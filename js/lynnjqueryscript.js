@@ -189,7 +189,6 @@ $(document).ready(function(){
 		selector: "[data-toggle='tooltip']",
 		container: "body"
 		});
-	
 	//Initialize popover
 	$('[data-toggle="popover"]').popover({
         title : false,
@@ -616,6 +615,8 @@ $(document).ready(function(){
 		}
 		});
 	//end us foreign options
+	//END toggle radio buttons content
+	
 	//start affiliation options
 	$('div#usaffiliation').css('display','none');
 	$('div#canadianaffiliation').css('display','none');
@@ -624,25 +625,24 @@ $(document).ready(function(){
 		$('#' + $(this).val()).show( 'fast' );
 	});
 	//end affiliation options
-	//start entity options
-	$('#autofill').css('display','none');
-	$('#entype').change(function(){
-		$('#autofill').show( 'fast' );
-		var include = ($(this).val() + '.html');
-		$('iframe#selected').attr('src',( include ));
-		$( 'iframe#selected' ).on('load', function() { 
-			$( 'div#entities' ).css( 'height', '2400px' );
-			$( 'iframe#selected' ).css( 'height', 2050 );
-		});
+	//start nameoftypeofbusiness options
+	$( 'div#nametype' ).css('display','none');
+	$( '#type' ).on('change',function(){
+		$( 'div#nametype' ).show( 'fast' );
 	});
-	//end entity options
-	//start iframe width
-	var a = $( "body.insertform" ); 
-	$( "div#entities" ).css( "height", a.innerHeight() );//set the width of the div to the height of the div
-	//end iframe width
-	//END toggle radio buttons content
+	//start entity options (import concept)
+	$('#autofill').css('display','none');
+	$('#entype').on('change',function(){
+		$('#container').empty();
+		$('footer').css('display','none');
+		var include = ('js/' + $(this).val() + '.js');
+		$.getScript( include );
+		$('#autofill').show( 'fast' );
+		$('footer').css('display','block');
+	});
+	//end entity options (import concept)
 	
-	//START set text area
+	//START fill from contacts values -- attorney
 	$( "a#clearform" ).click(function() {
 	  $( 'input#attorney-first-name' ).val( '' );
 	  $( 'input#title' ).val( '' );
@@ -659,7 +659,7 @@ $(document).ready(function(){
 	  $( 'input#attorney-phone' ).val( '' );
 	  });
 	$( "a#avo" ).click(function() {
-	  $( 'input#attorney-first-name' ).val( 'Avo' );
+	  $( 'input#firstname' ).val( 'Avo' );
 	  $( 'input#title' ).val( 'Director, Enterprise Technology Strategy and Innovation' );
 	  $( 'input#attorney-last-name' ).val( 'Reid' );
 	  $( '#suffix' ).val( 1 );
@@ -703,7 +703,7 @@ $(document).ready(function(){
 	  $( '#attorney-phonenumbertype' ).val( 4 );
 	  $( 'input#attorney-phone' ).val( '703-562-6675' );
 	});
-	//END set text area
+	//END fill from contacts values -- attorney
 		
 	//START contacts, fees, my mark components
 	//start toggle glyphicon contacts widget 

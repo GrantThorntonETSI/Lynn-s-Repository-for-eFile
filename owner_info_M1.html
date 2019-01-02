@@ -15,8 +15,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <!--    <link rel="stylesheet" th:href="@{/resources/css/usPTO.css}"/>
 --> <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -26,8 +24,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/lynnstyles.css">
-   
-</head>
+    <link rel="import" href="import_individual.html" id="individual">
+    <link rel="import" href="import_sole.html" id="sole">
+   </head>
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -42,7 +41,6 @@
           </button>
           <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
         </div>
-    
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -161,16 +159,16 @@
                         </section>
                     </div>
                     <div class="row">
-                    	<div class="col-xs-6">
+                    	<div class="col-xs-5 col-sm-6">
                     		<h1>Owner Information</h1>
                         </div>
-                        <nav class="col-xs-6" id="previousnext">
+                        <nav class="col-xs-7 col-sm-6" id="previousnext">
                     		<div class="btn-group btn-group-justified btn-sm" role="group" aria-label="previous and next buttons">
                               <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-default btn-sm">Previous</button>
                               </div>
                               <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default btn-sm">Next</button>
+                                <button type="button" class="btn btn-default btn-sm" id="noborder">Next</button>
                               </div>
                             </div>
                         </nav>
@@ -223,9 +221,11 @@
                                             <div class="col-xs-12">
                                         		<button type="button" class="btn-sm btn-success fill" id="autofill">Fill from Managed Contacts</button>
                                     		</div>
-                                            <iframe id="selected" class="embed-responsive-item" src="" scrolling="no" style="border:none;"></iframe>
-                                            <!--<button id="btnTest">Fill the form</button>-->
-											  <script type="application/javascript" src="js/fillfromcontacts_iframe.js"></script>
+                                            <div class="row">
+                                                <div class="col-xs-12">
+                                                    <div id="container"></div><!--external forms load into-->
+                                                </div>
+                                            </div>
                                         </fieldset><!--END Owner Information-->
                                         </form><!--END Owner Form-->
                                 </div><!--END owner toggle area-->
@@ -309,38 +309,15 @@
       
         <!--jquery and web jars -->
         <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <!--<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!--<script src="../resources/js/jquery.dataTables.min.js"></script>-->
         <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
-        <script>
-            $(document).ready(function() {
-                setTimeout(function() {
-                    // after 1000 ms we add the class animated to the login/register card
-                    $('.content').fadeIn(500);
-                }, 500);
-                ///////////////////////////////////////////////////////////////////////////////////////////
-                // password modal update actions
-                // passowrd update on click
-                ////////////////////////////////////////////////////////////////////////////////////////////
-                $('#webPolicy').click( function () {
-                    $('#web-policy-card').fadeIn();
-                });    
-                $(function() {
-                    $('*').click(function(e) {
-                        if(e.target.id != 'webPolicy')   {
-                            $('#web-policy-card').fadeOut();
-                        }
-                    });
-                });    
-                //////////////////////////////////////////////////////////////////////////
-            });
-        </script>    
+        <script type="application/javascript" src="js/html-imports.min.js"></script>
+		<script type="application/javascript" src="js/lynnjqueryscript.js"></script>
         
     <footer>
         <div class="container-fluid">
