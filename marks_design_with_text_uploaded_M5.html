@@ -56,7 +56,16 @@
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </li>
-            <li><a href="#">Lynn Stanikmas</a></li>
+            <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+              	</ul>
+            </li>
             <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
           </ul>
           
@@ -173,7 +182,7 @@
                                 <div class="form-group form-group-md col-xs-12">
                                     <p class="required weight600" aria-level="3"><span class="weight600">&#42;</span> Mark Literal</p>
                                     <label for="ta2">Enter the words, letters and numbers appearing in the mark. <a href="#" data-toggle="tooltip" title="Any entry in this field that is not found in the mark image will not be considered part of the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label> 
-                                    <textarea id="ta2" rows="3" class="form-control"></textarea>
+                                    <textarea id="ta2" rows="3" class="form-control" required></textarea>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <section aria-label="color claim">
@@ -198,7 +207,7 @@
                                                             <textarea id="ta3" rows="3" class="form-control"></textarea>
                                                             <h3 class="weight600">Mark Description</h3>
                                                             <label for="ta2"><span class="weight600">&#42;</span> Enter the description of the mark including the location of the colors. <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
-                                                            <textarea id="ta2" rows="3" class="form-control" placeholder="This mark consists of"></textarea>
+                                                            <textarea id="ta2" rows="3" class="form-control" placeholder="This mark consists of" required></textarea>
                                                         </div>
                                                         <div id="nocolorclaim"><!--toggle 'no' radio-->
                                                             <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
@@ -210,7 +219,7 @@
                                                             </div>
                                                             <h3 class="weight600">Mark Description</h3>
                                                             <label for="ta5"><span class="weight600">&#42;</span> Provide a description of the mark.</label>  
-                                                            <textarea id="ta5" rows="3" class="form-control" placeholder="This mark consists of"></textarea>
+                                                            <textarea id="ta5" rows="3" class="form-control" placeholder="This mark consists of" required></textarea>
                                                         </div>
                                                     </div>
                                                 </section>
@@ -257,14 +266,6 @@
                                                                     <input type="text" class="form-control" id="inthemark">
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div id="notranslation"><!--toggle 'no' radio-->
-                                                        	<div class="row">
-                                                                <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="notranslations">There is no meaning in a foreign language for</label>
-                                                                    <input type="text" class="form-control" id="notranslations">
-                                                                </div>
-                                                           	</div>
                                                         </div>
                                                     </div>
                                                 </section>
@@ -338,48 +339,60 @@
                                                         	<p id="whichnps">Identify which of the following it contains:</p> 
                                                             <input class="form-check-input checkmark" type="checkbox" value="name" aria-checked="false" tabindex="0" aria-labelledby="checkname" id="namechecked">
                                                             <label class="form-check-label form-check" for="namechecked" id="checkname"><span class="radio notspecial">Name</span></label>
-                                                            
-                                                            
                                                             <div id="yescontainsname" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
                                                             	<div class="row">
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-3">
-                                                                        <label for="firstname">First Name</label>
-                                                                        <input type="text" class="form-control" id="firstname">
+                                                                	<div class="containsaname col-xs-12">
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
+                                                                            <label for="firstname">First Name</label>
+                                                                            <input type="text" class="form-control" id="firstname">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-4">
+                                                                            <label for="middlename">Middle Name</label>
+                                                                            <input type="text" class="form-control" id="middlename">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-4">
+                                                                            <label for="lastname">Last Name</label>
+                                                                            <input type="text" class="form-control" id="lastname">
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                                                                        <label for="middlename">Middle Name</label>
-                                                                        <input type="text" class="form-control" id="middlename">
-                                                                    </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-3">
-                                                                        <label for="lastname">Last Name</label>
-                                                                        <input type="text" class="form-control" id="lastname">
-                                                                    </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-3">
-                                                                    	<button type="button" class="btn-sm btn-success add ctr">Add Additional</button>
+                                                                    <div class="appendaname"></div>
+                                                                    <div class="col-xs-7 col-md-4" role="group" aria-label="Add or delete additional names">
+                                                                        <div class="col-xs-9">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaname">Add Additional</button>
+                                                                        </div>
+                                                                        <div class="col-xs-3">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaname" aria-label="remove a name">&#8211;</button>
+                                                                        </div>
                                                                     </div>
                                                               	</div>
                                                             </div>
-                                                            
-                                                            
                                                             <input class="form-check-input checkmark" type="checkbox" value="portrait" aria-checked="false" tabindex="0" id="portraitchecked" aria-labelledby="checkportrait">
                                                             <label class="form-check-label form-check" for="portraitchecked" id="checkportrait"><span class="radio notspecial" id="collect">Portrait</span></label>
                                                             
                                                             <div id="yescontainsportrait" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
                                                             	<div class="row">
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-3">
-                                                                        <label for="firstname">First Name</label>
-                                                                        <input type="text" class="form-control" id="firstname">
+                                                                	<div class="containsaportrait col-xs-12">
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
+                                                                            <label for="firstname">First Name</label>
+                                                                            <input type="text" class="form-control" id="firstname">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-4">
+                                                                            <label for="middlename">Middle Name</label>
+                                                                            <input type="text" class="form-control" id="middlename">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-4">
+                                                                            <label for="lastname">Last Name</label>
+                                                                            <input type="text" class="form-control" id="lastname">
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                                                                        <label for="middlename">Middle Name</label>
-                                                                        <input type="text" class="form-control" id="middlename">
-                                                                    </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-3">
-                                                                        <label for="lastname">Last Name</label>
-                                                                        <input type="text" class="form-control" id="lastname">
-                                                                    </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-3">
-                                                                    	<button type="button" class="btn-sm btn-success add ctr">Add Additional</button>
+                                                                    <div class="appendaportrait"></div>
+                                                                    <div class="col-xs-7 col-md-4" role="group" aria-label="Add or delete additional portraits">
+                                                                        <div class="col-xs-9">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaportrait">Add Additional</button>
+                                                                        </div>
+                                                                        <div class="col-xs-3">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaportrait" aria-label="remove a portrait">&#8211;</button>
+                                                                        </div>
                                                                     </div>
                                                               	</div>
                                                             </div>
@@ -390,20 +403,28 @@
                                                             
                                                             <div id="yescontainssignature" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
                                                             	<div class="row">
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-3">
-                                                                        <label for="firstname">First Name</label>
-                                                                        <input type="text" class="form-control" id="firstname">
+                                                                    <div class="containsasignature col-xs-12">
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
+                                                                            <label for="firstname">First Name</label>
+                                                                            <input type="text" class="form-control" id="firstname">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-4">
+                                                                            <label for="middlename">Middle Name</label>
+                                                                            <input type="text" class="form-control" id="middlename">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-4">
+                                                                            <label for="lastname">Last Name</label>
+                                                                            <input type="text" class="form-control" id="lastname">
+                                                                        </div>
                                                                     </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                                                                        <label for="middlename">Middle Name</label>
-                                                                        <input type="text" class="form-control" id="middlename">
-                                                                    </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-3">
-                                                                        <label for="lastname">Last Name</label>
-                                                                        <input type="text" class="form-control" id="lastname">
-                                                                    </div>
-                                                                    <div class="form-group form-group-md col-xs-12 col-md-3">
-                                                                    	<button type="button" class="btn-sm btn-success add ctr">Add Additional</button>
+                                                                    <div class="appendasignature"></div>
+                                                                    <div class="col-xs-7 col-md-4" role="group" aria-label="Add or delete additional signatures">
+                                                                        <div class="col-xs-9">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addasignature">Add Additional</button>
+                                                                        </div>
+                                                                        <div class="col-xs-3">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetasignature" aria-label="remove a portrait">&#8211;</button>
+                                                                        </div>
                                                                     </div>
                                                               	</div>
                                                             </div>
@@ -472,11 +493,13 @@
                 </div>
             </div>
             <div class="col-xs-8 col-sm-4 col-md-3">
-                <div class="col-xs-6">
-                    <span id="webPolicy"><p>Website Policy</p></span>
-                </div>
-                <div class="col-xs-6">
-                    <p>Privacy Policy</p>
+            	<div class="row">
+                    <div class="col-xs-6">
+                        <span id="webPolicy"><p>Website Policy</p></span>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>Privacy Policy</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -5,10 +5,10 @@ $(document).ready(function(){
 		$( 'div#nametype' ).show( 'fast' );
 	});
 //START additional phone
-	var $append = $( ".appendto" );
+	var append = $( ".appendto" );
 	$("button#clonephone").one('click',function(){
-		$append = $append.prev();
-	  	$( $append ).clone().appendTo('.phone');
+		append = append.prev();
+	  	$( append ).clone().appendTo('.phone');
 	});
 //END additional phone
 //start nameoftypeofbusiness options

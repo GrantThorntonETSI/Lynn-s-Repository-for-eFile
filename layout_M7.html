@@ -57,7 +57,16 @@
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </li>
-            <li><a href="#">Lynn Stanikmas</a></li>
+            <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+              	</ul>
+            </li>
             <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
           </ul>
           
@@ -171,7 +180,7 @@
                             <div class="row">
                               <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-4">
                                 <label for="ownername"><span class="weight600">&#42;</span>Owner Name</label>
-                                <input type="text" class="form-control" id="ownername" th:field="*{firstName}">
+                                <input type="text" class="form-control" id="ownername" th:field="*{firstName}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
                                 <label for="additionalname">Additional Name</label>
@@ -185,7 +194,7 @@
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
                                 <label for="stateoforg"><span class="weight600">&#42;</span>State of Organization</label>
-                                <select class="form-control" id="stateoforg">
+                                <select class="form-control" id="stateoforg" required>
                                   <option value="Select">Select</option>
                                   <option value="AL">Alabama</option>
                                   <option value="AK">Alaska</option>
@@ -210,7 +219,7 @@
                             <div class="row">
                               <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                 <label for="firstname"><span class="weight600">&#42;</span>First Name</label>
-                                <input type="text" class="form-control" id="firstname">
+                                <input type="text" class="form-control" id="firstname" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
                                 <label for="middlename">Middle Name</label>
@@ -218,7 +227,7 @@
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                                 <label for="lastname"><span class="weight600">&#42;</span>Last Name</label>
-                                <input type="text" class="form-control" id="lastname" th:field="*{lastName}">
+                                <input type="text" class="form-control" id="lastname" th:field="*{lastName}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-6">
                                 <label for="suffix">Suffix</label>
@@ -269,7 +278,7 @@
                           </div>
                           <div class="form-group form-group-md col-md-12 col-lg-8">
                             <label for="addressline1"><span class="weight600">&#42;</span>Address Line 1</label>
-                            <input type="text" class="form-control" id="addressline1" th:field="*{ownerAddress1}">
+                            <input type="text" class="form-control" id="addressline1" th:field="*{ownerAddress1}" required>
                           </div>
                           <div class="form-group form-group-md col-md-12 col-lg-8">
                             <label for="addressline2">Address Line 2</label>
@@ -281,11 +290,11 @@
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                             <label for="city"><span class="weight600">&#42;</span>City</label>
-                            <input type="text" class="form-control" id="city" th:field="*{ownerCity}">
+                            <input type="text" class="form-control" id="city" th:field="*{ownerCity}" required>
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
                             <label for="state"><span class="weight600">&#42;</span>State</label>
-                            <select class="form-control" id="state" th:field="*{ownerState}">
+                            <select class="form-control" id="state" th:field="*{ownerState}" required>
                               <option value="Select">Select</option>
                               <option value="Virginia">Virginia</option>
                               <option value="Maryland">Maryland</option>
@@ -294,7 +303,7 @@
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                             <label for="zipcode"><span class="weight600">&#42;</span>Zip Code</label>
-                            <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}">
+                            <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
                           </div>
                        	</div>
                       </fieldset>
@@ -308,7 +317,7 @@
                     	<div class="row">
                           <div class="form-group form-group-md col-xs-12 col-md-6">
                             <label for="email"><span class="weight600">&#42;</span>Email Address <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to end correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
-                            <input type="text" class="form-control" id="email" th:field="*{ownerEmail}">
+                            <input type="text" class="form-control" id="email" th:field="*{ownerEmail}" required>
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-6">
                             <label for="webaddress">Website Address</label>
@@ -390,11 +399,13 @@
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-4 col-md-3">
-                    <div class="col-xs-6">
-                        <span id="webPolicy"><p>Website Policy</p></span>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>Privacy Policy</p>
+                	<div class="row">
+                        <div class="col-xs-6">
+                            <p><span id="webPolicy">Website Policy</span></p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>Privacy Policy</p>
+                        </div>
                     </div>
                 </div>
             </div>

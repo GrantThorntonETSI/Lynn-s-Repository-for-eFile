@@ -56,7 +56,16 @@
                 <li><a href="#">Contact Us</a></li>
               </ul>
             </li>
-            <li><a href="#">Lynn Stanikmas</a></li>
+            <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+              	</ul>
+            </li>
             <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
           </ul>
           
@@ -221,13 +230,19 @@
                                                           <label for="inlineRadio011" class="radio-inline"><input type="radio" name="priorradio" id="inlineRadio011" value="yes">Yes</label>
                                                           <label for="inlineRadio012" class="radio-inline"><input type="radio" name="priorradio" id="inlineRadio012" value="no">No</label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yesprior" role="region" aria-labelledby="prioreg" class="form-group form-group-md">
-                                                                <div class="col-xs-12 col-md-9">
-                                                                    <label for="yesprior">Enter prior U.S. registration numbers.</label>
-                                                                    <input type="text" class="form-control" id="yesprior">
-                                                                </div>
-                                                                <div class="col-xs-12 col-md-3">
-                                                                    <button type="button" class="btn-sm btn-success add">Add Number</button>
+                                                        <div id="yesprior" role="region" aria-labelledby="prioreg" class="form-group form-group-md row">
+                                                            <div class="form-group form-group-md col-xs-12 col-sm-8" id="copy">
+                                                                <label for="yesprior">Enter prior U.S. registration numbers.</label>
+                                                                <input type="text" class="form-control" id="yesprior">
+                                                            </div>
+                                                            <div class="appenddocket"></div>
+                                                                <div class="col-xs-7 col-sm-4" role="group" aria-label="Add or delete additional reference numbers">
+                                                                    <div class="col-xs-9">
+                                                                        <button type="button" class="btn-sm btn-success add ctr" id="addocket">Add Number</button>
+                                                                    </div>
+                                                                    <div class="col-xs-3">
+                                                                        <button type="button" class="btn-sm btn-success add ctr" id="resetdockets" aria-label="remove additional number">&#8211;</button>
+                                                                    </div>
                                                                 </div>
                                                         </div>
                                                     </div>
@@ -292,30 +307,6 @@
 	<script type="application/javascript" src="js/checkbox.js"></script>
     <script type="application/javascript" src="js/btn_checkbox.js"></script>
     <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
-
-	<script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                // after 1000 ms we add the class animated to the login/register card
-                $('.content').fadeIn(500);
-            }, 500);
-            ///////////////////////////////////////////////////////////////////////////////////////////
-            // password modal update actions
-            // passowrd update on click
-            ////////////////////////////////////////////////////////////////////////////////////////////
-            $('#webPolicy').click( function () {
-                $('#web-policy-card').fadeIn();
-            });    
-            $(function() {
-                $('*').click(function(e) {
-                    if(e.target.id != 'webPolicy')   {
-                        $('#web-policy-card').fadeOut();
-                    }
-                });
-            });    
-            //////////////////////////////////////////////////////////////////////////
-        });
-    </script>
         <footer>
             <div class="container-fluid">
                 <div class="row">
@@ -327,13 +318,15 @@
                         </div>
                     </div>
                     <div class="col-xs-8 col-sm-4 col-md-3">
+                	<div class="row">
                         <div class="col-xs-6">
-                            <span id="webPolicy"><p>Website Policy</p></span>
+                            <p><span id="webPolicy">Website Policy</span></p>
                         </div>
                         <div class="col-xs-6">
                             <p>Privacy Policy</p>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </footer>

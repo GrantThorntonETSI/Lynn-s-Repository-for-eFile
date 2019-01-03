@@ -264,10 +264,8 @@ $(document).ready(function(){
 				checked: false,
 			});
 	$('div#yestranslation').css('display','none');
-	$('div#notranslation').css('display','none');
 	$('input#inlineRadio3').change(function() {
 		if(this.checked == true){
-			$('div#notranslation').hide( 'fast' );
 			$('div#yestranslation').show( 'slow' );
 			
 			$("input#inlineRadio4").prop({
@@ -275,7 +273,6 @@ $(document).ready(function(){
 			});
 			}
 	else {
-			$('div#notranslation').show( 'fast' );
 			$('div#yestranslation').hide( 'slow' );
 			
 			$("input#inlineRadio4").prop({
@@ -285,7 +282,6 @@ $(document).ready(function(){
 		});
 	$('input#inlineRadio4').change(function() {
 		if(this.checked == true){
-			$('div#notranslation').show( 'fast' );
 			$('div#yestranslation').hide( 'slow' );
 			
 			$("input#inlineRadio3").prop({
@@ -293,7 +289,6 @@ $(document).ready(function(){
 			});
 			}
 	else {
-			$('div#notranslation').hide( 'fast' );
 			$('div#yestranslation').show( 'slow' );
 			
 			$("input#inlineRadio3").prop({
@@ -773,4 +768,49 @@ $(document).ready(function(){
 		$( 'button#contactsbtn span#toggleglyph' ).addClass('visuallyadded');
 	});
 	//end show managed contacts from nav
+	
+	//START additional phone
+	$( 'button#addphone' ).on('click',function(){
+	  	$( '.phones:eq(0)' ).clone().appendTo( '.appendphone' );
+	});
+	$( '#resetphone' ).click(function () {
+	  $( '.appendphone .phones' ).remove( '.phones:eq(0)' );
+    });
+	//END additional phone
+	
+	//START additional docket 
+	$( 'button#addocket' ).click(function(){
+	  	$( '#copy:eq(0)' ).clone().appendTo( '.appenddocket' );
+	});
+	$("#resetdockets").click(function () {
+	  $( '.appenddocket #copy' ).remove('#copy:eq(0)');
+    });
+	//END additional docket
+	
+	//START additional containsname
+	$( 'button#addaname' ).on('click',function(){
+	  	$( '.containsaname:eq(0)' ).clone().appendTo( '.appendaname' );
+	});
+	$( '#resetaname' ).on('click',function () {
+	  $( '.appendaname .containsaname' ).remove( '.containsaname:eq(0)' );
+    });
+	//END additional containsname
+	
+	//START additional containsportrait
+	$( 'button#addaportrait' ).on('click',function(){
+	  	$( '.containsaportrait:eq(0)' ).clone().appendTo( '.appendaportrait' );
+	});
+	$( '#resetaportrait' ).on('click',function () {
+	  $( '.appendaportrait .containsaportrait' ).remove( '.containsaportrait:eq(0)' );
+    });
+	//END additional containsportrait
+	
+	//START additional containssignature
+	$( 'button#addasignature' ).on('click',function(){
+	  	$( '.containsasignature:eq(0)' ).clone().appendTo( '.appendasignature' );
+	});
+	$( '#resetasignature' ).on('click',function () {
+	  $( '.appendasignature .containsasignature' ).remove( '.containsasignature:eq(0)' );
+    });
+	//END additional containssignaturet
 });
