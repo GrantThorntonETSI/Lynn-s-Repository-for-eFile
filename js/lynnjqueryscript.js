@@ -68,8 +68,12 @@ $(document).ready(function(){
 				{ "width": "33%" },
 			  ],
 		});
-		
 	//END initialize datable
+	//start close (x) gs panels
+	$('.closegspanels').click(function() {
+		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
+	});
+	//end close (x) gs panels
 	
   //START set initial checkboxes
   $('input[type=checkbox]').attr('checked',false);
@@ -165,6 +169,17 @@ $(document).ready(function(){
       var a = $( 'div.match' );
 	  $('#panels .panel-body').css( 'height', (a.innerHeight() + 8) );
 	//END 
+	//START close button height match
+      var d = $( '.closepans' ).prev('div');
+	  $(d).css('display','flex').css('flex-direction','column');
+	  $('#gsselected .closepans').css( 'height', (d.innerHeight()) );
+	  $('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
+	  
+	  $( window ).resize(function() {
+  		$('#gsselected .closepans').css( 'height', (d.innerHeight()) );
+	  	$('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
+		});
+	//END close button height match
 	
 	//START examples panel link hover / active
 	  $('#examples div.panel a').hover(function() {
