@@ -14,7 +14,7 @@ body {
 	background-color:#f6f6f6;
 	min-height:100%;
 	height:100%;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 	}
 .insertform {
 	background-color:#fff;
@@ -312,6 +312,10 @@ main {
 	}
 #panels p {
 	margin-bottom: 1.6em;
+	}
+#inuseyes p {
+	margin-bottom: 1.6em;
+	margin-top: 1.6em;
 	}
 #goodservideo .match {
 	min-height: 400px;
@@ -638,6 +642,10 @@ label a:hover {
 	-moz-box-shadow: 	0 1px 2px rgba(0,0,0,.20);
 	box-shadow: 		0 1px 2px rgba(0,0,0,.20);
 	}
+.list-group {
+    -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
 #examples .nopadding {
 	padding:0!important;
 	}
@@ -669,11 +677,22 @@ label a:hover {
     background-color: #D9D9D6;
     margin-top: 30px;
     margin-bottom: 20px;
-    padding: 8px 0 8px 18px;
+    padding: 5px 0 5px 18px;
     border-bottom-left-radius: 2px;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 	}
+.card-text.noexpand {
+    padding: 9px 0 9px 18px;
+	}
+.noexpand.blue {
+    background-color: #004C97;
+    color: #fff;
+	}
+/*#uploaded form .card-text, #entities .card-text, #basisabde .card-text {
+	padding-top:5px;
+	padding-bottom:5px;
+	}*/
 .lead {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -913,8 +932,14 @@ div.round {
 div[role="heading"] { 
 	margin-bottom: .6em;
 	}
-#uploaded div[role="heading"], #entities div[role="heading"] { 
+#uploaded div[role="heading"], #entities div[role="heading"], #filingbasisabde div[role="heading"] { 
 	margin-bottom: 0;
+	}
+div[role="heading"] { 
+	margin-bottom: 0;
+	}
+div[role="heading"] button { 
+	line-height: 1.44em;
 	}
 .Accordion-trigger {
 	padding:0;
@@ -932,10 +957,6 @@ div[role="heading"] {
 .Accordion-trigger .btn-link {
     font-weight: 600;
     color: #333;
-	}
-#uploaded form .card-text, #entities .card-text {
-	padding-top:6px;
-	padding-bottom:6px;
 	}
 .Accordion-trigger:active, .Accordion-trigger:focus, .Accordion-trigger:active:focus {
 	outline-offset: 4px;
@@ -1110,9 +1131,62 @@ input[type=radio] {
 	margin:0;
 	background-color: #009CDE;
 	}
+.radio {
+	margin-bottom: 1.4em;
+    margin-top: 1.4em!important;
+	}
 div[role="radiogroup"] {
 	margin-bottom:1.2em;
 	}
+.radiocontainer {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px!important;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.radiocontainer input {
+  position: absolute;
+  left:-10000px;
+  opacity: 0;
+  cursor: pointer;
+  height: 1px;
+  width: 1px;
+}
+.checkmark {
+  position: absolute;
+  top: -2px;
+  left: 0;
+  height: 27px;
+  width: 27px;
+  background-color: #fff;
+  border: 1px solid #808080;
+  border-radius: 50%;
+}
+.radiocontainer input:checked ~ .checkmark {
+  background-color: #009CDE;
+  border: 1px solid #009CDE;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.radiocontainer input:checked ~ .checkmark:after {
+  display: block;
+}
+.radiocontainer .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
 /* FIX for smooth animations */	
  #nocolorclaim, #yescolorclaim, #notranslation, #yestranslation, #yestransliteration, #yesnps, #markoptions, #yesattorneyfiling, #yesusentity, #gsselected {
 	 overflow:hidden;
@@ -1134,6 +1208,9 @@ div[role="radiogroup"] {
 	margin-top: 1em;
 	width:100%;
 	}
+#basisabde .upload-drop-zone {
+	line-height: 1.25em;
+	}
 .upload-drop-zone:hover, .upload-drop-zone:focus { 
     background-color: #fafafb!important;
     -webkit-box-shadow:none;
@@ -1144,7 +1221,7 @@ div[role="radiogroup"] {
 	outline-offset: -2px;
 	border:2px dashed transparent;
 	}
-#attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file] {
+#attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file], #basisabde input[type=file] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -1286,7 +1363,7 @@ footer {
     top: 100%;
     width: 100%;
 	background-color: #222222;
-	margin-top:100px;
+	margin-top:127px;
 	}
 footer p {
 	font-size:.7em;

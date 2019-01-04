@@ -190,8 +190,8 @@
                                 </div>
                                 <p id="usforeign">Is the owner a U.S. or Foreign Entity?</p>
                                 <div role="radiogroup" aria-labelledby="usforeign">
-                                  <label for="inlineRadio019" class="radio-inline" id="usentityselected"><input type="radio" name="usforeignradio" id="inlineRadio019" value="usentity">US Entity</label>
-                                  <label for="inlineRadio020" class="radio-inline" id="foreignentityselected"><input type="radio" name="usforeignradio" id="inlineRadio020" value="foreignentity">Foreign Entity</label>
+                                  <label for="inlineRadio019" class="radio-inline radiocontainer" id="usentityselected">US Entity<input type="radio" name="usforeignradio" id="inlineRadio019" value="usentity" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                  <label for="inlineRadio020" class="radio-inline radiocontainer" id="foreignentityselected">Foreign Entity<input type="radio" name="usforeignradio" id="inlineRadio020" value="foreignentity" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
                                 </div><!--END radiogroup-->
                                 <script type="application/javascript" src="js/accordion.js"></script>
                                 <script type="application/javascript" src="js/checkbox.js"></script>
@@ -267,7 +267,7 @@
                     </div>
                 </div>
             </section>-->
-            <section class="col-xs-7 col-sm-6 col-md-6 col-lg-6 col-xs-offset-5 col-sm-offset-6 col-md-offset-6 col-lg-offset-6 weight600" aria-label="your data" id="mydata2">
+            <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-6 col-md-offset-6 col-lg-offset-6 weight600" aria-label="your data" id="mydata2">
                 <div class="panel-group">
                     <div class="panel panel-default">
                         <div class="panel-heading" id="contacts">
@@ -338,11 +338,13 @@
                     </div>
                 </div>
                 <div class="col-xs-8 col-sm-4 col-md-3">
-                    <div class="col-xs-6">
-                        <p><span id="webPolicy">Website Policy</span></p>
-                    </div>
-                    <div class="col-xs-6">
-                        <p>Privacy Policy</p>
+                	<div class="row">
+                        <div class="col-xs-6">
+                            <p><span id="webPolicy">Website Policy</span></p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>Privacy Policy</p>
+                        </div>
                     </div>
                 </div>
             </div>

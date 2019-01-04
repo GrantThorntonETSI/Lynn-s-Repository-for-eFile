@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
 
-    <title>USPTO.gov :: webapp prototype :: Trademark Design with Text - File Uploaded</title>
+    <title>USPTO.gov :: webapp prototype :: Filing Basis :: 1(a) 1(b) 44(d) 44(e)</title>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -99,7 +99,7 @@
   <div class="row content">
     <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
       <!--START Content Div-->
-      	<div class="row" id="designwithtext">
+      	<div class="row" id="filingbasisabde">
             <div class="col-xs-12">
                 <div class="row">
                     <section class="col-xs-12 steps breadcrumb-steps" aria-label="progress tracker">
@@ -114,7 +114,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-2 two active">
+                            <div class="col-xs-2 two done">
                                 <div class="row">
                                     <div class="col-xs-3 col-sm-5 col-md-4 col-lg-4 number">
                                         <span>2</span>
@@ -124,7 +124,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-2 three">
+                            <div class="col-xs-2 three done">
                                 <div class="row">
                                     <div class="col-xs-3 col-sm-5 col-md-4 col-lg-4 number">
                                         <span>3</span>
@@ -134,7 +134,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-2 four">
+                            <div class="col-xs-2 four active">
                                 <div class="row">
                                     <div class="col-xs-3 col-sm-5 col-md-4 col-lg-4 number">
                                         <span>4</span>
@@ -167,22 +167,42 @@
                         </div>
                     </section>
                 </div>
-                <h1>Trademark Details &#8211; Design with Text</h1>
-                <p class="required"><span class="weight600">&#42; = Required</span></p>
-                <!--START Trademark Details Design with Text-->
+                <h1>Filing Basis</h1>
                 <div class="row">
-                    <div class="col-xs-12" id="uploaded">
-                        <div class="card-text noexpand">
-                            <h2 class="card-title weight600">Mark Information</h2>
-                        </div>
-                        <img src="images/scrubutts-09-a-68-a-jpg.jpg" alt="your mark" class="img-responsive">
+                    <div class="col-xs-12" id="basisabde">
+                            <div class="lead">
+                                <p class="weight600">Please provide information about each class you have selected for your mark.</p>
+                            </div>
+                            <div class="card-text noexpand blue">
+                                <h2 class="card-title weight600">Class 003</h2>
+                            </div>
                         <form action="" method="post" >
                            <fieldset>
                            	<div class="row">
                                 <div class="form-group form-group-md col-xs-12">
-                                    <p class="required weight600" aria-level="3"><span class="weight600">&#42;</span> Mark Literal</p>
-                                    <label for="ta2">Enter the words, letters and numbers appearing in the mark. <a href="#" data-toggle="tooltip" title="Any entry in this field that is not found in the mark image will not be considered part of the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label> 
-                                    <textarea id="ta2" rows="3" class="form-control" required></textarea>
+                                	<div class="row">
+                                        <div class="col-xs-12 col-md-6">
+                                        	<p id="upimage">Provide an image of your specimen:</p>
+                                            <div>
+                                                <label class="small upload-drop-zone" for="consentfile"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload Image</label>
+                                                <input type="file" id="consentfile" name="consentfileupload" class="form-control" aria-labelledby="#upimage">
+                                            </div><!-- Drop Zone -->
+                                            <div class="row">
+                                              <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
+                                                <p id="uploaded">Processed files</p>
+                                                <div class="list-group">
+                                                  <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploaded"></a>
+                                                </div>
+                                              </div>
+                                          	</div>
+                                        </div>
+                                        
+                                        <div class="col-xs-12 col-md-6">
+                                            <label for="specdescript">Provide a description of your specimen:</label> 
+                                            <textarea id="specdescript" rows="5" class="form-control"></textarea>
+                                        </div>
+                                        
+                                    </div>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <section aria-label="color claim">
@@ -243,7 +263,7 @@
                                                         <p id="foreign">Does your mark contain foreign wording?</p>                                            			
                                                         <div role="radiogroup" aria-labelledby="foreign">
                                                             <label for="inlineRadio3" class="radio-inline radiocontainer">Yes<input type="radio" name="foreignradio" id="inlineRadio3" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                                            <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" aria-checked="false" tabindex="0" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                                            <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yestranslation"><!--toggle 'yes' radio-->
                                                             <h3 class="weight600">Enter the foreign language and the translation.</h3>

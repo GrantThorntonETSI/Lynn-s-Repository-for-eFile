@@ -170,29 +170,19 @@
                         </section>
                     </div>
                     <div class="row">
-                    	<div class="col-xs-6">
+                    	<div class="col-xs-12">
                     		<h1>Attorney Information</h1>
                         </div>
-                        <nav class="col-xs-6" id="previousnext">
-                    		<div class="btn-group btn-group-justified btn-sm" role="group" aria-label="previous and next buttons">
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm">Previous</button>
-                              </div>
-                              <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm" id="noborder">Next</button>
-                              </div>
-                            </div>
-                        </nav>
                     </div>
                     <p class="required"><span class="weight600">&#42; = Required</span></p>
                     <!--START Attorney Information Form-->
-                    <div class="card-text">
+                    <div class="card-text noexpand">
                         <h2 class="card-title weight600" id="attorneyinfo">Attorney Information</h2>
                     </div>
                         <p id="attorneyfiling">Is an Attorney filing this application?</p>
                         <div role="radiogroup" aria-labelledby="attorneyfiling">
-                          <label for="inlineRadio015" class="radio-inline"><input type="radio" name="attorneyfilingradio" id="inlineRadio015" value="yes">Yes</label>
-                          <label for="inlineRadio016" class="radio-inline"><input type="radio" name="attorneyfilingradio" id="inlineRadio016" value="no">No</label>
+                          <label for="inlineRadio015" class="radio-inline radiocontainer">Yes<input type="radio" name="attorneyfilingradio" id="inlineRadio015" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                          <label for="inlineRadio016" class="radio-inline radiocontainer">No<input type="radio" name="attorneyfilingradio" id="inlineRadio016" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
                         </div><!--END radiogroup-->
                         <script type="application/javascript" src="js/accordion.js"></script>
 						<script type="application/javascript" src="js/checkbox.js"></script>
@@ -236,7 +226,7 @@
                                  	</div>
                               </fieldset><!--END Attorney Information-->
                                 <!--START Attorney Contact Information-->
-                                <div class="card-text">
+                                <div class="card-text noexpand">
                                     <h2 class="card-title weight600" id="attorneycontact">Attorney Contact Information</h2>
                                 </div>
                                 <fieldset aria-labelledby="attorneycontact">
@@ -595,7 +585,7 @@
                                 </div>
                                 </fieldset><!--END Contact Attorney Information-->
                                 <!--START Docket Reference Information-->
-                                <div class="card-text">
+                                <div class="card-text noexpand">
                                 	<h2 class="card-title weight600" id="docketreference">Docket or Reference Number</h2>
                                 </div>
                                 <fieldset aria-labelledby="docketreference" class="row">
@@ -614,7 +604,7 @@
                                     </div>
                                 </fieldset><!--END Docket Reference Information-->
                                 <!--START Affiliation Information-->
-                                <div class="card-text">
+                                <div class="card-text noexpand">
                                     <h2 class="card-title weight600" id="affiliation">Affiliation Information</h2>
                                 </div>
                                 <fieldset aria-labelledby="affiliation">
@@ -736,18 +726,27 @@ Upload bar credentials, including certificate of good standing from highest cour
                                     </div>
                                     <p id="canadalocation">Is the applicant located in Canada?</p>
                                     <div role="radiogroup" aria-labelledby="canadalocation">
-                                      <label for="applicantCATrue" class="radio-inline"><input type="radio" name="applicantCA" value="true" id="applicantCATrue">Yes</label>
-                                      <label for="applicantCAFalse" class="radio-inline"><input type="radio" name="applicantCA" value="false" id="applicantCAFalse">No</label>
+                                      <label for="applicantCATrue" class="radio-inline radiocontainer">Yes<input type="radio" name="applicantCA" value="true" id="applicantCATrue" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                      <label for="applicantCAFalse" class="radio-inline radiocontainer">No<input type="radio" name="applicantCA" value="false" id="applicantCAFalse" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
                                     </div><!--END radiogroup-->
                                 </div><!--END canadian affiliation-->
                                 </fieldset><!--END Affiliation Information-->
                             </form><!--END Attorney Form-->
                         </div><!--END attorney toggle area-->
                         <div class="col-xs-12">
-                            <button type="submit" class="btn btn-sm btn-primary add ctr" id="confirmattorney">Confirm</button>
+                            <button type="submit" class="btn btn-sm btn-primary add ctr" id="confirmattorney" value="submit">Submit</button>
                         </div>
                     </div>
                 </div>
+                <div class="inlinebuttons btn-group btn-group-justified" role="nav" aria-label="view previous or next page" id="prevnxt">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
+                            <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
+                    </div>
+            	</div>
             </main>
         </div>
     </div><!--END container-fluid-->
@@ -773,7 +772,7 @@ Upload bar credentials, including certificate of good standing from highest cour
                         </div>
                     </div>
                 </section>-->
-                <section class="col-xs-7 col-sm-6 col-md-6 col-lg-6 col-xs-offset-5 col-sm-offset-6 col-md-offset-6 col-lg-offset-6 weight600" aria-label="your data" id="mydata2">
+                <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-6 col-md-offset-6 col-lg-offset-6 weight600" aria-label="your data" id="mydata2">
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading" id="contacts">
