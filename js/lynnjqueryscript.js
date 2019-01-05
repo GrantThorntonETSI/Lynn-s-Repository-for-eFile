@@ -62,10 +62,10 @@ $(document).ready(function(){
 			"autoWidth": false,
 			"responsive": true,
 			"columns": [
-				{ "width": "12%" },
 				{ "width": "25%" },
-				{ "width": "30%" },
-				{ "width": "33%" },
+				{ "width": "25%" },
+				{ "width": "25%" },
+				{ "width": "25%" },
 			  ],
 		});
 	//END initialize datable
@@ -169,17 +169,28 @@ $(document).ready(function(){
       var a = $( 'div.match' );
 	  $('#panels .panel-body').css( 'height', (a.innerHeight() + 8) );
 	//END 
+	
 	//START close button height match
       var d = $( '.closepans' ).prev('div');
 	  $(d).css('display','flex').css('flex-direction','column');
 	  $('#gsselected .closepans').css( 'height', (d.innerHeight()) );
 	  $('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
-	  
 	  $( window ).resize(function() {
   		$('#gsselected .closepans').css( 'height', (d.innerHeight()) );
 	  	$('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
 		});
 	//END close button height match
+	
+	//START input label height match
+      var d = $( '.matchlabelheight' ).parent().prev('div').children('label');
+	  var e = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
+	  $('.matchlabelheight').css( 'height', (d.innerHeight() + 'px') );
+	  $('.matchlabelheighttwo').css( 'height', (e.innerHeight() + 'px') );
+	  $( window ).resize(function() {
+	  	$('.matchlabelheight').css( 'height', (d.innerHeight())  + 'px' );
+		$('.matchlabelheighttwo').css( 'height', (e.innerHeight())  + 'px' );
+		});
+	//END input label height match
 	
 	//START examples panel link hover / active
 	  $('#examples div.panel a').hover(function() {
@@ -231,86 +242,51 @@ $(document).ready(function(){
 	
 	//START toggle radio buttons content
 	//start mark color options
-	$("input#inlineRadio1").prop({
-				checked: false,
-			});
 	$('div#nocolorclaim').css('display','none');
 	$('div#yescolorclaim').css('display','none');
 	$('input#inlineRadio1').change(function() {
 		if(this.checked == true){
 			$('div#nocolorclaim').hide( 'fast' );
 			$('div#yescolorclaim').show( 'slow' );
-			
-			$("input#inlineRadio2").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#nocolorclaim').show( 'fast' );
 			$('div#yescolorclaim').hide( 'slow' );
-			
-			$("input#inlineRadio2").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio2').change(function() {
 		if(this.checked == true){
 			$('div#nocolorclaim').show( 'fast' );
 			$('div#yescolorclaim').hide( 'slow' );
-			
-			$("input#inlineRadio1").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#nocolorclaim').hide( 'fast' );
 			$('div#yescolorclaim').show( 'slow' );
-			
-			$("input#inlineRadio1").prop({
-				checked: true,
-			});
-		}
-		});
+			}
+	});
 	//end mark color options
 		
 	//start translations options
 	$("input#inlineRadio3").prop({
-				checked: false,
-			});
+		checked: false,
+	});
 	$('div#yestranslation').css('display','none');
 	$('input#inlineRadio3').change(function() {
 		if(this.checked == true){
 			$('div#yestranslation').show( 'slow' );
-			
-			$("input#inlineRadio4").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yestranslation').hide( 'slow' );
-			
-			$("input#inlineRadio4").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio4').change(function() {
 		if(this.checked == true){
 			$('div#yestranslation').hide( 'slow' );
-			
-			$("input#inlineRadio3").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yestranslation').show( 'slow' );
-			
-			$("input#inlineRadio3").prop({
-				checked: true,
-			});
 		}
-		});
+	});
 	//end translations options
 	
 	//start transliterations options
@@ -321,270 +297,167 @@ $(document).ready(function(){
 	$('input#inlineRadio5').change(function() {
 		if(this.checked == true){
 			$('div#yestransliteration').show( 'fast' );
-			
-			$("input#inlineRadio6").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yestransliteration').hide( 'fast' );
-			
-			$("input#inlineRadio6").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio6').change(function() {
 		if(this.checked == true){
 			$('div#yestransliteration').hide( 'fast' );
-			
-			$("input#inlineRadio5").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yestransliteration').show( 'fast' );
-			
-			$("input#inlineRadio5").prop({
-				checked: true,
-			});
-		}
-		});
+			}
+	});
 	//end translations options
 	
 	//start nps options
 	$("input#inlineRadio7").prop({
-				checked: false,
-			});
+		checked: false,
+	});
 	$('div#yesnps').css('display','none');
 	$('input#inlineRadio7').change(function() {
 		if(this.checked == true){
 			$('div#yesnps').show( 'fast' );
-			
-			$("input#inlineRadio8").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesnps').hide( 'fast' );
-			
-			$("input#inlineRadio8").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio8').change(function() {
 		if(this.checked == true){
 			$('div#yesnps').hide( 'fast' );
-			
-			$("input#inlineRadio7").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesnps').show( 'fast' );
-			
-			$("input#inlineRadio7").prop({
-				checked: true,
-			});
-		}
-		});
-		//yes, contains name is checked
-		$("#namechecked").prop({
-				checked: false,
-			});
-		$('div#yescontainsname').hide();
-		$('#namechecked').change(function() {
-			if(this.checked == true){
-				$('div#yescontainsname').show( 'fast' );
-				}
-		else {
-				$('div#yescontainsname').hide( 'fast' );
-				}
-			});
-		//yes, contains portrait is checked
-		$("#portraitchecked").prop({
-				checked: false,
-			});
-		$('div#yescontainsportrait').hide();
-		$('#portraitchecked').change(function() {
-			if(this.checked == true){
-				$('div#yescontainsportrait').show( 'fast' );
-				}
-		else {
-				$('div#yescontainsportrait').hide( 'fast' );
-				}
-			});
-		//yes, contains signature is checked
-		$("#signaturechecked").prop({
-				checked: false,
-			});
-		$('div#yescontainssignature').hide();
-		$('#signaturechecked').change(function() {
-			if(this.checked == true){
-				$('div#yescontainssignature').show( 'fast' );
-				}
-		else {
-				$('div#yescontainssignature').hide( 'fast' );
-				}
-			});
-		
+			}
+	});
+	//yes, contains name is checked
+	$('div#yescontainsname').hide();
+	$('#namechecked').change(function() {
+		if(this.checked == true){
+			$('div#yescontainsname').show( 'fast' );
+			}
+	else {
+			$('div#yescontainsname').hide( 'fast' );
+			}
+	});
+	//yes, contains portrait is checked
+	$('div#yescontainsportrait').hide();
+	$('#portraitchecked').change(function() {
+		if(this.checked == true){
+			$('div#yescontainsportrait').show( 'fast' );
+			}
+	else {
+			$('div#yescontainsportrait').hide( 'fast' );
+			}
+	});
+	//yes, contains signature is checked
+	$("#signaturechecked").prop({
+			checked: false,
+	});
+	$('div#yescontainssignature').hide();
+	$('#signaturechecked').change(function() {
+		if(this.checked == true){
+			$('div#yescontainssignature').show( 'fast' );
+			}
+	else {
+			$('div#yescontainssignature').hide( 'fast' );
+			}
+	});
 	//end nps options
 	
 	//start disclaimer options
 	$("input#inlineRadio09").prop({
-				checked: false,
-			});
+		checked: false,
+	});
 	$('div#yesdisclaimer').css('display','none');
 	$('input#inlineRadio09').change(function() {
 		if(this.checked == true){
 			$('div#yesdisclaimer').show( 'fast' );
-			
-			$("input#inlineRadio010").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesdisclaimer').hide( 'fast' );
-			
-			$("input#inlineRadio010").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio010').change(function() {
 		if(this.checked == true){
 			$('div#yesdisclaimer').hide( 'fast' );
-			
-			$("input#inlineRadio09").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesdisclaimer').show( 'fast' );
-			
-			$("input#inlineRadio09").prop({
-				checked: true,
-			});
-		}
-		});
+			}
+	});
 	//end disclaimer options
 	
 	//start prior options
 	$("input#inlineRadio011").prop({
-				checked: false,
-			});
+		checked: false,
+	});
 	$('div#yesprior').css('display','none');
 	$('input#inlineRadio011').change(function() {
 		if(this.checked == true){
 			$('div#yesprior').show( 'fast' );
-			
-			$("input#inlineRadio012").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesprior').hide( 'fast' );
-			
-			$("input#inlineRadio012").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio012').change(function() {
 		if(this.checked == true){
 			$('div#yesprior').hide( 'fast' );
-			
-			$("input#inlineRadio011").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesprior').show( 'fast' );
-			
-			$("input#inlineRadio011").prop({
-				checked: true,
-			});
-		}
-		});
+			}
+	});
 	//end prior options
 	
 	//start prior options
 	$("input#inlineRadio013").prop({
-				checked: false,
-			});
+		checked: false,
+	});
 	$('div#yesmeaning').css('display','none');
 	$('input#inlineRadio013').change(function() {
 		if(this.checked == true){
 			$('div#yesmeaning').show( 'fast' );
-			
-			$("input#inlineRadio014").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesmeaning').hide( 'fast' );
-			
-			$("input#inlineRadio014").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio014').change(function() {
 		if(this.checked == true){
 			$('div#yesmeaning').hide( 'fast' );
-			
-			$("input#inlineRadio013").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesmeaning').show( 'fast' );
-			
-			$("input#inlineRadio013").prop({
-				checked: true,
-			});
-		}
-		});
+			}
+	});
 	//end prior options
 	
 	//start attorney options
 	$("input#inlineRadio015").prop({
-				checked: false,
-			});
+		checked: false,
+	});
 	$('div#yesattorneyfiling').css('display','none');
 	$('input#inlineRadio015').change(function() {
 		if(this.checked == true){
 			$('div#yesattorneyfiling').show( 'fast' );
-			
-			$("input#inlineRadio016").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesattorneyfiling').hide( 'fast' );
-			
-			$("input#inlineRadio016").prop({
-				checked: true,
-			});	
 			}
-		});
+	});
 	$('input#inlineRadio016').change(function() {
 		if(this.checked == true){
 			$('div#yesattorneyfiling').hide( 'fast' );
-			
-			$("input#inlineRadio015").prop({
-				checked: false,
-			});
 			}
 	else {
 			$('div#yesattorneyfiling').show( 'fast' );
-			
-			$("input#inlineRadio015").prop({
-				checked: true,
-			});
 		}
-		});
+	});
 	//end attorney options
 	
 	//start us foreign options
@@ -607,7 +480,7 @@ $(document).ready(function(){
 				checked: true,
 			});	
 			}
-		});
+	});
 	$('input#inlineRadio020').change(function() {
 		if(this.checked == true){
 			$('div#yesusentity').hide( 'fast' );
@@ -623,8 +496,55 @@ $(document).ready(function(){
 				checked: true,
 			});
 		}
-		});
+	});
 	//end us foreign options
+	
+	//start basis commerce options
+	$("input#inlineRadio25").prop({
+				checked: false,
+			});
+	$('div#yescommerce').css('display','none');
+	$('input#inlineRadio25').change(function() {
+		if(this.checked == true){
+			$('div#yescommerce').show( 'fast' );
+			}
+	else {
+			$('div#yescommerce').hide( 'fast' );
+			}
+		});
+	$('input#inlineRadio26').change(function() {
+		if(this.checked == true){
+			$('div#yescommerce').hide( 'fast' );
+			}
+	else {
+			$('div#yescommerce').show( 'fast' );
+		}
+	});
+	//end basis commerce options
+	
+	//start basistwo connection options
+	$("input#inlineRadio29").prop({
+				checked: false,
+			});
+	$('div#yesconnection').css('display','none');
+	$('input#inlineRadio29').change(function() {
+		if(this.checked == true){
+			$('div#yesconnection').show( 'fast' );
+			}
+	else {
+			$('div#yesconnection').hide( 'fast' );
+			}
+		});
+	$('input#inlineRadio30').change(function() {
+		if(this.checked == true){
+			$('div#yesconnection').hide( 'fast' );
+			}
+	else {
+			$('div#yesconnection').show( 'fast' );
+		}
+	});
+	//end basistwo connection options
+	
 	//END toggle radio buttons content
 	
 	//start affiliation options
@@ -811,6 +731,41 @@ $(document).ready(function(){
     });
 	//END additional containsname
 	
+	//START additional pending + foreign
+	$('div .holdsapending').css('display','none');
+	$('div #pluspending').css('display','none');
+	$('input#pendingtwo').change(function() {
+		if(this.val == 'pendingtwo'){
+			$('div .holdsapending').hide( 'fast' );
+			$('div #pluspending').hide( 'fast' );
+			}
+	else {
+			$('div .holdsapending').show( 'fast' );
+			$('div #pluspending').show( 'fast' );
+		}
+	});
+	$('div .holdsaforeign').css('display','none');
+	$('div #plusforeign').css('display','none');
+	$('input#foreigntwo').change(function() {
+		if(this.val == 'foreigntwo'){
+			$('div .holdsaforeign').hide( 'fast' );
+			$('div #plusforeign').hide('fast');
+			}
+	else {
+			$('div .holdsaforeign').show( 'fast' );
+			$('div #plusforeign').show('fast');
+		}
+	});
+	//END additional pending + foreign
+	
+	$( 'button#addaname' ).on('click',function(){
+	  	$( '.containsaname:eq(0)' ).clone().appendTo( '.appendaname' );
+	});
+	$( '#resetaname' ).on('click',function () {
+	  $( '.appendaname .containsaname' ).remove( '.containsaname:eq(0)' );
+    });
+	//END additional pending
+	
 	//START additional containsportrait
 	$( 'button#addaportrait' ).on('click',function(){
 	  	$( '.containsaportrait:eq(0)' ).clone().appendTo( '.appendaportrait' );
@@ -828,4 +783,22 @@ $(document).ready(function(){
 	  $( '.appendasignature .containsasignature' ).remove( '.containsasignature:eq(0)' );
     });
 	//END additional containssignaturet
+	
+	//START additional foreignreg
+	$( 'button#addforeign' ).on('click',function(){
+	  	$( '.holdsaforeign:eq(0)' ).clone().appendTo( '.appendaforeign' );
+	});
+	$( '#resetforeign' ).on('click',function () {
+	  $( '.appendaforeign .holdsaforeign' ).remove( '.holdsaforeign:eq(0)' );
+    });
+	//END additional foreignreg
+	
+	//START additional foreignpending
+	$( 'button#addpending' ).on('click',function(){
+	  	$( '.holdsapending:eq(0)' ).clone().appendTo( '.appendapending' );
+	});
+	$( '#resetpending' ).on('click',function () {
+	  $( '.appendapending .holdsapending' ).remove( '.holdsapending:eq(0)' );
+    });
+	//END additional foreignpending
 });

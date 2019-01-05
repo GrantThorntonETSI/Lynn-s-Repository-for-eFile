@@ -180,9 +180,9 @@
                         <h2 class="card-title weight600" id="attorneyinfo">Attorney Information</h2>
                     </div>
                         <p id="attorneyfiling">Is an Attorney filing this application?</p>
-                        <div role="radiogroup" aria-labelledby="attorneyfiling">
-                          <label for="inlineRadio015" class="radio-inline radiocontainer">Yes<input type="radio" name="attorneyfilingradio" id="inlineRadio015" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                          <label for="inlineRadio016" class="radio-inline radiocontainer">No<input type="radio" name="attorneyfilingradio" id="inlineRadio016" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                        <div role="radiogroup" aria-labelledby="attorneyfiling" class="form-group form-group-md">
+                          <label for="inlineRadio015" class="radio-inline radiocontainer">Yes<input type="radio" name="attorneyfilingradio" id="inlineRadio015" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                          <label for="inlineRadio016" class="radio-inline radiocontainer">No<input type="radio" name="attorneyfilingradio" id="inlineRadio016" value="no" tabindex="0"><span class="checkmark"></span></label>
                         </div><!--END radiogroup-->
                         <script type="application/javascript" src="js/accordion.js"></script>
 						<script type="application/javascript" src="js/checkbox.js"></script>
@@ -688,7 +688,7 @@
                                     </div>
                                     <h4 class="weight600">Acknowledgement of Certification in Good Standing</h4>
                                     <div class="form-group form-group-md">
-                                        <input class="form-check-input checkmark" type="checkbox" value="" aria-checked="false" tabindex="0" aria-labelledby="userAccept-label" id="user-accept-checkbox" name="user-accept-checkbox">
+                                        <input class="form-check-input checkmark" type="checkbox" value="" tabindex="0" aria-labelledby="userAccept-label" id="user-accept-checkbox" name="user-accept-checkbox">
                                         <label class="form-check-label form-check long" for="user-accept-checkbox" id="userAccept-label"><span class="radio notspecial small">I certify that this attorney is in good standing with a bar of the highest court of any US State, the District of Columbia, the US Commonwealths or US Territories.</span></label>
                                     </div>
                                     <div class="form-group form-group-md">
@@ -721,13 +721,13 @@ Upload bar credentials, including certificate of good standing from highest cour
                                         </span>
                                     </div><!--END Li's form-group-->
                                     <div class="form-group">
-                                        <input class="form-check-input checkmark" type="checkbox" value="" aria-checked="false" tabindex="0" aria-labelledby="notCAList-label" id="notOnCAlist" name="notCAList-checkbox">
-                                <label class="form-check-label form-check" for="notOnCAlist" id="notCAList-label"><span class="radio notspecial">I can not find my name in the list.</span></label>
+                                        <input class="form-check-input checkmark" type="checkbox" value="" tabindex="0" aria-labelledby="notCAList-label" id="notOnCAlist" name="notCAList-checkbox">
+                                		<label class="form-check-label form-check" for="notOnCAlist" id="notCAList-label"><span class="radio notspecial">I can not find my name in the list.</span></label>
                                     </div>
                                     <p id="canadalocation">Is the applicant located in Canada?</p>
-                                    <div role="radiogroup" aria-labelledby="canadalocation">
-                                      <label for="applicantCATrue" class="radio-inline radiocontainer">Yes<input type="radio" name="applicantCA" value="true" id="applicantCATrue" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                      <label for="applicantCAFalse" class="radio-inline radiocontainer">No<input type="radio" name="applicantCA" value="false" id="applicantCAFalse" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                    <div role="radiogroup" aria-labelledby="canadalocation" class="form-group form-group-md">
+                                      <label for="applicantCATrue" class="radio-inline radiocontainer">Yes<input type="radio" name="applicantCA" value="true" id="applicantCATrue" tabindex="0"><span class="checkmark"></span></label>
+                                      <label for="applicantCAFalse" class="radio-inline radiocontainer">No<input type="radio" name="applicantCA" value="false" id="applicantCAFalse" tabindex="0"><span class="checkmark"></span></label>
                                     </div><!--END radiogroup-->
                                 </div><!--END canadian affiliation-->
                                 </fieldset><!--END Affiliation Information-->

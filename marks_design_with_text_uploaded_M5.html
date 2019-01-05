@@ -198,9 +198,9 @@
                                                     </div>
                                                     <div>
                                                         <p id="color">Are you claiming color as a feature of the mark?</p>                                            				
-                                                        <div role="radiogroup" aria-labelledby="color">
-                                                            <label for="inlineRadio1" class="radio-inline radiocontainer">Yes<input type="radio" name="coloradio" id="inlineRadio1" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                                            <label for="inlineRadio2" class="radio-inline radiocontainer">No<input type="radio" name="coloradio" id="inlineRadio2" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                                        <div role="radiogroup" aria-labelledby="color" class="form-group form-group-md" >
+                                                            <label for="inlineRadio1" class="radio-inline radiocontainer">Yes<input type="radio" name="coloradio" id="inlineRadio1" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                            <label for="inlineRadio2" class="radio-inline radiocontainer">No<input type="radio" name="coloradio" id="inlineRadio2" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yescolorclaim"><!--toggle 'yes' radio-->
                                                             <label for="ta3">Identify the colors in your mark.</label> 
@@ -209,8 +209,8 @@
                                                             <label for="ta2"><span class="weight600">&#42;</span> Enter the description of the mark including the location of the colors. <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
                                                             <textarea id="ta2" rows="3" class="form-control" placeholder="This mark consists of" required></textarea>
                                                         </div>
-                                                        <div id="nocolorclaim"><!--toggle 'no' radio-->
-                                                            <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" role="checkbox" aria-checked="false" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
+                                                        <div id="nocolorclaim" class="form-group form-group-md"><!--toggle 'no' radio-->
+                                                            <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" role="checkbox" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
                                                             <label class="form-check-label form-check" for="bwmark" id="acceptmark"><span class="radio notspecial">Accept the black and white drawing.</span></label>
                                                             <div class="alert alert-warning" role="alert">
                                                               <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
@@ -241,9 +241,9 @@
                                                     </div>
                                                     <div>
                                                         <p id="foreign">Does your mark contain foreign wording?</p>                                            			
-                                                        <div role="radiogroup" aria-labelledby="foreign">
-                                                            <label for="inlineRadio3" class="radio-inline radiocontainer">Yes<input type="radio" name="foreignradio" id="inlineRadio3" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                                            <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" aria-checked="false" tabindex="0" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                                        <div role="radiogroup" aria-labelledby="foreign" class="form-group form-group-md">
+                                                            <label for="inlineRadio3" class="radio-inline radiocontainer">Yes<input type="radio" name="foreignradio" id="inlineRadio3" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                            <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" tabindex="0" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yestranslation"><!--toggle 'yes' radio-->
                                                             <h3 class="weight600">Enter the foreign language and the translation.</h3>
@@ -285,9 +285,9 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <p id="translit">Does your mark contain foreign wording in non-Latin characters that requires transliteration?</p>                                            			<div role="radiogroup" aria-labelledby="translit">
-                                                          <label for="inlineRadio5" class="radio-inline radiocontainer">Yes<input type="radio" name="nonlatradio" id="inlineRadio5" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                                          <label for="inlineRadio6" class="radio-inline radiocontainer">No<input type="radio" name="nonlatradio" id="inlineRadio6" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                                        <p id="translit">Does your mark contain foreign wording in non-Latin characters that requires transliteration?</p>                                            			<div role="radiogroup" aria-labelledby="translit" class="form-group form-group-md">
+                                                          <label for="inlineRadio5" class="radio-inline radiocontainer">Yes<input type="radio" name="nonlatradio" id="inlineRadio5" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                          <label for="inlineRadio6" class="radio-inline radiocontainer">No<input type="radio" name="nonlatradio" id="inlineRadio6" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yestransliteration"><!--toggle 'yes' radio-->
                                                             <h3 class="weight600">Enter the transliteration of the mark.</h3>
@@ -332,12 +332,12 @@
                                                     <div>
                                                         <p id="nps">Does your mark contain a name, portrait, or signature?</p>                                            			
                                                         <div role="radiogroup" aria-labelledby="nps">
-                                                            <label for="inlineRadio7" class="radio-inline radiocontainer">Yes<input type="radio" name="npsradio" id="inlineRadio7" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                                            <label for="inlineRadio8" class="radio-inline radiocontainer">No<input type="radio" name="npsradio" id="inlineRadio8" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                                            <label for="inlineRadio7" class="radio-inline radiocontainer">Yes<input type="radio" name="npsradio" id="inlineRadio7" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                            <label for="inlineRadio8" class="radio-inline radiocontainer">No<input type="radio" name="npsradio" id="inlineRadio8" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yesnps" role="region" aria-labelledby="translit">
                                                         	<p id="whichnps">Identify which of the following it contains:</p> 
-                                                            <input class="form-check-input checkmark" type="checkbox" value="name" aria-checked="false" tabindex="0" aria-labelledby="checkname" id="namechecked">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="name" tabindex="0" aria-labelledby="checkname" id="namechecked">
                                                             <label class="form-check-label form-check" for="namechecked" id="checkname"><span class="radio notspecial">Name</span></label>
                                                             <div id="yescontainsname" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
                                                             	<div class="row">
@@ -366,7 +366,7 @@
                                                                     </div>
                                                               	</div>
                                                             </div>
-                                                            <input class="form-check-input checkmark" type="checkbox" value="portrait" aria-checked="false" tabindex="0" id="portraitchecked" aria-labelledby="checkportrait">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="portrait" tabindex="0" id="portraitchecked" aria-labelledby="checkportrait">
                                                             <label class="form-check-label form-check" for="portraitchecked" id="checkportrait"><span class="radio notspecial" id="collect">Portrait</span></label>
                                                             
                                                             <div id="yescontainsportrait" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
@@ -398,7 +398,7 @@
                                                             </div>
                                                             
                                                             
-                                                            <input class="form-check-input checkmark" type="checkbox" value="signature" aria-checked="false" tabindex="0" aria-labelledby="checksignature" id="signaturechecked">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="signature" tabindex="0" aria-labelledby="checksignature" id="signaturechecked">
                                                             <label class="form-check-label form-check" for="signaturechecked" id="checksignature"><span class="radio notspecial" id="collectm">Signature</span></label>
                                                             
                                                             <div id="yescontainssignature" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
@@ -431,8 +431,8 @@
                                                             
                                                             <p id="individualiving">Is this of a living individual?</p>                                            			
                                                             <div role="radiogroup" class="form-group form-group-md" aria-labelledby="individualiving">
-                                                                <label for="inlineRadio17" class="radio-inline radiocontainer">Yes<input type="radio" name="livindividualradio" id="inlineRadio17" value="yes" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
-                                                                <label for="inlineRadio18" class="radio-inline radiocontainer">No<input type="radio" name="livindividualradio" id="inlineRadio18" value="no" aria-checked="false" tabindex="0"><span class="checkmark"></span></label>
+                                                                <label for="inlineRadio17" class="radio-inline radiocontainer">Yes<input type="radio" name="livindividualradio" id="inlineRadio17" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                                <label for="inlineRadio18" class="radio-inline radiocontainer">No<input type="radio" name="livindividualradio" id="inlineRadio18" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                             </div><!--END radiogroup-->
                                                             <h4 class="weight600">Upload Consent</h4>
                                                             <p><a href="#"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Consent Template</a></p>
@@ -471,7 +471,7 @@
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
-                    <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
+                <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
             </div>
         </div>
         </main>

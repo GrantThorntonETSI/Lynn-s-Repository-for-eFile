@@ -325,7 +325,7 @@ h1 {
 	line-height: .98em;
 	}
 #designwithtext h3 {
-	margin-top: 2em;
+	margin-top: 1em;
     margin-bottom: 1em;
 	}
 h4, h5, h6 {
@@ -371,17 +371,25 @@ table.dataTable thead .sorting {
 	border-top:1px solid #333;
 	padding-top:.8em;
 	}
-#goodsandservices .form-check {
-	padding-left:59px;
-	margin-top:0;
-	margin-bottom:0;
+#goodsandservices .form-check span.radio.notspecial::before {
+	left:0!important;
+	top:-5px;
 	}
 table#goodsandservices {
 	border-top: 1px solid #333;
     margin-top: 2.8em;
 	}
-#goodsandservices .form-check span.radio::after {
-	top:-15px;
+#goodsandservices label.form-check {
+    padding-left: 0;
+    display: inline-block;
+    margin-bottom: .6em;
+    margin-top: 0;
+	font-size:100%!important
+	}
+#goodsandservices input[type="checkbox"]:checked + label span.radio::after {
+	top:-17px!important;
+	font-size:1.3em;
+	left:3px!important;
 	}
 #goodsandservices th:focus, .sorting_1:focus {
     box-shadow: none;
@@ -735,6 +743,15 @@ label {
 	font-size:inherit;
 	margin-bottom: .6em;
 	}
+.badge {
+	line-height: inherit;
+	}
+#upimgtwo {
+	padding: .81em;
+	}
+#upimgtwo span {
+	line-height: 1.8em;
+	}
 .visuallyhidden {
 	visibility:hidden!important;
 	}
@@ -787,6 +804,10 @@ button[disabled] {
 	margin:0 auto;
 	margin-top:1.2em;
 	margin-bottom:1em;
+	}
+#plusforeign, #plusforeign {
+	width: 400px;
+    margin: 0 auto;
 	}
 .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-default:focus {
     /*outline: thin dotted;*/
@@ -923,6 +944,10 @@ div.round {
 	margin-top: 2.9em;
 	border: none!important;
 	}
+#basisabde .btn-success.add.ctr {
+	margin-top: 0;
+	margin-bottom:2em;
+	}
 #yesnps .btn-success.add.ctr {	
 	margin-top: 1.84em;
 	}
@@ -1052,15 +1077,6 @@ input[type="checkbox"]{
 	bottom: 0;
 	margin: auto;
 	}
-#goodsandservices .form-check {
-	display:inline-block;
-	margin-top: 10px;
-    margin-bottom: 10px;
-	}
-.form-check span::before,
-.form-check span::after {
-	/*top: -10px!important;*/
-	}
 .form-check span.radio.notspecial::before {
 	width: 27px;
 	height: 27px;
@@ -1099,24 +1115,21 @@ input[type="checkbox"]{
 	opacity: 0.5;
 	-moz-opacity: 0.5;
 	}
+.form-check span.small.radio::after {
+	font-size: 1.6em!important;
+	}
 .form-check span.radio::after {
 	content: '\f00c';
 	font-family: 'FontAwesome';
 	position:absolute;
-	left: -32px;
-	top: -4px;
+	left: -33px;
+	top: -19%;
 	color: transparent;
 	-webkit-transition: color .2s;
 	transition: color .2s;
 	}
-.long span.radio::after {
-	top: 7px;
-	}
 .long span {
 	width:90%;
-	}
-#goodsandservices .form-check span.radio::after {
-    top: -10px;
 	}
 input[type="checkbox"]:checked + label span.radio::before {
 	background-color: #009CDE;
@@ -1126,6 +1139,18 @@ input[type="checkbox"]:checked + label span.radio::after {
 	color: #fff;
 	font-size: 1.3em;
 	}
+input[type="checkbox"]:focus + label span.radio::before {
+    outline: 1px solid #009CDE!important;
+	outline: 1px auto -webkit-focus-ring-color!important;
+	outline-offset: 2px!important;
+	}
+input[type="date"] {
+	padding:0 12px;
+	line-height:.95em!important;
+	}
+#specdescriptwo, #specdescript {
+	height:115px;
+	}
 /* RADIOS */
 input[type=radio] {
 	margin:0;
@@ -1134,6 +1159,9 @@ input[type=radio] {
 .radio {
 	margin-bottom: 1.4em;
     margin-top: 1.4em!important;
+	}
+label.radio-inline {
+	margin-right:1em;
 	}
 div[role="radiogroup"] {
 	margin-bottom:1.2em;
@@ -1148,15 +1176,15 @@ div[role="radiogroup"] {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
+	}
 .radiocontainer input {
-  position: absolute;
-  left:-10000px;
-  opacity: 0;
-  cursor: pointer;
-  height: 1px;
-  width: 1px;
-}
+	position: absolute;
+	left:-10000px;
+	opacity: 0;
+	cursor: pointer;
+	height: 1px;
+	width: 1px;
+	}
 .checkmark {
   position: absolute;
   top: -2px;
@@ -1166,27 +1194,32 @@ div[role="radiogroup"] {
   background-color: #fff;
   border: 1px solid #808080;
   border-radius: 50%;
-}
+	}
 .radiocontainer input:checked ~ .checkmark {
-  background-color: #009CDE;
-  border: 1px solid #009CDE;
-}
+  	background-color: #009CDE;
+  	border: 1px solid #009CDE;
+	}
+input[type="radio"]:focus + label span.checkmark::after {
+    outline: 1px solid #009CDE!important;
+	outline: 1px auto -webkit-focus-ring-color!important;
+	outline-offset: 4px!important;
+	}
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
+	content: "";
+	position: absolute;
+	display: none;
+	}
 .radiocontainer input:checked ~ .checkmark:after {
-  display: block;
-}
+	display: block;
+	}
 .radiocontainer .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-}
+	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+	}
 /* FIX for smooth animations */	
  #nocolorclaim, #yescolorclaim, #notranslation, #yestranslation, #yestransliteration, #yesnps, #markoptions, #yesattorneyfiling, #yesusentity, #gsselected {
 	 overflow:hidden;
@@ -1404,12 +1437,6 @@ a.footer-brand {
     border-color: #1596D1;
     outline: 0;
 	}
-@media (max-width: 420px) {
-	#goodsandservices .radio {
-		position: absolute;
-		margin-top:5px; 
-		}
-}
 @media (min-width: 768px){
 	.navbar-nav#lowernav>li {
 		float: right;
@@ -1431,6 +1458,21 @@ a.footer-brand {
 		padding-right:12px!important;
 		}
 }
+@media (min-width: 768px) and (max-width: 827px) {
+	.form-check span.small.radio::after {
+		top: 10%!important;
+		}
+}
+@media (min-width: 507px) and (max-width: 767px) {
+	.form-check span.small.radio::after {
+		top: -22%;
+		}
+}
+@media (min-width: 828px) {
+	.form-check span.small.radio::after {
+		top: -22%;
+		}
+}
 @media (min-width: 800px) {
 	.inlinebuttons {
 		width: 61%;
@@ -1443,7 +1485,7 @@ a.footer-brand {
 }
 @media (max-width: 767px) {
 	body {
-		font-size:90%;
+		font-size:90%!important;
 		}
 	main {
 		margin-top:40px!important;
@@ -1453,6 +1495,10 @@ a.footer-brand {
 		}
 	#goodsandservices th {
 		line-height:1em;
+		}
+	#goodsandservices input[type="checkbox"]:checked + label span.radio::after {
+		top: -15px !important;
+		left: 4px !important;
 		}
 	ul#lowernav li {
 		color: #fff!important;
@@ -1504,10 +1550,6 @@ a.footer-brand {
 	.navbar-nav .open .dropdown-menu>li>a {
     	line-height: 2.7em;
 		}
-	#goodsandservices input[type="checkbox"]:checked + label span.radio::after {
-    	font-size: 1.6em;
-		top: -16px;
-		}
 	.breadcrumb-steps p {
 		display:none!important;
 		}
@@ -1535,9 +1577,6 @@ a.footer-brand {
 	#mydata2 .list-group-item a#clearform {
 		margin-left: 0;
 		}
-	.long span.radio::after {
-		top: 21px;
-		}
 }
 @media (max-width: 1199px) {
 	btn.fill, .btn-success.fill, .btn-default.fill  {	
@@ -1549,11 +1588,6 @@ a.footer-brand {
 @media (min-width: 700px) {
 	.steps p {
 		font-size: .85em;
-		}
-}
-@media (min-width: 421px) {
-	#goodsandservices .form-check span.radio::after {
-		top: -15px;
 		}
 }
 /* IMAGES */
