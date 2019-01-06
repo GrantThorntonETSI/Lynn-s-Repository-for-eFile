@@ -246,14 +246,9 @@
                                     <label for="city"><span class="weight600">&#42;</span>City</label>
                                     <input type="text" class="form-control" id="city" th:field="*{ownerCity}" required>
                                   </div>
-                                  <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                                    <label for="state"><span class="weight600">&#42;</span>State</label>
-                                    <select class="form-control" id="state" th:field="*{ownerState}" required>
-                                      <option value="Select">Select</option>
-                                      <option value="Virginia">Virginia</option>
-                                      <option value="Maryland">Maryland</option>
-                                      <option value="North Carolina">North Carolina</option>
-                                    </select>
+                                  <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
+                                    <label for="state"><span class="weight600">&#42;</span>State/Province/Territory</label>
+                                    <input type="text" class="form-control" id="state" th:field="*{ownerState}" required>
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                     <label for="zipcode"><span class="weight600">&#42;</span>Zip Code</label>
