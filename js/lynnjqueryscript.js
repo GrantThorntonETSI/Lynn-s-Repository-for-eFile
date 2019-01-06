@@ -52,6 +52,9 @@ $(document).ready(function(){
 			if ($('#goodsandservices tr').length < 10) {
 				$('#goodsandservices_wrapper').css('min-height','975px');
 			}
+			else {
+				$('#goodsandservices_wrapper').css('min-height','0');
+				}
 		},
 			responsive: {
             details: true,
