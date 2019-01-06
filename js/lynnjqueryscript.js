@@ -56,12 +56,6 @@ $(document).ready(function(){
 				$('#goodsandservices_wrapper').css('min-height','0');
 				}
 		},
-			responsive: {
-            details: true,
-			breakpoints: [
-			{ name: 'phone',   width: 480 }
-			],
-			},
 			"autoWidth": false,
 			"responsive": true,
 			"columns": [
