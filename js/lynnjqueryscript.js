@@ -755,6 +755,7 @@ $(document).ready(function(){
 	});
 	//END additional pending + foreign
 	
+	//START additional pending
 	$( 'button#addaname' ).on('click',function(){
 	  	$( '.containsaname:eq(0)' ).clone().appendTo( '.appendaname' );
 	});

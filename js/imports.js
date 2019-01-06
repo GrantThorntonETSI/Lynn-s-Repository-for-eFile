@@ -6,10 +6,14 @@ $(document).ready(function(){
 	});
 //START additional phone
 	var append = $( ".appendto" );
-	$("button#clonephone").one('click',function(){
-		append = append.prev();
-	  	$( append ).clone().appendTo('.phone');
+	$("button#clonephone").on('click',function(){
+		//append = append.prev();
+	  	//$( append ).clone().appendTo('.phone');
+		$( '.phone:eq(0)' ).clone().appendTo( '.appendto' );
 	});
+	$( '#resetphone' ).on('click',function () {
+		  $( '.appendto .phone' ).remove( '.phone:eq(0)' );
+		});
 //END additional phone
 //start nameoftypeofbusiness options
 //START fill from contacts values -- owner information
