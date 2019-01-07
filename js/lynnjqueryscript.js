@@ -49,12 +49,6 @@ $(document).ready(function(){
 				var y = $( this ).siblings( 'input[type=checkbox]' ).attr('id');
 				$( this ).attr('for', y);
 			});
-			if ($('#goodsandservices tr').length < 10) {
-				$('#goodsandservices_wrapper').css('min-height','975px');
-			}
-			else {
-				$('#goodsandservices_wrapper').css('min-height','0');
-				}
 		},
 			"autoWidth": false,
 			"responsive": true,
@@ -66,6 +60,14 @@ $(document).ready(function(){
 			  ],
 		});
 	//END initialize datable
+	$('#goodsandservices').load(function() {
+	if ($('#goodsandservices tr').length < 10) {
+				$('#goodsandservices_wrapper').css('min-height','975px');
+			}
+			else {
+				$('#goodsandservices_wrapper').css('min-height','0');
+				}
+	});
 	//start close (x) gs panels
 	$('.closegspanels').click(function() {
 		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
