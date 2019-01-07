@@ -801,10 +801,6 @@ button[disabled] {
 	margin-top:1.2em;
 	margin-bottom:1em;
 	}
-#plusforeign, #pluspending {
-	width: 400px;
-    margin: 0 auto;
-	}
 .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-default:focus {
     /*outline: thin dotted;*/
 	outline: 1px solid #D9D9D6!important;
@@ -915,6 +911,11 @@ button#moreoptionsbtn {
 	padding:8px 10px!important;
 	margin-top:16.16px;
 	margin-bottom:16.16px;
+	}
+.btn-group-justified.large {
+	float:none;
+	max-width:600px;
+	margin:0 auto;
 	}
 .glyphicon-menu-right {
 	color:#fff;
@@ -1113,6 +1114,7 @@ input[type="checkbox"]{
 	}
 .form-check span.small.radio::after {
 	font-size: 1.6em!important;
+	top: 9%;
 	}
 .form-check span.radio::after {
 	content: '\f00c';

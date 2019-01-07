@@ -60,14 +60,24 @@ $(document).ready(function(){
 			  ],
 		});
 	//END initialize datable
-	$('#goodsandservices').load(function() {
-	if ($('#goodsandservices tr').length < 10) {
-				$('#goodsandservices_wrapper').css('min-height','975px');
-			}
-			else {
-				$('#goodsandservices_wrapper').css('min-height','0');
-				}
-	});
+	//table (function() {
+//	if ($('#goodsandservices tr').length < 10) {
+//				$('#goodsandservices_wrapper').css('min-height','975px');
+//			}
+//			else {
+//				$('#goodsandservices_wrapper').css('min-height','0');
+//				}
+//	});
+//	
+//	if ( $.fn.dataTable.isDataTable( '#goodsandservices' ) ) {
+//		table = $('#goodsandservices').DataTable();
+//	}
+//	else {
+//		table = $('#goodsandservices').DataTable( {
+//			paging: false
+//		} );
+//	}
+	
 	//start close (x) gs panels
 	$('.closegspanels').click(function() {
 		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
@@ -183,11 +193,17 @@ $(document).ready(function(){
 	//START input label height match
       var d = $( '.matchlabelheight' ).parent().prev('div').children('label');
 	  var e = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
+	  var f = $( '.matchlabelheightdiv' ).prev('div');
+	  var g = $( '.matchlabelheighttwodiv' ).prev('div');
 	  $('.matchlabelheight').css( 'height', (d.innerHeight() + 'px') );
 	  $('.matchlabelheighttwo').css( 'height', (e.innerHeight() + 'px') );
+	  $('.matchlabelheightdiv').css( 'height', (f.innerHeight() + 'px') );
+	  $('.matchlabelheighttwodiv').css( 'height', (g.innerHeight() + 'px') );
 	  $( window ).resize(function() {
 	  	$('.matchlabelheight').css( 'height', (d.innerHeight())  + 'px' );
 		$('.matchlabelheighttwo').css( 'height', (e.innerHeight())  + 'px' );
+		$('.matchlabelheightdiv').css( 'height', (f.innerHeight())  + 'px' );
+		$('.matchlabelheighttwodiv').css( 'height', (g.innerHeight())  + 'px' );
 		});
 	//END input label height match
 	
@@ -544,6 +560,26 @@ $(document).ready(function(){
 	});
 	//end basistwo connection options
 	
+	//start provide specimen options
+	$('div#yesspecimenone').css('display','none');
+	$('input#specimen').change(function() {
+		if(this.checked == true){
+			$('div#yesspecimenone').show( 'fast' );
+			}
+	else {
+			$('div#yesspecimenone').hide( 'fast' );
+			}
+		});
+	$('div#yesspecimentwo').css('display','none');
+	$('input#specimentwo').change(function() {
+		if(this.checked == true){
+			$('div#yesspecimentwo').show( 'fast' );
+			}
+	else {
+			$('div#yesspecimentwo').hide( 'fast' );
+			}
+		});
+	//end provide specimen options
 	//END toggle radio buttons content
 	
 	//start affiliation options
