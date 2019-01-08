@@ -774,6 +774,12 @@ label.hasinfo {
 button[disabled] {
     background-color: #eee!important;
 	}
+label.disabled {
+	color:#ddd;
+	}
+label.disabled span {
+    border-color: #eee!important;
+	}
 .inlinebuttons {
 	margin:0 auto;
 	position:relative;

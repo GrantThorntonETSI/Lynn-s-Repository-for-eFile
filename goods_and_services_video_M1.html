@@ -178,13 +178,20 @@
                         	<a href="https://youtu.be/H0LI1t5mn8M" target="_blank" class="btn btn-block"></a>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                        	<p class="weight600">Search through and select the goods and services that apply to your trademark, or provide a list.</p>
-                        	<button type="button" class="btn btn-sm btn-success">Search ID Manual for Goods and Services</button>
-                            <button type="button" class="btn btn-sm btn-success">Provide Own Goods and Services</button>
-                        </div>
+                        	<p class="weight600" id="selectgss">Search through and select the goods and services that apply to your trademark, or provide a list.</p>
+                            <div role="radiogroup" aria-labelledby="selectgss">
+                                <div class="radio form-group form-group-md">
+                                  <label for="searchmanual" class="radio-inline radiocontainer">Search ID Manual for Goods and Service<input type="radio" name="selectgs" id="searchmanual" value="searchman" tabindex="0"><span class="checkmark"></span></label>
+                                </div>
+                                <div class="radio">
+                                  <label for="provideown" class="radio-inline radiocontainer disabled">Provide Own Goods and Services<input type="radio" name="selectgs" id="provideown" value="provide" tabindex="0" disabled><span class="checkmark"></span></label>
+                                </div>
+                            </div><!--END radiogroup-->
+						</div>
                     </div><!--END Content Div-->
             	</div>
            	</div>
+            
             <div class="inlinebuttons btn-group btn-group-justified" role="nav" aria-label="view previous or next page" id="prevnxt">
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>

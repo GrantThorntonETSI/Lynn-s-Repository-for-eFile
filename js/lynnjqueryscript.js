@@ -91,7 +91,7 @@ $(document).ready(function(){
   //START set initial checkboxes
   $('input[type=checkbox]').attr('checked',false);
   //END set initial checkboxes
-  
+
   //START enable / disable checkboxes
   //When 'Certification' is checked, 'Trademark / Servicemark', 'Collective' and 'Collective Membership' are disabled
 	$('input#certcheck').change(function() {
@@ -130,7 +130,7 @@ $(document).ready(function(){
 			$('input#collectmember').attr('aria-disabled', 'false');
 		}
 	});
-	//When 'Collective' is checked, 'Trademark / Servicemark' and 'Certification' are disabled
+	//When 'Collective' is checked, 'Certification' is disabled
 	$('input#collectcheck').change(function() {
 		if(this.checked == true){
 			$('input#certcheck').prop({
@@ -138,11 +138,6 @@ $(document).ready(function(){
 			});
 			$('.form-check#certcheck2 span.radio').addClass('special');
 			$('input#certcheck').attr('aria-disabled', 'true');
-			$('input#tradeserv').prop({
-				disabled: true,				
-			});
-			$('.form-check#tradeserv2 span.radio').addClass('special');
-			$('input#tradeserv').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectmember').prop('checked')){ 
 			$('input#certcheck').prop({
@@ -150,11 +145,13 @@ $(document).ready(function(){
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
 				$('input#certcheck').attr('aria-disabled', 'true');
-				$('input#tradeserv').prop({
+		}
+		else if ($('input#tradeserv').prop('checked')){ 
+			$('input#certcheck').prop({
 					disabled: true,				
 				});
-				$('.form-check#tradeserv2 span.radio').addClass('special');
-				$('input#tradeserv').attr('aria-disabled', 'true');
+				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
 			$('input#certcheck').prop({
@@ -162,14 +159,9 @@ $(document).ready(function(){
 			});
 			$('.form-check#certcheck2 span.radio').removeClass('special');
 			$('input#certcheck').attr('aria-disabled', 'false');
-			$('input#tradeserv').prop({
-				disabled: false,
-			});
-			$('.form-check#tradeserv2 span.radio').removeClass('special');
-			$('input#tradeserv').attr('aria-disabled', 'false');
 		}
 	});
-	//When 'Collective Membership' is checked, 'Trademark / Servicemark' and 'Certification' are disabled
+	//When 'Collective Membership' is checked, 'Certification' is disabled
 	$('input#collectmember').change(function() {
 		if(this.checked == true){
 			$('input#certcheck').prop({
@@ -177,11 +169,6 @@ $(document).ready(function(){
 			});
 			$('.form-check#certcheck2 span.radio').addClass('special');
 			$('input#certcheck').attr('aria-disabled', 'true');
-			$('input#tradeserv').prop({
-				disabled: true,				
-			});
-			$('.form-check#tradeserv2 span.radio').addClass('special');
-			$('input#tradeserv').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectcheck').prop('checked')){ 
 				$('input#certcheck').prop({
@@ -189,11 +176,13 @@ $(document).ready(function(){
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
 				$('input#certcheck').attr('aria-disabled', 'true');
-				$('input#tradeserv').prop({
+		}
+		else if ($('input#tradeserv').prop('checked')){ 
+			$('input#certcheck').prop({
 					disabled: true,				
 				});
-				$('.form-check#tradeserv2 span.radio').addClass('special');
-				$('input#tradeserv').attr('aria-disabled', 'true');
+				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
 			$('input#certcheck').prop({
@@ -201,48 +190,23 @@ $(document).ready(function(){
 			});
 			$('.form-check#certcheck2 span.radio').removeClass('special');
 			$('input#certcheck').attr('aria-disabled', 'false');
-			$('input#tradeserv').prop({
-				disabled: false,
-			});
-			$('.form-check#tradeserv2 span.radio').removeClass('special');
-			$('input#tradeserv').attr('aria-disabled', 'false');
 		}
 	});
-	//When 'Trademark / Servicemark' is checked, 'Certification', 'Collective' and 'Collective Membership' are disabled
+	//When 'Trademark / Servicemark' is checked, 'Certification' is disabled
 		$('input#tradeserv').change(function(e) {
 			if(this.checked == true){
 				$('input#certcheck').prop({
 					disabled: true,				
 				});
-				$("input#collectcheck").prop({
-					disabled: true,				
-				});
-				$("input#collectmember").prop({
-					disabled: true,
-				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('.form-check#collectcheck2 span.radio').addClass('special');
-				$('.form-check#collectm2 span.radio').addClass('special');
 				$('input#certcheck').attr('aria-disabled', 'true');
-				$('input#collectcheck').attr('aria-disabled', 'true');
-				$('input#collectmember').attr('aria-disabled', 'true');
 				}
 			else{
 				$('input#certcheck').prop({
 					disabled: false,
 				});
-				$("input#collectcheck").prop({
-				disabled: false,				
-				});
-				$("input#collectmember").prop({
-					disabled: false,
-				});
 				$('.form-check#certcheck2 span.radio').removeClass('special');
-				$('.form-check#collectcheck2 span.radio').removeClass('special');
-				$('.form-check#collectm2 span.radio').removeClass('special');
 				$('input#certcheck').attr('aria-disabled', 'false');
-				$('input#collectcheck').attr('aria-disabled', 'false');
-				$('input#collectmember').attr('aria-disabled', 'false');
 				}
 	});//END enable / disable checkboxes
 	
