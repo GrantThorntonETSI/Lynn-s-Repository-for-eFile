@@ -739,6 +739,12 @@ label {
 	font-size:inherit;
 	margin-bottom: .6em;
 	}
+label.hasinfo {
+	display:inline-block;
+	margin-right:.5em;
+	margin-bottom: 0;
+    margin-top: 0;
+	}
 .badge {
 	line-height: inherit;
 	}
@@ -916,6 +922,33 @@ button#moreoptionsbtn {
 	float:none;
 	max-width:600px;
 	margin:0 auto;
+	}
+/* MODALS*/
+.modal-content {
+	-webkit-border-top-left-radius: 		0;
+    -webkit-border-top-right-radius: 		0;
+	-webkit-border-bottom-left-radius: 		0;
+    -webkit-border-bottom-right-radius: 	0;
+	-moz-border-top-left-radius: 			0;
+    -moz-border-top-right-radius: 			0;
+	-moz-border-bottom-left-radius: 		0;
+    -moz-border-bottom-right-radius: 		0;
+	border-top-left-radius: 				0;
+    border-top-right-radius: 				0;
+	border-bottom-left-radius: 				0;
+    border-bottom-right-radius: 			0;
+	border: 0;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+	font-size:.8em;
+	font-weight:400;
+	color: #fff;
+	background-color:#9BB8D3;
+	}
+.modal-body {
+	color: #333;
+	background-color:#fff;
 	}
 .glyphicon-menu-right {
 	color:#fff;

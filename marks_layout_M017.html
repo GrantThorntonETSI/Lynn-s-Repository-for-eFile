@@ -169,8 +169,15 @@
                   		<h1>Trademark Details</h1>                
                       	<p class="required"><span class="weight600">&#42; = Required</span></p>
                             <!--START Application Type-->
-                                    <div class="card-text noexpand">
-                                        <h2 class="card-title weight600" id="applicationtype">Mark Type</h2>
+                                    <div class="card-text">
+                                        <div role="heading" aria-level="2">
+                                            <button type="button" class="btn btn-link Accordion-trigger" data-toggle="collapse" data-target="#marktype" aria-controls="marktype" aria-expanded="false" id="marktypebtn"><span class="glyphicon glyphicon-triangle-right"></span><span id="toggleglyphcolor" class="glyphicon glyphicon-triangle-bottom visuallyremoved"></span> Mark Type</button>
+                                        </div>
+                                    </div>
+                                    <div id="marktype" class="collapse Accordion-panel" role="region" aria-labelledby="marktypebtn">
+                                        <div class="Accordion">
+                                            <p>Trademarks and service marks: Are generally words, symbols, designs, or combinations of these. Marks are often brand names; they work to identify the sources of goods or services, showing that they come from particular manufacturers or sellers. Trademarks are for goods, which are physical things that are sold to others, like shoes.  Service marks are for services that are provided to others, like tax preparation services.</p>
+                                        </div>
                                     </div>
                                     <p id="typemark"><span class="weight600">&#42;</span> What type of mark are you applying for? <a href="#" data-toggle="tooltip" title="" class="glyphicon glyphicon-info-sign test" data-placement="right" data-original-title="Trademarks and service marks: Are generally words, symbols, designs, or combinations of these.  Marks are often brand names; they work to identify the sources of goods or services, showing that they come from particular manufacturers or sellers.  Trademarks are for goods, which are physical things that are sold to others, like shoes.  Service marks are for services that are provided to others, like tax preparation services.
  
@@ -181,9 +188,9 @@ Collective Mark:  A collective mark is mark used by members of a collective orga
 Collective Membership Mark:  A collective membership mark is a mark used by the members of a particular organization to signify that they are members of that organization (e.g., a social club or labor union:  See TMEP Section 1304)."></a></p>
                                <fieldset>
                                     <legend>Select the type of mark you are applying for</legend>
-                                    <div class="form-group form-group-md">
-                                         <input class="form-check-input checkmark" type="checkbox" value="Trademark / Servicemark" role="checkbox" tabindex="0" aria-labelledby="tradeserv2" id="tradeserv">
-                                         <label class="form-check-label form-check" for="tradeserv" id="tradeserv2"><span class="radio notspecial">Trademark / Servicemark</span></label>
+                                    <div><!-- Button trigger modal -->
+                                        <input class="form-check-input checkmark" type="checkbox" value="Trademark / Servicemark" role="checkbox" tabindex="0" aria-labelledby="tradeserv2" id="tradeserv">
+                                        <label class="form-check-label form-check" for="tradeserv" id="tradeserv2"><span class="radio notspecial">Trademark / Servicemark</span></label>
                                     </div>
                                     <div role="heading" aria-level="3">
                                         <button type="button" class="btn btn-link Accordion-trigger" data-toggle="collapse" data-target="#markoptions" aria-controls="markoptions" aria-expanded="false" id="optionsbtn"><span class="glyphicon glyphicon-triangle-right"></span><span  class="toggleglyph glyphicon glyphicon-triangle-bottom visuallyremoved"></span> Expand for Uncommon Mark Types</button>
@@ -191,12 +198,50 @@ Collective Membership Mark:  A collective membership mark is a mark used by the 
                                     <div id="markoptions" class="collapse Accordion-panel" role="region" aria-labelledby="optionsbtn">
                                         <div class="Accordion form-group form-group-md">
                                         	<p><span class="weight600">&#42;</span> Which of the following types best describes the mark you want to apply for?</p>
-                                            <input class="form-check-input checkmark" type="checkbox" value="Certification" tabindex="0" aria-labelledby="certcheck" id="certcheck">
-                                            <label class="form-check-label form-check" for="certcheck"><span class="radio notspecial" id="certcheck">Certification</span></label>
+                                            <input class="form-check-input checkmark" type="checkbox" value="Certification" tabindex="0" aria-labelledby="certificationcheck" id="certcheck">
+                                            <label class="form-check-label form-check hasinfo" for="certcheck" id="certcheck2"><span class="radio notspecial" id="certificationcheck">Certification</span></label><a href="#" data-toggle="modal" data-target="#tradeservmodal"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" aria-label="more info about certification marks"></span></a>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="tradeservmodal" tabindex="-1" role="dialog" aria-labelledby="tradeserv2">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Certification Mark</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p>A certification mark is a type of trademark that is used to show consumers that particular goods and/or services, or their providers, have met certain standards.  (See TMEP Section 1306)</p>
+
+<p>Link for TMEP Section 3016: <a href="https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-1300d1e585.html" target="_blank">https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-1300d1e585.html</a></p>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Close</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                             <input class="form-check-input checkmark" type="checkbox" value="Collective" tabindex="0" id="collectcheck" aria-labelledby="collect">
-                                            <label class="form-check-label form-check" for="collectcheck"><span class="radio notspecial" id="collect">Collective</span></label>
+                                            <label class="form-check-label form-check hasinfo" for="collectcheck" id="collectcheck2"><span class="radio notspecial" id="collect">Collective</span></label><a href="#" data-toggle="modal" data-target="#collectivemodal"><span class="glyphicon glyphicon-info-sign" aria-hidden="true" aria-label="more info about collective marks"></span></a>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="collectivemodal" tabindex="-1" role="dialog" aria-labelledby="tradeserv2">
+                                              <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                  <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Collective Mark</h4>
+                                                  </div>
+                                                  <div class="modal-body">
+                                                    <p>Collective Mark:  A collective mark is mark used by members of a collective organization to identify their goods and/or services and distinguish them from the goods and/or services of non-members.  (See TMEP Section 1303)</p>
+
+													<p>Link for TMEP Section 3013: <a href="https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-1300d1e347.html" target="_blank">https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-1300d1e347.html</a></p>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                    <button type="button" class="btn btn-sm btn-success" data-dismiss="modal">Close</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
                                             <input class="form-check-input checkmark" type="checkbox" value="Collective Membership" tabindex="0" aria-labelledby="collectm" id="collectmember">
-                                            <label class="form-check-label form-check" for="collectmember"><span class="radio notspecial" id="collectm">Collective Membership</span></label>
+                                            <label class="form-check-label form-check" for="collectmember" id="collectm2"><span class="radio notspecial" id="collectm">Collective Membership</span></label>
                                         </div>
                                     </div>
                                 </fieldset>
