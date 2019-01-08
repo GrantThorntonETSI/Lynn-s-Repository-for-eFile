@@ -916,4 +916,11 @@ $(document).ready(function(){
 	  $( '.appendapending .holdsapending' ).remove( '.holdsapending:eq(0)' );
     });
 	//END additional foreignpending
+	
+	//START modals
+	$('#tradeservmodal','#collectivemodal','#collectivemembmodal').on('shown.bs.modal', function () {
+	  $('.btn-success').focus();
+	})
+	//END modals
+	
 });
