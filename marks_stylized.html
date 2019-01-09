@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
 
-    <title>USPTO.gov :: webapp prototype :: Trademark Design with Text - File Uploaded</title>
+    <title>USPTO.gov :: webapp prototype :: Trademark Stylized</title>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -99,7 +99,7 @@
   <div class="row content">
     <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
       <!--START Content Div-->
-      	<div class="row" id="designwithtext">
+      	<div class="row" id="detected">
             <div class="col-xs-12">
                 <div class="row">
                     <section class="col-xs-12 steps breadcrumb-steps" aria-label="progress tracker">
@@ -167,21 +167,43 @@
                         </div>
                     </section>
                 </div>
-                <h1>Trademark Details &#8211; Design with Text</h1>
+                <h1>Trademark Details &#8211; Stylized</h1>
                 <p class="required"><span class="weight600">&#42; = Required</span></p>
                 <!--START Trademark Details Design with Text-->
                 <div class="row">
-                    <div class="col-xs-12" id="uploaded">
+                    <div class="col-xs-12">
                         <div class="card-text noexpand">
                             <h2 class="card-title weight600">Mark Information</h2>
                         </div>
-                        <img src="images/scrubutts-09-a-68-a-jpg.jpg" alt="your mark" class="img-responsive">
                         <form action="" method="post" >
                            <fieldset>
                            	<div class="row">
+                            	<div class="col-xs-12" >
+                                  <p id="typemark"><span class="weight600">&#42;</span> Upload a file containing your mark.</p>						
+                                    <!--Start Dropzone-->
+                                  <div class="col-xs-12 form-group form-group-md">
+                                    <form action="" method="post" enctype="multipart/form-data" aria-labelledby="markinfo">
+                                        <fieldset>
+                                            <legend class="sr-only"><span>File upload</span></legend>
+                                            <div class="form-group form-group-md">
+                                                <label class="small upload-drop-zone" for="file"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
+                                                <input type="file" id="file" name="file" class="form-control">
+                                            </div><!-- Drop Zone -->
+                                            
+                                        </fieldset>
+                                    </form>
+                                    <div class="row">
+                                        <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
+                                            <p id="uploaded">Processed files</p>
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploaded"></a>
+                                            </div>
+                                        </div>
+                                    </div><!-- Upload Finished -->
+                                </div>
                                 <div class="form-group form-group-md col-xs-12">
-                                    <p class="required weight600" aria-level="3"><span class="weight600">&#42;</span> Mark Literal</p>
-                                    <label for="ta2">Enter the words, letters and numbers appearing in the mark. <a href="#" data-toggle="tooltip" title="Any entry in this field that is not found in the mark image will not be considered part of the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label> 
+                                    <p class="weight600" aria-level="3">Mark Literal</p>
+                                    <label for="ta2"><span class="required weight600">&#42;</span>Verify the words, letters and numbers appearing in the mark and edit if necessary. <a href="#" data-toggle="tooltip" title="Any entry in this field that is not found in the mark image will not be considered part of the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label> 
                                     <textarea id="ta2" rows="3" class="form-control" required></textarea>
                                         <div class="row">
                                             <div class="col-sm-12">
@@ -197,17 +219,18 @@
                                                         </div>
                                                     </div>
                                                     <div>
+                                                        <p class="weight600">Color was detected in your mark.</p>
                                                         <p id="color">Are you claiming color as a feature of the mark?</p>                                            				
                                                         <div role="radiogroup" aria-labelledby="color" class="form-group form-group-md" >
                                                             <label for="inlineRadio1" class="radio-inline radiocontainer">Yes<input type="radio" name="coloradio" id="inlineRadio1" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                             <label for="inlineRadio2" class="radio-inline radiocontainer">No<input type="radio" name="coloradio" id="inlineRadio2" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yescolorclaim"><!--toggle 'yes' radio-->
-                                                            <label for="ta3">Identify the colors in your mark.</label> 
+                                                            <label for="ta3">Verify and edit the following colors detected in your mark.</label> 
                                                             <textarea id="ta3" rows="3" class="form-control"></textarea>
                                                             <h3 class="weight600">Mark Description</h3>
-                                                            <label for="ta2"><span class="weight600">&#42;</span> Enter the description of the mark including the location of the colors. <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
-                                                            <textarea id="ta2" rows="3" class="form-control" placeholder="This mark consists of" required></textarea>
+                                                            <label for="ta2"><span class="weight600">&#42;</span> Verify and edit description of the mark including the location of the colors. <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
+                                                            <textarea id="ta2" rows="3" class="form-control" placeholder="The mark consists of the wording &#8220;SCRUBBY BUTTS SOAP CO.&#8221; in stylized red font" required></textarea>
                                                         </div>
                                                         <div id="nocolorclaim" class="form-group form-group-md"><!--toggle 'no' radio-->
                                                             <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" role="checkbox" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
@@ -225,7 +248,6 @@
                                                 </section>
                                             </div>
                                         </div><!--END color claim-->
-                                        
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <section aria-label="translation">
@@ -240,13 +262,13 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <p id="foreign">Does your mark contain foreign wording?</p>                                            			
-                                                        <div role="radiogroup" aria-labelledby="foreign" class="form-group form-group-md">
+                                                    	<p class="weight600">Foreign wording was detected in your mark.</p>
+                                                        <p id="foreign">Confirm your mark contains foreign wording.</p>                                                        <div role="radiogroup" aria-labelledby="foreign" class="form-group form-group-md">
                                                             <label for="inlineRadio3" class="radio-inline radiocontainer">Yes<input type="radio" name="foreignradio" id="inlineRadio3" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                             <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yestranslation"><!--toggle 'yes' radio-->
-                                                            <h3 class="weight600">Enter the foreign language and the translation.</h3>
+                                                            <h3 class="weight600">Verify the foreign language and the translation.</h3>
                                                             <div class="row">
                                                                 <div class="form-group form-group-md col-xs-12 col-md-3">
                                                                     <label for="language">Language</label>
@@ -285,7 +307,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <p id="translit">Does your mark contain foreign wording in non-Latin characters that requires transliteration?</p>                                            			<div role="radiogroup" aria-labelledby="translit" class="form-group form-group-md">
+                                                        <p id="translit">Does your mark contain foreign wording in non-Latin characters that requires transliteration?</p>                                    <div role="radiogroup" aria-labelledby="translit" class="form-group form-group-md">
                                                           <label for="inlineRadio5" class="radio-inline radiocontainer">Yes<input type="radio" name="nonlatradio" id="inlineRadio5" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                           <label for="inlineRadio6" class="radio-inline radiocontainer">No<input type="radio" name="nonlatradio" id="inlineRadio6" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
@@ -356,12 +378,12 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendaname"></div>
-                                                                    <div class="col-xs-7 col-md-4" role="group" aria-label="Add or delete additional names">
-                                                                        <div class="col-xs-9">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaname">Add Additional</button>
+                                                                    <div class="btn-group btn-group-justified large" role="group" aria-label="Add or delete additional names">
+                                                                        <div class="col-xs-5 col-sm-12 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaname">Add Additional Name</button>
                                                                         </div>
-                                                                        <div class="col-xs-3">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaname" aria-label="remove a name">&#8211;</button>
+                                                                        <div class="col-xs-7 col-sm-12 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaname">Remove Additional Name</button>
                                                                         </div>
                                                                     </div>
                                                               	</div>
@@ -386,12 +408,12 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendaportrait"></div>
-                                                                    <div class="col-xs-7 col-md-4" role="group" aria-label="Add or delete additional portraits">
-                                                                        <div class="col-xs-9">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaportrait">Add Additional</button>
+                                                                    <div class="btn-group btn-group-justified large" role="group" aria-label="Add or delete additional portraits">
+                                                                        <div class="col-xs-5 col-sm-12 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaportrait">Add Additional Portrait</button>
                                                                         </div>
-                                                                        <div class="col-xs-3">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaportrait" aria-label="remove a portrait">&#8211;</button>
+                                                                        <div class="col-xs-7 col-sm-12 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaportrait">Remove Additional Portrait</button>
                                                                         </div>
                                                                     </div>
                                                               	</div>
@@ -418,12 +440,12 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendasignature"></div>
-                                                                    <div class="col-xs-7 col-md-4" role="group" aria-label="Add or delete additional signatures">
-                                                                        <div class="col-xs-9">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addasignature">Add Additional</button>
+                                                                    <div class="btn-group btn-group-justified large" role="group" aria-label="Add or delete additional signatures">
+                                                                        <div class="col-xs-5 col-sm-12 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addasignature">Add Additional Signature</button>
                                                                         </div>
-                                                                        <div class="col-xs-3">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetasignature" aria-label="remove a portrait">&#8211;</button>
+                                                                        <div class="col-xs-7 col-sm-12 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetasignature">Remove Additional Signature</button>
                                                                         </div>
                                                                     </div>
                                                               	</div>
@@ -443,9 +465,9 @@
                                                             </div><!-- Drop Zone -->
                                                             <div class="row">
                                                               <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
-                                                                <p id="uploadedfile">Processed files</p>
+                                                                <p id="uploadedtwo">Processed files</p>
                                                                 <div class="list-group">
-                                                                  <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploadedfile"></a>
+                                                                  <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploadedtwo"></a>
                                                                 </div>
                                                               </div>
                                                             </div>

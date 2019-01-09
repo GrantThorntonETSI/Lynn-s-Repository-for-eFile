@@ -641,7 +641,7 @@ label a:hover {
 	position: absolute;
     left: -999em;
 	}
-#examples .img-responsive, #uploaded .img-responsive, #panels .img-responsive {
+#examples .img-responsive, #uploaded .img-responsive, #panels .img-responsive, #detected .img-responsive {
 	margin:0 auto;
 	float:none;
 	}
@@ -1291,7 +1291,7 @@ input[type="radio"]:focus + label span.checkmark::after {
 	outline-offset: -2px;
 	border:2px dashed transparent;
 	}
-#attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file], #basisabde input[type=file] {
+#attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file], #basisabde input[type=file], #detected input[type=file] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;

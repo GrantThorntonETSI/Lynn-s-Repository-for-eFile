@@ -323,11 +323,16 @@ $(document).ready(function(){
 			}
 	});
 	//end mark color options
+	
+	//start detected mark color options
+	$("#detected input#inlineRadio1").prop({
+			checked: true,
+		});
+	$('#detected div#nocolorclaim').css('display','none');
+	$('#detected div#yescolorclaim').css('display','block');
+	//end detected mark color options
 		
 	//start translations options
-	$("input#inlineRadio3").prop({
-		checked: false,
-	});
 	$('div#yestranslation').css('display','none');
 	$('input#inlineRadio3').change(function() {
 		if(this.checked == true){
@@ -347,10 +352,14 @@ $(document).ready(function(){
 	});
 	//end translations options
 	
+	//start detected translation options
+	$("#detected input#inlineRadio3").prop({
+			checked: true,
+		});
+	$('#detected div#yestranslation').css('display','block');
+	//end detected translation options
+	
 	//start transliterations options
-	$("input#inlineRadio5").prop({
-				checked: false,
-			});
 	$('div#yestransliteration').css('display','none');
 	$('input#inlineRadio5').change(function() {
 		if(this.checked == true){
@@ -370,10 +379,14 @@ $(document).ready(function(){
 	});
 	//end translations options
 	
+	//start detected transliteration options
+	$("#detected input#inlineRadio5").prop({
+			checked: true,
+		});
+	$('#detected div#yestransliteration').css('display','block');
+	//end detected transliteration options
+	
 	//start nps options
-	$("input#inlineRadio7").prop({
-		checked: false,
-	});
 	$('div#yesnps').css('display','none');
 	$('input#inlineRadio7').change(function() {
 		if(this.checked == true){
@@ -412,9 +425,6 @@ $(document).ready(function(){
 			}
 	});
 	//yes, contains signature is checked
-	$("#signaturechecked").prop({
-			checked: false,
-	});
 	$('div#yescontainssignature').hide();
 	$('#signaturechecked').change(function() {
 		if(this.checked == true){
@@ -427,9 +437,6 @@ $(document).ready(function(){
 	//end nps options
 	
 	//start disclaimer options
-	$("input#inlineRadio09").prop({
-		checked: false,
-	});
 	$('div#yesdisclaimer').css('display','none');
 	$('input#inlineRadio09').change(function() {
 		if(this.checked == true){
@@ -450,9 +457,6 @@ $(document).ready(function(){
 	//end disclaimer options
 	
 	//start prior options
-	$("input#inlineRadio011").prop({
-		checked: false,
-	});
 	$('div#yesprior').css('display','none');
 	$('input#inlineRadio011').change(function() {
 		if(this.checked == true){
@@ -473,9 +477,6 @@ $(document).ready(function(){
 	//end prior options
 	
 	//start prior options
-	$("input#inlineRadio013").prop({
-		checked: false,
-	});
 	$('div#yesmeaning').css('display','none');
 	$('input#inlineRadio013').change(function() {
 		if(this.checked == true){
@@ -496,9 +497,6 @@ $(document).ready(function(){
 	//end prior options
 	
 	//start attorney options
-	$("input#inlineRadio015").prop({
-		checked: false,
-	});
 	$('div#yesattorneyfiling').css('display','none');
 	$('input#inlineRadio015').change(function() {
 		if(this.checked == true){
@@ -519,9 +517,6 @@ $(document).ready(function(){
 	//end attorney options
 	
 	//start us foreign options
-	$("input#inlineRadio019").prop({
-				checked: false,
-			});
 	$('div#yesusentity').css('display','none');
 	$('input#inlineRadio019').change(function() {
 		if(this.checked == true){
@@ -558,9 +553,6 @@ $(document).ready(function(){
 	//end us foreign options
 	
 	//start basis commerce options
-	$("input#inlineRadio25").prop({
-				checked: false,
-			});
 	$('div#yescommerce').css('display','none');
 	$('input#inlineRadio25').change(function() {
 		if(this.checked == true){
@@ -581,9 +573,6 @@ $(document).ready(function(){
 	//end basis commerce options
 	
 	//start basistwo connection options
-	$("input#inlineRadio29").prop({
-				checked: false,
-			});
 	$('div#yesconnection').css('display','none');
 	$('input#inlineRadio29').change(function() {
 		if(this.checked == true){
@@ -712,6 +701,21 @@ $(document).ready(function(){
 	  $( 'input#attorney-phone' ).val( '703-562-6675' );
 	});
 	//END fill from contacts values -- attorney
+	
+	//START auto-detect pre-fill
+	var arrlanguages = [ 'Spanish', 'German', 'French' ];
+	var arrlanguage = jQuery.makeArray( arrlanguages );
+	var arrlangtranslits = [ 'German', 'Korean', 'French', 'Spanish' ];
+	var arrlangtranslit = jQuery.makeArray( arrlangtranslits );
+	  $( '#detected textarea#ta2' ).val( 'Scrubby Butts Soap Co. Squeaky Clean Naturally!' );
+	  $( '#detected textarea#ta3' ).val( 'Red' );
+	  $( '#detected #language' ).val( arrlanguage[0] );
+	  $( '#detected #engtranslation' ).val('Jabón' );
+	  $( '#detected input#inthemark' ).val( 'Soap' );
+	  $( '#detected #languagetranslit' ).val( arrlangtranslit[1] );
+	  $( '#detected input#nonlatranslation' ).val( '비누' );
+	  $( '#detected input#inenglish' ).val( 'Soap' );
+	//END auto-detect pre-fill
 		
 	//START contacts, fees, my mark components
 	//start toggle glyphicon contacts widget 
@@ -810,40 +814,31 @@ $(document).ready(function(){
 	//END additional containsname
 	
 	//START additional pending + foreign
-	$('div .holdsapending').css('display','none');
-	$('div #pluspending').css('display','none');
+	$('div.holdsapending').css('display','none');
+	$('div#pluspending').css('display','none');
 	$('input#pendingtwo').change(function() {
-		if(this.val == 'pendingtwo'){
-			$('div .holdsapending').hide( 'fast' );
-			$('div #pluspending').hide( 'fast' );
+		if(this.checked == true){
+			$('div.holdsapending').show( 'fast' );
+			$('div#pluspending').show( 'fast' );
 			}
 	else {
-			$('div .holdsapending').show( 'fast' );
-			$('div #pluspending').show( 'fast' );
+			$('div.holdsapending').hide( 'fast' );
+			$('div#pluspending').hide( 'fast' );
 		}
 	});
-	$('div .holdsaforeign').css('display','none');
-	$('div #plusforeign').css('display','none');
+	$('div.holdsaforeign').css('display','none');
+	$('div#plusforeign').css('display','none');
 	$('input#foreigntwo').change(function() {
-		if(this.val == 'foreigntwo'){
-			$('div .holdsaforeign').hide( 'fast' );
-			$('div #plusforeign').hide('fast');
+		if(this.checked == true){
+			$('div.holdsaforeign').show( 'fast' );
+			$('div#plusforeign').show('fast');
 			}
 	else {
-			$('div .holdsaforeign').show( 'fast' );
-			$('div #plusforeign').show('fast');
+			$('div.holdsaforeign').hide( 'fast' );
+			$('div#plusforeign').hide('fast');
 		}
 	});
 	//END additional pending + foreign
-	
-	//START additional pending
-	$( 'button#addaname' ).on('click',function(){
-	  	$( '.containsaname:eq(0)' ).clone().appendTo( '.appendaname' );
-	});
-	$( '#resetaname' ).on('click',function () {
-	  $( '.appendaname .containsaname' ).remove( '.containsaname:eq(0)' );
-    });
-	//END additional pending
 	
 	//START additional containsportrait
 	$( 'button#addaportrait' ).on('click',function(){
