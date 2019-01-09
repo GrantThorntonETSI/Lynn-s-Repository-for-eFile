@@ -1367,7 +1367,23 @@ button[type=submit] {
 	color:#111;
 	}
 .closepans {
-		flex: 1;
+	display: -webkit-flex;
+	flex: 1;
+	}
+#displaytext, p#showmarktxt {
+	display: -webkit-flex; 
+	-webkit-flex-wrap: wrap; 
+	display: flex;  
+	flex-wrap: wrap;
+	overflow-wrap: break-word;
+	word-wrap:break-word;
+	-webkit-columns: 2;
+	-moz-columns: 2;
+	columns: 2;
+	-webkit-column-width: 100px; 
+	-moz-column-width: 100px; 
+	column-width: 100px;
+	word-break:break-all;
 	}
 #gsselected .panel-heading {
 	-webkit-border-top-left-radius: 		0;

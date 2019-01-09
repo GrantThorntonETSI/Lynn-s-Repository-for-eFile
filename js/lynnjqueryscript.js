@@ -875,11 +875,9 @@ $(document).ready(function(){
 	//START displaymark height match
       var d = $( '#displaytext' ).prev('div');
 	  $('#displaytext').css('display','flex').css('flex-direction','column');
-	  $('#displaytext').css( 'height', (d.innerHeight()) );
-	  $('#showmarktxt').css('line-height',(d.innerHeight() + 'px'));
+	  $('#displaytext').css( 'min-height', (d.innerHeight()) );
 	  $( window ).resize(function() {
-  		$('#displaytext').css( 'height', (d.innerHeight()) );
-	  	$('#showmarktxt').css('line-height',(d.innerHeight() + 'px'));
+  		$('#displaytext').css( 'min-height', (d.innerHeight()) );
 		});
 	//END displaymark height match 
 	
