@@ -800,7 +800,7 @@ $(document).ready(function(){
 		}
 	});
 	//END additional pending + foreign
-	
+		
 	//START additional containsportrait
 	$( 'button#addaportrait' ).on('click',function(){
 	  	$( '.containsaportrait:eq(0)' ).clone().appendTo( '.appendaportrait' );
@@ -836,6 +836,24 @@ $(document).ready(function(){
 	  $( '.appendapending .holdsapending' ).remove( '.holdsapending:eq(0)' );
     });
 	//END additional foreignpending
+	
+	//START additional translate
+	$( 'button#addtranslate' ).on('click',function(){
+	  	$( '.holdsatranslate:eq(0)' ).clone().appendTo( '.appendatranslate' );
+	});
+	$( '#resettranslate' ).on('click',function () {
+	  $( '.appendatranslate .holdsatranslate' ).remove( '.holdsatranslate:eq(0)' );
+    });
+	//END additional translate
+	
+	//START additional transliteration
+	$( 'button#addtransliterate' ).on('click',function(){
+	  	$( '.holdsatransliterate:eq(0)' ).clone().appendTo( '.appendatransliterate' );
+	});
+	$( '#resettransliterate' ).on('click',function () {
+	  $( '.appendatransliterate .holdsatransliterate' ).remove( '.holdsatransliterate:eq(0)' );
+    });
+	//END additional transliteration
 	
 	//START modals
 	$('#tradeservmodal','#collectivemodal','#collectivemembmodal').on('shown.bs.modal', function () {

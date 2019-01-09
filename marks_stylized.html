@@ -94,7 +94,6 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-  
 <div class="container-fluid">    
   <div class="row content">
     <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
@@ -182,27 +181,22 @@
                                   <p id="typemark"><span class="weight600">&#42;</span> Upload a file containing your mark.</p>						
                                     <!--Start Dropzone-->
                                   <div class="col-xs-12 form-group form-group-md">
-                                    <form action="" method="post" enctype="multipart/form-data" aria-labelledby="markinfo">
-                                        <fieldset>
-                                            <legend class="sr-only"><span>File upload</span></legend>
-                                            <div class="form-group form-group-md">
-                                                <label class="small upload-drop-zone" for="file"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
-                                                <input type="file" id="file" name="file" class="form-control">
-                                            </div><!-- Drop Zone -->
-                                            
-                                        </fieldset>
-                                    </form>
-                                    <div class="row">
-                                        <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
-                                            <p id="uploaded">Processed files</p>
-                                            <div class="list-group">
-                                                <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploaded"></a>
+                                        <div class="form-group form-group-md">
+                                            <label class="small upload-drop-zone" for="file"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
+                                            <input type="file" id="file" name="file" class="form-control">
+                                        </div><!-- Drop Zone -->
+                                        <div class="row">
+                                            <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
+                                                <p id="uploaded">Processed files</p>
+                                                <div class="list-group">
+                                                    <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploaded"></a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div><!-- Upload Finished -->
+                                        </div><!-- Upload Finished -->
+                                   </div>
                                 </div>
                                 <div class="form-group form-group-md col-xs-12">
-                                    <p class="weight600" aria-level="3">Mark Literal</p>
+                                    <p class="weight600" role="heading" aria-level="3">Mark Literal</p>
                                     <label for="ta2"><span class="required weight600">&#42;</span>Enter the words, letters and numbers appearing in the mark. <a href="#" data-toggle="tooltip" title="Any entry in this field that is not found in the mark image will not be considered part of the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label> 
                                     <textarea id="ta2" rows="3" class="form-control" required></textarea>
                                         <div class="row">
@@ -229,10 +223,10 @@
                                                             <textarea id="ta3" rows="3" class="form-control"></textarea>
                                                             <h3 class="weight600">Mark Description</h3>
                                                             <label for="ta2"><span class="weight600">&#42;</span> Enter the description of the mark including the location of the colors. <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
-                                                            <textarea id="ta2" rows="3" class="form-control" required></textarea>
+                                                            <textarea id="ta2" rows="3" class="form-control" placeholder="This mark consists of" required></textarea>
                                                         </div>
                                                         <div id="nocolorclaim" class="form-group form-group-md"><!--toggle 'no' radio-->
-                                                            <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" role="checkbox" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
                                                             <label class="form-check-label form-check" for="bwmark" id="acceptmark"><span class="radio notspecial">Accept the black and white drawing.</span></label>
                                                             <div class="alert alert-warning" role="alert">
                                                               <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
@@ -265,27 +259,40 @@
                                                             <label for="inlineRadio3" class="radio-inline radiocontainer">Yes<input type="radio" name="foreignradio" id="inlineRadio3" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                             <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yestranslation"><!--toggle 'yes' radio-->
-                                                            <h3 class="weight600">Enter the foreign language and the translation.</h3>
+                                                        <div id="yestranslation" aria-labelledby="translate"><!--toggle 'yes' radio-->
                                                             <div class="row">
-                                                                <div class="form-group form-group-md col-xs-12 col-md-3">
-                                                                    <label for="language">Language</label>
-                                                                    <select class="form-control" id="language">
-                                                                      <option value="Select">Select</option>
-                                                                        <option value="Spanish">Spanish</option>
-                                                                        <option value="German">German</option>
-                                                                        <option value="French">French</option>
-                                                                    </select>
+                                                            	<div class="col-xs-12 form-group form-group-md holdsatranslate">
+                                                                    <h3 class="weight600" id="translate">Enter the foreign language and the translation.</h3>
+                                                                    <div class="form-group form-group-md col-xs-12 col-md-3">
+                                                                        <label for="language">Language</label>
+                                                                        <select class="form-control" id="language">
+                                                                          <option value="Select">Select</option>
+                                                                            <option value="Spanish">Spanish</option>
+                                                                            <option value="German">German</option>
+                                                                            <option value="French">French</option>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group form-group-md col-xs-12 col-md-5">
+                                                                        <label for="engtranslation">The English Translation of</label>
+                                                                        <input type="text" class="form-control" id="engtranslation">
+                                                                    </div>
+                                                                    <div class="form-group form-group-md col-xs-12 col-md-4">
+                                                                        <label for="inthemark">in the mark is</label>
+                                                                        <input type="text" class="form-control" id="inthemark">
+                                                                    </div>
+                                                            	</div>
+                                                                <div class="appendatranslate"></div>
+                                                                <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional translation">
+                                                                	<div class="row">
+                                                                        <div class="col-xs-6 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add" id="addtranslate">Add Additional Translation Item</button>
+                                                                        </div>
+                                                                        <div class="col-xs-6 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add" id="resettranslate">Remove Additional Translation Item</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-md-5">
-                                                                    <label for="engtranslation">The English Translation of</label>
-                                                                    <input type="text" class="form-control" id="engtranslation">
-                                                                </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-md-4">
-                                                                    <label for="inthemark">in the mark is</label>
-                                                                    <input type="text" class="form-control" id="inthemark">
-                                                                </div>
-                                                            </div>
+                                                           </div> 
                                                         </div>
                                                     </div>
                                                 </section>
@@ -301,7 +308,8 @@
                                                     </div>
                                                     <div id="transliteration" class="collapse Accordion-panel" role="region" aria-labelledby="translitbtn">
                                                         <div class="Accordion">
-                                                            <p>If a name(s) shown in the mark identifies a particular living individual, enter the name of the individual being identified. In addition, attach a .jpg or .pdf file showing the actual consent of the named individual to the use and registration of his or her name. Select &#8220;No&#8221; if the mark includes a name(s) but this does NOT identify a particular living person. <a href="https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-1200d1e4891.html" target="_blank">More information</a>.</p>
+                                                            <p>A transliteration of a trademark is the phonetic spelling, in the standard English alphabet, of the word(s) in the trademark that are in non-Latin characters. For example, if your trademark includes Chinese characters, the transliteration will state how those characters will be spelled out based on how they sound, using the English alphabet. 
+ <a href="https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-1200d1e4891.html" target="_blank">More information</a>.</p>
                                                         </div>
                                                     </div>
                                                     <div>
@@ -309,29 +317,44 @@
                                                           <label for="inlineRadio5" class="radio-inline radiocontainer">Yes<input type="radio" name="nonlatradio" id="inlineRadio5" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                           <label for="inlineRadio6" class="radio-inline radiocontainer">No<input type="radio" name="nonlatradio" id="inlineRadio6" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yestransliteration"><!--toggle 'yes' radio-->
-                                                            <h3 class="weight600">Enter the transliteration of the mark.</h3>
-                                                            <div class="row">
-                                                                <div class="form-group form-group-md col-xs-12 col-md-3">
-                                                                    <label for="languagetranslit">Language</label>
-                                                                    <select class="form-control" id="languagetranslit">
-                                                                      <option value="Select">Select</option>
-                                                                      <option value="German">German</option>
-                                                                      <option value="Korean">Korean</option>
-                                                                      <option value="French">French</option>
-                                                                      <option value="Spanish">Spanish</option>
-                                                                    </select>
+                                                        <div id="yestransliteration" aria-labelledby="translitp"><!--toggle 'yes' radio-->
+                                                        <div class="row">
+                                                          	<div class="col-xs-12 form-group form-group-md holdsatransliterate">
+                                                                    <h3 class="weight600" id="translitp">Enter the transliteration of the mark.</h3>
+                                                                    <div class="row">
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-3">
+                                                                            <label for="languagetranslit">Language</label>
+                                                                            <select class="form-control" id="languagetranslit">
+                                                                              <option value="Select">Select</option>
+                                                                              <option value="German">German</option>
+                                                                              <option value="Korean">Korean</option>
+                                                                              <option value="French">French</option>
+                                                                              <option value="Spanish">Spanish</option>
+                                                                            </select>
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-9">
+                                                                            <label for="nonlatranslation">The non-Latin characters in the mark transliterate to</label>
+                                                                            <input type="text" class="form-control" id="nonlatranslation">
+                                                                        </div>
+                                                                        <div class="form-group form-group-md col-xs-12 col-md-12">
+                                                                            <label for="inenglish">and this, in English, means</label>
+                                                                            <input type="text" class="form-control" id="inenglish">
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-md-9">
-                                                                    <label for="nonlatranslation">The non-Latin characters in the mark transliterate to</label>
-                                                                    <input type="text" class="form-control" id="nonlatranslation">
+                                                                <div class="appendatransliterate"></div>
+                                                                <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional transliteration">
+                                                                	<div class="row">
+                                                                        <div class="col-xs-6 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add" id="addtransliterate">Add Additional Translation Item</button>
+                                                                        </div>
+                                                                        <div class="col-xs-6 btn-group">
+                                                                            <button type="button" class="btn-sm btn-success add" id="resettransliterate">Remove Additional Translation Item</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-md-12">
-                                                                    <label for="inenglish">and this, in English, means</label>
-                                                                    <input type="text" class="form-control" id="inenglish">
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        	</div>
+                                                     	</div>
                                                     </div>
                                                 </section>
                                             </div>
@@ -376,12 +399,14 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendaname"></div>
-                                                                    <div class="btn-group btn-group-justified large" role="group" aria-label="Add or delete additional names">
-                                                                        <div class="col-xs-5 col-sm-12 btn-group">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaname">Add Additional Name</button>
-                                                                        </div>
-                                                                        <div class="col-xs-7 col-sm-12 btn-group">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaname">Remove Additional Name</button>
+                                                                    <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional names">
+                                                                    	<div class="row">
+                                                                            <div class="col-xs-6 col-sm-6 btn-group">
+                                                                                <button type="button" class="btn-sm btn-success add" id="addaname">Add Additional Name</button>
+                                                                            </div>
+                                                                            <div class="col-xs-6 col-sm-6 btn-group">
+                                                                                <button type="button" class="btn-sm btn-success add" id="resetaname">Remove Additional Name</button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                               	</div>
@@ -406,18 +431,18 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendaportrait"></div>
-                                                                    <div class="btn-group btn-group-justified large" role="group" aria-label="Add or delete additional portraits">
-                                                                        <div class="col-xs-5 col-sm-12 btn-group">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addaportrait">Add Additional Portrait</button>
-                                                                        </div>
-                                                                        <div class="col-xs-7 col-sm-12 btn-group">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetaportrait">Remove Additional Portrait</button>
-                                                                        </div>
+                                                                    <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional portraits">
+                                                                    	<div class="row">
+                                                                            <div class="col-xs-6 col-sm-6 btn-group">
+                                                                                <button type="button" class="btn-sm btn-success add" id="addaportrait">Add Additional Portrait</button>
+                                                                            </div>
+                                                                            <div class="col-xs-6 col-sm-6 btn-group">
+                                                                                <button type="button" class="btn-sm btn-success add" id="resetaportrait">Remove Additional Portrait</button>
+                                                                            </div>
+                                                                     	</div>
                                                                     </div>
                                                               	</div>
                                                             </div>
-                                                            
-                                                            
                                                             <input class="form-check-input checkmark" type="checkbox" value="signature" tabindex="0" aria-labelledby="checksignature" id="signaturechecked">
                                                             <label class="form-check-label form-check" for="signaturechecked" id="checksignature"><span class="radio notspecial" id="collectm">Signature</span></label>
                                                             
@@ -438,12 +463,14 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendasignature"></div>
-                                                                    <div class="btn-group btn-group-justified large" role="group" aria-label="Add or delete additional signatures">
-                                                                        <div class="col-xs-5 col-sm-12 btn-group">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addasignature">Add Additional Signature</button>
-                                                                        </div>
-                                                                        <div class="col-xs-7 col-sm-12 btn-group">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="resetasignature">Remove Additional Signature</button>
+                                                                    <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional signatures">
+                                                                        <div class="row">
+                                                                            <div class="col-xs-6 col-sm-6 btn-group">
+                                                                                <button type="button" class="btn-sm btn-success add" id="addasignature">Add Additional Signature</button>
+                                                                            </div>
+                                                                            <div class="col-xs-6 col-sm-6 btn-group">
+                                                                                <button type="button" class="btn-sm btn-success add" id="resetasignature">Remove Additional Signature</button>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                               	</div>
@@ -480,17 +507,17 @@
                         </form> 
                     </div><!--END col-->
                 </div><!--END row-->                    
-       		</div>
-          </div><!--END row-->
-          <div class="inlinebuttons btn-group btn-group-justified" role="nav" aria-label="view previous or next page" id="prevnxt">
-            <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
+              <div class="inlinebuttons btn-group btn-group-justified" role="nav" aria-label="view previous or next page" id="prevnxt">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
+                    <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
+                </div>
+              </div>
             </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
-                <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
-            </div>
-        </div>
+          </div>
         </main>
       </div><!--END div content-->
     </div><!--END div container-->
@@ -521,7 +548,7 @@
             <div class="col-xs-8 col-sm-4 col-md-3">
             	<div class="row">
                     <div class="col-xs-6">
-                        <span id="webPolicy"><p>Website Policy</p></span>
+                        <p id="webPolicy">Website Policy</p>
                     </div>
                     <div class="col-xs-6">
                         <p>Privacy Policy</p>
