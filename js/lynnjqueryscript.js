@@ -64,23 +64,6 @@ $(document).ready(function(){
 			  ],
 		});
 	//END initialize datable
-	//table (function() {
-//	if ($('#goodsandservices tr').length < 10) {
-//				$('#goodsandservices_wrapper').css('min-height','975px');
-//			}
-//			else {
-//				$('#goodsandservices_wrapper').css('min-height','0');
-//				}
-//	});
-//	
-//	if ( $.fn.dataTable.isDataTable( '#goodsandservices' ) ) {
-//		table = $('#goodsandservices').DataTable();
-//	}
-//	else {
-//		table = $('#goodsandservices').DataTable( {
-//			paging: false
-//		} );
-//	}
 	
 	//start close (x) gs panels
 	$('.closegspanels').click(function() {
@@ -323,15 +306,7 @@ $(document).ready(function(){
 			}
 	});
 	//end mark color options
-	
-	//start detected mark color options
-	$("#detected input#inlineRadio1").prop({
-			checked: true,
-		});
-	$('#detected div#nocolorclaim').css('display','none');
-	$('#detected div#yescolorclaim').css('display','block');
-	//end detected mark color options
-		
+			
 	//start translations options
 	$('div#yestranslation').css('display','none');
 	$('input#inlineRadio3').change(function() {
@@ -351,14 +326,7 @@ $(document).ready(function(){
 		}
 	});
 	//end translations options
-	
-	//start detected translation options
-	$("#detected input#inlineRadio3").prop({
-			checked: true,
-		});
-	$('#detected div#yestranslation').css('display','block');
-	//end detected translation options
-	
+		
 	//start transliterations options
 	$('div#yestransliteration').css('display','none');
 	$('input#inlineRadio5').change(function() {
@@ -378,13 +346,6 @@ $(document).ready(function(){
 			}
 	});
 	//end translations options
-	
-	//start detected transliteration options
-	$("#detected input#inlineRadio5").prop({
-			checked: true,
-		});
-	$('#detected div#yestransliteration').css('display','block');
-	//end detected transliteration options
 	
 	//start nps options
 	$('div#yesnps').css('display','none');
@@ -703,18 +664,18 @@ $(document).ready(function(){
 	//END fill from contacts values -- attorney
 	
 	//START auto-detect pre-fill
-	var arrlanguages = [ 'Spanish', 'German', 'French' ];
-	var arrlanguage = jQuery.makeArray( arrlanguages );
-	var arrlangtranslits = [ 'German', 'Korean', 'French', 'Spanish' ];
-	var arrlangtranslit = jQuery.makeArray( arrlangtranslits );
-	  $( '#detected textarea#ta2' ).val( 'Scrubby Butts Soap Co. Squeaky Clean Naturally!' );
-	  $( '#detected textarea#ta3' ).val( 'Red' );
-	  $( '#detected #language' ).val( arrlanguage[0] );
-	  $( '#detected #engtranslation' ).val('Jabón' );
-	  $( '#detected input#inthemark' ).val( 'Soap' );
-	  $( '#detected #languagetranslit' ).val( arrlangtranslit[1] );
-	  $( '#detected input#nonlatranslation' ).val( '비누' );
-	  $( '#detected input#inenglish' ).val( 'Soap' );
+	//var arrlanguages = [ 'Spanish', 'German', 'French' ];
+//	var arrlanguage = jQuery.makeArray( arrlanguages );
+//	var arrlangtranslits = [ 'German', 'Korean', 'French', 'Spanish' ];
+//	var arrlangtranslit = jQuery.makeArray( arrlangtranslits );
+//	  $( '#detected textarea#ta2' ).val( 'Scrubby Butts Soap Co. Squeaky Clean Naturally!' );
+//	  $( '#detected textarea#ta3' ).val( 'Red' );
+//	  $( '#detected #language' ).val( arrlanguage[0] );
+//	  $( '#detected #engtranslation' ).val('Jabón' );
+//	  $( '#detected input#inthemark' ).val( 'Soap' );
+//	  $( '#detected #languagetranslit' ).val( arrlangtranslit[1] );
+//	  $( '#detected input#nonlatranslation' ).val( '비누' );
+//	  $( '#detected input#inenglish' ).val( 'Soap' );
 	//END auto-detect pre-fill
 		
 	//START contacts, fees, my mark components
