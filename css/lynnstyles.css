@@ -25,6 +25,14 @@ p {
     margin-bottom: .6em;
     line-height: 1.16em;
 	}
+p#showmarktxt {
+	font-family: Palatino, Garamond, Bookman, Avant Garde;
+	font-size:2em;
+	text-align:center;
+	}
+.uppercase {
+	text-transform:uppercase;
+	}
 iframe {
 	width:100%;
 	height:100%;

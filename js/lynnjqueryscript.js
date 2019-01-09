@@ -861,4 +861,26 @@ $(document).ready(function(){
 	})
 	//END modals
 	
+	//START show standard character preview
+	$( '#ta2' ).keyup(function(){
+		var currentText = $(this).val();
+		$( 'p#showmarktxt' ).text(currentText);
+	});
+	//var str = $( '#ta2' ).val();
+//	$( 'button#displaytxt' ).on('click',function(){
+//		$( 'p#displaytext' ).html( str );
+//	});
+	//END show standard character preview
+	
+	//START displaymark height match
+      var d = $( '#displaytext' ).prev('div');
+	  $('#displaytext').css('display','flex').css('flex-direction','column');
+	  $('#displaytext').css( 'height', (d.innerHeight()) );
+	  $('#showmarktxt').css('line-height',(d.innerHeight() + 'px'));
+	  $( window ).resize(function() {
+  		$('#displaytext').css( 'height', (d.innerHeight()) );
+	  	$('#showmarktxt').css('line-height',(d.innerHeight() + 'px'));
+		});
+	//END displaymark height match 
+	
 });
