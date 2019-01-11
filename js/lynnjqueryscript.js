@@ -589,7 +589,7 @@ $(document).ready(function(){
 		$( 'div#nametype' ).show( 'fast' );
 	});
 	//start entity options (import concept)
-	$('#autofill').css('display','none');
+	$('#owner #autofill').css('display','none');
 	$('#entype').on('change',function(){
 		$('#container').empty();
 		$('footer').css('display','none');
@@ -680,12 +680,22 @@ $(document).ready(function(){
 		
 	//START contacts, fees, my mark components
 	//start toggle glyphicon contacts widget 
+	//$('a.fromcontact').click(function() {
+//		$( document ).find('span.glyphicon-ok-sign.visuallyadded').addClass( 'visuallyremoved' ).removeClass( 'visuallyadded' ).parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
+//		$( document ).find('span.glyphicon-plus-sign.visuallyremoved').addClass( 'visuallyadded' ).removeClass( 'visuallyremoved' );
+//		$( this ).find('span.glyphicon-plus-sign').addClass('visuallyremoved').removeClass( 'visuallyadded' );
+//		$( this ).find('span.glyphicon-ok-sign').addClass('visuallyadded').removeClass('visuallyremoved').parent().parent().css('background-color','#D4EB8E').siblings().css('background-color','#D4EB8E');
+//	});
+	//end toggle glyphicon contacts widget
 	$('a.fromcontact').click(function() {
-		$( document ).find('span.glyphicon-ok-sign.visuallyadded').addClass( 'visuallyremoved' ).removeClass( 'visuallyadded' ).parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
-		$( document ).find('span.glyphicon-plus-sign.visuallyremoved').addClass( 'visuallyadded' ).removeClass( 'visuallyremoved' );
-		$( this ).find('span.glyphicon-plus-sign').addClass('visuallyremoved').removeClass( 'visuallyadded' );
-		$( this ).find('span.glyphicon-ok-sign').addClass('visuallyadded').removeClass('visuallyremoved').parent().parent().css('background-color','#D4EB8E').siblings().css('background-color','#D4EB8E');
+		$( '#mydata2' ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
+		//$( this ).parent().parent().find('glyphicon-ok-sign').toggleClass( 'glyphicon-plus-sign' );
+		$( this ).find('span.glyphicon-plus-sign').toggleClass( 'glyphicon-ok-sign' );
+		$( this ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#D4EB8E').siblings().css('background-color','#D4EB8E');
+		$( this ).find('span.glyphicon-ok-sign').parent().parent().parent().siblings().children().children().children('.glyphicon-ok-sign').removeClass( 'glyphicon-ok-sign' );
 	});
+	//start toggle glyphicon contacts widget 
+	
 	//end toggle glyphicon contacts widget
 	
 	//start close (x) fees
