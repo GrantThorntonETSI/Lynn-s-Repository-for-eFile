@@ -478,6 +478,7 @@ $(document).ready(function(){
 	//end attorney options
 	
 	//start us foreign options
+	//us entity show
 	$('div#yesusentity').css('display','none');
 	$('input#inlineRadio019').change(function() {
 		if(this.checked == true){
@@ -507,6 +508,41 @@ $(document).ready(function(){
 			$('div#yesusentity').show( 'fast' );
 			
 			$("input#inlineRadio019").prop({
+				checked: true,
+			});
+		}
+	});
+	
+	//foreign entity show
+	$('div#yesforeignentity').css('display','none');
+	$('input#inlineRadio020').change(function() {
+		if(this.checked == true){
+			$('div#yesforeignentity').show( 'fast' );
+			
+			$("input#inlineRadio019").prop({
+				checked: false,
+			});
+			}
+	else {
+			$('div#yesforeignentity').hide( 'fast' );
+			
+			$("input#inlineRadio019").prop({
+				checked: true,
+			});	
+			}
+	});
+	$('input#inlineRadio019').change(function() {
+		if(this.checked == true){
+			$('div#yesforeignentity').hide( 'fast' );
+			
+			$("input#inlineRadio020").prop({
+				checked: false,
+			});
+			}
+	else {
+			$('div#yesforeignentity').show( 'fast' );
+			
+			$("input#inlineRadio020").prop({
 				checked: true,
 			});
 		}
@@ -588,7 +624,10 @@ $(document).ready(function(){
 	$( '#type' ).on('change',function(){
 		$( 'div#nametype' ).show( 'fast' );
 	});
-	//start entity options (import concept)
+	//end nameoftypeofbusiness options
+		
+	//START entity options (import concept)
+	//us form
 	$('#owner #autofill').css('display','none');
 	$('#entype').on('change',function(){
 		$('#container').empty();
@@ -598,7 +637,25 @@ $(document).ready(function(){
 		$('#autofill').show( 'fast' );
 		$('footer').css('display','block');
 	});
-	//end entity options (import concept)
+	//foreign form
+	$('#entypeforeignbahamas').on('change',function(){
+		$('#containerforeign').empty();//maybe use detach
+		$('footer').css('display','none');
+		var includeforeign = ('js/' + $(this).val() + $( '#entitycountry' ).val() + '.js');
+		$.getScript( includeforeign );
+		$('#autofill').show( 'fast' );
+		$('footer').css('display','block');
+		console.log(includeforeign);
+	});
+	//foreign select by country
+	$('.albaniaform, .algeriaform, .angolaform, .bahamasform').css('display','none');
+	$('#entitycountry').on('change',function(){
+		var loadselectmenu = ('.' + $(this).val() + 'form');
+		$('.hidethis').hide('fast');
+		$( loadselectmenu ).show('slow').addClass('hidethis');
+		$( loadselectmenu ).css('display','block');
+	});
+	//END entity options (import concept)
 	
 	//START fill from contacts values -- attorney
 	$( "a#clearform" ).click(function() {
