@@ -206,6 +206,7 @@ $(document).ready(function(){
 	//END 
 	
 	//START close button height match
+	$( window ).load(function () {
       var d = $( '.closepans' ).prev('div');
 	  $(d).css('display','flex').css('flex-direction','column');
 	  $('#gsselected .closepans').css( 'height', (d.innerHeight()) );
@@ -214,9 +215,11 @@ $(document).ready(function(){
   		$('#gsselected .closepans').css( 'height', (d.innerHeight()) );
 	  	$('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
 		});
+	});
 	//END close button height match
 	
 	//START input label height match
+	$( window ).load(function () {
       var d = $( '.matchlabelheight' ).parent().prev('div').children('label');
 	  var e = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
 	  var f = $( '.matchlabelheightdiv' ).prev('div');
@@ -231,6 +234,7 @@ $(document).ready(function(){
 		$('.matchlabelheightdiv').css( 'height', (f.innerHeight())  + 'px' );
 		$('.matchlabelheighttwodiv').css( 'height', (g.innerHeight())  + 'px' );
 		});
+	});
 	//END input label height match
 	
 	//START examples panel link hover / active
@@ -553,7 +557,7 @@ $(document).ready(function(){
 	$('div#yescommerce').css('display','none');
 	$('input#inlineRadio25').change(function() {
 		if(this.checked == true){
-			$('div#yescommerce').show( 'fast' );
+			$('div#yescommerce').show( 'fast' ); 
 			}
 	else {
 			$('div#yescommerce').hide( 'fast' );
@@ -930,8 +934,10 @@ $(document).ready(function(){
 	
 	//START show standard character preview
 	$( '#ta2' ).keyup(function(){
+		var d = $( '#entertext' ).next('div');
 		var currentText = $(this).val();
 		$( 'p#showmarktxt' ).text(currentText);
+		$('#entertext, #entertext textarea').css( 'height', (d.innerHeight()) );
 	});
 	//var str = $( '#ta2' ).val();
 //	$( 'button#displaytxt' ).on('click',function(){
@@ -940,12 +946,14 @@ $(document).ready(function(){
 	//END show standard character preview
 	
 	//START displaymark height match
-      var d = $( '#displaytext' ).prev('div');
+	$( window ).load(function () {
+      var d = $( '#entertext' ).next('div');
 	  $('#displaytext').css('display','flex').css('flex-direction','column');
-	  $('#displaytext').css( 'min-height', (d.innerHeight()) );
+	  $('#entertext').css( 'min-height', (d.innerHeight()) );
 	  $( window ).resize(function() {
-  		$('#displaytext').css( 'min-height', (d.innerHeight()) );
+  		$('#entertext').css( 'min-height', (d.innerHeight()) );
 		});
+	});
 	//END displaymark height match 
 	
 });

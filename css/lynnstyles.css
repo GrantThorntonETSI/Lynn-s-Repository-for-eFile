@@ -29,6 +29,7 @@ p#showmarktxt {
 	font-family: Palatino, Garamond, Bookman, Avant Garde;
 	font-size:2em;
 	text-align:center;
+	margin-bottom:0;
 	}
 .uppercase {
 	text-transform:uppercase;
@@ -1365,6 +1366,7 @@ button[type=submit] {
 #gsselected button.close {
     font-size: 1.45em;
 	color:#111;
+	margin: 0 auto;
 	}
 .closepans {
 	display: -webkit-flex;
@@ -1384,6 +1386,7 @@ button[type=submit] {
 	-moz-column-width: 100px; 
 	column-width: 100px;
 	word-break:break-all;
+	min-height: 149px;
 	}
 #gsselected .panel-heading {
 	-webkit-border-top-left-radius: 		0;
