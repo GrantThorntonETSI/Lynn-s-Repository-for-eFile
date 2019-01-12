@@ -634,7 +634,7 @@ $(document).ready(function(){
 	//us form
 	$('#owner #autofill').css('display','none');
 	$('#entype').on('change',function(){
-		$('#container').empty();
+		$('#container').empty();//maybe use detach
 		$('footer').css('display','none');
 		var include = ('js/' + $(this).val() + '.js');
 		$.getScript( include );
@@ -642,12 +642,13 @@ $(document).ready(function(){
 		$('footer').css('display','block');
 	});
 	//foreign form
+	$('#owner #autofillforeign').css('display','none');
 	$('#entypeforeignbahamas').on('change',function(){
 		$('#containerforeign').empty();//maybe use detach
 		$('footer').css('display','none');
 		var includeforeign = ('js/' + $(this).val() + $( '#entitycountry' ).val() + '.js');
 		$.getScript( includeforeign );
-		$('#autofill').show( 'fast' );
+		$('#owner #autofillforeign').show( 'fast' );
 		$('footer').css('display','block');
 		console.log(includeforeign);
 	});
@@ -662,21 +663,24 @@ $(document).ready(function(){
 	//END entity options (import concept)
 	
 	//START fill from contacts values -- attorney
-	$( "a#clearform" ).click(function() {
+	function clearform() {
 	  $( 'input#attorney-first-name' ).val( '' );
 	  $( 'input#title' ).val( '' );
 	  $( 'input#attorney-last-name' ).val( '' );
-	  $( '#suffix' ).val( );
+	  $( '#suffix' ).val( '');
 	  $( 'input#attorney-lawfirm-name' ).val( '' );
+	  $( '#attorney-country' ).val( '' );
 	  $( '#attorney-country' ).val( );
 	  $( 'input#attorney-address1' ).val( '' );
 	  $( 'input#attorney-city' ).val( '' );
-	  $( '#attorney-state' ).val( );
+	  $( '#attorney-state' ).val('' );
 	  $( 'input#attorney-zipcode' ).val( '' );
 	  $( 'input#attorney-email' ).val( '' );
-	  $( 'input#attorney-phonenumbertype' ).val( );
+	  $( 'input#attorney-phonenumbertype' ).val( '');
 	  $( 'input#attorney-phone' ).val( '' );
-	  });
+	  $( '#mydata2' ).find('span.glyphicon-ok-sign').removeClass( 'glyphicon-ok-sign' ).parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
+	}
+	$( "a#clearform" ).click(clearform);
 	$( "a#avo" ).click(function() {
 	  $( 'input#firstname' ).val( 'Avo' );
 	  $( 'input#title' ).val( 'Director, Enterprise Technology Strategy and Innovation' );
@@ -740,21 +744,15 @@ $(document).ready(function(){
 	//END auto-detect pre-fill
 		
 	//START contacts, fees, my mark components
-	//start toggle glyphicon contacts widget 
-	//$('a.fromcontact').click(function() {
-//		$( document ).find('span.glyphicon-ok-sign.visuallyadded').addClass( 'visuallyremoved' ).removeClass( 'visuallyadded' ).parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
-//		$( document ).find('span.glyphicon-plus-sign.visuallyremoved').addClass( 'visuallyadded' ).removeClass( 'visuallyremoved' );
-//		$( this ).find('span.glyphicon-plus-sign').addClass('visuallyremoved').removeClass( 'visuallyadded' );
-//		$( this ).find('span.glyphicon-ok-sign').addClass('visuallyadded').removeClass('visuallyremoved').parent().parent().css('background-color','#D4EB8E').siblings().css('background-color','#D4EB8E');
-//	});
-	//end toggle glyphicon contacts widget
-	$('a.fromcontact').click(function() {
+	//start toggle glyphicon contacts widget
+	function togglecontacts() {
 		$( '#mydata2' ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
 		//$( this ).parent().parent().find('glyphicon-ok-sign').toggleClass( 'glyphicon-plus-sign' );
 		$( this ).find('span.glyphicon-plus-sign').toggleClass( 'glyphicon-ok-sign' );
 		$( this ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#D4EB8E').siblings().css('background-color','#D4EB8E');
 		$( this ).find('span.glyphicon-ok-sign').parent().parent().parent().siblings().children().children().children('.glyphicon-ok-sign').removeClass( 'glyphicon-ok-sign' );
-	});
+	}
+	$('a.fromcontact').click(togglecontacts);
 	//start toggle glyphicon contacts widget 
 	
 	//end toggle glyphicon contacts widget
@@ -810,7 +808,7 @@ $(document).ready(function(){
 		$( '#mydata2 .collapse' ).collapse('show').fadeIn( 'slow','swing');
 	});
 	//populate form from managed contacts
-	$('button#autofill').on('click',function() {
+	$('button#autofill, button#autofillforeign').on('click',function() {
 		$( '#mydata2' ).css('visibility','visible');
 		$( '#mydata2 .collapse' ).collapse('show').fadeIn( 'slow','swing');
 		$( 'button#contactsbtn span#toggleglyphone' ).addClass('visuallyremoved');

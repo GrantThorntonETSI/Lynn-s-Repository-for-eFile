@@ -17,11 +17,30 @@ $(document).ready(function(){
 //END additional phone
 //start nameoftypeofbusiness options
 //START fill from contacts values -- owner information
+function clearform() {
+	  $( 'input#firstname' ).val( '' );
+	  $( 'input#lastname' ).val( '' );
+	  $( '#countryofcitizenship' ).val( '' );
+	  $( 'input#addressline1' ).val( '');
+	  $( 'input#attorney-lawfirm-name' ).val( '' );
+	  $( '#attorney-country' ).val( '' );
+	  $( '#attorney-country' ).val( );
+	  $( 'input#attorney-address1' ).val( '' );
+	  $( 'input#addressline2' ).val( '' );
+	  $( 'input#city' ).val('' );
+	  $( '#state' ).val( '' );
+	  $( 'input#zipcode' ).val( '' );
+	  $( 'input#email' ).val( '');
+	  $( '#phonenumbertype' ).val( '' );
+	  $( 'input#phonenumber' ).val( '' );
+	  $( '#mydata2' ).find('span.glyphicon-ok-sign').removeClass( 'glyphicon-ok-sign' ).parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
+	}
+	$( "a#clearform" ).click(clearform);
 	$( "a#jacob" ).on('click',function() {
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
-		$('input#firstname').val( 'Jacob' );
+		$( 'input#firstname' ).val( 'Jacob' );
 		$( 'input#lastname' ).val( 'Goldstein' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
@@ -37,7 +56,7 @@ $(document).ready(function(){
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
-		$('input#firstname').val( 'Jackie' );
+		$( 'input#firstname' ).val( 'Jackie' );
 		$( 'input#lastname' ).val( 'Babos' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
@@ -53,7 +72,7 @@ $(document).ready(function(){
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
-		$('input#firstname').val( 'Avo' );
+		$( 'input#firstname' ).val( 'Avo' );
 		$( 'input#lastname' ).val( 'Reid' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
@@ -69,7 +88,7 @@ $(document).ready(function(){
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
-		$('input#firstname').val( 'Li' );
+		$( 'input#firstname' ).val( 'Li' );
 		$( 'input#lastname' ).val( 'Zhang' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
@@ -85,7 +104,7 @@ $(document).ready(function(){
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
-		$('input#firstname').val( 'Lynn' );
+		$( 'input#firstname' ).val( 'Lynn' );
 		$( 'input#lastname' ).val( 'Stanikmas' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
@@ -101,7 +120,7 @@ $(document).ready(function(){
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
-		$('input#firstname').val( 'Sarah' );
+		$( 'input#firstname' ).val( 'Sarah' );
 		$( 'input#lastname' ).val( 'Sara' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
