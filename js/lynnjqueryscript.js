@@ -662,7 +662,8 @@ $(document).ready(function(){
 	$('input#inlineRadio015').change(function() {
 		if(this.checked == true){
 			$('div#yesattorneyfiling').show( 'fast' );
-			}
+			$( document ).find('p.required').toggleClass('visuallyshown');
+		}
 	else {
 			$('div#yesattorneyfiling').hide( 'fast' );
 			}
@@ -670,6 +671,7 @@ $(document).ready(function(){
 	$('input#inlineRadio016').change(function() {
 		if(this.checked == true){
 			$('div#yesattorneyfiling').hide( 'fast' );
+			$( document ).find('p.required').removeClass('visuallyshown');
 			}
 	else {
 			$('div#yesattorneyfiling').show( 'fast' );

@@ -18,6 +18,7 @@ $(document).ready(function(){
 //start nameoftypeofbusiness options
 //START fill from contacts values -- owner information
 function clearform() {
+	  $( 'input#ownername' ).val( '' );
 	  $( 'input#firstname' ).val( '' );
 	  $( 'input#lastname' ).val( '' );
 	  $( '#countryofcitizenship' ).val( '' );
@@ -40,6 +41,7 @@ function clearform() {
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
+		$( 'input#ownername' ).val( 'Jacob Goldstein' );
 		$( 'input#firstname' ).val( 'Jacob' );
 		$( 'input#lastname' ).val( 'Goldstein' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
@@ -57,6 +59,7 @@ function clearform() {
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
 		$( 'input#firstname' ).val( 'Jackie' );
+		$( 'input#ownername' ).val( 'Jackie Babos' );
 		$( 'input#lastname' ).val( 'Babos' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
 		$( 'input#addressline1' ).val( '333 John Carlyle St # 500' );
@@ -72,6 +75,7 @@ function clearform() {
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
+		$( 'input#ownername' ).val( 'Avo Reid' );
 		$( 'input#firstname' ).val( 'Avo' );
 		$( 'input#lastname' ).val( 'Reid' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
@@ -88,6 +92,7 @@ function clearform() {
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
+		$( 'input#ownername' ).val( 'Li Zhang' );
 		$( 'input#firstname' ).val( 'Li' );
 		$( 'input#lastname' ).val( 'Zhang' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
@@ -104,6 +109,7 @@ function clearform() {
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
+		$( 'input#ownername' ).val( 'Lynn Stanikmas' );
 		$( 'input#firstname' ).val( 'Lynn' );
 		$( 'input#lastname' ).val( 'Stanikmas' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );
@@ -120,6 +126,7 @@ function clearform() {
 		var arrctry = [ 'United States', 'Canada' ];
 		var arrstate = [ 'Virginia', 'Maryland', 'North Carolina' ];
 		var arrphone = [ 'Cell', 'Home', 'Work', 'Fax' ];
+		$( 'input#ownername' ).val( 'Sarah Sara' );
 		$( 'input#firstname' ).val( 'Sarah' );
 		$( 'input#lastname' ).val( 'Sara' );
 		$( '#countryofcitizenship' ).val( arrctry,2 );

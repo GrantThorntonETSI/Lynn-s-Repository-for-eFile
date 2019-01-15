@@ -174,7 +174,7 @@
                     		<h1>Attorney Information</h1>
                         </div>
                     </div>
-                    <p class="required"><span class="weight600">&#42; = Required</span></p>
+                    <p class="required visuallyhidden"><span class="weight600">&#42; = Required</span></p>
                     <!--START Attorney Information Form-->
                     <div class="card-text noexpand">
                         <h2 class="card-title weight600" id="attorneyinfo">Attorney Information</h2>
@@ -569,12 +569,12 @@
                                             </select>
                                           </div>
                                           <div class="form-group form-group-md col-xs-8">
-                                            <label for="attorney-phone"><span class="weight600">&#42;</span> Phone Number</label>
-                                            <input type="text" class="form-control" id="attorney-phone" placeholder="Phone Number" th:field="*{attorneyPhone}" required>
+                                            <label for="attorney-phone">Phone Number</label>
+                                            <input type="text" class="form-control" id="attorney-phone" placeholder="Phone Number" th:field="*{attorneyPhone}">
                                           </div>
                                       </div>
                                     <div class="appendphone"></div>
-                                    <div class="col-xs-7 col-md-5" role="group" aria-label="Add or delete additional phone numbers">
+                                    <div class="col-xs-7 col-md-3" role="group" aria-label="Add or delete additional phone numbers">
                                         <div class="col-xs-9">
                                             <button type="button" class="btn-sm btn-success add ctr" id="addphone">Add Number</button>
                                         </div>
@@ -594,7 +594,7 @@
                                         <input type="text" class="form-control" id="docket-id" th:field="*{attorneyDocketNumber}">
                                     </div>
                                     <div class="appenddocket"></div>
-                                    <div class="col-xs-7 col-md-5" role="group" id="plusdocket" aria-label="Add or delete additional docket or reference numbers">
+                                    <div class="col-xs-7 col-md-3" role="group" id="plusdocket" aria-label="Add or delete additional docket or reference numbers">
                                         <div class="col-xs-9">
                                             <button type="button" class="btn-sm btn-success add ctr" id="addocket">Add Number</button>
                                         </div>

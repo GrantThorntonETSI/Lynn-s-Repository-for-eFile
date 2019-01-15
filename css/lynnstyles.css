@@ -337,6 +337,16 @@ h1 {
 	margin-top: 1em;
     margin-bottom: 1em;
 	}
+h3.overline {
+	border-top:1px solid #333;
+	padding-top: .5em;
+	margin-bottom:1.6em;
+	}
+#declarationsignature h4 {
+	font-weight:normal;
+	margin:0;
+	margin-bottom: .5em;
+	}
 h4, h5, h6 {
 	margin-top: 2em;
     margin-bottom: 1em;
@@ -786,6 +796,27 @@ label.hasinfo {
 	padding-left:0!important;
 	padding-right:0!important;
 	}
+/*SCROLL*/
+#scrollone {
+	overflow: scroll;
+	max-height:300px;
+	margin:auto 5%;
+	overflow:auto;
+	overflow-y:auto;
+	overflow-x:auto;
+	}	
+	#scrollone::-webkit-scrollbar {
+	  width: .4em;
+	}
+	#scrollone::-webkit-scrollbar-track {
+	  background: #fff; 
+	}
+	#scrollone::-webkit-scrollbar-thumb {
+	  background: #808080; 
+	}
+	#scrollone::-webkit-scrollbar-thumb:hover {
+	  background: #004C97; 
+	}
 /*BUTTONS*/
 button[disabled] {
     background-color: #eee!important;
@@ -1053,6 +1084,9 @@ div[role="heading"] button {
 	}
 input[type="file"]:focus { 
 	margin-left: 0; 
+	}
+input[type="text"] { 
+	min-height: 38px; 
 	}
 #goodsandservices_wrapper input[type="search"] {
 	margin-left: 1em!important;
