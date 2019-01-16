@@ -82,7 +82,7 @@ $(document).ready(function(){
   //START set initial checkboxes
   $('input[type=checkbox]').attr('checked',false);
   $('input[type=radio]').attr('checked',false);
-  $('input[type=checkbox]#authemail').not(this).prop('checked', true);
+  $('input[type=checkbox]#authemail, input[type=radio]#inlineRadio044').not(this).prop('checked', true);
   //if ($('input[type=checkbox]#authemail').prop('checked')) {
 //	  console.log('checked');
 //  }
@@ -1196,6 +1196,22 @@ $(document).ready(function(){
   		$('#entertext').css( 'min-height', (d.innerHeight()) );
 		});
 	});
-	//END displaymark height match 
+	//END displaymark height match
+	
+	//row header p height match
+	var p = $('.rowheader p').height();
+	$('.rowheader p').height(p);
+	$( window ).resize(function() {
+  		$('.rowheader p').height(p);
+		});
+	//END row header p height match 
+	
+	//row header h3 height match
+	var q = $('.rowheader h3').height();
+	$('.rowheader h3').height(q);
+	$( window ).resize(function() {
+  		$('.rowheader h3').height(q);
+		});
+	//END row header p height match 
 	
 });

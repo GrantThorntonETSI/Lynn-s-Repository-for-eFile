@@ -338,6 +338,12 @@ main {
 	width: 20%;
     text-align: right;
 	}
+.imagefloat {
+	float:right;
+	position:relative;
+	width:40px;
+	margin-right:13px;
+	}
 h1 {
 	font-size:2.2em;
 	line-height: .98em;
@@ -352,6 +358,36 @@ h1 {
 	padding-right: .5em;
 	margin-bottom:1.6em;
 	}
+.overlinerow {
+	border-top:1px solid #333;
+	border-bottom:1px solid #333;
+	margin-left:0;
+	margin-right:0;
+	padding: .7em 0 0 0;
+	}
+.underlinerow {
+	border-bottom:1px solid #333;
+	margin-left:0;
+	margin-right:0;
+	padding: 0 0 1.3em 0;
+	margin-bottom: 1em;
+	}
+.underlinerow .small p {
+	text-align:right;
+	font-size:.6em;
+	margin-bottom:0;
+	}
+.underlinerow h2#enter {
+	margin-top:2em;
+	}
+.overlinerow h3 {
+	margin-bottom: .6em;
+    line-height: 1.16em;
+	color:#808080;
+	text-transform:uppercase;
+	font-size:.8em
+	}
+
 #declarationsignature h4 {
 	font-weight:normal;
 	margin:0;
@@ -755,6 +791,37 @@ label a:hover {
 .card-text.noexpand {
     padding: 9px 0 9px 18px;
 	}
+#payment .card-text.noexpand {
+    background-color:#EEEEEE;
+	padding: 0 0 0 15px;
+	}
+.card-text.noexpand .rowheader h3 {
+    font-weight:normal;
+	font-size:.7em;
+    line-height: 1.16em;
+	padding: .8em;
+	min-height: 40px;
+	padding-right: 0;
+	}
+.card-text.noexpand .rowheader p {
+	font-size:.8em;
+	background-color: #fff;
+	min-height: 32px;
+    padding: .7em;
+	margin-bottom:0;
+	padding-right: 0;
+	}
+.rowheader h3.morepad {
+	padding-left: 1.4em!important;
+	}
+.rowheader p.morepad {
+	padding-left: 1.2em!important;
+	}
+.rowheader div {
+	padding:0;
+	margin:0;
+	padding-top: .5em;
+	}
 .noexpand.blue {
     background-color: #004C97;
     color: #fff;
@@ -768,6 +835,9 @@ label a:hover {
     margin-bottom: 20px;
     padding: 8px 0 8px 0;
 	width:100%;
+	}
+#payment .lead {
+	font-size:inherit;
 	}
 .lead p {
 	font-size:.761905em;
@@ -796,7 +866,7 @@ span.weight600 {
 .checkbox-inline, .radio-inline {
     padding-left: 21px;
 	}
-input[type=date]::-webkit-inner-spin-button {
+input[type=date]::-webkit-inner-spin-button, input[type=month]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 	}
@@ -838,6 +908,15 @@ label.hasinfo {
 .phone, .phones {
 	padding-left:0!important;
 	padding-right:0!important;
+	}
+#payment .form-inline input, #payment .form-inline select {
+	float:right;
+	width:50%;
+	}
+#payment .form-inline label {
+	vertical-align:middle;
+	margin-bottom:0;
+	margin-top:.6em;
 	}
 /*SCROLL*/
 #scrollone {
@@ -1128,7 +1207,7 @@ div[role="heading"] button {
 input[type="file"]:focus { 
 	margin-left: 0; 
 	}
-input[type="text"] { 
+select, input[type="text"], input[type="email"], input[type="date"], input[type="date"] { 
 	min-height: 38px; 
 	}
 #goodsandservices_wrapper input[type="search"] {
@@ -1273,7 +1352,7 @@ input[type="checkbox"]:focus + label span.radio::before {
 	outline: 1px auto -webkit-focus-ring-color!important;
 	outline-offset: 2px!important;
 	}
-input[type="date"] {
+input[type="date"], input[type="date"] {
 	padding:0 12px;
 	line-height:.95em!important;
 	}
@@ -1584,6 +1663,13 @@ a.footer-brand {
     border-color: #1596D1;
     outline: 0;
 	}
+@media (max-width: 500px){
+	#payment .form-inline input {
+		float:none!important;
+		width:100%!important;
+		margin-top:1em!important;
+		}
+}
 @media (min-width: 768px){
 	.navbar-nav#lowernav>li {
 		float: right;
