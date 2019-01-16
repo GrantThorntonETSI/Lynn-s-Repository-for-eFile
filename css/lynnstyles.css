@@ -357,8 +357,11 @@ h1 {
 	margin:0;
 	margin-bottom: 1.3em;
 	}
-#declarationsignature .small {
+#declarationsignature #authem .small {
 	margin-bottom: 3.3em;
+	}
+#declarationsignature .form-check span#authem::before {
+    bottom: .2em!important;
 	}
 #declarationsignature #declarationschecks label {
 	margin-top:0!important;
