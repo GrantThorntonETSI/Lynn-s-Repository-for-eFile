@@ -865,7 +865,7 @@ $(document).ready(function(){
 		$.getScript( includeforeign );
 		$('#owner #autofillforeign').show( 'fast' );
 		$('footer').css('display','block');
-		console.log(includeforeign);
+		//console.log(includeforeign);
 	});
 	//foreign select by country
 	$('.albaniaform, .algeriaform, .angolaform, .bahamasform').css('display','none');
@@ -876,6 +876,17 @@ $(document).ready(function(){
 		$( loadselectmenu ).css('display','block');
 	});
 	//END entity options (import concept)
+	
+	//select signature method
+	$('#direct').css('display','none');
+	$('#signmethod').on('change',function(){
+		var loadsign = ('#' + $(this).val());
+		$('.hidethis').hide('fast');
+		$( loadsign ).show('fast').addClass('hidethis');
+		$( loadsign ).css('display','block');
+		console.log(loadsign);
+	});
+	//END signature method
 	
 	//START fill from contacts values -- attorney
 	function clearform() {
