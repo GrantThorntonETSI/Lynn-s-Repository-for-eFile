@@ -329,6 +329,15 @@ main {
 #goodservideo .match {
 	min-height: 400px;
 	}
+.float h3 {
+	float:left;
+	width: 80%;
+	}
+.float span {
+	float:right;
+	width: 20%;
+    text-align: right;
+	}
 h1 {
 	font-size:2.2em;
 	line-height: .98em;
@@ -337,15 +346,46 @@ h1 {
 	margin-top: 1em;
     margin-bottom: 1em;
 	}
-h3.overline {
+.overline {
 	border-top:1px solid #333;
 	padding-top: .5em;
+	padding-right: .5em;
 	margin-bottom:1.6em;
 	}
 #declarationsignature h4 {
 	font-weight:normal;
 	margin:0;
-	margin-bottom: .5em;
+	margin-bottom: 1.3em;
+	}
+#declarationsignature .small {
+	margin-bottom: 3.3em;
+	}
+#declarationsignature #declarationschecks label {
+	margin-top:0!important;
+	margin-bottom:0!important;
+	}
+#declarationsignature #declarationschecks span {
+	margin-top:0!important;
+	margin-bottom:0!important;
+	}
+#declarationsignature .form-check span::before {
+	top:.2em!important;
+	bottom:auto!important;
+	}
+#declarationsignature .form-check span::before {
+	content: '\f00c'!important;
+    font-family: 'FontAwesome';
+    color: #fff;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+	font-size: 1.4em;
+	padding-left: .14em;
+	}
+#declarationsignature .form-check span::after {
+	content:'';
+	}
+#declarationsignature .checkmargin {
+	margin-bottom:2em!important;
 	}
 h4, h5, h6 {
 	margin-top: 2em;
@@ -947,7 +987,7 @@ button#moreoptionsbtn {
 	font-size: inherit;
 	font-weight: 400;
 	}
-.btn-success:active:focus, btn.btn-success:active:hover, .btn-success:focus, .btn-success:hover {
+.btn-success:active:focus, btn.btn-success:active:hover, .btn-success:focus, .btn-success:hover, .btn-success:active.focus, btn.btn-success:active.hover, .btn-success.focus, .btn-success.hover {
 	background-color: #047db0;
     border-color: #057eb1;
 	}
@@ -1583,15 +1623,15 @@ a.footer-brand {
 		top: -22%;
 		}
 }
-@media (min-width: 1400px) {
-	.wide {
-		width:80%;
-		}
-}
 @media (min-width: 800px) {
 	.inlinebuttons {
 		width: 61%;
 	}
+#declarationsignature .indentctr {
+		width: 90%;
+		margin: 0 auto;
+		float: none;
+		}
 }
 @media (max-width: 768px) {
 	.btn-success.add.ctr {
@@ -1703,11 +1743,6 @@ a.footer-brand {
 		margin-bottom:0;
 		}
 }
-@media (min-width: 700px) {
-	.steps p {
-		font-size: .85em;
-		}
-}
 /* IMAGES */
 @media (max-width: 576px) { 
 	#goodservideo .bgimg {
@@ -1740,6 +1775,11 @@ a.footer-brand {
 		font-size: .82em;
 	}
 }
+@media (min-width: 700px) {
+	.steps p {
+		font-size: .85em;
+		}
+}
 @media (min-width: 992px) { 
 	#goodservideo .bgimg {
 	  background: url('../images/tmin_news_06_goods_and_services_lg.jpg');
@@ -1751,5 +1791,21 @@ a.footer-brand {
 @media (orientation: portrait) { 
 	.stickycomponents {
 		margin-bottom: 100%!important;
+		}
+}
+@media (min-width: 1400px) {
+	.wide {
+		width:70%;
+		}
+	#declarationsignature .indentctr {
+		width: 60%;
+		}
+}
+@media (min-width: 2150px) {
+	.wide {
+		width:60%;
+		}
+	#declarationsignature .indentctr {
+		width: 50%;
 		}
 }

@@ -82,6 +82,13 @@ $(document).ready(function(){
   //START set initial checkboxes
   $('input[type=checkbox]').attr('checked',false);
   $('input[type=radio]').attr('checked',false);
+  $('input[type=checkbox]#authemail').not(this).prop('checked', true);
+  //if ($('input[type=checkbox]#authemail').prop('checked')) {
+//	  console.log('checked');
+//  }
+//  else {
+//	  console.log('unchecked');
+//	  }
   //END set initial checkboxes
 
   //START enable / disable checkboxes
@@ -474,6 +481,14 @@ $(document).ready(function(){
 		var fileName = e.target.files[0].name;
 		$('a.list-group-item').html('<span class="filename">' + fileName + '</span>' + '<span class="badge alert-success pull-right">Success</span>')
 	});
+	
+	//toggle acceptance
+	$( '#acceptreview' ).click(function() {
+		$( this ).toggleClass( 'focus' );
+		$(this).html() === 'Accept'
+			? $(this).html('Accepted')
+			: $(this).html('Accept');
+		});	
 			
 	//+ Translation Item
 	//
