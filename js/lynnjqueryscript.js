@@ -407,38 +407,30 @@ $(document).ready(function(){
 	//END close button height match
 	
 	//START input label height match
-	function heightmatch() {
-		$( window ).load(function () {
-		  var d = $( '.matchlabelheight' ).parent().prev('div').children('label');
-		  var e = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
-		  var f = $( '.matchlabelheightdiv' ).prev('div');
-		  var g = $( '.matchlabelheighttwodiv' ).prev('div');
-		  $('.matchlabelheight').css( 'height', (d.innerHeight() + 'px') );
-		  $('.matchlabelheighttwo').css( 'height', (e.innerHeight() + 'px') );
-		  $('.matchlabelheightdiv').css( 'height', (f.innerHeight() + 'px') );
-		  $('.matchlabelheighttwodiv').css( 'height', (g.innerHeight() + 'px') );
-		  $( window ).resize(function() {
-			$('.matchlabelheight').css( 'height', (d.innerHeight())  + 'px' );
-			$('.matchlabelheighttwo').css( 'height', (e.innerHeight())  + 'px' );
-			$('.matchlabelheightdiv').css( 'height', (f.innerHeight())  + 'px' );
-			$('.matchlabelheighttwodiv').css( 'height', (g.innerHeight())  + 'px' );
-			});
-		});
-	}
-	
-	//function heightmatchbackwards() {
-//		  var h = $( '.matchlabelheight' ).siblings('div').find('label');
-//		  var i = $( '.matchlabelheightdiv' ).siblings('div');
-//		  $('.matchlabelheight').css( 'height', (h.innerHeight() + 'px') );
-//		  $('.matchlabelheightdiv').css( 'height', (i.innerHeight() + 'px') );
-//		  console.log(i)
-//		  console.log(h.innerHeight())
-//		  $( window ).resize(function() {
-//			$('.matchlabelheight').css( 'height', (h.innerHeight())  + 'px' );
-//			$('.matchlabelheightdiv').css( 'height', (i.innerHeight())  + 'px' );
-//			});
-//	}
+	var t = $( '.matchlabelheight' ).parent().prev('div').children('label');
+	var u = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
+	$('.matchlabelheight').css( 'height', (t.outerHeight() + 'px') );
+	$('.matchlabelheighttwo').css( 'height', (u.outerHeight() + 'px') );
+	console.log(u.outerHeight());
+	$( window ).resize(function() {
+		$('.matchlabelheight').css( 'height', (t.outerHeight())  + 'px' );
+		$('.matchlabelheighttwo').css( 'height', (u.outerHeight())  + 'px' );
+	});
 	//END input label height match
+	
+	//START basis input label height match upload label
+		var r = $( '#specdescript' );	
+		var s = $( '#upimg' );
+		var z = $( '#specdescriptwo' );
+		var n = $( '#upimgtwo' );
+		$('#specdescript').css( 'height', (s.outerHeight() + 'px') );
+		$('#specdescriptwo').css( 'height', (n.outerHeight() + 'px') );
+		//console.log(s.outerHeight());
+		$( window ).resize(function() {
+			$('#specdescript').css( 'height', (s.outerHeight())  + 'px' );
+			$('#specdescriptwo').css( 'height', (n.outerHeight() + 'px') );
+		});
+	//END basis textarea label height match upload label
 	
 	//START examples panel link hover / active
 	  $('#examples div.panel a').hover(function() {
@@ -771,7 +763,6 @@ $(document).ready(function(){
 	$('input#inlineRadio25').change(function() {
 		if(this.checked == true){
 			$('div#yescommerce').show( 'fast' );
-			$(heightmatch); 
 			}
 	else {
 			$('div#yescommerce').hide( 'fast' );
@@ -780,7 +771,6 @@ $(document).ready(function(){
 	$('input#inlineRadio26').change(function() {
 		if(this.checked == true){
 			$('div#yescommerce').hide( 'fast' );
-			$(heightmatch);
 			}
 	else {
 			$('div#yescommerce').show( 'fast' );
@@ -793,6 +783,7 @@ $(document).ready(function(){
 	$('input#inlineRadio29').change(function() {
 		if(this.checked == true){
 			$('div#yesconnection').show( 'fast' );
+			//$(heightmatch);
 			}
 	else {
 			$('div#yesconnection').hide( 'fast' );
