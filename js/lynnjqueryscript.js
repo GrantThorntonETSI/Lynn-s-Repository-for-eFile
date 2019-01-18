@@ -81,18 +81,23 @@ $(document).ready(function(){
 		"fnDrawCallback": function( oSettings ) {
 
 		},
-			"autoWidth": false,
-			"responsive": true,
-			"columns": [
-				{ "width": "20%" },
-				{ "width": "20%" },
-				{ "width": "20%" },
-				{ "width": "20%" },
-				{ "width": "20%" },
+			'autoWidth': false,
+			'responsive': true,
+			'columns': [
+				{ 'width': '20%' },
+				{ 'width': '20%' },
+				{ 'width': '20%' },
+				{ 'width': '20%' },
+				{ 'width': '20%' },
 			  ],
-			  "columnDefs": [
-				{ className: "centertxt", "targets": [ 0,1 ] }
-			  ]
+			  'columnDefs': [  
+				{ responsivePriority: 1, targets: 0 },
+				{ responsivePriority: 2, targets: 1 },
+				{ responsivePriority: 3, targets: 4 },
+				{ responsivePriority: 4, targets: 2 },
+				{ responsivePriority: 5, targets: 3 },
+				{ className: 'centertxt', 'targets': [ 0,1 ] },
+			   ],
 		});
 	//END initialize Dashboard datable one
 	
@@ -101,24 +106,27 @@ $(document).ready(function(){
 		"fnDrawCallback": function( oSettings ) {
 
 		},
-			"autoWidth": false,
-			"responsive": true,
-			"columns": [
-				{ "width": "12%" },
-				{ "width": "17%" },
-				{ "width": "14%" },
-				{ "width": "14%" },
-				{ "width": "15%" },
-				{ "width": "14%" },
-				{ "width": "14%" },
+			'autoWidth': false,
+			'responsive': true,
+			'columns': [
+				{ 'width': '12%' },
+				{ 'width': '17%' },
+				{ 'width': '14%' },
+				{ 'width': '14%' },
+				{ 'width': '15%' },
+				{ 'width': '14%' },
+				{ 'width': '14%' },
 			  ],
-			  "columnDefs": [
-				{ 
-				className: "centertxt", 
-				"targets": [ 0,1 ],
-				//className: 'dt-head-right',
-				}
-			  ]
+			  'columnDefs': [
+			  	{ responsivePriority: 1, targets: 0 },
+				{ responsivePriority: 2, targets: 6 },
+				{ responsivePriority: 3, targets: 4 },
+				{ responsivePriority: 4, targets: 5 },
+				{ responsivePriority: 5, targets: 1 },
+				{ responsivePriority: 6, targets: 3 },
+				{ responsivePriority: 7, targets: 2 },
+				{ className: 'centertxt', 'targets': [ 0,1 ] },
+			  ],
 		});
 	//END initialize Dashboard datable two
 	
@@ -466,11 +474,11 @@ $(document).ready(function(){
 	$( window ).load(function () {
       var d = $( '.closepans' ).prev('div');
 	  $(d).css('display','flex').css('flex-direction','column');
-	  $('#gsselected .closepans').css( 'height', (d.innerHeight()) );
-	  $('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
+	  $('.closepans').css( 'height', (d.innerHeight()) );
+	  $('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
 	  $( window ).resize(function() {
-  		$('#gsselected .closepans').css( 'height', (d.innerHeight()) );
-	  	$('#gsselected .closegspanels').css('line-height',(d.innerHeight() + 'px'));
+  		$('.closepans').css( 'height', (d.innerHeight()) );
+	  	$('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
 		});
 	});
 	//END close button height match
