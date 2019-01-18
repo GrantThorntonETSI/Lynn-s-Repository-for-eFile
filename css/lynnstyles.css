@@ -309,9 +309,6 @@ main {
 	border-radius: 			3px;
 	}
 /*TAB CAROUSEL*/
-[aria-hidden="true"] {
-	display: none;
-	}
 /* tab panels */
 ul[role="tablist"] {
 	list-type:none;
@@ -521,8 +518,8 @@ table.dataTable thead .sorting_desc_disabled:after {
     color: #eee;
 	}
 table.dataTable thead .sorting:after {
-  font-family:'FontAwesome';
-  /* sort */
+/*  font-family:'FontAwesome';
+*/  /* sort */
 	}
 /*table.dataTable thead .sorting {
     background-image: url('../images/sort_asc.png');

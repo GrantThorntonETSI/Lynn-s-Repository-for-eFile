@@ -32,8 +32,10 @@
 			$panels
 				.attr('role', 'tabpanel')
 				.attr('aria-hidden', 'true')
+				.css('display','none')
 				.first()
-					.attr('aria-hidden', 'false');
+					.attr('aria-hidden', 'false')
+					.css('display','block');
 
 			// init - Add aria labelledby and controls
 			$links.each(function onEachTab(idx, el) {
@@ -60,7 +62,7 @@
 					.attr("tabindex", "-1");
 
 				// Hide active panel
-				$("#" + activeTab.attr("aria-controls")).attr("aria-hidden", "true");
+				$("#" + activeTab.attr("aria-controls")).attr("aria-hidden", "true").css('display','none');
 
 				// Select the new tab
 				newTab
@@ -68,7 +70,7 @@
 					.attr("tabindex", "0");
 
 				// Show the controlled panel 
-				$("#" + newTab.attr("aria-controls")).attr("aria-hidden", "false");
+				$("#" + newTab.attr("aria-controls")).attr("aria-hidden", "false").css('display','block');
 					newTab.focus();
 			}
 
