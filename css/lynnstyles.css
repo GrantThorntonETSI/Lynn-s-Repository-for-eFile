@@ -343,6 +343,8 @@ ul[role="tablist"] a {
 	text-decoration: none;
 	color: #fff;
 	padding-top:.15em;
+	display: block;
+	width: 100%;
 	}
 .notice {
 	background-color:#FABBCB!important;
