@@ -50,14 +50,14 @@ $(document).ready(function(){
 	});
 	//END expand / collapse glyphicon
 	
-	//START initialize datable
+	//START initialize Goods + Services datable
 		var table = $('#goodsandservices').DataTable({
 		"fnDrawCallback": function( oSettings ) {
-			$( '#goodsandservices_wrapper input[type=checkbox]' ).each(function() {
+			$( '#goodsandservices input[type=checkbox]' ).each(function() {
 				var x = $( 'input[type=checkbox]' ).index( this );
 				$( this ).attr('id', 'a' + x);
 			});
-			$( '#goodsandservices_wrapper label' ).each(function() {
+			$( '#goodsandservices label' ).each(function() {
 				var y = $( this ).siblings( 'input[type=checkbox]' ).attr('id');
 				$( this ).attr('for', y);
 			});
@@ -70,8 +70,77 @@ $(document).ready(function(){
 				{ "width": "25%" },
 				{ "width": "25%" },
 			  ],
+			  "columnDefs": [
+				{ className: "centertxt", "targets": [ 0 ] }
+			  ]
 		});
-	//END initialize datable
+	//END initialize Goods + Services datable
+	
+	//START initialize Dashboard datable one
+		var tableone = $('#dashboardtableone').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+
+		},
+			"autoWidth": false,
+			"responsive": true,
+			"columns": [
+				{ "width": "20%" },
+				{ "width": "20%" },
+				{ "width": "20%" },
+				{ "width": "20%" },
+				{ "width": "20%" },
+			  ],
+			  "columnDefs": [
+				{ className: "centertxt", "targets": [ 0,1 ] }
+			  ]
+		});
+	//END initialize Dashboard datable one
+	
+	//START initialize Dashboard datable two
+		var tabletwo = $('#dashboardtabletwo').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+
+		},
+			"autoWidth": false,
+			"responsive": true,
+			"columns": [
+				{ "width": "12%" },
+				{ "width": "17%" },
+				{ "width": "14%" },
+				{ "width": "14%" },
+				{ "width": "15%" },
+				{ "width": "14%" },
+				{ "width": "14%" },
+			  ],
+			  "columnDefs": [
+				{ 
+				className: "centertxt", 
+				"targets": [ 0,1 ],
+				//className: 'dt-head-right',
+				}
+			  ]
+		});
+	//END initialize Dashboard datable two
+	
+	//START initialize Dashboard datable three
+		var tablethree = $('#dashboardtablethree').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+
+		},
+			"autoWidth": false,
+			"responsive": true,
+			"columns": [
+				{ "width": "16%" },
+				{ "width": "21%" },
+				{ "width": "21%" },
+				{ "width": "21%" },
+				{ "width": "21%" },
+			  ],
+			  "columnDefs": [
+				{ className: "centertxt", "targets": [ 0,2 ] }
+			  ]
+		});
+	//END initialize Dashboard datable three
 	
 	//start close (x) gs panels
 	$('.closegspanels').click(function() {
@@ -411,7 +480,7 @@ $(document).ready(function(){
 	var u = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
 	$('.matchlabelheight').css( 'height', (t.outerHeight() + 'px') );
 	$('.matchlabelheighttwo').css( 'height', (u.outerHeight() + 'px') );
-	console.log(u.outerHeight());
+	//console.log(u.outerHeight());
 	$( window ).resize(function() {
 		$('.matchlabelheight').css( 'height', (t.outerHeight())  + 'px' );
 		$('.matchlabelheighttwo').css( 'height', (u.outerHeight())  + 'px' );
@@ -1203,6 +1272,14 @@ $(document).ready(function(){
 	$( window ).resize(function() {
   		$('.rowheader h3').height(q);
 		});
-	//END row header p height match 
+	//END row header p height match
+	
+	//tabpanels
+	$('.tabwidget').tabs();
+	$('ul[role="tablist"] a').on('click',function (){
+		$(this).parent('li').toggleClass('notice');
+		$(this).parent('li').siblings('li').removeClass('notice');
+		});
+	//tabpanels 
 	
 });
