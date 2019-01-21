@@ -1820,6 +1820,7 @@ a.footer-brand {
 	.inlinebuttons {
 		width: 61%;
 	}
+}
 @media (max-width: 768px) {
 	.btn-success.add.ctr {
 		margin-top:0;
@@ -1928,11 +1929,6 @@ a.footer-brand {
 	#goodservideo .bgimg {
 	  background-size:95%;
 	}
-}
-@media (min-width: 700px) {
-	.steps p {
-		font-size: .85em;
-		}
 }
 @media (min-width: 992px) { 
 	#goodservideo .bgimg {
