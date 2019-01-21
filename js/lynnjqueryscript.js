@@ -150,8 +150,14 @@ $(document).ready(function(){
 		});
 	//END initialize Dashboard datable three
 	
+	//start close (x) dashboard panels
+	$('#dashsectionscontainer .closegspanels').click(function() {
+		$( this ).parent().parent().parent().parent().parent().fadeOut( 'fast','swing');
+	});
+	//end close (x) dashboard panels
+	
 	//start close (x) gs panels
-	$('.closegspanels').click(function() {
+	$('#gsselected .closegspanels').click(function() {
 		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
 	});
 	//end close (x) gs panels
