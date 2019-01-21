@@ -130,25 +130,14 @@ $(document).ready(function(){
 		});
 	//END initialize Dashboard datable two
 	
-	//START initialize Dashboard datable three
-		var tablethree = $('#dashboardtablethree').DataTable({
-		"fnDrawCallback": function( oSettings ) {
-
-		},
-			"autoWidth": false,
-			"responsive": true,
-			"columns": [
-				{ "width": "16%" },
-				{ "width": "21%" },
-				{ "width": "21%" },
-				{ "width": "21%" },
-				{ "width": "21%" },
-			  ],
-			  "columnDefs": [
-				{ className: "centertxt", "targets": [ 0,2 ] }
-			  ]
+	// .dashsection height = #announcedashsection height
+      var h = $( 'div#announcedashsection' );
+	  var y = $( 'div#announce' );
+	  $('.dashsection:eq(0), .dashsection:eq(1)').css( 'min-height', (h.innerHeight() + y.innerHeight()) );
+	  $( window ).resize(function() {
+		$('.dashsection:eq(0), .dashsection:eq(1)').css( 'min-height', (h.innerHeight() + y.innerHeight()) );	
 		});
-	//END initialize Dashboard datable three
+	//END 
 	
 	//start close (x) dashboard panels
 	$('#dashsectionscontainer .closegspanels').click(function() {
