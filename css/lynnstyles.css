@@ -574,7 +574,7 @@ table#goodsandservices {
 	}
 #dashboardtableone_length label, #dashboardtabletwo_length label, #dashboardtablethree_length label {
 	margin-bottom: 1em;
-	margin-top: .39em;
+	margin-top: .49em;
 	}
 #dashboardtableone_filter label, #dashboardtabletwo_filter label, #dashboardtablethree_filter label {
 	margin-bottom: 1.5em;
@@ -1190,6 +1190,12 @@ button#moreoptionsbtn {
 .btn.fill, .btn-success.fill, .btn-default.fill  {	
 	margin:0 auto;
 	margin-bottom: 1.5em;
+	}
+#dashboardtableone .btn-success.fill {
+	display:inline-block;
+	background-color:#007A33;
+	margin-left: 1em;
+	margin-top: .07em;
 	}
 #yesentity .btn.fill, .btn-success.fill, .btn-default.fill  {	
 	margin-bottom: 0;
