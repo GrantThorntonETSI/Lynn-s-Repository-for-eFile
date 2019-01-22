@@ -96,7 +96,7 @@ $(document).ready(function(){
 				{ responsivePriority: 3, targets: 3 },
 				{ responsivePriority: 4, targets: 2 },
 				{ responsivePriority: 5, targets: 4 },
-				{ className: 'centertxt', 'targets': [ 0,1 ] },
+				{ className: 'centertxt', 'targets': [ 0,1,2,3,4 ] },
 			   ],
 		});
 	//END initialize Dashboard datable one
@@ -125,7 +125,7 @@ $(document).ready(function(){
 				{ responsivePriority: 5, targets: 1 },
 				{ responsivePriority: 6, targets: 3 },
 				{ responsivePriority: 7, targets: 2 },
-				{ className: 'centertxt', 'targets': [ 0,1 ] },
+				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5,6 ] },
 			  ],
 		});
 	//END initialize Dashboard datable two
