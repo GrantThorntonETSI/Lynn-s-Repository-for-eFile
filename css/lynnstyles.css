@@ -57,6 +57,10 @@ object#selected {
     -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
     box-shadow: 0 0px 0px rgba(0,0,0,0);
 	}
+.subtle {
+	vertical-align: text-top;
+	display: inline-block;
+	}
 #dashboardmain .img-thumbnail, #dashboardmain .thumbnail {
     margin: 0 auto;
     float: none;
@@ -992,6 +996,12 @@ label {
 	margin-bottom: .6em;
 	line-height: 1.19em;
 	}
+label.save {
+	margin-top: .4em;
+	}
+p.savep {
+	display:inline-block;
+	}
 label.hasinfo {
 	display:inline-block;
 	margin-right:.5em;
@@ -1031,6 +1041,7 @@ label.hasinfo {
 	width:50%;
 	}
 #payment .form-inline label {
+	display: table-cell;
 	vertical-align:middle;
 	margin-bottom:0;
 	margin-top:.6em;
@@ -1632,6 +1643,7 @@ button[type=submit] {
 	margin: 0 auto;
 	}
 .closepans {
+	display:flex;
 	display: -webkit-flex;
 	flex: 1;
 	}
