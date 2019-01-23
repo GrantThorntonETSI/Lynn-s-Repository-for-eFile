@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
 
-    <title>USPTO.gov :: webapp prototype :: Declaration and Signature</title>
+    <title>USPTO.gov :: webapp prototype :: Review Application</title>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -170,14 +170,23 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <h1>Declaration and Signature</h1>
+                            <h1>Review Application</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-xs-12" id="declarationsignature">
-                                <div class="lead">
-                                    <p id="lead">Selecting edit will take you back to the appropriate section in the application.</p>
+                        <div class="col-xs-12" id="reviewapplication">
+                                <div class="card-text noexpand">
+                                    <h2 class="card-title weight600">Application Fee</h2>
                                 </div>
+                                <div class="lead">
+                                    <p id="lead">Your current filing fee is $275 per class. To reduce your filing fee to $225, select &#8220;Return to Application&#8221; and complete the missing fields below.</p>
+                                </div>
+                                <button type="button" class="btn-sm btn-success fill">Return to Application</button>
+								<ul>
+                                    <li>Color Claimed as a Feature</li>
+                                    <li>Colors Claimed</li>
+                                    <li>Color Location Statement</li>
+                                </ul>
                                 <div class="card-text noexpand">
                                     <h2 class="card-title weight600">Review Application</h2>
                                 </div>
@@ -186,7 +195,7 @@
                                 <div class="row">
                                     <div class="form-group form-group-md col-xs-12">
                                         <div class="row">
-                                            <section aria-label="mark information" id="scrollone">
+                                            <section aria-label="mark information">
                                                 <div class="col-xs-12 float">
                                                 	<h3 class="overline">Mark Information</h3>
                                                     <span class="overline"><a href="#">Edit</a></span>
@@ -401,102 +410,6 @@
                                                 </div>
                                             </div>
                                         </div><!--//row-->
-                                        <div class="row">
-                                            <section class="col-xs-12" aria-label="signature method">
-                                                <div class="card-text noexpand">
-                                                    <h2 class="card-title weight600">Signature Method</h2>
-                                                </div>
-                                                <div class="col-xs-12">
-                                                    <div class="row">
-                                                        <div class="col-xs-12 form-group form-group-md">
-                                                            <label for="ta2" class="weight600">How are you signing the application?</label> 
-                                                            <select class="form-control" id="signmethod">
-                                                                <option value="Select">Select Signature Method</option>
-                                                                <option value="direct">Sign Directly</option>
-                                                                <option value="handwritten">Print and Upload Handwritten Signature</option>
-                                                                <option value="send">Send to Second Party for Signature</option>
-                                                                <option value="unsigned">Submit Unsigned</option>
-                                                            </select>
-                                                       </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                        </div><!--//signature method-->
-                                        <div class="row" id="direct">
-                                            <section class="col-xs-12" aria-label="declarations" id="declarationschecks">
-                                                <div class="card-text noexpand">
-                                                    <h2 class="card-title weight600">Declarations</h2>
-                                                </div>
-                                                <div class="col-xs-12">
-                                                    <div class="row">
-                                                        <div class="col-xs-12 form-group form-group-md indentctr">
-                                                            <p class="weight600">Read the following statements before signing. Acknowledge the statements by checking the boxes and signing below.</p> 
-                                                       		<div class="row">
-                                                                <div class="col-xs-12 form-group form-group-md">		
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="court" tabindex="0" aria-labelledby="courtdecree" id="courtd">
-                                                                    <label class="form-check-label form-check" for="courtd" id="courtdec"><span class="radio notspecial" id="courtdecree">The signatory believes that the applicant is the owner of the trademark/service mark sought to be registered;</span></label>
-                                                                </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="ttab" tabindex="0" aria-labelledby="priorttab" id="ttabmade">
-                                                                    <label class="form-check-label form-check" for="ttabmade" id="ttabdecision"><span class="radio notspecial" id="priorttab">The mark is in use in commerce on or in connection with the goods/services in the application;</span></label>
-                                                                </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="conflicting" tabindex="0" aria-labelledby="conflictingreg" id="conflict">
-                                                                    <label class="form-check-label form-check" for="conflict" id="conflictowner"><span class="radio notspecial" id="conflictingreg">The specimen(s) shows the mark as used on or in connection with the goods/services in the application; and</span></label>
-                                                                </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="earlier" tabindex="0" aria-labelledby="early" id="earlieruse">
-                                                                    <label class="form-check-label form-check" for="earlieruse" id="firstcommerce"><span class="radio notspecial" id="early">To the best of the signatory&#8217;s knowledge and belief, the facts recited in the application are accurate. To the best of the signatory&#8217;s knowledge and belief, no other persons, except, if applicable, concurrent users, have the right to use the mark in commerce, either in the identical form or in such near resemblance as to be likely, when used on or in connection with the goods/services of such other persons, to cause confusion or mistake, or to deceive.</span></label>		
-                                                                </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="earlier4" tabindex="0" aria-labelledby="earlyu" id="earlierusey">
-                                                                    <label class="form-check-label form-check" for="earlierusey" id="firstcommercefour"><span class="radio notspecial" id="earlyu">To the best of the signatory&#8217;s knowledge, information, and belief, formed after an inquiry reasonable under the circumstances, the allegations and other factual contentions made above have evidentiary support.</span></label>		
-                                                                </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="earlier5" tabindex="0" aria-labelledby="earlyx" id="earlierusex">
-                                                                    <label class="form-check-label form-check" for="earlierusex" id="firstcommercefive"><span class="radio notspecial" id="earlyx">The signatory being warned that willful false statements and the like are punishable by fine or imprisonment, or both, under 18 U.S.C. &#167; 1001, and that such willful false statements and the like may jeopardize the validity of the application or submission or any registration resulting therefrom, declares that all statements made of his/her own knowledge are true and all statements made on information and belief are believed to be true.</span></label>		
-                                                                </div>
-                                                            </div><!--end checkbox row-->
-                                                       </div>
-                                                    </div>
-                                                </div>
-                                            </section><!--//declarations-->
-                                            <section class="col-xs-12" aria-label="sign">
-                                                <div class="card-text noexpand">
-                                                    <h2 class="card-title weight600">Sign</h2>
-                                                </div>
-                                                <div class="col-xs-12">
-                                                    <div class="row">
-                                                        <div class="col-xs-12 form-group form-group-md">
-                                                            <div class="row">
-                                                                <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                                                	<p class="sr-only">Enclose the signature in forward slashes</p>
-                                                                    <label for="signature"><span class="weight600">&#42;</span> Signature</label>
-                                                                    <input type="text" class="form-control" placeholder="/Signature/" id="signature" required>
-                                                                </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                                                    <p class="sr-only">Enter the date in the following format: 20:36:14 May 30, 2019 E.T.</p>
-                                                                    <label for="datesigned">Date Signed</label>
-                                                                    <textarea type="text" rows="2" class="form-control" placeholder="20:36:14 May 30, 2019 E.T." id="datesigned"></textarea>
-                                                                </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                                                    <label for="signatoryname"><span class="weight600">&#42;</span> Signatory&#8217;s Name</label>
-                                                                    <input type="text" class="form-control" id="signatoryname" required>
-                                                                </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-sm-9 col-lg-6">
-                                                                    <label for="signatoryphone">Signatory&#8217;s Phone Number</label>
-                                                                    <input type="text" class="form-control" id="signatoryphone">
-                                                                </div>
-                                                                <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                                                    <label for="signatoryposition"><span class="weight600">&#42;</span> Signatory&#8217;s Position</label>
-                                                                    <input type="text" class="form-control" id="signatoryposition" required>
-                                                                </div>
-                                                            </div><!--end checkbox row-->
-                                                       </div>
-                                                    </div>
-                                                </div>
-                                            </section>
-                                   		</div><!--//sign-->
                                     </div><!--END formgroup-->
                                 </div>
                            </fieldset>

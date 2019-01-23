@@ -433,6 +433,10 @@ h1 {
 	padding-top: .5em;
 	padding-right: .5em;
 	margin-bottom:1.6em;
+	font-weight:600;
+	}
+.overline a {
+	font-weight:400;
 	}
 .overlinerow {
 	border-top:1px solid #333;
@@ -464,7 +468,7 @@ h1 {
 	font-size:.8em
 	}
 
-#declarationsignature h4 {
+#declarationsignature h4, #reviewapplication h4 {
 	font-weight:normal;
 	margin:0;
 	margin-bottom: 1.3em;
@@ -998,6 +1002,9 @@ label a:hover {
 #payment .lead {
 	font-size:inherit;
 	}
+#reviewapplication .lead {
+	margin-top:0;
+	}
 p#lead {
 	font-size:.761905em;
 	margin-bottom:0;
@@ -1089,6 +1096,12 @@ label.hasinfo {
 	vertical-align:middle;
 	margin-bottom:0;
 	margin-top:.6em;
+	}
+#reviewapplication ul li {
+	height:2em;
+	}
+#reviewapplication .overline {
+	margin-top:1em;
 	}
 /*SCROLL*/
 #scrollone {
@@ -1259,6 +1272,12 @@ button#moreoptionsbtn {
 	display:inline-block;
 	background-color:#007A33;
 	margin-left: 1em;
+	margin-top: .07em;
+	}
+#reviewapplication .btn-success.fill {
+	display:inline-block;
+	background-color:#007A33;
+	margin-bottom: 1em;
 	margin-top: .07em;
 	}
 #yesentity .btn.fill, .btn-success.fill, .btn-default.fill  {	
@@ -1514,11 +1533,11 @@ legend {
 span#authem  {
 	margin-bottom: 0!important;
 	}
-#declarationsignature #declarationschecks label {
+#declarationsignature #declarationschecks label, #reviewapplication #declarationschecks label {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
-#declarationsignature #declarationschecks span {
+#declarationsignature #declarationschecks span, #reviewapplication #declarationschecks span {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
@@ -1531,7 +1550,7 @@ span#authem  {
 	font-size: 1.4em;
 	padding: .175em .16em;
 	}
-#declarationsignature .checkmargin {
+#declarationsignature .checkmargin, #reviewapplication .checkmargin {
 	margin-bottom:2em!important;
 	}	
 input[type="checkbox"]{
