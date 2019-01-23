@@ -504,6 +504,10 @@ $(document).ready(function(){
 		});
 	//END basis textarea label height match upload label
 	
+	//Placeholder as editable text
+	$('textarea#ta2, textarea#ta5').val('This mark consists of');
+	//Placeholder as editable text
+	
 	//START examples panel link hover / active
 	  $('#examples div.panel a').hover(function() {
 		$(this).css('display','block');
@@ -1285,4 +1289,15 @@ $(document).ready(function(){
 		});
 	//tabpanels 
 	
+	//toggle save more labels
+	$('.togglesavemore').change(function() {
+		if(this.checked == true){
+			$( document ).find('span.subtle').removeClass('visuallyremoved');
+			$( document ).find('#on').removeClass('visuallyhidden');
+			}
+		else if(this.checked == false) {
+			$( document ).find('span.subtle').addClass( 'visuallyremoved' );
+			}
+	});
+	//toggle save more labels 
 });
