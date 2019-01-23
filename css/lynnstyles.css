@@ -56,6 +56,9 @@ object#selected {
 .img-thumbnail, .thumbnail {
     -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
     box-shadow: 0 0px 0px rgba(0,0,0,0);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
 	}
 .glyphicon {
 	top: 2px;
@@ -963,9 +966,10 @@ label a:hover {
 #payment .lead {
 	font-size:inherit;
 	}
-.lead p {
+p#lead {
 	font-size:.761905em;
 	margin-bottom:0;
+	font-weight:400!important;
 	}
 .weight600 {
 	font-weight:600;
