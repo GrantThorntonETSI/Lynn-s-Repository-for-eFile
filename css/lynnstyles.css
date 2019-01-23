@@ -533,6 +533,7 @@ table.dataTable thead .sorting_desc {
 .table>thead>tr>th {
 	text-align:center!important;
 	}
+
 .table>thead:first-child>tr:first-child>th {
     background-color: #eee;
 	color:#808080;
@@ -540,6 +541,32 @@ table.dataTable thead .sorting_desc {
 	}
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     background-color: #e8f5fa;
+	}
+#gridview .table>thead>tr>th:nth-of-type(1) {
+	text-align:left!important;
+	}
+#gridview .table>tbody>tr>td {
+	text-align: center!important;
+	}
+#gridview .table>tbody>tr>td:nth-of-type(1) {
+	padding-left: 2em!important;
+	text-align:left!important;
+	}
+#gridview .table>tbody>tr>th:first-child {
+	text-align: left;
+	}
+#gridview .radio {
+	margin-top: .8em!important;
+	margin-bottom: 0;
+	}
+#gridview .weight600.colheader {
+	color: #333;
+	font-weight:600;
+	}
+#gridview .table>tbody>tr>th {
+    background-color: #eee;
+    color: #808080;
+	text-align:center;
 	}
 #announce {
 	background-color: #D9D9D6;
@@ -582,6 +609,11 @@ table#goodsandservices {
     box-shadow: none;
 	border-color: #1596D1;
     outline: 0;
+	}
+td:focus {
+    box-shadow: none;
+	outline: 1px solid #1596D1;
+    outline-offset: -4px;
 	}
 #dashboardmain h1 {
 	margin-bottom: .3em;
@@ -969,7 +1001,7 @@ label a:hover {
 p#lead {
 	font-size:.761905em;
 	margin-bottom:0;
-	font-weight:400!important;
+	font-weight:600!important;
 	}
 .weight600 {
 	font-weight:600;
@@ -1605,7 +1637,7 @@ div[role="radiogroup"] {
 	}
 input[type="radio"]:focus + label span.checkmark::after {
     outline: 1px solid #009CDE!important;
-	outline: 1px auto -webkit-focus-ring-color!important;
+	outline: 1px solid -webkit-focus-ring-color!important;
 	outline-offset: 4px!important;
 	}
 .checkmark:after {
