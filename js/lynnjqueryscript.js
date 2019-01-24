@@ -1313,6 +1313,7 @@ $(document).ready(function(){
 		var p = $( '#gridview table tr td:nth-child(2) input' ); //GS 2nd checkbox
 		var q = $( '#gridview table tr td:nth-child(1) input' ); //GS 1st checkbox
 		var b = $( '#gridview table th:nth-child(1) input:checked' ); //Classnames 1st checkbox, checked
+		//var b = $( '#gridview table th:nth-child(1) input:checked' ); //Classnames 1st checkbox, checked
 		var bb = $( '#gridview table th input:checked:nth-child(1)' ); //Classnames 1st checkbox, checked
 		var c = $( '#gridview table th:nth-child(1) input:not(:checked)' ); //Classnames 1st checkbox, not checked
 		
@@ -1321,12 +1322,13 @@ $(document).ready(function(){
 		//input:not(:checked)
 			if((this.checked == true) && $( '#gridview table th input:checked' )) {
 				//$('div#yesforeignentity').show( 'fast' );
-				//$(b).parent().siblings().children('input').eq(0).prop({ //check the iu1a checkbox for this class
-//					checked: true,
-//					});
-				$(o).prop({ //check the iu1a checkbox for this class
+				$(b).parent().next('th').children('input').prop({ //check the iu1a checkbox for this class -- note: eq(0) checks the checkbox adjacent to the checked classname
 					checked: true,
 					});
+					console.log(b);
+				//$(o).prop({ //check the iu1a checkbox for this class
+//					checked: true,
+//					});
 
 				//$(b).parent().parent().siblings('tr').children('th').children('input').eq(0).prop({ //don't check the iu1a checkbox for classnames' GSs when the classname is unchecked
 //					checked: true,
