@@ -130,7 +130,7 @@ $(document).ready(function(){
 		});
 	//END initialize Dashboard datable two
 	
-	// .dashsection height = #announcedashsection height
+	//.dashsection height = #announcedashsection height
       var h = $( 'div#announcedashsection' );
 	  var y = $( 'div#announce' );
 	  $('.dashsection:eq(0), .dashsection:eq(1)').css( 'min-height', (h.innerHeight() + y.innerHeight()) );
@@ -1299,5 +1299,101 @@ $(document).ready(function(){
 			$( document ).find('span.subtle').addClass( 'visuallyremoved' );
 			}
 	});
-	//toggle save more labels 
+	//toggle save more labels
+	
+	//grid view checkboxes
+	
+	$( 'input#iu1a' ).change(function() {
+		var s = $( 'input#iu1a').val();
+		var t = $( '#gridview table th:nth-child(1) input' ); //Classnames 1st checkbox
+		var d = $( '#gridview table th:nth-child(1) input:not(:checked)' ); //Classnames 1st checkbox not checked
+		var o = $( '#gridview table th:nth-child(2) input' ); //Classnames 2nd checkbox
+		var u = $( 'input' ); //any input
+		var y = $( '#gridview table th input' ); //any th input
+		var p = $( '#gridview table tr td:nth-child(2) input' ); //GS 2nd checkbox
+		var q = $( '#gridview table tr td:nth-child(1) input' ); //GS 1st checkbox
+		var b = $( '#gridview table th:nth-child(1) input:checked' ); //Classnames 1st checkbox, checked
+		var bb = $( '#gridview table th input:checked:nth-child(1)' ); //Classnames 1st checkbox, checked
+		var c = $( '#gridview table th:nth-child(1) input:not(:checked)' ); //Classnames 1st checkbox, not checked
+		
+		var h = $( '#gridview table th input:not(:checked)' ).parent().parent().siblings().children('td').children('input'); 
+		//.not(this).prop('checked', true)
+		//input:not(:checked)
+			if((this.checked == true) && $( '#gridview table th input:checked' )) {
+				//$('div#yesforeignentity').show( 'fast' );
+				//$(b).parent().siblings().children('input').eq(0).prop({ //check the iu1a checkbox for this class
+//					checked: true,
+//					});
+				$(o).prop({ //check the iu1a checkbox for this class
+					checked: true,
+					});
+
+				//$(b).parent().parent().siblings('tr').children('th').children('input').eq(0).prop({ //don't check the iu1a checkbox for classnames' GSs when the classname is unchecked
+//					checked: true,
+//					});
+//				$(b).parent().parent().siblings('tr').children('th').children('input').eq(1).prop({ //don't check the iu1a checkbox for classnames' GSs when the classname is unchecked
+//					checked: true,
+//					});
+					
+				//$(q).prop({
+//					checked: true,
+//					});
+			}
+				
+
+		});
+		
+		
+			//$(q).prop({ //check the iu1a checkbox for all classnames' GSs
+				//checked: true,
+				//});
+				//console.log(b);				
+				//}
+				
+			//else if ($( '#gridview table th input:not(:checked)' )){ 
+				//$(this).parent().parent().siblings().children('input').prop({ //check the iu1a checkbox for this class
+				//checked: false,
+				//});
+				//}
+				
+			//$('#gridview table th input', t).prop({
+//				checked: true,
+//				});
+			//$(t,o).prop({
+//					checked: true,
+//				});
+//			$(q).prop({
+//				checked: true,
+//			});
+		//}
+			//console.log(e);
+			//console.log(o);
+			//console.log(s);
+				//if(this.checked == false){
+					//$(o).prop({
+//						checked: true,
+//					});
+//					$(p).prop({
+//						checked: true,
+//					});
+//					$(t).prop({
+//						checked: true,
+//					});
+//					$(q).prop({
+//						checked: true,
+//					});
+					
+				//}
+			//}
+
+	
+	//$( 'input#iu1a' ).change(function() {
+//		if(this.checked == true){
+//			console.log('checked');
+//			}
+//		if(this.checked == false){
+//		console.log('unchecked');
+//		}
+//	});
+	//END grid view checkboxes 
 });
