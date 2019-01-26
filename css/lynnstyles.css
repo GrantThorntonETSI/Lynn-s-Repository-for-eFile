@@ -23,7 +23,7 @@ body {
 	}
 p {
     margin-bottom: .7em;
-    line-height: 1.19em;
+    line-height: 1.5em;
 	}
 p#showmarktxt {
 	font-family: Palatino, Garamond, Bookman, Avant Garde;
@@ -2077,6 +2077,9 @@ a.footer-brand {
 		}
 	.form-check {
     	padding-left: 50px;
+		}
+	#gridview .form-check {
+    	padding-left: 0;
 		}
 }
 @media (max-width: 1199px) {
