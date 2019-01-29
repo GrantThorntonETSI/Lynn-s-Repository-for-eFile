@@ -553,8 +553,8 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 	text-align: center!important;
 	}
 #gridview .table>tbody>tr>td:nth-of-type(1) {
-	padding-left: 2em!important;
-	text-align:left!important;
+/*	padding-left: 2em!important;
+*/	text-align:left!important;
 	}
 #gridview .table>tbody>tr>th:first-child {
 	text-align: left;
@@ -562,6 +562,9 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 #gridview .radio {
 	margin-top: .8em!important;
 	margin-bottom: 0;
+	}
+#gridview #yesinuse1aone label  {
+	display: block;
 	}
 #gridview .weight600.colheader {
 	color: #333;
@@ -1599,7 +1602,7 @@ input[type="date"], input[type="date"] {
 	padding:0 12px;
 	line-height:.95em!important;
 	}
-#specdescriptwo, #specdescript {
+#specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo {
 	height:115px;
 	}
 label.form-check-label {
@@ -1693,11 +1696,14 @@ input[type="radio"]:focus + label span.checkmark::after {
 	padding:2em;
 	height: 2.65em;
 	margin-bottom: 1em;
-	margin-top: 1em;
 	width:100%;
 	}
-#basisabde .upload-drop-zone {
+#basisabde .upload-drop-zone, #gridview .upload-drop-zone {
 	line-height: 1.25em;
+	}
+#gridview .upload-drop-zone {
+	display:table-cell!important;
+	width:50%;
 	}
 .upload-drop-zone:hover, .upload-drop-zone:focus { 
     background-color: #fafafb!important;
@@ -1709,7 +1715,14 @@ input[type="radio"]:focus + label span.checkmark::after {
 	outline-offset: -2px;
 	border:2px dashed transparent;
 	}
-#attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file], #basisabde input[type=file], #detected input[type=file] {
+p#upimagetwo, p#upimagethree, p#upimagefour {
+	margin-bottom:.6em;
+	line-height: 1.19em;
+	}
+p#upimage {
+	margin-bottom:.35em;
+	}
+#attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file], #basisabde input[type=file], #detected input[type=file], #gridview input[type=file] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
