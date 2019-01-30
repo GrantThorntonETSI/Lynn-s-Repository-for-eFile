@@ -171,6 +171,13 @@
                     <div class="row">
                         <div class="col-xs-8">
                             <h1>Filing Basis</h1>
+                            <p class="instructions" id="costsavingoptions">Reduce Fee Mode</p>
+                            <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn reduce fee labels on or off">
+                                <label class="switch">
+                                <input class="togglesavemore" type="checkbox">
+                                <span class="slider"><span class="visuallyhidden" id="on">On</span> <span id="off">Off</span></span>
+                                </label>
+                            </div>
                         </div>
                         <div class="col-xs-4">
                             <label for="pagelayout">Page Layout</label>
@@ -214,18 +221,18 @@
                                                     <div class="card-text noexpand">
                                                         <h2 class="card-title weight600">Bar Soap</h2>
                                                     </div>
-                                                    <p id="commerce">Are you currently using the mark on bar soap in commerce?</p>                                            				
+                                                    <p id="commerce">Are you currently using the mark on goods/services in commerce? <span class="label label-info subtle visuallyremoved">Reduce Fee</span></p>                                            				
                                                     <div role="radiogroup" aria-labelledby="commerce" class="form-group form-group-md">
                                                         <label for="inlineRadio25" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio25" value="yes" tabindex="0"><span class="checkmark"></span>Yes</label>
                                                         <label for="inlineRadio26" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio26" value="no" tabindex="0"><span class="checkmark"></span>No</label>
                                                     </div><!--END radiogroup-->
                                                     <div id="yescommerce" class="form-group form-group-md"><!--toggle 'yes' radio-->
                                                         <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                            <label for="firstcommerce-date">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                                            <label for="firstcommerce-date">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                             <input type="date" class="form-control" id="firstcommerce-date" name="firstcommerce" value="">
                                                         </div> 
                                                         <div class="col-xs-12 col-md-6 form-group form-group-md matchlabelheightdiv">
-                                                            <label for="commerce-date" class="matchlabelheight">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                                            <label for="commerce-date" class="matchlabelheight">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                             <input type="date" class="form-control" id="commerce-date" name="commercedate" value="">
                                                         </div>
                                                         <div class="col-xs-12 form-group form-group-md">
@@ -264,18 +271,18 @@
                                                     <div class="card-text noexpand">
                                                         <h2 class="card-title weight600">Liquid Bath Soap</h2>
                                                     </div>
-                                                    <p id="connection">Are you currently using the mark on liquid bath soap in commerce?</p>                                            				
+                                                    <p id="connection">Are you currently using the mark on goods/services in commerce? <span class="label label-info subtle visuallyremoved">Reduce Fee</span></p>                                            				
                                                     <div role="radiogroup" aria-labelledby="connection" class="form-group form-group-md">
                                                         <label for="inlineRadio29" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio29" value="yes" tabindex="0"><span class="checkmark"></span>Yes</label>
                                                         <label for="inlineRadio30" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio30" value="no" tabindex="0"><span class="checkmark"></span>No</label>
                                                     </div><!--END radiogroup-->
                                                     <div id="yesconnection" class="form-group form-group-md"><!--toggle 'yes' radio-->
                                                         <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                            <label for="connection-date">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                                            <label for="connection-date">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                             <input type="date" class="form-control" id="connection-date" name="connectiondate" value="">
                                                         </div> 
                                                         <div class="col-xs-12 col-md-6 form-group form-group-md matchlabelheighttwodiv">
-                                                            <label for="firstconnection-date" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                                            <label for="firstconnection-date" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                             <input type="date" class="form-control" id="firstconnection-date" name="firstconnectiondate" value="">
                                                         </div>
                                                         <div class="col-xs-12 form-group form-group-md">
@@ -310,7 +317,7 @@
                                                                     <p class="weight600" id="foreignapplication">Foreign Application Information:</p>
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="country">Country:</label>
+                                                                    <label for="country">Country: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <select class="form-control" id="country">
                                                                       <option value="Select">Select</option>
                                                                       <option value="Mexico">Mexico</option>
@@ -319,11 +326,11 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="appnumber">Foreign application number:</label>
+                                                                    <label for="appnumber">Foreign application number: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <input type="text" class="form-control" id="appnumber">
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="application-date">Foreign application filing date:</label>
+                                                                    <label for="application-date">Foreign application filing date: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <input type="date" class="form-control" id="application-date" name="applicationdate" value="">
                                                                 </div>
                                                             </div><!--pending foreign-->
@@ -343,7 +350,7 @@
                                                             		<p class="weight600" id="foreignregistration">Foreign Registration Information:</p>
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12" aria-labelledby="foreignregistration">
-                                                                    <label for="countrytwo">Country:</label>
+                                                                    <label for="countrytwo">Country: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <select class="form-control" id="countrytwo">
                                                                       <option value="Select">Select</option>
                                                                       <option value="Mexico">Mexico</option>
@@ -352,19 +359,23 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="appnumbertwo">Foreign registration number:</label>
+                                                                    <label for="appnumbertwo">Foreign registration number: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <input type="text" class="form-control" id="appnumbertwo">
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="reg-date">Foreign registration expiration date:</label>
+                                                                    <label for="reg-date">Foreign registration date: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <input type="date" class="form-control" id="reg-date" name="regdate" value="">
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <label for="renew-date">Foreign registration renewal date (if applicable):</label>
+                                                                    <label for="reg-date-exp">Foreign registration expiration date: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
+                                                                    <input type="date" class="form-control" id="reg-date-exp" name="regdatexp" value="">
+                                                                </div>
+                                                                <div class="form-group form-group-md col-xs-12">
+                                                                    <label for="renew-date">Foreign registration renewal date (if applicable): <span class="label label-info subtle visuallyremoved">Reduce Fee</span></label>
                                                                     <input type="date" class="form-control" id="renew-date" name="renewdate" value="">
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <p id="upimagethree">Provide an image of your specimen:</p>
+                                                                    <p id="upimagethree">Provide an image of forereign registration certificate: <span class="label label-info subtle visuallyremoved">Reduce Fee</span></p>
                                                                     <div>
                                                                         <label class="small upload-drop-zone" for="renewfile" id="upimgtwo"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span></label>
                                                                         <input type="file" id="renewfile" name="specimenfileupload" class="form-control" aria-labelledby="upimgtwo upimagethree">
