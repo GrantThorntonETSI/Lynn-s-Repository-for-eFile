@@ -1315,36 +1315,72 @@ $(document).ready(function(){
 	
 	//Toggle 1(a) + 1(b)
 	$('#gridview table tbody tr td:nth-child(2) input').change(function() {
-		$(this).parent().next('td').children('label').children('span').addClass('special');
-		$(this).parent().next('td').children('input').prop({ 
-				disabled: true,
-				checked: false,
-				});
-		$(this).parent().siblings('td').children('input').attr('aria-disabled', 'true');
+		if ($(this).prop('checked')) {
+			$(this).parent().next('td').children('label').children('span').addClass('special');
+			$(this).parent().next('td').children('input').prop({ 
+					disabled: true,
+					checked: false,
+					});
+			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'false');
+		}
+		else if ($(this).prop('checked',false)) {
+			$(this).parent().next('td').children('label').children('span').removeClass('special');
+			$(this).parent().next('td').children('input').prop({ 
+					disabled: false,
+					});
+			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'false');
+		}
 	});
 	$('#gridview table tbody tr th:nth-child(2) input').change(function() {
-		$(this).parent().next('th').children('label').children('span').addClass('special');
-		$(this).parent().next('th').children('input').prop({ 
-				disabled: true,
-				checked: false,
-				});
-		$(this).parent().next('th').children('input').attr('aria-disabled', 'true');
+		if ($(this).prop('checked')) {
+			$(this).parent().next('th').children('label').children('span').addClass('special');
+			$(this).parent().next('th').children('input').prop({ 
+					disabled: true,
+					checked: false,
+					});
+			$(this).parent().next('th').children('input').attr('aria-disabled', 'true');
+		}
+		else if ($(this).prop('checked',false)) {
+			$(this).parent().next('th').children('label').children('span').removeClass('special');
+			$(this).parent().next('th').children('input').prop({ 
+					disabled: false,
+					});
+			$(this).parent().next('th').children('input').attr('aria-disabled', 'false');
+		}
 	});
 	$('#gridview table tbody tr td:nth-child(3) input').change(function() {
-		$(this).parent().prev('td').children('label').children('span').addClass('special');
-		$(this).parent().prev('td').children('input').prop({ 
-				disabled: true,
-				checked: false,
-				});
-		$(this).parent().siblings('td').children('input').attr('aria-disabled', 'true');
+		if ($(this).prop('checked')) {
+			$(this).parent().prev('td').children('label').children('span').addClass('special');
+			$(this).parent().prev('td').children('input').prop({ 
+					disabled: true,
+					checked: false,
+					});
+			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'true');
+		}
+		else if ($(this).prop('checked',false)) {
+			$(this).parent().prev('td').children('label').children('span').removeClass('special');
+			$(this).parent().prev('td').children('input').prop({ 
+					disabled: false,
+					});
+			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'false');
+		}
 	});
 	$('#gridview table tbody tr th:nth-child(3) input').change(function() {
-		$(this).parent().prev('th').children('label').children('span').addClass('special');
-		$(this).parent().prev('th').children('input').prop({ 
-				disabled: true,
-				checked: false,
-				});
-		$(this).parent().prev('th').children('input').attr('aria-disabled', 'true');
+		if ($(this).prop('checked')) {
+			$(this).parent().prev('th').children('label').children('span').addClass('special');
+			$(this).parent().prev('th').children('input').prop({ 
+					disabled: true,
+					checked: false,
+					});
+			$(this).parent().prev('th').children('input').attr('aria-disabled', 'true');
+		}
+		else if ($(this).prop('checked',false)) {
+			$(this).parent().prev('th').children('label').children('span').removeClass('special');
+			$(this).parent().prev('th').children('input').prop({ 
+					disabled: false,
+					});
+			$(this).parent().prev('th').children('input').attr('aria-disabled', 'false');
+		}
 	});
 	//END Toggle 1(a) + 1(b)
 	
