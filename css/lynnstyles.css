@@ -72,6 +72,10 @@ object#selected {
 	padding-top:.35em;
 	padding-bottom:.35em;
 	}
+.label-info {
+	background-color:#dff0d8;
+	color: #555
+	}
 #dashboardmain .img-thumbnail, #dashboardmain .thumbnail {
     margin: 0 auto;
     float: none;
@@ -1306,7 +1310,7 @@ button#moreoptionsbtn {
 	vertical-align: text-bottom;
 	margin-right:1em;
 	}
-#designwithtext .instructions {
+.instructions {
 	display:inline-block;
 	vertical-align: text-bottom;
     margin-right: .4em;
@@ -1317,11 +1321,11 @@ div[role="switch"] {
 	}
 #on {
 	margin-left: 5px;
-	color:#fff;
+	color:#666;
 	}
 #off {
 	margin-left: 7px;
-	color:#fff;
+	color:#666;
 	}
 #costsavingoptions {
 	color:#808080;
@@ -1347,7 +1351,7 @@ div[role="switch"] {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #ccc;
+	background-color: #eee;
 	-webkit-transition: .4s;
 	transition: .4s;
 	padding-top: 10px;
@@ -1360,13 +1364,13 @@ div[role="switch"] {
 	width: 28px;
 	left: 5px;
 	bottom: 5px;
-	background-color: white;
+	background-color: #fff;
 	-webkit-transition: .4s;
 	transition: .4s;
 	border-radius: 1px;
 	}
 input:checked + .slider {
-	background-color: #5bc0de;
+	background-color: #dff0d8;
 	}
 input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
