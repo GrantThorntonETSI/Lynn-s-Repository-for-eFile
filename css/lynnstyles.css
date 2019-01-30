@@ -72,6 +72,10 @@ object#selected {
 	padding-top:.35em;
 	padding-bottom:.35em;
 	}
+.label.subtle::before {
+	content: ''!important;
+	font-size:.8em;
+	}
 .label-info {
 	background-color:#dff0d8;
 	color: #555
@@ -1324,7 +1328,7 @@ div[role="switch"] {
 	color:#666;
 	}
 #off {
-	margin-left: 7px;
+	margin-left: 6px;
 	color:#666;
 	}
 #costsavingoptions {
@@ -2094,6 +2098,9 @@ a.footer-brand {
 		}
 	.form-check {
     	padding-left: 50px;
+		}
+	#declarationsignature .form-check {
+    	padding-left: 0;
 		}
 	#gridview .form-check {
     	padding-left: 0;
