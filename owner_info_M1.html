@@ -175,7 +175,13 @@
                         </div>
                     </div>
                     <p class="required"><span class="weight600">&#42; = Required</span></p>
-                    
+                    <p class="instructions" id="costsavingoptions">Reduce Fee Mode</p>
+                    <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn reduce fee labels on or off">
+                        <label class="switch">
+                        <input class="togglesavemore" type="checkbox">
+                        <span class="slider"><span class="visuallyhidden" id="on">On</span> <span id="off">Off</span></span>
+                        </label>
+                    </div>
                     <!--START Owner Information Form-->
                     <div class="row">
                         <div class="col-xs-12" id="entities">
@@ -203,7 +209,7 @@
                                         <fieldset aria-labelledby="entitytype">
                                             <div class="row">
                                               <div class="form-group form-group-md col-xs-6">
-                                                <label for="entype">Please select the entity type:</label>
+                                                <label for="entype">Please select the entity type: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
                                                 <select class="form-control" id="entype">
                                                   <option value="Select">Select</option>
                                                   <option value="individual">Individual</option>
@@ -246,7 +252,7 @@
                                               <div class="form-group form-group-md col-xs-6" id="switchselect">
                                               	<div class="row">
                                                     <div class="col-xs-12 albaniaform">
-                                                        <label for="entypeforeignalbania">Please select the entity type:</label>
+                                                        <label for="entypeforeignalbania">Please select the entity type: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
                                                         <select class="form-control" id="entypeforeignalbania">
                                                           <option value="Select">Select</option>
                                                           <option value="jointstock">Joint Stock Company</option>
@@ -254,7 +260,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-12 algeriaform">
-                                                        <label for="entypeforeignalgeria">Please select the entity type:</label>
+                                                        <label for="entypeforeignalgeria">Please select the entity type: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
                                                         <select class="form-control" id="entypeforeignalgeria">
                                                           <option value="Select">Select</option>
                                                           <option value="jointstock">Joint Stock Company</option>
@@ -265,7 +271,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-12 angolaform">
-                                                        <label for="entypeforeignangola">Please select the entity type:</label>
+                                                        <label for="entypeforeignangola">Please select the entity type: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
                                                         <select class="form-control" id="entypeforeignalgeria">
                                                           <option value="Select">Select</option>
                                                           <option value="jointstock">Joint Stock Company</option>
@@ -276,7 +282,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-xs-12 bahamasform">
-                                                        <label for="entypeforeignbahamas">Please select the entity type:</label>
+                                                        <label for="entypeforeignbahamas">Please select the entity type: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
                                                         <select class="form-control" id="entypeforeignbahamas">
                                                           <option value="Select">Select</option>
                                                           <option value="soleforeign">Sole Proprietorship</option>
