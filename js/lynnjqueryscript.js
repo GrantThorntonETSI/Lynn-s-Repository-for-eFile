@@ -1206,7 +1206,7 @@ $(document).ready(function(){
     });
 	//END additional containsname
 	
-	//START additional pending + foreign
+	//START pending + foreign
 	$('div.holdsapending').css('display','none');
 	$('div#pluspending').css('display','none');
 	$('input#pendingtwo').change(function() {
@@ -1231,7 +1231,7 @@ $(document).ready(function(){
 			$('div#plusforeign').hide('fast');
 		}
 	});
-	//END additional pending + foreign
+	//END pending + foreign
 		
 	//START additional containsportrait
 	$( 'button#addaportrait' ).on('click',function(){

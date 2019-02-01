@@ -1800,6 +1800,9 @@ button[type=submit] {
 	margin:0 auto;
 	float:none;
 	}
+.js-upload-finished .list-group-item-success {
+	padding-top: 7px;
+	}
 /* IMAGES */
 #goodservideo .bgimg {
 	background-size:cover;
