@@ -123,6 +123,7 @@ ul#lowernav li a.glyphed:focus {
 ul#lowernav li a.glyphed span {
 	color:#9BB8D3!important;
 	margin-right:.45em;
+	top: 1px;
 	}
 ul#lowernav li a.glyphed span.kerned {
 	margin-right:.2em;
@@ -246,6 +247,7 @@ div.breadcrumb-steps {
     -moz-border-radius: 	0;
     border-radius: 			0;
 	font-size: .7em;
+	border-bottom: 0;
 	}
 .dropdown-menu {
 	font-size: 12px;
@@ -289,9 +291,12 @@ ul#lowernav .dropdown-menu>li>a  {
 #firstli  {
 	padding-top:3px!important;
 	}
-#lastli  {
-	padding-bottom:3px!important;
-	border-bottom:0!important;
+ul#lowernav li.dropdown ul.dropdown-menu li#lastli  {
+	padding-bottom:1px;
+	padding-top:1px;
+	border-bottom:0;
+	font-weight:600;
+	background-color:#009CDE!important;
 	}
 ul#lowernav .dropdown-menu li  {
 	color: #333;
