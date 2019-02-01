@@ -1760,8 +1760,16 @@ p#upimage {
 	font-size:3em;
 	line-height: .8em;
 	}
+.upload-drop-zone span.glyphicon-check {
+	line-height: 1.42em;
+	}
 #fileDisplayArea img {
 	max-width:20%;
+	overflow:hidden;
+	}
+.fileDisplayArea img {
+	max-width:50%;
+	overflow:hidden;
 	}
 .alert-warning {
     background-image: none;

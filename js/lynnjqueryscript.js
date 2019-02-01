@@ -571,8 +571,33 @@ $(document).ready(function(){
 			? $(this).html('Accepted')
 			: $(this).html('Accept');
 		});	
-		
+	//sm file upload inputs	
 	$(document).on('change', 'input[type="file"]', function(e) {
+            var fileDisplayArea = $(this).siblings('label').children('.fileDisplayArea');
+    		//var fileDisplayArea = ('.fileDisplayArea');
+			var file = e.target.files[0];
+			var imageType = /image.*/;
+			if (file.type.match(imageType)) {
+			  var reader = new FileReader();
+			  reader.onload = function(e) {
+				$(fileDisplayArea).html("");
+				// Create an image
+				var img = new Image();
+				// Set the img src
+				img.src = reader.result;
+				// display the image on the page
+				$(fileDisplayArea).append(img);
+				$('.upload-drop-zone').css('height','115px');
+				$('.upload-drop-zone img').css('height','56px');
+			  }
+			  reader.readAsDataURL(file); 
+			  console.log(fileDisplayArea);
+			} else {
+			  $(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
+			}
+        });	
+		//lg file upload inputs
+		$(document).on('change', 'input[type="file"]', function(e) {
             var fileInput = ('input#file');
     		var fileDisplayArea = ('div#fileDisplayArea');
 			var file = e.target.files[0];
@@ -594,17 +619,6 @@ $(document).ready(function(){
 			}
         });	
 		
-	//$('input[type="file"]').change(function(e) {
-//		var fileloc = e.target.result;
-//		var reader = new FileReader();
-//		//var image=new Image();
-//		image.src=e.target.result;
-//		reader.onload = function() {
-//			reader.readAsDataURL(e.target.files[0]);
-//				$('#blah').attr('src', fileloc);
-//					
-//			};
-//	});		
 	//+ Translation Item
 	//
 	
