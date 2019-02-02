@@ -1072,7 +1072,7 @@ label {
     font-weight: 400;
 	font-size:inherit;
 	margin-bottom: .6em;
-	line-height: 1.19em;
+	line-height: 1.5em;
 	}
 label.save {
 	margin-top: .4em;
@@ -1374,7 +1374,7 @@ div[role="switch"] {
 	background-color: #eee;
 	-webkit-transition: .4s;
 	transition: .4s;
-	padding-top: 10px;
+	padding-top: 7px;
 	border-radius: 2px;
 	}
 .slider:before {
@@ -1397,7 +1397,27 @@ input:checked + .slider:before {
 	-ms-transform: translateX(26px);
 	transform: translateX(26px);
 	}
-/* MODALS*/
+/* SPINNER */
+.loader {
+	border: 4px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 4px solid #3498db;
+	width: 40px;
+	height: 40px;
+	margin:0 auto;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	}
+	/* Safari */
+	@-webkit-keyframes spin {
+		0% { -webkit-transform: rotate(0deg); }
+		100% { -webkit-transform: rotate(360deg); }
+		}
+	@keyframes spin {
+		0% { transform: rotate(0deg); }
+		100% { transform: rotate(360deg); }
+		}
+/* MODALS */
 .modal-content {
 	-webkit-border-top-left-radius: 		0;
     -webkit-border-top-right-radius: 		0;
@@ -1741,10 +1761,10 @@ input[type="radio"]:focus + label span.checkmark::after {
 	}
 p#upimagetwo, p#upimagethree, p#upimagefour {
 	margin-bottom:.6em;
-	line-height: 1.19em;
+	line-height: 1.5em;
 	}
 p#upimage {
-	margin-bottom:.35em;
+	margin-bottom:.6em;
 	}
 #attorney input[type=file], #owner input[type=file], #uploadmark input[type=file], #yesnps input[type=file], #basisabde input[type=file], #detected input[type=file], #gridview input[type=file] {
 	width: 0.1px;
@@ -1769,7 +1789,6 @@ p#upimage {
 	line-height: 1.42em;
 	}
 #fileDisplayArea img {
-	max-width:20%;
 	overflow:hidden;
 	}
 .fileDisplayArea img {
@@ -1782,7 +1801,21 @@ p#upimage {
 .filename {
 	font-size:.8em;
 	display: inline-block;
-    padding: 0 7px;
+    padding: 3px 7px;
+	display: -webkit-flex; 
+	-webkit-flex-wrap: wrap; 
+	display: flex;  
+	flex-wrap: wrap;
+	overflow-wrap: break-word;
+	word-wrap:break-word;
+	-webkit-columns: 1;
+	-moz-columns: 1;
+	columns: 1;
+	-webkit-column-width: 100px; 
+	-moz-column-width: 100px; 
+	word-break:break-all;
+	width:60%;
+	float: left;
 	}
 .alert-success { 
 	background-image:none!important;
@@ -1801,7 +1834,9 @@ button[type=submit] {
 	float:none;
 	}
 .js-upload-finished .list-group-item-success {
-	padding-top: 7px;
+	padding-top: 10px;
+	display: inline-block;
+	width:100%;
 	}
 /* IMAGES */
 #goodservideo .bgimg {

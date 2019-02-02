@@ -562,7 +562,7 @@ $(document).ready(function(){
 	//Display uploaded filename
 	$('input[type="file"]').change(function(e){
 		var fileName = e.target.files[0].name;
-		$('a.list-group-item').html('<span class="filename">' + fileName + '</span>' + '<span class="badge alert-success pull-right">File Uploaded</span>');
+		$('a.list-group-item').html('<span class="filename">' + fileName + '</span>' + '<span class="badge alert-success pull-right">File Uploaded</span><br clear:all>');
 	});
 	//toggle acceptance
 	$( '#acceptreview' ).click(function() {
@@ -580,21 +580,28 @@ $(document).ready(function(){
 			if (file.type.match(imageType)) {
 			  var reader = new FileReader();
 			  reader.onload = function(e) {
-				$(fileDisplayArea).html("");
+				$(fileDisplayArea).addClass('loader').html("");
 				// Create an image
 				var img = new Image();
 				// Set the img src
 				img.src = reader.result;
 				// display the image on the page
-				$(fileDisplayArea).append(img);
+				$(fileDisplayArea).removeClass('loader').append(img);
 				$('.upload-drop-zone').css('height','115px');
-				$('.upload-drop-zone img').css('height','56px');
+				$('.upload-drop-zone img').css('height','64px');
 			  }
 			  reader.readAsDataURL(file); 
-			  console.log(fileDisplayArea);
 			} else {
-			  $(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
+			  var reader = new FileReader();
+			  	reader.onload = function(e) {
+				$(fileDisplayArea).addClass('loader').html("");
+				// Create an image
+				var arrayBuffer = reader.result;
+				$(fileDisplayArea).removeClass('loader');
+				$(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
 			}
+			reader.readAsArrayBuffer(file);
+		  }
         });	
 		//lg file upload inputs
 		$(document).on('change', 'input[type="file"]', function(e) {
@@ -605,17 +612,27 @@ $(document).ready(function(){
 			if (file.type.match(imageType)) {
 			  var reader = new FileReader();
 			  reader.onload = function(e) {
-				$(fileDisplayArea).html("");
+				$(fileDisplayArea).addClass('loader').html("");
 				// Create an image
 				var img = new Image();
 				// Set the img src
 				img.src = reader.result;
 				// display the image on the page
-				$(fileDisplayArea).append(img);
+				$(fileDisplayArea).removeClass('loader').append(img);
+				$('.upload-drop-zone').css('height','115px');
+				$('.upload-drop-zone img').css('height','64px');
 			  }
 			  reader.readAsDataURL(file); 
 			} else {
-			  $(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
+				var reader = new FileReader();
+			  	reader.onload = function(e) {
+				$(fileDisplayArea).addClass('loader').html("");
+				// Create an image
+				var arrayBuffer = reader.result;
+				$(fileDisplayArea).removeClass('loader');
+				$(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
+			  }
+			  reader.readAsArrayBuffer(file); 
 			}
         });	
 		
