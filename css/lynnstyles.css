@@ -107,7 +107,7 @@ object#selected {
 	margin-left:.5em;
 	margin-right:.5em;
 	}
-ul#lowernav li a.glyphed:hover {
+/*ul#lowernav li a.glyphed:hover {
     background-color: transparent!important;
 	color:#F3D54E;
 	}
@@ -127,6 +127,10 @@ ul#lowernav li a.glyphed span {
 	}
 ul#lowernav li a.glyphed span.kerned {
 	margin-right:.2em;
+	}*/
+ul#lowernav li a.glyphed span {
+	margin-right:.45em;
+	top: 1px;
 	}
 /* PROGRESS tracker */
 section .breadcrumb-steps {
