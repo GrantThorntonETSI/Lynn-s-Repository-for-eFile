@@ -83,6 +83,7 @@ $(document).ready(function(){
 		},
 			'autoWidth': false,
 			'responsive': true,
+			'dom': '<"top">rt<"bottom"flpi><"clear">', //position interactive elements
 			'columns': [
 				{ 'width': '20%' },
 				{ 'width': '20%' },
@@ -108,6 +109,7 @@ $(document).ready(function(){
 		},
 			'autoWidth': false,
 			'responsive': true,
+			'dom': '<"top">rt<"bottom"flpi><"clear">', //position interactive elements
 			'columns': [
 				{ 'width': '12%' },
 				{ 'width': '17%' },
@@ -155,6 +157,7 @@ $(document).ready(function(){
   $('input[type=checkbox]').attr('checked',false);
   $('input[type=radio]').attr('checked',false);
   $('input[type=checkbox]#authemail, input[type=radio]#inlineRadio044').not(this).prop('checked', true);
+  $('input[type=radio]#inlineRadio031').prop('checked', true);
   //if ($('input[type=checkbox]#authemail').prop('checked')) {
 //	  console.log('checked');
 //  }
@@ -777,6 +780,26 @@ $(document).ready(function(){
 			}
 	});
 	//end disclaimer options
+	
+	//start uncommoninfo options
+	$('div#yesnotpreviously').css('display','none');
+	$('input#inlineRadio045').change(function() {
+		if(this.checked == true){
+			$('div#yesnotpreviously').show( 'fast' );
+			}
+	else {
+			$('div#yesnotpreviously').hide( 'fast' );
+			}
+	});
+	$('input#inlineRadio046').change(function() {
+		if(this.checked == true){
+			$('div#yesnotpreviously').hide( 'fast' );
+			}
+	else {
+			$('div#yesnotpreviously').show( 'fast' );
+			}
+	});
+	//end uncommoninfo options
 	
 	//start prior options
 	$('div#yesprior').css('display','none');
