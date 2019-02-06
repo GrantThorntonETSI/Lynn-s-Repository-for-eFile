@@ -1198,6 +1198,7 @@ label.disabled span {
 	}
 #editowner .btn-success.add {
     margin-top: 1.99993em;
+	padding: 5px 10px;
 	}
 #editowner .btn-group {
 	width:40px;
