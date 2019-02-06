@@ -83,7 +83,6 @@ $(document).ready(function(){
 		},
 			'autoWidth': false,
 			'responsive': true,
-			'dom': '<"top">rt<"bottom"flpi><"clear">', //position interactive elements
 			'columns': [
 				{ 'width': '20%' },
 				{ 'width': '20%' },
@@ -109,7 +108,6 @@ $(document).ready(function(){
 		},
 			'autoWidth': false,
 			'responsive': true,
-			'dom': '<"top">rt<"bottom"flpi><"clear">', //position interactive elements
 			'columns': [
 				{ 'width': '12%' },
 				{ 'width': '17%' },
