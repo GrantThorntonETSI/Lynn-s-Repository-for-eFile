@@ -147,11 +147,11 @@ $(document).ready(function(){
 	});
 	//end close (x) dashboard panels
 	
-	//start close (x) gs panels
-	$('#gsselected .closegspanels').click(function() {
+	//start close (x) gs + editowner panels
+	$('#gsselected .closegspanels, #editowner .closegspanels').click(function() {
 		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
 	});
-	//end close (x) gs panels
+	//end close (x) gs + editowner panels
 	
   //START set initial checkboxes
   $('input[type=checkbox]').attr('checked',false);
@@ -478,19 +478,6 @@ $(document).ready(function(){
 	  $('#panels .panel-body').css( 'height', (a.innerHeight() + 8) );
 	//END 
 	
-	//START close button height match
-	$( window ).load(function () {
-      var d = $( '.closepans' ).prev('div');
-	  $(d).css('display','flex').css('flex-direction','column');
-	  $('.closepans').css( 'height', (d.innerHeight()) );
-	  $('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
-	  $( window ).resize(function() {
-  		$('.closepans').css( 'height', (d.innerHeight()) );
-	  	$('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
-		});
-	});
-	//END close button height match
-	
 	//START input label height match
 	var t = $( '.matchlabelheight' ).parent().prev('div').children('label');
 	var u = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
@@ -525,6 +512,45 @@ $(document).ready(function(){
 	//Placeholder as editable text
 	$('textarea#ta2, textarea#ta5').val('This mark consists of');
 	//Placeholder as editable text
+	
+	//Placeholder as editable text edit owner
+	$('input#ta12').val('Jackie').css('position','relative');
+	$('input#ta13').val('Babos').css('position','relative');
+	$('input#ta18').val('jackie.babos@us.gt.com').css('position','relative');
+	$('input#ta14').val('333 John Carlyle St ').css('position','relative');
+	$('input#ta15').val('# 500').css('position','relative');
+	$('input#ta16').val('').css('position','relative');
+	$('input#ta19').val('Alexandria').css('position','relative');
+	$('input#ta020').val('Virginia').css('position','relative');
+	$('input#ta021').val('22314').css('position','relative');
+	$('input#ta17').val('703-562-6675').css('position','relative');
+	$('input#ta022').val('Doing Business As (DBA)').css('position','relative');
+	$('input#ta023').val('Jackie Z. Babos-Smith').css('position','relative');
+	$('input#ta024').val('United States').css('position','relative');
+	$('input#ta025').val('United States').css('position','relative');
+	$('input#ta026').val('www.us.gt.com').css('position','relative');
+	$('input#ta027').val('Cell').css('position','relative');
+	$('input#ta028').val('').css('position','relative');
+	
+	$('input#ta212').val('Jacob').css('position','relative');
+	$('input#ta213').val('Goldstein').css('position','relative');
+	$('input#ta218').val('jacob.goldstein@us.gt.com').css('position','relative');
+	$('input#ta214').val('333 John Carlyle St ').css('position','relative');
+	$('input#ta215').val('# 500').css('position','relative');
+	$('input#ta216').val('').css('position','relative');
+	$('input#ta219').val('Alexandria').css('position','relative');
+	$('input#ta2020').val('Virginia').css('position','relative');
+	$('input#ta2021').val('22314').css('position','relative');
+	$('input#ta217').val('703-562-6675').css('position','relative');
+	$('input#ta2022').val('Also Known As (AKA)').css('position','relative');
+	$('input#ta2023').val('Jacob T. Goldstein').css('position','relative');
+	$('input#ta2024').val('Canada').css('position','relative');
+	$('input#ta2025').val('Denmark').css('position','relative');
+	$('input#ta2026').val('www.us.gt.com').css('position','relative');
+	$('input#ta2027').val('Home').css('position','relative');
+	$('input#ta2028').val('12345').css('position','relative');
+	$('input#ta12, input#ta13, input#ta14, input#ta15, input#ta16, input#ta17, input#ta18, input#ta19, input#ta020, input#ta021, input#ta212, input#ta213, input#ta214, input#ta215, input#ta216, input#ta217, input#ta218, input#ta219, input#ta2020, input#ta2021, input#ta022, input#ta023, input#ta2022, input#ta2023, input#ta024, input#ta2024, input#ta025, input#ta2025, input#ta026, input#ta2026, input#ta027, input#ta028, input#ta2027, input#ta2028').prop('disabled', true);
+	//Placeholder as editable text edit owner
 	
 	//START examples panel link hover / active
 	  $('#examples div.panel a').hover(function() {
@@ -1210,6 +1236,15 @@ $(document).ready(function(){
 		$( 'button#contactsbtn span#toggleglyph' ).addClass('visuallyadded');
 	});
 	//end show managed contacts from nav
+	
+	//edit owner accordion button toggle
+	$('#editowner button.Accordion-trigger').on('click',function() {
+		$( this ).children('span.glyphicon-chevron-right').toggleClass('visuallyremoved');
+		$( this ).children('span.glyphicon-chevron-down').toggleClass('visuallyadded');
+		$( this ).children('span.glyphicon-triangle-right').toggleClass('visuallyremoved');
+		$( this ).children('span.glyphicon-triangle-bottom').toggleClass('visuallyadded');
+	});
+	//edit owner accordion button toggle
 	
 	//START additional phone
 	$( 'button#addphone' ).on('click',function(){
