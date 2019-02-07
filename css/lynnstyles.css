@@ -1032,7 +1032,7 @@ label a:hover {
     margin-bottom: 20px;
     padding: 8px 0 8px 0;
 	}
-#editowner .leadtext {
+#editowner .leadtext, #reviewattorney .leadtext {
     margin-top: 30px;
     margin-bottom: 20px;
     padding: 8px 15px 8px 15px;
@@ -1196,7 +1196,11 @@ label.disabled span {
 	margin-left:0;
 	padding-right:0;
 	}
-#editowner .btn-success.add {
+#reviewattorney .inlinebuttons {
+	height: 83px;
+	width: auto;
+	}
+#editowner .btn-success.add, #reviewattorney .btn-success.add {
     margin-top: 1.99993em;
 	padding: 5px 10px;
 	}
@@ -1209,7 +1213,10 @@ label.disabled span {
 #editowner .btn-success {
     padding: 5px 5px;
 	}
-#editowner .btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child {
+#reviewattorney .btn-success {
+    padding: 5px 10px;
+	}
+#editowner .btn-group > .btn:last-child, #reviewattorney .btn-group > .btn:last-child {
 	border-radius: 3px;
 	}
 .inlinebuttons button {
@@ -1384,13 +1391,15 @@ button#moreoptionsbtn {
 div[role="switch"] {
 	display:inline-block;
 	}
+#on, #off {
+	color:#fff;
+	font-size: 13px;
+	}
 #on {
-	margin-left: 5px;
-	color:#666;
+	margin-left: 18px;
 	}
 #off {
-	margin-left: 6px;
-	color:#666;
+	margin-left: 5px;
 	}
 #costsavingoptions {
 	color:#808080;
@@ -1398,11 +1407,10 @@ div[role="switch"] {
 .switch {
 	position: relative;
 	display: inline-block;
-	width: 64px;
+	width: 90px;
 	height: 38px;
 	margin-bottom:0;
 	margin-top:1.5em;
-	margin-bottom: -.09em;
 	}
 .switch input { 
 	opacity: 0;
@@ -1416,11 +1424,11 @@ div[role="switch"] {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background-color: #eee;
+	background-color: #aaa;
 	-webkit-transition: .4s;
 	transition: .4s;
 	padding-top: 7px;
-	border-radius: 2px;
+	border-radius: 19px;
 	}
 .slider:before {
 	position: absolute;
@@ -1430,17 +1438,20 @@ div[role="switch"] {
 	left: 5px;
 	bottom: 5px;
 	background-color: #fff;
-	-webkit-transition: .4s;
-	transition: .4s;
-	border-radius: 1px;
+	-webkit-transition: .2s;
+	transition: .2s;
+	border-radius: 14px;
 	}
 input:checked + .slider {
-	background-color: #dff0d8;
+	background-color: #004C97;
 	}
 input:checked + .slider:before {
-	-webkit-transform: translateX(26px);
-	-ms-transform: translateX(26px);
-	transform: translateX(26px);
+	-webkit-transform: translateX(52px);
+	-ms-transform: translateX(52px);
+	transform: translateX(52px);
+	}
+input:checked + .slider #off {
+	color: #004C97;
 	}
 /* SPINNER */
 .loader {
@@ -1544,12 +1555,22 @@ div[role="heading"] button {
 	font-weight:600;
 	outline-offset: 4px;
 	color: #333;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	white-space: normal;
 	}
-#editowner .Accordion-panel .Accordion-trigger {
+#editowner .Accordion-panel .Accordion-trigger, #reviewattorney .Accordion-panel .Accordion-trigger {
 	margin-top:.5em;
 	font-weight:400;
 	}
-#editowner .Accordion {
+#editowner .Accordion, #reviewattorney .Accordion {
 	position:relative;
 	}
 .Accordion-trigger.link {
@@ -1738,6 +1759,9 @@ div[role="radiogroup"] {
 .form-group .form-group-md.radiocontainer {
 	margin-left:1em;
 	}
+#editowner .form-group, #reviewattorney .form-group {
+	margin-top:.58em;
+	}
 .radiocontainer input {
 	position: absolute;
 	left:-10000px;
@@ -1904,26 +1928,26 @@ button[type=submit] {
 	min-height:400px;
 	max-width: 100%;
 	}
-/* START GSselected, Dashboard, Editowner panels */
-#gsselected .panel-heading h4, #gsselected .panel-heading p, #dashboardmain .panel-heading h4, #dashboardmain .panel-heading p, #editowner .panel-heading h4, #editowner .panel-heading p {
+/* START GSselected, Dashboard, Editowner, Reviewattorney panels */
+#gsselected .panel-heading h4, #gsselected .panel-heading p, #dashboardmain .panel-heading h4, #dashboardmain .panel-heading p, #editowner .panel-heading h4, #editowner .panel-heading p, #reviewattorney .panel-heading h4, #reviewattorney .panel-heading p {
 	display:inline-block;
 	font-size: 1.3em;
 	}
-#gsselected span.weight600, #dashboardmain span.weight600, #editowner span.weight600 {
+#gsselected span.weight600, #dashboardmain span.weight600, #editowner span.weight600, #reviewattorney span.weight600 {
 	color:#333;
 	font-weight:600;
 	}
-#gsselected .panel-heading h4, #gsselected .panel-heading p, #dashboardmain .panel-heading h4, #dashboardmain .panel-heading p, #editowner .panel-heading p {
+#gsselected .panel-heading h4, #gsselected .panel-heading p, #dashboardmain .panel-heading h4, #dashboardmain .panel-heading p, #editowner .panel-heading p, #reviewattorney .panel-heading p {
 	margin:.1em;
 	color:#333/*#fff*/;
 	}
-#gsselected button.close, #dashboardmain button.close, #editowner button.close {
+#gsselected button.close, #dashboardmain button.close, #editowner button.close, #reviewattorney button.close {
     font-size: 1.45em;
 	color:#111;
 	margin: 0 auto;
 	height:1em;
 	}
-#editowner button.close {
+#editowner button.close, #reviewattorney button.close {
     font-size: 3em;
 	height:1.06em;
 	}
@@ -1932,7 +1956,7 @@ button[type=submit] {
 	display: -webkit-flex;
 	flex: 1;
 	}
-#editowner .closepans {
+#editowner .closepans, #reviewattorney .closepans {
 	padding: 0;
     padding-right: 15px;
 	display:block;
@@ -1960,7 +1984,7 @@ button[type=submit] {
 	word-break:break-all;
 	min-height: 149px;
 	}
-#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading {
+#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading {
 	-webkit-border-top-left-radius: 		0;
     -webkit-border-top-right-radius: 		0;
 	-webkit-border-bottom-left-radius: 		0;
@@ -1977,13 +2001,13 @@ button[type=submit] {
     background-color: #D9D9D6;
 	padding: 14px 15px;
 	}
-#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default {
+#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default {
 	border:none!important;
 	}
-#gsselected .panel-title p, #dashboardmain .panel-title p, #editowner .panel-title p {
+#gsselected .panel-title p, #dashboardmain .panel-title p, #editowner .panel-title p, #reviewattorney .panel-title p {
 	font-size: 1.3em!important;
 	}
-#gsselected .panel-group, #editowner .panel-group {
+#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group {
 	margin-bottom: 1.5em;
 	padding:0;
 	overflow-wrap: break-word;
@@ -1997,13 +2021,13 @@ button[type=submit] {
 	hyphens: auto;
 	white-space: normal;
 	}
-#editowner .panel-group .email {
+#editowner .panel-group .email, #reviewattorney .panel-group .email {
 	-ms-hyphens: none;
 	-moz-hyphens: none;
 	-webkit-hyphens: none;
 	hyphens: none;
 	}
-#editowner .panel-group, #editowner .panel-group .Accordion {
+#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion {
 	margin-bottom: 1em;
 	margin-top: 1em;
 	}
@@ -2012,40 +2036,40 @@ button[type=submit] {
 	margin-bottom:12px;
 	padding-top:0;
 	}
-#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel {
+#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel {
 	-webkit-border-radius: 	2px;
     -moz-border-radius: 	2px;
     border-radius: 			2px;
 	}
-#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading {
+#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading {
     color:#333/*#FFF*/;
     background-color:#eee/*#F3D54E*/;
 	font-size:.8em;
 	width: 100%;
 	border:none!important;
 	}
-#editowner .panel-default>.panel-heading {
+#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading {
     background-color:transparent;
 	border:1px solid #eee!important;
 	}
 #dashboardmain .panel-default>.panel-heading {
     background-color:#F3D54E;
 	}
-#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number {
+#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number {
 	color:#333/*#FFF*/;
 	}
-#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name {
+#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name {
 	color:#EEEEE;
 	}
-#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading {
+#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading {
 	color:#EEEEEE;
 	letter-spacing: 0.03em;
 	}
-#gsselected .panel, #dashboardmain .panel, #editowner .panel {
+#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel {
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
     box-shadow: 0 0 0 rgba(0,0,0,0);
 	}
-/* END GSselected, Dashboard, Editowner panel */
+/* END GSselected, Dashboard, Editowner, Reviewattorney panel */
 /* CLONE */
 #clonecontainer {
     display: block;
@@ -2276,10 +2300,10 @@ a.footer-brand {
 		}
 }
 @media (max-width: 991px) {
-	#editowner .inlinebuttons {
+	#editowner .inlinebuttons, #reviewattorney .inlinebuttons {
 		margin-top:1em;
 		}
-	#editowner .btn-success.add {
+	#editowner .btn-success.add, #reviewattorney .btn-success.add {
 		margin-top: 0;
 		}
 	}

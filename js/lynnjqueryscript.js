@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	
+	var e = $( window ).height();
+	$('footer').css('position','relative').css('top',e).css('margin-top','0');
+	
 	//START expand / collapse glyphicon
 	$("button#optionsbtn").click(function() {
 		$( 'button#optionsbtn span' ).toggleClass('visuallyremoved');
@@ -145,11 +149,11 @@ $(document).ready(function(){
 	});
 	//end close (x) dashboard panels
 	
-	//start close (x) gs + editowner panels
-	$('#gsselected .closegspanels, #editowner .closegspanels').click(function() {
+	//start close (x) gs + editowner + reviewattorney panels
+	$('#gsselected .closegspanels, #editowner .closegspanels, #reviewattorney .closegspanels').click(function() {
 		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
 	});
-	//end close (x) gs + editowner panels
+	//end close (x) gs + editowner + reviewattorney panels
 	
   //START set initial checkboxes
   $('input[type=checkbox]').attr('checked',false);
@@ -1236,9 +1240,9 @@ $(document).ready(function(){
 	//end show managed contacts from nav
 	
 	//edit owner accordion button toggle
-	$('#editowner button.Accordion-trigger').on('click',function() {
-		$( this ).children('span.glyphicon-chevron-right').toggleClass('visuallyremoved');
-		$( this ).children('span.glyphicon-chevron-down').toggleClass('visuallyadded');
+	$('#editowner button.Accordion-trigger, #reviewattorney button.Accordion-trigger').click(function() {
+		//$( this ).children('span.glyphicon-chevron-right').toggleClass('visuallyremoved');
+		//$( this ).children('span.glyphicon-chevron-down').toggleClass('visuallyadded');
 		$( this ).children('span.glyphicon-triangle-right').toggleClass('visuallyremoved');
 		$( this ).children('span.glyphicon-triangle-bottom').toggleClass('visuallyadded');
 	});
@@ -1432,6 +1436,7 @@ $(document).ready(function(){
 			}
 		else if(this.checked == false) {
 			$( document ).find('span.subtle').addClass( 'visuallyremoved' );
+			$( document ).find('#on').addClass('visuallyhidden');
 			}
 	});
 	//toggle save more labels
