@@ -20,6 +20,13 @@ body {
 #loginform label {
 	color:#fff;
 	}
+#loginform h1 {
+	font-size:.8em;
+	}
+#loginform h2 {
+	margin:1em 0;
+	margin-bottom:0;
+	}
 main#loginform {
 	background-color: #009CDE;
 	padding:0;
@@ -28,51 +35,30 @@ main#loginform {
 	margin: 0 auto;
 	margin-top: 2em;
 	}
-#loginform button.btn-success {
-	margin: 0;
-	float:left;
-	position:relative;
-	}
 #loginform .headlinecontainer {
 	text-align: center;
-	margin: 24px 0 12px 0;
+	margin: 3em 0 .8em 0;
 	color:#fff;
-	height:1.5em;
 	line-height: 3em;
 	font-size:1.4em;
 	}
 .headlinecontainer img {
-	width: 48px;
+	width: 2.5em;
+    vertical-align: middle;
 	}
 #loginform .maincontainer {
 	padding: 1em 6em;
+	padding-top:0;
 	}
 #loginform .maincontainer.bottom {
 	height: 4.2em;
 	background-color:#eee;
 	padding:1em;
 	}
-#loginform div.psw {
-	float: right;
-	}
 #loginform div.psw p {
 	margin-bottom: .0;
 	line-height: 2.2em;
 	}
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  #loginform span.psw {
-     display: block;
-     float: none;
-  }
-  #loginform .cancelbtn {
-     width: 100%;
-  }
-}
-
-
-
-
 
 
 .insertform {
@@ -2201,7 +2187,7 @@ a.footer-brand {
 		min-height:280px;
 		}
 }
-@media (min-width: 577px) and (max-width:991px) { 
+@media (min-width:577px) and (max-width:991px) { 
 	#goodservideo .bgimg {
 	  background: url('../images/tmin_news_06_goods_and_services_md.jpg');
 	  background-repeat: no-repeat;
@@ -2262,6 +2248,34 @@ a.footer-brand {
 		}
 	main {
 		margin-top:40px!important;
+		}
+	body.loginform  {
+		background-color: #004C97;
+		}
+	#loginform .maincontainer {
+		padding:1em 3em;
+		background-color: #004C97;
+		}
+	#loginform .headlinecontainer, main#loginform {
+		background-color: #004C97;
+		}
+	#loginform .maincontainer.bottom {
+		margin:0 3em;
+		background-color: #004C97;
+		color:#fff;
+		}
+	#loginform .btn-primary {
+		background-color:#009CDE;
+		}
+	#loginform .btn-primary:hover, #loginform .btn-primary.hover{
+		    background-color: #047db0!important;
+		}
+	#loginform .maincontainer.bottom p {
+		color:#fff;
+		text-align:center;
+		}
+	#loginform .maincontainer.bottom a {
+		color:#EEE;
 		}
 	#mydata .panel-group, #mydata2 .panel-group {
 		margin-bottom: 0;
@@ -2355,6 +2369,14 @@ a.footer-brand {
 		}
 	#gridview .form-check {
     	padding-left: 0;
+		}
+}
+@media (min-width:577px) and (max-width:767px) { 
+	#loginform .maincontainer {
+		padding:1em 9em;
+		}
+	#loginform .maincontainer.bottom {
+		margin:0 9em;
 		}
 }
 @media (max-width: 991px) {
