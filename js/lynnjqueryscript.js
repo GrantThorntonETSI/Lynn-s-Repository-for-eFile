@@ -1,8 +1,34 @@
 $(document).ready(function(){
-	
-	var e = $( window ).height();
-	$('footer').css('position','relative').css('top',e).css('margin-top','0');
-	
+	//START footer and login positioning
+	$( window ).load(function() {
+		var e = $( window ).height();
+		var enav = $('.navbar-fixed-top').height();
+		var efoot = $('footer').height();
+		var winwidth = $(window).width();
+		if (winwidth > 768) {
+			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
+			$('main#loginform').css('position','relative').css('top',((e - efoot) - enav) / 6);
+			}
+		else if (winwidth < 767) {
+			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
+			$('main#loginform').css('position','relative').css('top', '0');
+			}
+	});
+	$( window ).resize(function() {
+		var e = $( window ).height();
+		var enav = $('.navbar-fixed-top').height();
+		var efoot = $('footer').height();
+		var winwidth = $(window).width();
+		if (winwidth > 768) {
+			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
+			$('main#loginform').css('position','relative').css('top',((e - efoot) - enav) / 6);
+			}
+		else if (winwidth < 767) {
+			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
+			$('main#loginform').css('position','relative').css('top', '0');
+			}
+	});
+	//END footer and login positioning
 	//START expand / collapse glyphicon
 	$("button#optionsbtn").click(function() {
 		$( 'button#optionsbtn span' ).toggleClass('visuallyremoved');

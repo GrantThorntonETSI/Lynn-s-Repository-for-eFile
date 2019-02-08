@@ -7,15 +7,74 @@
 	font-size: 100%;
 	}
 html {
-	height:auto;
+	/*height:auto;*/
 	}
 body {
 	font-family: "Segoe UI", "Helvetica Neue", Tahoma, Arial!important;
 	background-color:#f6f6f6;
-	min-height:100%;
-	height:100%;
+	/*min-height:100%;*/
+	/*height:100%;*/
 	/*overflow-x: hidden;*/
 	}
+/*Login Form*/
+#loginform label {
+	color:#fff;
+	}
+main#loginform {
+	background-color: #009CDE;
+	padding:0;
+	}
+#loginform button {
+	margin: 0 auto;
+	margin-top: 2em;
+	}
+#loginform button.btn-success {
+	margin: 0;
+	float:left;
+	position:relative;
+	}
+#loginform .headlinecontainer {
+	text-align: center;
+	margin: 24px 0 12px 0;
+	color:#fff;
+	height:1.5em;
+	line-height: 3em;
+	font-size:1.4em;
+	}
+.headlinecontainer img {
+	width: 48px;
+	}
+#loginform .maincontainer {
+	padding: 1em 6em;
+	}
+#loginform .maincontainer.bottom {
+	height: 4.2em;
+	background-color:#eee;
+	padding:1em;
+	}
+#loginform div.psw {
+	float: right;
+	}
+#loginform div.psw p {
+	margin-bottom: .0;
+	line-height: 2.2em;
+	}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  #loginform span.psw {
+     display: block;
+     float: none;
+  }
+  #loginform .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+
+
+
+
 .insertform {
 	background-color:#fff;
 	padding-left:0;
@@ -1140,7 +1199,6 @@ label.hasinfo {
 	width:50%;
 	}
 #payment .form-inline label {
-	display: table-cell;
 	vertical-align:middle;
 	margin-bottom:0;
 	margin-top:.6em;
@@ -1639,10 +1697,10 @@ select, input[type="text"], input[type="email"], input[type="date"], input[type=
 	margin-left:0;
 	}
 .form-control:focus, .dataTables_length select, .sorting_1 {
-    background-color: #fafafb;
-    box-shadow: none;
-	border-color: #1596D1;
-    outline: 0;
+    background-color: #fafafb!important;
+    box-shadow: none!important;
+	border-color: #1596D1!important;
+    outline: 0!important;
 	background:none;
 	}
 legend {
@@ -2085,10 +2143,10 @@ footer {
 	color:#fff;
 	position: relative;
     left: 0;
-    top: 100%;
+    /*top: 100%;*/
     width: 100%;
 	background-color: #222222;
-	margin-top:360px;
+	/*margin-top:360px;*/
 	}
 footer p {
 	font-size:.7em;
