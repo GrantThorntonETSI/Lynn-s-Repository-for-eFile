@@ -34,6 +34,7 @@ main#loginform {
 #loginform button {
 	margin: 0 auto;
 	margin-top: 2em;
+	margin-bottom: 2.9em;
 	}
 #loginform .headlinecontainer {
 	text-align: center;
@@ -69,6 +70,9 @@ main#loginform {
 p {
     margin-bottom: .7em;
     line-height: 1.5em;
+	}
+a {
+	color: #004C97;
 	}
 p#showmarktxt {
 	font-family: Palatino, Garamond, Bookman, Avant Garde;
@@ -573,6 +577,9 @@ h1.message   {
 	}
 .glyphicon-triangle-right {
 	top: 2px;
+	}
+.glyphicon-alert {
+	margin-right: .4em;
 	}
 .right {
 	text-align:right;
@@ -1544,6 +1551,53 @@ input:checked + .slider #off {
 	color: #333;
 	background-color:#fff;
 	}
+.loginform .modal-content {
+	-webkit-border-top-left-radius: 		0;
+    -webkit-border-top-right-radius: 		0;
+	-webkit-border-bottom-left-radius: 		0;
+    -webkit-border-bottom-right-radius: 	0;
+	-moz-border-top-left-radius: 			0;
+    -moz-border-top-right-radius: 			0;
+	-moz-border-bottom-left-radius: 		0;
+    -moz-border-bottom-right-radius: 		0;
+	border-top-left-radius: 				0;
+    border-top-right-radius: 				0;
+	border-bottom-left-radius: 				0;
+    border-bottom-right-radius: 			0;
+	border: 0;
+	-webkit-box-shadow:none;
+	-moz-box-shadow:none;
+	box-shadow:none;
+	font-size:100%;
+	font-weight:400;
+	color: #fff;
+	background-color:#9BB8D3;
+	}
+.loginform .modal-body {
+	background-color:#fff;
+	}
+.loginform .modal-header {
+	background-color:#fff;
+	border:none;
+	}
+.loginform #loginmodal .headlinecontainer {
+    color: #004C97!important;
+	margin-top: 1.5em; 
+	}
+#loginmodal button.close {
+    margin: 0;
+	margin-top: -6px;
+	font-size:2.8em
+	}
+#loginmodal button {
+	margin-top: 3.5em;
+	}
+#loginform #loginmodal label {
+    color: #004C97;
+	}
+#loginmodal .headlinecontainer img {
+    width: 3.4em;
+	}
 .glyphicon-menu-right {
 	color:#fff;
 	font-size:.85em;
@@ -1682,8 +1736,10 @@ select, input[type="text"], input[type="email"], input[type="date"], input[type=
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 	margin-left:0;
 	}
-.form-control:focus, .dataTables_length select, .sorting_1 {
+.form-control:focus {
     background-color: #fafafb!important;
+	}
+.form-control:focus, .dataTables_length select, .sorting_1 {
     box-shadow: none!important;
 	border-color: #1596D1!important;
     outline: 0!important;
@@ -1924,6 +1980,15 @@ p#upimage {
 	}
 .alert-warning {
     background-image: none;
+	color: #333;
+    background-color: #F3D54E;
+    border: none;
+	}
+.alert {
+    text-shadow: 0 0 0 rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
+    box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
+	border-radius: 2px;
 	}
 .filename {
 	font-size:.8em;
@@ -2249,14 +2314,11 @@ a.footer-brand {
 	main {
 		margin-top:40px!important;
 		}
-	body.loginform  {
+	body.loginform, #loginform .headlinecontainer, main#loginform  {
 		background-color: #004C97;
 		}
 	#loginform .maincontainer {
 		padding:1em 3em;
-		background-color: #004C97;
-		}
-	#loginform .headlinecontainer, main#loginform {
 		background-color: #004C97;
 		}
 	#loginform .maincontainer.bottom {
@@ -2264,11 +2326,18 @@ a.footer-brand {
 		background-color: #004C97;
 		color:#fff;
 		}
+	#loginform .modal-dialog .maincontainer, #loginform .modal-dialog .headlinecontainer, #loginform .modal-dialog .maincontainer.bottom {
+		background-color: #fff;
+		}
+	#loginform .modal-dialog .maincontainer.bottom a, #loginform .modal-dialog .maincontainer.bottom p {
+		color:#004C97;
+		}
 	#loginform .btn-primary {
 		background-color:#009CDE;
+		border:0;
 		}
 	#loginform .btn-primary:hover, #loginform .btn-primary.hover{
-		    background-color: #047db0!important;
+		background-color: #047db0!important;
 		}
 	#loginform .maincontainer.bottom p {
 		color:#fff;
