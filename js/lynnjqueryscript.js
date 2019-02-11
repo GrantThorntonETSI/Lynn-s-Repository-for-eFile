@@ -182,8 +182,8 @@ $(document).ready(function(){
 	//end close (x) gs + editowner + reviewattorney panels
 	
   //START set initial checkboxes
-  $('input[type=checkbox]').attr('checked',false);
-  $('input[type=radio]').attr('checked',false);
+  //$('input[type=checkbox]').attr('checked',false);
+  //$('input[type=radio]').attr('checked',false);
   $('input[type=checkbox]#authemail, input[type=radio]#inlineRadio044').not(this).prop('checked', true);
   $('input[type=radio]#inlineRadio031').prop('checked', true);
   //if ($('input[type=checkbox]#authemail').prop('checked')) {
@@ -194,6 +194,37 @@ $(document).ready(function(){
 //	  }
   //END set initial checkboxes
 
+	//START additional info page supplemental register checked
+	$('input[type=radio]#inlineRadio032').change(function() {
+			var firstfees = $('li#firstli span').text();
+			var classfee = $('li#classli span').text();
+			var highestfeeperclass = '80';//additional fee
+			var lastfees = (parseFloat(firstfees) + parseFloat( highestfeeperclass ));
+			var lastfeesprincipal = (parseFloat(firstfees) + parseFloat( originalclassfees ));
+			var originalclassfees = (parseFloat(classfee) - parseFloat( highestfeeperclass ));
+			if(this.checked == true){
+				$('li#classli span').html('<span>' + highestfeeperclass + '</span>');
+				$('li#lastli span').html('<span>' + lastfees + '</span>');
+				$('span#displayfees').html('<span>' + lastfees + '</span>');
+				$('#tr div.alert').addClass('visuallyadded');
+				$('#tr div.alert').removeClass('visuallyremoved');
+				}
+		});
+		$('input[type=radio]#inlineRadio031').change(function() {
+			var firstfees = $('li#firstli span').text();
+			var classfee = $('li#classli span').text();
+			var highestfeeperclass = '0';//additional fee
+			var lastfees = (parseFloat(firstfees) + parseFloat( highestfeeperclass ));
+			if(this.checked == true){
+				$('li#classli span').html('<span>' + highestfeeperclass + '</span>');
+				$('li#lastli span').html('<span>' + lastfees + '</span>');
+				$('span#displayfees').html('<span>' + lastfees + '</span>');
+				$('#tr div.alert').addClass('visuallyremoved');
+				$('#tr div.alert').removeClass('visuallyadded');
+				}
+		});
+	//END additional info page supplemental register checked
+	
   //START enable / disable checkboxes
   //When 'Certification' is checked, 'Trademark / Servicemark', 'Collective' and 'Collective Membership' are disabled
 	$('input#certcheck').change(function() {

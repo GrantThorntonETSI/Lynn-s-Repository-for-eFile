@@ -86,6 +86,7 @@
             <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
             <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
             <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#loginmodal" class="weight600">Log In</a></li>
           </ul>
           <br style="clear:both">
         </div><!-- /.navbar-collapse -->
@@ -106,7 +107,7 @@
                           <div class="maincontainer">
                             <div class="form-group form-group-md">
                                 <label for="uname"><b>Email Address</b></label>
-                                <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+                                <input type="text" class="form-control" placeholder="Enter Email Address" name="uname" required>
                             </div>
                             <div class="form-group form-group-md">
                                 <label for="psw"><b>Password</b></label>
@@ -123,6 +124,47 @@
                         </fieldset>
                     </form>
              	</div>
+                
+                
+                <!-- Modal -->
+                <div class="modal fade" id="loginmodal" tabindex="0" role="dialog" aria-labelledby="loginmodaltwo">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="" method="post" >
+                          <fieldset aria-label="login">
+                              <div class="headlinecontainer">
+                                <h1><img src="images/usptologo.png" alt="USPTO eFile Reimagined"> &#124; eFile Reimagined</h1>
+                                <h2 class="weight600">Log In</h2>
+                              </div>
+                              <div class="maincontainer">
+                                <div class="form-group form-group-md">
+                                    <label for="uname"><b>Email Address</b></label>
+                                    <input type="text" class="form-control" placeholder="Enter Email Address" name="uname" required>
+                                </div>
+                                <div class="form-group form-group-md">
+                                    <label for="psw"><b>Password</b></label>
+                                    <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+                                </div>    
+                                <button type="submit" class="btn btn-md btn-primary">Login</button>
+                              </div>
+                            
+                              <div class="maincontainer bottom">
+                                <div class="psw">
+                                    <p><a href="#">New</a> user? Forgot <a href="#">password?</a></p>
+                                </div>
+                              </div>
+                            </fieldset>
+                        </form>                                           
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                
             </main>
         </div><!--END div content-->
     </div><!--END div container-->
