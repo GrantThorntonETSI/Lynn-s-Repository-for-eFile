@@ -2569,6 +2569,9 @@ footer #megamenu ul {
 	.form-check {
     	padding-left: 50px;
 		}
+	.form-check-left {
+    	padding-left: 0;
+		}
 	#declarationsignature .form-check {
     	padding-left: 0;
 		}
