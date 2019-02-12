@@ -16,6 +16,9 @@ body {
 	/*height:100%;*/
 	/*overflow-x: hidden;*/
 	}
+body#landing {
+	background-color:#fff;
+	}
 /*Login Form*/
 #loginform label {
 	color:#fff;
@@ -295,6 +298,9 @@ div.breadcrumb-steps {
 /* END progress tracker*/
 
 /*NAVBAR top*/
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    text-shadow: 0 0 0 rgba(0,0,0,0);
+	}
 .navbar-inverse {
 	-webkit-border-radius: 	0;
     -moz-border-radius: 	0;
@@ -336,6 +342,12 @@ ul#lowernav li a:hover  {
 	-webkit-transition: all .5s ease;
 	-moz-transition: all .5s ease;
 	transition: all .5s ease;
+	}
+#landing ul#lowernav li a:hover  {
+	color: #fff!important;
+	-webkit-transition: background-color .5s ease;
+	-moz-transition: background-color .5s ease;
+	transition: background-color .5s ease;
 	}
 ul#lowernav .dropdown-menu>li>a  {
     color: #333!important;
@@ -737,9 +749,9 @@ td:focus {
 	-moz-box-shadow: 	0 0 0 rgba(0,0,0,0.0);
 	box-shadow: 		0 0 0 rgba(0,0,0,0.0);
 	padding: 27px 40px 27px 40px;
-	-webkit-border-radius: 	3px;
-	-moz-border-radius: 	3px;
-	border-radius: 			3px;
+	-webkit-border-radius: 	2px;
+	-moz-border-radius: 	2px;
+	border-radius: 			2px;
 	margin-bottom:27px;
 	}
 #announcements .dashsection {
@@ -750,8 +762,58 @@ td:focus {
 	-moz-border-top-left-radius:0;
 	border-top-left-radius:0;
 	}
-#dashsectionscontainer {
+#announcements .dashsection panel-heading {
+	-webkit-border-top-right-radius:2px;
+	-moz-border-top-right-radius:2px;
+	border-top-right-radius:2px;
+	-webkit-border-top-left-radius:2px;
+	-moz-border-top-left-radius:2px;
+	border-top-left-radius:2px;
+	}
+#dashsectionscontainer, #landingpagecontainer  {
 	padding: 0 27px 0 27px;
+	}
+#landingpagecontainer  {
+	background-color: #555;
+	color:#fff;
+	}
+#landingpagecontent .col-sm-6  {
+	min-height: 10em;
+	}
+#landingpagecontent  {
+	background-color: #EEE;
+	color:#333;
+	padding:1.5em;
+	margin-top:3em;
+	text-align:center;
+	-webkit-border-radius:2px;
+	-moz-border-radius:2px;
+	border-radius:2px;
+	}
+#landingpagecontent h2  {
+	font-size: 1.5em;
+	margin-bottom: .25em;
+	}
+#landingpagecontent p  {
+	margin-top: .5em;
+	}
+#landingpagecontent .glyphicon  {
+	font-size: 1.4em;
+	margin-bottom:.5em;
+	}
+#landingpagecontent .text  {
+	font-size: 1.5em;
+	font-family: "Varela Round", sans-serif!important;
+	}
+#landingpagemain h1 {
+	margin-bottom: .3em;
+	}
+main#landingpagemain {
+	background-color: #555;
+	padding:5em;
+	-webkit-border-radius:1.3em;
+	-moz-border-radius:1.3em;
+	border-radius:1.3em;
 	}
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#dashboardtablethree.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtablethree.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
 	background-color: #009CDE;
@@ -1273,6 +1335,11 @@ label.disabled span {
 .inlinebuttons button {
 	margin:0 auto;
 	}
+.btn {
+	-webkit-border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+	}
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus {
     /*outline: thin dotted;*/
 	outline: 1px solid #9BB8D3!important;
@@ -1336,6 +1403,7 @@ div[role="radio"]:focus {
 	}
 .btn-primary:hover,.btn-primary:active {
 	background-color: #003865!important;
+	border-color: #003865!important;
 	}
 .btn-primary:active, .btn-success:active{
 	outline: 1px solid #009CDE!important;
@@ -2217,6 +2285,51 @@ footer div.footer-brand {
 a.footer-brand {
     display: block;
 }
+footer #megamenu {
+	font-size:.65em;
+	padding:3em;
+	padding-bottom: 1em;
+	background-color:#333;
+	}
+footer #megamenusubmenu {
+	background-color:#222;
+	line-height:1.1em!important;
+	padding: 2em;
+	}
+footer #megamenusubmenu p {
+	line-height:1.5em!important;
+	text-align:left;
+	}
+footer #megamenusubmenu .singlelink {
+	line-height:5em!important;
+	}
+footer #megamenusubmenu a {
+	color:#fff;
+	}
+footer #megamenusubmenu a.graylink {
+	color:#9d9d9d;
+	}
+footer #megamenusubmenu a.bluelink {
+	color:#009CDE;
+	}
+footer #megamenu h2 {
+	text-transform:uppercase;
+	color:#fff;
+	}
+footer #megamenu li a {
+	color:#009CDE;
+	margin-top:1.17em;
+	margin-bottom:1.17em;
+	}
+footer #megamenu li {
+	margin-top:.8em;
+	margin-bottom:.8em;
+	line-height:1.5em;
+	}
+footer #megamenu ul {
+	margin-bottom: 3em;
+	height:17em;
+	}
 /* SEARCH managed contacts */
 .inner-addon {
   position: relative;
@@ -2286,6 +2399,26 @@ a.footer-brand {
 	#lowernav {
 		background-color:#004C97;
 		}
+	#landing #lowernav {
+		background-color:#f6f6f6;
+		border-top:0;
+		}
+	#landing #lowernav a {
+		color:#009CDE!important;
+		font-weight:600;
+		font-size:1.2em;
+		border-left:1px solid #eee;
+		}
+	#landing .navpad {
+		background-color:#63666A;
+		height: 8.9em;
+		}
+	#landing .navpadbottom {
+		background-color:#333;
+		}
+	#landing .navnopad {
+		padding: 0;
+		}
 	#goodservideo .bgimg {    
 		background-position: 15px 0!important;
 		min-height:400px;
@@ -2310,6 +2443,9 @@ a.footer-brand {
 @media (max-width: 767px) {
 	body {
 		font-size:90%!important;
+		}
+	footer #megamenu {
+		font-size:80%!important;
 		}
 	main {
 		margin-top:40px!important;
@@ -2439,6 +2575,12 @@ a.footer-brand {
 	#gridview .form-check {
     	padding-left: 0;
 		}
+	body#landing {
+		background-color: #555;
+		}
+	main#landingpagemain {
+		padding: 3em;
+		}
 }
 @media (min-width:577px) and (max-width:767px) { 
 	#loginform .maincontainer {
@@ -2454,6 +2596,9 @@ a.footer-brand {
 		}
 	#editowner .btn-success.add, #reviewattorney .btn-success.add {
 		margin-top: 0;
+		}
+	img.tmr {
+		display:none;
 		}
 	}
 @media (max-width: 1199px) {
