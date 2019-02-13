@@ -63,8 +63,6 @@ main#loginform {
 	margin-bottom: .0;
 	line-height: 2.2em;
 	}
-
-
 .insertform {
 	background-color:#fff;
 	padding-left:0;
@@ -1329,7 +1327,7 @@ label.disabled span {
 #reviewattorney .btn-success {
     padding: 5px 10px;
 	}
-#editowner .btn-group > .btn:last-child, #reviewattorney .btn-group > .btn:last-child {
+#editowner .btn-group > .btn:last-child, #reviewattorney .btn-group > .btn:last-child, #userprofilepage .btn-group > .btn:last-child {
 	border-radius: 3px;
 	}
 .inlinebuttons button {
@@ -1495,6 +1493,11 @@ button#moreoptionsbtn {
 	float:none;
 	max-width:600px;
 	margin:0 auto;
+	}
+.addphoneinitial {    
+	width: 50%!important;
+    margin: 0 auto!important;
+    float: none!important;
 	}
 /*toggle button*/
 #designwithtext .required {
@@ -2118,13 +2121,13 @@ button[type=submit] {
 	margin:.1em;
 	color:#333/*#fff*/;
 	}
-#gsselected button.close, #dashboardmain button.close, #editowner button.close, #reviewattorney button.close {
+#gsselected button.close, #dashboardmain button.close, #editowner button.close, #reviewattorney button.close, #userprofilepage button.close {
     font-size: 1.45em;
 	color:#111;
 	margin: 0 auto;
 	height:1em;
 	}
-#editowner button.close, #reviewattorney button.close {
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close {
     font-size: 3em;
 	height:1.06em;
 	}
@@ -2433,7 +2436,16 @@ footer #megamenu ul {
 @media (min-width: 800px) {
 	.inlinebuttons {
 		width: 61%;
-	}
+		}
+	#userprofilepage fieldset .inlinebuttons {
+		width: 41%!important;
+		margin-top:2em;
+		margin-bottom:2em;
+		}
+	#userprofilepage fieldset#preferences .inlinebuttons {
+		width: 100%!important;
+		margin-top:.5em;
+		}
 }
 @media (max-width: 768px) {
 	.btn-success.add.ctr {
