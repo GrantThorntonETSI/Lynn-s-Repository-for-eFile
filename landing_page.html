@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="css/lynnstyles.css">
     </head>
     
-    <body id="landing">
+    <body class="loginform" id="landing">
         <div class="row">
             <nav class="navbar navbar-inverse navbar-fixed-top">
               <div class="container-fluid">
@@ -47,6 +47,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                       <ul class="nav navbar-nav navbar-right">
+                      	<li><a href="#" data-toggle="modal" data-target="#loginmodal" class="weight600" id="loginmodaltwo">Log In</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Jobs</a></li>
                         <li><a href="#">Contact Us</a></li>
@@ -82,50 +83,81 @@
         <div class="container-fluid">    
             <div class="row content">
                 <main class="col-xs-12 col-sm-10 col-md-10 col-lg-11" id="landingpagemain">
-                    <!--START Content Div-->
-                   <div class="row">
-                        <div class="col-xs-12" id="landingpagecontainer">
-                            <div class="row">
-                                <div class="col-xs-12 col-md-6">
-                                    <h1>Trademark Application Overview</h1>
-                                    <p class="leadtext">Registering your trademark is important for safeguarding your rights in your brand and providing notice of your claim of ownership in your mark. Start on the path to federally register your brand by using our trademark electronic filing system!</p>
-                                    <button type="button" class="btn btn-md btn-success">Start Trademark Application</button>
-                                </div> 
-                                <div class="col-xs-12 col-md-6">
-							    	<img src="images/tmr.gif" alt="T M registration mark graphic" class="img-responsive tmr">
-                            	</div> 
-                            <div class="row">
-                                <div class="col-xs-12" id="landingpagecontent">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-6 col-lg-3">
-                                            <span class="glyphicon text" aria-hidden="true">TM</span>
-                                            <h2>Trademark Basics</h2>
-                                            <p>What to know before you file an application</p>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-6 col-lg-3">
-                                            <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
-                                            <h2>Trademark Process</h2>
-                                            <p>An overview of a trademark application and maintenance process</p>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-6 col-lg-3">
-                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                            <h2>Search Trademark Database</h2>
-                                            <p>Search trademark applications and registrations</p>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-6 col-lg-3">
-                                            <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                            <h2>Simple File</h2>
-                                            <p>Fast, efficient and stream-lined</p>
-                                        </div>
+                	<!-- Modal -->
+                    <div class="modal fade" id="loginmodal" tabindex="0" role="dialog" aria-labelledby="loginmodaltwo">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          </div>
+                          <div class="modal-body">
+                            <form action="" method="post" >
+                              <fieldset aria-label="login">
+                                  <div class="headlinecontainer">
+                                    <h1><img src="images/usptologo.png" alt="USPTO eFile Reimagined"> &#124; eFile Reimagined</h1>
+                                    <h2 class="weight600">Log In</h2>
+                                  </div>
+                                  <div class="maincontainer">
+                                    <div class="form-group form-group-md">
+                                        <label for="uname"><b>Email Address</b></label>
+                                        <input type="text" class="form-control" placeholder="Enter Email Address" name="uname" required>
                                     </div>
-                                </div> 	
+                                    <div class="form-group form-group-md">
+                                        <label for="psw"><b>Password</b></label>
+                                        <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+                                    </div>    
+                                    <button type="submit" class="btn btn-md btn-primary">Login</button>
+                                  </div>
+                                
+                                  <div class="maincontainer bottom">
+                                    <div class="psw">
+                                        <p><a href="#">New</a> user? Forgot <a href="#">password?</a></p>
+                                    </div>
+                                  </div>
+                                </fieldset>
+                            </form>                                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--START Content Div-->
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6">
+                                <h1>Trademark Application Overview</h1>
+                                <p class="leadtext">Registering your trademark is important for safeguarding your rights in your brand and providing notice of your claim of ownership in your mark. Start on the path to federally register your brand by using our trademark electronic filing system!</p>
+                                <button type="button" class="btn btn-md btn-success">Start Trademark Application</button>
+                            </div> 
+                            <div class="col-xs-12 col-md-6">
+                                <img src="images/tmr.gif" alt="T M registration mark graphic" class="img-responsive tmr">
+                            </div> 
+                            <div class="col-xs-12" id="landingpagecontent">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <span class="glyphicon text" aria-hidden="true">TM</span>
+                                        <h2>Trademark Basics</h2>
+                                        <p>What to know before you file an application</p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
+                                        <h2>Trademark Process</h2>
+                                        <p>An overview of a trademark application and maintenance process</p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        <h2>Search Trademark Database</h2>
+                                        <p>Search trademark applications and registrations</p>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-6 col-lg-3">
+                                        <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+                                        <h2>Simple File</h2>
+                                        <p>Fast, efficient and stream-lined</p>
+                                    </div>
+                                </div>
                             </div> 
                         </div>                   
-                    </div>
-                 </div>
-             </main>
-         </div><!--END div content-->
-     </div><!--END div container-->
+             		</main>
+         		</div><!--END div content-->
+     		</div><!--END div container-->
                 <!--jquery and web jars -->
         <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
         <script type="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
