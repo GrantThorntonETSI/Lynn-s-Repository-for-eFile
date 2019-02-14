@@ -1309,10 +1309,28 @@ $(document).ready(function(){
 	$( 'button#addphone' ).on('click',function(){
 	  	$( '.phones:eq(0)' ).clone().appendTo( '.appendphone' );
 	});
-	$( '#resetphone' ).click(function () {
+	$( '#resetphone' ).on('click',function() {
 	  $( '.appendphone .phones' ).remove( '.phones:eq(0)' );
     });
 	//END additional phone
+	
+	//START additional phone new
+	$( 'button#addphone2' ).on('click',function(){
+	  	$( '.phones:eq(0)' ).clone().appendTo( '.appendphones' );
+		$( '#resetphone2' ).parent().addClass( 'displaycell' );
+		$( '#resetphone2' ).parent().removeClass( 'visuallyremoved' );
+		$( this ).removeClass( 'addphoneinitial' );
+	});
+	$( '#resetphone2' ).click(function () {
+		var n = $( '.phones' ).length;
+	  	$( '.appendphones .phones' ).remove( '.phones:eq(0)' );
+	  	$( '#resetphone2' ).parent().removeClass( 'displaycell' );
+			if( n < 3 ){
+					$( '#resetphone2' ).parent().addClass( 'visuallyremoved' );
+					$( 'button#addphone2' ).addClass( 'addphoneinitial' );
+				} 
+    });
+	//END additional phone new
 	
 	//START additional docket 
 	$( 'button#addocket' ).click(function(){
@@ -1432,7 +1450,7 @@ $(document).ready(function(){
 	//END additional concurrent app/reg
 	
 	//START modals
-	$('#tradeservmodal','#collectivemodal','#collectivemembmodal').on('shown.bs.modal', function () {
+	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
 	})
 	//END modals
