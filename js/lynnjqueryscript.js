@@ -109,8 +109,18 @@ $(document).ready(function(){
 	//START initialize Dashboard datable one
 		var tableone = $('#dashboardtableone').DataTable({
 		"fnDrawCallback": function( oSettings ) {
-
-		},
+		},	
+			'sDom': '<"toolbar">lfrtip',
+			"language": {
+			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
+			  '<option value="10">10</option>'+
+			  '<option value="25">25</option>'+
+			  '<option value="50">50</option>'+
+			  '<option value="100">100</option>'+
+			  '<option value="-1">All</option>'+
+			  '</select>'
+  			},
 			'autoWidth': false,
 			'responsive': true,
 			'columns': [
@@ -134,8 +144,18 @@ $(document).ready(function(){
 	//START initialize Dashboard datable two
 		var tabletwo = $('#dashboardtabletwo').DataTable({
 		"fnDrawCallback": function( oSettings ) {
-
 		},
+			'sDom': '<"toolbar">lfrtip',
+			"language": {
+			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
+			  '<option value="10">10</option>'+
+			  '<option value="25">25</option>'+
+			  '<option value="50">50</option>'+
+			  '<option value="100">100</option>'+
+			  '<option value="-1">All</option>'+
+			  '</select>'
+  			},
 			'autoWidth': false,
 			'responsive': true,
 			'columns': [
@@ -159,6 +179,16 @@ $(document).ready(function(){
 			  ],
 		});
 	//END initialize Dashboard datable two
+	
+	//Dashboard datatables ellipsis menu
+		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vis" data-column="0">Serial#</a></li><li><a class="toggle-vis" data-column="1">Registration#</a></li><li><a class="toggle-vis" data-column="2">Owner</a></li><li><a class="toggle-vis" data-column="3">Status</a></li><li><a class="toggle-vis" data-column="4">Mark</a></li></ul></div>');
+		$('a.toggle-vis').on( 'click', function (e) {
+			e.preventDefault();
+			var column = tableone.column( $(this).attr('data-column') );
+			column.visible( ! column.visible() );
+			console.log($(this).attr('data-column'));
+		});
+	//END dashboard datatables ellipsis menu
 	
 	//.dashsection height = #announcedashsection height
       var h = $( 'div#announcedashsection' );
