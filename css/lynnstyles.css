@@ -1409,6 +1409,15 @@ label.disabled span {
     -moz-border-radius: 3px 3px 3px 3px;
     border-radius: 3px 3px 3px 3px;
 	}
+.close {
+	opacity:1.0;
+	-moz-opacity: 1.0;
+	}
+.resetphonebtn {
+	margin: 0 auto;
+    float: none;
+    margin-top: .57em;
+	}
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus {
     /*outline: thin dotted;*/
 	outline: 1px solid #9BB8D3!important;
@@ -1828,7 +1837,7 @@ div.round {
 	}
 .btn.add.ctr, .btn-success.add.ctr, .fill  {	
 	margin:0 auto;
-	margin-top: 2.9em;
+	margin-top: 3.1em;
 	border: none!important;
 	}
 .btn-success.add.ctr.right {
@@ -1910,14 +1919,13 @@ div[role="heading"] button {
 input[type="file"]:focus { 
 	margin-left: 0; 
 	}
-select, input[type="text"], input[type="email"], input[type="date"], input[type="date"] { 
-	min-height: 38px; 
+option, select, input[type="text"], input[type="email"], input[type="date"], input[type="date"] { 
+	min-height: 38px!important; 
 	}
 #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"] {
 	margin-left: .5em!important;
 	}
-.form-control, #goodsandservices_wrapper input[type="search"], #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"] {
-    box-shadow: none;
+#goodsandservices_wrapper input[type="search"], #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"] {
 	-webkit-border-radius: 	0;
 	-moz-border-radius: 	0;
 	border-radius: 			0;
@@ -1940,6 +1948,7 @@ select, input[type="text"], input[type="email"], input[type="date"], input[type=
     border: 1px solid #ccc;
     -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0);
     box-shadow: inset 0 0 0 rgba(0,0,0,0);
+	box-shadow: none;
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
     -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
@@ -1949,9 +1958,24 @@ select, input[type="text"], input[type="email"], input[type="date"], input[type=
 	}
 .form-control:focus, .dataTables_length select, .sorting_1 {
     box-shadow: none!important;
+	-webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
+    box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
 	border-color: #1596D1!important;
     outline: 0!important;
 	background:none;
+	}
+.form-control {
+    box-shadow: none!important;
+	-webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
+    box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
+	}
+input.form-control, textarea.form-control, select.form-control {
+    -webkit-border-radius: 	2px;
+	-moz-border-radius: 	2px;
+	border-radius: 			2px;
+	}
+select.form-control {
+    height: 38px!important;
 	}
 legend {
 	position:absolute;
@@ -2258,15 +2282,21 @@ button[type=submit] {
 	margin:.1em;
 	color:#333/*#fff*/;
 	}
-#gsselected button.close, #dashboardmain button.close, #editowner button.close, #reviewattorney button.close, #userprofilepage button.close {
+#gsselected button.close, #dashboardmain button.close, #editowner button.close, #reviewattorney button.close {
     font-size: 1.45em;
 	color:#111;
 	margin: 0 auto;
 	height:1em;
 	}
-#editowner button.close, #reviewattorney button.close, #userprofilepage button.close {
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close {
     font-size: 3em;
 	height:1.06em;
+	color:#009CDE;
+	}
+#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover {
+	color: #047db0;
+	opacity:1.0;
+	-moz-opacity: 1.0;
 	}
 .closepans {
 	display:flex;
@@ -2606,7 +2636,7 @@ footer #megamenu ul {
 	.inlinebuttons {
 		width: 61%;
 		}
-	#userprofilepage fieldset .inlinebuttons {
+	#userprofilepage fieldset .inlinebuttons, #yesattorneyfiling fieldset .inlinebuttons {
 		width: 41%!important;
 		margin-top:2em;
 		margin-bottom:2em;

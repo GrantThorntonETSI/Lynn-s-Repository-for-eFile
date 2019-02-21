@@ -212,8 +212,8 @@ $(document).ready(function(){
 	//end close (x) gs + editowner + reviewattorney panels
 	
   //START set initial checkboxes
-  //$('input[type=checkbox]').attr('checked',false);
-  //$('input[type=radio]').attr('checked',false);
+  $('input[type=checkbox]').attr('checked',false);
+  $('input[type=radio]').attr('checked',false);
   $('input[type=checkbox]#authemail, input[type=radio]#inlineRadio044').not(this).prop('checked', true);
   $('input[type=radio]#inlineRadio031').prop('checked', true);
   //if ($('input[type=checkbox]#authemail').prop('checked')) {
@@ -1344,23 +1344,23 @@ $(document).ready(function(){
     });
 	//END additional phone
 	
-	//START additional phone new
-	$( 'button#addphone2' ).on('click',function(){
-	  	$( '.phones:eq(0)' ).clone().appendTo( '.appendphones' );
-		$( '#resetphone2' ).parent().addClass( 'displaycell' );
-		$( '#resetphone2' ).parent().removeClass( 'visuallyremoved' );
-		$( this ).removeClass( 'addphoneinitial' );
-	});
-	$( '#resetphone2' ).click(function () {
-		var n = $( '.phones' ).length;
-	  	$( '.appendphones .phones' ).remove( '.phones:eq(0)' );
-	  	$( '#resetphone2' ).parent().removeClass( 'displaycell' );
-			if( n < 3 ){
-					$( '#resetphone2' ).parent().addClass( 'visuallyremoved' );
-					$( 'button#addphone2' ).addClass( 'addphoneinitial' );
-				} 
-    });
-	//END additional phone new
+	//START additional phone rev
+	$( document ).on('click','button#addphone2',function(){	
+		var clonephone = $( 'div.phones:eq(0) input' ).clone();
+		var this_id = $( clonephone ).attr('id');
+		var new_id = (parseFloat(this_id) + 1 );
+	  	$( 'div.phones:eq(0) input' ).attr( 'id', function() {
+		  return (parseFloat(this.id) + 1);
+		});
+		$( 'div.phones:eq(0)' ).clone().appendTo( '.appendphones' );
+		$( '.appendphones .resetphone2' ).removeClass( 'visuallyremoved' );
+		$( this ).removeClass( '.addphoneinitial' );
+			console.log(new_id);
+		});
+		$( document ).on('click','.resetphonebtn',function(){
+			$( this ).parent().parent().parent().remove();
+		});
+	//END additional phone rev
 	
 	//START additional docket 
 	$( 'button#addocket' ).click(function(){
