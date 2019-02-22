@@ -145,7 +145,7 @@ $(document).ready(function(){
 		var tabletwo = $('#dashboardtabletwo').DataTable({
 		"fnDrawCallback": function( oSettings ) {
 		},
-			'sDom': '<"toolbar">lfrtip',
+			'sDom': '<"toolbartwo">lfrtip',
 			"language": {
 			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
 			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
@@ -180,7 +180,7 @@ $(document).ready(function(){
 		});
 	//END initialize Dashboard datable two
 	
-	//Dashboard datatables ellipsis menu
+	//Dashboard datatables ellipsis menu tableone
 		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vis" data-column="0">Serial#</a></li><li><a class="toggle-vis" data-column="1">Registration#</a></li><li><a class="toggle-vis" data-column="2">Owner</a></li><li><a class="toggle-vis" data-column="3">Status</a></li><li><a class="toggle-vis" data-column="4">Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function (e) {
 			e.preventDefault();
@@ -188,7 +188,17 @@ $(document).ready(function(){
 			column.visible( ! column.visible() );
 			console.log($(this).attr('data-column'));
 		});
-	//END dashboard datatables ellipsis menu
+	//END dashboard datatables ellipsis menu tableone
+	
+	//Dashboard datatables ellipsis menu tabletwo
+		$("div.toolbartwo").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vistwo" data-column="0">Serial#</a></li><li><a class="toggle-vistwo" data-column="1">Registration#</a></li><li><a class="toggle-vistwo" data-column="2">Mark</a></li><li><a class="toggle-vistwo" data-column="3">Owner</a></li><li><a class="toggle-vistwo" data-column="4">Due Date</a></li><li><a class="toggle-vistwo" data-column="5">Status</a></li><li><a class="toggle-vistwo" data-column="6">Action</a></li></ul></div>');
+		$('a.toggle-vistwo').on( 'click', function (e) {
+			e.preventDefault();
+			var column = tabletwo.column( $(this).attr('data-column') );
+			column.visible( ! column.visible() );
+			console.log($(this).attr('data-column'));
+		});
+	//END dashboard datatables ellipsis menu tabletwo
 	
 	//.dashsection height = #announcedashsection height
       var h = $( 'div#announcedashsection' );
@@ -1346,16 +1356,10 @@ $(document).ready(function(){
 	
 	//START additional phone rev
 	$( document ).on('click','button#addphone2',function(){	
-		var clonephone = $( 'div.phones:eq(0) input' ).clone();
-		var this_id = $( clonephone ).attr('id');
-		var new_id = (parseFloat(this_id) + 1 );
-	  	$( 'div.phones:eq(0) input' ).attr( 'id', function() {
-		  return (parseFloat(this.id) + 1);
-		});
 		$( 'div.phones:eq(0)' ).clone().appendTo( '.appendphones' );
+		$( 'div.phones' ).last().find('input').val('');
 		$( '.appendphones .resetphone2' ).removeClass( 'visuallyremoved' );
 		$( this ).removeClass( '.addphoneinitial' );
-			console.log(new_id);
 		});
 		$( document ).on('click','.resetphonebtn',function(){
 			$( this ).parent().parent().parent().remove();
@@ -1549,7 +1553,7 @@ $(document).ready(function(){
 	//grid view checkboxes In-Use 1(a)
 	//Gridview In-Use 1(a) Form Reveal
 	$(document).on('change', 'input#otherformfirst, input#otherformcommerce', function() {
-			$(this).parent().siblings('div#yesinuse1atwo').css('display','block' );
+		$(this).parent().siblings('div#yesinuse1atwo').css('display','block' );
 	});
 	//END Gridview In-Use 1(a) Form Reveal
 	

@@ -171,7 +171,7 @@
                                 <h2 class="card-title weight600">Miscellaneous Statement</h2>
                             </div>
                             <form action="" method="post" >
-                               <fieldset aria-label="provide additional information about your mark">
+                               <fieldset aria-labelledby="notprevious">
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <div>
@@ -181,14 +181,14 @@
                                                   <label for="inlineRadio046" class="radio-inline radiocontainer">No<input type="radio" name="uncommoninfo" id="inlineRadio046" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                 </div><!--END radiogroup-->
                                                 <!--Start Dropzone-->
-                                                  <div class="col-xs-12 form-group form-group-md" id="yesnotpreviously">
-                                                            <label for="ta8" class="weight600">Provide the additional information.</label> 
-                                                            <textarea id="ta8" rows="3" class="form-control"></textarea>
-                                                            <p class="weight600 form-group form-group-md">Optional upload.</p></legend>
-                                                            <div class="form-group form-group-md">
-                                                                <label class="small upload-drop-zone" for="file"><div id="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
-                                                                <input type="file" id="file" name="file" class="form-control">
-                                                            </div><!-- Drop Zone -->
+                                               	<div class="col-xs-12 form-group form-group-md" id="yesnotpreviously">
+                                                    <label for="ta8" class="weight600">Provide the additional information.</label> 
+                                                    <textarea id="ta8" rows="3" class="form-control"></textarea>
+                                                    <p class="weight600 form-group form-group-md">Optional upload.</p></legend>
+                                                    <div class="form-group form-group-md">
+                                                        <label class="small upload-drop-zone" for="file"><div id="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
+                                                        <input type="file" id="file" name="file" class="form-control">
+                                                    </div><!-- Drop Zone -->
                                                     <div class="row">
                                                         <div class="js-upload-finished col-xs-12">
                                                             <p id="uploaded">Processed Files</p>
@@ -205,14 +205,14 @@
                                     <div class="form-group form-group-md col-xs-12">
                                         <section aria-label="Rare/Uncommon Situations">
                                             <div class="card-text noexpand">
-                                                <h2 class="card-title weight600">Rare/Uncommon Situations</h2>
+                                                <h2 class="card-title weight600" id="raresits">Rare/Uncommon Situations</h2>
                                             </div>
                                             <div class="form-group form-group-md">
-                                                <p class="weight600">The following situations are rare and are not relevant for most applicants. If none of these apply to you, click next.</p>                                           
+                                                <p class="weight600">The following situations are rare and are not relevant for most applicants. If none of these apply to you, click next.</p>
                                                 <div class="row">
                                                     <div class="col-xs-12 wide">
                                                         <div class="row">
-                                                            <fieldset aria-label="rare situations">	
+                                                            <fieldset aria-labelledby="raresits">	
                                                                 <div class="col-xs-12 col-md-5">		
                                                                     <input class="form-check-input checkmark" type="checkbox" value="typeofregister" tabindex="0" aria-labelledby="typeregister" id="typeregi">
                                                                     <label class="form-check-label form-check" for="typeregi" id="typereg"><span class="radio notspecial" id="typeregister">Type of Register <a href="#" data-toggle="tooltip" title="The Principal Register is the primary register for all trademarks. When a mark has been registered on the Principal Register, the mark is entitled to certain rights provided by federal law. The Supplemental Register is a listing of non-mark designations (such as descriptive words) that are &#8220;capable&#8221; of eventually becoming a &#8220;mark.&#8221;" class="glyphicon glyphicon-info-sign test" data-placement="right"></a></span></label>
@@ -270,7 +270,7 @@
                                     <div class="row" id="cad">
                                         <div class="col-sm-12">
                                             <section aria-label="distinctiveness">
-                                            <fieldset aria-label="distinctiveness">
+                                            <fieldset aria-labelledby="distinctiveness">
                                                 <div class="card-text">
                                                     <div role="heading" aria-level="2">
                                                     <button type="button" class="btn btn-link Accordion-trigger" data-toggle="collapse" data-target="#distinctiveness" aria-controls="distinctiveness" aria-expanded="false" id="distinctivenessbtn"><span class="glyphicon glyphicon-triangle-right"></span><span id="toggleglyph" class="glyphicon glyphicon-triangle-bottom visuallyremoved"></span> 2(f) Claim of Acquired Distinctiveness</button>
@@ -282,256 +282,257 @@
                                                     </div>
                                                 </div>
                                                 <div>
-                                                    <p id="disclm">Are you claiming that your mark is inherently distinctive?</p>                                                            <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
+                                                    <p id="disclm">Are you claiming that your mark is inherently distinctive?</p>
+                                                    <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
                                                       <label for="inlineRadio033" class="radio-inline radiocontainer">Yes<input type="radio" name="distinctradio" id="inlineRadio033" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                       <label for="inlineRadio034" class="radio-inline radiocontainer">No<input type="radio" name="distinctradio" id="inlineRadio034" value="no" tabindex="0"><span class="checkmark"></span></label>
-                                                    </div><!--END radiogroup-->
-                                                    <div id="yesdistict" class="form-group"><!--toggle 'yes' radio-->
-                                                        <div class="form-group form-group-md">
-                                                            <p>Is this for the whole mark, or part of the mark?</p>
-                                                            <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
-                                                              <label for="inlineRadio035" class="radio-inline radiocontainer">Whole<input type="radio" name="wholepartradio" id="inlineRadio035" value="whole" tabindex="0"><span class="checkmark"></span></label>
-                                                              <label for="inlineRadio036" class="radio-inline radiocontainer">In part<input type="radio" name="wholepartradio" id="inlineRadio036" value="inpart" tabindex="0"><span class="checkmark"></span></label>
-                                                            </div><!--END radiogroup-->
-                                                            <div id="yespart" class="form-group"><!--toggle 'yes' radio-->
-                                                                <div class="form-group form-group-md">
-                                                                    <label for="partmark" class="weight600">Which part of the mark?</label> 
-                                                                    <textarea id="partmark" rows="1" class="form-control"></textarea>
-                                                                </div>
+                                                </div><!--END radiogroup-->
+                                                <div id="yesdistict" class="form-group"><!--toggle 'yes' radio-->
+                                                    <div class="form-group form-group-md">
+                                                        <p>Is this for the whole mark, or part of the mark?</p>
+                                                        <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
+                                                          <label for="inlineRadio035" class="radio-inline radiocontainer">Whole<input type="radio" name="wholepartradio" id="inlineRadio035" value="whole" tabindex="0"><span class="checkmark"></span></label>
+                                                          <label for="inlineRadio036" class="radio-inline radiocontainer">In part<input type="radio" name="wholepartradio" id="inlineRadio036" value="inpart" tabindex="0"><span class="checkmark"></span></label>
+                                                        </div><!--END radiogroup-->
+                                                        <div id="yespart" class="form-group"><!--toggle 'yes' radio-->
+                                                            <div class="form-group form-group-md">
+                                                                <label for="partmark" class="weight600">Which part of the mark?</label> 
+                                                                <textarea id="partmark" rows="1" class="form-control"></textarea>
                                                             </div>
-                                                            <div id="yeswhole" class="form-group"><!--toggle 'yes' radio-->
-                                                                <div class="form-group form-group-md">
-                                                                    <p>What is your claim based on?</p>
-                                                                    <div class="col-xs-12 wide">
-                                                                        <div class="row">
-                                                                            <div class="col-xs-4 col-md-3 col-lg-3 form-group form-group-md">
-                                                                                <label for="inlineRadio037" class="radio-inline radiocontainer">Evidence<input type="radio" name="wholepartradiotwo" id="inlineRadio037" value="evidence" tabindex="0"><span class="checkmark"></span></label>
-                                                                            </div>
-                                                                            <div class="col-xs-8 col-md-4 col-lg-4 form-group form-group-md">
-                                                                                <label for="inlineRadio038" class="radio-inline radiocontainer">Prior Registrations<input type="radio" name="wholepartradiotwo" id="inlineRadio038" value="prioregistrations" tabindex="0"><span class="checkmark"></span></label>
-                                                                            </div>
-                                                                            <div class="col-xs-12 col-md-5 col-lg-5 form-group form-group-md">
-                                                                                <label for="inlineRadio039" class="radio-inline radiocontainer">Five or more years of use<input type="radio" name="wholepartradiotwo" id="inlineRadio039" value="fivepluyears" tabindex="0"><span class="checkmark"></span></label>
-                                                                            </div>
+                                                        </div>
+                                                        <div id="yeswhole" class="form-group"><!--toggle 'yes' radio-->
+                                                            <div class="form-group form-group-md">
+                                                                <p>What is your claim based on?</p>
+                                                                <div class="col-xs-12 wide">
+                                                                    <div class="row">
+                                                                        <div class="col-xs-4 col-md-3 col-lg-3 form-group form-group-md">
+                                                                            <label for="inlineRadio037" class="radio-inline radiocontainer">Evidence<input type="radio" name="wholepartradiotwo" id="inlineRadio037" value="evidence" tabindex="0"><span class="checkmark"></span></label>
+                                                                        </div>
+                                                                        <div class="col-xs-8 col-md-4 col-lg-4 form-group form-group-md">
+                                                                            <label for="inlineRadio038" class="radio-inline radiocontainer">Prior Registrations<input type="radio" name="wholepartradiotwo" id="inlineRadio038" value="prioregistrations" tabindex="0"><span class="checkmark"></span></label>
+                                                                        </div>
+                                                                        <div class="col-xs-12 col-md-5 col-lg-5 form-group form-group-md">
+                                                                            <label for="inlineRadio039" class="radio-inline radiocontainer">Five or more years of use<input type="radio" name="wholepartradiotwo" id="inlineRadio039" value="fivepluyears" tabindex="0"><span class="checkmark"></span></label>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div id="yesevidence" class="form-group"><!--toggle 'yes' radio-->
-                                                                <p class="weight600" role="heading" aria-level="3">Upload evidence.</p>
-                                                                <label class="small upload-drop-zone" for="filetwo"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
-                                                                <input type="filetwo" id="filevidence" name="file-evidence" class="form-control">
-                                                            </div><!-- Drop Zone -->
-                                                            <div class="row" id="yespriors">
-                                                                <div class="col-xs-12 col-md-6 col-lg-10 form-group holdsaprior"><!--toggle 'yes' radio-->
-                                                                    <label for="prioregnumbers" class="weight600">Enter prior registration numbers.</label>
-                                                                    <input type="text" class="form-control" id="prioregnumbers">
-                                                                </div>
-                                                                <div class="appendaprior"></div>
-                                                                <div class="col-xs-12 col-lg-2 btn-group" role="group" id="pluspriors" aria-label="Add or delete additional prior registration numbers">
-                                                                    <div class="row">
-                                                                        <div class="col-xs-12">
-                                                                            <button type="button" class="btn-sm btn-success add ctr" id="addprior">Add number</button>
-                                                                        </div>
+                                                        </div>
+                                                        <div id="yesevidence" class="form-group"><!--toggle 'yes' radio-->
+                                                            <p class="weight600" role="heading" aria-level="3">Upload evidence.</p>
+                                                            <label class="small upload-drop-zone" for="filetwo"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
+                                                            <input type="file" id="filetwo" name="file-evidence" class="form-control">
+                                                        </div><!-- Drop Zone -->
+                                                        <div class="row" id="yespriors">
+                                                            <div class="col-xs-12 col-md-6 col-lg-10 form-group holdsaprior"><!--toggle 'yes' radio-->
+                                                                <label for="prioregnumbers" class="weight600">Enter prior registration numbers.</label>
+                                                                <input type="text" class="form-control" id="prioregnumbers">
+                                                            </div>
+                                                            <div class="appendaprior"></div>
+                                                            <div class="col-xs-12 col-lg-2 btn-group" role="group" id="pluspriors" aria-label="Add or delete additional prior registration numbers">
+                                                                <div class="row">
+                                                                    <div class="col-xs-12">
+                                                                        <button type="button" class="btn-sm btn-success add ctr" id="addprior">Add number</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                              </fieldset>
-                                            </section>
-                                        </div>
-                                    </div><!--END distinctiveness-->
-                                    <div class="row" id="uaf">
-                                        <div class="col-sm-12">
-                                            <section aria-label="Use in Another Form">
-                                                <fieldset aria-label="use in another form">
-                                                    <div class="card-text noexpand">
-                                                        <h2 class="card-title weight600">Use in Another Form</h2>
-                                                    </div>
-                                                    <div>
-                                                        <p class="weight600" id="otherform">Is the mark (or part of the mark) currently in use in another form?</p>                                                            <div role="radiogroup" aria-labelledby="otherform" class="form-group form-group-md">
-                                                          <label for="inlineRadio040" class="radio-inline radiocontainer">Yes<input type="radio" name="formradio" id="inlineRadio040" value="yes" tabindex="0"><span class="checkmark"></span></label>
-                                                          <label for="inlineRadio041" class="radio-inline radiocontainer">No<input type="radio" name="formradio" id="inlineRadio041" value="no" tabindex="0"><span class="checkmark"></span></label>
+                                            </div>
+                                          </fieldset>
+                                        </section>
+                                    </div>
+                                </div><!--END distinctiveness-->
+                                <div class="row" id="uaf">
+                                    <div class="col-sm-12">
+                                        <section aria-label="Use in Another Form">
+                                            <fieldset aria-labelledby="otherform">
+                                                <div class="card-text noexpand">
+                                                    <h2 class="card-title weight600" id="otherform">Use in Another Form</h2>
+                                                </div>
+                                                <div>
+                                                    <p class="weight600" id="otherform">Is the mark (or part of the mark) currently in use in another form?</p>                                                            
+                                                    <div role="radiogroup" aria-labelledby="otherform" class="form-group form-group-md">
+                                                      <label for="inlineRadio040" class="radio-inline radiocontainer">Yes<input type="radio" name="formradio" id="inlineRadio040" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                      <label for="inlineRadio041" class="radio-inline radiocontainer">No<input type="radio" name="formradio" id="inlineRadio041" value="no" tabindex="0"><span class="checkmark"></span></label>
+                                                </div><!--END radiogroup-->
+                                                <div id="yesotherform" class="form-group"><!--toggle 'yes' radio-->
+                                                    <div class="form-group form-group-md">
+                                                        <p class="weight600">Is this for the whole mark, or part of the mark?</p>
+                                                        <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
+                                                          <label for="inlineRadio042" class="radio-inline radiocontainer">Whole<input type="radio" name="wholepartradiothree" id="inlineRadio042" value="whole" tabindex="0"><span class="checkmark"></span></label>
+                                                          <label for="inlineRadio043" class="radio-inline radiocontainer">In part<input type="radio" name="wholepartradiothree" id="inlineRadio043" value="inpart" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yesotherform" class="form-group"><!--toggle 'yes' radio-->
+                                                        <div id="yespartother" class="form-group"><!--toggle 'yes' radio-->
                                                             <div class="form-group form-group-md">
-                                                                <p class="weight600">Is this for the whole mark, or part of the mark?</p>
-                                                                <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
-                                                                  <label for="inlineRadio042" class="radio-inline radiocontainer">Whole<input type="radio" name="wholepartradiothree" id="inlineRadio042" value="whole" tabindex="0"><span class="checkmark"></span></label>
-                                                                  <label for="inlineRadio043" class="radio-inline radiocontainer">In part<input type="radio" name="wholepartradiothree" id="inlineRadio043" value="inpart" tabindex="0"><span class="checkmark"></span></label>
-                                                                </div><!--END radiogroup-->
-                                                                <div id="yespartother" class="form-group"><!--toggle 'yes' radio-->
-                                                                    <div class="form-group form-group-md">
-                                                                        <label for="partmark" class="weight600">Which part of the mark?</label> 
-                                                                        <textarea id="partmark" rows="1" class="form-control"></textarea>
+                                                                <label for="partmark" class="weight600">Which part of the mark?</label> 
+                                                                <textarea id="partmark" rows="1" class="form-control"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div id="yeswholeother" class="form-group"><!--toggle 'yes' radio-->
+                                                            <div class="form-group form-group-md">
+                                                                <div class="row">
+                                                                    <div class="col-xs-12 col-md-6 form-group form-group-md matchlabelheightdiv">
+                                                                        <label for="otherformfirst" class="matchlabelheight">Provide date of first use in another form:</label>
+                                                                        <input type="date" class="form-control" id="otherformfirst" name="otherformfirst" value="">
                                                                     </div>
-                                                                </div>
-                                                                <div id="yeswholeother" class="form-group"><!--toggle 'yes' radio-->
-                                                                    <div class="form-group form-group-md">
-                                                                        <div class="row">
-                                                                            <div class="col-xs-12 col-md-6 form-group form-group-md matchlabelheightdiv">
-                                                                                <label for="otherformfirst" class="matchlabelheight">Provide date of first use in another form:</label>
-                                                                                <input type="date" class="form-control" id="otherformfirst" name="otherformfirst" value="">
-                                                                            </div>
-                                                                            <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                                <label for="otherformcommerce" id="getit">Provide date of first use in commerce in another form:</label>
-                                                                                <input type="date" class="form-control" id="otherformcommerce" name="otherformcommerce" value="">
-                                                                            </div>
-                                                                        </div>
+                                                                    <div class="col-xs-12 col-md-6 form-group form-group-md">
+                                                                        <label for="otherformcommerce" id="getit">Provide date of first use in commerce in another form:</label>
+                                                                        <input type="date" class="form-control" id="otherformcommerce" name="otherformcommerce" value="">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </fieldset>
-                                            </section>
-                                        </div>
-                                    </div><!--END use in another form-->
-                                    <div class="row" id="cc">
-                                        <div class="col-sm-12">
-                                            <section aria-label="Concurrent Use">
-                                                <fieldset aria-label="rare concurrent use">
-                                                    <div class="card-text noexpand">
-                                                        <h2 class="card-title weight600">Concurrent Use</h2>
-                                                    </div>
-                                                    <p class="weight600">The following situations are rare and are not relevant for most applicants. If none of these apply to you, click next.</p>                                           
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </section>
+                                </div>
+                            </div><!--END use in another form-->
+                            <div class="row" id="cc">
+                                <div class="col-sm-12">
+                                    <section aria-label="Concurrent Use">
+                                        <fieldset aria-labelledby="concurrent">
+                                            <div class="card-text noexpand">
+                                                <h2 class="card-title weight600" id="concurrent">Concurrent Use</h2>
+                                            </div>
+                                            <p class="weight600">The following situations are rare and are not relevant for most applicants. If none of these apply to you, click next.</p>                                            <div class="row">
+                                                <div class="col-xs-12 wide">
                                                     <div class="row">
-                                                        <div class="col-xs-12 wide">
-                                                            <div class="row">
-                                                                <div class="col-xs-12">		
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="court" tabindex="0" aria-labelledby="courtdecree" id="courtd">
-                                                                    <label class="form-check-label form-check" for="courtd" id="courtdec"><span class="radio notspecial match" id="courtdecree">Court Decree</span></label>
-                                                                </div>
-                                                                <div class="col-xs-12">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="ttab" tabindex="0" aria-labelledby="priorttab" id="ttabmade">
-                                                                    <label class="form-check-label form-check" for="ttabmade" id="ttabdecision"><span class="radio notspecial" id="priorttab">Prior decision made by the Trademark Trial and Apeal Board (TTAB)</span></label>
-                                                                </div>
-                                                                <div class="col-xs-12">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="conflicting" tabindex="0" aria-labelledby="conflictingreg" id="conflict">
-                                                                    <label class="form-check-label form-check" for="conflict" id="conflictowner"><span class="radio notspecial" id="conflictingreg">Written Consent signed by owner of conflicting registrations</span></label>
-                                                                </div>
-                                                                <div class="col-xs-12">
-                                                                    <input class="form-check-input checkmark" type="checkbox" value="earlier" tabindex="0" aria-labelledby="early" id="earlieruse">
-                                                                    <label class="form-check-label form-check" for="earlieruse" id="firstcommerce"><span class="radio notspecial match" id="early">Earlier date of first use in commerce</span></label>		
-                                                                </div>
-                                                            </div>
+                                                        <div class="col-xs-12">		
+                                                            <input class="form-check-input checkmark" type="checkbox" value="court" tabindex="0" aria-labelledby="courtdecree" id="courtd">
+                                                            <label class="form-check-label form-check" for="courtd" id="courtdec"><span class="radio notspecial match" id="courtdecree">Court Decree</span></label>
                                                         </div>
-                                                    </div><!--end checkbox row-->
-                                                    <div class="row" id="hideshowconcurrentuses">
-                                                          <!--Start Dropzone-->
-                                                          <div class="col-xs-12 form-group form-group-md">
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <p class="weight600" role="heading" aria-level="3">Upload supporting documents.</p>
-                                                                    <label class="small upload-drop-zone" for="filethree"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
-                                                                    <input type="file" id="filethree" name="file" class="form-control">
-                                                                </div><!-- Drop Zone -->
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <label for="additional2" class="weight600">Provide any additional information.</label> 
-                                                                    <textarea id="additional2" rows="3" class="form-control"></textarea>
+                                                        <div class="col-xs-12">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="ttab" tabindex="0" aria-labelledby="priorttab" id="ttabmade">
+                                                            <label class="form-check-label form-check" for="ttabmade" id="ttabdecision"><span class="radio notspecial" id="priorttab">Prior decision made by the Trademark Trial and Apeal Board (TTAB)</span></label>
+                                                        </div>
+                                                        <div class="col-xs-12">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="conflicting" tabindex="0" aria-labelledby="conflictingreg" id="conflict">
+                                                            <label class="form-check-label form-check" for="conflict" id="conflictowner"><span class="radio notspecial" id="conflictingreg">Written Consent signed by owner of conflicting registrations</span></label>
+                                                        </div>
+                                                        <div class="col-xs-12">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="earlier" tabindex="0" aria-labelledby="early" id="earlieruse">
+                                                            <label class="form-check-label form-check" for="earlieruse" id="firstcommerce"><span class="radio notspecial match" id="early">Earlier date of first use in commerce</span></label>		
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div><!--end checkbox row-->
+                                            <div class="row" id="hideshowconcurrentuses">
+                                                  <!--Start Dropzone-->
+                                                  <div class="col-xs-12 form-group form-group-md">
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <p class="weight600" role="heading" aria-level="3">Upload supporting documents.</p>
+                                                            <label class="small upload-drop-zone" for="filethree"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload a File</label>
+                                                            <input type="file" id="filethree" name="file" class="form-control">
+                                                        </div><!-- Drop Zone -->
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <label for="additional2" class="weight600">Provide any additional information.</label> 
+                                                            <textarea id="additional2" rows="3" class="form-control"></textarea>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <label for="geographic" class="weight600">Geographic Area where you are using the mark in commerce:</label> 
+                                                            <textarea id="geographic" rows="3" class="form-control"></textarea>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <label for="mode" class="weight600">Mode of Use:</label> 
+                                                            <textarea id="mode" rows="3" class="form-control"></textarea>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md holdsaconcregapp">
+                                                            <div class="row">
+                                                                <div class="col-xs-12 col-md-7 form-group form-group-md">
+                                                                    <label for="ttab">Provide <span class="uppercase">ttab</span> Proceeding Number:</label> 
+                                                                    <textarea id="ttab" rows="1" class="form-control"></textarea>
                                                                 </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <label for="geographic" class="weight600">Geographic Area where you are using the mark in commerce:</label> 
-                                                                    <textarea id="geographic" rows="3" class="form-control"></textarea>
+                                                                <div class="col-xs-12 col-md-7 form-group form-group-md">
+                                                                    <label for="concurrentfiles">Registration Issued/Applications Files by Concurrent User</label> 
+                                                                    <textarea id="concurrentfiles" rows="1" class="form-control"></textarea>
                                                                 </div>
-                                                                <div class="col-xs-12 form-group form-group-md">
-                                                                    <label for="mode" class="weight600">Mode of Use:</label> 
-                                                                    <textarea id="mode" rows="3" class="form-control"></textarea>
-                                                                </div>
-                                                                <div class="col-xs-12 form-group form-group-md holdsaconcregapp">
-                                                                    <div class="row">
-                                                                        <div class="col-xs-12 col-md-7 form-group form-group-md">
-                                                                            <label for="ttab">Provide <span class="uppercase">ttab</span> Proceeding Number:</label> 
-                                                                            <textarea id="ttab" rows="1" class="form-control"></textarea>
-                                                                        </div>
-                                                                        <div class="col-xs-12 col-md-7 form-group form-group-md">
-                                                                            <label for="concurrentfiles">Registration Issued/Applications Files by Concurrent User</label> 
-                                                                            <textarea id="concurrentfiles" rows="1" class="form-control"></textarea>
-                                                                        </div>
-                                                                        <div class="col-xs-12">
-                                                                            <input class="form-check-input checkmark" type="checkbox" value="noconcurrentfiles" tabindex="0" aria-labelledby="noconcurrentfile" id="noconcurrentfiles">
-                                                                            <label class="form-check-label form-check" for="noconcurrentfiles" id="nofiles"><span class="radio notspecial" id="noconcurrentfile">Concurrent User does not have a Registration/Application with USPTO</span></label>
-                                                                        </div>
-                                                                        <div class="col-xs-12 col-md-7 form-group form-group-md">
-                                                                            <label for="concurrentname">Concurrent User&#8217;s Name</label> 
-                                                                            <textarea id="concurrentname" rows="1" class="form-control"></textarea>
-                                                                        </div>
-                                                                        <div class="col-xs-12 form-group form-group-md">
-                                                                            <p class="weight600" role="heading" aria-level="3">Concurrent User&#8217;s Address:</p>
-                                                                        </div>
-                                                                        <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-5">
-                                                                            <label for="concurrent-country">Country / US Territory</label>
-                                                                            <select class="form-control" id="concurrent-country">
-                                                                              <option value="Select">Select</option>
-                                                                              <option value="1">UNITED STATES OF AMERICA</option>
-                                                                                <option value="B2">AFGHANISTAN</option>
-                                                                                <option value="B3">ALBANIA</option>
-                                                                                <option value="C9">BELGIUM</option>
-                                                                                <option value="D5">BRAZIL</option>
-                                                                                <option value="E3">CAMBODIA</option>
-                                                                                <option value="E4">CAMEROON</option>
-                                                                                <option value="G7">DENMARK</option>
-                                                                                <option value="G8">DOMINICAN REPUBLIC</option>
-                                                                            </select>
-                                                                      </div>
-                                                                      <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-7">
-                                                                        <label for="concurrent-address1">Address Line 1</label>
-                                                                        <input type="text" class="form-control" id="attorney-address1">
-                                                                      </div>
-                                                                      <div class="form-group form-group-md col-xs-12 col-xl-6">
-                                                                        <label for="concurrent-address2">Address Line 2</label>
-                                                                        <input type="text" class="form-control" id="concurrent-address2">
-                                                                      </div>
-                                                                      <div class="form-group form-group-md col-xs-12 col-xl-6">
-                                                                        <label for="concurrent-address3">Address Line 3</label>
-                                                                        <input type="text" class="form-control" id="concurrent-address3">
-                                                                      </div>
-                                                                      <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
-                                                                        <label for="concurrent-city">City</label>
-                                                                        <input type="text" class="form-control" id="concurrent-city">
-                                                                      </div>
-                                                                      <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                                                                        <label for="concurrent-state">State</label>
-                                                                        <select class="form-control" id="concurrent-state">
-                                                                          <option value="Select">Select</option>
-                                                                            <option value="MD">Maryland</option>
-                                                                            <option value="NC">North Carolina</option>
-                                                                            <option value="4">Virginia</option>
-                                                                        </select>
-                                                                      </div>
-                                                                      <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
-                                                                        <label for="concurrent-zipcode">Zip Code</label>
-                                                                        <input type="text" class="form-control" id="concurrent-zipcode" placeholder="XXXXX">
-                                                                      </div>
-                                                                      <div class="col-xs-12 form-group form-group-md">
-                                                                        <label for="gs">Goods/Services:</label> 
-                                                                        <textarea id="gs" rows="3" class="form-control"></textarea>
-                                                                      </div>
-                                                                      <div class="col-xs-12 form-group form-group-md">
-                                                                        <label for="area">Geographic Area of concurrent user:</label> 
-                                                                        <textarea id="area" rows="3" class="form-control"></textarea>
-                                                                      </div>
-                                                                      <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                        <label for="concurrentmode">Concurrent User Mode of Use:</label> 
-                                                                        <textarea id="concurrentmode" rows="1" class="form-control"></textarea>
-                                                                      </div>
-                                                                      <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                        <label for="timeuse">Time Periods of Use</label> 
-                                                                        <textarea id="timeuse" rows="1" class="form-control"></textarea>
-                                                                      </div>
-                                                                </div> 
-                                                            </div><!--END holdsaconcregapp-->
-                                                            <div class="appendaconcregapp"></div>
-                                                            <div class="col-xs-12" role="group" aria-label="Add or delete additional application/registration">
                                                                 <div class="col-xs-12">
-                                                                    <button type="button" class="btn-sm btn-success add ctr" id="addconcregapp">Add Additional Registration/Application</button>
+                                                                    <input class="form-check-input checkmark" type="checkbox" value="noconcurrentfiles" tabindex="0" aria-labelledby="noconcurrentfile" id="noconcurrentfiles">
+                                                                    <label class="form-check-label form-check" for="noconcurrentfiles" id="nofiles"><span class="radio notspecial" id="noconcurrentfile">Concurrent User does not have a Registration/Application with USPTO</span></label>
                                                                 </div>
+                                                                <div class="col-xs-12 col-md-7 form-group form-group-md">
+                                                                    <label for="concurrentname">Concurrent User&#8217;s Name</label> 
+                                                                    <textarea id="concurrentname" rows="1" class="form-control"></textarea>
+                                                                </div>
+                                                                <div class="col-xs-12 form-group form-group-md">
+                                                                    <p class="weight600" role="heading" aria-level="3">Concurrent User&#8217;s Address:</p>
+                                                                </div>
+                                                                <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-5">
+                                                                    <label for="concurrent-country">Country / US Territory</label>
+                                                                    <select class="form-control" id="concurrent-country">
+                                                                      <option value="Select">Select</option>
+                                                                      <option value="1">UNITED STATES OF AMERICA</option>
+                                                                        <option value="B2">AFGHANISTAN</option>
+                                                                        <option value="B3">ALBANIA</option>
+                                                                        <option value="C9">BELGIUM</option>
+                                                                        <option value="D5">BRAZIL</option>
+                                                                        <option value="E3">CAMBODIA</option>
+                                                                        <option value="E4">CAMEROON</option>
+                                                                        <option value="G7">DENMARK</option>
+                                                                        <option value="G8">DOMINICAN REPUBLIC</option>
+                                                                    </select>
+                                                              </div>
+                                                              <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-7">
+                                                                <label for="concurrent-address1">Address Line 1</label>
+                                                                <input type="text" class="form-control" id="attorney-address1">
+                                                              </div>
+                                                              <div class="form-group form-group-md col-xs-12 col-xl-6">
+                                                                <label for="concurrent-address2">Address Line 2</label>
+                                                                <input type="text" class="form-control" id="concurrent-address2">
+                                                              </div>
+                                                              <div class="form-group form-group-md col-xs-12 col-xl-6">
+                                                                <label for="concurrent-address3">Address Line 3</label>
+                                                                <input type="text" class="form-control" id="concurrent-address3">
+                                                              </div>
+                                                              <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
+                                                                <label for="concurrent-city">City</label>
+                                                                <input type="text" class="form-control" id="concurrent-city">
+                                                              </div>
+                                                              <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
+                                                                <label for="concurrent-state">State</label>
+                                                                <select class="form-control" id="concurrent-state">
+                                                                  <option value="Select">Select</option>
+                                                                    <option value="MD">Maryland</option>
+                                                                    <option value="NC">North Carolina</option>
+                                                                    <option value="4">Virginia</option>
+                                                                </select>
+                                                              </div>
+                                                              <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
+                                                                <label for="concurrent-zipcode">Zip Code</label>
+                                                                <input type="text" class="form-control" id="concurrent-zipcode" placeholder="XXXXX">
+                                                              </div>
+                                                              <div class="col-xs-12 form-group form-group-md">
+                                                                <label for="gs">Goods/Services:</label> 
+                                                                <textarea id="gs" rows="3" class="form-control"></textarea>
+                                                              </div>
+                                                              <div class="col-xs-12 form-group form-group-md">
+                                                                <label for="area">Geographic Area of concurrent user:</label> 
+                                                                <textarea id="area" rows="3" class="form-control"></textarea>
+                                                              </div>
+                                                              <div class="col-xs-12 col-md-6 form-group form-group-md">
+                                                                <label for="concurrentmode">Concurrent User Mode of Use:</label> 
+                                                                <textarea id="concurrentmode" rows="1" class="form-control"></textarea>
+                                                              </div>
+                                                              <div class="col-xs-12 col-md-6 form-group form-group-md">
+                                                                <label for="timeuse">Time Periods of Use</label> 
+                                                                <textarea id="timeuse" rows="1" class="form-control"></textarea>
+                                                              </div>
+                                                         	</div> 
+                                                        </div><!--END holdsaconcregapp-->
+                                                        <div class="appendaconcregapp"></div>
+                                                        <div class="col-xs-12" role="group" aria-label="Add or delete additional application/registration">
+                                                            <div class="col-xs-12">
+                                                                <button type="button" class="btn-sm btn-success add ctr" id="addconcregapp">Add Additional Registration/Application</button>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </fieldset>
-                                            </section>
+                                                </div>
+                                            </fieldset>
+                                        </section>
                                     </div><!--END concurrent use-->
                                 </div><!--END formgroup-->
                             </form> 
@@ -548,7 +549,7 @@
                     </div>
                 </div>
             </div>
-       </main>
+       	</main>
      </div><!--END div content-->
  </div><!--END div container-->
 

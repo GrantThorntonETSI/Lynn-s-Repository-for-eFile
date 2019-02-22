@@ -1427,7 +1427,7 @@ label.disabled span {
   	-moz-box-shadow:    rgb(0,0,0);  
   	box-shadow:         rgb(0,0,0);
 	}
-#dashboardtableone_wrapper div.toolbar .btn-xs.active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs.active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs.focus, #dashboardtableone_wrapper div.toolbar  .btn-xs:active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs:active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:focus {
+#dashboardtableone_wrapper div.toolbar .btn-xs.active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs.active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs.focus, #dashboardtableone_wrapper div.toolbar  .btn-xs:active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs:active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo  .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:focus {
     /*outline: thin dotted;*/
 	outline: 0!important;
 	outline: 0 -webkit-focus-ring-color;
@@ -1574,12 +1574,12 @@ button#moreoptionsbtn {
 	position:relative;
 	float:right;
 	}
-#dashboardtableone_wrapper div.toolbar, #dashboardtableone_wrapper div.toolbar, #dashboardtabletwo_wrapper div.toolbar, #dashboardtabletwo_wrapper div.toolbar {
+#dashboardtableone_wrapper div.toolbar, #dashboardtableone_wrapper div.toolbar, #dashboardtabletwo_wrapper div.toolbartwo, #dashboardtabletwo_wrapper div.toolbartwo {
 	float:right;
 	margin-bottom: 1.5em;
 	width:1.8em
 	}
-#dashboardtableone_wrapper div.toolbar .btn-xs, #dashboardtabletwo_wrapper div.toolbar .btn-xs {
+#dashboardtableone_wrapper div.toolbar .btn-xs, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs {
 	padding: 0;
 	border:0;
 	font-size:2.85em!important;
@@ -1587,7 +1587,7 @@ button#moreoptionsbtn {
 	height: .8em;
 	margin:0;
 	}
-#dashboardtableone_wrapper div.toolbar .btn-xs .glyphicon, #dashboardtabletwo_wrapper div.toolbar .btn-xs .glyphicon {
+#dashboardtableone_wrapper div.toolbar .btn-xs .glyphicon, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs .glyphicon {
 	top: -6px;
 	}
 #reviewapplication .btn-success.fill {
@@ -2288,7 +2288,7 @@ button[type=submit] {
 	margin: 0 auto;
 	height:1em;
 	}
-#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close {
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close {
     font-size: 3em;
 	height:1.06em;
 	color:#009CDE;
@@ -2636,7 +2636,7 @@ footer #megamenu ul {
 	.inlinebuttons {
 		width: 61%;
 		}
-	#userprofilepage fieldset .inlinebuttons, #yesattorneyfiling fieldset .inlinebuttons {
+	#userprofilepage fieldset .inlinebuttons, #yesattorneyfiling fieldset .inlinebuttons, .insertform fieldset .inlinebuttons {
 		width: 41%!important;
 		margin-top:2em;
 		margin-bottom:2em;

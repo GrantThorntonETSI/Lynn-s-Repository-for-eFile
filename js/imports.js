@@ -4,17 +4,17 @@ $(document).ready(function(){
 	$( '#type' ).on('change',function(){
 		$( 'div#nametype' ).show( 'fast' );
 	});
-//START additional phone
-	var append = $( ".appendto" );
-	$("button#clonephone").on('click',function(){
-		//append = append.prev();
-	  	//$( append ).clone().appendTo('.phone');
-		$( '.phone:eq(0)' ).clone().appendTo( '.appendto' );
+//START additional phone rev
+$( document ).on('click','button#addphone2',function(){	
+	$( '.phones' ).first().clone().appendTo( '#appendphones' );
+	$( '.phones' ).last().find('input').val('');
+	$( '#appendphones .resetphone2' ).removeClass( 'visuallyremoved' );
+	$( this ).removeClass( '.addphoneinitial' );
 	});
-	$( '#resetphone' ).on('click',function () {
-		  $( '.appendto .phone' ).remove( '.phone:eq(0)' );
-		});
-//END additional phone
+	$( document ).on('click','.resetphonebtn',function(){
+		$( this ).parent().parent().parent().remove();
+	});
+//END additional phone rev
 //start nameoftypeofbusiness options
 //START fill from contacts values -- owner information
 function clearform() {
