@@ -2636,7 +2636,7 @@ footer #megamenu ul {
 	.inlinebuttons {
 		width: 61%;
 		}
-	#userprofilepage fieldset .inlinebuttons, #yesattorneyfiling fieldset .inlinebuttons, .insertform fieldset .inlinebuttons {
+	#userprofilepage fieldset .inlinebuttons, #yesattorneyfiling fieldset .inlinebuttons, .insertform fieldset .inlinebuttons, #addNewOwnerForm fieldset .inlinebuttons {
 		width: 41%!important;
 		margin-top:2em;
 		margin-bottom:2em;
