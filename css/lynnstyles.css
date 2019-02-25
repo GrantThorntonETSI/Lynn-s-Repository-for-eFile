@@ -1589,10 +1589,10 @@ button#moreoptionsbtn {
 	color:#9BB8D3;
 	height: .8em;
 	margin:0;
+	background-color:transparent;
 	}
 #dashboardtableone_wrapper div.toolbar .btn-xs .glyphicon, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs .glyphicon {
 	top: -6px;
-	background-color:transparent;
 	}
 #reviewapplication .btn-success.fill {
 	display:inline-block;
