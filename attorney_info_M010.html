@@ -631,7 +631,7 @@
                                             </select>
                                         </div>
                                     </div>                                
-                                <div id="usaffiliation" role="region" aria-labelledby="affiliation" class="hidethis">
+                                <div id="usaffiliation" role="region" aria-labelledby="affiliation" class="hidethisdiv">
                                     <div class="row">
                                         <div class="form-group form-group-md col-xs-12 col-md-3">
                                             <label for="attorney-bar-jurisdiction">Bar Jurisdiction</label>
@@ -705,20 +705,22 @@
                                         <label class="form-check-label form-check" for="user-accept-checkbox" id="userAccept-label"><span class="radio notspecial">I certify that this attorney is in good standing with a bar of the highest court of any US State, the District of Columbia, the US Commonwealths or US Territories.</span></label>
                                     </div>
                                     <div class="form-group form-group-md">
-                                        <label class="small long upload-drop-zone" for="file"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>
-Upload bar credentials, including certificate of good standing from highest court of a state, commonwealth, territory or possession, or of the District of Columbia evidencing that you are a memeber of the bar of such court and are in good standing.</label>
-                                        <input type="file" id="file" name="file" class="form-control">
-                                    </div><!-- Drop Zone -->
-                                    <div class="row">
-                                      <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
-                                        <p id="uploaded">Processed files</p>
-                                        <div class="list-group">
-                                          <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploaded"></a>
+                                        <div class="form-group form-group-md hidethis">
+                                            <label class="small long upload-drop-zone" for="file"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>
+    Upload bar credentials, including certificate of good standing from highest court of a state, commonwealth, territory or possession, or of the District of Columbia evidencing that you are a memeber of the bar of such court and are in good standing.</label>
+                                            <input type="file" id="file" name="file" class="form-control">
                                         </div>
-                                      </div>
-                                    </div>
+                                        <div class="row">
+                                            <div class="js-upload-finished col-xs-12">
+                                                <p id="uploadedfile">Selected files</p>
+                                                <div class="list-group" id="filedata">
+                                                    <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- Drop Zone -->
                              	</div><!--END US affiliation-->
-                                <div id="canadianaffiliation" role="region" aria-labelledby="affiliation" class="hidethis">
+                                <div id="canadianaffiliation" role="region" aria-labelledby="affiliation" class="hidethisdiv">
                                     <div class="form-group">
                                         <label for="ca-attornery-query">Please select a name from the registered OED list from Canadian Trademark and Patent Agents</label>
                                         <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">	
@@ -801,27 +803,27 @@ Upload bar credentials, including certificate of good standing from highest cour
                                     	<td tabindex="0" class="list-group-item inner-addon right-addon col-xs-6"><i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" class="form-control" id="contactsearch" placeholder="Search" aria-label="search"></td>
                                  	</tr>
                                     <tr class="row">
-                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Avo Reed</td>
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Avo Reed</td>
                                         <td tabindex="0" class="list-group-item col-xs-6">avo.reid@us.gt.com</td>
                                     </tr>
                                     <tr class="row">
-                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Jackie Babos</td>
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jackie Babos</td>
                                         <td tabindex="0" class="list-group-item col-xs-6">jackie.babos@us.gt.com</td>
                                   	</tr>
                                     <tr class="row">
-                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Jacob Goldstein</td>
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jacob Goldstein</td>
                                         <td tabindex="0" class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
                                    	</tr>
                                     <tr class="row">
-                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Avo Reed</td>
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Avo Reed</td>
                                         <td tabindex="0" class="list-group-item col-xs-6">avo.reid@us.gt.com</td>
                                     </tr>
                                     <tr class="row">
-                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Jackie Babos</td>
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jackie Babos</td>
                                         <td tabindex="0" class="list-group-item col-xs-6">jackie.babos@us.gt.com</td>
                                   	</tr>
                                     <tr class="row">
-                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Jacob Goldstein</td>
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jacob Goldstein</td>
                                         <td tabindex="0" class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
                                    	</tr>
                                 </table>

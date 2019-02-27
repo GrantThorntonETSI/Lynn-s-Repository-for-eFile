@@ -199,22 +199,31 @@
                                         <div class="form-group form-group-md col-xs-12">
                                             <div class="row">
                                                 <section aria-label="class image and description">
-                                                    <div class="col-xs-12 col-md-6">
+                                                    <div class="col-xs-12">
                                                         <p id="upimage">Provide an image of your specimen:</p>
                                                         <div>
-                                                            <label class="small upload-drop-zone" for="specimenfile" id="upimg"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
-                                                            <input type="file" id="specimenfile" name="specimenfileupload" class="form-control" aria-labelledby="upimg upimage">
-                                                        </div><!-- Drop Zone -->
-                                                        <div class="row">
-                                                            <div class="js-upload-finished col-xs-12">
-                                                                <p id="uploaded">Processed Files</p>
-                                                                <div class="list-group">
-                                                                    <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploaded"></a>
+                                                            <div class="form-group form-group-md hidethis">
+                                                                <label class="small upload-drop-zone" for="specimenfile" id="upimg"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
+                                                                <input type="file" id="specimenfile" name="specimenfileupload" class="form-control" aria-labelledby="upimg upimage">
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="js-upload-finished col-xs-12">
+                                                                    <p id="uploadedfile">Selected files</p>
+                                                                    <div class="list-group" id="filedata">
+                                                                        <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div><!-- Upload Finished -->
+                                                            <div class="row">
+                                                                <div class="col-xs-12">
+                                                                    <div class="col-xs-12 form-group form-group-md">
+                                                                        <button type="button" class="btn-sm btn-success add ctr" aria-label="submit selected files">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div><!-- Drop Zone -->
                                                     </div>
-                                                    <div class="col-xs-12 col-md-6">
+                                                    <div class="col-xs-12">
                                                         <label for="specdescript">Provide a description of your specimen:</label> 
                                                         <textarea id="specdescript" class="form-control"></textarea>
                                                     </div>
@@ -245,14 +254,29 @@
                                                             <label class="form-check-label form-check" for="specimen"><span class="radio notspecial">Check here to provide a specimen for this individual good/service.</span></label>
                                                         </div>
                                                         <div id="yesspecimenone" class="form-group form-group-md"><!--toggle 'yes' radio-->
-                                                            <div class="col-xs-12 col-md-6">
+                                                            <div class="col-xs-12">
                                                                 <p id="upimagetwo">Provide an image of your specimen:</p>
-                                                                <div>
+                                                                <div class="form-group form-group-md hidethis">
                                                                     <label class="small upload-drop-zone" for="specimentwofile"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
                                                                     <input type="file" id="specimentwofile" name="specimentwofileupload" class="form-control" aria-labelledby="upimgtwo upimagetwo">
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="js-upload-finished col-xs-12">
+                                                                        <p id="uploadedfile">Selected files</p>
+                                                                        <div class="list-group" id="filedata">
+                                                                            <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-12">
+                                                                        <div class="col-xs-12 form-group form-group-md">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" aria-label="submit selected files">Submit</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div><!-- Drop Zone -->
                                                             </div>
-                                                            <div class="col-xs-12 col-md-6">
+                                                            <div class="col-xs-12">
                                                                 <label for="specdescriptwo">Provide a description of your specimen:</label> 
                                                                 <textarea id="specdescriptwo" class="form-control"></textarea>
                                                             </div>
@@ -295,14 +319,29 @@
                                                             <label class="form-check-label form-check" for="specimentwo"><span class="radio notspecial">Check here to provide a specimen for this individual good/service.</span></label>
                                                         </div>
                                                         <div id="yesspecimentwo" class="form-group form-group-md"><!--toggle 'yes' radio-->
-                                                            <div class="col-xs-12 col-md-6">
+                                                            <div class="col-xs-12">
                                                                 <p id="upimagefour">Provide an image of your specimen:</p>
-                                                                <div>
+                                                                <div class="form-group form-group-md hidethis">
                                                                     <label class="small upload-drop-zone" for="specimenthreefile"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
                                                                     <input type="file" id="specimenthreefile" name="specimenthreefileupload" class="form-control" aria-labelledby="upimgtwo upimagetwo">
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="js-upload-finished col-xs-12">
+                                                                        <p id="uploadedfile">Selected files</p>
+                                                                        <div class="list-group" id="filedata">
+                                                                            <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-12">
+                                                                        <div class="col-xs-12 form-group form-group-md">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" aria-label="submit selected files">Submit</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div><!-- Drop Zone -->
                                                             </div>
-                                                            <div class="col-xs-12 col-md-6">
+                                                            <div class="col-xs-12">
                                                                 <label for="specdescriptfour">Provide a description of your specimen:</label> 
                                                                 <textarea id="specdescriptfour" class="form-control"></textarea>
                                                             </div>
@@ -380,10 +419,25 @@
                                                                     <input type="date" class="form-control" id="renew-date" name="renewdate" value="">
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12">
-                                                                    <p id="upimagethree">Provide an image of forereign registration certificate: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></p>
-                                                                    <div>
+                                                                    <p id="upimagethree">Provide an image of foreign registration certificate: <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></p>
+                                                                    <div class="form-group form-group-md hidethis">
                                                                         <label class="small upload-drop-zone" for="renewfile"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
                                                                         <input type="file" id="renewfile" name="specimenfileupload" class="form-control" aria-labelledby="upimgtwo upimagethree">
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="js-upload-finished col-xs-12">
+                                                                            <p id="uploadedfile">Selected files</p>
+                                                                            <div class="list-group" id="filedata">
+                                                                                <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="col-xs-12">
+                                                                            <div class="col-xs-12 form-group form-group-md">
+                                                                                <button type="button" class="btn-sm btn-success add ctr" aria-label="submit selected files">Submit</button>
+                                                                            </div>
+                                                                        </div>
                                                                     </div><!-- Drop Zone -->
                                                                 </div>
                                                             </div><!--foreign-->

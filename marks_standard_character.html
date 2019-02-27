@@ -381,21 +381,30 @@
                                                                 <label for="inlineRadio17" class="radio-inline radiocontainer">Yes<input type="radio" name="livindividualradio" id="inlineRadio17" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                                 <label for="inlineRadio18" class="radio-inline radiocontainer">No<input type="radio" name="livindividualradio" id="inlineRadio18" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                             </div><!--END radiogroup-->
-                                                            <h4 class="weight600">Upload Consent</h4>
-                                                            <p><a href="#"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Consent Template</a></p>
-                                                            <div class="form-group form-group-md">
-                                                                <label class="small upload-drop-zone" for="consentfile"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>
-                                                                    Upload Consent</label>
-                                                                <input type="file" id="consentfile" name="consentfileupload" class="form-control">
-                                                            </div><!-- Drop Zone -->
-                                                            <div class="row">
-                                                              <div class="js-upload-finished col-xs-12 col-md-10 col-lg-8">
-                                                                <p id="uploadedtwo">Processed files</p>
-                                                                <div class="list-group">
-                                                                  <a href="#" class="list-group-item list-group-item-success" aria-labelledby="uploadedtwo"></a>
+                                                            <div class="col-xs-12" id="yesliving">
+                                                                <h4 class="weight600">Upload Consent</h4>
+                                                                <p><a href="#"><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Consent Template</a></p>
+                                                                <div class="form-group form-group-md hidethis">
+                                                                    <label class="small upload-drop-zone" for="consentfile"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>
+                                                                        Upload Consent</label>
+                                                                    <input type="file" id="consentfile" name="consentfileupload" class="form-control">
+                                                                </div><!-- Drop Zone -->
+                                                                <div class="row">
+                                                                    <div class="js-upload-finished col-xs-12">
+                                                                        <p id="uploadedfile">Selected files</p>
+                                                                        <div class="list-group" id="filedata">
+                                                                            <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
-                                                              </div>
-                                                            </div>
+                                                                <div class="row">
+                                                                    <div class="col-xs-12">
+                                                                        <div class="col-xs-12 form-group form-group-md">
+                                                                            <button type="button" class="btn-sm btn-success add ctr" aria-label="submit selected images">Submit</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                           	</div>
                                                         </div>
                                                     </div>
                                                 </section>

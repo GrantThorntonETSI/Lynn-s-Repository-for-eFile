@@ -181,22 +181,22 @@ $(document).ready(function(){
 	//END initialize Dashboard datable two
 	
 	//Dashboard datatables ellipsis menu tableone
-		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vis" data-column="0">Serial#</a></li><li><a class="toggle-vis" data-column="1">Registration#</a></li><li><a class="toggle-vis" data-column="2">Owner</a></li><li><a class="toggle-vis" data-column="3">Status</a></li><li><a class="toggle-vis" data-column="4">Mark</a></li></ul></div>');
+		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical" role="img" aria-label="toggle columns visibility"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vis" data-column="0">Serial#</a></li><li><a class="toggle-vis" data-column="1">Registration#</a></li><li><a class="toggle-vis" data-column="2">Owner</a></li><li><a class="toggle-vis" data-column="3">Status</a></li><li><a class="toggle-vis" data-column="4">Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function (e) {
 			e.preventDefault();
 			var column = tableone.column( $(this).attr('data-column') );
 			column.visible( ! column.visible() );
-			console.log($(this).attr('data-column'));
+			//console.log($(this).attr('data-column'));
 		});
 	//END dashboard datatables ellipsis menu tableone
 	
 	//Dashboard datatables ellipsis menu tabletwo
-		$("div.toolbartwo").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vistwo" data-column="0">Serial#</a></li><li><a class="toggle-vistwo" data-column="1">Registration#</a></li><li><a class="toggle-vistwo" data-column="2">Mark</a></li><li><a class="toggle-vistwo" data-column="3">Owner</a></li><li><a class="toggle-vistwo" data-column="4">Due Date</a></li><li><a class="toggle-vistwo" data-column="5">Status</a></li><li><a class="toggle-vistwo" data-column="6">Action</a></li></ul></div>');
+		$("div.toolbartwo").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical role="img" aria-label="toggle column visibility""></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle columns</li><li><a class="toggle-vistwo" data-column="0">Serial#</a></li><li><a class="toggle-vistwo" data-column="1">Registration#</a></li><li><a class="toggle-vistwo" data-column="2">Mark</a></li><li><a class="toggle-vistwo" data-column="3">Owner</a></li><li><a class="toggle-vistwo" data-column="4">Due Date</a></li><li><a class="toggle-vistwo" data-column="5">Status</a></li><li><a class="toggle-vistwo" data-column="6">Action</a></li></ul></div>');
 		$('a.toggle-vistwo').on( 'click', function (e) {
 			e.preventDefault();
 			var column = tabletwo.column( $(this).attr('data-column') );
 			column.visible( ! column.visible() );
-			console.log($(this).attr('data-column'));
+			//console.log($(this).attr('data-column'));
 		});
 	//END dashboard datatables ellipsis menu tabletwo
 	
@@ -688,11 +688,6 @@ $(document).ready(function(){
 			? $(this).html('<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Show My Mark')
 			: $(this).html('<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Hide My Mark');
 		});	
-	//Display uploaded filename
-	$('input[type="file"]').change(function(e){
-		var fileName = e.target.files[0].name;
-		$('a.list-group-item').html('<span class="filename">' + fileName + '</span>' + '<span class="badge alert-success pull-right">File Uploaded</span><br clear:all>');
-	});
 	//toggle acceptance
 	$( '#acceptreview' ).click(function() {
 		$( this ).toggleClass( 'focus' );
@@ -700,71 +695,82 @@ $(document).ready(function(){
 			? $(this).html('Accepted')
 			: $(this).html('Accept');
 		});	
-	//sm file upload inputs	
+	//file upload inputs	
 	$(document).on('change', 'input[type="file"]', function(e) {
-            var fileDisplayArea = $(this).siblings('label').children('.fileDisplayArea');
+            var fileDisplayArea = $(this).siblings('label').children( 'div.fileDisplayArea' );
     		//var fileDisplayArea = ('.fileDisplayArea');
 			var file = e.target.files[0];
+			var name = e.target.files[0].name;
+    		var type = e.target.files[0].type;
+			var listlength = $(this).parent().next().children('js-upload-finished').children('list-group').children('div.fileholder div.row').length + 1;
+			var holdata = $(this).parent().parent().find('div.fileholder');
+			var hidethis = $(this).parent().contents();
+			//var fileName = e.target.files[0].name;
 			var imageType = /image.*/;
 			if (file.type.match(imageType)) {
-			  var reader = new FileReader();
-			  reader.onload = function(e) {
-				$(fileDisplayArea).addClass('loader').html("");
-				// Create an image
-				var img = new Image();
-				// Set the img src
-				img.src = reader.result;
-				// display the image on the page
-				$(fileDisplayArea).removeClass('loader').append(img);
-				$('.upload-drop-zone').css('height','115px');
-				$('.upload-drop-zone img').css('height','64px');
-			  }
-			  reader.readAsDataURL(file); 
-			} else {
-			  var reader = new FileReader();
-			  	reader.onload = function(e) {
-				$(fileDisplayArea).addClass('loader').html("");
-				// Create an image
-				var arrayBuffer = reader.result;
-				$(fileDisplayArea).removeClass('loader');
-				$(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
-			}
-			reader.readAsArrayBuffer(file);
-		  }
-        });	
-		//lg file upload inputs
-		$(document).on('change', 'input[type="file"]', function(e) {
-            var fileInput = ('input#file');
-    		var fileDisplayArea = ('div#fileDisplayArea');
-			var file = e.target.files[0];
-			var imageType = /image.*/;
-			if (file.type.match(imageType)) {
-			  var reader = new FileReader();
-			  reader.onload = function(e) {
-				$(fileDisplayArea).addClass('loader').html("");
-				// Create an image
-				var img = new Image();
-				// Set the img src
-				img.src = reader.result;
-				// display the image on the page
-				$(fileDisplayArea).removeClass('loader').append(img);
-				$('.upload-drop-zone').css('height','115px');
-				$('.upload-drop-zone img').css('height','64px');
-			  }
-			  reader.readAsDataURL(file); 
-			} else {
+			  if ((listlength) < 2)  {
+				//console.log(listlength);
 				var reader = new FileReader();
 			  	reader.onload = function(e) {
-				$(fileDisplayArea).addClass('loader').html("");
-				// Create an image
-				var arrayBuffer = reader.result;
-				$(fileDisplayArea).removeClass('loader');
-				$(fileDisplayArea).html('<span class="glyphicon glyphicon-check"></span>');
+					$(fileDisplayArea).addClass('loader').html("");
+					// Create an image
+					var img = new Image();
+					// Set the img src
+					img.src = reader.result;
+					var imgSrc = img.src;
+					// display the image on the page
+					$(fileDisplayArea).removeClass('loader').append(img);
+					$( '.upload-drop-zone' ).css('height','115px');
+					$( '.upload-drop-zone img' ).css('height','64px');
+					$( '.thumbnail img' ).css('height','20px');
+					$(holdata).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-4 linkholder"><a href="'+ imgSrc + '" aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-2"><img src="' + imgSrc + '" class="img-thumbnail"></div><div class="col-xs-4"><span class="badge alert-success pull-right">Selected File</span></div></div>');
+					//console.log(holdata);
+					}
+				if ((listlength) == 1)  {
+						$( hidethis ).hide();
+					}
+				//if ((listlength) == 0)  {
+						//$( '.upload-drop-zone' ).show();
+					//}
+				if (file) {
+				  reader.readAsDataURL(file);
+				  }
 			  }
-			  reader.readAsArrayBuffer(file); 
-			}
+			  
+			} else {
+			  var reader = new FileReader();
+			  	reader.onload = function(e) {
+					if (( listlength ) < 2)  {
+						$( fileDisplayArea ).addClass( 'loader' ).html("");
+						// Create a file
+						var dataURL = reader.result;
+						$( fileDisplayArea ).removeClass( 'loader' );
+						$( fileDisplayArea ).html( '<span class="glyphicon glyphicon-check"></span>' );
+						$( holdata ).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-4 linkholder"><a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-1 visuallyhidden">' + type + '</div><div class="col-xs-5"><span class="badge alert-success pull-right">Selected File</span></div></div>');
+						//console.log(dataURL);
+					}
+					if ((listlength) == 1)  {
+						$( hidethis ).hide();
+					}
+//					if ((listlength) == 0)  {
+//						$( '.upload-drop-zone' ).show();
+//					}
+				}
+			if (file) {
+				reader.readAsDataURL(file);
+				}
+			  }
         });	
-		
+	//START remove selected file
+	$(document).on('click', '.js-upload-finished button.close', function() {
+		$( '.hidethis' ).contents().css('display','block');
+		$( '.upload-drop-zone' ).css('height','115px');
+		$( '#usaffiliation .upload-drop-zone' ).css('height','175px');
+		$( this ).parent().parent().remove();
+		$( 'div.fileDisplayArea img' ).remove();
+		$( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		});
+	//END remove selected file
 	//+ Translation Item
 	//
 	
@@ -883,6 +889,24 @@ $(document).ready(function(){
 			}
 	else {
 			$('div#yescontainssignature').hide( 'fast' );
+			}
+	});
+	//yes, consent required is checked
+	$('div#yesliving').hide();
+	$('#inlineRadio17').change(function() {
+		if(this.checked == true){
+			$('div#yesliving').show( 'fast' );
+			}
+	else {
+			$('div#yesliving').hide( 'fast' );
+			}
+	});
+	$('#inlineRadio18').change(function() {
+		if(this.checked == true){
+			$('div#yesliving').hide( 'fast' );
+			}
+	else {
+			$('div#yesliving').show( 'fast' );
 			}
 	});
 	//end nps options
@@ -1128,7 +1152,7 @@ $(document).ready(function(){
 	$('div#usaffiliation').css('display','none');
 	$('div#canadianaffiliation').css('display','none');
 	$('#attorney-bar-standing').change(function(){
-		$('.hidethis').hide( 'fast' );
+		$('.hidethisdiv').hide( 'fast' );
 		$('#' + $(this).val()).show( 'fast' );
 	});
 	//end affiliation options
@@ -1266,11 +1290,11 @@ $(document).ready(function(){
 	//START contacts, fees, my mark components
 	//start toggle glyphicon contacts widget
 	function togglecontacts() {
-		$( '#mydata2' ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#9BB8D3').siblings().css('background-color','#9BB8D3');
-		//$( this ).parent().parent().find('glyphicon-ok-sign').toggleClass( 'glyphicon-plus-sign' );
-		$( this ).find('span.glyphicon-plus-sign').toggleClass( 'glyphicon-ok-sign' );
-		$( this ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#D4EB8E').siblings().css('background-color','#D4EB8E');
+		$( '#mydata2' ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#9BB8D3').css('color','#fff').siblings().css('background-color','#9BB8D3').css('color','#fff');
+		$( this ).find('span.glyphicon-plus-sign').toggleClass( 'glyphicon-ok-sign' ).attr('aria-label','select this contact');
+		$( this ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#D4EB8E').css('color','#333').siblings().css('background-color','#D4EB8E').css('color','#333');
 		$( this ).find('span.glyphicon-ok-sign').parent().parent().parent().siblings().children().children().children('.glyphicon-ok-sign').removeClass( 'glyphicon-ok-sign' );
+		$( this ).find('span.glyphicon-ok-sign').attr('aria-label','deselect this contact');
 	}
 	$('a.fromcontact').click(togglecontacts);
 	//start toggle glyphicon contacts widget 
@@ -1735,7 +1759,7 @@ $(document).ready(function(){
 					}); 
 				$( document ).find($(b).prop('checked',true)).parent().parent().after(newrow);
 				$('div#yesinuse1atwo').css('display','none');
-				console.log(dd);
+				//console.log(dd);
 			}
 			//user selects In-Use 1(a) and all Classnames + GSs are selected
 			else if ($(b).prop('checked',false)) {
