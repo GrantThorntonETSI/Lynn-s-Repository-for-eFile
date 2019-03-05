@@ -15,7 +15,7 @@
                         <fieldset aria-labelledby="ownerinfo">
                        		<div class="row">
                               <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-4">
-                                <label for="ownername"><span class="weight600">&#42;</span>Owner Name</label>
+                                <label for="ownername">Owner Name <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="ownername" th:field="*{firstName}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
@@ -29,7 +29,7 @@
                                 </select>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
-                                <label for="countryoforg"><span class="weight600">&#42;</span>Country of Incorporation</label>
+                                <label for="countryoforg">Country of Incorporation <span class="weight600">&#42;</span></label>
                                 <select class="form-control" id="countryoforg" required>
                                   <option value="Select">Select</option>
                                   <option value="bahamas">Bahamas</option>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="row">
                             <div class="form-group form-group-md col-xs-12 col-md-6">
-                                <label for="email"><span class="weight600">&#42;</span>Email Address <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                <label for="email">Email Address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
                                 <input type="text" class="form-control" id="email" th:field="*{ownerEmail}" required>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                 </select>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-lg-8">
-                                <label for="addressline1"><span class="weight600">&#42;</span>Address Line 1</label>
+                                <label for="addressline1">Address Line 1 <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="addressline1" th:field="*{ownerAddress1}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-lg-8">
@@ -79,15 +79,15 @@
                                 <input type="text" class="form-control" id="addressline3" th:field="*{ownerAddress3}">
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
-                                <label for="city"><span class="weight600">&#42;</span>City</label>
+                                <label for="city">City <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="city" th:field="*{ownerCity}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
-                                    <label for="state"><span class="weight600">&#42;</span>State/Province/Territory</label>
+                                    <label for="state">State/Province/Territory <span class="weight600">&#42;</span></label>
                                     <input type="text" class="form-control" id="state" th:field="*{ownerState}" required>
                                   </div>
                               <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
-                                <label for="zipcode"><span class="weight600">&#42;</span>Postal Code</label>
+                                <label for="zipcode">Postal Code <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
                               </div>
                               <div class="row">
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                             <div id="appendphones"></div>
-                            <div class="col-xs-12" aria-label="add additional phone number">
+                            <div class="form-group form-group-md col-xs-12" aria-label="add additional phone number">
                                 <div class="row">
                                     <div class="inlinebuttons btn-group btn-group-justified">
                                         <div class="btn-group col-xs-6">

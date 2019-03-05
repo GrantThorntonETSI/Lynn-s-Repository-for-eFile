@@ -171,8 +171,8 @@
                         </div>
                     </div>
                     <p class="required"><span class="weight600">&#42; = Required</span></p>
-                    <p class="instructions" id="costsavingoptions">Reduce Fee Mode</p>
-                    <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn reduce fee labels on or off">
+                    <p class="instructions" id="costsavingoptions">Reduced Fee Mode</p>
+                    <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn Reduced Fee labels on or off">
                         <label class="switch">
                         <input class="togglesavemore" type="checkbox">
                         <span class="slider uppercase"><span class="visuallyhidden" id="on">On</span> <span id="off">Off</span></span>
@@ -193,40 +193,40 @@
                     <div id="yesattorneyfiling" role="region" aria-labelledby="attorneyfiling">
                         <form method="post" id="addNewAttorneyForm" action="/attorney/add" enctype="multipart/form-data" th:object="${addNewAttorneyContactFormDTO}" aria-labelledby="title">
                             <fieldset aria-labelledby="attorneyinfo">
-                            		<div class="row">
-                                      <div class="col-xs-12 col-sm-12 col-lg-12">
-                                        <button type="button" class="btn-sm btn-success fill" id="autofill">Fill from Contacts</button>
-                                      </div>
-                                      <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                        <label for="title">Title</label>
-                                        <input type="text" class="form-control" id="title"><!--Needs th:field= attribute to capture this value on submit-->
-                                      </div>
-                                      <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                        <label for="attorney-first-name"><span class="weight600">&#42;</span> First Name</label>
-                                        <input type="text" class="form-control" id="attorney-first-name" th:field="*{firstName}" name="first" placeholder="First Name" required>
-                                      </div>
-                                      <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                        <label for="Attorney-middle-name">Middle Name</label>
-                                        <input type="text" class="form-control" id="Attorney-middle-name" th:field="*{middleName}">
-                                      </div>
-                                      <div class="form-group form-group-md col-xs-12 col-sm-9 col-lg-6">
-                                        <label for="attorney-last-name"><span class="weight600">&#42;</span> Last Name</label>
-                                        <input type="text" class="form-control" id="attorney-last-name" th:field="*{lastName}" required>
-                                      </div>
-                                      <div class="form-group form-group-md col-xs-5 col-sm-3">
-                                        <label for="suffix">Suffix</label>
-                                        <select class="form-control" id="suffix" th:field="*{suffix}">
-                                          <option value="Select">Select</option>
-                                          <option value="1">Mr.</option>
-                                          <option value="2">Mrs.</option>
-                                          <option value="3">Ms.</option>
-                                        </select>
-                                      </div>
-                                      <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-5">
-                                        <label for="attorney-lawfirm-name"><span class="weight600">&#42;</span> Firm</label>
-                                        <input type="text" class="form-control" id="attorney-lawfirm-name" th:field="*{lawFirmName}" placeholder="Law Firm Name" required>
-                                      </div>
-                                 	</div>
+                                <div class="row">
+                                  <div class="col-xs-12 col-sm-12 col-lg-12">
+                                    <button type="button" class="btn-sm btn-success fill" id="autofill">Fill from Contacts</button>
+                                  </div>
+                                  <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                    <label for="title">Title</label>
+                                    <input type="text" class="form-control" id="title"><!--Needs th:field= attribute to capture this value on submit-->
+                                  </div>
+                                  <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                    <label for="attorney-first-name"> First Name <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="attorney-first-name" th:field="*{firstName}" name="first" placeholder="First Name" required>
+                                  </div>
+                                  <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                    <label for="Attorney-middle-name">Middle Name</label>
+                                    <input type="text" class="form-control" id="Attorney-middle-name" th:field="*{middleName}">
+                                  </div>
+                                  <div class="form-group form-group-md col-xs-12 col-sm-9 col-lg-6">
+                                    <label for="attorney-last-name">Last Name <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="attorney-last-name" th:field="*{lastName}" required>
+                                  </div>
+                                  <div class="form-group form-group-md col-xs-5 col-sm-3">
+                                    <label for="suffix">Suffix</label>
+                                    <select class="form-control" id="suffix" th:field="*{suffix}">
+                                      <option value="Select">Select</option>
+                                      <option value="1">Mr.</option>
+                                      <option value="2">Mrs.</option>
+                                      <option value="3">Ms.</option>
+                                    </select>
+                                  </div>
+                                  <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-5">
+                                    <label for="attorney-lawfirm-name">Firm <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="attorney-lawfirm-name" th:field="*{lawFirmName}" placeholder="Law Firm Name" required>
+                                  </div>
+                                </div>
                               </fieldset><!--END Attorney Information-->
                                 <!--START Attorney Contact Information-->
                                 <div class="card-text noexpand">
@@ -557,7 +557,7 @@
                                         <input type="text" class="form-control" id="attorney-zipcode" placeholder="XXXXX" th:field="*{attorneyZipcode}">
                                       </div>
                                       <div class="form-group form-group-md col-xs-12 col-md-7 col-lg-7">
-                                        <label for="attorney-email" class="sr-only"><span class="weight600">&#42;</span> Email Address</label>
+                                        <label for="attorney-email" class="sr-only">Email Address <span class="weight600">&#42;</span></label>
                                         <input type="text" class="form-control" id="attorney-email" placeholder="email Address" th:field="*{attorneyEmail}" required>
                                       </div>
                                       <div class="row phones">
@@ -586,7 +586,7 @@
                                     	</div>
                                     </div> 
                                     <div class="appendphones"></div>
-                                    <div class="col-xs-12" aria-label="add additional phone number">
+                                    <div class="form-group form-group-md col-xs-12" aria-label="add additional phone number">
                                         <div class="row">
                                             <div class="inlinebuttons btn-group btn-group-justified">
                                                 <div class="btn-group col-xs-6">
@@ -601,18 +601,24 @@
                                 <div class="card-text noexpand">
                                 	<h2 class="card-title weight600" id="docketreference">Docket or Reference Number</h2>
                                 </div>
-                                <fieldset aria-labelledby="docketreference" class="row">
-                                    <div class="form-group form-group-md col-xs-12 col-md-7" id="copy">
-                                        <label for="docket-id">If applicable, enter the attorney docket or reference number.</label>
-                                        <input type="text" class="form-control" id="docket-id" th:field="*{attorneyDocketNumber}">
+                                <fieldset aria-labelledby="docketreference">
+                                	<div class="row docket">
+                                        <div class="form-group form-group-md col-xs-9">
+                                            <label for="docket-id">If applicable, enter the attorney docket or reference number.</label>
+                                            <input type="text" class="form-control" id="docket-id" th:field="*{attorneyDocketNumber}">
+                                        </div>
+                                        <div class="form-group form-group-md visuallyremoved resetdkt col-xs-3">
+                                            <button type="button" class="btn btn-sm close resetdktrefbtn" value="" aria-label="remove this number"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                        </div>
                                     </div>
                                     <div class="appenddocket"></div>
-                                    <div class="col-xs-7 col-md-3" role="group" id="plusdocket" aria-label="Add or delete additional docket or reference numbers">
-                                        <div class="col-xs-9">
-                                            <button type="button" class="btn-sm btn-success add ctr" id="addocket">Add Number</button>
-                                        </div>
-                                        <div class="col-xs-3">
-                                            <button type="button" class="btn-sm btn-success add ctr" id="resetdockets">&#8211;</button>
+                                    <div class="form-group form-group-md col-xs-12">
+                                        <div class="row">
+                                            <div class="inlinebuttons btn-group btn-group-justified">
+                                                <div class="btn-group col-xs-6">
+                                                    <button type="button" class="btn btn-sm btn-success addinitial" id="addocketref" aria-label="add docket or reference number">Add Number</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </fieldset><!--END Docket Reference Information-->
@@ -623,7 +629,7 @@
                                 <fieldset aria-labelledby="affiliation">
                                     <div class="row">
                                         <div class="form-group form-group-md col-xs-12">
-                                            <label for="attorney-bar-standing">Specify affiliation <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
+                                            <label for="attorney-bar-standing">Specify affiliation <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
                                             <select class="form-control" id="attorney-bar-standing" th:field="*{attorneyAffiliation}">
                                               <option value="Select">Select</option>
                                               <option value="usaffiliation">US Attorney in good standing</option>
@@ -691,7 +697,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group form-group-md col-xs-12 col-md-5">
-                                            <label for="bar-membership-number">Membership Number <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
+                                            <label for="bar-membership-number">Membership Number <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
                                             <input type="text" class="form-control" id="bar-membership-number" name="attorneyBarMembershipNumber" value="">
                                         </div>
                                         <div class="form-group form-group-md col-xs-12 col-md-4">
@@ -753,7 +759,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="inlinebuttons btn-group btn-group-justified" role="nav" aria-label="view previous or next page" id="prevnxt">
+                <div class="inlinebuttons btn-group btn-group-justified" role="navigation" aria-label="view previous or next page" id="prevnxt">
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
                     </div>

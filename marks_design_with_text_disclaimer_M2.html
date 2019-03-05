@@ -165,8 +165,8 @@
                 </section>
             </div>
           	<h1>Trademark Details &#8211; Design with Text</h1>
-            <p class="instructions" id="costsavingoptions">Reduce Fee Mode</p>
-            <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn reduce fee labels on or off">
+            <p class="instructions" id="costsavingoptions">Reduced Fee Mode</p>
+            <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn Reduced Fee labels on or off">
                 <label class="switch">
                 <input class="togglesavemore" type="checkbox">
                 <span class="slider uppercase"><span class="visuallyhidden" id="on">On</span> <span id="off">Off</span></span>
@@ -228,26 +228,30 @@
                                                             <p>If you own one or more prior registrations for the same mark (same wording, design, etc.) list it below.</p>
                                                         </div>
                                                     </div>
-                                                    <div>
-                                                        <p id="prioreg">Do you have a prior registration for the same mark?</p>                                                        
-                                                        <div role="radiogroup" aria-labelledby="prioreg" class="form-group form-group-md">
-                                                          <label for="inlineRadio011" class="radio-inline radiocontainer">Yes<input type="radio" name="priorradio" id="inlineRadio011" value="yes" tabindex="0"><span class="checkmark"></span></label>
-                                                          <label for="inlineRadio012" class="radio-inline radiocontainer">No<input type="radio" name="priorradio" id="inlineRadio012" value="no" tabindex="0"><span class="checkmark"></span></label>
-                                                        </div><!--END radiogroup-->
-                                                        <div id="yesprior" role="region" aria-labelledby="prioreg" class="form-group form-group-md row">
-                                                            <div class="form-group form-group-md col-xs-12 col-sm-8" id="copy">
-                                                                <label for="yesprior">Enter prior U.S. registration numbers. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduce Fee</span></label>
+                                                    <p id="prioreg">Do you have a prior registration for the same mark?</p>                                                        
+                                                    <div role="radiogroup" aria-labelledby="prioreg" class="form-group form-group-md">
+                                                      <label for="inlineRadio011" class="radio-inline radiocontainer">Yes<input type="radio" name="priorradio" id="inlineRadio011" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                      <label for="inlineRadio012" class="radio-inline radiocontainer">No<input type="radio" name="priorradio" id="inlineRadio012" value="no" tabindex="0"><span class="checkmark"></span></label>
+                                                    </div><!--END radiogroup-->
+                                                    <div id="yesprior" role="region" aria-labelledby="prioreg" class="form-group form-group-md">
+                                                        <div class="row docket">
+                                                            <div class="form-group form-group-md col-xs-9">
+                                                                <label for="yesprior">Enter prior U.S. registration numbers. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
                                                                 <input type="text" class="form-control" id="yesprior">
                                                             </div>
-                                                            <div class="appenddocket"></div>
-                                                                <div class="col-xs-7 col-sm-4" role="group" aria-label="Add or delete additional reference numbers">
-                                                                    <div class="col-xs-9">
-                                                                        <button type="button" class="btn-sm btn-success add ctr" id="addocket">Add Number</button>
-                                                                    </div>
-                                                                    <div class="col-xs-3">
-                                                                        <button type="button" class="btn-sm btn-success add ctr" id="resetdockets" aria-label="remove additional number">&#8211;</button>
+                                                            <div class="form-group form-group-md visuallyremoved resetdkt col-xs-3">
+                                                                <button type="button" class="btn btn-sm close resetdktrefbtn" value="" aria-label="remove this number"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="appenddocket"></div>
+                                                        <div class="form-group form-group-md col-xs-12" aria-label="add additional docket or reference number">
+                                                            <div class="row">
+                                                                <div class="inlinebuttons btn-group btn-group-justified">
+                                                                    <div class="btn-group col-xs-6">
+                                                                        <button type="button" class="btn btn-sm btn-success addinitial" id="addocketref" aria-label="add docket or reference number">Add Number</button>
                                                                     </div>
                                                                 </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </section>
@@ -298,7 +302,7 @@
             </div>
           </div>
           <!--END row-->
-          <div class="inlinebuttons btn-group btn-group-justified" role="nav" aria-label="view previous or next page" id="prevnxt">
+          <div class="inlinebuttons btn-group btn-group-justified" role="navigation" aria-label="view previous or next page" id="prevnxt">
             <div class="btn-group">
                 <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
             </div>
