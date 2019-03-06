@@ -276,9 +276,12 @@
                                                             <input class="form-check-input checkmark" type="checkbox" value="name" tabindex="0" aria-labelledby="checkname" id="namechecked">
                                                             <label class="form-check-label form-check" for="namechecked" id="checkname"><span class="radio notspecial">Name</span></label>
                                                             <p class="savep"><span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></p>
-                                                            <div id="yescontainsname" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
-                                                            	<div class="row">
-                                                                	<div class="containsaname col-xs-12">
+                                                            <div id="yescontainsname" role="region" aria-labelledby="whichnps" class="row form-group form-group-md">
+                                                                <div class="containsaname col-xs-12">
+                                                                    <div class="row addname">
+                                                                    	<div class="form-group form-group-md col-xs-12 visuallyremoved resetname">
+                                                                            <button type="button" class="btn btn-sm close resetnamebtn" aria-label="remove this name"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                                                        </div>
                                                                         <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                                                             <label for="firstname">First Name</label>
                                                                             <input type="text" class="form-control" id="firstname">
@@ -293,13 +296,12 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendaname"></div>
-                                                                    <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional names">
-                                                                    	<div class="row">
-                                                                            <div class="col-xs-6 col-sm-6 btn-group">
-                                                                                <button type="button" class="btn-sm btn-success add ctr" id="addaname">Add Additional Name</button>
-                                                                            </div>
-                                                                            <div class="col-xs-6 col-sm-6 btn-group">
-                                                                                <button type="button" class="btn-sm btn-success add ctr" id="resetaname">Remove Additional Name</button>
+                                                                    <div class="col-xs-12 form-group form-group-md" aria-label="Add additional name">
+                                                                        <div class="row">
+                                                                            <div class="inlinebuttons btn-group btn-group-justified">
+                                                                                <div class="btn-group col-xs-6">
+                                                                                    <button type="button" class="btn btn-sm btn-success addinitial" id="addaname">Add Additional Name</button>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -307,10 +309,12 @@
                                                             </div>
                                                             <input class="form-check-input checkmark" type="checkbox" value="portrait" tabindex="0" id="portraitchecked" aria-labelledby="checkportrait">
                                                             <label class="form-check-label form-check" for="portraitchecked" id="checkportrait"><span class="radio notspecial" id="collect">Portrait</span></label>
-                                                            
-                                                            <div id="yescontainsportrait" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
-                                                            	<div class="row">
-                                                                	<div class="containsaportrait col-xs-12">
+                                                            <div id="yescontainsportrait" role="region" aria-labelledby="whichnps" class="row form-group form-group-md">
+                                                            	<div class="containsaportrait col-xs-12">
+                                                                	<div class="row addportrait">
+                                                                    	<div class="form-group form-group-md col-xs-12 visuallyremoved resetportrait">
+                                                                            <button type="button" class="btn btn-sm close resetportraitbtn" aria-label="remove this portrait"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                                                        </div>
                                                                         <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                                                             <label for="firstname">First Name</label>
                                                                             <input type="text" class="form-control" id="firstname">
@@ -325,24 +329,25 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendaportrait"></div>
-                                                                    <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional portraits">
-                                                                    	<div class="row">
-                                                                            <div class="col-xs-6 col-sm-6 btn-group">
-                                                                                <button type="button" class="btn-sm btn-success add ctr" id="addaportrait">Add Additional Portrait</button>
+                                                                    <div class="col-xs-12 form-group form-group-md" aria-label="Add additional portrait">
+                                                                        <div class="row">
+                                                                            <div class="inlinebuttons btn-group btn-group-justified">
+                                                                                <div class="btn-group col-xs-6">
+                                                                                    <button type="button" class="btn btn-sm btn-success addinitial" id="addaportrait">Add Additional Portrait</button>
+                                                                                </div>
                                                                             </div>
-                                                                            <div class="col-xs-6 col-sm-6 btn-group">
-                                                                                <button type="button" class="btn-sm btn-success add ctr" id="resetaportrait">Remove Additional Portrait</button>
-                                                                            </div>
-                                                                     	</div>
+                                                                        </div>
                                                                     </div>
                                                               	</div>
                                                             </div>
                                                             <input class="form-check-input checkmark" type="checkbox" value="signature" tabindex="0" aria-labelledby="checksignature" id="signaturechecked">
                                                             <label class="form-check-label form-check" for="signaturechecked" id="checksignature"><span class="radio notspecial" id="collectm">Signature</span></label>
-                                                            
-                                                            <div id="yescontainssignature" role="region" aria-labelledby="whichnps" class="form-group form-group-md">
-                                                            	<div class="row">
-                                                                    <div class="containsasignature col-xs-12">
+                                                            <div id="yescontainssignature" role="region" aria-labelledby="whichnps" class="row form-group form-group-md">
+                                                            	<div class="containsasignature col-xs-12">
+                                                                    <div class="row addsignature">
+                                                                    	<div class="form-group form-group-md col-xs-12 visuallyremoved resetsignature">
+                                                                            <button type="button" class="btn btn-sm close resetsignaturebtn" aria-label="remove this signature"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                                                        </div>
                                                                         <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                                                             <label for="firstname">First Name</label>
                                                                             <input type="text" class="form-control" id="firstname">
@@ -357,19 +362,17 @@
                                                                         </div>
                                                                     </div>
                                                                     <div class="appendasignature"></div>
-                                                                    <div class="col-xs-12 btn-group btn-group-justified large" role="group" aria-label="Add or delete additional signatures">
+                                                                    <div class="col-xs-12 form-group form-group-md" aria-label="Add additional signature">
                                                                         <div class="row">
-                                                                            <div class="col-xs-6 col-sm-6 btn-group">
-                                                                                <button type="button" class="btn-sm btn-success add ctr" id="addasignature">Add Additional Signature</button>
-                                                                            </div>
-                                                                            <div class="col-xs-6 col-sm-6 btn-group">
-                                                                                <button type="button" class="btn-sm btn-success add ctr" id="resetasignature">Remove Additional Signature</button>
+                                                                            <div class="inlinebuttons btn-group btn-group-justified">
+                                                                                <div class="btn-group col-xs-6">
+                                                                                    <button type="button" class="btn btn-sm btn-success addinitial" id="addasignature">Add Additional Signature</button>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                               	</div>
                                                             </div>
-                                                            
                                                             <p id="individualiving">Is this of a living individual?</p>                                            			
                                                             <div role="radiogroup" class="form-group form-group-md" aria-labelledby="individualiving">
                                                                 <label for="inlineRadio17" class="radio-inline radiocontainer">Yes<input type="radio" name="livindividualradio" id="inlineRadio17" value="yes" tabindex="0"><span class="checkmark"></span></label>

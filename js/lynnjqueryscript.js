@@ -1521,14 +1521,65 @@ $(document).ready(function(){
 		});
 	//END additional docket
 	
-	//START additional containsname 
-	$( 'button#addaname' ).on('click',function(){
-	  	$( '.containsaname:eq(0)' ).clone().appendTo( '.appendaname' );
-	});
-	$( '#resetaname' ).on('click',function () {
-	  $( '.appendaname .containsaname' ).remove( '.containsaname:eq(0)' );
-    });
-	//END additional containsname
+	//START additional name
+	$( document ).on('click','button#addaname',function(){	
+		$( 'div.addname:eq(0)' ).clone().appendTo( '.appendaname' );
+		$( 'div.addname' ).last().find('input').val('');
+		$( '.appendaname .resetname' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( this ).removeClass( '.addinitial' );
+		});
+		$( document ).on('click','.resetnamebtn',function(){
+			$( this ).parent().parent().remove();
+		});
+	//END additional name
+	
+	//START additional portrait
+	$( document ).on('click','button#addaportrait',function(){	
+		$( 'div.addportrait:eq(0)' ).clone().appendTo( '.appendaportrait' );
+		$( 'div.addportrait' ).last().find('input').val('');
+		$( '.appendaportrait .resetportrait' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( this ).removeClass( '.addinitial' );
+		});
+		$( document ).on('click','.resetportraitbtn',function(){
+			$( this ).parent().parent().remove();
+		});
+	//END additional portrait
+	
+	//START additional signature
+	$( document ).on('click','button#addasignature',function(){	
+		$( 'div.addsignature:eq(0)' ).clone().appendTo( '.appendasignature' );
+		$( 'div.addsignature' ).last().find('input').val('');
+		$( '.appendasignature .resetsignature' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( this ).removeClass( '.addinitial' );
+		});
+		$( document ).on('click','.resetsignaturebtn',function(){
+			$( this ).parent().parent().remove();
+		});
+	//END additional signature
+	
+	//START additional translation
+	$( document ).on('click','button#addatranslation',function(){	
+		$( 'div.addtranslation:eq(0)' ).clone().appendTo( '.appendatranslate' );
+		$( 'div.addtranslation' ).last().find('input').val('');
+		$( '.appendatranslate .resettranslation' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( this ).removeClass( '.addinitial' );
+		});
+		$( document ).on('click','.resettranslationbtn',function(){
+			$( this ).parent().parent().remove();
+		});
+	//END additional translation
+	
+	//START additional transliteration
+	$( document ).on('click','button#addatransliteration',function(){	
+		$( 'div.addtransliteration:eq(0)' ).clone().appendTo( '.appendatransliterate' );
+		$( 'div.addtransliteration' ).last().find('input').val('');
+		$( '.appendatransliterate .resettransliteration' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( this ).removeClass( '.addinitial' );
+		});
+		$( document ).on('click','.resettransliterationbtn',function(){
+			$( this ).parent().parent().remove();
+		});
+	//END additional transliteration
 		
 	//START pending + foreign
 	//Basis one
@@ -1652,24 +1703,6 @@ $(document).ready(function(){
 	});
 	//END pending + foreign
 		
-	//START additional containsportrait
-	$( 'button#addaportrait' ).on('click',function(){
-	  	$( '.containsaportrait:eq(0)' ).clone().appendTo( '.appendaportrait' );
-	});
-	$( '#resetaportrait' ).on('click',function () {
-	  $( '.appendaportrait .containsaportrait' ).remove( '.containsaportrait:eq(0)' );
-    });
-	//END additional containsportrait
-	
-	//START additional containssignature
-	$( 'button#addasignature' ).on('click',function(){
-	  	$( '.containsasignature:eq(0)' ).clone().appendTo( '.appendasignature' );
-	});
-	$( '#resetasignature' ).on('click',function () {
-	  $( '.appendasignature .containsasignature' ).remove( '.containsasignature:eq(0)' );
-    });
-	//END additional containssignaturet	
-	
 	//START additional foreignreg
 	$( document ).on('click','button#addforeignreg_basisone',function(){	
 		$( 'div#yescommerce div.holdsaforeign' ).last().clone().appendTo( 'div#yescommerce .appendaforeign' );
@@ -1749,25 +1782,7 @@ $(document).ready(function(){
 		$( this ).removeClass( '.addinitial' );
 		});
 	//END additional foreignpending
-	
-	//START additional translate
-	$( 'button#addtranslate' ).on('click',function(){
-	  	$( '.holdsatranslate:eq(0)' ).clone().appendTo( '.appendatranslate' );
-	});
-	$( '#resettranslate' ).on('click',function () {
-	  $( '.appendatranslate .holdsatranslate' ).remove( '.holdsatranslate:eq(0)' );
-    });
-	//END additional translate
-	
-	//START additional transliteration
-	$( 'button#addtransliterate' ).on('click',function(){
-	  	$( '.holdsatransliterate:eq(0)' ).clone().appendTo( '.appendatransliterate' );
-	});
-	$( '#resettransliterate' ).on('click',function () {
-	  $( '.appendatransliterate .holdsatransliterate' ).remove( '.holdsatransliterate:eq(0)' );
-    });
-	//END additional transliteration
-	
+		
 	//START modals
 	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();

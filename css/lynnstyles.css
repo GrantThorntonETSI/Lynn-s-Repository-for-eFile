@@ -1412,7 +1412,7 @@ label.hasinfo {
   	box-shadow:         rgb(0,0,0);
 	text-shadow: 0 0 0 transparent;
 	}
-.resetphonebtn, .resetregbtn, .resetdktrefbtn {
+.resetphonebtn, .resetregbtn, .resetdktrefbtn, .resetnamebtn, .resetportraitbtn, .resetportraitbtn, .resetsignaturebtn, .resettranslationbtn, .resettransliterationbtn {
 	margin: 0 auto;
     float: none;
     margin-top: .545em;
