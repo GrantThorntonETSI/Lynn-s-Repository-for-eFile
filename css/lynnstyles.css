@@ -978,6 +978,10 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	color:#F3D54E;
 	font-size:1.1em;
 	}
+#dashboard a.toggle-vis span.glyphicon {
+	margin-right:1em;
+	color:#F3D54E;
+	}
 #mydata2 .list-group-item a span.glyphicon-ok-sign {
 	color:#7A9A01;
 	}
