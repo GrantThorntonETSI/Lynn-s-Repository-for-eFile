@@ -22,27 +22,27 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://18.218.222.47/resources/css/reset.css">
+    <link rel="stylesheet" href="reset.css">
 
     <!--<link rel="stylesheet" th:href="@{/resources/css/lynnstyles.css}"/>-->
-    <link rel="stylesheet" href="https://18.218.222.47/resources/css/efileUSPTO.css">
+    <link rel="stylesheet" href="efileUSPTO.css">
 
     <!--jquery and web jars -->
     <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
-    <script type="text/javascript" async="" src="//nebula-cdn.kampyle.com/resources/onsite/js/cool-2.1.15.min.js"></script><script type="text/javascript" async="" src="https://js.driftt.com/include/1551713700000/b5xdchmzc38b.js"></script><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script type="text/javascript" async src="//nebula-cdn.kampyle.com/resources/onsite/js/cool-2.1.15.min.js"></script><script type="text/javascript" async src="https://js.driftt.com/include/1551713700000/b5xdchmzc38b.js"></script><script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <!--<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!--<script src="../resources/js/jquery.dataTables.min.js"></script>-->
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="application/javascript" src="/resources/js/lynnjqueryscript.js"></script>
-    <script type="application/javascript" src="/resources/js/accordion.js"></script>
+    <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
+    <script type="application/javascript" src="js/accordion.js"></script>
     <!--<script type="application/javascript" src="js/checkbox.js"></script>-->
-    <script type="application/javascript" src="/resources/js/checkbox.js"></script>
-    <script type="application/javascript" src="/resources/js/btn_checkbox.js"></script>
+    <script type="application/javascript" src="js/checkbox.js"></script>
+    <script type="application/javascript" src="js/btn_checkbox.js"></script>
 
-    <script type="application/javascript" src="/resources/js/checkboxids.js"></script>
+    <script type="application/javascript" src="js/checkboxids.js"></script>
 
 
 <style type="text/css" id="kampyleStyle">.noOutline{outline: none !important;}.wcagOutline:focus{outline: 1px dashed #595959 !important;outline-offset: 2px !important;transition: none !important;}button#nebula_div_btn { height: auto !important } .kampyle_vertical_button { background-color:transparent !important;font-family:"Open Sans",sans-serif;cursor:pointer;position:fixed;top:45%;z-index:99999990;height:35px !important;min-height: 35px !important;max-height: 35px !important;width:125px !important;max-width: 125px !important;min-width: 125px !important;-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg);transform:rotate(90deg) } .kampyle_vertical_button .kampyle_button { height:35px;min-height: 35px !important;max-height: 35px !important;width:125px !important;min-width: 125px !important;max-width: 125px !important; background:#5081ff;color:#ffffff;position:absolute;top:0;left:0;z-index:-1; } .kampyle_vertical_button .kampyle_button-text { color:#ffffff;font-size:14px;line-height:35px;text-align:center;font-weight:normal !important; } .kampyle_vertical_button.kampyle_left .kampyle_button { -webkit-border-radius:3px 3px 0 0;-moz-border-radius:3px 3px 0 0;-ms-border-radius:3px 3px 0 0;border-radius:3px 3px 0 0; } .kampyle_vertical_button.kampyle_right { right:-45px; } .kampyle_vertical_button.kampyle_left { left:-45px } .kampyle_vertical_button.kampyle_right .kampyle_button { -webkit-border-radius:0 0 3px 3px;-moz-border-radius:0 0 3px 3px;-ms-border-radius:0 0 3px 3px;border-radius:0 0 3px 3px } .kampyle_vertical_button.kampyle_right, .kampyle_vertical_button.kampyle_left  { padding: 0 !important; }</style></head>
@@ -58,7 +58,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="http://www.uspto.gov"><img src="https://18.218.222.47/resources/images/logo_top.png" alt="US Trade and Patent Office logo"></a>
+            <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -296,12 +296,12 @@
                 <div class="card-text">
                     <h2 class="card-title weight600" id="ownerinfo">Owner Information</h2>
                 </div>
-                <form method="post" id="addNewOwnerForm" action="/owner/add" onsubmit="return validateOwnerForm();" aria-labelledby="ownerinfo">
+                <form method="post" id="addNewOwnerForm" action="/owner/add" onSubmit="return validateOwnerForm();" aria-labelledby="ownerinfo">
                     <fieldset aria-labelledby="ownerinfo">
                         <div class="row">
                             <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-4">
                                 <label for="ownername"><span class="weight600">*</span>Owner Name</label>
-                                <input type="text" class="form-control" id="ownername" required="" name="ownerName" value="">
+                                <input type="text" class="form-control" id="ownername" required name="ownerName" value="">
                             </div>
                             <div class="form-group form-group-md col-xs-6">
                                 <label for="stateoforg">State Where Legally Organized<span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
@@ -402,7 +402,7 @@
                         <div class="row">
                             <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                 <label for="partner-first-name"><span class="weight600">*</span>First Name</label>
-                                <input type="text" id="partner-first-name" name="partnerDTOs[0].firstName" class="form-control" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;" required="" value="">
+                                <input type="text" id="partner-first-name" name="partnerDTOs[0].firstName" class="form-control" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;" required value="">
                             </div>
                             <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
                                 <label for="partner-middle-name">Middle Name</label>
@@ -410,7 +410,7 @@
                             </div>
                             <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                                 <label for="partner-last-name"><span class="weight600">*</span>Last Name</label>
-                                <input id="partner-last-name" type="text" name="partnerDTOs[0].lastName" class="form-control" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;" required="" value="">
+                                <input id="partner-last-name" type="text" name="partnerDTOs[0].lastName" class="form-control" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;" required value="">
                             </div>
                             <div class="form-group form-group-md col-xs-6">
                                 <label for="partner-suffix">Suffix</label>
@@ -670,7 +670,7 @@
                         <div class="row">
                             <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                 <label for="ownername"><b style="color: red">*</b>Owner Name</label>
-                                <input id="owner-name" type="text" class="form-control rounded-borders" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;" required="" name="partnerDTOs[0].partnerName" value="">
+                                <input id="owner-name" type="text" class="form-control rounded-borders" style="border-bottom-left-radius: 5px; border-bottom-right-radius: 5px; border-top-left-radius: 5px; border-top-right-radius: 5px;" required name="partnerDTOs[0].partnerName" value="">
                             </div>
                             <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                             <label><b style="color: red">*</b>Type</label>
@@ -1003,7 +1003,7 @@
                             </div>
                             <div class="form-group form-group-md col-md-12 col-lg-8">
                                 <label for="ownerAddress1"><span class="weight600">*</span>Address Line 1</label>
-                                <input type="text" class="form-control" id="ownerAddress1" required="" name="ownerAddress1" value="">
+                                <input type="text" class="form-control" id="ownerAddress1" required name="ownerAddress1" value="">
                             </div>
                             <div class="form-group form-group-md col-md-12 col-lg-8">
                                 <label for="addressline2">Address Line 2</label>
@@ -1015,7 +1015,7 @@
                             </div>
                             <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                                 <label for="ownerCity"><span class="weight600">*</span>City</label>
-                                <input type="text" class="form-control" id="ownerCity" required="" name="ownerCity" value="">
+                                <input type="text" class="form-control" id="ownerCity" required name="ownerCity" value="">
                             </div>
                             <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
                                 <label for="ownerState"><span class="weight600">*</span>State</label>
@@ -1076,7 +1076,7 @@
                             </div>
                             <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                 <label for="ownerZipcode"><span class="weight600">*</span>Zip Code</label>
-                                <input type="text" class="form-control" id="ownerZipcode" placeholder="" required="" name="ownerZipcode" value="">
+                                <input type="text" class="form-control" id="ownerZipcode" placeholder="" required name="ownerZipcode" value="">
                             </div>
                         </div>
                     </fieldset>
@@ -1092,7 +1092,7 @@
                             
                                 <div class="form-group form-group-md col-xs-12 col-md-6">
                                     <label for="ownerEmail"><span class="weight600">*</span>Email Address <a href="#" data-toggle="tooltip" title="" class="glyphicon glyphicon-info-sign test" data-placement="right" data-original-title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current."></a></label>
-                                    <input type="text" class="form-control" id="ownerEmail" required="" name="ownerEmail" value="">
+                                    <input type="text" class="form-control" id="ownerEmail" required name="ownerEmail" value="">
                                 </div>
 
                             
@@ -2367,7 +2367,7 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="https://nebula-cdn.kampyle.com/wu/451129/onsite/embed.js" async=""></script>
+<script type="text/javascript" src="https://nebula-cdn.kampyle.com/wu/451129/onsite/embed.js" async></script>
 <script>
     "use strict";
 
@@ -2398,4 +2398,4 @@
 
 
 
-<script type="text/javascript" async="" src="https://nebula-cdn.kampyle.com/wu/451129/onsite/generic1550112923431.js" charset="UTF-8"></script><div id="drift-widget-container" style="position: absolute; z-index: 2147483647;"><iframe id="drift-widget" src="https://js.driftt.com/deploy/assets/index.html" title="Drift Messenger" role="complementary" style="border: none; display: block; height: 76px !important; width: 76px !important; position: fixed; top: auto; left: auto; bottom: 24px; right: 24px; visibility: visible; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1;" class="drift-widget-welcome-online"></iframe></div><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div><span><div id="KampyleAnimationContainer" style="z-index: 2147483000; border: 0px; position: fixed; display: block; width: 0px; height: 0px;"></div></span><span id="kampyleButtonContainer"><button id="nebula_div_btn" style="border: none; position: fixed !important; margin-top: 0px;" alt="Feedback" tabindex="0" class="kampyle_vertical_button kampyle_right  noOutline "><div class="kampyle_button"></div><div class="kampyle_button-text">Feedback</div></button></span></body></html>
+<script type="text/javascript" async src="https://nebula-cdn.kampyle.com/wu/451129/onsite/generic1550112923431.js" charset="UTF-8"></script><div id="drift-widget-container" style="position: absolute; z-index: 2147483647;"><iframe id="drift-widget" src="https://js.driftt.com/deploy/assets/index.html" title="Drift Messenger" role="complementary" style="border: none; display: block; height: 76px !important; width: 76px !important; position: fixed; top: auto; left: auto; bottom: 24px; right: 24px; visibility: visible; z-index: 2147483647; max-height: 100vh; max-width: 100vw; transition: none 0s ease 0s; background: none transparent; opacity: 1;" class="drift-widget-welcome-online"></iframe></div><iframe frameborder="0" scrolling="no" style="background-color: transparent; border: 0px; display: none;"></iframe><div id="GOOGLE_INPUT_CHEXT_FLAG" input="" input_stat="{&quot;tlang&quot;:true,&quot;tsbc&quot;:true,&quot;pun&quot;:true,&quot;mk&quot;:true,&quot;ss&quot;:true}" style="display: none;"></div><span><div id="KampyleAnimationContainer" style="z-index: 2147483000; border: 0px; position: fixed; display: block; width: 0px; height: 0px;"></div></span><span id="kampyleButtonContainer"><button id="nebula_div_btn" style="border: none; position: fixed !important; margin-top: 0px;" alt="Feedback" tabindex="0" class="kampyle_vertical_button kampyle_right  noOutline "><div class="kampyle_button"></div><div class="kampyle_button-text">Feedback</div></button></span></body></html>
