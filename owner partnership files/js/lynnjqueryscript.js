@@ -318,19 +318,19 @@ $(document).ready(function(){
 		}
 		else if ($('input#collectmember').prop('checked')){ 
 			$('input#certcheck').prop({
-					disabled: true,
-					checked: false,				
-				});
-				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('input#certcheck').attr('aria-disabled', 'true');
+				disabled: true,
+				checked: false,				
+			});
+			$('.form-check#certcheck2 span.radio').addClass('special');
+			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#tradeserv').prop('checked')){ 
-			$('input#certcheck').prop({
-					disabled: true,
-					checked: false,				
-				});
-				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('input#certcheck').attr('aria-disabled', 'true');
+		$('input#certcheck').prop({
+				disabled: true,
+				checked: false,				
+			});
+			$('.form-check#certcheck2 span.radio').addClass('special');
+			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
 			$('input#certcheck').prop({
@@ -351,12 +351,12 @@ $(document).ready(function(){
 			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectcheck').prop('checked')){ 
-				$('input#certcheck').prop({
-					disabled: true,
-					checked: false,				
-				});
-				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('input#certcheck').attr('aria-disabled', 'true');
+			$('input#certcheck').prop({
+				disabled: true,
+				checked: false,				
+			});
+			$('.form-check#certcheck2 span.radio').addClass('special');
+			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#tradeserv').prop('checked')){ 
 			$('input#certcheck').prop({

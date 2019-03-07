@@ -31,6 +31,34 @@
 
     <!--<link rel="stylesheet" th:href="@{/resources/css/lynnstyles.css}"/>-->
     <link rel="stylesheet" href="efileUSPTO.css"/>
+    <style>
+	.addpartnership button.close {
+		font-size: 3em;
+		height: 1.06em;
+		color: #009CDE;
+		}
+	button.close {
+		-webkit-appearance: none;
+		padding: 0;
+		cursor: pointer;
+		background: 0 0;
+		border: 0;
+		opacity: 1.0;
+		-moz-opacity: 1.0;
+		-webkit-box-shadow: rgb(0,0,0);
+		-moz-box-shadow: rgb(0,0,0);
+		box-shadow: rgb(0,0,0);
+		text-shadow: 0 0 0 transparent;
+		}
+	button.close:hover {
+		right: 0;
+		}
+	.resetpartnerbtn {
+		margin: 0 auto;
+		float: none;
+		margin-top: .545em;
+		}
+	</style>
 
     <!--jquery and web jars -->
     <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
@@ -574,7 +602,10 @@
                                     <!--START hidden content-->
                                     <div class="col-xs-12 form-group form-group-md">
                                         <div class="row addpartnership">
-                                            <div class="col-xs-12">
+                                        	<div class="form-group form-group-md col-xs-12 visuallyremoved resetpartner">
+                                                <button type="button" class="btn btn-sm close resetpartnerbtn" aria-label="remove this partner"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                            </div>
+                                            <div class="col-xs-12 form-group form-group-md">
                                                 <label><b style="color: red">*</b>Select Entity Type</label>
                                                 <span>
                                                     <select id="domestic-entity-dropdown-partner" class="form-control" name="nameType" style="border-bottom-left-radius: 2px; border-bottom-right-radius: 2px; border-top-left-radius: 2px; border-top-right-radius: 2px;">
@@ -939,6 +970,7 @@
                                         </div>
                                     </div>
                                     <!--END hidden content-->
+                                    <div class="appendpartner col-xs-12"></div>
                                     <div class="row" id="hideshow_addpartner">
                                     	<script type="application/javascript" src="js/add_partner.js"></script>
                                         <div class="col-xs-12 form-group form-group-md" aria-label="add a partner">
@@ -951,17 +983,7 @@
                                     </div><!--// hide / show add partner-->
                                 </div>
                             </fieldset>
-
-                                
-
-                                
-
-                            
                         </div>
-
-
-
-
 
                         <!--END Sole Proprietor Information Form-->
                         <!--START Owner Address Information Form-->

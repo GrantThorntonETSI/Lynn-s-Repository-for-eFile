@@ -1443,7 +1443,7 @@ $(document).ready(function(){
 		var resettype = [ 'Type' ];
 		var resettype = jQuery.makeArray( resettype );
 		$( 'div.phones:eq(0)' ).clone().appendTo( '.appendphones' );
-		$('div.phones').last().find('select').val(resettype[0]);
+		$( 'div.phones' ).last().find('select').val(resettype[0]);
 		$( 'div.phones' ).last().find('input').val('');
 		$( '.appendphones .resetphone2' ).removeClass( 'visuallyremoved' );
 		$( this ).removeClass( '.addphoneinitial' );
