@@ -1580,6 +1580,18 @@ $(document).ready(function(){
 			$( this ).parent().parent().remove();
 		});
 	//END additional transliteration
+	
+	//START additional transliteration
+	$( document ).on('click','button#addisclaimer',function(){	
+		$( 'div.disclaim:eq(0)' ).clone().appendTo( '.appenddisclaim' );
+		$( 'div.disclaim' ).last().find('input').val('');
+		$( '.appenddisclaim .resetdisclaim' ).removeClass( 'visuallyremoved' );
+		$( this ).removeClass( '.addinitial' );
+		});
+		$( document ).on('click','.resetdisclaimbtn',function(){
+			$( this ).parent().parent().remove();
+		});
+	//END additional transliteration
 		
 	//START pending + foreign
 	//Basis one

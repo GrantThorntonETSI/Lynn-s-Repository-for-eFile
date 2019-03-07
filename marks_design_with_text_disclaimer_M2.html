@@ -192,14 +192,14 @@
                                                             <p>A disclaimer is a statement indicating you do not claim exclusive rights to an unregistrable portion of your mark. This is often material that is descriptive or common in your field of business. A disclaimer does not physically remove the unregistrable portion from your mark or affect the appearance of your mark. You cannot disclaim the entire mark. A disclaimer will appear on the registration certificate.</p>
                                                         </div>
                                                     </div>
-                                                    <div>
-                                                        <p id="disclaim">Is there a portion of your mark that you wish to disclaim?</p>                                                        
-                                                        <div role="radiogroup" aria-labelledby="disclaim" class="form-group form-group-md">
-                                                          <label for="inlineRadio09" class="radio-inline radiocontainer">Yes<input type="radio" name="disclaimradio" id="inlineRadio09" value="yes" tabindex="0"><span class="checkmark"></span></label>
-                                                          <label for="inlineRadio010" class="radio-inline radiocontainer">No<input type="radio" name="disclaimradio" id="inlineRadio010" value="no" tabindex="0"><span class="checkmark"></span></label>
-                                                        </div><!--END radiogroup-->
-                                                        <div id="yesdisclaimer" class="form-group"><!--toggle 'yes' radio-->
-                                                            <div class="form-group form-group-md">
+                                                    <p id="disclaim">Is there a portion of your mark that you wish to disclaim?</p>                                                        
+                                                    <div role="radiogroup" aria-labelledby="disclaim" class="form-group form-group-md">
+                                                      <label for="inlineRadio09" class="radio-inline radiocontainer">Yes<input type="radio" name="disclaimradio" id="inlineRadio09" value="yes" tabindex="0"><span class="checkmark"></span></label>
+                                                      <label for="inlineRadio010" class="radio-inline radiocontainer">No<input type="radio" name="disclaimradio" id="inlineRadio010" value="no" tabindex="0"><span class="checkmark"></span></label>
+                                                    </div><!--END radiogroup-->
+                                                    <div id="yesdisclaimer" class="form-group"><!--toggle 'yes' radio-->
+                                                        <div class="row disclaim">
+                                                        	<div class="form-group form-group-md col-xs-9">
                                                                 <div class="control-label">
                                                                     <p>No claim is made to the exclusive right to use</p>
                                                                 </div>
@@ -209,9 +209,22 @@
                                                                 <div class="control-label">
                                                                     <p>apart from the mark as shown.</p>
                                                                 </div>
+                                                           	</div>
+                                                            <div class="form-group form-group-md visuallyremoved resetdisclaim col-xs-3">
+                                                                <button type="button" class="btn btn-sm close resetdisclaimbtn" value="" aria-label="remove this number"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                                            </div>
+                                                    	</div> 
+                                                        <div class="appenddisclaim"></div>
+                                                        <div class="form-group form-group-md col-xs-12">
+                                                            <div class="row">
+                                                                <div class="inlinebuttons btn-group btn-group-justified">
+                                                                    <div class="btn-group col-xs-6">
+                                                                        <button type="button" class="btn btn-sm btn-success addinitial" id="addisclaimer" aria-label="add additional disclaimer">Add Additional Disclaimer</button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                 	</div>
+                                                    </div>
                                                 </section>
                                             </div>
                                         </div><!--END Disclaimer-->
