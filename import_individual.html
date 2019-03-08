@@ -14,15 +14,15 @@
                                 <fieldset aria-labelledby="ownerinfo">-->
                                    <div class="row">
                                       <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
-                                        <label for="firstname">First Name <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="If the owner only has one name, insert the words First Name Unavailable (FNU) in the first name field and the name to be entered in the surname field." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                        <label for="firstname">First name <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="If the owner only has one name, insert the words First Name Unavailable (FNU) in the first name field and the name to be entered in the surname field." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
                                         <input type="text" class="form-control" id="firstname" name="firstname" required>
                                       </div>
                                       <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                                        <label for="middlename">Middle Name</label>
+                                        <label for="middlename">Middle name</label>
                                         <input type="text" class="form-control" id="middlename" name="middlename" th:field="*{middleName}">
                                       </div>
                                       <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
-                                        <label for="lastname">Last Name <span class="weight600">&#42;</span></label>
+                                        <label for="lastname">Last name <span class="weight600">&#42;</span></label>
                                         <input type="text" class="form-control" id="lastname" name="lastname" th:field="*{lastName}" required>
                                       </div>
                                       <div class="form-group form-group-md col-xs-6">
@@ -59,7 +59,7 @@
                                         <input type="text" class="form-control" id="nameoftype" name="nameoftype"><!--needs th:attribute-->
                                       </div>
                                       <div class="form-group form-group-md col-xs-7">
-                                        <label for="countryofcitizenship">Country of Citizenship <a href="#" data-toggle="tooltip" title="If you have dual citizenship only enter the citizenship you would like printed in the Official Gazette." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
+                                        <label for="countryofcitizenship">Country of citizenship <a href="#" data-toggle="tooltip" title="If you have dual citizenship only enter the citizenship you would like printed in the Official Gazette." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
                                         <select class="form-control" id="countryofcitizenship" name="countryofcitizenship" th:field="*{ownerCitizenShip}">
                                           <option value="Select">Select</option>
                                           <option value="United States">United States</option>
@@ -76,7 +76,7 @@
                         <fieldset aria-labelledby="addressinfo">
                             <div class="row">
                               <div class="form-group form-group-md col-xs-12 col-md-6 col-lg-7">
-                                <label for="email">Email Address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                <label for="email">Email address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
                                 <input type="text" class="form-control" id="email" name="email" th:field="*{ownerEmail}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-6 col-lg-7">
@@ -95,15 +95,15 @@
                                 </select>
                               </div>
                               <div class="form-group form-group-md col-md-12 col-lg-8">
-                                <label for="addressline1">Address Line 1 <span class="weight600">&#42;</span></label>
+                                <label for="addressline1">Address line 1 <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="addressline1" name="addressline1" th:field="*{ownerAddress1}" required>
                               </div>
                               <div class="form-group form-group-md col-md-12 col-lg-8">
-                                <label for="addressline2">Address Line 2</label>
+                                <label for="addressline2">Address line 2</label>
                                 <input type="text" class="form-control" id="addressline2" th:field="*{ownerAddress2}">
                               </div>
                               <div class="form-group form-group-md col-md-12 col-lg-8">
-                                <label for="addressline3">Address Line 3</label>
+                                <label for="addressline3">Address line 3</label>
                                 <input type="text" class="form-control" id="addressline3" th:field="*{ownerAddress3}">
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
@@ -120,17 +120,17 @@
                                 </select>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
-                                <label for="zipcode">Zip Code <span class="weight600">&#42;</span></label>
+                                <label for="zipcode">Zip code <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-7">
-                                <label for="webaddress">Website Address</label>
+                                <label for="webaddress">Website address</label>
                                 <input type="text" class="form-control" id="webaddress" th:field="*{ownerWebSite}">
                               </div>
                               <div class="row phones">
                                  <div class="col-xs-12">
                                     <div class="form-group form-group-md col-xs-6 col-sm-3">
-                                        <label for="phonenumbertype">Phone Type</label>
+                                        <label for="phonenumbertype">Phone type</label>
                                         <select class="form-control" id="phonenumbertype">
                                             <option value="Type">Type</option>
                                             <option value="Cell">Cell</option>
@@ -140,7 +140,7 @@
                                         </select>
                                     </div>
                                     <div class="form-group form-group-md col-xs-6 col-sm-4">
-                                        <label for="phonenumber">Phone Number</label>
+                                        <label for="phonenumber">Phone number</label>
                                         <input type="text" class="form-control" id="phonenumber">
                                     </div>
                                     <div class="form-group form-group-md col-xs-9 col-sm-3">
