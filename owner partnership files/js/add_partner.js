@@ -38,71 +38,85 @@ $(document).ready(function(){
 		//END hide / show append partner
 		$(document).on('change', '#domestic-entity-dropdown-partner', function() {
 			var subtype_val = this.value;
-			function fadeOutPartnerInfo(){
-				$('#individual-partner-entity').hide('fast');
-				$('#none-individual-partner-entity').hide('fast');
-				}
-			function disableNoneIndiviualRequiredfields(){
+			var thiselect = this;
+			var individualpartnerentity = $('fieldset#individual-partner-entity');
+			var individualpartnerentitynone = $('fieldset#none-individual-partner-entity');
+			var child = $( thiselect ).parent().parent().next('div').find( individualpartnerentity );
+			var childtwo = $( thiselect ).parent().parent().next('div').find( individualpartnerentitynone );
+			var fadetwo = {};
+			var fadeone = {};
+			$(function(){
+				var fadeOutPartnerInfo = function(){
+					$(child).hide('fast');
+					};
+				var fadeOutPartnerInfoNone = function(){
+					$(childtwo).hide('fast');
+					};
+				fadetwo = fadeOutPartnerInfo;
+				fadeone = fadeOutPartnerInfoNone;
+			});
+			$(function disableNoneIndiviualRequiredfields(){
 				$('#owner-name').prop("required", false);
 				$('#owner-type').prop("required", false);
 				$('#owner-state').prop("required", false);
-				}
-			function enableNoneIndiviualRequiredfields(){
+				});
+			$(function enableNoneIndiviualRequiredfields(){
 				$('#owner-name').prop("required", true);
 				$('#owner-type').prop("required", true);
 				$('#owner-state').prop("required", true);
-				}
-			function disableIndiviualRequiredfields(){
+				});
+			$(function disableIndiviualRequiredfields(){
 				$('#partner-first-name').prop("required", false);
 				$('#partner-last-name').prop("required", false);
-				}
-			function enableIndiviualRequiredfields() {
+				});
+			$(function enableIndiviualRequiredfields() {
 				$('#partner-first-name').prop("required", true);
 				$('#partner-last-name').prop("required", true);
-				}
+				});
 			if(subtype_val == "none"){
 				//fade out every thing
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadetwo();
+				fadeone();
 				}
 			else if(subtype_val == "Individual"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadeone();
 				$(this).parent().parent().siblings().children('#individual-partner-entity').show('fast');
 				disableNoneIndiviualRequiredfields();
 				enableIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Sole Proprietorship"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadeone();
 				$(this).parent().parent().siblings().children('#individual-partner-entity').show('fast');  // same owner entity fields as individual
 				disableNoneIndiviualRequiredfields();
 				enableIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Limited Liability Company"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
 				disableIndiviualRequiredfields();
 				enableNoneIndiviualRequiredfields();
 				}
 				// same owner entity fields as individual
 			else if(subtype_val == "Partnership"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
 				disableIndiviualRequiredfields();
 				enableNoneIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Joint Venture"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
 				disableIndiviualRequiredfields();
 				enableNoneIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Trust"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
 				disableIndiviualRequiredfields();
 				enableNoneIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Estate"){
-				$(this).parent().parent().siblings().children(fadeOutPartnerInfo);
+				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
 				disableIndiviualRequiredfields();
 				enableNoneIndiviualRequiredfields();
