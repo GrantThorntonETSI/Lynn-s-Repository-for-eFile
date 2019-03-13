@@ -40,7 +40,7 @@ $(document).ready(function(){
 		//START hide /show + require / not require by selection
 		$(document).on('change', '#domestic-entity-dropdown-partner', function() {
 			var subtype_val = this.value;
-			var thiselect = this;
+			var thiselect = $(this);
 			var individualpartnerentity = $('fieldset#individual-partner-entity');
 			var individualpartnerentitynoneinputs = $('fieldset#none-individual-partner-entity input, fieldset#none-individual-partner-entity select');
 			var individualpartnerentityinputs = $('fieldset#individual-partner-entity input, fieldset#individual-partner-entity select');

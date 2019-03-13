@@ -1866,10 +1866,12 @@ $(document).ready(function(){
 		if(this.checked == true){
 			$( document ).find('span.subtle').removeClass('visuallyremoved');
 			$( document ).find('#on').removeClass('visuallyhidden');
+			$( document ).find('#off').addClass('visuallyhidden');
 			}
 		else if(this.checked == false) {
 			$( document ).find('span.subtle').addClass( 'visuallyremoved' );
 			$( document ).find('#on').addClass('visuallyhidden');
+			$( document ).find('#off').removeClass('visuallyhidden');
 			}
 	});
 	//toggle save more labels

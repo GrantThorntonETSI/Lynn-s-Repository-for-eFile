@@ -90,6 +90,9 @@ a {
 	color: #004C97;
 	cursor: pointer;
 	}
+a:active, a:hover	 {
+	color: #00254b;
+	}
 a.not-allowed {
 	cursor: not-allowed!important;
 	}
@@ -620,6 +623,21 @@ h1.message   {
 .glyphicon-alert {
 	margin-right: .4em;
 	}
+.glyphicon-new-window, .form-check span.glyphicon-new-window::before {
+	color: #004C97;
+	margin-left:.29em;
+	top: .1em;
+	content: "\e164"!important;
+	font-family: "Glyphicons Halflings"!important;
+	font-size: 1em;
+	padding:0;
+	}
+.glyphicon-new-window:hover, .glyphicon-new-window:active {
+	color: #00254b!important;
+	}
+.form-check span.glyphicon-new-window::before {
+	margin-left: 0!important;
+	}
 .right {
 	text-align:right;
 	}
@@ -1021,7 +1039,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
     margin-bottom: 0;
 	}
 #mydata .panel>.panel-collapse>table.list-group tbody, #mydata2 .panel>.panel-collapse>table.list-group tbody {
-    display: block;
+    /*display: block;*/
 	width:100%;
 	}
 #mydata .panel>.panel-collapse>table.list-group table tbody td, #mydata2 .panel>.panel-collapse>table.list-group table tbody td, #mydata .panel>.panel-collapse>table.list-group table tbody tr, #mydata2 .panel>.panel-collapse>table.list-group table tbody tr {
@@ -1106,8 +1124,11 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 /*left tooltip
 .tooltip.left > .tooltip-arrow {
 }*/
-label a:hover {
+label a.glyphicon-info-sign:hover, label a.glyphicon-info-sign:active {
 	text-decoration: none!important;
+	}
+span#termsagree label a:hover, span#termsagree label a:hover {
+	text-decoration: underline!important;
 	}
 /* Tooltip on top 
 .tooltip.top > .tooltip-arrow {
@@ -1123,7 +1144,11 @@ label a:hover {
 }*/
 #panels a.right {
 	text-align:right;
-	display:block;
+	display:inline-block;
+	font-size:.8em;
+	line-height:1.48em;
+	}
+#panels .glyphicon-new-window {
 	font-size:.8em;
 	line-height:1.48em;
 	}
@@ -1243,6 +1268,7 @@ label a:hover {
     margin-top: 30px;
     margin-bottom: 20px;
     padding: 8px 0 8px 0;
+	max-width: 31.25em;
 	}
 #editowner .leadtext, #reviewattorney .leadtext {
     margin-top: 30px;
@@ -1487,6 +1513,9 @@ a:focus {
 	margin:0 auto;
 	margin-top:1.2em;
 	margin-bottom:1em;
+	}
+#goodservideo .btn-block {
+	height:400px;
 	}
 .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-default:focus {
     /*outline: thin dotted;*/
@@ -2041,13 +2070,13 @@ span#authem  {
 	margin-bottom:0!important;
 	}
 .form-check span::before {
-	content: '\f00c'!important;
-    font-family: 'FontAwesome';
+	content: "\f00c"!important;
+    font-family: "FontAwesome";
     color: #fff;
     -webkit-transition: color .2s;
     transition: color .2s;
 	font-size: 1.4em;
-	padding: .175em .16em;
+	padding: .155em .16em;
 	}
 #declarationsignature .checkmargin, #reviewapplication .checkmargin {
 	margin-bottom:2em!important;
@@ -2064,7 +2093,7 @@ input[type="checkbox"]{
 	position:absolute;
 	background-color: #fff;
 	left: -37px;
-    top: -6px;
+    top: -5px;
 	box-sizing: border-box;
 	border: 1px solid #808080;
 	transition: border-color .2s;
