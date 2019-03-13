@@ -36,10 +36,14 @@ $(document).ready(function(){
 				$( this ).parent().parent().remove();
 			});
 		//END hide / show append partner
+		
+		//START hide /show + require / not require by selection
 		$(document).on('change', '#domestic-entity-dropdown-partner', function() {
 			var subtype_val = this.value;
 			var thiselect = this;
 			var individualpartnerentity = $('fieldset#individual-partner-entity');
+			var individualpartnerentitynoneinputs = $('fieldset#none-individual-partner-entity input, fieldset#none-individual-partner-entity select');
+			var individualpartnerentityinputs = $('fieldset#individual-partner-entity input, fieldset#individual-partner-entity select');
 			var individualpartnerentitynone = $('fieldset#none-individual-partner-entity');
 			var child = $( thiselect ).parent().parent().next('div').find( individualpartnerentity );
 			var childtwo = $( thiselect ).parent().parent().next('div').find( individualpartnerentitynone );
@@ -48,31 +52,17 @@ $(document).ready(function(){
 			$(function(){
 				var fadeOutPartnerInfo = function(){
 					$(child).hide('fast');
+					$(individualpartnerentitynoneinputs).prop("required", true);
+					$(individualpartnerentityinputs).prop("required", false);
 					};
 				var fadeOutPartnerInfoNone = function(){
 					$(childtwo).hide('fast');
+					$(individualpartnerentityinputs).prop("required", true);
+					$(individualpartnerentitynoneinputs).prop("required", false);
 					};
 				fadetwo = fadeOutPartnerInfo;
 				fadeone = fadeOutPartnerInfoNone;
 			});
-			$(function disableNoneIndiviualRequiredfields(){
-				$('#owner-name').prop("required", false);
-				$('#owner-type').prop("required", false);
-				$('#owner-state').prop("required", false);
-				});
-			$(function enableNoneIndiviualRequiredfields(){
-				$('#owner-name').prop("required", true);
-				$('#owner-type').prop("required", true);
-				$('#owner-state').prop("required", true);
-				});
-			$(function disableIndiviualRequiredfields(){
-				$('#partner-first-name').prop("required", false);
-				$('#partner-last-name').prop("required", false);
-				});
-			$(function enableIndiviualRequiredfields() {
-				$('#partner-first-name').prop("required", true);
-				$('#partner-last-name').prop("required", true);
-				});
 			if(subtype_val == "none"){
 				//fade out every thing
 				fadetwo();
@@ -81,46 +71,33 @@ $(document).ready(function(){
 			else if(subtype_val == "Individual"){
 				fadeone();
 				$(this).parent().parent().siblings().children('#individual-partner-entity').show('fast');
-				disableNoneIndiviualRequiredfields();
-				enableIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Sole Proprietorship"){
 				fadeone();
 				$(this).parent().parent().siblings().children('#individual-partner-entity').show('fast');  // same owner entity fields as individual
-				disableNoneIndiviualRequiredfields();
-				enableIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Limited Liability Company"){
 				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
-				disableIndiviualRequiredfields();
-				enableNoneIndiviualRequiredfields();
 				}
 				// same owner entity fields as individual
 			else if(subtype_val == "Partnership"){
 				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
-				disableIndiviualRequiredfields();
-				enableNoneIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Joint Venture"){
 				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
-				disableIndiviualRequiredfields();
-				enableNoneIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Trust"){
 				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
-				disableIndiviualRequiredfields();
-				enableNoneIndiviualRequiredfields();
 				}
 			else if(subtype_val == "Estate"){
 				fadetwo();
 				$(this).parent().parent().siblings().children('#none-individual-partner-entity').show('fast');
-				disableIndiviualRequiredfields();
-				enableNoneIndiviualRequiredfields();
 				}
 			//saveProjectInfo("set-Owner-entity-types", "US"+"+"+subtype_val, appInternalID); // static from radio buttton
 		});
+		//END hide /show + require / not require by selection
 });
