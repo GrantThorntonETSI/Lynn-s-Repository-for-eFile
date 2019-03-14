@@ -181,22 +181,20 @@ $(document).ready(function(){
 	//END initialize Dashboard datable two
 	
 	//Dashboard datatables ellipsis menu tableone
-		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical" role="img" aria-label="toggle columns visibility"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle Columns</li><li><a class="toggle-vis" data-column="0"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Serial#</a></li><li><a class="toggle-vis" data-column="1"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Registration#</a></li><li><a class="toggle-vis" data-column="2"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Owner</a></li><li><a class="toggle-vis" data-column="3"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Status</a></li><li><a class="toggle-vis" data-column="4"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Mark</a></li></ul></div>');
+		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical" role="img" aria-label="toggle columns visibility"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle Columns</li><li><a class="toggle-vis" data-column="0"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Serial#</a></li><li><a class="toggle-vis" data-column="1"><span class="glyphicon glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Registration#</a></li><li><a class="toggle-vis" data-column="2"><span class="glyphicon glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Owner</a></li><li><a class="toggle-vis" data-column="3"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Status</a></li><li><a class="toggle-vis" data-column="4"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function (e) {
 			e.preventDefault();
 			var column = tableone.column( $(this).attr('data-column') );
 			column.visible( ! column.visible() );
-			//console.log($(this).attr('data-column'));
 		});
 	//END dashboard datatables ellipsis menu tableone
 	
 	//Dashboard datatables ellipsis menu tabletwo
-		$("div.toolbartwo").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical role="img" aria-label="toggle column visibility""></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle Columns</li><li><a class="toggle-vistwo" data-column="0"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Serial#</a></li><li><a class="toggle-vistwo" data-column="1"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Registration#</a></li><li><a class="toggle-vistwo" data-column="2"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Mark</a></li><li><a class="toggle-vistwo" data-column="3"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Owner</a></li><li><a class="toggle-vistwo" data-column="4"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Due Date</a></li><li><a class="toggle-vistwo" data-column="5"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Status</a></li><li><a class="toggle-vistwo" data-column="6"><span class="glyphicon glyphicon-eye-open" role="img" aria-label="hide this column"></span>Action</a></li></ul></div>');
+		$("div.toolbartwo").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical role="img" aria-label="toggle column visibility""></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle Columns</li><li><a class="toggle-vistwo" data-column="0"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Serial#</a></li><li><a class="toggle-vistwo" data-column="1"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Registration#</a></li><li><a class="toggle-vistwo" data-column="2"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Mark</a></li><li><a class="toggle-vistwo" data-column="3"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Owner</a></li><li><a class="toggle-vistwo" data-column="4"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Due Date</a></li><li><a class="toggle-vistwo" data-column="5"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Status</a></li><li><a class="toggle-vistwo" data-column="6"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Action</a></li></ul></div>');
 		$('a.toggle-vistwo').on( 'click', function (e) {
 			e.preventDefault();
 			var column = tabletwo.column( $(this).attr('data-column') );
 			column.visible( ! column.visible() );
-			//console.log($(this).attr('data-column'));
 		});
 	//END dashboard datatables ellipsis menu tabletwo
 	
@@ -538,6 +536,30 @@ $(document).ready(function(){
 			$('div#yespriors').hide( 'fast' );
 			}
 	});
+	
+	//basis classes provide specimen options
+	$('div#yesonespecimen').css('display','none');
+	$('div.individualspecimen').css('display','none');
+	$('input#inlineRadio057').on('change',function(){
+		if(this.checked == true){
+			$('div#yesonespecimen').show( 'fast' );
+			$('div.individualspecimen').hide( 'fast' );
+			}
+	else {
+			$('div#yesonespecimen').hide( 'fast' );
+			$('div.individualspecimen').show( 'fast' );
+			}
+	});
+	$('input#inlineRadio058').on('change',function(){
+		if(this.checked == true){
+			$('div#yesonespecimen').hide( 'fast' );
+			$('div.individualspecimen').show( 'fast' );
+			}
+	else {
+			$('div#yesonespecimen').show( 'fast' );
+			$('div.individualspecimen').hide( 'fast' );
+			}
+	});
 	//hide / show concurrent uses
 	$('div#hideshowconcurrentuses_courtd').css('display','none');
 	$('div#hideshowconcurrentuses_ttab').css('display','none');
@@ -642,19 +664,7 @@ $(document).ready(function(){
       var a = $( 'div.match' );
 	  $('#panels .panel-body').css( 'height', (a.innerHeight() + 8) );
 	//END 
-	
-	//START input label height match
-	var t = $( '.matchlabelheight' ).parent().prev('div').children('label');
-	var u = $( '.matchlabelheighttwo' ).parent().prev('div').children('label');
-	$('.matchlabelheight').css( 'height', (t.outerHeight() + 'px') );
-	$('.matchlabelheighttwo').css( 'height', (u.outerHeight() + 'px') );
-	//console.log(u.outerHeight());
-	$( window ).resize(function() {
-		$('.matchlabelheight').css( 'height', (t.outerHeight())  + 'px' );
-		$('.matchlabelheighttwo').css( 'height', (u.outerHeight())  + 'px' );
-	});
-	//END input label height match
-	
+		
 	//START basis input label height match upload label
 		//var r = $( '#specdescript' );	
 //		var s = $( '#upimg' );
@@ -1152,7 +1162,7 @@ $(document).ready(function(){
 	
 	//start basis commerce options
 	$('div#yescommerce').css('display','none');
-	$('input#inlineRadio25').change(function() {
+	$('input#inlineRadio25').on('change',function(){
 		if(this.checked == true){
 			$('div#yescommerce').show( 'fast' );
 			}
@@ -1172,10 +1182,9 @@ $(document).ready(function(){
 	
 	//start basistwo connection options
 	$('div#yesconnection').css('display','none');
-	$('input#inlineRadio29').change(function() {
+	$('input#inlineRadio29').on('change',function(){
 		if(this.checked == true){
 			$('div#yesconnection').show( 'fast' );
-			//$(heightmatch);
 			}
 	else {
 			$('div#yesconnection').hide( 'fast' );
@@ -1200,7 +1209,7 @@ $(document).ready(function(){
 	else {
 			$('div#yesspecimenone').hide( 'fast' );
 			}
-		});
+	});
 	$('div#yesspecimentwo').css('display','none');
 	$('input#specimentwo').change(function() {
 		if(this.checked == true){
@@ -1209,7 +1218,16 @@ $(document).ready(function(){
 	else {
 			$('div#yesspecimentwo').hide( 'fast' );
 			}
-		});
+	});
+	$('div#yesspecimenthree').css('display','none');
+	$('input#specimenthree').change(function() {
+		if(this.checked == true){
+			$('div#yesspecimenthree').show( 'fast' );
+			}
+	else {
+			$('div#yesspecimenthree').hide( 'fast' );
+			}
+	});
 	//end provide specimen options
 	//END toggle radio buttons content
 	
@@ -1365,7 +1383,7 @@ $(document).ready(function(){
 	
 	//start toggle glyphicon dashboard toggle menu widget
 	function togglecolumnselection() {
-		$( this ).find('span.glyphicon-eye-open').toggleClass( 'visuallyhidden' ).attr('aria-label','show this column');
+		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyhidden' ).attr('aria-label','show this column');
 	}
 	$('a.toggle-vis').click(togglecolumnselection);
 	//start toggle glyphicon dashboard toggle menu widget

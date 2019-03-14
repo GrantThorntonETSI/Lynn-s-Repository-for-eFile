@@ -60,6 +60,10 @@ main#loginform {
 .headlinecontainer h2 {
     margin-top: 1em;
 	}
+#yescommerce .radio, #yesconnection .radio {
+	margin-top:0;
+	margin-bottom:0;
+	}
 .maincontainer {
 	padding: 1em 6em;
 	padding-top:0;
@@ -150,6 +154,9 @@ object#selected {
 .label-info {
 	background-color:#dff0d8;
 	color: #555
+	}
+div.holdsaforeign p.weight600, div.appendsaforeign p.weight600, div.holdsapending p.weight600, div.appendapending p.weight600 {
+	margin-top:1.2em;
 	}
 #dashboardmain .img-thumbnail, #dashboardmain .thumbnail {
     margin: 0 auto;
@@ -1018,7 +1025,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	color:#F3D54E;
 	font-size:1.1em;
 	}
-#dashboard a.toggle-vis span.glyphicon {
+#dashboard a.toggle-vis span.glyphicon, #dashboard a.toggle-vistwo span.glyphicon {
 	margin-right:1em;
 	color:#F3D54E;
 	}
@@ -1147,19 +1154,20 @@ span#termsagree label a:hover, span#termsagree label a:hover {
 	display:inline-block;
 	font-size:.8em;
 	line-height:1.48em;
+	float:right;
 	}
 #panels .glyphicon-new-window {
 	font-size:.8em;
 	line-height:1.48em;
 	}
-#panels a.right span {
+/*#panels a.right span {
 	position:absolute;
 	left:-10000px;
 	top:auto;
 	width:1px;
 	height:1px;
 	overflow:hidden;
-	}
+	}*/
 #panels .col-xs-7t {
 	position:relative;
 	}
@@ -1400,10 +1408,10 @@ label.hasinfo {
 	overflow-x:auto;
 	}	
 	#scrollone::-webkit-scrollbar {
-	  width: .4em;
+	  width: 1em;
 	}
 	#scrollone::-webkit-scrollbar-track {
-	  background: #fff; 
+	  background: #bbb; 
 	}
 	#scrollone::-webkit-scrollbar-thumb {
 	  background: #808080; 
@@ -1655,7 +1663,7 @@ button#moreoptionsbtn {
 	background-color:transparent;
 	}
 #dashboardtableone_wrapper div.toolbar .btn-xs .glyphicon, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs .glyphicon {
-	top: -6px;
+	top: -7px;
 	}
 #reviewapplication .btn-success.fill {
 	display:inline-block;
@@ -1918,6 +1926,11 @@ div.round {
 	margin-top: 0;
 	margin-bottom:2em;
 	}
+.radio-inline.block {
+	margin-left:0;
+	display:block;
+	margin-bottom:1.25em;
+	}
 #yesnps .btn-success.add.ctr {	
 	margin-top: 1.84em;
 	}
@@ -2076,7 +2089,7 @@ span#authem  {
     -webkit-transition: color .2s;
     transition: color .2s;
 	font-size: 1.4em;
-	padding: .155em .16em;
+	padding: .175em .16em;
 	}
 #declarationsignature .checkmargin, #reviewapplication .checkmargin {
 	margin-bottom:2em!important;
@@ -2323,9 +2336,17 @@ button[type="submit"] {
 	-webkit-hyphens: auto;
 	hyphens: auto;
 	white-space: normal;*/
+	/*overflow: hidden;
+  	text-overflow: ellipsis;*/
+	display:table;
+	max-height: 38px;
+	}
+.fileholder .linkholder a {
+	display: table-cell;
+    vertical-align: middle;
 	overflow: hidden;
   	text-overflow: ellipsis;
-	/*max-height: 38px;*/
+	max-width: 100px;
 	}
 .fileholder div {
 	padding: 1em 0;
@@ -3016,6 +3037,11 @@ footer #megamenu ul {
 	#preferences .btn-xs {
 		margin-top: 0;
 		margin-bottom: 1em;
+		}
+}
+@media (min-width: 990px) { 
+	.matchlabelheight, .matchlabelheighttwo {
+		min-height:48px;
 		}
 }
 @media (orientation: portrait) { 
