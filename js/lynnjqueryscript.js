@@ -78,6 +78,10 @@ $(document).ready(function(){
 		$( 'button#distinctivenessbtn span' ).toggleClass('visuallyremoved');
 		$( 'button#distinctivenessbtn span#toggleglyph' ).toggleClass('visuallyadded');
 	});
+	$("button#attorneyadvisebtn").click(function() {
+		$( 'button#attorneyadvisebtn span' ).toggleClass('visuallyremoved');
+		$( 'button#attorneyadvisebtn span#toggleglyph' ).toggleClass('visuallyadded');
+	});
 	//END expand / collapse glyphicon
 	
 	//START initialize Goods + Services datable
@@ -223,13 +227,20 @@ $(document).ready(function(){
 	$('input[type=checkbox]').attr('checked',false);
 	$('input[type=radio]').attr('checked',false);
 	$('input[type=checkbox]#authemail, input[type=radio]#inlineRadio044').not(this).prop('checked', true);
-	$('input[type=radio]#inlineRadio031').prop('checked', true);
-	//if ($('input[type=checkbox]#authemail').prop('checked')) {
-	//	  console.log('checked');
-	//  }
-	//  else {
-	//	  console.log('unchecked');
-	//	  }
+	$('input[type=radio]#inlineRadio031').prop('checked',true);
+	$('input[type=radio]#inlineRadio059').prop('checked',true);
+	$('input[type=radio]#inlineRadio061').prop('checked',true);
+	//if ($('input[type=radio]#inlineRadio059').prop('checked')) {
+//	console.log('checked');
+//	}
+	//$('input[type=radio]#inlineRadio060').change(function() {
+//		if ($('input[type=radio]#inlineRadio059').prop('checked')) {
+//		console.log('checked');
+//		}
+//		else{ 
+//		console.log('unchecked');
+//		} 
+//	});
 	//END set initial checkboxes
 
 	//START additional info page supplemental register checked

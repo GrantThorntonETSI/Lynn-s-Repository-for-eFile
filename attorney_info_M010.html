@@ -179,8 +179,18 @@
                         </label>
                     </div>
                     <!--START Attorney Information Form-->
-                    <div class="card-text noexpand">
-                        <h2 class="card-title weight600" id="attorneyinfo">Attorney Information</h2>
+                    <div class="card-text">
+                    	<div role="heading" aria-level="2" id="attorneyinfo">
+                        	<button type="button" class="btn btn-link Accordion-trigger" data-toggle="collapse" data-target="#attorneyadvise" aria-controls="attorneyadvise" aria-expanded="false" id="attorneyadvisebtn"><span class="glyphicon glyphicon-triangle-right"></span><span id="toggleglyphcolor" class="glyphicon glyphicon-triangle-bottom visuallyremoved"></span> Attorney Information</button>
+                        </div>
+                    </div>
+                    <div id="attorneyadvise" class="collapse Accordion-panel" role="region" aria-labelledby="attorneyadvisebtn">
+                        <div class="Accordion">
+                            <ol>The only attorneys who may sign responses and otherwise practice before the USPTO in trademark matters are as follows:
+								<li>Attorneys in good standing with a bar of the highest court of any U.S. state, the District of Columbia, Puerto Rico, and other U.S. commonwealths or U.S. territories; and</li>
+								<li>Canadian agents/attorneys who represent owners of the mark located in Canada and (a) are registered with the USPTO and in good standing as patent agents or (b) have been granted reciprocal recognition by the USPTO.</li>
+                           	</ol>
+                        </div>
                     </div>
                         <p id="attorneyfiling">Is an attorney filing this application?</p>
                         <div role="radiogroup" aria-labelledby="attorneyfiling" class="form-group form-group-md">
@@ -705,11 +715,6 @@
                                             <input type="date" class="form-control" id="bar-membership-date" name="attorneyBarAdmissionDate" value="">
                                         </div>
                                     </div>
-                                    <h4 class="weight600">Acknowledgement of Certification in Good Standing</h4>
-                                    <div class="form-group form-group-md">
-                                        <input class="form-check-input checkmark" type="checkbox" value="" tabindex="0" aria-labelledby="userAccept-label" id="user-accept-checkbox" name="user-accept-checkbox">
-                                        <label class="form-check-label form-check" for="user-accept-checkbox" id="userAccept-label"><span class="radio notspecial">I certify that this attorney is in good standing with a bar of the highest court of any US State, the District of Columbia, the US Commonwealths or US Territories.</span></label>
-                                    </div>
                                     <div class="form-group form-group-md">
                                         <div class="form-group form-group-md hidethis">
                                             <label class="small long upload-drop-zone" for="file"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>
@@ -725,6 +730,11 @@
                                             </div>
                                         </div>
                                     </div><!-- Drop Zone -->
+                                    <h4 class="weight600">Acknowledgement of Certification in Good Standing</h4>
+                                    <div class="form-group form-group-md">
+                                        <input class="form-check-input checkmark" type="checkbox" value="" tabindex="0" aria-labelledby="userAccept-label" id="user-accept-checkbox" name="user-accept-checkbox">
+                                        <label class="form-check-label form-check" for="user-accept-checkbox" id="userAccept-label"><span class="radio notspecial">I certify that this attorney is in good standing with a bar of the highest court of any US State, the District of Columbia, the US Commonwealths or US Territories.</span></label>
+                                    </div>
                              	</div><!--END US affiliation-->
                                 <div id="canadianaffiliation" role="region" aria-labelledby="affiliation" class="hidethisdiv">
                                     <div class="form-group">

@@ -210,6 +210,17 @@ ul#lowernav li a.glyphed span {
 	margin-right:.45em;
 	top: 1px;
 	}
+#attorney ol {
+	margin-bottom:1em;
+	line-height: 1.5em;
+	}
+#attorney li {
+	list-style: decimal;
+    padding: .4em;
+    margin-left: 18px;
+    padding-bottom: .05em;
+    padding-top: .7em;
+	}
 /* PROGRESS tracker */
 section .breadcrumb-steps {
     color: #333333;
@@ -1986,7 +1997,7 @@ div[role="heading"] button {
 	outline: 0!important;
     outline: 0;
 	}
-#uploaded .Accordion p {
+.Accordion p, .Accordion ol {
 	padding-left:40px;
 	padding-right:40px;
 	}
