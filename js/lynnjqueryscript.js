@@ -2493,8 +2493,7 @@ $(document).ready(function(){
 				$('div#optionuploadtwo').css('display','none');
 			}
 		});
-		
-		
+				
 	//$( 'input#iu1a' ).change(function() {
 //		if(this.checked == true){
 //			console.log('checked');

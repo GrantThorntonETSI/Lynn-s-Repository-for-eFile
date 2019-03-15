@@ -210,16 +210,60 @@ ul#lowernav li a.glyphed span {
 	margin-right:.45em;
 	top: 1px;
 	}
-#attorney ol {
+#attorney ol, #errorslist ul {
 	margin-bottom:1em;
 	line-height: 1.5em;
 	}
-#attorney li {
+#attorney li, #errorslist li {
 	list-style: decimal;
     padding: .4em;
     margin-left: 18px;
     padding-bottom: .05em;
     padding-top: .7em;
+	}
+#errorslist li {
+	list-style: disc;
+	padding-bottom: 0;
+	padding-top: .2em;
+	}
+#errorslist ul {
+	outline: 1px solid #9BB8D3!important;
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: .7em;
+	-webkit-box-shadow: rgb(0,0,0); 
+  	-moz-box-shadow:    rgb(0,0,0);  
+  	box-shadow:         rgb(0,0,0);
+	background-color: #EEEEEE;
+	padding:.8em
+	}
+.highlighted {
+	background-color: #9BB8D3;
+	outline: 1px solid #9BB8D3!important;
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: .3em;
+	border:none;
+	color:#000;
+	}
+.highlighted::placeholder { 
+  	color: #000;
+  	opacity: 1;
+	}
+.highlighted:-ms-input-placeholder {
+  	color: #000;
+	}
+.highlighted::-ms-input-placeholder {
+  	color: #000;
+	}
+#errorslist ul {
+  	margin:2em;
+	}
+#errorslist:focus {
+	outline: 0!important;
+	outline: 0r;
+	outline-offset: 0;
+	-webkit-box-shadow: rgb(0,0,0); 
+  	-moz-box-shadow:    rgb(0,0,0);  
+  	box-shadow:         rgb(0,0,0);
 	}
 /* PROGRESS tracker */
 section .breadcrumb-steps {
@@ -2014,7 +2058,7 @@ div[role="heading"] button {
 input[type="file"]:focus { 
 	margin-left: 0; 
 	}
-option, select, input[type="text"], input[type="email"], input[type="date"], input[type="date"] { 
+option, select, input[type="text"], input[type="email"], input[type="date"], input[type="date"], input[type="tel"], input[type="url"] { 
 	min-height: 38px!important; 
 	}
 #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"] {
@@ -2050,12 +2094,13 @@ option, select, input[type="text"], input[type="email"], input[type="date"], inp
 	}
 .form-control:focus {
     background-color: #fafafb!important;
+	border-color: #009CDE!important;
 	}
-.form-control:focus, .dataTables_length select, .sorting_1 {
+.form-control:focus, .dataTables_length select, .sorting_1, .highlighted:focus {
     box-shadow: none!important;
 	-webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
     box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
-	border-color: #1596D1!important;
+	border: 1px solid #009CDE!important;
     outline: 0!important;
 	background:none;
 	}
@@ -2066,6 +2111,8 @@ option, select, input[type="text"], input[type="email"], input[type="date"], inp
 	}
 input.form-control, textarea.form-control, select.form-control {
     -webkit-border-radius: 	2px;
+	-moz-border-radius: 	2px;
+	-webkit-border-radius: 	2px;
 	-moz-border-radius: 	2px;
 	border-radius: 			2px;
 	max-width: 100%;

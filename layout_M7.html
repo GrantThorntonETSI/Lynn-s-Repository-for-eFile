@@ -75,10 +75,10 @@
           	<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fees $225<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li id="firstli">Basic Fees $225</li>
-                <li>Extra Class Fee $0</li>
-                <li>Total Classes 0</li>
-                <li id="lastli">Total Fee $225</li>
+                <li id="firstli" role="status" aria-live="polite">Basic Fees $225</li>
+                <li role="status" aria-live="polite">Extra Class Fee $0</li>
+                <li role="status" aria-live="polite">Total Classes 0</li>
+                <li id="lastli" role="status" aria-live="polite">Total Fee $225</li>
               </ul>
             </li>
 		<!--<li><a href="#">Actions</a></li>
@@ -166,17 +166,20 @@
                 	</div>
                 <h1>Owner Information &#8211; Sole Proprietorship</h1>
               	<p class="required"><span class="weight600">&#42; = Required</span></p>
+                <div class="row">
+                	<div class="col-xs-12" id="errorslist" tabindex="-1">
+                	</div>
+                </div>
                 <!--START Owner Information Form-->
-                
                     <div class="card-text noexpand">
                         <h2 class="card-title weight600" id="ownerinfo">Owner Information</h2>
                     </div>
-                    <form method="post" id="addNewOwnerForm" action="/owner/add" th:object="${addNewOwnerContactFormDTO}" aria-labelledby="ownerinfo">
-                    	<fieldset>
+                    <form method="post" id="addNewOwnerForm" action="" th:object="${addNewOwnerContactFormDTO}" onsubmit="return checkForm(this);" aria-labelledby="ownerinfo">
+                    	<fieldset aria-label="Owner Information">
                             <div class="row">
                               <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-4">
                                 <label for="ownername">Owner name <span class="weight600">&#42;</span></label>
-                                <input type="text" class="form-control" id="ownername" th:field="*{firstName}" required>
+                                <input type="text" class="form-control" id="ownername" name="ownername" th:field="*{firstName}" aria-required="true" aria-invalid="false">
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
                                 <label for="additionalname">Additional name</label>
@@ -190,7 +193,7 @@
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
                                 <label for="stateoforg">State of organization <span class="weight600">&#42;</span></label>
-                                <select class="form-control" id="stateoforg" required>
+                                <select class="form-control" id="stateoforg" name="stateoforg" aria-required="true" aria-invalid="false">
                                   <option value="Select">Select</option>
                                   <option value="AL">Alabama</option>
                                   <option value="AK">Alaska</option>
@@ -205,17 +208,16 @@
                               </div>
                             </div>
                       	</fieldset>
-                    </form><!--END Owner Information Form-->
-                <!--START Sole Proprietor Information Form-->
-                    <div class="card-text noexpand">
-                        <h2 class="card-title weight600" id="proprietorinfo">Sole Proprietor Information</h2>
-                    </div>
-                    <form method="post" aria-labelledby="proprietorinfo">
-                        <fieldset>
+                    	<!--END Owner Information Fieldset-->
+                        <!--START Sole Proprietor Information Form-->
+                        <div class="card-text noexpand">
+                            <h2 class="card-title weight600" id="proprietorinfo">Sole Proprietor Information</h2>
+                        </div>
+                        <fieldset aria-label="Sole Proprietor Information">
                             <div class="row">
                               <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                                 <label for="firstname">First name <span class="weight600">&#42;</span></label>
-                                <input type="text" class="form-control" id="firstname" required>
+                                <input type="text" class="form-control" id="firstname" name="firstname" aria-required="true" aria-invalid="false">
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
                                 <label for="middlename">Middle name</label>
@@ -223,7 +225,7 @@
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                                 <label for="lastname">Last name <span class="weight600">&#42;</span></label>
-                                <input type="text" class="form-control" id="lastname" th:field="*{lastName}" required>
+                                <input type="text" class="form-control" id="lastname" name="lastname" th:field="*{lastName}" aria-required="true" aria-invalid="false">
                               </div>
                               <div class="form-group form-group-md col-xs-6">
                                 <label for="suffix">Suffix</label>
@@ -249,18 +251,16 @@
                                 </select>
                               </div>
                          </div>
-                   	</fieldset>
-              	</form><!--END Sole Proprietor Information Form-->
-                <!--START Owner Address Information Form-->
+                   	</fieldset><!--END Sole Proprietor Information Fieldset-->
+                	<!--START Owner Address Information Form-->
                     <div class="card-text noexpand">
                         <h2 class="card-title weight600" id="addressinfo">Owner Address Information</h2>
                     </div>
-                    <form method="post" aria-labelledby="addressinfo">
-                    <fieldset>
+                    <fieldset aria-label="Owner Address Information">
                     	<div class="row">
                           <div class="form-group form-group-md col-xs-12 col-lg-7">
                             <label for="territory">Country/US territory <span class="weight600">&#42;</span></label>
-                            <select class="form-control" id="territory">
+                            <select class="form-control" id="territory" name="territory" aria-required="true" aria-invalid="false">
                               <option value="United States">United States</option>
                               <option value="Afghanistan">Afghanistan</option>
                               <option value="Albania">Albania</option>
@@ -274,7 +274,7 @@
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-lg-8">
                             <label for="addressline1">Address line 1 <span class="weight600">&#42;</span></label>
-                            <input type="text" class="form-control" id="addressline1" th:field="*{ownerAddress1}" required>
+                            <input type="text" class="form-control" id="addressline1" name="addressline1" th:field="*{ownerAddress1}" aria-required="true" aria-invalid="false">
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-lg-8">
                             <label for="addressline2">Address line 2</label>
@@ -286,11 +286,11 @@
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
                             <label for="city">City <span class="weight600">&#42;</span></label>
-                            <input type="text" class="form-control" id="city" th:field="*{ownerCity}" required>
+                            <input type="text" class="form-control" id="city" name="city" th:field="*{ownerCity}" aria-required="true" aria-invalid="false">
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
                             <label for="state">State <span class="weight600">&#42;</span></label>
-                            <select class="form-control" id="state" th:field="*{ownerState}" required>
+                            <select class="form-control" id="state" name="state" th:field="*{ownerState}" aria-required="true" aria-invalid="false">
                               <option value="Select">Select</option>
                               <option value="Virginia">Virginia</option>
                               <option value="Maryland">Maryland</option>
@@ -299,25 +299,23 @@
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
                             <label for="zipcode">Zip code <span class="weight600">&#42;</span></label>
-                            <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
+                            <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" aria-required="true" aria-invalid="false">
                           </div>
                        	</div>
-                      </fieldset>
-                    </form><!--END Owner Address Information Form-->
-                <!--START Additional Information Form-->
+                      </fieldset><!--END Owner Address Information Form-->
+                	<!--START Additional Information Form-->
                     <div class="card-text noexpand">
                         <h2 class="card-title weight600" id="additionalinfo">Additional Information</h2>
                     </div>
-                    <form method="post" aria-labelledby="additionalinfo">
-                    <fieldset>
+                    <fieldset aria-label="Additional Information">
                     	<div class="row">
                           <div class="form-group form-group-md col-xs-12 col-md-6">
                             <label for="email">Email address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
-                            <input type="text" class="form-control" id="email" th:field="*{ownerEmail}" required>
+                            <input type="email" class="form-control" id="email" th:field="*{ownerEmail}" aria-required="true" aria-invalid="false">
                           </div>
                           <div class="form-group form-group-md col-xs-12 col-md-6">
                             <label for="webaddress">Website address</label>
-                            <input type="text" class="form-control" id="webaddress" th:field="*{ownerWebSite}">
+                            <input type="url" class="form-control" id="webaddress" th:field="*{ownerWebSite}">
                           </div>
                           <div class="row">
                               <div class="col-xs-12">
@@ -333,7 +331,7 @@
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-md-6 col-lg-6">
                                     <label for="phonenumber">Phone number</label>
-                                    <input type="text" class="form-control" id="phonenumber" th:field="*{ownerPhone}">
+                                    <input type="tel" class="form-control" id="phonenumber" th:field="*{ownerPhone}">
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-md-2 col-lg-2">
                                     <label for="extension">Ext.</label>
@@ -342,26 +340,34 @@
                              </div>
                           </div>
                         </div>
-                      </fieldset>
-                    </form><!--END Additional Information Form-->
-            </div><!--END Content Div-->
-          </div>
-          <div class="inlinebuttons btn-group btn-group-justified" role="navigation" aria-label="view previous or next page" id="prevnxt">
-            <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
+                      </fieldset><!--END Additional Information Form-->
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="form-group form-group-md col-xs-12" aria-label="submit">
+                                <div class="col-xs-12">
+                                	<button type="submit" class="btn-sm btn-success add ctr" name="Submit" value="Owner Info Submitted">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div><!--END Content Div-->
+              </div>
+              <div class="inlinebuttons btn-group btn-group-justified" role="navigation" aria-label="view previous or next page" id="prevnxt">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next" onclick="clearerrors()">Next 
+                        <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
+                </div>
             </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
-                    <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
-            </div>
-        </div>
         </main><!--MAIN-->
-      </div><!--END container div-->
+ 	</div><!--END container div-->
       
         <!--jquery and web jars -->
         <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
-        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
         <!--<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <!--<script src="../resources/js/jquery.dataTables.min.js"></script>-->
@@ -369,6 +375,160 @@
         <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
+        <script type="application/javascript" src="js/validate.js"></script>
+		<script type="application/javascript">
+			function checkForm(theForm) {
+				var why = "";
+				why  = checkText(theForm.ownername.value, "owner name");
+				var ownernameval = document.getElementById("ownername").value;
+				var highlightownername = document.getElementById("ownername");
+					if (ownernameval) {
+						var highlightownername = document.getElementById("ownername");
+						document.getElementById("ownername").classList.remove("highlighted");
+						highlightownername.classList.remove("highlighted");
+						highlightownername.setAttribute("aria-invalid", "false");
+						}
+					if (ownernameval.length == 0) {
+					highlightownername.classList.add("highlighted");
+					highlightownername.setAttribute("aria-invalid", "true");
+					}
+				why += checkDropdown(theForm.stateoforg.selectedIndex, "state of organization");				
+				var stateoforgval = document.getElementById("stateoforg").selectedIndex;
+				var highlightstateoforg = document.getElementById("stateoforg");
+					if (stateoforgval > 0) {
+						var highlightstateoforg = document.getElementById("stateoforg");
+						document.getElementById("stateoforg").classList.remove("highlighted");
+						highlightstateoforg.classList.remove("highlighted");
+						highlightstateoforg.setAttribute("aria-invalid", "false");
+						}
+					if (stateoforgval < 1) {
+					highlightstateoforg.classList.add("highlighted");
+					highlightstateoforg.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.firstname.value, "first name");
+				var firstnameval = document.getElementById("firstname").value;
+				var highlightfirstname = document.getElementById("firstname");
+					if (firstnameval) {
+						var highlightfirstname = document.getElementById("firstname");
+						document.getElementById("firstname").classList.remove("highlighted");
+						highlightfirstname.classList.remove("highlighted");
+						highlightfirstname.setAttribute("aria-invalid", "false");
+						}
+					if (firstnameval.length == 0) {
+					highlightfirstname.classList.add("highlighted");
+					highlightfirstname.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.lastname.value, "last name");
+				var lastnameval = document.getElementById("lastname").value;
+				var highlightlastname = document.getElementById("lastname");
+					if (lastnameval) {
+						var highlightlastname = document.getElementById("lastname");
+						document.getElementById("lastname").classList.remove("highlighted");
+						highlightlastname.classList.remove("highlighted");
+						highlightlastname.setAttribute("aria-invalid", "false");
+						}
+					if (lastnameval.length == 0) {
+					highlightlastname.classList.add("highlighted");
+					highlightlastname.setAttribute("aria-invalid", "true");
+					}
+				why += checkDropdown(theForm.territory.selectedIndex, "country/US territory");
+				var territoryval = document.getElementById("territory").selectedIndex;
+				var highlightterritory = document.getElementById("territory");
+					if (territoryval > 0) {
+						var highlightterritory = document.getElementById("territory");
+						document.getElementById("territory").classList.remove("highlighted");
+						highlightterritory.classList.remove("highlighted");
+						highlightterritory.setAttribute("aria-invalid", "false");
+						}
+					if (territoryval < 1) {
+					highlightterritory.classList.add("highlighted");
+					highlightterritory.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.addressline1.value, "address line 1");
+				var addressline1val = document.getElementById("addressline1").value;
+				var highlightaddressline1 = document.getElementById("addressline1");
+					if (addressline1val) {
+						var highlightaddressline1 = document.getElementById("addressline1");
+						document.getElementById("addressline1").classList.remove("highlighted");
+						highlightaddressline1.classList.remove("highlighted");
+						highlightaddressline1.setAttribute("aria-invalid", "false");
+						}
+					if (addressline1val.length == 0) {
+					highlightaddressline1.classList.add("highlighted");
+					highlightaddressline1.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.city.value, "city");
+				var cityval = document.getElementById("city").value;
+				var highlightcity = document.getElementById("city");
+					if (cityval) {
+						var highlightcity = document.getElementById("city");
+						document.getElementById("city").classList.remove("highlighted");
+						highlightcity.classList.remove("highlighted");
+						highlightcity.setAttribute("aria-invalid", "false");
+						}
+					if (cityval.length == 0) {
+					highlightcity.classList.add("highlighted");
+					highlightcity.setAttribute("aria-invalid", "true");
+					}
+				why += checkDropdown(theForm.state.selectedIndex, "state");
+				var stateval = document.getElementById("state").selectedIndex;
+				var highlightstate = document.getElementById("state");
+					if (stateval > 0) {
+						var highlightstate = document.getElementById("state");
+						document.getElementById("state").classList.remove("highlighted");
+						highlightstate.classList.remove("highlighted");
+						highlightstate.setAttribute("aria-invalid", "false");
+						}
+					if (stateval < 1) {
+					highlightstate.classList.add("highlighted");
+					highlightstate.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.zipcode.value, "zip code");
+				var zipcodeval = document.getElementById("zipcode").value;
+				var highlightzipcode = document.getElementById("zipcode");
+					if (zipcodeval) {
+						var highlightzipcode = document.getElementById("zipcode");
+						document.getElementById("zipcode").classList.remove("highlighted");
+						highlightzipcode.classList.remove("highlighted");
+						highlightzipcode.setAttribute("aria-invalid", "false");
+						}
+					if (zipcodeval.length == 0) {
+					highlightzipcode.classList.add("highlighted");
+					highlightzipcode.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.email.value, "email address");
+				var emailval = document.getElementById("email").value;
+				var highlightemail = document.getElementById("email");
+					if (emailval) {
+						var highlightemail = document.getElementById("email");
+						document.getElementById("email").classList.remove("highlighted");
+						highlightemail.classList.remove("highlighted");
+						highlightemail.setAttribute("aria-invalid", "false");
+						}
+					if (emailval.length == 0) {
+					highlightemail.classList.add("highlighted");
+					highlightemail.setAttribute("aria-invalid", "true");
+					}
+					if (why != "") {
+						var textnode = "The form is not complete. Please enter the following information.\n" + why;
+						var node = document.createElement("ul");
+						node.innerHTML = (textnode);
+						document.getElementById("errorslist").appendChild(node);
+						document.getElementById("errorslist").focus();
+						document.getElementById("errorslist").tabIndex = "-1";
+						window.scrollTo(0, 0);
+						var c = document.getElementById("errorslist").childElementCount;
+						if (c > 1) {
+							document.getElementById("errorslist").firstElementChild.remove();
+						}
+						node.setAttribute('aria-invalid', 'true');						
+						return false;
+					} 
+					else {
+				return true;
+				}
+		}
+        </script>        
     </div>
     <footer>
         <div class="container-fluid">

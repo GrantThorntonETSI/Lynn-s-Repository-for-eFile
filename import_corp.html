@@ -46,7 +46,7 @@
                         <div class="row">
                             <div class="form-group form-group-md col-xs-12 col-md-6">
                                 <label for="email">Email address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
-                                <input type="text" class="form-control" id="email" th:field="*{ownerEmail}" required>
+                                <input type="email" class="form-control" id="email" th:field="*{ownerEmail}" required>
                             </div>
                         </div>
                         <fieldset aria-labelledby="addressinfo">
@@ -94,7 +94,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group form-group-md col-xs-12 col-md-6">
                                         <label for="webaddress">Website address</label>
-                                        <input type="text" class="form-control" id="webaddress" th:field="*{ownerWebSite}">
+                                        <input type="url" class="form-control" id="webaddress" th:field="*{ownerWebSite}">
                                     </div>
                                 </div>
                               </div>
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="form-group form-group-md col-xs-6 col-sm-4">
                                         <label for="phonenumber">Phone number</label>
-                                        <input type="text" class="form-control" id="phonenumber">
+                                        <input type="tel" class="form-control" id="phonenumber">
                                     </div>
                                     <div class="form-group form-group-md col-xs-9 col-sm-3">
                                         <label for="extension">Ext.</label>

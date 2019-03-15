@@ -39,3 +39,6 @@ table {
 a{
 	text-decoration: none;
 	}
+input {
+	border: none; 
+	}

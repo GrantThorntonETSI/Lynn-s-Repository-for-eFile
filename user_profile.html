@@ -68,10 +68,10 @@
           	<li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fees $225<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li id="firstli">Basic Fees $225</li>
-                <li>Extra Class Fee $0</li>
-                <li>Total Classes 0</li>
-                <li id="lastli">Total Fee $225</li>
+                <li id="firstli" role="status" aria-live="polite">Basic Fees $225</li>
+                <li role="status" aria-live="polite">Extra Class Fee $0</li>
+                <li role="status" aria-live="polite">Total Classes 0</li>
+                <li id="lastli" role="status" aria-live="polite">Total Fee $225</li>
               </ul>
             </li>
 		<!--<li><a href="#">Actions</a></li>
@@ -412,7 +412,7 @@
                                 </div>
                                 <div class="form-group form-group-md col-xs-12 col-md-6">
                                     <label for="altemail">Alternate email address <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
-                                    <input type="text" class="form-control" id="altemail">
+                                    <input type="email" class="form-control" id="altemail">
                                 </div>
                                 <div class="row phones">
                                     <div class="col-xs-12">
@@ -476,7 +476,7 @@
                                                   		</div>
                                                   		<div class="modal-body">
                                                     		<label for="newemail">Update the email address associated with this account.</label>
-                                    						<input type="text" class="form-control" id="newemail">
+                                    						<input type="email" class="form-control" id="newemail">
                                                   		</div>
                                                   		<div class="modal-footer">
                                                         	<div class="inlinebuttons btn-group btn-group-justified" aria-label="cancel or save changes">
