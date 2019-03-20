@@ -226,7 +226,7 @@ $(document).ready(function(){
 	//START set initial checkboxes
 	$('input[type=checkbox]').attr('checked',false);
 	$('input[type=radio]').attr('checked',false);
-	$('input[type=checkbox]#authemail, input[type=radio]#inlineRadio044').not(this).prop('checked', true);
+	$('input[type=radio]#inlineRadio044').prop('checked', true);
 	$('input[type=radio]#inlineRadio031').prop('checked',true);
 	$('input[type=radio]#inlineRadio059').prop('checked',true);
 	$('input[type=radio]#inlineRadio061').prop('checked',true);
@@ -291,8 +291,11 @@ $(document).ready(function(){
 				checked: false,
 			});
 			$('.form-check#tradeserv2 span.radio').addClass('special');
+			$('label.form-check#tradeserv2 span.radio::before').addClass('disabled');
 			$('.form-check#collectcheck2 span.radio').addClass('special');
+			$('label.form-check#collectcheck2 span.radio::before').addClass('disabled');
 			$('.form-check#collectm2 span.radio').addClass('special');
+			$('label.form-check#collectm2 span.radio::before').addClass('disabled');
 			$('input#tradeserv').attr('aria-disabled', 'true');
 			$('input#collectcheck').attr('aria-disabled', 'true');
 			$('input#collectmember').attr('aria-disabled', 'true');
@@ -308,8 +311,11 @@ $(document).ready(function(){
 				disabled: false,
 			});
 			$('.form-check#tradeserv2 span.radio').removeClass('special');
+			$('label.form-check#tradeserv2 span.radio::before').removeClass('disabled');
 			$('.form-check#collectcheck2 span.radio').removeClass('special');
+			$('label.form-check#collectcheck2 span.radio::before').removeClass('disabled');
 			$('.form-check#collectm2 span.radio').removeClass('special');
+			$('label.form-check#collectm2 span.radio::before').removeClass('disabled');
 			$('input#tradeserv').attr('aria-disabled', 'false');
 			$('input#collectcheck').attr('aria-disabled', 'false');
 			$('input#collectmember').attr('aria-disabled', 'false');
@@ -323,6 +329,7 @@ $(document).ready(function(){
 				checked: false,				
 			});
 			$('.form-check#certcheck2 span.radio').addClass('special');
+			$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectmember').prop('checked')){ 
@@ -331,6 +338,7 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#tradeserv').prop('checked')){ 
@@ -339,6 +347,7 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
@@ -346,6 +355,7 @@ $(document).ready(function(){
 				disabled: false,
 			});
 			$('.form-check#certcheck2 span.radio').removeClass('special');
+			$('label.form-check#certcheck2 span.radio::before').removeClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'false');
 		}
 	});
@@ -357,6 +367,7 @@ $(document).ready(function(){
 				checked: false,				
 			});
 			$('.form-check#certcheck2 span.radio').addClass('special');
+			$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectcheck').prop('checked')){ 
@@ -365,6 +376,7 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#tradeserv').prop('checked')){ 
@@ -373,6 +385,7 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
@@ -380,6 +393,7 @@ $(document).ready(function(){
 				disabled: false,
 			});
 			$('.form-check#certcheck2 span.radio').removeClass('special');
+			$('label.form-check#certcheck2 span.radio::before').removeClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'false');
 		}
 	});
@@ -391,6 +405,7 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 				}
 			else{
@@ -398,6 +413,7 @@ $(document).ready(function(){
 					disabled: false,
 				});
 				$('.form-check#certcheck2 span.radio').removeClass('special');
+				$('label.form-check#certcheck2 span.radio::before').removeClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'false');
 				}
 	});//END enable / disable checkboxes
@@ -549,26 +565,26 @@ $(document).ready(function(){
 	});
 	
 	//basis classes provide specimen options
-	$('div#yesonespecimen').css('display','none');
+	$('div.yesonespecimen').css('display','none');
 	$('div.individualspecimen').css('display','none');
-	$('input#inlineRadio057').on('change',function(){
+	$('input.yesone').on('change',function(){
 		if(this.checked == true){
-			$('div#yesonespecimen').show( 'fast' );
-			$('div.individualspecimen').hide( 'fast' );
+			$(this).closest('section').find('div.yesonespecimen').show( 'fast' );
+			$(this).closest('fieldset').find('div.individualspecimen').hide( 'fast' );
 			}
 	else {
-			$('div#yesonespecimen').hide( 'fast' );
-			$('div.individualspecimen').show( 'fast' );
+			$(this).closest('section').find('div.yesonespecimen').hide( 'fast' );
+			$(this).closest('fieldset').find('div.individualspecimen').show( 'fast' );
 			}
 	});
-	$('input#inlineRadio058').on('change',function(){
+	$('input.yesoneeach').on('change',function(){
 		if(this.checked == true){
-			$('div#yesonespecimen').hide( 'fast' );
-			$('div.individualspecimen').show( 'fast' );
+			$(this).closest('section').find('div.yesonespecimen').hide( 'fast' );
+			$(this).closest('fieldset').find('div.individualspecimen').show( 'fast' );
 			}
 	else {
-			$('div#yesonespecimen').show( 'fast' );
-			$('div.individualspecimen').hide( 'fast' );
+			$(this).closest('section').find('div.yesonespecimen').show( 'fast' );
+			$(this).closest('fieldset').find('div.individualspecimen').hide( 'fast' );
 			}
 	});
 	//hide / show concurrent uses
@@ -1172,71 +1188,103 @@ $(document).ready(function(){
 	//end us foreign options
 	
 	//start basis commerce options
-	$('div#yescommerce').css('display','none');
-	$('input#inlineRadio25').on('change',function(){
+	$('div.yescommerce').css('display','none');
+	$('input#inlineRadio25, input.countyes').on('change',function(){
 		if(this.checked == true){
-			$('div#yescommerce').show( 'fast' );
+			$(this).closest('section').find('div.yescommerce').show( 'fast' );
 			}
 	else {
-			$('div#yescommerce').hide( 'fast' );
+			$(this).closest('section').find('div.yescommerce').hide( 'fast' );
 			}
 		});
-	$('input#inlineRadio26').change(function() {
+	$('input#inlineRadio26, input.count').change(function() {
 		if(this.checked == true){
-			$('div#yescommerce').hide( 'fast' );
+			$(this).closest('section').find('div.yescommerce').hide( 'fast' );
+			var resetselect = [ 'Select','mm/dd/yy' ];
+			var resetselect = jQuery.makeArray( resetselect );
+			$(this).closest('section').find('div.yescommerce input[type=date]').val(resetselect[1]);
+			$(this).closest('section').find('div.yescommerce textarea').val('');
+			$(this).closest('section').find('div.yescommerce input.checkmark').prop('checked', false);
+			$(this).closest('section').find('div.yescommerce input[type=text]').val('');
+			$(this).closest('section').find('div.yescommerce select').val( resetselect[0] );
+			$(this).closest('section').find('div.yescommerce .hidethis').contents().css('display','block');
+			$(this).closest('section').find('div.yescommerce .upload-drop-zone').css('height','115px');
+			$(this).closest('section').find('div.yescommerce div.upload-drop-zone').css('height','175px');
+			$(this).closest('section').find('div.yescommerce .js-upload-finished button.close' ).parent().parent().remove();
+			$(this).closest('section').find('div.yescommerce div.fileDisplayArea img' ).remove();
+			$(this).closest('section').find('div.yescommerce div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 			}
 	else {
-			$('div#yescommerce').show( 'fast' );
+			$(this).closest('section').find('div.yescommerce').show( 'fast' );
 		}
 	});
 	//end basis commerce options
 	
+	//generate unique IDs + matching labels for Basis pages, checkmarks
+		var checkboxList = $('#basisab input.showspecimen, #basisabde input.showspecimen');
+		for (var i = 0; i <= checkboxList.length; i++) {
+			$(checkboxList[i]).attr('id', i);
+		}
+		var labelList = $('#basisab input.showspecimen, #basisabde input.showspecimen').next('label');
+		for (var i = 0; i <= labelList.length; i++) {
+			$(labelList[i]).attr('for', i);
+		}
+		var labelidList = $('#basisab input.showspecimen, #basisabde input.showspecimen').next('label');
+		for (var i = 0; i <= labelidList.length; i++) {
+			$(labelidList[i]).attr('id', 'individualspecimen_' + i);
+		}
+		var checkboxarialabelList = $('#basisab input.showspecimen, #basisabde input.showspecimen');
+		for (var i = 0; i <= checkboxarialabelList.length; i++) {
+			$(checkboxarialabelList[i]).attr('aria-labelledby', 'individualspecimen_' + i);
+		}
+		
 	//start basistwo connection options
-	$('div#yesconnection').css('display','none');
-	$('input#inlineRadio29').on('change',function(){
+	$('div.yesconnection').css('display','none');
+	$('input#inlineRadio29, input.countyes').on('change',function(){
 		if(this.checked == true){
-			$('div#yesconnection').show( 'fast' );
+			$(this).closest('section').find('div.yesconnection').show( 'fast' );
 			}
 	else {
-			$('div#yesconnection').hide( 'fast' );
+			$(this).closest('section').find('div.yesconnection').hide( 'fast' );
 			}
 		});
-	$('input#inlineRadio30').change(function() {
+	$('input#inlineRadio30, input.count').change(function() {
 		if(this.checked == true){
-			$('div#yesconnection').hide( 'fast' );
+			$(this).closest('section').find('div.yesconnection').hide( 'fast' );
+			var resetselect = [ 'Select','mm/dd/yy' ];
+			var resetselect = jQuery.makeArray( resetselect );
+			$(this).closest('section').find('div.yesconnection input[type=date]').val(resetselect[1]);
+			$(this).closest('section').find('div.yesconnection textarea').val('');
+			$(this).closest('section').find('div.yesconnection input.checkmark').prop('checked', false);
+			$(this).closest('section').find('div.yesconnection input[type=text]').val('');
+			$(this).closest('section').find('div.yesconnection select').val( resetselect[0] );
+			$(this).closest('section').find('div.yesconnection .hidethis').contents().css('display','block');
+			$(this).closest('section').find('div.yesconnection .upload-drop-zone').css('height','115px');
+			$(this).closest('section').find('div.yesconnection div.upload-drop-zone').css('height','175px');
+			$(this).closest('section').find('div.yesconnection .js-upload-finished button.close' ).parent().parent().remove();
+			$(this).closest('section').find('div.yesconnection div.fileDisplayArea img' ).remove();
+			$(this).closest('section').find('div.yesconnection div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 			}
 	else {
-			$('div#yesconnection').show( 'fast' );
+			$(this).closest('section').find('div.yesconnection').show( 'fast' );
 		}
 	});
 	//end basistwo connection options
 	
 	//start provide specimen options
-	$('div#yesspecimenone').css('display','none');
-	$('input#specimen').change(function() {
+	$('div.yesspecimen').css('display','none');
+	$('input.showspecimen').change(function() {
 		if(this.checked == true){
-			$('div#yesspecimenone').show( 'fast' );
+			$(this).closest('section').find('div.yesspecimen').show( 'fast' );
 			}
 	else {
-			$('div#yesspecimenone').hide( 'fast' );
-			}
-	});
-	$('div#yesspecimentwo').css('display','none');
-	$('input#specimentwo').change(function() {
-		if(this.checked == true){
-			$('div#yesspecimentwo').show( 'fast' );
-			}
-	else {
-			$('div#yesspecimentwo').hide( 'fast' );
-			}
-	});
-	$('div#yesspecimenthree').css('display','none');
-	$('input#specimenthree').change(function() {
-		if(this.checked == true){
-			$('div#yesspecimenthree').show( 'fast' );
-			}
-	else {
-			$('div#yesspecimenthree').hide( 'fast' );
+			$(this).closest('section').find('div.yesspecimen').hide( 'fast' );
+			$(this).closest('section').find('.hidethis').contents().css('display','block');
+			$(this).closest('section').find('.upload-drop-zone').css('height','115px');
+			$(this).closest('section').find('div.upload-drop-zone').css('height','175px');
+			$(this).closest('section').find('.js-upload-finished button.close' ).parent().parent().remove();
+			$(this).closest('section').find('div.fileDisplayArea img' ).remove();
+			$(this).closest('section').find('div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 			}
 	});
 	//end provide specimen options
@@ -1636,9 +1684,9 @@ $(document).ready(function(){
 		
 	//START pending + foreign
 	//Basis one
-	$('div#yescommerce div.holdsapending').css('display','none');
-	$('div#yescommerce button#addpending_basisone').css('display','none');
-	$('div#yescommerce input#pendingtwo_basisone').change(function() {
+	$('div.yescommerce div.holdsapending').css('display','none');
+	$('div.yescommerce button#addpending_basisone').css('display','none');
+	$('div.yescommerce input#pendingtwo_basisone').change(function() {
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsapending').show( 'fast' );
 			$('button#addpending_basisone').show( 'fast' );
@@ -1651,9 +1699,9 @@ $(document).ready(function(){
 			$('button#addpending_basisone').hide( 'fast' );
 		}
 	});
-	$('div#yescommerce div.holdsaforeign').css('display','none');
+	$('div.yescommerce div.holdsaforeign').css('display','none');
 	$('button#addforeignreg_basisone').css('display','none');
-	$('div#yescommerce input#foreigntwo_basisone').change(function() {
+	$('div.yescommerce input#foreigntwo_basisone').change(function() {
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsaforeign').show( 'fast' );
 			$('button#addforeignreg_basisone').show( 'fast' );
@@ -1667,9 +1715,9 @@ $(document).ready(function(){
 		}
 	});
 	//Basis two
-	$('div#yesconnection div.holdsapending').css('display','none');
+	$('div.yesconnection div.holdsapending').css('display','none');
 	$('button#addpending_basistwo').css('display','none');
-	$('div#yesconnection input#pendingtwo_basistwo').change(function() {
+	$('div.yesconnection input#pendingtwo_basistwo').change(function() {
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsapending').show( 'fast' );
 			$('button#addpending_basistwo').show( 'fast' );
@@ -1682,9 +1730,9 @@ $(document).ready(function(){
 			$('button#addpending_basistwo').hide( 'fast' );
 		}
 	});
-	$('div#yesconnection div.holdsaforeign').css('display','none');
+	$('div.yesconnection div.holdsaforeign').css('display','none');
 	$('button#addforeignreg_basistwo').css('display','none');
-	$('div#yesconnection input#foreigntwo_basistwo').change(function() {
+	$('div.yesconnection input#foreigntwo_basistwo').change(function() {
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsaforeign').show( 'fast' );
 			$('button#addforeignreg_basistwo').show( 'fast' );
@@ -1700,138 +1748,136 @@ $(document).ready(function(){
 	
 	$('input#natwo_basisone').change(function() {
 		if(this.checked == true){
-			$('div#yescommerce div.holdsaforeign').hide( 'fast' );
-			$('div#yescommerce div.holdsapending').hide( 'fast' );
+			$('div.yescommerce div.holdsaforeign').hide( 'fast' );
+			$('div.yescommerce div.holdsapending').hide( 'fast' );
 			$('button#addforeignreg_basisone').hide( 'fast' );
 			$('button#addpending_basisone').hide( 'fast' );
-			$('div#yescommerce input#pendingtwo_basisone').prop({
+			$('div.yescommerce input#pendingtwo_basisone').prop({
 					checked: false,				
 				});
-			$('div#yescommerce input#foreigntwo_basisone').prop({
+			$('div.yescommerce input#foreigntwo_basisone').prop({
 					checked: false,				
 				});
 			var resetselect = [ 'Select','mm/dd/yy' ];
 			var resetselect = jQuery.makeArray( resetselect );
-			$('div#yescommerce div.holdsaforeign input[type=date], div#yescommerce div.holdsapending input[type=date]').val(resetselect[1]);
-			$('div#yescommerce div.holdsaforeign textarea, div#yescommerce div.holdsapending textarea').val('');
-			$('div#yescommerce div.holdsaforeign input.checkmark, div#yescommerce div.holdsapending input.checkmark').prop('checked', false);
-			$('div#yescommerce div.holdsaforeign input[type=text], div#yescommerce div.holdsapending input[type=text]').val('');
-			$('div#yescommerce div.holdsaforeign select, div#yescommerce div.holdsapending select').val( resetselect[0] );
-			$('div#yescommerce div.holdsaforeign .hidethis, div#yescommerce div.holdsapending .hidethis').contents().css('display','block');
-			$('div#yescommerce div.holdsaforeign .upload-drop-zone, div#yescommerce div.holdsapending .upload-drop-zone').css('height','115px');
-			$('div#yescommerce div.holdsaforeign div.upload-drop-zone, div#yescommerce div.holdsapending div.upload-drop-zone').css('height','175px');
-			$('div#yescommerce div.holdsaforeign .js-upload-finished button.close, div#yescommerce div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
-			$('div#yescommerce div.holdsaforeign div.fileDisplayArea img, div#yescommerce div.holdsapending div.fileDisplayArea img' ).remove();
-			$('div#yescommerce div.holdsaforeign div.fileDisplayArea, div#yescommerce div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
-			$('div#yescommerce div.appendaforeign div.holdsaforeign, div#yescommerce div.appendaforeign div.holdsapending').remove();
+			$('div.yescommerce div.holdsaforeign input[type=date], div.yescommerce div.holdsapending input[type=date]').val(resetselect[1]);
+			$('div.yescommerce div.holdsaforeign textarea, div.yescommerce div.holdsapending textarea').val('');
+			$('div.yescommerce div.holdsaforeign input.checkmark, div.yescommerce div.holdsapending input.checkmark').prop('checked', false);
+			$('div.yescommerce div.holdsaforeign input[type=text], div.yescommerce div.holdsapending input[type=text]').val('');
+			$('div.yescommerce div.holdsaforeign select, div.yescommerce div.holdsapending select').val( resetselect[0] );
+			$('div.yescommerce div.holdsaforeign .hidethis, div.yescommerce div.holdsapending .hidethis').contents().css('display','block');
+			$('div.yescommerce div.holdsaforeign .upload-drop-zone, div.yescommerce div.holdsapending .upload-drop-zone').css('height','115px');
+			$('div.yescommerce div.holdsaforeign div.upload-drop-zone, div.yescommerce div.holdsapending div.upload-drop-zone').css('height','175px');
+			$('div.yescommerce div.holdsaforeign .js-upload-finished button.close, div.yescommerce div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
+			$('div.yescommerce div.holdsaforeign div.fileDisplayArea img, div.yescommerce div.holdsapending div.fileDisplayArea img' ).remove();
+			$('div.yescommerce div.holdsaforeign div.fileDisplayArea, div.yescommerce div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div.yescommerce div.appendaforeign div.holdsaforeign, div.yescommerce div.appendaforeign div.holdsapending').remove();
 		}
 	});
 	$('input#natwo_basistwo').change(function() {
 		if(this.checked == true){
-			$('div#yesconnection div.holdsaforeign').hide( 'fast' );
-			$('div#yesconnection div.holdsapending').hide( 'fast' );
+			$('div.yesconnection div.holdsaforeign').hide( 'fast' );
+			$('div.yesconnection div.holdsapending').hide( 'fast' );
 			$('button#addforeignreg_basistwo').hide( 'fast' );
 			$('button#addpending_basistwo').hide( 'fast' );
-			$('div#yesconnection input#pendingtwo_basistwo').prop({
+			$('div.yesconnection input#pendingtwo_basistwo').prop({
 					checked: false,				
 				});
-			$('div#yesconnection input#foreigntwo_basistwo').prop({
+			$('div.yesconnection input#foreigntwo_basistwo').prop({
 					checked: false,				
 				});
 			var resetselect = [ 'Select','mm/dd/yy' ];
 			var resetselect = jQuery.makeArray( resetselect );
-			$('div#yesconnection div.holdsaforeign input[type=date], div#yesconnection div.holdsapending input[type=date]').val(resetselect[1]);
-			$('div#yesconnection div.holdsaforeign textarea, div#yesconnection div.holdsapending textarea').val('');
-			$('div#yesconnection div.holdsaforeign input.checkmark, div#yesconnection div.holdsapending input.checkmark').prop('checked', false);
-			$('div#yesconnection div.holdsaforeign input[type=text], div#yesconnection div.holdsapending input[type=text]').val('');
-			$('div#yesconnection div.holdsaforeign select, div#yesconnection div.holdsapending select').val( resetselect[0] );
-			$('div#yesconnection div.holdsaforeign .hidethis, div#yesconnection div.holdsapending .hidethis').contents().css('display','block');
-			$('div#yesconnection div.holdsaforeign .upload-drop-zone, div#yesconnection div.holdsapending .upload-drop-zone').css('height','115px');
-			$('div#yesconnection div.holdsaforeign div.upload-drop-zone, div#yesconnection div.holdsapending div.upload-drop-zone').css('height','175px');
-			$('div#yesconnection div.holdsaforeign .js-upload-finished button.close, div#yesconnection div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
-			$('div#yesconnection div.holdsaforeign div.fileDisplayArea img, div#yesconnection div.holdsapending div.fileDisplayArea img' ).remove();
-			$('div#yesconnection div.holdsaforeign div.fileDisplayArea, div#yesconnection div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
-			$('div#yesconnection div.appendaforeign div.holdsaforeign, div#yesconnection div.appendaforeign div.holdsapending').remove();
+			$('div.yesconnection div.holdsaforeign input[type=date], div.yesconnection div.holdsapending input[type=date]').val(resetselect[1]);
+			$('div.yesconnection div.holdsaforeign textarea, div.yesconnection div.holdsapending textarea').val('');
+			$('div.yesconnection div.holdsaforeign input.checkmark, div.yesconnection div.holdsapending input.checkmark').prop('checked', false);
+			$('div.yesconnection div.holdsaforeign input[type=text], div.yesconnection div.holdsapending input[type=text]').val('');
+			$('div.yesconnection div.holdsaforeign select, div.yesconnection div.holdsapending select').val( resetselect[0] );
+			$('div.yesconnection div.holdsaforeign .hidethis, div.yesconnection div.holdsapending .hidethis').contents().css('display','block');
+			$('div.yesconnection div.holdsaforeign .upload-drop-zone, div.yesconnection div.holdsapending .upload-drop-zone').css('height','115px');
+			$('div.yesconnection div.holdsaforeign div.upload-drop-zone, div.yesconnection div.holdsapending div.upload-drop-zone').css('height','175px');
+			$('div.yesconnection div.holdsaforeign .js-upload-finished button.close, div.yesconnection div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
+			$('div.yesconnection div.holdsaforeign div.fileDisplayArea img, div.yesconnection div.holdsapending div.fileDisplayArea img' ).remove();
+			$('div.yesconnection div.holdsaforeign div.fileDisplayArea, div.yesconnection div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div.yesconnection div.appendaforeign div.holdsaforeign, div#yesconnection div.appendaforeign div.holdsapending').remove();
 		}
 	});
 	//END pending + foreign
 		
 	//START additional foreignreg
 	$( document ).on('click','button#addforeignreg_basisone',function(){	
-		$( 'div#yescommerce div.holdsaforeign' ).last().clone().appendTo( 'div#yescommerce .appendaforeign' );
-		$( 'div#yescommerce div.holdsaforeign' ).last().find('input').val('');
-		$( 'div#yescommerce div.holdsaforeign' ).last().find('div.hidethis input').attr( 'id', function() {
+		$( 'div.yescommerce div.holdsaforeign' ).last().clone().appendTo( 'div.yescommerce .appendaforeign' );
+		$( 'div.yescommerce div.holdsaforeign' ).last().find('input').val('');
+		$( 'div.yescommerce div.holdsaforeign' ).last().find('div.hidethis input').attr( 'id', function() {
 		  return (parseFloat(this.id) + 1);
 		});
 		var clonelabel = $( 'div.holdsaforeign div.hidethis input' ).last().attr('id');
-		$( 'div#yescommerce div.holdsaforeign' ).last().find('textarea').val('');
-		$( 'div#yescommerce div.holdsaforeign' ).last().find('.js-upload-finished button.close').parent().parent().remove();
-		$( 'div#yescommerce div.holdsaforeign .hidethis' ).last().contents().css('display','block');
-		$( 'div#yescommerce div.holdsaforeign .upload-drop-zone' ).last().css('height','115px');
-		$( 'div#yescommerce div.holdsaforeign .upload-drop-zone' ).last().attr('for', clonelabel);
-		$( 'div#yescommerce div.holdsaforeign #usaffiliation .upload-drop-zone' ).last().css('height','175px');
-		$( 'div#yescommerce div.holdsaforeign div.fileDisplayArea img' ).last().remove();
-		$( 'div#yescommerce div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
-		$( 'div#yescommerce .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( 'div.yescommerce div.holdsaforeign' ).last().find('textarea').val('');
+		$( 'div.yescommerce div.holdsaforeign' ).last().find('.js-upload-finished button.close').parent().parent().remove();
+		$( 'div.yescommerce div.holdsaforeign .hidethis' ).last().contents().css('display','block');
+		$( 'div.yescommerce div.holdsaforeign .upload-drop-zone' ).last().css('height','115px');
+		$( 'div.yescommerce div.holdsaforeign .upload-drop-zone' ).last().attr('for', clonelabel);
+		$( 'div.yescommerce div.holdsaforeign #usaffiliation .upload-drop-zone' ).last().css('height','175px');
+		$( 'div.yescommerce div.holdsaforeign div.fileDisplayArea img' ).last().remove();
+		$( 'div.yescommerce div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yescommerce .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
 		});
 	$( document ).on('click','button#addforeignreg_basistwo',function(){	
-		$( 'div#yesconnection div.holdsaforeign' ).last().clone().appendTo( 'div#yesconnection .appendaforeign' );
-		$( 'div#yesconnection div.holdsaforeign' ).last().find('input').val('');
-		$( 'div#yesconnection div.holdsaforeign' ).last().find('div.hidethis input').attr( 'id', function() {
+		$( 'div.yesconnection div.holdsaforeign' ).last().clone().appendTo( 'div.yesconnection .appendaforeign' );
+		$( 'div.yesconnection div.holdsaforeign' ).last().find('input').val('');
+		$( 'div.yesconnection div.holdsaforeign' ).last().find('div.hidethis input').attr( 'id', function() {
 		  return (parseFloat(this.id) + 1);
 		});
 		var clonelabel = $( 'div.holdsaforeign div.hidethis input' ).last().attr('id');
-		$( 'div#yesconnection div.holdsaforeign' ).last().find('textarea').val('');
-		$( 'div#yesconnection div.holdsaforeign' ).last().find('.js-upload-finished button.close').parent().parent().remove();
-		$( 'div#yesconnection div.holdsaforeign .hidethis' ).last().contents().css('display','block');
-		$( 'div#yesconnection div.holdsaforeign .upload-drop-zone' ).last().css('height','115px');
-		$( 'div#yesconnection div.holdsaforeign .upload-drop-zone' ).last().attr('for', clonelabel);
-		$( 'div#yesconnection div.holdsaforeign #usaffiliation .upload-drop-zone' ).last().css('height','175px');
-		$( 'div#yesconnection div.holdsaforeign div.fileDisplayArea img' ).last().remove();
-		$( 'div#yesconnection div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
-		$( 'div#yesconnection .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
+		$( 'div.yesconnection div.holdsaforeign' ).last().find('textarea').val('');
+		$( 'div.yesconnection div.holdsaforeign' ).last().find('.js-upload-finished button.close').parent().parent().remove();
+		$( 'div.yesconnection div.holdsaforeign .hidethis' ).last().contents().css('display','block');
+		$( 'div.yesconnection div.holdsaforeign .upload-drop-zone' ).last().css('height','115px');
+		$( 'div.yesconnection div.holdsaforeign .upload-drop-zone' ).last().attr('for', clonelabel);
+		$( 'div.yesconnection div.holdsaforeign #usaffiliation .upload-drop-zone' ).last().css('height','175px');
+		$( 'div.yesconnection div.holdsaforeign div.fileDisplayArea img' ).last().remove();
+		$( 'div.yesconnection div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yesconnection .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
 		});
 	//END additional foreignreg
 	
 	//START additional foreignpending
 	$( document ).on('click','button#addpending_basisone',function(){	
-		$( 'div#yescommerce div.holdsapending' ).last().clone().appendTo( 'div#yescommerce .appendapending' );
-		$( 'div#yescommerce div.holdsapending' ).last();
-		$( 'div#yescommerce div.holdsapending' ).last().find('input').val('');
-		$( 'div#yescommerce div.holdsapending' ).last().find('div.hidethis input').attr( 'id', function() {
+		$( 'div.yescommerce div.holdsapending' ).last().clone().appendTo( 'div.yescommerce .appendapending' );
+		$( 'div.yescommerce div.holdsapending' ).last().find('input').val('');
+		$( 'div.yescommerce div.holdsapending' ).last().find('div.hidethis input').attr( 'id', function() {
 		  return (parseFloat(this.id) + 1);
 		});
-		var clonelabel = $( 'div#yescommerce div.holdsapending div.hidethis input' ).last().attr('id');
-		$( 'div#yescommerce div.holdsapending' ).last().find('textarea').val('');
-		$( 'div#yescommerce div.holdsapending' ).last().find('.js-upload-finished button.close').parent().parent().remove();
-		$( 'div#yescommerce div.holdsapending .hidethis' ).last().contents().css('display','block');
-		$( 'div#yescommerce div.holdsapending .upload-drop-zone' ).last().css('height','115px');
-		$( 'div#yescommerce div.holdsapending .upload-drop-zone' ).last().attr('for', clonelabel);
-		$( 'div#yescommerce div.holdsapending #usaffiliation .upload-drop-zone' ).last().css('height','175px');
-		$( 'div#yescommerce div.holdsapending div.fileDisplayArea img' ).last().remove();
-		$( 'div#yescommerce div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
-		$( 'div#yescommerce .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
+		var clonelabel = $( 'div.yescommerce div.holdsapending div.hidethis input' ).last().attr('id');
+		$( 'div.yescommerce div.holdsapending' ).last().find('textarea').val('');
+		$( 'div.yescommerce div.holdsapending' ).last().find('.js-upload-finished button.close').parent().parent().remove();
+		$( 'div.yescommerce div.holdsapending .hidethis' ).last().contents().css('display','block');
+		$( 'div.yescommerce div.holdsapending .upload-drop-zone' ).last().css('height','115px');
+		$( 'div.yescommerce div.holdsapending .upload-drop-zone' ).last().attr('for', clonelabel);
+		$( 'div.yescommerce div.holdsapending #usaffiliation .upload-drop-zone' ).last().css('height','175px');
+		$( 'div.yescommerce div.holdsapending div.fileDisplayArea img' ).last().remove();
+		$( 'div.yescommerce div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yescommerce .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
 		$( this ).removeClass( '.addinitial' );
 		});
 	$( document ).on('click','button#addpending_basistwo',function(){	
-		$( 'div#yesconnection div.holdsapending' ).last().clone().appendTo( 'div#yesconnection .appendapending' );
-		$( 'div#yesconnection div.holdsapending' ).last();
-		$( 'div#yesconnection div.holdsapending' ).last().find('input').val('');
-		$( 'div#yesconnection div.holdsapending' ).last().find('div.hidethis input').attr( 'id', function() {
+		$( 'div.yesconnection div.holdsapending' ).last().clone().appendTo( 'div.yesconnection .appendapending' );
+		$( 'div.yesconnection div.holdsapending' ).last().find('input').val('');
+		$( 'div.yesconnection div.holdsapending' ).last().find('div.hidethis input').attr( 'id', function() {
 		  return (parseFloat(this.id) + 1);
 		});
-		var clonelabel = $( 'div#yescommerce div.holdsapending div.hidethis input' ).last().attr('id');
-		$( 'div#yesconnection div.holdsapending' ).last().find('textarea').val('');
-		$( 'div#yesconnection div.holdsapending' ).last().find('.js-upload-finished button.close').parent().parent().remove();
-		$( 'div#yesconnection div.holdsapending .hidethis' ).last().contents().css('display','block');
-		$( 'div#yesconnection div.holdsapending .upload-drop-zone' ).last().css('height','115px');
-		$( 'div#yesconnection div.holdsapending .upload-drop-zone' ).last().attr('for', clonelabel);
-		$( 'div#yesconnection div.holdsapending #usaffiliation .upload-drop-zone' ).last().css('height','175px');
-		$( 'div#yesconnection div.holdsapending div.fileDisplayArea img' ).last().remove();
-		$( 'div#yesconnection div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
-		$( 'div#yesconnection .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
+		var clonelabel = $( 'div.yescommerce div.holdsapending div.hidethis input' ).last().attr('id');
+		$( 'div.yesconnection div.holdsapending' ).last().find('textarea').val('');
+		$( 'div.yesconnection div.holdsapending' ).last().find('.js-upload-finished button.close').parent().parent().remove();
+		$( 'div.yesconnection div.holdsapending .hidethis' ).last().contents().css('display','block');
+		$( 'div.yesconnection div.holdsapending .upload-drop-zone' ).last().css('height','115px');
+		$( 'div.yesconnection div.holdsapending .upload-drop-zone' ).last().attr('for', clonelabel);
+		$( 'div.yesconnection div.holdsapending #usaffiliation .upload-drop-zone' ).last().css('height','175px');
+		$( 'div.yesconnection div.holdsapending div.fileDisplayArea img' ).last().remove();
+		$( 'div.yesconnection div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yesconnection .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
 		$( this ).removeClass( '.addinitial' );
 		});
 	//END additional foreignpending
@@ -2493,7 +2539,48 @@ $(document).ready(function(){
 				$('div#optionuploadtwo').css('display','none');
 			}
 		});
-				
+
+//Filing Basis a, b: "The system shall not allow the user to select 'No' for all goods / services within each class (one of them has to be 'Yes')"
+	$(document).on('change','#basisab input#inlineRadio69, #basisab input#inlineRadio71, #basisab input#inlineRadio73', function() { //'yes' buttons
+		if (this.checked == true) {
+			$(this).closest('fieldset').find('input[type=radio].countyes').prop({
+				disabled: false,
+				checked:false,
+			}).attr('aria-disabled', 'false');
+			$(this).closest('fieldset').find('input[type=radio].countyes').parent().removeClass('special').removeClass('disabled');
+			$(this).closest('fieldset').find('input[type=radio].count').attr('checked',false);
+			$(document).on('change','#basisab input[type=radio].count', function() {
+				var count = $(this).closest('fieldset').find('input[type=radio].count').length;
+				var countall = $(this).closest('fieldset').find('input[type=radio].count:checked').length;
+				if (countall == count) {
+					alert ('You have indicated at least one of the goods / services in this class is in-use. You must choose &#8216;Yes&#8217; for at least one good / service.');
+					$(this).prop({
+								disabled: true,
+								checked:false,
+								}).attr('aria-disabled', 'true');
+					$(this).parent().addClass('special').addClass('disabled');
+					}
+				});
+			$(document).on('change','#basisab input.countyes', function() {
+				$(this).closest('fieldset').find('input[type=radio].count').prop({
+								disabled: false,
+								}).attr('aria-disabled', 'false');
+				$(this).closest('fieldset').find('label.special').removeClass('special').removeClass('disabled');
+			});
+		}		
+	});
+	$(document).on('change','#basisab input#inlineRadio70, input#inlineRadio72, input#inlineRadio74', function() { //'no' buttons
+		$(this).closest('fieldset').find('input[type=radio].count').prop({
+			disabled: false,
+			checked:true,
+			}).attr('aria-disabled', 'false');
+		$(this).closest('fieldset').find('label.special').removeClass('special').removeClass('disabled');
+		$(this).closest('fieldset').find('input[type=radio].countyes').prop({
+			disabled: true,
+			checked:false,
+			}).attr('aria-disabled', 'true');
+		$(this).closest('fieldset').find('input[type=radio].countyes').parent().addClass('special').addClass('disabled');
+	});	
 	//$( 'input#iu1a' ).change(function() {
 //		if(this.checked == true){
 //			console.log('checked');

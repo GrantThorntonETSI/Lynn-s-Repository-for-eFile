@@ -1,0 +1,143 @@
+<template>
+	<div class="container-fluid insertform">
+      <div class="row content">
+        <div class="col-xs-12">
+            <!--START Content Div-->
+            <div class="row">
+                <div class="col-xs-12 text-left">
+                    <!--START Owner Information Form-->
+                        <div class="card-text noexpand">
+                            <h2 class="card-title weight600" id="ownerinfo">Owner Information</h2>
+                        </div>
+                        <script type="application/javascript" src="js/imports.js"></script>
+                            <!--<form method="post" id="individual" action="" name="entityform">
+                                <fieldset aria-labelledby="ownerinfo">-->
+                        <fieldset aria-labelledby="ownerinfo">
+                       		<div class="row">
+                              <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-4">
+                                <label for="ownername">Owner name <span class="weight600">&#42;</span></label>
+                                <input type="text" class="form-control" id="ownername" th:field="*{firstName}" required>
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
+                                <label for="type">Type</label>
+                                <select class="form-control" id="type" th:field="*{ownerType}">
+                                  <option value="Select">Select</option>
+                                  <option value="DBA">Doing Business As (DBA)</option>
+                                  <option value="TA">Trading As (TA)</option>
+                                  <option value="AKA">Also Known As (AKA)</option>
+                                  <option value="Formerly">Formerly</option>
+                                </select>
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
+                                <label for="countryoforg">Country of Incorporation <span class="weight600">&#42;</span></label>
+                                <select class="form-control" id="countryoforg" required>
+                                  <option value="Select">Select</option>
+                                  <option value="bahamas">Bahamas</option>
+                                  <option value="mexico">Mexico</option>
+                                  <option value="canada">Canada</option>
+                                </select>
+                              </div>
+                            </div>
+                        </fieldset><!--END Owner Information Fieldset-->
+                        <!--START Owner Address Information Fieldset-->
+                        <div class="card-text noexpand">
+                            <h2 class="card-title weight600" id="addressinfo">Owner Address Information</h2>
+                        </div>
+                        <div class="row">
+                            <div class="form-group form-group-md col-xs-12 col-md-6">
+                                <label for="email">Email address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
+                                <input type="email" class="form-control" id="email" th:field="*{ownerEmail}" required>
+                            </div>
+                        </div>
+                        <fieldset aria-labelledby="addressinfo">
+                            <div class="row">
+                              <div class="form-group form-group-md col-xs-12 col-lg-7">
+                                <label for="territory">Country</label>
+                                <select class="form-control" id="territory">
+                                  <option value="United States">United States</option>
+                                  <option value="Afghanistan">Afghanistan</option>
+                                  <option value="Albania">Albania</option>
+                                  <option value="Bahamas">Bahamas</option>
+                                  <option value="Belgium">Belgium</option>
+                                  <option value="Brazil">Brazil</option>
+                                  <option value="Cambodia">Cambodia</option>
+                                  <option value="Cameroon">Cameroon </option>
+                                  <option value="Denmark">Denmark</option>
+                                  <option value="Dominican Republic">Dominican Republic</option>
+                                </select>
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-lg-8">
+                                <label for="addressline1">Address line 1 <span class="weight600">&#42;</span></label>
+                                <input type="text" class="form-control" id="addressline1" th:field="*{ownerAddress1}" required>
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-lg-8">
+                                <label for="addressline2">Address line 2</label>
+                                <input type="text" class="form-control" id="addressline2" th:field="*{ownerAddress2}">
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-lg-8">
+                                <label for="addressline3">Address line 3</label>
+                                <input type="text" class="form-control" id="addressline3" th:field="*{ownerAddress3}">
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
+                                <label for="city">City <span class="weight600">&#42;</span></label>
+                                <input type="text" class="form-control" id="city" th:field="*{ownerCity}" required>
+                              </div>
+                              <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
+                                    <label for="state">State/Province/Territory <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="state" th:field="*{ownerState}" required>
+                                  </div>
+                              <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
+                                <label for="zipcode">Postal Code <span class="weight600">&#42;</span></label>
+                                <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
+                              </div>
+                              <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="form-group form-group-md col-xs-12 col-md-6">
+                                        <label for="webaddress">Website address</label>
+                                        <input type="url" class="form-control" id="webaddress" th:field="*{ownerWebSite}">
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="row phones">
+                                 <div class="col-xs-12">
+                                    <div class="form-group form-group-md col-xs-6 col-sm-3">
+                                        <label for="phonenumbertype">Phone type</label>
+                                        <select class="form-control" id="phonenumbertype">
+                                            <option value="Type">Type</option>
+                                            <option value="Cell">Cell</option>
+                                            <option value="Home">Home</option>
+                                            <option value="Work">Work</option>
+                                            <option value="Fax">Fax</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group form-group-md col-xs-6 col-sm-4">
+                                        <label for="phonenumber">Phone number</label>
+                                        <input type="tel" class="form-control" id="phonenumber">
+                                    </div>
+                                    <div class="form-group form-group-md col-xs-9 col-sm-3">
+                                        <label for="extension">Ext.</label>
+                                        <input type="text" class="form-control" id="extension">
+                                    </div>
+                                    <div class="col-xs-3 col-sm-2 form-group form-group-md visuallyremoved resetphone2">
+                                        <button type="button" class="btn btn-sm close resetphonebtn" value="" aria-label="remove this number"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="appendphones"></div>
+                            <div class="form-group form-group-md col-xs-12" aria-label="add additional phone number">
+                                <div class="row">
+                                    <div class="inlinebuttons btn-group btn-group-justified">
+                                        <div class="btn-group col-xs-6">
+                                            <button type="button" class="btn btn-sm btn-success addphoneinitial" id="addphone2" aria-label="add number">Add Number</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>        
+                         </div>
+                      </fieldset><!--END Owner Address Information Form-->
+                    </div><!--END Content Div-->
+        		</div><!--MAIN-->
+      		</div><!--END container div-->
+   		</div>
+	</div>
+</template>

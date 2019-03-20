@@ -188,7 +188,7 @@
                     <div class="row">
                         <div class="col-xs-12" id="basisabde">
                                 <div class="leadtext">
-                                    <p id="lead" class="weight600">Provide a specimen for all goods/services within the class. Only one specimen is required per class.</p>
+                                    <p id="lead" class="weight600">Please provide information about each class you have selected for your mark.</p>
                                 </div>
                                 <div class="card-text noexpand blue">
                                     <h2 class="card-title weight600">Class 003</h2>
@@ -202,10 +202,10 @@
                                                     <div class="col-xs-12">
                                                     	<p id="commerce">How would you like to provide your specimen(s)?</p>                                            				
                                                         <div role="radiogroup" aria-labelledby="commerce" class="form-group form-group-md">
-                                                            <label for="inlineRadio057" class="radio-inline radiocontainer block"><input type="radio" name="numberspecimen" id="inlineRadio057" value="yes" tabindex="0"><span class="checkmark"></span>One specimen for all the goods/services within this class.</label>
-                                                            <label for="inlineRadio058" class="radio-inline radiocontainer block"><input type="radio" name="numberspecimen" id="inlineRadio058" value="no" tabindex="0"><span class="checkmark"></span>One specimen for each good/service within this class.</label>
+                                                            <label for="inlineRadio057" class="radio-inline radiocontainer block"><input type="radio" class="yesone" name="numberspecimen" id="inlineRadio057" value="yes" tabindex="0"><span class="checkmark"></span>One specimen for all the goods/services within this class.</label>
+                                                            <label for="inlineRadio058" class="radio-inline radiocontainer block"><input type="radio" class="yesoneeach" name="numberspecimen" id="inlineRadio058" value="no" tabindex="0"><span class="checkmark"></span>One specimen for each good/service within this class.</label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yesonespecimen" class="row form-group form-group-md"><!--toggle 'yes' radio-->
+                                                        <div class="row form-group form-group-md yesonespecimen"><!--toggle 'yes' radio-->
                                                             <div class="col-xs-12 form-group form-group-md">
                                                                 <p id="upimage">Provide an image of your specimen:</p>
                                                                 <div>
@@ -250,7 +250,7 @@
                                                             <label for="inlineRadio25" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio25" value="yesbar" tabindex="0"><span class="checkmark"></span>Yes</label>
                                                             <label for="inlineRadio26" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio26" value="nobar" tabindex="0"><span class="checkmark"></span>No</label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yescommerce" class="row form-group form-group-md"><!--toggle 'yes' radio-->
+                                                        <div class="row form-group form-group-md yescommerce"><!--toggle 'yes' radio-->
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
                                                                 <label for="connection-date" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
                                                                 <input type="date" class="form-control" id="connection-date" name="connectiondate" value="">
@@ -260,14 +260,14 @@
                                                                 <input type="date" class="form-control" id="firstconnection-date" name="firstconnectiondate" value="">
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md individualspecimen">
-                                                                <input class="form-check-input checkmark" type="checkbox" value="specimentwo" tabindex="0" id="specimentwo">
-                                                                <label class="form-check-label form-check" for="specimentwo"><span class="radio notspecial">Check here to provide a specimen for this individual good/service.</span></label>
+                                                                <input class="form-check-input checkmark showspecimen" type="checkbox" value="specimenseven" role="checkbox" tabindex="0" aria-labelledby="individualspecimen_1" id="">
+                                                                <label class="form-check-label form-check" for="" id="individualspecimen_1"><span class="radio notspecial">Check here to provide a specimen for this individual good/service.</span></label>
                                                             </div>
-                                                            <div id="yesspecimentwo" class="form-group form-group-md"><!--toggle 'yes' radio-->
+                                                            <div class="form-group form-group-md yesspecimen"><!--toggle 'yes' radio-->
                                                                 <div class="col-xs-12">
-                                                                    <p id="upimagefour">Provide an image of your specimen:</p>
+                                                                    <p id="upimagetwo">Provide an image of your specimen:</p>
                                                                     <div class="form-group form-group-md hidethis">
-                                                                        <label class="small upload-drop-zone" for="specimenthreefile"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
+                                                                        <label class="small upload-drop-zone" for="specimenthreefile" id="upimgtwo"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
                                                                         <input type="file" id="specimenthreefile" name="specimenthreefileupload" class="form-control" aria-labelledby="upimgtwo upimagetwo">
                                                                     </div>
                                                                     <div class="row">
@@ -381,8 +381,8 @@
                                                                     <div class="form-group form-group-md col-xs-12">
                                                                         <p id="upimagethree">Please provide a copy of the Foreign Registration Certificate. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></p>
                                                                         <div class="form-group form-group-md hidethis">
-                                                                            <label class="small upload-drop-zone" for="1"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
-                                                                            <input type="file" id="1" name="specimenfileupload" class="form-control" aria-labelledby="upimgtwo upimagethree">
+                                                                            <label class="small upload-drop-zone" for="1" id="upimgthree"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
+                                                                            <input type="file" id="1" name="specimenfileupload" class="form-control" aria-labelledby="upimgthree upimagethree">
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="js-upload-finished col-xs-12">
@@ -429,7 +429,7 @@
                                                             <label for="inlineRadio29" class="radio-inline radiocontainer"><input type="radio" name="commerceadiotwo" id="inlineRadio29" value="yesliquid" tabindex="0"><span class="checkmark"></span>Yes</label>
                                                             <label for="inlineRadio30" class="radio-inline radiocontainer"><input type="radio" name="commerceadiotwo" id="inlineRadio30" value="noliquid" tabindex="0"><span class="checkmark"></span>No</label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yesconnection" class="row form-group form-group-md"><!--toggle 'yes' radio-->
+                                                        <div class="row form-group form-group-md yesconnection"><!--toggle 'yes' radio-->
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
                                                                 <label for="connection-date" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
                                                                 <input type="date" class="form-control" id="connection-date" name="connectiondate" value="">
@@ -439,15 +439,15 @@
                                                                 <input type="date" class="form-control" id="firstconnection-date" name="firstconnectiondate" value="">
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md individualspecimen">
-                                                                <input class="form-check-input checkmark" type="checkbox" value="specimenthree" tabindex="0" id="specimenthree">
-                                                                <label class="form-check-label form-check" for="specimenthree"><span class="radio notspecial">Check here to provide a specimen for this individual good/service.</span></label>
+                                                                <input class="form-check-input checkmark showspecimen" type="checkbox" value="specimeneight" role="checkbox" tabindex="0" aria-labelledby="individualspecimen_2" id="">
+                                                                <label class="form-check-label form-check" for="" id="individualspecimen_2"><span class="radio notspecial">Check here to provide a specimen for this individual good/service.</span></label>
                                                             </div>
-                                                            <div id="yesspecimenthree" class="form-group form-group-md"><!--toggle 'yes' radio-->
+                                                            <div class="form-group form-group-md yesspecimen"><!--toggle 'yes' radio-->
                                                                 <div class="col-xs-12">
                                                                     <p id="upimagefour">Provide an image of your specimen:</p>
                                                                     <div class="form-group form-group-md hidethis">
-                                                                        <label class="small upload-drop-zone" for="specimenthreefile"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
-                                                                        <input type="file" id="specimenthreefile" name="specimenthreefileupload" class="form-control" aria-labelledby="upimgtwo upimagetwo">
+                                                                        <label class="small upload-drop-zone" for="specimenthreefile" id="upimgfour"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
+                                                                        <input type="file" id="specimenthreefile" name="specimenthreefileupload" class="form-control" aria-labelledby="upimgfour upimagefour">
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="js-upload-finished col-xs-12">
@@ -558,10 +558,10 @@
                                                                         <input type="date" class="form-control" id="renew-date" name="renewdate" value="">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <p id="upimagethree">Please provide a copy of the Foreign Registration Certificate. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></p>
+                                                                        <p id="upimagefive">Please provide a copy of the Foreign Registration Certificate. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></p>
                                                                         <div class="form-group form-group-md hidethis">
-                                                                            <label class="small upload-drop-zone" for="1"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
-                                                                            <input type="file" id="1" name="specimenfileupload" class="form-control" aria-labelledby="upimgtwo upimagethree">
+                                                                            <label class="small upload-drop-zone" for="1" id="upimgfive"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div></label>
+                                                                            <input type="file" id="1" name="specimenfileupload" class="form-control" aria-labelledby="upimgfive upimagefive">
                                                                         </div>
                                                                         <div class="row">
                                                                             <div class="js-upload-finished col-xs-12">

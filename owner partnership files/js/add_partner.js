@@ -17,7 +17,6 @@ $(document).ready(function(){
 				$( '.appendpartner .resetpartner' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 				//$( this ).removeClass( '.addphoneinitial' );
 			}
-			
 			else {
 				$( 'div.addpartnership' ).show('fast');
 				$( 'div.addpartnership .resetpartner' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
