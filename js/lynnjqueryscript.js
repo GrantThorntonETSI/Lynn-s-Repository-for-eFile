@@ -2580,7 +2580,23 @@ $(document).ready(function(){
 			checked:false,
 			}).attr('aria-disabled', 'true');
 		$(this).closest('fieldset').find('input[type=radio].countyes').parent().addClass('special').addClass('disabled');
-	});	
+	});
+	
+	//START review application statement
+	var arrcompanies = [ 'Scrubby Butts Soap Co.','Black Diamond Ski Shop' ];
+	var arrcompany = jQuery.makeArray( arrcompanies );
+	var arrnames = [ 'John Smith','Robert Snow' ];
+	var arrname = jQuery.makeArray( arrnames );
+	var arrterritories = [ 'The United States of America','Afghanistan' ];
+	var arrterritory = jQuery.makeArray( arrterritories );
+	var arrstates = [ 'Colorado','Alaska' ];
+	var arrstate = jQuery.makeArray( arrstates );
+	  $( 'span.partner_citizenship' ).html( arrterritory[0] );
+	  $( 'span.partner_name' ).html( arrnames[0]  + " and " + arrnames[1] );
+	  $( 'span.partnershipname' ).html( arrcompany[0] );
+	  $( 'span.state_country' ).html( arrstate[0] );
+	//END review application statement
+		
 	//$( 'input#iu1a' ).change(function() {
 //		if(this.checked == true){
 //			console.log('checked');
