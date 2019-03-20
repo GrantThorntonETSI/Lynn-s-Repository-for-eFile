@@ -1237,7 +1237,7 @@ $(document).ready(function(){
 		for (var i = 0; i <= checkboxarialabelList.length; i++) {
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'individualspecimen_' + i);
 		}
-		
+				
 	//start basistwo connection options
 	$('div.yesconnection').css('display','none');
 	$('input#inlineRadio29, input.countyes').on('change',function(){
@@ -1561,7 +1561,25 @@ $(document).ready(function(){
 		$( 'div.holdsaconcregapp_courtd').last().find('input.checkmark').prop('checked', false);
 		$( '.appendaconcregapp_courtd .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
-		});
+		//generate unique IDs + matching labels for Additional Information page, concurrent use, courtd checkmarks
+		var checkboxList_courtd = $('.appendaconcregapp_courtd input.checkmark');
+		for (var i = 0; i <= checkboxList_courtd.length; i++) {
+			$(checkboxList_courtd[i]).attr('id', 'noregapp_' + i);
+			console.log(checkboxList_courtd);
+		}
+		var labelList_courtd = $('.appendaconcregapp_courtd input.checkmark').next('label');
+		for (var i = 0; i <= labelList_courtd.length; i++) {
+			$(labelList_courtd[i]).attr('for', 'noregapp_' + i);
+		}
+		var labelidList_courtd = $('.appendaconcregapp_courtd input.checkmark').next('label');
+		for (var i = 0; i <= labelidList_courtd.length; i++) {
+			$(labelidList_courtd[i]).attr('id', 'noregapplabel_' + i);
+		}
+		var checkboxarialabelList_courtd = $('.appendaconcregapp_courtd input.checkmark');
+		for (var i = 0; i <= checkboxarialabelList_courtd.length; i++) {
+			$(checkboxarialabelList_courtd[i]).attr('aria-labelledby', 'noregapplabel_' + i);
+		}
+	});
 	//end additional registration no courtd
 	
 	//start additional registration no ttab
@@ -1572,7 +1590,25 @@ $(document).ready(function(){
 		$( 'div.holdsaconcregapp_ttab').last().find('input.checkmark').prop('checked', false);
 		$( '.appendaconcregapp_ttab .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
-		});
+		//generate unique IDs + matching labels for Additional Information page, concurrent use, ttab checkmarks
+		var checkboxList_ttab = $('.appendaconcregapp_ttab input.checkmark');
+		for (var i = 0; i <= checkboxList_ttab.length; i++) {
+			$(checkboxList_ttab[i]).attr('id', 'noregapp_' + i);
+			console.log(checkboxList_ttab);
+		}
+		var labelList_ttab = $('.appendaconcregapp_ttab input.checkmark').next('label');
+		for (var i = 0; i <= labelList_ttab.length; i++) {
+			$(labelList_ttab[i]).attr('for', 'noregapp_' + i);
+		}
+		var labelidList_ttab = $('.appendaconcregapp_ttab input.checkmark').next('label');
+		for (var i = 0; i <= labelidList_ttab.length; i++) {
+			$(labelidList_ttab[i]).attr('id', 'noregapplabel_' + i);
+		}
+		var checkboxarialabelList_ttab = $('.appendaconcregapp_ttab input.checkmark');
+		for (var i = 0; i <= checkboxarialabelList_ttab.length; i++) {
+			$(checkboxarialabelList_ttab[i]).attr('aria-labelledby', 'noregapplabel_' + i);
+		}
+	});
 	//end additional registration no ttab
 	
 	//start additional registration no conflicting
@@ -1583,7 +1619,24 @@ $(document).ready(function(){
 		$( 'div.holdsaconcregapp_conflictingreg').last().find('input.checkmark').prop('checked', false);
 		$( '.appendaconcregapp_conflictingreg .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
-		});
+		//generate unique IDs + matching labels for Additional Information page, concurrent use, conflicting reg checkmarks
+		var checkboxList_conflictingreg = $('.appendaconcregapp_conflictingreg input.checkmark');
+		for (var i = 0; i <= checkboxList_conflictingreg.length; i++) {
+			$(checkboxList_conflictingreg[i]).attr('id', 'noregapp_' + i);
+		}
+		var labelList_conflictingreg = $('.appendaconcregapp_conflictingreg input.checkmark').next('label');
+		for (var i = 0; i <= labelList_conflictingreg.length; i++) {
+			$(labelList_conflictingreg[i]).attr('for', 'noregapp_' + i);
+		}
+		var labelidList_conflictingreg = $('.appendaconcregapp_conflictingreg input.checkmark').next('label');
+		for (var i = 0; i <= labelidList_conflictingreg.length; i++) {
+			$(labelidList_conflictingreg[i]).attr('id', 'noregapplabel_' + i);
+		}
+		var checkboxarialabelList_conflictingreg = $('.appendaconcregapp_conflictingreg input.checkmark');
+		for (var i = 0; i <= checkboxarialabelList_conflictingreg.length; i++) {
+			$(checkboxarialabelList_conflictingreg[i]).attr('aria-labelledby', 'noregapplabel_' + i);
+		}
+	});
 	//end additional registration no conflicting
 	
 	//start additional registration no earlieruse
@@ -1594,7 +1647,24 @@ $(document).ready(function(){
 		$( 'div.holdsaconcregapp_earlieruse').last().find('input.checkmark').prop('checked', false);
 		$( '.appendaconcregapp_earlieruse .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
-		});
+		//generate unique IDs + matching labels for Additional Information page, concurrent use, earlier use checkmarks
+		var checkboxList_earlieruse = $('.appendaconcregapp_earlieruse input.checkmark');
+		for (var i = 0; i <= checkboxList_earlieruse.length; i++) {
+			$(checkboxList_earlieruse[i]).attr('id', 'noregapp_' + i);
+		}
+		var labelList_earlieruse = $('.appendaconcregapp_earlieruse input.checkmark').next('label');
+		for (var i = 0; i <= labelList_earlieruse.length; i++) {
+			$(labelList_earlieruse[i]).attr('for', 'noregapp_' + i);
+		}
+		var labelidList_earlieruse = $('.appendaconcregapp_earlieruse input.checkmark').next('label');
+		for (var i = 0; i <= labelidList_earlieruse.length; i++) {
+			$(labelidList_earlieruse[i]).attr('id', 'noregapplabel_' + i);
+		}
+		var checkboxarialabelList_earlieruse = $('.appendaconcregapp_earlieruse input.checkmark');
+		for (var i = 0; i <= checkboxarialabelList_earlieruse.length; i++) {
+			$(checkboxarialabelList_earlieruse[i]).attr('aria-labelledby', 'noregapplabel_' + i);
+		}
+	});
 	//end additional registration no earlieruse
 	//END concurrent use, 2(f) Claim add/remove
 	
