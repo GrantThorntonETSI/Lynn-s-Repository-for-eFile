@@ -2284,6 +2284,20 @@ input[type="radio"]:focus + label span.checkmark::after {
  #nocolorclaim, #yescolorclaim, #notranslation, #yestranslation, #yestransliteration, #yesnps, #markoptions, #yesattorneyfiling, #yesusentity, #gsselected, #register2, #yesdistict, #yespart, #yeswhole, #yesevidence, #yesotherform, #yeswholeother, #yespartother, #hideshowconcurrentuses {
 	 overflow:hidden;
  	}
+/* accept b/w image, colorclaim */
+	#nocolorclaim .img-thumbnail {
+		max-width:310px; 
+		margin:0 auto;
+		display:block; 
+		}
+	#nocolorclaim .bwimage {
+		max-width:310px; 
+		margin:0 auto;
+		}
+	#nocolorclaim .bwimage .form-check {
+		margin:0 auto;
+		padding-left:38px!important;
+		}
 /* FILE UPLOAD */
 .upload-drop-zone {
 	color: #808080;
