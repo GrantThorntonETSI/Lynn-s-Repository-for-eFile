@@ -1223,11 +1223,11 @@ $(document).ready(function(){
 	//generate unique IDs + matching labels for Basis pages, checkmarks
 		var checkboxList = $('#basisab input.showspecimen, #basisabde input.showspecimen');
 		for (var i = 0; i <= checkboxList.length; i++) {
-			$(checkboxList[i]).attr('id', i);
+			$(checkboxList[i]).attr('id', 'individualspecimencheck_' + i);
 		}
 		var labelList = $('#basisab input.showspecimen, #basisabde input.showspecimen').next('label');
 		for (var i = 0; i <= labelList.length; i++) {
-			$(labelList[i]).attr('for', i);
+			$(labelList[i]).attr('for', 'individualspecimencheck_' + i);
 		}
 		var labelidList = $('#basisab input.showspecimen, #basisabde input.showspecimen').next('label');
 		for (var i = 0; i <= labelidList.length; i++) {
