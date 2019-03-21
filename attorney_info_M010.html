@@ -165,12 +165,12 @@
                             </div>
                         </section>
                     </div>
+                    <h1>Attorney Information</h1>
+                    <p class="required"><span class="weight600">&#42; = Required</span></p>
                     <div class="row">
-                    	<div class="col-xs-12">
-                    		<h1>Attorney Information</h1>
+                        <div class="col-xs-12" id="errorslist" tabindex="-1">
                         </div>
                     </div>
-                    <p class="required"><span class="weight600">&#42; = Required</span></p>
                     <p class="instructions" id="costsavingoptions">Reduced fee mode</p>
                     <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn Reduced Fee labels on or off">
                         <label class="switch">
@@ -212,16 +212,16 @@
                                     <input type="text" class="form-control" id="title"><!--Needs th:field= attribute to capture this value on submit-->
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
-                                    <label for="attorney-first-name"> First name <span class="weight600">&#42;</span></label>
-                                    <input type="text" class="form-control" id="attorney-first-name" th:field="*{firstName}" name="first" placeholder="First name" required>
+                                    <label for="attorneyfirstname"> First name <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="attorneyfirstname" th:field="*{firstName}" name="first" placeholder="First name" required>
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
                                     <label for="Attorney-middle-name">Middle name</label>
                                     <input type="text" class="form-control" id="Attorney-middle-name" th:field="*{middleName}">
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-sm-9 col-lg-6">
-                                    <label for="attorney-last-name">Last name <span class="weight600">&#42;</span></label>
-                                    <input type="text" class="form-control" id="attorney-last-name" th:field="*{lastName}" required>
+                                    <label for="attorneylastname">Last name <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="attorneylastname" th:field="*{lastName}" required>
                                   </div>
                                   <div class="form-group form-group-md col-xs-5 col-sm-3">
                                     <label for="suffix">Suffix</label>
@@ -233,8 +233,8 @@
                                     </select>
                                   </div>
                                   <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-5">
-                                    <label for="attorney-lawfirm-name">Firm <span class="weight600">&#42;</span></label>
-                                    <input type="text" class="form-control" id="attorney-lawfirm-name" th:field="*{lawFirmName}" placeholder="Law Firm Name" required>
+                                    <label for="attorneylawfirmname">Firm <span class="weight600">&#42;</span></label>
+                                    <input type="text" class="form-control" id="attorneylawfirmname" th:field="*{lawFirmName}" placeholder="Law Firm Name" required>
                                   </div>
                                 </div>
                               </fieldset><!--END Attorney Information-->
@@ -765,7 +765,7 @@
                             </form><!--END Attorney Form-->
                         </div><!--END attorney toggle area-->
                         <div class="col-xs-12">
-                            <button type="submit" class="btn btn-sm btn-primary add ctr" id="confirmattorney" value="submit">Submit</button>
+                            <button type="submit" class="btn btn-sm btn-primary add ctr" id="confirmattorney" value="submit" onclick="return checkForm(addNewAttorneyForm);">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -898,6 +898,69 @@
         <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
+        <script type="application/javascript" src="js/validate.js"></script>
+		<script type="application/javascript">
+			function checkForm(theForm) {
+				var why = "";
+				why  = checkText(theForm.attorneyfirstname.value, "first name");
+				var attorneyfirstnameval = document.getElementById("attorneyfirstname").value;
+				var highlightattorneyfirstname = document.getElementById("attorneyfirstname");
+					if (attorneyfirstnameval) {
+						var highlightattorneyfirstname = document.getElementById("attorneyfirstname");
+						document.getElementById("attorneyfirstname").classList.remove("highlighted");
+						highlightattorneyfirstname.classList.remove("highlighted");
+						highlightattorneyfirstname.setAttribute("aria-invalid", "false");
+						}
+					if (attorneyfirstnameval.length == 0) {
+					highlightattorneyfirstname.classList.add("highlighted");
+					highlightattorneyfirstname.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.attorneylastname.value, "last name");
+				var attorneylastnameval = document.getElementById("attorneylastname").value;
+				var highlightattorneylastname = document.getElementById("attorneylastname");
+					if (attorneylastnameval) {
+						var highlightattorneylastname = document.getElementById("attorneylastname");
+						document.getElementById("attorneylastname").classList.remove("highlighted");
+						highlightattorneylastname.classList.remove("highlighted");
+						highlightattorneylastname.setAttribute("aria-invalid", "false");
+						}
+					if (attorneylastnameval.length == 0) {
+					highlightattorneylastname.classList.add("highlighted");
+					highlightattorneylastname.setAttribute("aria-invalid", "true");
+					}
+				why += checkText(theForm.attorneylawfirmname.value, "firm");
+				var attorneylawfirmnameval = document.getElementById("attorneylawfirmname").value;
+				var highlightattorneylawfirmname = document.getElementById("attorneylawfirmname");
+					if (attorneylawfirmnameval) {
+						var highlightattorneylawfirmname = document.getElementById("attorneylawfirmname");
+						document.getElementById("attorneylawfirmname").classList.remove("highlighted");
+						highlightattorneylawfirmname.classList.remove("highlighted");
+						highlightattorneylawfirmname.setAttribute("aria-invalid", "false");
+						}
+					if (attorneylawfirmnameval.length == 0) {
+					highlightattorneylawfirmname.classList.add("highlighted");
+					highlightattorneylawfirmname.setAttribute("aria-invalid", "true");
+					}
+					if (why != "") {
+						var textnode = "The form is not complete. Please enter the following information.\n" + why;
+						var node = document.createElement("ul");
+						node.innerHTML = (textnode);
+						document.getElementById("errorslist").appendChild(node);
+						document.getElementById("errorslist").focus();
+						document.getElementById("errorslist").tabIndex = "-1";
+						window.scrollTo(0, 0);
+						var c = document.getElementById("errorslist").childElementCount;
+						if (c > 1) {
+							document.getElementById("errorslist").firstElementChild.remove();
+						}
+						node.setAttribute('aria-invalid', 'true');						
+						return false;
+					} 
+					else {
+				return true;
+				}
+		}
+        </script>        
         
     <footer>
         <div class="container-fluid">

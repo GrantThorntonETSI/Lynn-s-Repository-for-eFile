@@ -2628,7 +2628,7 @@ $(document).ready(function(){
 				var count = $(this).closest('fieldset').find('input[type=radio].count').length;
 				var countall = $(this).closest('fieldset').find('input[type=radio].count:checked').length;
 				if (countall == count) {
-					alert ('You have indicated at least one of the goods / services in this class is in-use. You must choose &#8216;Yes&#8217; for at least one good / service.');
+					alert ('You have indicated at least one of the goods / services in this class is in-use. You must choose "Yes" for at least one good / service.');
 					$(this).prop({
 								disabled: true,
 								checked:false,
