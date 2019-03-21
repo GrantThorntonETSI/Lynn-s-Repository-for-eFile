@@ -574,6 +574,8 @@ ul[role="tablist"] a[aria-selected="true"] {
 	margin-top: 1em;
 	}
 #markoptions p {
+	padding-left: 0;
+	padding-right: 0;
 	margin-top: .6em;
 	}
 #panels p {
@@ -1379,7 +1381,7 @@ input[type="date"]::-webkit-inner-spin-button, input[type=month]::-webkit-inner-
     display: none;
 	}
 .disabled {
-	cursor: url('../images/cusor_not_allowed.png'), auto!important;
+	cursor: url('../images/cursor_not_allowed.png'), auto!important;
 	}
 label {
     font-weight: 400;
@@ -1477,7 +1479,7 @@ label.hasinfo {
 /*BUTTONS*/
 .btn-success.disabled, .btn-success.disabled.active, .btn-success.disabled.focus, .btn-success.disabled:active, .btn-success.disabled:focus, .btn-success.disabled:hover, .btn-success[disabled], .btn-success[disabled].active, .btn-success[disabled].focus, .btn-success[disabled]:active, .btn-success[disabled]:focus, .btn-success[disabled]:hover, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success.active, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:hover {
     background-color: #cdd8dc!important;
-	cursor: url('../images/cusor_not_allowed.png'), auto!important;
+	cursor: url('../images/cursor_not_allowed.png'), auto!important;
 	}
 .inlinebuttons {
 	margin:0 auto;
@@ -2176,6 +2178,9 @@ input[type="checkbox"]{
 	-moz-opacity: 1.0;
 	cursor:pointer;
 	line-height: 1.02em;
+	}
+.form-check span.radio.notspecial.special::before, .form-check span.radio.special::before, .radio-inline.radiocontainer.special::before, .radiocontainer.special::before {
+	cursor: url('../images/cursor_not_allowed.png'), auto!important;
 	}
 .form-check span.radio.special, .radio-inline.radiocontainer.special, .radiocontainer.special {
 	opacity: 0.5;

@@ -226,6 +226,7 @@ $(document).ready(function(){
 	//START set initial checkboxes
 	$('input[type=checkbox]').attr('checked',false);
 	$('input[type=radio]').attr('checked',false);
+	$('input#tradeserv').prop('checked',true);
 	$('input[type=radio]#inlineRadio044').prop('checked', true);
 	$('input[type=radio]#inlineRadio031').prop('checked',true);
 	$('input[type=radio]#inlineRadio059').prop('checked',true);
@@ -291,11 +292,8 @@ $(document).ready(function(){
 				checked: false,
 			});
 			$('.form-check#tradeserv2 span.radio').addClass('special');
-			$('label.form-check#tradeserv2 span.radio::before').addClass('disabled');
 			$('.form-check#collectcheck2 span.radio').addClass('special');
-			$('label.form-check#collectcheck2 span.radio::before').addClass('disabled');
 			$('.form-check#collectm2 span.radio').addClass('special');
-			$('label.form-check#collectm2 span.radio::before').addClass('disabled');
 			$('input#tradeserv').attr('aria-disabled', 'true');
 			$('input#collectcheck').attr('aria-disabled', 'true');
 			$('input#collectmember').attr('aria-disabled', 'true');
@@ -311,11 +309,11 @@ $(document).ready(function(){
 				disabled: false,
 			});
 			$('.form-check#tradeserv2 span.radio').removeClass('special');
-			$('label.form-check#tradeserv2 span.radio::before').removeClass('disabled');
+			$('.form-check span.radio.notspecial::before').removeClass('disabled');
 			$('.form-check#collectcheck2 span.radio').removeClass('special');
-			$('label.form-check#collectcheck2 span.radio::before').removeClass('disabled');
+			$('.form-check span.radio.notspecial::before').removeClass('disabled');
 			$('.form-check#collectm2 span.radio').removeClass('special');
-			$('label.form-check#collectm2 span.radio::before').removeClass('disabled');
+			$('.form-check span.radio.notspecial::before').removeClass('disabled');
 			$('input#tradeserv').attr('aria-disabled', 'false');
 			$('input#collectcheck').attr('aria-disabled', 'false');
 			$('input#collectmember').attr('aria-disabled', 'false');
@@ -329,7 +327,6 @@ $(document).ready(function(){
 				checked: false,				
 			});
 			$('.form-check#certcheck2 span.radio').addClass('special');
-			$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectmember').prop('checked')){ 
@@ -338,7 +335,6 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#tradeserv').prop('checked')){ 
@@ -347,7 +343,6 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
@@ -355,7 +350,7 @@ $(document).ready(function(){
 				disabled: false,
 			});
 			$('.form-check#certcheck2 span.radio').removeClass('special');
-			$('label.form-check#certcheck2 span.radio::before').removeClass('disabled');
+			$('.form-check span.radio.notspecial::before').removeClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'false');
 		}
 	});
@@ -367,7 +362,6 @@ $(document).ready(function(){
 				checked: false,				
 			});
 			$('.form-check#certcheck2 span.radio').addClass('special');
-			$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#collectcheck').prop('checked')){ 
@@ -376,7 +370,6 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else if ($('input#tradeserv').prop('checked')){ 
@@ -385,7 +378,6 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 		}
 		else{
@@ -393,11 +385,19 @@ $(document).ready(function(){
 				disabled: false,
 			});
 			$('.form-check#certcheck2 span.radio').removeClass('special');
-			$('label.form-check#certcheck2 span.radio::before').removeClass('disabled');
+			$('.form-check span.radio.notspecial::before').removeClass('disabled');
 			$('input#certcheck').attr('aria-disabled', 'false');
 		}
 	});
 	//When 'Trademark / Servicemark' is checked, 'Certification' is disabled
+		if ($('input#tradeserv').prop('checked',true)) {
+			$('input#certcheck').prop({
+					disabled: true,
+					checked: false,				
+				});
+				$('.form-check#certcheck2 span.radio').addClass('special');
+				$('input#certcheck').attr('aria-disabled', 'true');
+				};
 		$('input#tradeserv').change(function(e) {
 			if(this.checked == true){
 				$('input#certcheck').prop({
@@ -405,7 +405,6 @@ $(document).ready(function(){
 					checked: false,				
 				});
 				$('.form-check#certcheck2 span.radio').addClass('special');
-				$('label.form-check#certcheck2 span.radio::before').addClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'true');
 				}
 			else{
@@ -413,7 +412,7 @@ $(document).ready(function(){
 					disabled: false,
 				});
 				$('.form-check#certcheck2 span.radio').removeClass('special');
-				$('label.form-check#certcheck2 span.radio::before').removeClass('disabled');
+				$('.form-check span.radio.notspecial::before').removeClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'false');
 				}
 	});//END enable / disable checkboxes
@@ -2040,14 +2039,14 @@ $(document).ready(function(){
 			$(this).parent().next('td').children('input').prop({ 
 					disabled: true,
 					checked: false,
-					});
+					}).addClass('disabled');
 			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'false');
 		}
 		else if ($(this).prop('checked',false)) {
 			$(this).parent().next('td').children('label').children('span').removeClass('special');
 			$(this).parent().next('td').children('input').prop({ 
 					disabled: false,
-					});
+					}).removeClass('disabled');
 			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'false');
 		}
 	});
@@ -2057,14 +2056,14 @@ $(document).ready(function(){
 			$(this).parent().next('th').children('input').prop({ 
 					disabled: true,
 					checked: false,
-					});
+					}).addClass('disabled');
 			$(this).parent().next('th').children('input').attr('aria-disabled', 'true');
 		}
 		else if ($(this).prop('checked',false)) {
 			$(this).parent().next('th').children('label').children('span').removeClass('special');
 			$(this).parent().next('th').children('input').prop({ 
 					disabled: false,
-					});
+					}).removeClass('disabled');
 			$(this).parent().next('th').children('input').attr('aria-disabled', 'false');
 		}
 	});
@@ -2074,14 +2073,14 @@ $(document).ready(function(){
 			$(this).parent().prev('td').children('input').prop({ 
 					disabled: true,
 					checked: false,
-					});
+					}).addClass('disabled');
 			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'true');
 		}
 		else if ($(this).prop('checked',false)) {
 			$(this).parent().prev('td').children('label').children('span').removeClass('special');
 			$(this).parent().prev('td').children('input').prop({ 
 					disabled: false,
-					});
+					}).removeClass('disabled');
 			$(this).parent().siblings('td').children('input').attr('aria-disabled', 'false');
 		}
 	});
@@ -2091,14 +2090,14 @@ $(document).ready(function(){
 			$(this).parent().prev('th').children('input').prop({ 
 					disabled: true,
 					checked: false,
-					});
+					}).addClass('disabled');
 			$(this).parent().prev('th').children('input').attr('aria-disabled', 'true');
 		}
 		else if ($(this).prop('checked',false)) {
 			$(this).parent().prev('th').children('label').children('span').removeClass('special');
 			$(this).parent().prev('th').children('input').prop({ 
 					disabled: false,
-					});
+					}).removeClass('disabled');
 			$(this).parent().prev('th').children('input').attr('aria-disabled', 'false');
 		}
 	});
@@ -2109,7 +2108,7 @@ $(document).ready(function(){
 		var b 	= 	$( '#gridview table tbody tr th:nth-child(1) input:checked' ); //Classnames 1st checkbox, checked
 		var p 	= 	$( '#gridview table tbody tr th:nth-child(2) input:checked' ); //Classnames 2nd checkbox, checked
 		var q	=	$( '#gridview table thead tr:nth-child(2) th:nth-child(2) input' ); //In-Use 1(a) checkbox
-		var newrow = $( "<tr class='inuse1aone'><td colspan='5'><div id='yesinuse1aone' class='form-group'><!--toggle 1(a) one--><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='yesinuse1atwo' class='col-xs-12 form-group'><!--toggle 1(a) two--><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div><!-- Drop Zone --></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='specdescripthree'>Provide a description of your specimen:</label><textarea id='specdescripthree' class='form-control'></textarea></div></div></div></div></td></tr>" );
+		var newrow = $( "<tr class='inuse1aone'><td colspan='5'><div id='yesinuse1aone' class='form-group'><!--toggle 1(a) one--><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce' class='matchlabelheight'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='yesinuse1atwo' class='col-xs-12 form-group'><!--toggle 1(a) two--><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div><!-- Drop Zone --></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='specdescripthree'>Provide a description of your specimen:</label><textarea id='specdescripthree' class='form-control'></textarea></div></div></div></div></td></tr>" );
 		console.log('#gridview table tbody tr th:nth-child(2) input');
 		if ($(this).prop('checked')) {
 				$(q).prop({ 
@@ -2202,8 +2201,8 @@ $(document).ready(function(){
 			var y	=	$( '#gridview table thead tr:nth-child(2) th:nth-child(3) input' ); //Intent-To-Use 1(b) checkbox
 			var d 	= 	$( '#gridview table tbody tr td:nth-child(3) input' ); //GS 2nd checkbox
 			var dd 	= 	$( '#gridview table tbody tr td:nth-child(2) input' ); //GS 1st checkbox
-			var newrow = $( "<tr class='inuse1aone'><td colspan='5'><div id='yesinuse1aone' class='form-group'><!--toggle 1(a) one--><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='yesinuse1atwo' class='col-xs-12 form-group'><!--toggle 1(a) two--><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div><!-- Drop Zone --></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='specdescripthree'>Provide a description of your specimen:</label><textarea id='specdescripthree' class='form-control'></textarea></div></div></div></div></td></tr>" );
-			var newrowgs1a = $( "<tr class='optionalupload'><td colspan='5'><div id='yesinuse1aone' class='form-group'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='optionuploadone' class='col-xs-12'><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><input class='form-check-input checkmark' type='checkbox' value='' tabindex='0' id='optionupload'><label class='form-check-label form-check' for='optionupload'><span class='radio notspecial'>Only one specimen is required per class. Click here to add a specimen to this good / service.</span></label></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md' id='optionuploadtwo'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div></div></div></div></div></td></tr>" );
+			var newrow = $( "<tr class='inuse1aone'><td colspan='5'><div id='yesinuse1aone' class='form-group'><!--toggle 1(a) one--><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce' class='matchlabelheight'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='yesinuse1atwo' class='col-xs-12 form-group'><!--toggle 1(a) two--><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div><!-- Drop Zone --></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='specdescripthree'>Provide a description of your specimen:</label><textarea id='specdescripthree' class='form-control'></textarea></div></div></div></div></td></tr>" );
+			var newrowgs1a = $( "<tr class='optionalupload'><td colspan='5'><div id='yesinuse1aone' class='form-group'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce' class='matchlabelheight'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='optionuploadone' class='col-xs-12'><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><input class='form-check-input checkmark' type='checkbox' value='' tabindex='0' id='optionupload'><label class='form-check-label form-check' for='optionupload'><span class='radio notspecial'>Only one specimen is required per class. Click here to add a specimen to this good / service.</span></label></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md' id='optionuploadtwo'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div></div></div></div></div></td></tr>" );
 			//user selects classnames then selects In-Use 1(a)
 			if ($(b).prop('checked')) {
 				$(b).parent().next('th').children('input').prop({ 
@@ -2239,19 +2238,19 @@ $(document).ready(function(){
 					checked: false,
 					});
 				$(y).attr('aria-disabled', 'true');
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(3) label span' ).addClass('special');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(3) label span' ).addClass('special').addClass('disabled');
 				$(pp).prop({ 
 					disabled: true,
 					checked: false,
 					});
 				$(pp).attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr th:nth-child(3) label span' ).addClass('special');
+				$( '#gridview table tbody tr th:nth-child(3) label span' ).addClass('special').addClass('disabled');
 				$(d).prop({ 
 					disabled: true,
 					checked: false,
 					});
 				$(d).attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr td:nth-child(3) label span' ).addClass('special');
+				$( '#gridview table tbody tr td:nth-child(3) label span' ).addClass('special').addClass('disabled');
 			}
 			
 			if (this.checked == false) {
@@ -2267,17 +2266,17 @@ $(document).ready(function(){
 				$(y).prop({ 
 					disabled: false,
 					});
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(3) label span' ).removeClass('special');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(3) label span' ).removeClass('special').removeClass('disabled');
 				$(pp).prop({ 
 					disabled: false,
 					});
 				$(pp).attr('aria-disabled', 'false');
-				$( '#gridview table tbody tr th:nth-child(3) label span' ).removeClass('special');
+				$( '#gridview table tbody tr th:nth-child(3) label span' ).removeClass('special').removeClass('disabled');
 				$(d).prop({ 
 					disabled: false,
 					});
 				$(d).attr('aria-disabled', 'false');
-				$( '#gridview table tbody tr td:nth-child(3) label span' ).removeClass('special');
+				$( '#gridview table tbody tr td:nth-child(3) label span' ).removeClass('special').removeClass('disabled');
 				$(c).prop({ 
 					checked: false,
 					});
@@ -2312,16 +2311,16 @@ $(document).ready(function(){
 					checked: false,
 					});
 				$(d).attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr td:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table tbody tr td:nth-child(2) label span' ).addClass('special').addClass('disabled');
 				$(ff).prop({  
 					disabled: true,
 					checked: false,
 					});
 				$(ff).attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special').addClass('disabled');
 				$(b).parent().next('th').children('input').attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special');
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special').addClass('disabled');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).addClass('special').addClass('disabled');
 			}
 			//user selects Intent-to-Use 1(b) and all Classnames + GSs are selected
 			else if($(b).prop('checked',false)) {
@@ -2348,26 +2347,26 @@ $(document).ready(function(){
 					checked: false,
 					});
 				$(d).attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr td:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table tbody tr td:nth-child(2) label span' ).addClass('special').addClass('disabled');
 				
 				$(ee).prop({  
 					disabled: true,
 					checked: false,
 					});
 				$(ee).attr('aria-disabled', 'true');
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).addClass('special').addClass('disabled');
 				
 				$(ff).prop({  
 					disabled: true,
 					checked: false,
 					});
 				$(ff).attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special').addClass('disabled');
 				
 				$(b).parent().next('th').children('input').attr('aria-disabled', 'true');
-				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table tbody tr th:nth-child(2) label span' ).addClass('special').addClass('disabled');
 			//disable 
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).addClass('special');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).addClass('special').addClass('disabled');
 			}
 			if (this.checked == false) {
 				$(p).prop({ 
@@ -2387,21 +2386,21 @@ $(document).ready(function(){
 					disabled: false,
 					});
 				$(d).attr('aria-disabled', 'false');
-				$( '#gridview table tbody tr td:nth-child(2) label span' ).removeClass('special');
+				$( '#gridview table tbody tr td:nth-child(2) label span' ).removeClass('special').removeClass('disabled');
 				$(ee).prop({  
 					disabled: false,
 					});
 				$(ee).attr('aria-disabled', 'false');
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).removeClass('special');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).removeClass('special').removeClass('disabled');
 				$(ff).prop({  
 					disabled: false,
 					});
 				$(ff).attr('aria-disabled', 'false');
-				$( '#gridview table tbody tr th:nth-child(2) label span' ).removeClass('special');
+				$( '#gridview table tbody tr th:nth-child(2) label span' ).removeClass('special').removeClass('disabled');
 				
 				$(b).parent().next('th').children('input').attr('aria-disabled', 'false');
-				$( '#gridview table tbody tr th:nth-child(2) label span' ).removeClass('special');
-				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).removeClass('special');
+				$( '#gridview table tbody tr th:nth-child(2) label span' ).removeClass('special').removeClass('disabled');
+				$( '#gridview table thead tr:nth-child(2) th:nth-child(2) label span' ).removeClass('special').removeClass('disabled');
 			}
 		});
 		
@@ -2519,7 +2518,7 @@ $(document).ready(function(){
 		
 		$(document).on('change', '#gridview table tbody tr td:nth-child(2) input', function() { //In-Use 1(a) GS checkbox
 		var c 	= 	$( '#gridview table tbody tr th:nth-child(1) input' ); //Classname 1st checkbox
-		var newrow = $( "<tr class='optionalupload'><td colspan='5'><div id='yesinuse1aone' class='form-group'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='optionuploadone' class='col-xs-12'><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><input class='form-check-input checkmark' type='checkbox' value='' tabindex='0' id='optionupload'><label class='form-check-label form-check' for='optionupload'><span class='radio notspecial'>Only one specimen is required per class. Click here to add a specimen to this good / service.</span></label></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md' id='optionuploadtwo'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div></div></div></div></div></td></tr>" );
+		var newrow = $( "<tr class='optionalupload'><td colspan='5'><div id='yesinuse1aone' class='form-group'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce' class='matchlabelheight'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='optionuploadone' class='col-xs-12'><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><input class='form-check-input checkmark' type='checkbox' value='' tabindex='0' id='optionupload'><label class='form-check-label form-check' for='optionupload'><span class='radio notspecial'>Only one specimen is required per class. Click here to add a specimen to this good / service.</span></label></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md' id='optionuploadtwo'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div></div></div></div></div></td></tr>" );
 			if (this.checked == true) {
 				$(this).parent().parent().after(newrow);
 				$('div#optionuploadtwo').css('display','none');
@@ -2672,14 +2671,15 @@ $(document).ready(function(){
 	  $( 'span.state_country' ).html( arrstate[0] );
 	//END review application statement
 		
-	//$( 'input#iu1a' ).change(function() {
-//		if(this.checked == true){
+	//$( 'input.checkmark' ).change(function() {
+//		if($(this).prop('checked')){
 //			console.log('checked');
 //			}
-//		if(this.checked == false){
+//		else{
 //		console.log('unchecked');
 //		}
 //	});
+	
 	//END grid view checkboxes
 	
 	
