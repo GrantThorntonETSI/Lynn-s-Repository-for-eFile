@@ -1315,6 +1315,11 @@ $(document).ready(function(){
 		$.getScript( include );
 		$('#autofill').show( 'fast' );
 		$('footer').css('display','block');
+		//var includevalidate = ('js/validate_ownerindividual.js');
+//		$.getScript( includevalidate );
+//		$.getScript( includevalidate, function() {		
+//			  console.log('script loaded');
+//			});
 	});
 	//foreign form
 	$('#owner #autofillforeign').css('display','none');

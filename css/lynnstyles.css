@@ -238,9 +238,9 @@ ul#lowernav li a.glyphed span {
 	}
 .highlighted {
 	background-color: #9BB8D3;
-	outline: 1px solid #9BB8D3!important;
+	outline: none!important;
 	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: .3em;
+	outline-offset: 0;
 	border:none;
 	color:#000;
 	}

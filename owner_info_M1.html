@@ -173,6 +173,7 @@
                         </div>
                     </div>
                     <p class="required"><span class="weight600">&#42; = Required</span></p>
+                    
                     <p class="instructions" id="costsavingoptions">Reduced fee mode</p>
                     <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn Reduced Fee labels on or off">
                         <label class="switch">
@@ -195,7 +196,7 @@
                                     </div>
                                 </div>
                                 <p id="usforeign">Is the owner a U.S. or Foreign Entity?</p>
-                                <form method="post" id="" action="">
+                                <form method="post" id="ownerindividualform" action="">
                                     <div role="radiogroup" aria-labelledby="usforeign" class="form-group form-group-md">
                                       <label for="inlineRadio019" class="radio-inline radiocontainer" id="usentityselected">US Entity<input type="radio" name="usforeignradio" id="inlineRadio019" value="usentity" tabindex="0"><span class="checkmark"></span></label>
                                       <label for="inlineRadio020" class="radio-inline radiocontainer" id="foreignentityselected">Foreign Entity<input type="radio" name="usforeignradio" id="inlineRadio020" value="foreignentity" tabindex="0"><span class="checkmark"></span></label>
@@ -312,12 +313,17 @@
                     </div>
                 </div>
             </div>
+            
+            
+            
+            
+            
             <div class="inlinebuttons btn-group btn-group-justified" role="navigation" aria-label="view previous or next page" id="prevnxt">
                 <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
+                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next" onclick="return checkForm(ownerindividualform);">Next 
                         <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
                 </div>
             </div>
@@ -356,35 +362,71 @@
                                 <button type="button" id="closecontacts" class="close" data-target="#mydata2" aria-label="Close"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                         </div>
                         <div id="collapse2" class="panel-collapse collapse" aria-labelledby="contactsbtn">
-                            <table class="list-group table">
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontactclear" id="clearform">Clear form</a></td>
-                                    <td class="list-group-item inner-addon right-addon col-xs-6"><i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" class="form-control" id="contactsearch" placeholder="Search" aria-label="search"></td>
-                                </tr>
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Avo Reid</td>
-                                    <td class="list-group-item col-xs-6">avo.reid@us.gt.com</td>
-                                </tr>
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Jackie Babos</td>
-                                    <td class="list-group-item col-xs-6">jackie.babos@us.gt.com</td>
-                                </tr>
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Jacob Goldstein</td>
-                                    <td class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
-                                </tr>
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="li"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Li Zhang</td>
-                                    <td class="list-group-item col-xs-6">li.zhang@us.gt.com</td>
-                                </tr>
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="lynn"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Lynn Stanikmas</td>
-                                    <td class="list-group-item col-xs-6">lynn.stanikmass@us.gt.com</td>
-                                </tr>
-                                <tr class="row">
-                                    <td class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="sarah"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span></a> Sarah Sara</td>
-                                    <td class="list-group-item col-xs-6">sarah.sara@us.gt.com</td>
-                                </tr>
+                            <table class="list-group table-fixed" role="grid" aria-label="contacts">
+                                <tbody>
+                                    <tr role="row">
+                                    	<td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontactclear" id="clearform">Clear Form</a></td>
+                                    	<td tabindex="0" class="list-group-item inner-addon right-addon col-xs-6"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><input type="text" class="form-control" id="contactsearch" placeholder="Search" role="search"></td>
+                                 	</tr>
+                                    <tr role="row">
+                                    	<td class="nopadding" colspan="2">
+                                        	<table class="list-group table" role="grid" id="contactssearch">
+                                                <thead class="sr-only">
+                                                    <tr>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">email address</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="scroll">
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Avo Reed</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">avo.reid@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jackie Babos</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jackie.babos@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jacob Goldstein</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Avo Reed</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">avo.reid@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jackie Babos</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jackie.babos@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jacob Goldstein</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jacob Goldstein</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="avo"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Avo Reed</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">avo.reid@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jackie"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jackie Babos</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jackie.babos@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Jacob Goldstein</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">jacob.goldstein@us.gt.com</td>
+                                                    </tr>
+                                                    <tr role="row">
+                                                        <td tabindex="0" class="list-group-item col-xs-6"><a href="#" class="fromcontact" id="jacob"><span class="glyphicon glyphicon-plus-sign" role="img" aria-label="select this contact"></span></a> Li Zhang</td>
+                                                        <td tabindex="0" class="list-group-item col-xs-6">li.zhang@us.gt.com</td>
+                                                    </tr>
+                                               	</tbody>
+                                            </table>
+                                    	</td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -405,7 +447,6 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="application/javascript" src="js/html-imports.min.js"></script>
 		<script type="application/javascript" src="js/lynnjqueryscript.js"></script>
-        
     <footer>
         <div class="container-fluid">
             <div class="row">
