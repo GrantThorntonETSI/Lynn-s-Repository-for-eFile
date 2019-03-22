@@ -2878,6 +2878,9 @@ footer #megamenu ul {
 	.nav > li > a { 
 		padding-right:12px!important;
 		}
+	.label.subtle {
+    	padding-bottom: .33em;
+		}
 }
 @media (min-width: 800px) {
 	.inlinebuttons {

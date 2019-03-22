@@ -777,6 +777,9 @@ $(document).ready(function(){
 		container: "body",
 		placement : 'bottom auto',
 		});
+	$("[data-toggle='tooltip']").click(function (event) { 
+		 event.preventDefault(); 
+	});
 	//Initialize popover
 	$('[data-toggle="popover"]').popover({
         title : false,
@@ -1963,7 +1966,7 @@ $(document).ready(function(){
 	//END modals
 	
 	//START show standard character preview
-	$( '#ta2' ).keyup(function(){
+	$( '#ta2standard' ).keyup(function(){
 		var d = $( '#entertext' ).next('div');
 		var currentText = $(this).val();
 		$( 'p#showmarktxt' ).text(currentText);
