@@ -3079,6 +3079,11 @@ footer #megamenu ul {
 		border-left: none!important;
 		}
 	}
+@media (min-width: 1200px) and (max-width: 1587px) {
+	#switchselect label {
+		min-height: 48px;
+		}
+	}
 @media (max-width: 1199px) {
 	btn.fill, .btn-success.fill, .btn-default.fill  {	
 		margin:0 auto;

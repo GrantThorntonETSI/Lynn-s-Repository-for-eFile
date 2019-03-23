@@ -14,11 +14,11 @@
                                 <fieldset aria-labelledby="ownerinfo">-->
                         <fieldset aria-labelledby="ownerinfo">
                        		<div class="row">
-                              <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-4">
+                              <div class="form-group form-group-md col-xs-12 col-sm-8">
                                 <label for="ownername">Owner name <span class="weight600">&#42;</span></label>
                                 <input type="text" class="form-control" id="ownername" th:field="*{firstName}" required>
                               </div>
-                              <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
+                              <div class="form-group form-group-md col-xs-12 col-sm-6">
                                 <label for="type">Type</label>
                                 <select class="form-control" id="type" th:field="*{ownerType}">
                                   <option value="Select">Select</option>
@@ -26,15 +26,6 @@
                                   <option value="TA">Trading As (TA)</option>
                                   <option value="AKA">Also Known As (AKA)</option>
                                   <option value="Formerly">Formerly</option>
-                                </select>
-                              </div>
-                              <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
-                                <label for="countryoforg">Country of Incorporation <span class="weight600">&#42;</span></label>
-                                <select class="form-control" id="countryoforg" required>
-                                  <option value="Select">Select</option>
-                                  <option value="bahamas">Bahamas</option>
-                                  <option value="mexico">Mexico</option>
-                                  <option value="canada">Canada</option>
                                 </select>
                               </div>
                             </div>
@@ -83,12 +74,12 @@
                                 <input type="text" class="form-control" id="city" th:field="*{ownerCity}" required>
                               </div>
                               <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
-                                    <label for="state">State/Province/Territory <span class="weight600">&#42;</span></label>
-                                    <input type="text" class="form-control" id="state" th:field="*{ownerState}" required>
-                                  </div>
+                                    <label for="state">State/Province/Territory</label>
+                                    <input type="text" class="form-control" id="state" th:field="*{ownerState}">
+                              </div>
                               <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
-                                <label for="zipcode">Postal Code <span class="weight600">&#42;</span></label>
-                                <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
+                                <label for="zipcode">Zip code/Postal code</label>
+                                <input type="text" class="form-control" id="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}">
                               </div>
                               <div class="row">
                                 <div class="col-xs-12">
