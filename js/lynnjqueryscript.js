@@ -202,6 +202,20 @@ $(document).ready(function(){
 		});
 	//END dashboard datatables ellipsis menu tabletwo
 	
+	//Update ARIA label when sorting
+	$( '#dashboardtableone th.sorting, #dashboardtabletwo th.sorting' ).click(function() {
+		$( this ).toggleClass( 'focus' );
+		$( this ).attr('aria-label').text() === 'activate to sort column descending'
+			? $( this ).text('activate to sort column ascending')
+			: $( this ).text('activate to sort column descending');
+		$( this ).attr('aria-sort').text() === 'ascending'
+			? $( this ).text('descending')
+			: $( this ).text('ascending');
+	});	
+	//aria-label={`sort by ${header} in ${this.state.sortDir !== 'ascending' ? 'ascending' : 'descending'} order`}  
+
+	//Update ARIA label when sorting
+	
 	//.dashsection height = #announcedashsection height
       var h = $( 'div#announcedashsection' );
 	  var y = $( 'div#announce' );
@@ -258,6 +272,11 @@ $(document).ready(function(){
 			$('span#displayfees').html('<span>' + lastfees + '</span>');
 			$('#tr div.alert').addClass('visuallyadded');
 			$('#tr div.alert').removeClass('visuallyremoved');
+			}
+		else {
+			$('li#classli span').html('<span>' + highestfeeperclass + '</span>');
+			$('li#lastli span').html('<span>' + lastfees + '</span>');
+			$('span#displayfees').html('<span>' + lastfees + '</span>');
 			}
 	});
 	$('input[type=radio]#inlineRadio031').change(function() {
