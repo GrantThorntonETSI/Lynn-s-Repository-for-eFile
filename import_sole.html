@@ -17,11 +17,8 @@
                             <label for="ownername">Owner name <span class="weight600">&#42;</span></label>
                             <input type="text" class="form-control" id="ownername" name="ownernamefield" th:field="*{firstName}" required>
                           </div>
-                          <div class="form-group form-group-md col-xs-12">
-                            <p class="weight600">Add additional name if I do business as/or trading under a different name:</p>
-                          </div>
                           <div class="form-group form-group-md col-xs-12 col-sm-6 col-lg-4">
-                            <label for="additionalname">Type</label>
+                            <label for="additionalname">Alternate name <a href="#" data-toggle="tooltip" title="Make selection below if the owner is doing business as or trading under a different name." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
                             <select class="form-control" id="type" th:field="*{ownerType}">
                               <option value="Select">Select</option>
                               <option value="DBA">Doing Business As (DBA)</option>
@@ -139,7 +136,7 @@
                         <input type="text" class="form-control" id="city" name="city" th:field="*{ownerCity}" required>
                       </div>
                       <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
-                        <label for="state">State <span class="weight600">&#42;</span></label>
+                        <label for="state">State/Province/Territory <span class="weight600">&#42;</span></label>
                         <select class="form-control" id="state" name="state" th:field="*{ownerState}" required>
                           <option value="Select">Select</option>
                           <option value="Virginia">Virginia</option>
@@ -148,7 +145,7 @@
                         </select>
                       </div>
                       <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
-                        <label for="zipcode">Zip code <span class="weight600">&#42;</span></label>
+                        <label for="zipcode">Zip code/Postal code <span class="weight600">&#42;</span></label>
                         <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
                       </div>
                       <div class="form-group form-group-md col-xs-12 col-md-7">

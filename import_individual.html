@@ -48,11 +48,8 @@
                                                   <option value="VIII">VIII</option>
                                                 </select>
                                               </div>
-                                              <div class="form-group form-group-md col-xs-12">
-                                                <p class="weight600">Add additional name if I do business as/or trading under a different name:</p>
-                                              </div>
                                               <div class="form-group form-group-md col-xs-6">
-                                                <label for="type">Type</label>
+                                                <label for="additionalname">Alternate name <a href="#" data-toggle="tooltip" title="Make selection below if the owner is doing business as or trading under a different name." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
                                                 <select class="form-control" id="type"><!--Needs th:attribute-->
                                                   <option value="select">Select</option>
                                                   <option value="dba">Doing Business As (DBA)</option>
@@ -129,7 +126,7 @@
                                         </select>
                                       </div>
                                       <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-3">
-                                        <label for="zipcode">Zip code <span class="weight600">&#42;</span></label>
+                                        <label for="zipcode">Zip code/Postal code <span class="weight600">&#42;</span></label>
                                         <input type="text" class="form-control" id="zipcode" name="zipcode" placeholder="XXXXX" th:field="*{ownerZipcode}" required>
                                       </div>
                                       <div class="form-group form-group-md col-xs-12 col-md-7">
