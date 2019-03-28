@@ -687,6 +687,9 @@ h1.message   {
 .glyphicon-alert {
 	margin-right: .4em;
 	}
+.dtr-title span.glyphicon {
+	display:none;
+	}
 .glyphicon-new-window, .form-check span.glyphicon-new-window::before {
 	color: #004C97;
 	margin-left:.29em;
@@ -709,6 +712,11 @@ h1.message   {
     border-color: #D9D9D6;
 	}
 /* START Datatables */
+#dashboardtableone th, #dashboardtabletwo th {
+	 font-weight:400!important;
+	 padding-left:.1em;
+	 padding-right:.1em;
+	 }
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
     color: #eee;
@@ -914,6 +922,10 @@ td:focus {
 	font-size: 1.4em;
 	margin-bottom:0;
 	top: 5px;
+	}
+#dashboardtableone .glyphicon-triangle-top, #dashboardtableone .glyphicon-triangle-bottom, #dashboardtabletwo .glyphicon-triangle-top, #dashboardtabletwo .glyphicon-triangle-bottom {
+	font-size: .5em;
+	top:-.4em;
 	}
 #dashboardtableone_wrapper .glyphicon-filter, #dashboardtabletwo_wrapper .glyphicon-filter {
 	margin-right: .17em;
@@ -1555,7 +1567,7 @@ label.hasinfo {
   	-moz-box-shadow:    rgb(0,0,0);  
   	box-shadow:         rgb(0,0,0);
 	}
-#dashboardtableone_wrapper div.toolbar .btn-xs.active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs.active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs.focus, #dashboardtableone_wrapper div.toolbar  .btn-xs:active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs:active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo  .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:focus {
+#dashboardtableone_wrapper div.toolbar .btn-xs.active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs.active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs.focus, #dashboardtableone_wrapper div.toolbar  .btn-xs:active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs:active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo  .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo, #dashboardtableone th.focus, #dashboardtabletwo th.focus {
     /*outline: thin dotted;*/
 	outline: 0!important;
 	outline: 0 -webkit-focus-ring-color;
@@ -2105,6 +2117,9 @@ option, select, input[type="text"], input[type="email"], input[type="date"], inp
 	border: 1px solid #009CDE!important;
     outline: 0!important;
 	background:none;
+	}
+.sorting_1 {
+	border: none!important;
 	}
 .form-control {
     box-shadow: none!important;

@@ -126,13 +126,20 @@ $(document).ready(function(){
 			  '</select>'
   			},
 			'autoWidth': false,
-			'responsive': true,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
 			'columns': [
-				{ 'width': '20%' },
-				{ 'width': '20%' },
-				{ 'width': '20%' },
-				{ 'width': '20%' },
-				{ 'width': '20%' },
+				{ 'width': '10%' },
+				{ 'width': '60%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
 			  ],
 			  'columnDefs': [  
 				{ responsivePriority: 1, targets: 0 },
@@ -161,15 +168,22 @@ $(document).ready(function(){
 			  '</select>'
   			},
 			'autoWidth': false,
-			'responsive': true,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
 			'columns': [
-				{ 'width': '12%' },
-				{ 'width': '17%' },
-				{ 'width': '14%' },
-				{ 'width': '14%' },
-				{ 'width': '15%' },
-				{ 'width': '14%' },
-				{ 'width': '14%' },
+				{ 'width': '10%' },
+				{ 'width': '40%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
 			  ],
 			  'columnDefs': [
 			  	{ responsivePriority: 1, targets: 0 },
@@ -203,16 +217,10 @@ $(document).ready(function(){
 	//END dashboard datatables ellipsis menu tabletwo
 	
 	//Update ARIA label when sorting
-	$( '#dashboardtableone th.sorting, #dashboardtabletwo th.sorting' ).click(function() {
+	$(document).on('click', 'table#dashboardtableone th,table#dashboardtabletwo th', function() {
 		$( this ).toggleClass( 'focus' );
-		$( this ).attr('aria-label').text() === 'activate to sort column descending'
-			? $( this ).text('activate to sort column ascending')
-			: $( this ).text('activate to sort column descending');
-		$( this ).attr('aria-sort').text() === 'ascending'
-			? $( this ).text('descending')
-			: $( this ).text('ascending');
+		$( this ).find('span.glyphicon-triangle-bottom').toggleClass( 'glyphicon-triangle-top' ).attr('aria-hidden','true');
 	});	
-	//aria-label={`sort by ${header} in ${this.state.sortDir !== 'ascending' ? 'ascending' : 'descending'} order`}  
 
 	//Update ARIA label when sorting
 	
