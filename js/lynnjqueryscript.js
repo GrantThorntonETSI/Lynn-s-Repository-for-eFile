@@ -1370,17 +1370,18 @@ $(document).ready(function(){
 		$( loadselectmenu ).css('display','block');
 	});
 	//END entity options (import concept)
-	
 	//select signature method
-	$('#direct').css('display','none');
-	$('#signmethod').on('change',function(){
-		var loadsign = ('#' + $(this).val());
-		$('.hidethis').hide('fast');
-		$( loadsign ).show('fast').addClass('hidethis');
+	$('.hidethis').css('display','none');
+	$('select.signmethod').on('change',function(){
+		var loadsign = ('.' + $(this).val());
+		$(this).closest('fieldset').find('.hidethis').show('fast');
 		$( loadsign ).css('display','block');
+		if( loadsign == '.Select') {
+			$(this).closest('fieldset').find('.hidethis').hide('fast');
+			} 
+		//console.log(loadsign);
 	});
-	//END signature method
-	
+	//END select signature method	
 	//START fill from contacts values -- attorney
 	function clearform() {
 	  $( 'input#attorney-first-name' ).val( '' );
@@ -2700,7 +2701,61 @@ $(document).ready(function(){
 	  $( 'span.partnershipname' ).html( arrcompany[0] );
 	  $( 'span.state_country' ).html( arrstate[0] );
 	//END review application statement
-		
+
+	//WYSIWYG editor for revive petition application s1
+	if ( $( 'div#petitions1' ).length ) {
+		var quill = new Quill('#petitions1 #editor', {
+			theme: 'snow'
+			});
+	}
+	//WYSIWYG editor for revive petition application s1
+	
+	//start revive petition s1 options
+	$('fieldset#responsefile').css('display','none');//radios
+	$('div#reviveappformradios').css('display','none');//form and (hidden) radios
+	$('div#reviveappform').css('display','none');//form
+	$('input#inlineRadio072').change(function() {
+		if(this.checked == true){
+			$('div#reviveappform').css('display','block');
+			$('div#reviveappformradios').show('fast','swing');
+			$('fieldset#responsefile').hide('fast');
+			$('fieldset#edit').show('fast','swing');
+			$('fieldset#resp').show('fast','swing');
+			$('.hidethis').hide('fast','swing');
+			$('select.signmethod').val('Select');
+			$('input#inlineRadio074, input#inlineRadio075').prop({
+				checked:false,
+			});
+			$('div.ql-editor').empty();
+		}
+	});
+	$('input#inlineRadio073').change(function() {
+		if(this.checked == true){
+			$('div#reviveappform').hide('fast','swing');
+			$('fieldset#responsefile').css('display','block');
+			$('div#reviveappformradios').show('fast');
+			}
+	});
+	$('input#inlineRadio074').change(function() {
+		if(this.checked == true){
+			$('div#reviveappform').show('fast','swing');
+			$('fieldset#edit').show('fast','swing');
+			$('fieldset#resp').show('fast','swing');
+			$('.hidethis').hide('fast','swing');
+			$('select.signmethod').val('Select');
+			$('div.ql-editor').empty();
+			}
+	});
+	$('input#inlineRadio075').change(function() {
+		if(this.checked == true){
+			$('div#reviveappform').show('fast','swing');
+			$('div#reviveappform').find('fieldset#edit').hide('fast');
+			$('div#reviveappform').find('fieldset#resp').hide('fast');
+			}
+	});
+	//revive petition s1 options
+	
+
 	//$( 'input.checkmark' ).change(function() {
 //		if($(this).prop('checked')){
 //			console.log('checked');

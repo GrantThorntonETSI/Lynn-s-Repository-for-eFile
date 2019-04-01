@@ -17,6 +17,38 @@ body {
 	/*height:100%;*/
 	/*overflow-x: hidden;*/
 	}
+/*text editor*/
+.ql-container {
+	font-family: "Segoe UI", "Helvetica Neue", Tahoma, Arial!important;
+	}
+.ql-snow.ql-toolbar button:hover, .ql-snow .ql-toolbar button:hover, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.ql-active, .ql-snow .ql-toolbar button.ql-active, .ql-snow.ql-toolbar .ql-picker-label:hover, .ql-snow .ql-toolbar .ql-picker-label:hover, .ql-snow.ql-toolbar .ql-picker-label.ql-active, .ql-snow .ql-toolbar .ql-picker-label.ql-active, .ql-snow.ql-toolbar .ql-picker-item:hover, .ql-snow .ql-toolbar .ql-picker-item:hover, .ql-snow.ql-toolbar .ql-picker-item.ql-selected, .ql-snow .ql-toolbar .ql-picker-item.ql-selected {
+	color: #047db0!important;
+	}
+.ql-snow.ql-toolbar button:hover .ql-stroke, .ql-snow .ql-toolbar button:hover .ql-stroke, .ql-snow.ql-toolbar button:focus .ql-stroke, .ql-snow .ql-toolbar button:focus .ql-stroke, .ql-snow.ql-toolbar button.ql-active .ql-stroke, .ql-snow .ql-toolbar button.ql-active .ql-stroke, .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke, .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke, .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke, .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke, .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke, .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke, .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke, .ql-snow.ql-toolbar button:hover .ql-stroke-miter, .ql-snow .ql-toolbar button:hover .ql-stroke-miter, .ql-snow.ql-toolbar button:focus .ql-stroke-miter, .ql-snow .ql-toolbar button:focus .ql-stroke-miter, .ql-snow.ql-toolbar button.ql-active .ql-stroke-miter, .ql-snow .ql-toolbar button.ql-active .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-label:hover .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-label:hover .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-label.ql-active .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-item:hover .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-item:hover .ql-stroke-miter, .ql-snow.ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter, .ql-snow .ql-toolbar .ql-picker-item.ql-selected .ql-stroke-miter {
+	/*stroke: #009CDE;*/
+	stroke: #047db0;
+	}
+.ql-toolbar.ql-snow .ql-picker.ql-expanded .ql-picker-options, .ql-snow .ql-stroke {
+	color:#009CDE;
+	stroke: #009CDE;
+	}
+.ql-snow .ql-fill {
+	fill:#009CDE;
+	}
+	
+.ql-formats {
+	margin-right:2.1em!important;
+	}
+#editor, .ql-editor {
+	min-height:200px;
+	font-size:100%;
+	}
+strong { 
+	font-weight: bold!important; 
+	}
+em {
+	font-style: italic;
+	}
 body#landing {
 	background-color:#fff;
 	}
@@ -85,6 +117,18 @@ main#loginform {
 p {
     margin-bottom: .7em;
     line-height: 1.5em;
+	}
+#petitions1 h3 {
+	margin-top: 1.2em;
+	font-size: 1.2em;
+	}
+#petitions1 h4, #petitions1 .panel-body p {
+    margin-top: .6em;
+    margin-bottom: .4em;
+	font-weight:600;
+	}
+#petitions1 .panel-body p {
+	font-weight:400;
 	}
 #preferences p {
     margin-top: .2em;
@@ -605,7 +649,7 @@ ul[role="tablist"] a[aria-selected="true"] {
 	}
 h1 {
 	font-size:2.2em;
-	line-height: .98em;
+	line-height: 1.25em;
 	}
 #designwithtext h3 {
 	margin-top: 1em;
@@ -634,6 +678,19 @@ h1 {
 	margin-right:0;
 	padding: 0 0 1.3em 0;
 	margin-bottom: 1em;
+	}
+#petitions1 .underlinerow {
+	margin-bottom: 1em;
+	}
+#petitions1 .underlinerow>div {
+	padding-left: 0;
+	padding-right: 0;
+	}
+#petitions1 .underlinerow>div a {
+	margin-top: 1.2em;
+	display: inline-block;
+	font-size: 1.2em;
+	float:right;
 	}
 .underlinerow .small p {
 	text-align:right;
@@ -690,16 +747,20 @@ h1.message   {
 .dtr-title span.glyphicon {
 	display:none;
 	}
-.glyphicon-new-window, .form-check span.glyphicon-new-window::before {
+.glyphicon-new-window, .glyphicon-edit, .form-check span.glyphicon-new-window::before {
 	color: #004C97;
 	margin-left:.29em;
+	margin-right: .14em;
 	top: .1em;
 	content: "\e164"!important;
 	font-family: "Glyphicons Halflings"!important;
 	font-size: 1em;
 	padding:0;
 	}
-.glyphicon-new-window:hover, .glyphicon-new-window:active {
+#petitions1 .glyphicon-edit {
+	font-size: 1.3em;
+	}
+.glyphicon-new-window:hover, .glyphicon-edit:hover, .glyphicon-new-window:active, .glyphicon-edit:active {
 	color: #00254b!important;
 	}
 .form-check span.glyphicon-new-window::before {
@@ -719,7 +780,7 @@ h1.message   {
 	 }
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
-    color: #eee;
+    color: #cdd8dc;
 	}
 #dashboardtableone_paginate, #dashboardtableone_info, #dashboardtabletwo_paginate, #dashboardtabletwo_info {
 	margin-top:1em;
@@ -1395,6 +1456,14 @@ input[type="date"]::-webkit-inner-spin-button, input[type=month]::-webkit-inner-
 .disabled {
 	cursor: url('../images/cursor_not_allowed.png'), auto!important;
 	}
+a.disabled, a.disabled span {
+	cursor: url('../images/cursor_not_allowed.png'), auto!important;
+	color: #cdd8dc;
+	}
+a.disabled:hover, a.disabled:active, a.disabled span:hover,  a.disabled span:active {
+	text-decoration: none;
+	color: #cdd8dc!important;
+	}
 label {
     font-weight: 400;
 	font-size:inherit;
@@ -1558,7 +1627,7 @@ label.hasinfo {
     float: none;
     margin-top: .545em;
 	}
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus {
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.focus, .ql-snow.ql-toolbar span:focus, .ql-snow .ql-toolbar span:focus, .ql-snow.ql-toolbar span.focus, .ql-tooltip input:focus, .ql-tooltip input.focus {
     /*outline: thin dotted;*/
 	outline: 1px solid #9BB8D3!important;
 	outline: 1px solid -webkit-focus-ring-color;
@@ -1566,6 +1635,17 @@ label.hasinfo {
 	-webkit-box-shadow: rgb(0,0,0); 
   	-moz-box-shadow:    rgb(0,0,0);  
   	box-shadow:         rgb(0,0,0);
+	}
+.ql-snow.ql-toolbar span:focus, .ql-snow.ql-toolbar span.focus {
+		outline-offset: 3px;
+	}
+span.ql-picker span:focus, span.ql-picker span.focus, span.ql-picker:focus, span.ql-picker.focus {
+		outline-offset: 0!important;
+		outline:0!important;
+		background:transparent;
+	}
+.ql-picker {
+		background:transparent;
 	}
 #dashboardtableone_wrapper div.toolbar .btn-xs.active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs.active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs.focus, #dashboardtableone_wrapper div.toolbar  .btn-xs:active.focus, #dashboardtableone_wrapper div.toolbar .btn-xs:active:focus, #dashboardtableone_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbar .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo  .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.active:focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active.focus, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs:active:focus, #dashboardtabletwo_wrapper div.toolbartwo, #dashboardtableone th.focus, #dashboardtabletwo th.focus {
     /*outline: thin dotted;*/
@@ -1617,9 +1697,12 @@ div[role="radio"]:focus {
 	background-color:#004C97;
 	min-height:38px;
 	}
-.btn-sm {
+.btn-sm, .ql-toolbar button {
 	min-height:38px;
 	min-width: 38px;
+	}
+.ql-toolbar button {
+	margin: 8px;
 	}
 .btn-xs {
 	min-height:38px;
@@ -1631,6 +1714,9 @@ div[role="radio"]:focus {
 	font-size:1em!important;
 	margin-top:1.5em;
 	margin-bottom:1.5em;
+	}
+#petitions1 .panel-body .btn-xs {
+	margin:0;
 	}
 .btn-default {
     color: #444;
@@ -1712,7 +1798,7 @@ button#moreoptionsbtn {
 #dashboardtableone .btn-success.fill {
 	display:inline-block;
 	background-color:#007A33;
-	margin-left: 1em;
+	margin-right: .5em;
 	margin-top: .07em;
 	position:relative;
 	float:right;
@@ -2137,6 +2223,12 @@ input.form-control, textarea.form-control, select.form-control {
 select.form-control {
     height: 38px!important;
 	}
+textarea {
+	min-height:38px;
+	}
+textarea.datesigned {
+	line-height: 24px;
+	}
 legend {
 	position:absolute;
 	left:-10000px;
@@ -2446,20 +2538,28 @@ button[type="submit"] {
 .fileholder div.row {
 	padding: 0;
 	}
-.fileholder div img, .fileholder div button, .fileholder span, .fileholder a {
+.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, #petitions1 div img {
     float: none!important;
 	height:38px;
 	font-size:.8em;
 	}
-.fileholder div img, .fileholder span {
+#petitions1 div img {
+    float: left!important;
+	}
+.fileholder div img, .fileholder span, #petitions1 div img {
 	margin:0 auto;
 	display:block;
 	}
-.fileholder .img-thumbnail {
+.fileholder .img-thumbnail, #petitions1 .img-thumbnail {
 	border:0;
 	-webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
+	}
+#petitions1 .img-thumbnail {
+    background-color: #ccc;
+	margin-bottom: .8em;
+	margin-top: .6em;
 	}
 .fileholder span.glyphicon {
 	line-height: 1.4em;
@@ -2587,7 +2687,7 @@ button[type="submit"] {
 	word-break:break-all;
 	min-height: 149px;
 	}
-#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading, #userprofilepage .panel-body {
+#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading, #userprofilepage .panel-body, #petitions1 .panel-body {
 	-webkit-border-top-left-radius: 		0;
     -webkit-border-top-right-radius: 		0;
 	-webkit-border-bottom-left-radius: 		0;
@@ -2612,13 +2712,13 @@ button[type="submit"] {
 	-moz-border-top-right-radius: 		0;
 	border-top-right-radius: 			0;
 	}
-#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default, #userprofilepage .panel-default {
+#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default, #userprofilepage .panel-default, #petitions1 .panel-default {
 	border:none!important;
 	}
-#gsselected .panel-title p, #dashboardmain .panel-title p, #editowner .panel-title p, #reviewattorney .panel-title p, #userprofilepage .panel-title p {
-	font-size: 1.3em!important;
+#petitions1 p.panel-title  {
+	margin-bottom: 1em!important;
 	}
-#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group {
+#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group, #petitions1 .panel-group {
 	margin-bottom: 1.5em;
 	padding:0;
 	overflow-wrap: break-word;
@@ -2638,34 +2738,37 @@ button[type="submit"] {
 #userprofilepage .panel-body {
 	min-height: 26.5em;
 	}
-#editowner .panel-group .email, #reviewattorney .panel-group .email {
+#editowner .panel-group .email, #reviewattorney .panel-group .email, #petitions1 .panel-group .email {
 	-ms-hyphens: none;
 	-moz-hyphens: none;
 	-webkit-hyphens: none;
 	hyphens: none;
 	}
-#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion {
+#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion, #petitions1 .panel-group {
 	margin-bottom: 1em;
 	margin-top: 1em;
+	}
+#petitions1 .panel-group {
+	margin-bottom: 3em;
 	}
 #dashboardmain .panel-group {
 	padding:15px;
 	margin-bottom:12px;
 	padding-top:0;
 	}
-#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel, #userprofilepage .panel-group .panel {
+#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel, #userprofilepage .panel-group .panel, #petitions1 .panel-group .panel {
 	-webkit-border-radius: 	2px;
     -moz-border-radius: 	2px;
     border-radius: 			2px;
 	}
-#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body {
+#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body {
     color:#333/*#FFF*/;
     background-color:#eee/*#F3D54E*/;
 	font-size:.8em;
 	width: 100%;
 	border:none!important;
 	}
-#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body {
+#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body {
     background-color:transparent;
 	border:1px solid #eee!important;
 	}
@@ -2690,17 +2793,17 @@ button[type="submit"] {
 #dashboardmain .panel-default>.panel-heading {
     background-color:#F3D54E;
 	}
-#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number {
+#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number, #petitions1 .panel-default>.panel-body .number {
 	color:#333/*#FFF*/;
 	}
-#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name {
+#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name, #petitions1 .panel-default>.panel-body .name {
 	color:#EEEEE;
 	}
 #gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading {
 	color:#EEEEEE;
 	letter-spacing: 0.03em;
 	}
-#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel, #userprofilepage .panel {
+#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel, #userprofilepage .panel, #petitions1 .panel {
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
     box-shadow: 0 0 0 rgba(0,0,0,0);
 	}
@@ -3067,6 +3170,29 @@ footer #megamenu ul {
 		padding: 3em;
 		}
 }
+@media (max-width: 991px) {
+	.ql-toolbar {
+		width:20%;
+		position:relative;
+		float:left;
+		border-right:0!important;
+		}
+	#editor {
+		width:80%;
+		position:relative;
+		float:right;
+		height:420px;
+		border-top:1px solid #ccc!important;
+		}
+	.ql-snow .ql-picker.ql-header {
+		width:0;
+		}
+	.ql-formats {
+		margin:0 auto!important;
+		display:block!important;
+		width: 58px;
+		}
+}
 @media (min-width:577px) and (max-width:767px) { 
 	#loginform .maincontainer {
 		padding:1em 9em;
@@ -3076,7 +3202,7 @@ footer #megamenu ul {
 		}
 }
 @media (max-width: 991px) {
-	#editowner .inlinebuttons, #reviewattorney .inlinebuttons {
+	#editowner .inlinebuttons, #reviewattorney .inlinebuttons, #petitions1 .inlinebuttons {
 		margin-top:1em;
 		}
 	#editowner .btn-success.add, #reviewattorney .btn-success.add {
@@ -3092,6 +3218,10 @@ footer #megamenu ul {
 		}
 	#userprofilepage div#three .panel-default>.panel-body, #userprofilepage div#three .panel-default>.panel-heading {
 		border-left: none!important;
+		}
+	#petitions1 .panel-body p {
+		margin-top: 0;
+		margin-bottom: .8em;
 		}
 	}
 @media (min-width: 1200px) and (max-width: 1587px) {

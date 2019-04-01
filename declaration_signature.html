@@ -414,19 +414,19 @@
                                                     <div class="row">
                                                         <div class="col-xs-12 form-group form-group-md">
                                                             <label for="ta2" class="weight600">How are you signing the application?</label> 
-                                                            <select class="form-control" id="signmethod">
+                                                            <select class="form-control signmethod" id="ta2"  onchange="showTheTime()">
                                                                 <option value="Select">Select Signature Method</option>
                                                                 <option value="direct">Sign directly</option>
-                                                                <option value="handwritten">Print and upload handwritten signature</option>
-                                                                <option value="send">Send to second party for signature</option>
-                                                                <option value="unsigned">Submit unsigned</option>
+                                                                <option value="handwritten" disabled>Print and upload handwritten signature</option>
+                                                                <option value="send" disabled>Send to second party for signature</option>
+                                                                <option value="unsigned" disabled>Submit unsigned</option>
                                                             </select>
                                                        </div>
                                                     </div>
                                                 </div>
                                             </section>
                                         </div><!--//signature method-->
-                                        <div class="row" id="direct">
+                                        <div class="row hidethis">
                                             <section class="col-xs-12" aria-label="declarations" id="declarationschecks">
                                                 <div class="card-text noexpand">
                                                     <h2 class="card-title weight600">Declarations</h2>
@@ -478,10 +478,11 @@
                                                                     <label for="signature">Signature <span class="weight600">&#42;</span></label>
                                                                     <input type="text" class="form-control" placeholder="/Signature/" id="signature" required>
                                                                 </div>
+                                                                <script type="application/javascript" src="js/timestamp.js"></script>
                                                                 <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
                                                                     <p class="sr-only">Enter the date in the following format: 20:36:14 May 30, 2019 E.T.</p>
-                                                                    <label for="datesigned">Date signed <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
-                                                                    <textarea type="text" rows="2" class="form-control" placeholder="20:36:14 May 30, 2019 E.T." id="datesigned"></textarea>
+                                                                    <label for="datesigned">Date signed: <span id="tz" class="sr-only"> </span></label>
+                                                                    <textarea rows="1" class="form-control datesigned disabled" id="datesigned" disabled> </textarea>
                                                                 </div>
                                                                 <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
                                                                     <label for="signatoryname">Signatory&#8217;s name <span class="weight600">&#42;</span></label>
