@@ -538,8 +538,9 @@ ul.dropdown-menu>li>a:hover  {
 	-moz-transition: background-color .2s ease;
 	transition: background-color .2s ease;
 	}
-#dashboardtableone_wrapper ul.dropdown-menu>li>a:hover, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:hover  {
+#dashboardtableone_wrapper ul.dropdown-menu>li>a:hover, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:hover, #dashboardtableone_wrapper ul.dropdown-menu>li>a:active, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:active, #dashboardtableone_wrapper ul.dropdown-menu>li>a:focus, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:focus  {
 	background-color: #808080;
+	background-image: none;
 	}
 .navbar-fixed-top .container-fluid {
 	padding:0;

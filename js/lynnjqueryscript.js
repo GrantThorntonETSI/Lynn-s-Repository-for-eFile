@@ -178,12 +178,12 @@ $(document).ready(function(){
 			},
 			'columns': [
 				{ 'width': '10%' },
-				{ 'width': '40%' },
+				{ 'width': '20%' },
+				{ 'width': '15%' },
 				{ 'width': '10%' },
 				{ 'width': '10%' },
 				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
+				{ 'width': '25%' },
 			  ],
 			  'columnDefs': [
 			  	{ responsivePriority: 1, targets: 0 },
@@ -199,29 +199,45 @@ $(document).ready(function(){
 	//END initialize Dashboard datable two
 	
 	//Dashboard datatables ellipsis menu tableone
-		$("div.toolbar").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical" role="img" aria-label="toggle columns visibility"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle Columns</li><li><a class="toggle-vis" data-column="0"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Serial#</a></li><li><a class="toggle-vis" data-column="1"><span class="glyphicon glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Registration#</a></li><li><a class="toggle-vis" data-column="2"><span class="glyphicon glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Owner</a></li><li><a class="toggle-vis" data-column="3"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Status</a></li><li><a class="toggle-vis" data-column="4"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Mark</a></li></ul></div>');
-		$('a.toggle-vis').on( 'click', function (e) {
-			e.preventDefault();
+		$("div.toolbar").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="toggle columns visibility"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Mark</a></li></ul></div>');
+		$('a.toggle-vis').on( 'click', function () {
+			//e.preventDefault();
 			var column = tableone.column( $(this).attr('data-column') );
 			column.visible( ! column.visible() );
+			$(column).attr('aria-hidden','true')
+			$(this).attr('aria-label','show this column');			
 		});
 	//END dashboard datatables ellipsis menu tableone
 	
 	//Dashboard datatables ellipsis menu tabletwo
-		$("div.toolbartwo").html('<div class="dropdown"><button class="btn btn-xs dropdown-toggle" type="button" id="dropdownMenucolvis" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="glyphicon glyphicon-option-vertical role="img" aria-label="toggle column visibility""></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis"><li class="dropdown-header">Toggle Columns</li><li><a class="toggle-vistwo" data-column="0"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Serial#</a></li><li><a class="toggle-vistwo" data-column="1"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Registration#</a></li><li><a class="toggle-vistwo" data-column="2"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Mark</a></li><li><a class="toggle-vistwo" data-column="3"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Owner</a></li><li><a class="toggle-vistwo" data-column="4"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Due Date</a></li><li><a class="toggle-vistwo" data-column="5"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Status</a></li><li><a class="toggle-vistwo" data-column="6"><span class="glyphicon glyphicon-ok" role="img" aria-label="hide this column"></span>Action</a></li></ul></div>');
-		$('a.toggle-vistwo').on( 'click', function (e) {
-			e.preventDefault();
+		$("div.toolbartwo").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdroptwo" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdroptwo" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Mark</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Due Date</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Action</a></li></ul></div>');
+		$('a.toggle-vistwo').on( 'click', function () {
+			//e.preventDefault();
 			var column = tabletwo.column( $(this).attr('data-column') );
 			column.visible( ! column.visible() );
+			$(column).attr('aria-hidden','true');
+			$(this).attr('aria-label','show this column');
+			console.log(column);
 		});
 	//END dashboard datatables ellipsis menu tabletwo
+	
+	//start toggle glyphicon dashboard toggle menu widget
+	function togglecolumnselection() {
+		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyhidden' ).attr('aria-label','show this column');
+	}
+	$('a.toggle-vis').click(togglecolumnselection);
+	$('a.toggle-vistwo').click(togglecolumnselection);
+	//start toggle glyphicon dashboard toggle menu widget
+	
+	$('button.dropdown-toggle').on( 'click', function () {
+		$(this).attr('aria-expanded','true');
+	});
 	
 	//Update ARIA label when sorting
 	$(document).on('click', 'table#dashboardtableone th,table#dashboardtabletwo th', function() {
 		$( this ).toggleClass( 'focus' );
 		$( this ).find('span.glyphicon-triangle-bottom').toggleClass( 'glyphicon-triangle-top' ).attr('aria-hidden','true');
 	});	
-
 	//Update ARIA label when sorting
 	
 	//.dashsection height = #announcedashsection height
@@ -1474,13 +1490,6 @@ $(document).ready(function(){
 	}
 	$('a.fromcontact').click(togglecontacts);
 	//end toggle glyphicon contacts widget
-	
-	//start toggle glyphicon dashboard toggle menu widget
-	function togglecolumnselection() {
-		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyhidden' ).attr('aria-label','show this column');
-	}
-	$('a.toggle-vis').click(togglecolumnselection);
-	//start toggle glyphicon dashboard toggle menu widget
 	
 	//start close (x) fees
 	$('button#closefee').click(function() {
