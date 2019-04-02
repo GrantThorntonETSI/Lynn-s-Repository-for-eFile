@@ -1387,7 +1387,7 @@ $(document).ready(function(){
 	});
 	//END entity options (import concept)
 	//select signature method
-	$('.hidethis').css('display','none');
+	$('#declarationsignature .hidethis, #petitions1 .hidethis').css('display','none');
 	$('select.signmethod').on('change',function(){
 		var loadsign = ('.' + $(this).val());
 		$(this).closest('fieldset').find('.hidethis').show('fast');
