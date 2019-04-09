@@ -317,7 +317,7 @@ $(document).ready(function(){
 			}
 	});
 	//END additional info page supplemental register checked
-	
+		
   //START enable / disable checkboxes
   //When 'Certification' is checked, 'Trademark / Servicemark', 'Collective' and 'Collective Membership' are disabled
 	$('input#certcheck').change(function() {
@@ -1965,6 +1965,9 @@ $(document).ready(function(){
 		  return (parseFloat(this.id) + 1);
 		});
 		var clonelabel = $( 'div.yescommerce div.holdsapending div.hidethis input' ).last().attr('id');
+		$( 'div.yescommerce div.holdsapending' ).last().find('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
+		$( 'div.yescommerce div.holdsapending' ).last().find('#alertmin button').css('display','none');
+	  	$( 'div.yescommerce div.holdsapending' ).last().find('#alertmin p').css('display','none');
 		$( 'div.yescommerce div.holdsapending' ).last().find('textarea').val('');
 		$( 'div.yescommerce div.holdsapending' ).last().find('.js-upload-finished button.close').parent().parent().remove();
 		$( 'div.yescommerce div.holdsapending .hidethis' ).last().contents().css('display','block');
@@ -1983,6 +1986,9 @@ $(document).ready(function(){
 		  return (parseFloat(this.id) + 1);
 		});
 		var clonelabel = $( 'div.yescommerce div.holdsapending div.hidethis input' ).last().attr('id');
+		$( 'div.yescommerce div.holdsapending' ).last().find('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
+		$( 'div.yescommerce div.holdsapending' ).last().find('#alertmin button').css('display','none');
+	  	$( 'div.yescommerce div.holdsapending' ).last().find('#alertmin p').css('display','none');
 		$( 'div.yesconnection div.holdsapending' ).last().find('textarea').val('');
 		$( 'div.yesconnection div.holdsapending' ).last().find('.js-upload-finished button.close').parent().parent().remove();
 		$( 'div.yesconnection div.holdsapending .hidethis' ).last().contents().css('display','block');
@@ -1995,6 +2001,15 @@ $(document).ready(function(){
 		$( this ).removeClass( '.addinitial' );
 		});
 	//END additional foreignpending
+	
+	//Basis foreign application date alert
+	$(document).on('click','#alertmin button.close', function () {
+	  $('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
+	  $('#alertmin button').css('display','none');
+	  $('#alertmin p').css('display','none');
+	});
+	//END Basis foreign application date alert
+
 		
 	//START modals
 	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {

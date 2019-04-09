@@ -8,6 +8,7 @@ function showTheTime(tzOffset) {
 
 	var t = document.getElementById("tz").innerHTML = thatTZ;
 	g[0].value += t;
+	console.log(thatTZ);
 }
 
 function showTheTimeTwo(tzOffset) {
@@ -20,4 +21,5 @@ function showTheTimeTwo(tzOffset) {
 
 	var t = document.getElementById("tz2").innerHTML = thatTZ;
 	g[1].value += t;
+	console.log(thatTZ);
 }

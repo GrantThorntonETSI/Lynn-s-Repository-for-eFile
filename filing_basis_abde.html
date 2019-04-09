@@ -1,9 +1,8 @@
 <!doctype html>
-<html th:fragment="layout (template, menu)" lang="en" xml:lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
@@ -193,7 +192,7 @@
                                 <div class="card-text noexpand blue">
                                     <h2 class="card-title weight600">Class 003</h2>
                                 </div>
-                            <form action="" method="post" >
+                            <form action="" method="post">
                                <fieldset>
                                     <div class="row">
                                         <div class="form-group form-group-md col-xs-12">
@@ -245,19 +244,20 @@
                                                         <div class="card-text noexpand">
                                                             <h2 class="card-title weight600">Bar Soap</h2>
                                                         </div>
-                                                        <p id="commerce">Are you currently using the mark on goods/services in commerce? <span class="label label-info subtle visuallyremoved">Reduced Fee</span></p>                                            				
+                                                        <p id="commerce">Are you currently using the mark on goods/services in commerce? <span class="label label-info subtle visuallyremoved">Reduced Fee</span></p>                                            			
+														<script type="application/javascript" src="js/restrictdate.js"></script>
                                                         <div role="radiogroup" aria-labelledby="commerce" class="form-group form-group-md">
                                                             <label for="inlineRadio25" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio25" value="yesbar" tabindex="0"><span class="checkmark"></span>Yes</label>
                                                             <label for="inlineRadio26" class="radio-inline radiocontainer"><input type="radio" name="commerceadio" id="inlineRadio26" value="nobar" tabindex="0"><span class="checkmark"></span>No</label>
                                                         </div><!--END radiogroup-->
                                                         <div class="row form-group form-group-md yescommerce"><!--toggle 'yes' radio-->
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                <label for="connection-date" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
-                                                                <input type="date" class="form-control" id="connection-date" name="connectiondate" value="">
+                                                                <label for="connectiondateone" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
+                                                                <input type="date" class="form-control" id="connectiondateone" name="connectiondateone">
                                                             </div> 
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
                                                                 <label for="firstconnection-date" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
-                                                                <input type="date" class="form-control" id="firstconnection-date" name="firstconnectiondate" value="">
+                                                                <input type="date" class="form-control" id="firstconnection-date" name="firstconnectiondate">
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md individualspecimen">
                                                                 <input class="form-check-input checkmark showspecimen" type="checkbox" value="specimenseven" tabindex="0" aria-labelledby="individualspecimen_1" id="">
@@ -293,12 +293,17 @@
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md">
                                                                 <p class="weight600">Specify if you have a pending application, foreign registration, or both for this good/service.</p>
-                                                                <input class="form-check-input checkmark" type="checkbox" value="pendingtwo" tabindex="0" aria-labelledby="pendtwo" id="pendingtwo_basisone">
+                                                                <input class="form-check-input checkmark" type="checkbox" value="pendingtwo" tabindex="0" aria-labelledby="pendtwo" id="pendingtwo_basisone" onclick="return datelimit();">
                                                                 <label class="form-check-label form-check" for="pendingtwo_basisone"><span class="radio notspecial" id="pendtwo">Pending foreign application</span></label>
                                                                 <input class="form-check-input checkmark" type="checkbox" value="foreigntwo" tabindex="0" id="foreigntwo_basisone" aria-labelledby="forregtwo">
                                                                 <label class="form-check-label form-check" for="foreigntwo_basisone"><span class="radio notspecial" id="forregtwo">Foreign registration</span></label>
                                                                 <input class="form-check-input checkmark" type="checkbox" value="natwo" tabindex="0" aria-labelledby="notapptwo" id="natwo_basisone">
                                                                 <label class="form-check-label form-check" for="natwo_basisone"><span class="radio notspecial" id="notapptwo">Not applicable</span></label>
+                                                            </div>
+                                                            <div class="col-xs-12 alert alert-warning" role="alert" aria-live="assertive" id="alertmin">
+                                                              <p id="mintext"></p>
+                                                              <button type="button" class="close" aria-label="close alert" id="alertbtn"><span aria-hidden="true" class="glyphicon glyphicon-remove-circle"></span></button>
+                                                              <br clear="all">
                                                             </div>
                                                             <div class="col-xs-12">
                                                                 <div class="row holdsapending" aria-labelledby="foreignapplication">
@@ -322,11 +327,12 @@
                                                                         <input type="text" class="form-control" id="appnumber">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="application-date">Foreign application filing date: <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
-                                                                        <input type="date" class="form-control" id="application-date" name="applicationdate" value="">
+                                                                        <label for="applicationdate">Foreign application filing date: <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
+                                                                        <input type="date" class="form-control foreignfiling" id="applicationdate" name="applicationdateone" min="" max="" onblur="return datealert();">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <p id="basisforeg">Note: Foreign Application Information provides a basis for filing and a priority date, but not a basis for registration.</p>                                                     					<div role="radiogroup" aria-labelledby="basisforeg" class="form-group form-group-md">
+                                                                        <p id="basisforeg">Note: Foreign Application Information provides a basis for filing and a priority date, but not a basis for registration.</p>                                                     					
+                                                                        <div role="radiogroup" aria-labelledby="basisforeg" class="form-group form-group-md">
                                                                             <label for="inlineRadio059" class="radio-inline radiocontainer block"><input type="radio" name="basisforfiling" id="inlineRadio059" value="relyon" tabindex="0"><span class="checkmark"></span>The applicant intends to rely on Foreign Registration as a basis for registration and requests that the application be suspended to await the submission of the foreign registration. If the applicant does not rely on Foreign Registration as basis, a valid claim of priority may be retained.</label>
                                                                             <label for="inlineRadio060" class="radio-inline radiocontainer block"><input type="radio" name="basisforfiling" id="inlineRadio060" value="hasanother" tabindex="0"><span class="checkmark"></span>The applicant has another basis for registration (In Use or Intent to Use) and does NOT intend to rely on Foreign Registration as the basis, but is only asserting a valid claim of priority. The application should not be suspended.</label>
                                                                         </div><!--END radiogroup-->
@@ -472,7 +478,7 @@
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md">
                                                                 <p class="weight600">Specify if you have a pending application, foreign registration, or both for this good/service.</p>
-                                                                <input class="form-check-input checkmark" type="checkbox" value="pendingtwo" tabindex="0" aria-labelledby="pendtwo" id="pendingtwo_basistwo">
+                                                                <input class="form-check-input checkmark" type="checkbox" value="pendingtwo" tabindex="0" aria-labelledby="pendtwo" id="pendingtwo_basistwo" onclick="return datelimit();">
                                                                 <label class="form-check-label form-check" for="pendingtwo_basistwo"><span class="radio notspecial" id="pendtwo">Pending foreign application</span></label>
                                                                 <input class="form-check-input checkmark" type="checkbox" value="foreigntwo" tabindex="0" id="foreigntwo_basistwo" aria-labelledby="forregtwo">
                                                                 <label class="form-check-label form-check" for="foreigntwo_basistwo"><span class="radio notspecial" id="forregtwo">Foreign registration</span></label>
@@ -502,7 +508,7 @@
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
                                                                         <label for="application-date">Foreign application filing date: <span class="label label-info subtle visuallyremoved">Reduced Fee</span></label>
-                                                                        <input type="date" class="form-control" id="application-date" name="applicationdate" value="">
+                                                                        <input type="date" class="form-control foreignfiling" id="application-date" name="applicationdate" min="" max="" onblur="return datealert();">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
                                                                         <p id="basisforeg">Note: Foreign Application Information provides a basis for filing and a priority date, but not a basis for registration.</p>                                                     					<div role="radiogroup" aria-labelledby="basisforeg" class="form-group form-group-md">
@@ -586,7 +592,7 @@
                                                                         <div class="row">
                                                                             <div class="inlinebuttons btn-group btn-group-justified">
                                                                                 <div class="btn-group col-xs-6">
-                                                                                    <button type="button" class="btn btn-sm btn-success addinitial" id="addforeignreg_basistwo">Add Additional Foreign Registration</button>
+                                                                                    <button type="submit" class="btn btn-sm btn-success addinitial" id="addforeignreg_basistwo">Add Additional Foreign Registration</button>
                                                                                 </div>
                                                                             </div>
                                                                         </div>

@@ -1623,6 +1623,14 @@ label.hasinfo {
   	box-shadow:         rgb(0,0,0);
 	text-shadow: 0 0 0 transparent;
 	}
+.close:focus, .close:hover {
+	opacity:1.0;
+	-moz-opacity: 1.0;
+	-webkit-box-shadow: rgb(0,0,0); 
+  	-moz-box-shadow:    rgb(0,0,0);  
+  	box-shadow:         rgb(0,0,0);
+	text-shadow: 0 0 0 transparent;
+	}
 .resetphonebtn, .resetregbtn, .resetdktrefbtn, .resetnamebtn, .resetportraitbtn, .resetportraitbtn, .resetsignaturebtn, .resettranslationbtn, .resettransliterationbtn, .resetdisclaimbtn {
 	margin: 0 auto;
     float: none;
@@ -2159,7 +2167,7 @@ div[role="heading"] button {
 input[type="file"]:focus { 
 	margin-left: 0; 
 	}
-option, select, input[type="text"], input[type="email"], input[type="date"], input[type="date"], input[type="tel"], input[type="url"] { 
+option, select, input[type="text"], input[type="email"], input[type="date"], input[type="tel"], input[type="url"] { 
 	min-height: 38px!important; 
 	}
 #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"] {
@@ -2307,7 +2315,7 @@ input[type="checkbox"]:focus + label span.radio::before {
 	outline: 1px auto -webkit-focus-ring-color!important;
 	outline-offset: 2px!important;
 	}
-input[type="date"], input[type="date"] {
+input[type="date"] {
 	padding:0 12px;
 	line-height:.95em!important;
 	}
@@ -2490,6 +2498,23 @@ p#upimage {
 	}
 .alert-success { 
 	background-image:none!important;
+	}
+#alertmin p { 
+	float:left;
+	width: 80%;
+	}
+p#mintext { 
+	float:left;
+	width: 90%;
+	}
+#alertmin button#alertbtn { 
+	float:right;
+	width: 10%;
+	font-size: 2.5em;
+	color:#444;
+	}
+#alertmin button#alertbtn:hover { 
+	color:#000;
 	}
 button[type="submit"] {
 	margin: 0 auto;
