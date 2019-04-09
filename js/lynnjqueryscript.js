@@ -2003,6 +2003,7 @@ $(document).ready(function(){
 	//END additional foreignpending
 	
 	//Basis foreign application date alert
+	$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	$(document).on('click','#alertmin button.close', function () {
 	  $('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	  $('#alertmin button').css('display','none');
