@@ -198,6 +198,50 @@ $(document).ready(function(){
 		});
 	//END initialize Dashboard datable two
 	
+	//START initialize File Petition datable
+		var table = $('#filepetitiontable').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+		},
+			'sDom': '<"toolbarpetitions">lfrtip',
+			"language": {
+			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
+			  '<option value="10">10</option>'+
+			  '<option value="25">25</option>'+
+			  '<option value="50">50</option>'+
+			  '<option value="100">100</option>'+
+			  '<option value="-1">All</option>'+
+			  '</select>'
+  			},
+			'autoWidth': false,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
+			'columns': [
+				{ 'width': '10%' },
+				{ 'width': '15%' },
+				{ 'width': '20%' },
+				{ 'width': '25%' },
+				{ 'width': '15%' },
+				{ 'width': '15%' },
+			  ],
+			  'columnDefs': [
+			  	{ responsivePriority: 1, targets: 0 },
+				{ responsivePriority: 3, targets: 4 },
+				{ responsivePriority: 4, targets: 5 },
+				{ responsivePriority: 5, targets: 1 },
+				{ responsivePriority: 6, targets: 3 },
+				{ responsivePriority: 7, targets: 2 },
+				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
+			  ],
+		});
+	//END initialize File Petition datable
+	
 	//Dashboard datatables ellipsis menu tableone
 		$("div.toolbar").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="toggle columns visibility"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function () {
@@ -221,20 +265,35 @@ $(document).ready(function(){
 		});
 	//END dashboard datatables ellipsis menu tabletwo
 	
+	//Datatable filter menu petitions
+		$("div.toolbarpetitions").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="filter row visibility"><span class="">Filter</span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis" data-column="0" tabindex="0" id="revive"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Revive</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Director</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Make Special</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Request for Reinstatement</a></li></ul></div>');
+		$('#petitions a.toggle-vis').on( 'click', function () {
+			//e.preventDefault();
+			$(this).attr('aria-label','unfilter these rows');			
+		});
+	//END Datatable filter menu petitions
+	
 	//start toggle glyphicon dashboard toggle menu widget
 	function togglecolumnselection() {
 		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyhidden' ).attr('aria-label','show this column');
 	}
-	$('a.toggle-vis').click(togglecolumnselection);
-	$('a.toggle-vistwo').click(togglecolumnselection);
+	$('#dashboard a.toggle-vis').click(togglecolumnselection);
+	$('#dashboard a.toggle-vistwo').click(togglecolumnselection);
 	//start toggle glyphicon dashboard toggle menu widget
+	
+	//start toggle glyphicon petitions filter menu widget
+	function togglecolumnselectionpetitions() {
+		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyshown' ).attr('aria-label','unfilter these rows');
+	}
+	$('#petitions a.toggle-vis').click(togglecolumnselectionpetitions);
+	//start toggle glyphicon petitions filter menu widget
 	
 	$('button.dropdown-toggle').on( 'click', function () {
 		$(this).attr('aria-expanded','true');
 	});
 	
 	//Update ARIA label when sorting
-	$(document).on('click', 'table#dashboardtableone th,table#dashboardtabletwo th', function() {
+	$(document).on('click', 'table#dashboardtableone th, table#dashboardtabletwo th, table#filepetitiontable th', function() {
 		$( this ).toggleClass( 'focus' );
 		$( this ).find('span.glyphicon-triangle-bottom').toggleClass( 'glyphicon-triangle-top' ).attr('aria-hidden','true');
 	});	
@@ -254,6 +313,16 @@ $(document).ready(function(){
 		$( this ).parent().parent().parent().parent().parent().fadeOut( 'fast','swing');
 	});
 	//end close (x) dashboard panels
+	
+	// filter petition types
+	$(document).on('click','#petitions a#revive', function() {
+		var a = $('#filepetitiontable td:contains("abandoned")');
+		//var aa = $('#filepetitiontable tr[data-petition="revive"]');
+		var aaa = $(a).parent().siblings();
+		//$(document).find(a).parent().attr('data-petition','revive');
+		$( aaa ).toggleClass('visuallyremoved');
+		});
+	// filter petition types
 	
 	//start close (x) gs + editowner + reviewattorney panels
 	$('#gsselected .closegspanels, #editowner .closegspanels, #reviewattorney .closegspanels').click(function() {
