@@ -1627,15 +1627,21 @@ $(document).ready(function(){
 		});
 	});
 	//search managed contacts
-	
-	//edit owner accordion button toggle
-	$('#editowner button.Accordion-trigger, #reviewattorney button.Accordion-trigger').click(function() {
-		//$( this ).children('span.glyphicon-chevron-right').toggleClass('visuallyremoved');
-		//$( this ).children('span.glyphicon-chevron-down').toggleClass('visuallyadded');
-		$( this ).children('span.glyphicon-triangle-right').toggleClass('visuallyremoved');
-		$( this ).children('span.glyphicon-triangle-bottom').toggleClass('visuallyadded');
+		
+	//edit owner accordion button toggle rev
+	$( document ).on('click','#editowner button.Accordion-trigger, #reviewattorney button.Accordion-trigger', function() {
+		$( this ).siblings('span.glyphicon-triangle-right').removeClass('visuallyadded').toggleClass('visuallyremoved');
+		$( this ).siblings('span.glyphicon-triangle-bottom').removeClass('visuallyremoved').toggleClass('visuallyadded');
 	});
-	//edit owner accordion button toggle
+	$( document ).on('click','#editowner .panel-title span.glyphicon-triangle-right, #reviewattorney .panel-title span.glyphicon-triangle-right', function() {
+		$( this ).addClass('visuallyremoved').removeClass('visuallyadded');
+		$( this ).siblings( 'span.glyphicon-triangle-bottom' ).addClass('visuallyadded').removeClass('visuallyremoved');
+	});
+	$( document ).on('click','#editowner .panel-title span.glyphicon-triangle-bottom, #reviewattorney .panel-title span.glyphicon-triangle-bottom', function() {
+		$( this ).addClass('visuallyremoved').removeClass('visuallyadded');
+		$( this ).siblings( 'span.glyphicon-triangle-right' ).addClass('visuallyadded').removeClass('visuallyremoved');
+	});
+	//edit owner accordion button toggle rev
 		
 	//START additional phone
 	$( document ).on('click','button#addphone2',function(){	
