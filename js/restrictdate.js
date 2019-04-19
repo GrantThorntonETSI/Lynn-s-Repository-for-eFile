@@ -74,8 +74,12 @@ function datealert() {
 			document.getElementById("mintext").style.display = "none";
 			document.getElementById("alertbtn").style.display = "none";
 			document.getElementById("alertbtn").blur();
+			//validateinput.focus();
 	  }
 	  validateinput.value = "yyyy-MM-dd";
+	  document.getElementById("alertbtn").onclick = function() {
+	  	validateinput.focus();
+	  }
 	}
 	if ((todaydate) < dateval) {
 		var b = document.getElementById("alertmin");
@@ -99,6 +103,9 @@ function datealert() {
 			document.getElementById("mintext").style.display = "none";
 			document.getElementById("alertbtn").style.display = "none";
 			document.getElementById("alertbtn").blur();
+	  }
+	  document.getElementById("alertbtn").onclick = function() {
+	  	validateinput.focus();
 	  }
 	}	
 }

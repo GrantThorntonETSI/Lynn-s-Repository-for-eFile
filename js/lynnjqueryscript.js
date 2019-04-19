@@ -1446,6 +1446,7 @@ $(document).ready(function(){
 		$('footer').css('display','block');
 		//console.log(includeforeign);
 	});
+	
 	//foreign select by country
 	$('.albaniaform, .algeriaform, .angolaform, .bahamasform').css('display','none');
 	$('#entitycountry').on('change',function(){
@@ -1455,6 +1456,7 @@ $(document).ready(function(){
 		$( loadselectmenu ).css('display','block');
 	});
 	//END entity options (import concept)
+	
 	//select signature method
 	$('#declarationsignature .hidethis, #petitions1 .hidethis').css('display','none');
 	$('select.signmethod').on('change',function(){
@@ -1466,6 +1468,20 @@ $(document).ready(function(){
 			} 
 		//console.log(loadsign);
 	});
+	
+	//start select all declarations	  
+	$(document).on('change','#declarationsignature input#select', function() {
+	   var checkboxes  = $('#declarationsignature input#select').parent('div').siblings('div').children('input.checkmark');
+	   var selectall = $(this);
+		$.each(checkboxes, function(){
+			$(this).prop("checked", selectall.prop('checked'));
+		});
+		$(checkboxes).on('click', function(e){
+		   $(selectall).prop('checked', false);
+		});
+	});
+	//end select all declarations
+	
 	//END select signature method	
 	//START fill from contacts values -- attorney
 	function clearform() {
@@ -1597,7 +1613,7 @@ $(document).ready(function(){
 	//end close (x) managed contacts
 	
 	//start show managed contacts from widget
-	$("button#contactsbtn").click(function() {
+	$('button#contactsbtn').click(function() {
 		$( '#mydata2' ).css('visibility','visible');
 		$( '#mydata2 .collapse' ).collapse('show').fadeIn( 'slow','swing');
 		$( 'button#contactsbtn span#toggleglyphone' ).toggleClass('visuallyremoved','visuallyadded');
@@ -2086,7 +2102,6 @@ $(document).ready(function(){
 	});
 	//END Basis foreign application date alert
 
-		
 	//START modals
 	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
@@ -2240,7 +2255,7 @@ $(document).ready(function(){
 		var p 	= 	$( '#gridview table tbody tr th:nth-child(2) input:checked' ); //Classnames 2nd checkbox, checked
 		var q	=	$( '#gridview table thead tr:nth-child(2) th:nth-child(2) input' ); //In-Use 1(a) checkbox
 		var newrow = $( "<tr class='inuse1aone'><td colspan='5'><div id='yesinuse1aone' class='form-group'><!--toggle 1(a) one--><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md matchlabelheightdiv'><label for='otherformfirst' class='matchlabelheight'>In-Use 1(a) Date of First Use Anywhere</label><input type='date' class='form-control' id='otherformfirst' value=''></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='otherformcommerce' class='matchlabelheight'>In-Use 1(a) Date of First Use in Commerce</label><input type='date' class='form-control' id='otherformcommerce' value=''></div><div id='yesinuse1atwo' class='col-xs-12 form-group'><!--toggle 1(a) two--><div class='row'><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><p id='upimage'>Provide an image of your specimen:</p><div><label class='small upload-drop-zone' for='specimenfile' id='upimg'><span class='glyphicon glyphicon-upload' aria-hidden='true'></span> <br>Drag and drop files or click here to upload.</label><input type='file' id='specimenfile' class='form-control' aria-labelledby='upimg upimage'></div><!-- Drop Zone --></div><div class='col-xs-12 col-md-6 col-lg-6 form-group form-group-md'><label for='specdescripthree'>Provide a description of your specimen:</label><textarea id='specdescripthree' class='form-control'></textarea></div></div></div></div></td></tr>" );
-		console.log('#gridview table tbody tr th:nth-child(2) input');
+		//console.log('#gridview table tbody tr th:nth-child(2) input');
 		if ($(this).prop('checked')) {
 				$(q).prop({ 
 					checked: true,
