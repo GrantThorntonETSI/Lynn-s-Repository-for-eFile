@@ -70,6 +70,14 @@ $(document).ready(function(){
 		$( 'button#entbtn span' ).toggleClass('visuallyremoved');
 		$( 'button#entbtn span#toggleglyph' ).toggleClass('visuallyadded');
 	});
+	$("button#discaimrabtn").click(function() {
+		$( 'button#discaimrabtn span' ).toggleClass('visuallyremoved');
+		$( 'button#discaimrabtn span#toggleglyph' ).toggleClass('visuallyadded');
+	});
+	$("button#translaterabtn").click(function() {
+		$( 'button#translaterabtn span' ).toggleClass('visuallyremoved');
+		$( 'button#translaterabtn span#toggleglyph' ).toggleClass('visuallyadded');
+	});
 	$("button#registerbtn").click(function() {
 		$( 'button#registerbtn span' ).toggleClass('visuallyremoved');
 		$( 'button#registerbtn span#toggleglyph' ).toggleClass('visuallyadded');
@@ -242,6 +250,94 @@ $(document).ready(function(){
 		});
 	//END initialize File Petition datable
 	
+	//START initialize Response Amendment datable
+		var tablethree = $('#responseamendtable').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+		},
+			'sDom': 't',
+			//"language": {
+			//"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+//			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
+//			  '<option value="10">10</option>'+
+//			  '<option value="25">25</option>'+
+//			  '<option value="50">50</option>'+
+//			  '<option value="100">100</option>'+
+//			  '<option value="-1">All</option>'+
+//			  '</select>'
+  			//},
+			
+			'autoWidth': false,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
+			'columns': [
+				{ 'width': '4%' },
+				{ 'width': '30%' },
+				{ 'width': '36%' },
+				{ 'width': '30%' },
+			  ],
+			  'columnDefs': [
+				{ className: 'centertxt', 'targets': [ 0,1,2,3 ] },
+				{ orderable: false},
+            	{ className: 'select-checkbox'},
+            	{ targets:   0}
+			  ],
+			  	select: {
+				style:    'multi',
+				selector: 'tr td:nth-child(1) span'
+			},
+			order: [[ 1, 'asc' ]]
+		});
+	//END initialize Response Amendment datable
+	
+	//generate unique IDs + matching labels for response / amend pages, checkmarks
+		var checkboxList = $('#responseamendtable tr td:nth-child(1) input');
+		for (var i = 0; i <= checkboxList.length; i++) {
+			$(checkboxList[i]).attr('id', 'checkboxone' + i);
+		}
+		var labelList = $('#responseamendtable tr td:nth-child(1) input').next('label');
+		for (var i = 0; i <= labelList.length; i++) {
+			$(labelList[i]).attr('for', 'checkboxone' + i);
+		}
+		var labelidList = $('#responseamendtable tr td:nth-child(1) input').next('label');
+		for (var i = 0; i <= labelidList.length; i++) {
+			$(labelidList[i]).attr('id', 'selectrow_' + i);
+		}
+		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(1) input');
+		for (var i = 0; i <= checkboxarialabelList.length; i++) {
+			$(checkboxarialabelList[i]).attr('aria-labelledby', 'selectrow_' + i);
+		}
+	//
+	
+	//start select all response / amend	  
+	$(document).on('change','#responseamendtable input#selectall', function() {
+	   var checkboxes  = $('#responseamendtable tr td:nth-child(1) span');
+	   var rows  = $('#responseamendtable tr');
+	   var input  = $('#responseamendtable tr td:nth-child(1) input');
+	   var selectall = $(this);
+		if ($(this).is( ":checked" )) {
+			$(rows).addClass('selected');
+			$(input).prop('checked', true);        
+		} else {
+			$(rows).removeClass('selected');
+			$(input).prop('checked', false); 
+		}
+	});
+	$('#responseamendtable tr td:nth-child(1) input').on('change', function(e){
+		$(selectall).prop('checked', false);
+		if ($(this).is( ":checked" )) {
+			$(this).parent().parent().addClass('selected');
+		} else {
+			$(this).parent().parent().removeClass('selected'); 
+		}
+	});
+	//end select all response / amend
+	
 	//Dashboard datatables ellipsis menu tableone
 		$("div.toolbar").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="toggle columns visibility"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function () {
@@ -293,7 +389,7 @@ $(document).ready(function(){
 	});
 	
 	//Update ARIA label when sorting
-	$(document).on('click', 'table#dashboardtableone th, table#dashboardtabletwo th, table#filepetitiontable th', function() {
+	$(document).on('click', 'table#dashboardtableone th, table#dashboardtabletwo th, table#filepetitiontable th, table#responseamendtable th', function() {
 		$( this ).toggleClass( 'focus' );
 		$( this ).find('span.glyphicon-triangle-bottom').toggleClass( 'glyphicon-triangle-top' ).attr('aria-hidden','true');
 	});	
@@ -1351,6 +1447,7 @@ $(document).ready(function(){
 		for (var i = 0; i <= checkboxarialabelList.length; i++) {
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'individualspecimen_' + i);
 		}
+	//
 				
 	//start basistwo connection options
 	$('div.yesconnection').css('display','none');
@@ -1474,7 +1571,7 @@ $(document).ready(function(){
 	   var checkboxes  = $('#declarationsignature input#select').parent('div').siblings('div').children('input.checkmark');
 	   var selectall = $(this);
 		$.each(checkboxes, function(){
-			$(this).prop("checked", selectall.prop('checked'));
+			$(this).prop('checked', true);
 		});
 		$(checkboxes).on('click', function(e){
 		   $(selectall).prop('checked', false);
@@ -2131,6 +2228,19 @@ $(document).ready(function(){
 		});
 	});
 	//END displaymark height match
+	
+	//START close button height match
+	$( window ).load(function () {
+      var d = $( '#announcements .closepans' ).prev('div');
+	  $(d).css('display','flex').css('flex-direction','column');
+	  $('.closepans').css( 'height', (d.innerHeight()) );
+	  $('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
+	  $( window ).resize(function() {
+  		$('.closepans').css( 'height', (d.innerHeight()) );
+	  	$('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
+		});
+	});
+	//END close button height match
 	
 	//row header p height match
 	var p = $('.rowheader p').height();
@@ -2870,6 +2980,11 @@ $(document).ready(function(){
 	});
 	//revive petition s1 options
 	
+	//response amendment submit buttons
+	$('#responseamend a.ablock').click(function(){
+		$('#responseamend button.right').toggleClass( 'visuallyadded' );
+	});
+	//response amendment submit buttons	
 
 	//$( 'input.checkmark' ).change(function() {
 //		if($(this).prop('checked')){

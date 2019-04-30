@@ -1,0 +1,266 @@
+<!doctype html>
+<html th:fragment="layout (template, menu)" lang="en" xml:lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
+
+    <title>Response and Amendments Scenario Four :: Entity Type :: USPTO.gov :: webapp prototype</title>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--    <link rel="stylesheet" th:href="@{/resources/css/usPTO.css}"/>
+--> <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/lynnstyles.css">
+   </head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#w">Applications / Registration</a></li>
+            <li><a href="#">Actions</a></li>
+            <li><a href="#">Resources</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="https://www.uspto.gov/learning-and-resources/account-faqss">FAQs</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+            	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            	<ul class="dropdown-menu">
+                    <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+              	</ul>
+            </li>
+            <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
+          </ul>
+          
+          <br style="clear:both">
+          
+          <ul class="nav navbar-nav navbar-right" id="lowernav">
+          	<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
+              <ul class="dropdown-menu" id="classfees">
+                <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
+                <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
+                <li aria-live="assertive">Total Classes 0</li>
+                <li id="lastli" aria-live="assertive">Total Fee $<span>225</span></li>
+              </ul>
+            </li>
+		<!--<li><a href="#">Actions</a></li>
+            <li><a href="#">Applications / Registration</a></li>-->
+            <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
+            <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
+            <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop" aria-live="assertive"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+          </ul>
+          <br style="clear:both">
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+      
+    <div class="container-fluid">    
+      <div class="row content" id="responseamend">
+        <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
+            <!--START Content Div-->
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                    	<div class="col-xs-12">
+                    		<h1>Response and Amendments</h1>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                        	<a href="#" class="ablock" data-toggle="collapse" data-target="#translation" aria-controls="translation" aria-expanded="false" id="translationbtn">Translation of foreign wording</a>
+                        </div>
+                    </div>
+                    <div class="row collapse Accordion-panel" role="region" id="translation" aria-labelledby="translationbtn">
+                        <div class="col-xs-12">
+                        	<div class="callout">
+                            	<div class="row">
+                                	<div class="col-xs-12 col-lg-8">
+                                        <h2>Translation of Foreign Wording</h2>
+                                    </div>
+                                    <div class="col-xs-12 col-lg-4">
+                                        <a href="#" class="view">View office action</a>
+                                    </div>
+                                	<div class="col-xs-12">
+                                        <p>To permit proper examination of the application, applicant must submit an English translation of the foreign wording in the mark &#94;. 37 C.F.R. &#167;&#167;2.32(a)(9), 2.61(b); see TMEP &#167;809. The following English translation is suggested: <span class="weight600">The English translation of &#8220;&#94;&#8221; in the mark is &#8220;&#94;&#8221;</span>. TMEP &#167;809.03. See attached translation evidence.</p>   
+									</div>
+                                </div>
+                          	</div>  
+                        	<section aria-label="enter the translation of the mark">
+                                <div class="card-text">
+                                    <div role="heading" aria-level="2">
+                                    <button type="button" class="btn btn-link Accordion-trigger" data-toggle="collapse" data-target="#translatera" aria-controls="translatera" aria-expanded="false" id="translaterabtn"><span class="glyphicon glyphicon-triangle-right"></span><span class="glyphicon glyphicon-triangle-bottom visuallyremoved"></span> Translation</button>
+                                    </div>
+                                </div>
+                                <div id="translatera" class="collapse Accordion-panel" role="region" aria-labelledby="translaterabtn">
+                                    <div class="Accordion">
+                                        <p>A translation of a trademark is the meaning in English of any non-English wording. Every application to register a trademark that includes non-English wording must include a translation of that wording. <a href="https://tmep.uspto.gov/RDMS/TMEP/current#/current/TMEP-800d1e2300.html" target="_blank">More information<span class="glyphicon glyphicon-new-window" aria-hidden="true"></span><span class="sr-only">Opens in new window</span></a>.</p>
+                                    </div>
+                                </div>
+                                <div class="row disclaim">
+                                    <div class="col-xs-12">
+                                        <p>Enter the foreign language and the translation.</p>
+                                        <div class="row">
+                                            <form action="" method="post" class="form-inline">
+                                                <fieldset aria-label="select foreign language">
+                                                    <div class="form-group form-group-md col-xs-12">
+                                                        <label for="foreignlanguage">Language:</label>
+                                                        <select class="form-control" id="foreignlanguage">
+                                                          <option value="Select">Select</option>
+                                                          <option value="Spanish">Spanish</option>
+                                                          <option value="German">German</option>
+                                                          <option value="French">French</option>
+                                                        </select>
+                                                    </div>
+                                             	</fieldset>    
+                                            </form>
+                                        </div>
+                                        <p>The English translation of</p>
+                                    </div>
+                                    <form action="" method="post">
+                                    	<fieldset aria-label="enter translation information">
+                                            <div class="form-group form-group-md col-xs-12">
+                                                <label for="foreignwording" class="sr-only">enter the foreign language of the mark text</label>
+                                                <input type="text" class="form-control" id="foreignwording">
+                                            </div>
+                                            <div class="form-group form-group-md col-xs-12">
+                                                <p>in the mark is</p>
+                                            </div>
+                                            <div class="form-group form-group-md col-xs-12">
+                                                <label for="englishwording" class="sr-only">enter the English language of the mark text</label>
+                                                <input type="text" class="form-control" id="englishwording">
+                                            </div>
+                                     	</fieldset>
+                                    </div> 
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <section class="col-xs-12" aria-labelledby="optionalactions" id="optionalactionschecks">
+                                <div class="card-text noexpand">
+                                    <h2 class="card-title weight600" id="optionalactions">Optional Actions</h2>
+                                </div>
+                                <fieldset aria-label="enter optional information">
+                                    <div class="row">
+                                        <div class="col-xs-12 form-group form-group-md indentctr">
+                                            <div class="row">
+                                                <div class="col-xs-12 form-group form-group-md">		
+                                                    <input class="form-check-input checkmark" type="checkbox" value="modifygs" tabindex="0" aria-labelledby="modgs" id="modigs">
+                                                    <label class="form-check-label form-check" for="modigs"><span class="radio notspecial" id="modgs">Modify the goods/services</span></label>
+                                                </div>
+                                                <div class="col-xs-12 form-group form-group-md">
+                                                    <input class="form-check-input checkmark" type="checkbox" value="modate" tabindex="0" aria-labelledby="moddu" id="modidu">
+                                                    <label class="form-check-label form-check" for="modidu"><span class="radio notspecial" id="moddu">Modify the dates of use</span></label>
+                                                </div>
+                                                <div class="col-xs-12 form-group form-group-md">
+                                                    <input class="form-check-input checkmark" type="checkbox" value="correctname" tabindex="0" aria-labelledby="correctinfo" id="correctninfo">
+                                                    <label class="form-check-label form-check" for="correctninfo"><span class="radio notspecial" id="correctinfo">Correct or change the owner&#8217;s name or entity information</span></label>
+                                                </div>
+                                                <div class="col-xs-12 form-group form-group-md">
+                                                    <input class="form-check-input checkmark" type="checkbox" value="attrecord" tabindex="0" aria-labelledby="appoint" id="replace">
+                                                    <label class="form-check-label form-check" for="replace"><span class="radio notspecial" id="appoint">Appoint, replace or withdraw attorney of record</span></label>		
+                                                </div>
+                                                <div class="col-xs-12 form-group form-group-md">
+                                                    <input class="form-check-input checkmark" type="checkbox" value="changeadd" tabindex="0" aria-labelledby="modadd" id="modiadd">
+                                                    <label class="form-check-label form-check" for="modiadd"><span class="radio notspecial" id="modadd">Change owner&#8217;s address</span></label>		
+                                                </div>
+                                                <div class="col-xs-12 form-group form-group-md">
+                                                    <input class="form-check-input checkmark" type="checkbox" value="changecorradd" tabindex="0" aria-labelledby="modcradd" id="modicradd">
+                                                    <label class="form-check-label form-check" for="modicradd"><span class="radio notspecial" id="modcradd">Change correspondence address</span></label>		
+                                                </div>
+                                                <div class="col-xs-12 form-group form-group-md">
+                                                    <input class="form-check-input checkmark" type="checkbox" value="xabandone" tabindex="0" aria-labelledby="filexabandon" id="filexabandone">
+                                                    <label class="form-check-label form-check" for="filexabandone"><span class="radio notspecial" id="filexabandon">File Express abandonment</span></label>		
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </section>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-xs-12 form-group form-group-md">
+                                <button type="submit" class="btn-sm btn-success right visuallyremoved">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div><!--END container-fluid-->
+<!--END div container-fluid-->
+      
+        <!--jquery and web jars -->
+        <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <!--<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!--<script src="../resources/js/jquery.dataTables.min.js"></script>-->
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="js/html-imports.min.js"></script>
+		<script type="application/javascript" src="js/lynnjqueryscript.js"></script>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="uspto-footer-top col-xs-4 col-sm-8 col-md-9 col-lg-9">
+                    <div class="uspto-footer-logo col-sm-8">
+                        <a href="http://www.uspto.gov">
+                            <div class="footer-brand" role="img" aria-label="United States Office of Patent and Trademarks"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-sm-4 col-md-3">
+                	<div class="row">
+                        <div class="col-xs-6">
+                            <p><span id="webPolicy">Website policy</span></p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>Privacy policy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
