@@ -530,6 +530,9 @@ ul.dropdown-menu, .dropdown-menu {
 	-webkit-box-shadow: 0 0 0 0 rgba(0,0,0,0)!important;
     box-shadow: 0 0 0 0 rgba(0,0,0,0)!important;
 	}
+/*ul#classfees.dropdown-menu {
+	display: block;
+	}*/
 /* end dropdown no links (fees)*/
 ul#lowernav .dropdown-menu>li>a:hover  {
     color: #333;
@@ -2668,8 +2671,7 @@ button[type="submit"] {
 	margin: 0 auto;
 	float: none;
 	}
-button[type="submit"].right {
-	margin-bottom: 1em;
+button[type="submit"].right, button[type="button"].right {
 	float: right;
 	}
 .upload-drop-zone p {
