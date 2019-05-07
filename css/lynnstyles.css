@@ -128,16 +128,16 @@ p {
     margin-bottom: .7em;
     line-height: 1.5em;
 	}
-#petitions1 h3 {
+#petitions1 h3, #petitions2 h3 {
 	margin-top: 1.2em;
 	font-size: 1.2em;
 	}
-#petitions1 h4, #petitions1 .panel-body p {
+#petitions1 h4, #petitions1 .panel-body p, #petitions2 h4, #petitions2 .panel-body p {
     margin-top: .6em;
     margin-bottom: .4em;
 	font-weight:600;
 	}
-#petitions1 .panel-body p {
+#petitions1 .panel-body p, #petitions2 .panel-body p {
 	font-weight:400;
 	}
 #preferences p {
@@ -295,11 +295,12 @@ ul#lowernav li a.glyphed span {
 	padding:.8em
 	}
 .callout {
-	background-color: #EEEEEE;
+	background-color: #fff;
 	padding:1.3em;
 	padding-bottom:.8em;
-	margin-top:1.5em;
-	margin-bottom:1.25em;
+	margin:30px;
+	padding-bottom:1.25em;
+	border:1px solid #ddd;
 	}
 .callout h2 {
     margin-bottom: 1em;
@@ -308,6 +309,7 @@ ul#lowernav li a.glyphed span {
 .callout .view {
 	margin-bottom:1em;
 	display:inline-block;
+	/*float: right;*/
 	}
 .highlighted {
 	background-color: #9BB8D3;
@@ -590,6 +592,16 @@ main {
 	-moz-border-radius: 	3px;
 	border-radius: 			3px;
 	}
+#owner main {
+	height:100%;
+	overflow: visible;
+	}
+#responseamend main, #responseamendreview main {
+    background-color: #EEEEEE;
+	}
+#responseamendreview #tabbed {
+	padding-top:.6em;
+	}
 /*TAB CAROUSEL*/
 /* tab panels */
 ul[role="tablist"], #responseamendreview ul[role="tablist"] {
@@ -624,7 +636,6 @@ ul[role="tablist"] li, #responseamendreview ul[role="tablist"] li {
 	min-height: 3em;
 	display:table;
 	text-align: center;
-	margin-top:.2em;
 	margin-bottom:.3em;
 	left:1px;
 	}
@@ -669,10 +680,6 @@ ul[role="tablist"] a[aria-selected="true"], #responseamendreview ul[role="tablis
 	}
 .tabwidget:focus, .tabwidget div:focus, #responseamendreview .tabwidget:focus, #responseamendreview .tabwidget div:focus {
 	outline:0px;
-	}
-#owner main {
-	height:100%;
-	overflow: visible;
 	}
 #goodservideo p {
 	margin-bottom: 1.6em;
@@ -746,14 +753,14 @@ h2, h3, h4, h5, h6 {
 	padding: 0 0 1.3em 0;
 	margin-bottom: 1em;
 	}
-#petitions1 .underlinerow {
+#petitions1 .underlinerow, #petitions2 .underlinerow {
 	margin-bottom: 1em;
 	}
-#petitions1 .underlinerow>div {
+#petitions1 .underlinerow>div, #petitions2 .underlinerow>div {
 	padding-left: 0;
 	padding-right: 0;
 	}
-#petitions1 .underlinerow>div a {
+#petitions1 .underlinerow>div a, #petitions2 .underlinerow>div a {
 	margin-top: 1.2em;
 	display: inline-block;
 	font-size: 1.2em;
@@ -823,7 +830,7 @@ h1.message   {
 	font-size: 1em;
 	padding:0;
 	}
-#petitions1 .glyphicon-edit {
+#petitions1 .glyphicon-edit, #petitions2 .glyphicon-edit {
 	font-size: 1.3em;
 	}
 .glyphicon-new-window:hover, .glyphicon-edit:hover, .glyphicon-new-window:active, .glyphicon-edit:active {
@@ -873,14 +880,29 @@ table.dataTable thead .sorting_desc {
 .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
     border: none;
 	}
-#responseamend .table-bordered>tbody>tr>td, #responseamend .table-bordered>tbody>tr>th, #responseamend .table-bordered>tfoot>tr>td, #responseamend .table-bordered>tfoot>tr>th, #responseamend .table-bordered>thead>tr>td, #responseamend .table-bordered>thead>tr>th {
+#responseamend .table-bordered>tbody>tr>td, #responseamend .table-bordered>tbody>tr>th, #responseamend .table-bordered>tfoot>tr>td, #responseamend .table-bordered>tfoot>tr>th, #responseamend .table-bordered>thead>tr>td, #responseamend .table-bordered>thead>tr>th, #responseamendreview .table-bordered>tbody>tr>td, #responseamendreview .table-bordered>tfoot>tr>td, #responseamendreview .table-bordered>thead>tr>td {
     border: 1px solid #ddd;
 	text-align:center;
+	}
+#responseamendreview .table-bordered>tbody>tr>td, #responseamendreview .table-bordered>tfoot>tr>td, #responseamendreview .table-bordered>thead>tr>td {
+	text-align:left;
+	padding-left:1em;
 	}
 #responseamend .table-bordered>thead>tr>th {
 	background:#004C97;
 	border-color:#004C97;
 	color:#fff;
+	}
+#responseamendreview .table-bordered>tbody>tr>th {
+	background:#009CDE;
+	border-color:#009CDE;
+	color:#fff;
+	}
+#responseamendreview .table-bordered>tbody>tr>th {
+	text-align:left;
+	}
+#responseamendreview .table {
+	margin-bottom:.8em;
 	}
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 	vertical-align:middle!important;
@@ -980,7 +1002,13 @@ td.red {
 	color:#E4002B;
 	}
 #dashboardmain h1 {
+	font-size: 2.47em;
+	}
+#dashboardmain h1 {
 	margin-bottom: .3em;
+	}
+#responseamendreview h1 {
+	margin-bottom: .7em;
 	}
 #dashboardmain {
 	background-color: #EEEEEE;
@@ -1844,7 +1872,7 @@ div[role="radio"]:focus {
 	margin-top:1.5em;
 	margin-bottom:1.5em;
 	}
-#petitions1 .panel-body .btn-xs {
+#petitions1 .panel-body .btn-xs, #petitions2 .panel-body .btn-xs {
 	margin:0;
 	}
 .btn-default {
@@ -1978,6 +2006,9 @@ button#moreoptionsbtn {
 .btn-default.fill.prev  {	
 	background-color: #fff;
 	color: #337ab7!important;
+	}
+#responseamendreview .btn-default.fill.prev  {	
+	background-color: #EEEEEE;
 	}
 .btn-primary.fill.next, .btn-default.fill.prev  {
 	padding:8px 10px!important;
@@ -2392,11 +2423,11 @@ legend {
 span#authem  {
 	margin-bottom: 0!important;
 	}
-#declarationsignature #declarationschecks label, #reviewapplication #declarationschecks label, #optionalactionschecks label {
+#declarationsignature #declarationschecks label, #optionalactionschecks label, #responseamendoptional label {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
-#declarationsignature #declarationschecks span, #reviewapplication #declarationschecks span, #optionalactionschecks span {
+#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
@@ -2547,7 +2578,7 @@ input[type="radio"]:focus + label span.checkmark::after {
 	background: white;
 	}
 /* animations */	
- #nocolorclaim, #yescolorclaim, #notranslation, #yestranslation, #yestransliteration, #yesnps, #markoptions, #yesattorneyfiling, #yesusentity, #gsselected, #register2, #yesdistict, #yespart, #yeswhole, #yesevidence, #yesotherform, #yeswholeother, #yespartother, #hideshowconcurrentuses {
+ #nocolorclaim, #yescolorclaim, #notranslation, #yestranslation, #yestransliteration, #yesnps, #markoptions, #yesattorneyfiling, #yesusentity, #gsselected, #register2, #yesdistict, #yespart, #yeswhole, #yesevidence, #yesotherform, #yeswholeother, #yespartother, #hideshowconcurrentuses, #reconsideration {
 	 overflow:hidden;
  	}
 /* accept b/w image, colorclaim */
@@ -2641,6 +2672,9 @@ p#upimage {
     background-color: #FABBCB;
     border: none;
 	}
+#responseamendreview .alert {
+    margin-bottom: .3em;
+	}
 .alert {
     text-shadow: 0 0 0 rgba(0,0,0,0);
     -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0), 0 0 0 rgba(0,0,0,0);
@@ -2718,25 +2752,25 @@ button[type="submit"].right, button[type="button"].right {
 .fileholder div.row {
 	padding: 0;
 	}
-.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, #petitions1 div img {
+.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, #petitions1 div img, #petitions2 div img {
     float: none!important;
 	height:38px;
 	font-size:.8em;
 	}
-#petitions1 div img {
+#petitions1 div img, #petitions2 div img {
     float: left!important;
 	}
-.fileholder div img, .fileholder span, #petitions1 div img {
+.fileholder div img, .fileholder span, #petitions1 div img, #petitions2 div img {
 	margin:0 auto;
 	display:block;
 	}
-.fileholder .img-thumbnail, #petitions1 .img-thumbnail {
+.fileholder .img-thumbnail, #petitions1 .img-thumbnail, #petitions2 .img-thumbnail {
 	border:0;
 	-webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
 	}
-#petitions1 .img-thumbnail {
+#petitions1 .img-thumbnail, #petitions2 .img-thumbnail {
     background-color: #ccc;
 	margin-bottom: .8em;
 	margin-top: .6em;
@@ -2867,7 +2901,7 @@ button[type="submit"].right, button[type="button"].right {
 	word-break:break-all;
 	min-height: 149px;
 	}
-#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading, #userprofilepage .panel-body, #petitions1 .panel-body {
+#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading, #userprofilepage .panel-body, #petitions1 .panel-body, #petitions2 .panel-body {
 	-webkit-border-top-left-radius: 		0;
     -webkit-border-top-right-radius: 		0;
 	-webkit-border-bottom-left-radius: 		0;
@@ -2892,13 +2926,13 @@ button[type="submit"].right, button[type="button"].right {
 	-moz-border-top-right-radius: 		0;
 	border-top-right-radius: 			0;
 	}
-#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default, #userprofilepage .panel-default, #petitions1 .panel-default {
+#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default, #userprofilepage .panel-default, #petitions1 .panel-default, #petitions2 .panel-default {
 	border:none!important;
 	}
-#petitions1 p.panel-title  {
+#petitions1 p.panel-title, #petitions2 p.panel-title  {
 	margin-bottom: 1em!important;
 	}
-#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group, #petitions1 .panel-group {
+#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group, #petitions1 .panel-group, #petitions2 .panel-group {
 	margin-bottom: 1.5em;
 	padding:0;
 	overflow-wrap: break-word;
@@ -2918,17 +2952,17 @@ button[type="submit"].right, button[type="button"].right {
 #userprofilepage .panel-body {
 	min-height: 26.5em;
 	}
-#editowner .panel-group .email, #reviewattorney .panel-group .email, #petitions1 .panel-group .email {
+#editowner .panel-group .email, #reviewattorney .panel-group .email, #petitions1 .panel-group .email, #petitions2 .panel-group .email {
 	-ms-hyphens: none;
 	-moz-hyphens: none;
 	-webkit-hyphens: none;
 	hyphens: none;
 	}
-#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion, #petitions1 .panel-group {
+#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion, #petitions1 .panel-group, #petitions2 .panel-group {
 	margin-bottom: 1em;
 	margin-top: 1em;
 	}
-#petitions1 .panel-group {
+#petitions1 .panel-group, #petitions2 .panel-group {
 	margin-bottom: 3em;
 	}
 #dashboardmain .panel-group {
@@ -2936,19 +2970,19 @@ button[type="submit"].right, button[type="button"].right {
 	margin-bottom:12px;
 	padding-top:0;
 	}
-#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel, #userprofilepage .panel-group .panel, #petitions1 .panel-group .panel {
+#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel, #userprofilepage .panel-group .panel, #petitions1 .panel-group .panel, #petitions2 .panel-group .panel {
 	-webkit-border-radius: 	2px;
     -moz-border-radius: 	2px;
     border-radius: 			2px;
 	}
-#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body {
+#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body, #petitions2 .panel-default>.panel-body {
     color:#333/*#FFF*/;
     background-color:#eee/*#F3D54E*/;
 	font-size:.8em;
 	width: 100%;
 	border:none!important;
 	}
-#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body {
+#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body, #petitions2 .panel-default>.panel-body {
     background-color:transparent;
 	border:1px solid #eee!important;
 	}
@@ -2973,17 +3007,17 @@ button[type="submit"].right, button[type="button"].right {
 #dashboardmain .panel-default>.panel-heading {
     background-color:#F3D54E;
 	}
-#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number, #petitions1 .panel-default>.panel-body .number {
+#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number, #petitions1 .panel-default>.panel-body .number, #petitions2 .panel-default>.panel-body .number {
 	color:#333/*#FFF*/;
 	}
-#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name, #petitions1 .panel-default>.panel-body .name {
+#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name, #petitions1 .panel-default>.panel-body .name, #petitions2 .panel-default>.panel-body .name {
 	color:#EEEEE;
 	}
 #gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading {
 	color:#EEEEEE;
 	letter-spacing: 0.03em;
 	}
-#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel, #userprofilepage .panel, #petitions1 .panel {
+#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel, #userprofilepage .panel, #petitions1 .panel, #petitions2 .panel {
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
     box-shadow: 0 0 0 rgba(0,0,0,0);
 	}
@@ -3349,7 +3383,7 @@ footer #megamenu ul {
 	.form-check-left {
     	padding-left: 0;
 		}
-	#declarationsignature .form-check, #optionalactionschecks .form-check, #petitions1 .form-check, #usaffiliation .form-check {
+	#declarationsignature .form-check, #optionalactionschecks .form-check, #petitions1 .form-check, #petitions2 .form-check, #usaffiliation .form-check, #responseamendoptional .form-check {
     	padding-left: 0;
 		}
 	#gridview .form-check {
@@ -3397,6 +3431,9 @@ footer #megamenu ul {
 	.ql-snow .ql-picker:not(.ql-color-picker):not(.ql-icon-picker) svg {
 		right: -14px;
 		}
+	.callout .view {
+		float: left;
+		}
 }
 @media (min-width:577px) and (max-width:767px) { 
 	#loginform .maincontainer {
@@ -3407,7 +3444,7 @@ footer #megamenu ul {
 		}
 }
 @media (max-width: 991px) {
-	#editowner .inlinebuttons, #reviewattorney .inlinebuttons, #petitions1 .inlinebuttons {
+	#editowner .inlinebuttons, #reviewattorney .inlinebuttons, #petitions1 .inlinebuttons, #petitions2 .inlinebuttons {
 		margin-top:1em;
 		}
 	#editowner .btn-success.add, #reviewattorney .btn-success.add {
@@ -3424,7 +3461,7 @@ footer #megamenu ul {
 	#userprofilepage div#three .panel-default>.panel-body, #userprofilepage div#three .panel-default>.panel-heading {
 		border-left: none!important;
 		}
-	#petitions1 .panel-body p {
+	#petitions1 .panel-body p, #petitions2 .panel-body p {
 		margin-top: 0;
 		margin-bottom: .8em;
 		}
@@ -3518,6 +3555,12 @@ footer #megamenu ul {
 		min-height: 20em;
 		}
 }
+@media (min-width: 1748px) {
+	#responseamend main {
+		padding-left:12em;
+		padding-right:12em;
+		}
+}
 @media (min-width: 1800px) {
 	#userprofilepage .panel-heading {
 		min-height: 6em;
@@ -3530,9 +3573,5 @@ footer #megamenu ul {
 		}
 	#responseamend .js-upload-finished, .upload-drop-zone {
 		width:100%;
-		}
-	#responseamend main {
-		padding-left:12em;
-		padding-right:12em;
 		}
 }
