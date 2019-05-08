@@ -111,9 +111,12 @@ main#loginform {
 	padding-top:0;
 	}
 .maincontainer.bottom {
-	height: 4.2em;
+	height: 3.7em;
 	background-color:#eee;
 	padding:1em;
+	}
+#loginform .maincontainer.bottom {
+	height: 4.3em;
 	}
 #loginform div.psw p {
 	margin-bottom: .0;
@@ -148,9 +151,12 @@ a {
 	color: #004C97;
 	cursor: pointer;
 	}
-#responseamend a {
+#responseamend a, #loginform div.psw a, #loginmodal div.psw a {
 	text-decoration: underline;
-	line-height: 1.5;
+	line-height: 1.5em;
+	}
+#loginform div.psw p, #loginmodal div.psw p {
+	color: #004C97;
 	}
 a:active, a:hover	 {
 	color: #00254b;
