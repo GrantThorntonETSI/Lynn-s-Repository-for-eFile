@@ -784,6 +784,12 @@ h2, h3, h4, h5, h6 {
 #petitions1 .underlinerow, #petitions2 .underlinerow, #responseamend .underlinerow {
 	margin-bottom: 1em;
 	}
+#petitions1 .underlinerow h3, #petitions2 .underlinerow h3, #responseamend .underlinerow h3 {
+	margin-top: 0;
+	}
+#petitions1 .leadtext, #petitions2 .leadtext, #responseamend .leadtext {
+	margin-bottom: 0;
+	}
 #petitions1 .underlinerow>div, #petitions2 .underlinerow>div, #responseamend .underlinerow>div {
 	padding-left: 0;
 	padding-right: 0;
