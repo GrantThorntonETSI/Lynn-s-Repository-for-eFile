@@ -28,70 +28,28 @@ $(document).ready(function(){
 //			$('main#loginform').css('position','relative').css('top', '0');
 //			}
 	});
-	//END footer and login positioning
-	//START expand / collapse glyphicon
-	$("button#optionsbtn").click(function() {
-		$( 'button#optionsbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#optionsbtn span#toggleglyph' ).toggleClass('visuallyadded');
+	//
+	$("button.Accordion-trigger").click(function() {
+		var triangles = $('.Accordion-trigger span');
+		$(this).find(triangles).toggleClass('visuallyremoved');
 	});
-	$("button#translatesbtn").click(function() {
-		$( 'button#translatesbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#translatesbtn span#toggleglyph' ).toggleClass('visuallyadded');
+	//START accordion (panel) scroll
+	$('#responseamend #accordion').on('shown.bs.collapse', function () {
+		var panel = $(this).find('.in');
+		$('html, body').animate({
+			scrollTop: panel.offset().top - 144
+		}, 500);
 	});
-	$("button#colorbtn").click(function() {
-		$( 'button#colorbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#colorbtn span#toggleglyph' ).toggleClass('visuallyadded');
+	$('#responseamend div.panel-collapse').on('hide.bs.collapse', function () {
+		$(this).parent().find('.panel-heading button span').toggleClass('visuallyremoved');
 	});
-	$("button#marktypebtn").click(function() {
-		$( 'button#marktypebtn span' ).toggleClass('visuallyremoved');
-		$( 'button#marktypebtn span#toggleglyph' ).toggleClass('visuallyadded');
+	$('#responseamend div.panel-collapse').on('show.bs.collapse', function () {
+		$(this).parent().find('.panel-heading button span').toggleClass('visuallyremoved');
 	});
-	$("button#translitbtn").click(function() {
-		$( 'button#translitbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#translitbtn span#toggleglyph' ).toggleClass('visuallyadded');
+	$('.Accordion-panel').on('show.bs.collapse shown.bs.collapse hide.bs.collapse hidden.bs.collapse', function (e) {
+	  e.stopPropagation();
 	});
-	$("button#npsbtn").click(function() {
-		$( 'button#npsbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#npsbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#disclaimerbtn").click(function() {
-		$( 'button#disclaimerbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#disclaimerbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#priorbtn").click(function() {
-		$( 'button#priorbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#priorbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#meanbtn").click(function() {
-		$( 'button#meanbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#meanbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#entbtn").click(function() {
-		$( 'button#entbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#entbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#discaimrabtn").click(function() {
-		$( 'button#discaimrabtn span' ).toggleClass('visuallyremoved');
-		$( 'button#discaimrabtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#translaterabtn").click(function() {
-		$( 'button#translaterabtn span' ).toggleClass('visuallyremoved');
-		$( 'button#translaterabtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#registerbtn").click(function() {
-		$( 'button#registerbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#registerbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#distinctivenessbtn").click(function() {
-		$( 'button#distinctivenessbtn span' ).toggleClass('visuallyremoved');
-		$( 'button#distinctivenessbtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	$("button#attorneyadvisebtn").click(function() {
-		$( 'button#attorneyadvisebtn span' ).toggleClass('visuallyremoved');
-		$( 'button#attorneyadvisebtn span#toggleglyph' ).toggleClass('visuallyadded');
-	});
-	//END expand / collapse glyphicon
-	
+	//
 	//START initialize Goods + Services datable
 		var table = $('#goodsandservices').DataTable({
 		"fnDrawCallback": function( oSettings ) {
@@ -116,8 +74,7 @@ $(document).ready(function(){
 				{ className: "centertxt", "targets": [ 0 ] }
 			  ]
 		});
-	//END initialize Goods + Services datable
-	
+	//
 	//START initialize Dashboard datable one
 		var tableone = $('#dashboardtableone').DataTable({
 		"fnDrawCallback": function( oSettings ) {
@@ -158,8 +115,7 @@ $(document).ready(function(){
 				{ className: 'centertxt', 'targets': [ 0,1,2,3,4 ] },
 			   ],
 		});
-	//END initialize Dashboard datable one
-	
+	//
 	//START initialize Dashboard datable two
 		var tabletwo = $('#dashboardtabletwo').DataTable({
 		"fnDrawCallback": function( oSettings ) {
@@ -204,8 +160,7 @@ $(document).ready(function(){
 				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5,6 ] },
 			  ],
 		});
-	//END initialize Dashboard datable two
-	
+	//
 	//START initialize File Petition datable
 		var table = $('#filepetitiontable').DataTable({
 		"fnDrawCallback": function( oSettings ) {
@@ -248,8 +203,7 @@ $(document).ready(function(){
 				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
 			  ],
 		});
-	//END initialize File Petition datable
-	
+	//
 	//START initialize Response Amendment datable
 		var tablethree = $('#responseamendtable').DataTable({
 		"fnDrawCallback": function( oSettings ) {
@@ -282,7 +236,7 @@ $(document).ready(function(){
 				{ 'width': '30%' },
 			  ],
 			  'columnDefs': [
-				{ className: 'centertxt', 'targets': [ 0,1,2,3 ] },
+				{ className: 'centertxt', 'targets': [ 0,1,2 ] },
 				{ orderable: false},
             	{ className: 'select-checkbox'},
             	{ targets:   0}
@@ -293,27 +247,75 @@ $(document).ready(function(){
 			},
 			order: [[ 1, 'asc' ]]
 		});
-	//END initialize Response Amendment datable
-	
+	//
+	//START initialize Response Amendment datable two
+		var tablethree = $('#responseamendtabletwo').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+		},
+			'sDom': 't',
+			//"language": {
+			//"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+//			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
+//			  '<option value="10">10</option>'+
+//			  '<option value="25">25</option>'+
+//			  '<option value="50">50</option>'+
+//			  '<option value="100">100</option>'+
+//			  '<option value="-1">All</option>'+
+//			  '</select>'
+  			//},
+			
+			'autoWidth': false,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
+			'columns': [
+				{ 'width': '4%' },
+				{ 'width': '13%' },
+				{ 'width': '13%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+			  ],
+			  'columnDefs': [
+				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5,6,7,8,9 ] },
+				{ orderable: false},
+            	{ className: 'select-checkbox'},
+            	{ targets:   0}
+			  ],
+			  	select: {
+				style:    'multi',
+				selector: 'tr td:nth-child(1) span'
+			},
+			order: [[ 1, 'asc' ]]
+		});
+	//
 	//generate unique IDs + matching labels for response / amend pages, checkmarks
-		var checkboxList = $('#responseamendtable tr td:nth-child(1) input');
+		var checkboxList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input');
 		for (var i = 0; i <= checkboxList.length; i++) {
 			$(checkboxList[i]).attr('id', 'checkboxone' + i);
 		}
-		var labelList = $('#responseamendtable tr td:nth-child(1) input').next('label');
+		var labelList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input').next('label');
 		for (var i = 0; i <= labelList.length; i++) {
 			$(labelList[i]).attr('for', 'checkboxone' + i);
 		}
-		var labelidList = $('#responseamendtable tr td:nth-child(1) input').next('label');
+		var labelidList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input').next('label');
 		for (var i = 0; i <= labelidList.length; i++) {
 			$(labelidList[i]).attr('id', 'selectrow_' + i);
 		}
-		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(1) input');
+		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input');
 		for (var i = 0; i <= checkboxarialabelList.length; i++) {
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'selectrow_' + i);
 		}
 	//
-	
 	//start select all response / amend	  
 	$(document).on('change','#responseamendtable input#selectall', function() {
 	   var checkboxes  = $('#responseamendtable tr td:nth-child(1) span');
@@ -329,15 +331,35 @@ $(document).ready(function(){
 		}
 	});
 	$('#responseamendtable tr td:nth-child(1) input').on('change', function(e){
-		$(selectall).prop('checked', false);
+		$('#responseamendtable input#selectall').prop('checked', false);
 		if ($(this).is( ":checked" )) {
 			$(this).parent().parent().addClass('selected');
 		} else {
 			$(this).parent().parent().removeClass('selected'); 
 		}
 	});
-	//end select all response / amend
-	
+	$(document).on('change','#responseamendtabletwo input#selectalltwo', function() {
+	   var checkboxes  = $('#responseamendtabletwo tr td:nth-child(1) span');
+	   var rows  = $('#responseamendtabletwo tr');
+	   var input  = $('#responseamendtabletwo tr td:nth-child(1) input');
+	   var selectall = $(this);
+		if ($(this).is( ":checked" )) {
+			$(rows).addClass('selected');
+			$(input).prop('checked', true);        
+		} else {
+			$(rows).removeClass('selected');
+			$(input).prop('checked', false); 
+		}
+	});
+	$('#responseamendtabletwo tr td:nth-child(1) input').on('change', function(e){
+		$('#responseamendtabletwo input#selectalltwo').prop('checked', false);
+		if ($(this).is( ":checked" )) {
+			$(this).parent().parent().addClass('selected');
+		} else {
+			$(this).parent().parent().removeClass('selected'); 
+		}
+	});
+	//
 	//Dashboard datatables ellipsis menu tableone
 		$("div.toolbar").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="toggle columns visibility"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function () {
@@ -347,8 +369,7 @@ $(document).ready(function(){
 			$(column).attr('aria-hidden','true')
 			$(this).attr('aria-label','show this column');			
 		});
-	//END dashboard datatables ellipsis menu tableone
-	
+	//
 	//Dashboard datatables ellipsis menu tabletwo
 		$("div.toolbartwo").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdroptwo" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdroptwo" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Mark</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Due Date</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Action</a></li></ul></div>');
 		$('a.toggle-vistwo').on( 'click', function () {
@@ -359,58 +380,52 @@ $(document).ready(function(){
 			$(this).attr('aria-label','show this column');
 			console.log(column);
 		});
-	//END dashboard datatables ellipsis menu tabletwo
-	
+	//
 	//Datatable filter menu petitions
 		$("div.toolbarpetitions").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="filter row visibility"><span class="">Filter</span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis" data-column="0" tabindex="0" id="revive"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Revive</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Director</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Make Special</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Request for Reinstatement</a></li></ul></div>');
 		$('#petitions a.toggle-vis').on( 'click', function () {
 			//e.preventDefault();
 			$(this).attr('aria-label','unfilter these rows');			
 		});
-	//END Datatable filter menu petitions
-	
+	//
 	//start toggle glyphicon dashboard toggle menu widget
 	function togglecolumnselection() {
 		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyhidden' ).attr('aria-label','show this column');
 	}
 	$('#dashboard a.toggle-vis').click(togglecolumnselection);
 	$('#dashboard a.toggle-vistwo').click(togglecolumnselection);
-	//start toggle glyphicon dashboard toggle menu widget
-	
-	//start toggle glyphicon petitions filter menu widget
+	//
+	//START toggle glyphicon petitions filter menu widget
 	function togglecolumnselectionpetitions() {
 		$( this ).find('span.glyphicon-ok').toggleClass( 'visuallyshown' ).attr('aria-label','unfilter these rows');
 	}
 	$('#petitions a.toggle-vis').click(togglecolumnselectionpetitions);
-	//start toggle glyphicon petitions filter menu widget
-	
+	//
+	//START toggle glyphicon petitions filter menu widget
 	$('button.dropdown-toggle').on( 'click', function () {
 		$(this).attr('aria-expanded','true');
 	});
-	
-	//Update ARIA label when sorting
+	//
+	//START Update ARIA label when sorting
 	$(document).on('click', 'table#dashboardtableone th, table#dashboardtabletwo th, table#filepetitiontable th, table#responseamendtable th', function() {
 		$( this ).toggleClass( 'focus' );
 		$( this ).find('span.glyphicon-triangle-bottom').toggleClass( 'glyphicon-triangle-top' ).attr('aria-hidden','true');
 	});	
-	//Update ARIA label when sorting
-	
-	//.dashsection height = #announcedashsection height
+	//
+	//START .dashsection height = #announcedashsection height
       var h = $( 'div#announcedashsection' );
 	  var y = $( 'div#announce' );
 	  $('.dashsection:eq(0), .dashsection:eq(1)').css( 'min-height', (h.innerHeight() + y.innerHeight()) );
 	  $( window ).resize(function() {
 		$('.dashsection:eq(0), .dashsection:eq(1)').css( 'min-height', (h.innerHeight() + y.innerHeight()) );	
 		});
-	//END 
-	
-	//start close (x) dashboard panels
+	//
+	//START close (x) dashboard panels
 	$('#dashsectionscontainer .closegspanels').click(function() {
 		$( this ).parent().parent().parent().parent().parent().fadeOut( 'fast','swing');
 	});
-	//end close (x) dashboard panels
-	
-	// filter petition types
+	//
+	//START filter petition types
 	$(document).on('click','#petitions a#revive', function() {
 		var a = $('#filepetitiontable td:contains("abandoned")');
 		//var aa = $('#filepetitiontable tr[data-petition="revive"]');
@@ -418,14 +433,12 @@ $(document).ready(function(){
 		//$(document).find(a).parent().attr('data-petition','revive');
 		$( aaa ).toggleClass('visuallyremoved');
 		});
-	// filter petition types
-	
-	//start close (x) gs + editowner + reviewattorney panels
+	//
+	//START close (x) gs + editowner + reviewattorney panels
 	$('#gsselected .closegspanels, #editowner .closegspanels, #reviewattorney .closegspanels').click(function() {
 		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
 	});
-	//end close (x) gs + editowner + reviewattorney panels
-	
+	//
 	//START set initial checkboxes
 	$('input[type=checkbox]').attr('checked',false);
 	$('input[type=radio]').attr('checked',false);
@@ -445,8 +458,7 @@ $(document).ready(function(){
 //		console.log('unchecked');
 //		} 
 //	});
-	//END set initial checkboxes
-
+	//
 	//START additional info page supplemental register checked
 	$('input[type=radio]#inlineRadio032').change(function() {
 		var firstfees = $('li#firstli span').text();
@@ -481,8 +493,7 @@ $(document).ready(function(){
 			$('#tr div.alert').removeClass('visuallyadded');
 			}
 	});
-	//END additional info page supplemental register checked
-		
+	//
   //START enable / disable checkboxes
   //When 'Certification' is checked, 'Trademark / Servicemark', 'Collective' and 'Collective Membership' are disabled
 	$('input#certcheck').change(function() {
@@ -623,8 +634,7 @@ $(document).ready(function(){
 				$('.form-check span.radio.notspecial::before').removeClass('disabled');
 				$('input#certcheck').attr('aria-disabled', 'false');
 				}
-	});//END enable / disable checkboxes
-	
+	});//
 	//START additional info checkboxes
 	$('div#tr').css('display','none');
 	$('input#typeregi').change(function() {
@@ -662,9 +672,8 @@ $(document).ready(function(){
 			$('#cc').hide( 'fast' );
 		}
 	});
-	//END additional info checkboxes
-	
-	//start distinctive options
+	//
+	//START distinctive options
 	$('div#yesdistict').css('display','none');
 	$('input#inlineRadio033').change(function() {
 		if(this.checked == true){
@@ -770,7 +779,6 @@ $(document).ready(function(){
 			$('div#yespriors').hide( 'fast' );
 			}
 	});
-	
 	//basis classes provide specimen options
 	$('div.yesonespecimen').css('display','none');
 	$('div.individualspecimen').css('display','none');
@@ -892,13 +900,11 @@ $(document).ready(function(){
 		$( document ).find('div').removeClass( 'highlight focus' );
 		$( this ).addClass( 'highlight focus' );
 	});
-	//END toggle panel color
-	
+	//
 	//START panel height match
       var a = $( 'div.match' );
 	  $('#panels .panel-body').css( 'height', (a.innerHeight() + 8) );
-	//END 
-		
+	//END
 	//START basis input label height match upload label
 		//var r = $( '#specdescript' );	
 //		var s = $( '#upimg' );
@@ -916,13 +922,11 @@ $(document).ready(function(){
 //			$('#specdescriptwo').css( 'height', ((n.outerHeight() + 2) + 'px') );
 //			$('#specdescriptfour').css( 'height', ((c.outerHeight() + 2) + 'px') );
 //		});
-	//END basis input label height match upload label
-	
-	//Placeholder as editable text
+	//
+	//START Placeholder as editable text
 	$('textarea#ta2, textarea#ta5').val('This mark consists of');
-	//Placeholder as editable text
-	
-	//Placeholder as editable text edit owner
+	//
+	//START Placeholder as editable text edit owner
 	$('input#ta12').val('Jackie').css('position','relative');
 	$('input#ta13').val('Babos').css('position','relative');
 	$('input#ta18').val('jackie.babos@us.gt.com').css('position','relative');
@@ -959,8 +963,7 @@ $(document).ready(function(){
 	$('input#ta2027').val('Home').css('position','relative');
 	$('input#ta2028').val('12345').css('position','relative');
 	$('input#ta12, input#ta13, input#ta14, input#ta15, input#ta16, input#ta17, input#ta18, input#ta19, input#ta020, input#ta021, input#ta212, input#ta213, input#ta214, input#ta215, input#ta216, input#ta217, input#ta218, input#ta219, input#ta2020, input#ta2021, input#ta022, input#ta023, input#ta2022, input#ta2023, input#ta024, input#ta2024, input#ta025, input#ta2025, input#ta026, input#ta2026, input#ta027, input#ta028, input#ta2027, input#ta2028').prop('disabled', true);
-	//Placeholder as editable text edit owner
-	
+	//
 	//START examples panel link hover / active
 	  $('#examples div.panel a').hover(function() {
 		$(this).css('display','block');
@@ -968,8 +971,7 @@ $(document).ready(function(){
 	  }, function() {
 		$( this ).parent().parent().parent().removeClass( 'examplehover' );
 	  });
-	//END examples panel link hover / active
-	
+	//
 	//START examples panel button toggle text
 	$( 'button#moreoptionsbtn' ).click(function() {
 		$( this ).toggleClass( 'focus' );
@@ -977,9 +979,8 @@ $(document).ready(function(){
 			? $(this).text('See Less Types')
 			: $(this).text('See More Types');
 	});	
-	//END examples panel button toggle text
-	
-	//Initialize tooltip
+	//
+	//START Initialize tooltip
 	 $("body").tooltip({   
 		selector: "[data-toggle='tooltip']",
 		container: "body",
@@ -988,7 +989,7 @@ $(document).ready(function(){
 	$("[data-toggle='tooltip']").click(function (event) { 
 		 event.preventDefault(); 
 	});
-	//Initialize popover
+	//START Initialize popover
 	$('[data-toggle="popover"]').popover({
         title : false,
 		html : true,
@@ -1000,15 +1001,17 @@ $(document).ready(function(){
 		$(this).html() === '<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Hide My Mark'
 			? $(this).html('<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Show My Mark')
 			: $(this).html('<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Hide My Mark');
-		});	
-	//toggle acceptance
+		});
+	//	
+	//START toggle acceptance
 	$( '#acceptreview' ).click(function() {
 		$( this ).toggleClass( 'focus' );
 		$(this).html() === 'Accept'
 			? $(this).html('Accepted')
 			: $(this).html('Accept');
-		});	
-	//file upload inputs	
+		});
+	//	
+	//START file upload inputs	
 	$(document).on('change', 'input[type="file"]', function(e) {
             var fileDisplayArea = $(this).siblings('label').children( 'div.fileDisplayArea' );
     		//var fileDisplayArea = ('.fileDisplayArea');
@@ -1072,7 +1075,8 @@ $(document).ready(function(){
 				reader.readAsDataURL(file);
 				}
 			  }
-        });	
+        });
+	//	
 	//START remove selected file
 	$(document).on('click', '.js-upload-finished button.close', function() {
 		$( '.hidethis' ).contents().css('display','block');
@@ -1082,13 +1086,12 @@ $(document).ready(function(){
 		$( 'div.fileDisplayArea img' ).remove();
 		$( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 	});
-	//END remove selected file
+	//
 	//+ Translation Item
 	//
 	
 	//- Translation Item		
 	//
-	
 	//START toggle radio buttons content
 	//start mark color options
 	$('div#nocolorclaim').css('display','none');
@@ -1114,7 +1117,6 @@ $(document).ready(function(){
 			}
 	});
 	//end mark color options
-			
 	//start translations options
 	$('div#yestranslation').css('display','none');
 	$('input#inlineRadio3').change(function() {
@@ -1134,7 +1136,6 @@ $(document).ready(function(){
 		}
 	});
 	//end translations options
-		
 	//start transliterations options
 	$('div#yestransliteration').css('display','none');
 	$('input#inlineRadio5').change(function() {
@@ -1154,7 +1155,6 @@ $(document).ready(function(){
 			}
 	});
 	//end translations options
-	
 	//start nps options
 	$('div#yesnps').css('display','none');
 	$('input#inlineRadio7').change(function() {
@@ -1221,9 +1221,8 @@ $(document).ready(function(){
 			$('div#yesliving').show( 'fast' );
 			}
 	});
-	//end nps options
-	
-	//start disclaimer options
+	//
+	//START disclaimer options
 	$('div#yesdisclaimer').css('display','none');
 	$('input#inlineRadio09').change(function() {
 		if(this.checked == true){
@@ -1241,9 +1240,8 @@ $(document).ready(function(){
 			$('div#yesdisclaimer').show( 'fast' );
 			}
 	});
-	//end disclaimer options
-	
-	//start uncommoninfo options
+	//
+	//START uncommoninfo options
 	$('div#yesnotpreviously').css('display','none');
 	$('input#inlineRadio045').change(function() {
 		if(this.checked == true){
@@ -1261,9 +1259,8 @@ $(document).ready(function(){
 			$('div#yesnotpreviously').show( 'fast' );
 			}
 	});
-	//end uncommoninfo options
-	
-	//start prior options
+	//
+	//START prior options
 	$('div#yesprior').css('display','none');
 	$('input#inlineRadio011').change(function() {
 		if(this.checked == true){
@@ -1281,9 +1278,8 @@ $(document).ready(function(){
 			$('div#yesprior').show( 'fast' );
 			}
 	});
-	//end prior options
-	
-	//start prior options
+	//
+	//START prior options
 	$('div#yesmeaning').css('display','none');
 	$('input#inlineRadio013').change(function() {
 		if(this.checked == true){
@@ -1301,9 +1297,8 @@ $(document).ready(function(){
 			$('div#yesmeaning').show( 'fast' );
 			}
 	});
-	//end prior options
-	
-	//start attorney options
+	//
+	//START attorney options
 	$('div#yesattorneyfiling').css('display','none');
 	$('input#inlineRadio015').change(function() {
 		if(this.checked == true){
@@ -1323,9 +1318,8 @@ $(document).ready(function(){
 			$('div#yesattorneyfiling').show( 'fast' );
 		}
 	});
-	//end attorney options
-	
-	//start us foreign options
+	//
+	//START us foreign options
 	//us entity show
 	$('div#yesusentity').css('display','none');
 	$('input#inlineRadio019').change(function() {
@@ -1360,7 +1354,6 @@ $(document).ready(function(){
 			});
 		}
 	});
-	
 	//foreign entity show
 	$('div#yesforeignentity').css('display','none');
 	$('input#inlineRadio020').change(function() {
@@ -1395,9 +1388,8 @@ $(document).ready(function(){
 			});
 		}
 	});
-	//end us foreign options
-	
-	//start basis commerce options
+	//
+	//START basis commerce options
 	$('div.yescommerce').css('display','none');
 	$('input#inlineRadio25, input.countyes').on('change',function(){
 		if(this.checked == true){
@@ -1428,9 +1420,8 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yescommerce').show( 'fast' );
 		}
 	});
-	//end basis commerce options
-	
-	//generate unique IDs + matching labels for Basis pages, checkmarks
+	//
+	//START generate unique IDs + matching labels for Basis pages, checkmarks
 		var checkboxList = $('#basisab input.showspecimen, #basisabde input.showspecimen');
 		for (var i = 0; i <= checkboxList.length; i++) {
 			$(checkboxList[i]).attr('id', 'individualspecimencheck_' + i);
@@ -1447,9 +1438,8 @@ $(document).ready(function(){
 		for (var i = 0; i <= checkboxarialabelList.length; i++) {
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'individualspecimen_' + i);
 		}
-	//
-				
-	//start basistwo connection options
+	//		
+	//START basistwo connection options
 	$('div.yesconnection').css('display','none');
 	$('input#inlineRadio29, input.countyes').on('change',function(){
 		if(this.checked == true){
@@ -1480,9 +1470,8 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yesconnection').show( 'fast' );
 		}
 	});
-	//end basistwo connection options
-	
-	//start provide specimen options
+	//
+	//START provide specimen options
 	$('div.yesspecimen').css('display','none');
 	$('input.showspecimen').change(function() {
 		if(this.checked == true){
@@ -1499,23 +1488,21 @@ $(document).ready(function(){
 			}
 	});
 	//end provide specimen options
-	//END toggle radio buttons content
-	
-	//start affiliation options
+	//
+	//START affiliation options
 	$('div#usaffiliation').css('display','none');
 	$('div#canadianaffiliation').css('display','none');
 	$('#attorney-bar-standing').change(function(){
 		$('.hidethisdiv').hide( 'fast' );
 		$('#' + $(this).val()).show( 'fast' );
 	});
-	//end affiliation options
-	//start nameoftypeofbusiness options
+	//
+	//START nameoftypeofbusiness options
 	$( 'div#nametype' ).css('display','none');
 	$( '#type' ).on('change',function(){
 		$( 'div#nametype' ).show( 'fast' );
 	});
-	//end nameoftypeofbusiness options
-		
+	//
 	//START entity options (import concept)
 	//us form
 	$('#owner #autofill').css('display','none');
@@ -1543,7 +1530,6 @@ $(document).ready(function(){
 		$('footer').css('display','block');
 		//console.log(includeforeign);
 	});
-	
 	//foreign select by country
 	$('.albaniaform, .algeriaform, .angolaform, .bahamasform').css('display','none');
 	$('#entitycountry').on('change',function(){
@@ -1553,33 +1539,52 @@ $(document).ready(function(){
 		$( loadselectmenu ).css('display','block');
 	});
 	//END entity options (import concept)
-	
-	//select signature method
-	$('#declarationsignature .hidethis, #petitions1 .hidethis').css('display','none');
+	//START select signature method
+	$('#declarationsignature .hidethis, #petitions1 .hidethis, #petitions2 .hidethis').css('display','none');
 	$('select.signmethod').on('change',function(){
-		var loadsign = ('.' + $(this).val());
+		var loadsign = ($(this).val());
 		$(this).closest('fieldset').find('.hidethis').show('fast');
 		$( loadsign ).css('display','block');
-		if( loadsign == '.Select') {
+		if( loadsign == 'Select') {
 			$(this).closest('fieldset').find('.hidethis').hide('fast');
+			$(this).closest('fieldset').find('textarea.datesigned').val('');
+			$(this).closest('fieldset').find('.hidethis input').val('');
 			} 
-		//console.log(loadsign);
 	});
-	
-	//start select all declarations	  
+	$('select.countinputs').on('change',function(){
+		var count = $('div.indentctr input[type=radio]:checked').length;
+		var boxes = $('div.indentctr');
+		//var section = $(this).closest('section').prev('section').find('div.indentctr');
+		$(this).closest('section').prev('section').find('div.indentctr input[type=radio]:checked');
+		if( count < 1) {
+			$('html, body').animate({
+				scrollTop: boxes.offset().top - 144
+			}, 500);
+			$(this).val('Select');
+			$(this).closest('fieldset').find('.hidethis').css('display','none');
+			alert ('You must click one of the three buttons, below, to confirm that you are authorized pursuant to the rules governing representation of others before the USPTO to sign this form.');
+			$(this).closest('fieldset').find('textarea.datesigned').val('');
+		}
+	});
+	//
+	//START select all declarations	  
 	$(document).on('change','#declarationsignature input#select', function() {
 	   var checkboxes  = $('#declarationsignature input#select').parent('div').siblings('div').children('input.checkmark');
 	   var selectall = $(this);
-		$.each(checkboxes, function(){
-			$(this).prop('checked', true);
-		});
+	   if ($(this).is( ":checked" )) {
+			$.each(checkboxes, function(){
+				$(this).prop('checked', true);
+			});
+		} else {
+			$.each(checkboxes, function(){
+				$(this).prop('checked', false);
+			}); 
+		}
 		$(checkboxes).on('click', function(e){
 		   $(selectall).prop('checked', false);
 		});
 	});
-	//end select all declarations
-	
-	//END select signature method	
+	//
 	//START fill from contacts values -- attorney
 	function clearform() {
 	  $( 'input#attorney-first-name' ).val( '' );
@@ -1644,8 +1649,7 @@ $(document).ready(function(){
 	  $( '#attorney-phonenumbertype' ).val( 4 );
 	  $( 'input#attorney-phone' ).val( '703-562-6675' );
 	});
-	//END fill from contacts values -- attorney
-	
+	//
 	//START auto-detect pre-fill
 	//var arrlanguages = [ 'Spanish', 'German', 'French' ];
 //	var arrlanguage = jQuery.makeArray( arrlanguages );
@@ -1659,8 +1663,7 @@ $(document).ready(function(){
 //	  $( '#detected #languagetranslit' ).val( arrlangtranslit[1] );
 //	  $( '#detected input#nonlatranslation' ).val( '비누' );
 //	  $( '#detected input#inenglish' ).val( 'Soap' );
-	//END auto-detect pre-fill
-		
+	//
 	//START contacts, fees, my mark components
 	//start toggle glyphicon contacts widget
 	function togglecontacts() {
@@ -1671,77 +1674,64 @@ $(document).ready(function(){
 		$( this ).find('span.glyphicon-ok-sign').attr('aria-label','deselect this contact');
 	}
 	$('a.fromcontact').click(togglecontacts);
-	//end toggle glyphicon contacts widget
-	
-	//start close (x) fees
+	//
+	//START close (x) fees
 	$('button#closefee').click(function() {
 		$( '#mydata' ).css('visibility','hidden');
 		$( '#mydata .collapse' ).collapse('hide').fadeOut( 'slow','swing');
-		$( '#mydata button#feebtn span' ).toggleClass('visuallyremoved');
-		$( '#mydata button#feebtn span#toggleglyph' ).toggleClass('visuallyadded');
 	});	
-	//end close (x) fees
-	
-	//start show fees from nav
+	//
+	//START show fees from nav
 	$('a#showfees').click(function() {
 		$( '#mydata' ).css('visibility','visible');
 		$( '#mydata .collapse' ).collapse('show').fadeIn( 'slow','swing');
-		$( '#mydata button#feebtn span' ).toggleClass('visuallyremoved');
-		$( '#mydata button#feebtn span#toggleglyph' ).toggleClass('visuallyadded');
 	});
-	//end show fees from nav
-	
-	//start show fees from widget
+	//
+	//START show fees from widget
 	$("button#feebtn").click(function() {
 		$( '#mydata' ).css('visibility','visible');
 		$( '#mydata .collapse' ).collapse('show').fadeIn( 'slow','swing');
-		$( 'button#feebtn span' ).toggleClass('visuallyremoved');
-		$( 'button#feebtn span#toggleglyph' ).toggleClass('visuallyadded');
 	});
-	//end show fees from widget
-	
-	//start close (x) managed contacts
+	//
+	//START close (x) managed contacts
 	$('button#closecontacts').click(function() {
-		$( 'button#contactsbtn span#toggleglyphone' ).toggleClass('visuallyremoved','visuallyadded');
-		$( 'button#contactsbtn span#toggleglyph' ).toggleClass('visuallyadded','visuallyremoved');
 		$( '#mydata2 .collapse' ).collapse('hide').fadeOut( 'slow','swing');
 		$( '#mydata2' ).css('visibility','hidden');
 	});
-	//end close (x) managed contacts
-	
-	//start show managed contacts from widget
+	//
+	//START show managed contacts from widget
 	$('button#contactsbtn').click(function() {
 		$( '#mydata2' ).css('visibility','visible');
 		$( '#mydata2 .collapse' ).collapse('show').fadeIn( 'slow','swing');
-		$( 'button#contactsbtn span#toggleglyphone' ).toggleClass('visuallyremoved','visuallyadded');
-		$( 'button#contactsbtn span#toggleglyph' ).toggleClass('visuallyadded','visuallyremoved');
 	});
-	//end show managed contacts from widget
-	
-	//start show managed contacts from nav
+	//
+	//START show managed contacts from nav
 	$('a#showcontacts').click(function() {
 		$( '#mydata2' ).css('visibility','visible');
 		$( '#mydata2 .collapse' ).collapse('show').fadeIn( 'slow','swing');
 	});
-	//populate form from managed contacts
+	//START populate form from managed contacts
 	$('button#autofill, button#autofillforeign').on('click',function() {
 		$( '#mydata2' ).css('visibility','visible');
 		$( '#mydata2 .collapse' ).collapse('show').fadeIn( 'slow','swing');
-		$( 'button#contactsbtn span#toggleglyphone' ).addClass('visuallyremoved');
-		$( 'button#contactsbtn span#toggleglyph' ).addClass('visuallyadded');
 	});
-	//end show managed contacts from nav
-	
-	//search managed contacts
+		//$( '#mydata2' ).find('.panel-heading button span').toggleClass('visuallyremoved');
+		$('#mydata2 div.panel-collapse').on('hide.bs.collapse', function () {
+			$('#mydata2').parent().find('.panel-heading button span').toggleClass('visuallyremoved');
+			});
+		$('#mydata2 div.panel-collapse').on('show.bs.collapse', function () {
+			$('#mydata2').parent().find('.panel-heading button span').toggleClass('visuallyremoved');
+		});
+	//
+	//START search managed contacts
 	$("#contactsearch").on("keyup", function() {
 		var value = $(this).val().toLowerCase();
 		$("#contactssearch tr").filter(function() {
 		  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
 		});
 	});
-	//search managed contacts
-		
-	//edit owner accordion button toggle rev
+	//
+	//START edit owner accordion button toggle rev
 	$( document ).on('click','#editowner button.Accordion-trigger, #reviewattorney button.Accordion-trigger', function() {
 		$( this ).siblings('span.glyphicon-triangle-right').removeClass('visuallyadded').toggleClass('visuallyremoved');
 		$( this ).siblings('span.glyphicon-triangle-bottom').removeClass('visuallyremoved').toggleClass('visuallyadded');
@@ -1754,8 +1744,7 @@ $(document).ready(function(){
 		$( this ).addClass('visuallyremoved').removeClass('visuallyadded');
 		$( this ).siblings( 'span.glyphicon-triangle-right' ).addClass('visuallyadded').removeClass('visuallyremoved');
 	});
-	//edit owner accordion button toggle rev
-		
+	//
 	//START additional phone
 	$( document ).on('click','button#addphone2',function(){	
 		var resettype = [ 'Type' ];
@@ -1769,13 +1758,13 @@ $(document).ready(function(){
 		$( document ).on('click','.resetphonebtn',function(){
 			$( this ).parent().parent().parent().remove();
 		});
-	//END additional phone
-	
+	//
 	//START concurrent use, 2(f) Claim
 	$( document ).on('click','.resetregbtn',function(){
 		$( this ).parent().parent().remove();
 	});
-	//start additional registration 2(f)
+	//
+	//START additional registration 2(f)
 	$( document ).on('click','button#addreg2f',function(){	
 		$( 'div.reg:eq(0)' ).clone().appendTo( '#yespriors .appendreg' );
 		$( 'div.reg' ).last().find('input').val('');
@@ -1783,9 +1772,8 @@ $(document).ready(function(){
 		$( '#yespriors .appendreg .resetreg' ).removeClass( 'visuallyremoved' );
 		$( this ).removeClass( '.addinitial' );
 		});
-	//end additional registration 2(f) add/remove
-	
-	//start additional registration no courtd
+	//
+	//START additional registration no courtd
 	$( document ).on('click','button#addreg',function(){	
 		$( 'div.holdsaconcregapp_courtd:eq(0)' ).clone().appendTo( '.appendaconcregapp_courtd' );
 		$( 'div.holdsaconcregapp_courtd' ).last().find('input').val('');
@@ -1812,9 +1800,8 @@ $(document).ready(function(){
 			$(checkboxarialabelList_courtd[i]).attr('aria-labelledby', 'noregapplabel_' + i);
 		}
 	});
-	//end additional registration no courtd
-	
-	//start additional registration no ttab
+	//
+	//START additional registration no ttab
 	$( document ).on('click','button#addttab',function(){	
 		$( 'div.holdsaconcregapp_ttab:eq(0)' ).clone().appendTo( '.appendaconcregapp_ttab' );
 		$( 'div.holdsaconcregapp_ttab' ).last().find('input').val('');
@@ -1841,9 +1828,8 @@ $(document).ready(function(){
 			$(checkboxarialabelList_ttab[i]).attr('aria-labelledby', 'noregapplabel_' + i);
 		}
 	});
-	//end additional registration no ttab
-	
-	//start additional registration no conflicting
+	//
+	//START additional registration no conflicting
 	$( document ).on('click','button#addconflicting',function(){	
 		$( 'div.holdsaconcregapp_conflictingreg:eq(0)' ).clone().appendTo( '.appendaconcregapp_conflictingreg' );
 		$( 'div.holdsaconcregapp_conflictingreg' ).last().find('input').val('');
@@ -1869,9 +1855,8 @@ $(document).ready(function(){
 			$(checkboxarialabelList_conflictingreg[i]).attr('aria-labelledby', 'noregapplabel_' + i);
 		}
 	});
-	//end additional registration no conflicting
-	
-	//start additional registration no earlieruse
+	//
+	//START additional registration no earlieruse
 	$( document ).on('click','button#addearlieruse',function(){	
 		$( 'div.holdsaconcregapp_earlieruse:eq(0)' ).clone().appendTo( '.appendaconcregapp_earlieruse' );
 		$( 'div.holdsaconcregapp_earlieruse' ).last().find('input').val('');
@@ -1898,8 +1883,7 @@ $(document).ready(function(){
 		}
 	});
 	//end additional registration no earlieruse
-	//END concurrent use, 2(f) Claim add/remove
-	
+	//
 	//START additional docket
 	$( document ).on('click','button#addocketref',function(){	
 		$( 'div.docket:eq(0)' ).clone().appendTo( '.appenddocket' );
@@ -1910,8 +1894,7 @@ $(document).ready(function(){
 		$( document ).on('click','.resetdktrefbtn',function(){
 			$( this ).parent().parent().remove();
 		});
-	//END additional docket
-	
+	//
 	//START additional name
 	$( document ).on('click','button#addaname',function(){	
 		$( 'div.addname:eq(0)' ).clone().appendTo( '.appendaname' );
@@ -1934,8 +1917,7 @@ $(document).ready(function(){
 		$( document ).on('click','.resetportraitbtn',function(){
 			$( this ).parent().parent().remove();
 		});
-	//END additional portrait
-	
+	//
 	//START additional signature
 	$( document ).on('click','button#addasignature',function(){	
 		$( 'div.addsignature:eq(0)' ).clone().appendTo( '.appendasignature' );
@@ -1946,8 +1928,7 @@ $(document).ready(function(){
 		$( document ).on('click','.resetsignaturebtn',function(){
 			$( this ).parent().parent().remove();
 		});
-	//END additional signature
-	
+	//
 	//START additional translation
 	$( document ).on('click','button#addatranslation',function(){	
 		$( 'div.addtranslation:eq(0)' ).clone().appendTo( '.appendatranslate' );
@@ -1958,8 +1939,7 @@ $(document).ready(function(){
 		$( document ).on('click','.resettranslationbtn',function(){
 			$( this ).parent().parent().remove();
 		});
-	//END additional translation
-	
+	//
 	//START additional transliteration
 	$( document ).on('click','button#addatransliteration',function(){	
 		$( 'div.addtransliteration:eq(0)' ).clone().appendTo( '.appendatransliterate' );
@@ -1970,8 +1950,7 @@ $(document).ready(function(){
 		$( document ).on('click','.resettransliterationbtn',function(){
 			$( this ).parent().parent().remove();
 		});
-	//END additional transliteration
-	
+	//
 	//START additional transliteration
 	$( document ).on('click','button#addisclaimer',function(){	
 		$( 'div.disclaim:eq(0)' ).clone().appendTo( '.appenddisclaim' );
@@ -1982,8 +1961,7 @@ $(document).ready(function(){
 		$( document ).on('click','.resetdisclaimbtn',function(){
 			$( this ).parent().parent().remove();
 		});
-	//END additional transliteration
-		
+	//
 	//START pending + foreign
 	//Basis one
 	$('div.yescommerce div.holdsapending').css('display','none');
@@ -2104,8 +2082,7 @@ $(document).ready(function(){
 			$('div.yesconnection div.appendaforeign div.holdsaforeign, div#yesconnection div.appendaforeign div.holdsapending').remove();
 		}
 	});
-	//END pending + foreign
-		
+	//
 	//START additional foreignreg
 	$( document ).on('click','button#addforeignreg_basisone',function(){	
 		$( 'div.yescommerce div.holdsaforeign' ).last().clone().appendTo( 'div.yescommerce .appendaforeign' );
@@ -2143,8 +2120,7 @@ $(document).ready(function(){
 		$( 'div.yesconnection .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
 		});
-	//END additional foreignreg
-	
+	//
 	//START additional foreignpending
 	$( document ).on('click','button#addpending_basisone',function(){	
 		$( 'div.yescommerce div.holdsapending' ).last().clone().appendTo( 'div.yescommerce .appendapending' );
@@ -2188,23 +2164,20 @@ $(document).ready(function(){
 		$( 'div.yesconnection .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
 		$( this ).removeClass( '.addinitial' );
 		});
-	//END additional foreignpending
-	
-	//Basis foreign application date alert
+	//
+	//START Basis foreign application date alert
 	$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	$(document).on('click','#alertmin button.close', function () {
 	  $('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	  $('#alertmin button').css('display','none');
 	  $('#alertmin p').css('display','none');
 	});
-	//END Basis foreign application date alert
-
+	//
 	//START modals
 	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
 	})
-	//END modals
-	
+	//
 	//START show standard character preview
 	$( '#ta2standard' ).keyup(function(){
 		var d = $( '#entertext' ).next('div');
@@ -2216,8 +2189,7 @@ $(document).ready(function(){
 //	$( 'button#displaytxt' ).on('click',function(){
 //		$( 'p#displaytext' ).html( str );
 //	});
-	//END show standard character preview
-	
+	//
 	//START displaymark height match
 	$( window ).load(function () {
       var d = $( '#entertext' ).next('div');
@@ -2227,8 +2199,7 @@ $(document).ready(function(){
   		$('#entertext').css( 'min-height', (d.innerHeight()) );
 		});
 	});
-	//END displaymark height match
-	
+	//
 	//START close button height match
 	$( window ).load(function () {
       var d = $( '#announcements .closepans' ).prev('div');
@@ -2240,8 +2211,7 @@ $(document).ready(function(){
 	  	$('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
 		});
 	});
-	//END close button height match
-	
+	//
 	//row header p height match
 	var p = $('.rowheader p').height();
 	$('.rowheader p').height(p);
@@ -2256,17 +2226,15 @@ $(document).ready(function(){
 	$( window ).resize(function() {
   		$('.rowheader h3').height(q);
 		});
-	//END row header p height match
-	
+	//
 	//tabpanels
 	$('.tabwidget').tabs();
 	$('ul[role="tablist"] a').on('click',function (){
 		$(this).parent('li').toggleClass('notice');
 		$(this).parent('li').siblings('li').removeClass('notice');
 		});
-	//tabpanels 
-	
-	//toggle save more labels
+	// 
+	//START toggle teas save more labels
 	$('.togglesavemore').change(function() {
 		if(this.checked == true){
 			$( document ).find('span.subtle').removeClass('visuallyremoved');
@@ -2279,16 +2247,14 @@ $(document).ready(function(){
 			$( document ).find('#off').removeClass('visuallyhidden');
 			}
 	});
-	//toggle save more labels
-	
-	//grid view checkboxes In-Use 1(a)
+	//
+	//START grid view checkboxes In-Use 1(a)
 	//Gridview In-Use 1(a) Form Reveal
 	$(document).on('change', 'input#otherformfirst, input#otherformcommerce', function() {
 		$(this).parent().siblings('div#yesinuse1atwo').css('display','block' );
 	});
-	//END Gridview In-Use 1(a) Form Reveal
-	
-	//Toggle 1(a) + 1(b)
+	//
+	//START Toggle 1(a) + 1(b)
 	$('#gridview table tbody tr td:nth-child(2) input').change(function() {
 		if ($(this).prop('checked')) {
 			$(this).parent().next('td').children('label').children('span').addClass('special');
@@ -2357,9 +2323,8 @@ $(document).ready(function(){
 			$(this).parent().prev('th').children('input').attr('aria-disabled', 'false');
 		}
 	});
-	//END Toggle 1(a) + 1(b)
-	
-	//user selects In-Use 1(a) classname and adjacent checkbox
+	//
+	//START user selects In-Use 1(a) classname and adjacent checkbox
 	$(document).on('change', '#gridview table tbody tr th:nth-child(2) input', function() { //Classnames 2nd checkbox
 		var b 	= 	$( '#gridview table tbody tr th:nth-child(1) input:checked' ); //Classnames 1st checkbox, checked
 		var p 	= 	$( '#gridview table tbody tr th:nth-child(2) input:checked' ); //Classnames 2nd checkbox, checked
@@ -2911,7 +2876,7 @@ $(document).ready(function(){
 			}).attr('aria-disabled', 'true');
 		$(this).closest('fieldset').find('input[type=radio].countyes').parent().addClass('special').addClass('disabled');
 	});
-	
+	//
 	//START review application statement
 	var arrcompanies = [ 'Scrubby Butts Soap Co.','Black Diamond Ski Shop' ];
 	var arrcompany = jQuery.makeArray( arrcompanies );
@@ -2925,78 +2890,239 @@ $(document).ready(function(){
 	  $( 'span.partner_name' ).html( arrnames[0]  + " and " + arrnames[1] );
 	  $( 'span.partnershipname' ).html( arrcompany[0] );
 	  $( 'span.state_country' ).html( arrstate[0] );
-	//END review application statement
-
+	//
 	//WYSIWYG editor for revive petition application s1
-	if ( $( 'div#petitions1' ).length ) {
-		var quill = new Quill('#petitions1 #editor', {
+	if ( $( 'div#editor' ).length ) {
+		var quill = new Quill('#editor', {
 			theme: 'snow'
 			});
 	}
-	//WYSIWYG editor for revive petition application s1
-	
-	//start revive petition s1 options
-	$('fieldset#responsefile').css('display','none');//radios
-	$('div#reviveappformradios').css('display','none');//form and (hidden) radios
-	$('div#reviveappform').css('display','none');//form
+	//
+	//START revive petition options			
+	$('div#reviveappformradios').css('display','none');
+	$('div#reviveappformdisplay').css('display','block');
+	$('div#reviveappform').css('display','none');
+	$('div#reconsideration').css('display','none');
+	$('div#noreconsideration').css('display','none');
+	$('div#yesreconsideration').css('display','none');
+	$('div#yesttabreconsideration').css('display','none');
+	$('div#nottabreconsideration').css('display','none');
+	$('div#newpetradios').css('display','none');
+	$('div#twomonths').css('display','none');
+	$('div#petdiradios').css('display','none');
+	$('div#receipt').css('display','none');
+	$('div#received').css('display','none');
+	$('div#expedite').css('display','none');
+	$('div#reconsidersig').css('display','none');
+	//clear signature inputs when user selects alternate radio option
+	function clear() {
+		$('div#reviveappform textarea.datesigned').val('');
+		$('div#reviveappform .hidethis input').val('');
+		$('div#reviveappform select.signmethod').val('Select');
+		$('div#reviveappform .hidethis').hide('fast');
+		}
+	function clearreconsider() {
+		$('div#reconsideration textarea.datesigned, div#noreconsideration textarea.datesigned, div#expedite textarea.datesigned, div#received textarea.datesigned').val('');
+		$('div#reconsideration .hidethis input, div#noreconsideration .hidethis input, div#expedite .hidethis input, div#received .hidethis input').val('');
+		$('div#reconsideration select.signmethod, div#noreconsideration select.signmethod, div#expedite select.signmethod, div#received select.signmethod').val('Select');
+		$('div#reconsideration .hidethis, div#noreconsideration .hidethis, div#expedite .hidethis, div#received .hidethis').hide('fast');
+		}
+	//
+	//START revive petition ROA s1 options			
 	$('input#inlineRadio072').change(function() {
 		if(this.checked == true){
-			$('div#reviveappform').css('display','block');
-			$('div#reviveappformradios').show('fast','swing');
-			$('fieldset#responsefile').hide('fast');
-			$('fieldset#edit').show('fast','swing');
-			$('fieldset#resp').show('fast','swing');
-			$('.hidethis').hide('fast','swing');
-			$('select.signmethod').val('Select');
+			$(clear);
 			$('input#inlineRadio074, input#inlineRadio075').prop({
 				checked:false,
 			});
-			$('div.ql-editor').empty();
+			$('div#reviveappformradios').hide('fast');
+			$('div#reviveappform').show('fast','swing');
 		}
 	});
-	$('input#inlineRadio073').change(function() {
+	$('input#inlineRadio073,input#inlineRadio079').change(function() {
 		if(this.checked == true){
+			$(clear);
 			$('div#reviveappform').hide('fast','swing');
-			$('fieldset#responsefile').css('display','block');
-			$('div#reviveappformradios').show('fast');
+			$('div#reviveappformradios').show('fast','swing');
 			}
 	});
 	$('input#inlineRadio074').change(function() {
 		if(this.checked == true){
+			$(clear);
 			$('div#reviveappform').show('fast','swing');
 			$('fieldset#edit').show('fast','swing');
 			$('fieldset#resp').show('fast','swing');
-			$('.hidethis').hide('fast','swing');
-			$('select.signmethod').val('Select');
-			$('div.ql-editor').empty();
 			}
 	});
 	$('input#inlineRadio075').change(function() {
 		if(this.checked == true){
+			$(clear);
+			$('div#reviveappform fieldset#edit').hide('fast');
+			$('div#reviveappform fieldset#resp').hide('fast');
 			$('div#reviveappform').show('fast','swing');
-			$('div#reviveappform').find('fieldset#edit').hide('fast');
-			$('div#reviveappform').find('fieldset#resp').hide('fast');
 			}
 	});
-	//revive petition s1 options
-	
-	//response amendment submit buttons
-	$('#responseamend a.ablock').click(function(){
-		$('#responseamend button.right').toggleClass( 'visuallyadded' );
+	//
+	//START revive petition ROA s2 unique options
+	$('input#inlineRadio078,input#inlineRadio079').change(function() {
+		$(clear);
+		$('div#reviveappform div.ql-editor').empty();
+		$('div#reviveappform input').prop({
+				checked:false,
+			});
+		$('div#reviveappform input').val('');
+		$('div#reconsideration').hide('fast');
+		$('div#noreconsideration').hide('fast');
+		$('div#yesttabreconsideration').hide('fast');
+		$('div#nottabreconsideration').hide('fast');
+		$('div#reviveappform').hide('fast','swing');
+		$('div#reviveappform').show('fast','swing');
 	});
-	//response amendment submit buttons	
-
-	//$( 'input.checkmark' ).change(function() {
-//		if($(this).prop('checked')){
-//			console.log('checked');
-//			}
-//		else{
-//		console.log('unchecked');
-//		}
-//	});
-	
-	//END grid view checkboxes
-	
-	
-	//END Gridview In-Use 1(a) Form Reveal
+	//request for reconsideration radios
+	$('input#inlineRadio080').change(function() {
+		$(clearreconsider);
+		$('div#reconsideration input,div#noreconsideration input,div#yesttabreconsideration input,div#nottabreconsideration input').prop({
+				checked:false,
+			});
+		$('div#nottabreconsideration').hide('fast');
+		$('div#nottabreconsideration').hide('fast');
+		$('div#noreconsideration').hide('fast','swing');
+		$('div#reconsideration').show('fast','swing');
+	});
+	$('input#inlineRadio081').change(function() {
+		$(clearreconsider);
+		$('div.ql-editor').empty();
+		$('div#reconsideration input,div#noreconsideration input,div#yesttabreconsideration input,div#nottabreconsideration input').prop({
+				checked:false,
+			});
+		$('div#nottabreconsideration').hide('fast');
+		$('fieldset#tabappeal').hide('fast');
+		$('div#reconsideration').hide('fast');
+		$('div#noreconsideration').show('fast','swing');
+	});
+	//
+	$('input#inlineRadio076,input#inlineRadio082').change(function() {
+		$('div#nottabreconsideration input').prop({
+				checked:false,
+			});
+		$('div#nottabreconsideration').hide('fast');
+		$('div#yesttabreconsideration').show('fast');
+		//$('fieldset#appsig').css('display','none');
+	});
+	$('input#inlineRadio077,input#inlineRadio083').change(function() {
+		$('div#yesttabreconsideration').hide('fast','swing');
+		$('div#nottabreconsideration').show('fast','swing');
+	});
+	//
+	//START revive petition ROA s3 options
+	$('input#inlineRadio084').change(function() {
+		$('div#twomonths').hide('fast');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input').val('');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input').prop({
+				checked:false,
+			});
+		$('div.ql-editor').empty();
+		$('textarea.datesigned').val('');
+		$('.hidethis input').val('');
+		$('select.signmethod').val('Select');
+		$('.hidethis').hide('fast');
+		$('div#newpetradios, div#twomonths, div#petdiradios, div#reviveappformradios, div#expedite, div#received, div#receipt').hide('fast');
+		$('div#newpetradios').show('fast','swing');
+	});
+	$('input#inlineRadio085').change(function() {
+		$('div#newpetradios').hide('fast');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input').val('');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input').prop({
+				checked:false,
+			});
+		$('div.ql-editor').empty();
+		$('textarea.datesigned').val('');
+		$('.hidethis input').val('');
+		$('select.signmethod').val('Select');
+		$('.hidethis').hide('fast');
+		$('div#newpetradios, div#twomonths, div#petdiradios, div#reviveappformradios, div#expedite, div#received, div#receipt').hide('fast');
+		$('div#twomonths').show('fast','swing');
+	});
+	$('input#inlineRadio088').change(function() {
+		$('div#petdiradios').hide('fast');
+		$('div#receipt').show('fast','swing');
+	});
+	$('input#inlineRadio089').change(function() {
+		$(clearreconsider);
+		$('div#received div.ql-editor').empty();
+		$('div#received input, div#receipt input, div#reviveappformradios input').prop({
+				checked:false,
+			});
+		$('div#receipt').hide('fast');
+		$('div#expedite').hide('fast');
+		$('div#reviveappformradios').hide('fast');
+		$('div#received').hide('fast');
+		$('div#petdiradios').show('fast','swing');
+	});
+	$('input#inlineRadio092').change(function() {
+		$(clearreconsider);
+		$('input#inlineRadio094, input#inlineRadio095').prop({
+				checked:false,
+			});
+		$('div#reviveappformradios').hide('fast');
+		$('div#expedite').hide('fast');
+		$('div#received').show('fast','swing');
+	});
+	$('input#inlineRadio093').change(function() {
+		$('div#received div.ql-editor').empty();
+		$('div#received input').val('');
+		$(clearreconsider);
+		$('div#received').hide('fast');
+		$('div#reviveappformradios').show('fast','swing');
+	});
+	$('input#inlineRadio094, input#inlineRadio095').change(function() {
+		$('div#expedite').show('fast','swing');
+		$(clearreconsider);
+	});
+	//
+	//START revive petition ROA s4 options
+	$('input#inlineRadio096').change(function() {
+		$('div#twomonths').hide('fast');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input').val('');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input').prop({
+				checked:false,
+			});
+		$('div.ql-editor').empty();
+		$('textarea.datesigned').val('');
+		$('.hidethis input').val('');
+		$('select.signmethod').val('Select');
+		$('.hidethis').hide('fast');
+		$('div#newpetradios, div#twomonths, div#petdiradios, div#reviveappformradios, div#expedite, div#received, div#receipt').hide('fast');
+		$('div#newpetradios').show('fast','swing');
+		//$('div#reconsidersig').show('fast','swing');
+	});
+	$('input#inlineRadio097').change(function() {
+		$('div#newpetradios').hide('fast');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input, div#reconsidersig input').val('');
+		$('div#newpetradios input, div#twomonths input, div#petdiradios input, div#reviveappformradios input, div#expedite input, div#received input, div#receipt input, div#reconsidersig input').prop({
+				checked:false,
+			});
+		$('div.ql-editor').empty();
+		$('textarea.datesigned').val('');
+		$('.hidethis input').val('');
+		$('select.signmethod').val('Select');
+		$('.hidethis').hide('fast');
+		$('div#newpetradios, div#twomonths, div#petdiradios, div#reviveappformradios, div#expedite, div#received, div#receipt, div#reconsidersig').hide('fast');
+		$('div#twomonths').show('fast','swing');
+		//$('div#reconsidersig').show('fast','swing');
+	});
+	$('input#inlineRadio098').change(function() {
+		$(clearreconsider);
+		$('input#inlineRadio094, input#inlineRadio095').prop({
+				checked:false,
+			});
+		$('div#reviveappformradios').show('fast');
+		$('div#expedite').show('fast');
+	});
+	$('input#inlineRadio0100').change(function() {
+		$(clearreconsider);
+		$('div#expedite').hide('fast');
+		$('div#received').show('fast','swing');
+		$('div#reconsidersig').show('fast','swing');
+	});
 });

@@ -64,6 +64,7 @@ function datealert() {
 			document.getElementById("mintext").style.display = "block";
 			document.getElementById("alertbtn").style.display = "block";
 			document.getElementById("alertbtn").focus();
+			window.scrollTo(0, 250);
 			document.getElementById("mintext").innerHTML = ("You cannot claim Section 44(d) priority, because your attempted U.S. filing is outside the 6-month window. (i.e., from when the foreign application was filed). The date must be a number after " + strmin)
 	  } else {
 			b.style.visibility = "hidden";
@@ -92,6 +93,7 @@ function datealert() {
 			document.getElementById("mintext").style.display = "block";
 			document.getElementById("alertbtn").style.display = "block";
 			document.getElementById("alertbtn").focus();
+			window.scrollBy(0, 250);
 			document.getElementById("mintext").innerHTML = ("You cannot claim Section 44(d) priority, because your attempted U.S. filing is after the current date. The date must be a number before " + thatz);
 	  		validateinput.value = "yyyy-MM-dd";
 		} else {
