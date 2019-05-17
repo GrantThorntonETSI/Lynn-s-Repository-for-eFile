@@ -2359,6 +2359,10 @@ div[role="heading"] button {
 	padding-left:40px;
 	padding-right:40px;
 	}
+#applicationdata .Accordion p {
+	padding-left:0;
+	padding-right:0;
+	}
 .collapse {
 	display: none;
 	}
