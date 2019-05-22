@@ -112,8 +112,8 @@ $(document).ready(function(){
 		},	
 			'sDom': '<"toolbar">lfrtip',
 			"language": {
-			"search": "<span class='glyphicon glyphicon-search' aria-hidden="true"></span><span class="sr-only">search</span>",
-			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden="true"></span><span class="sr-only">select number of entries to display</span> <select>"+
+			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
 			  '<option value="10">10</option>'+
 			  '<option value="25">25</option>'+
 			  '<option value="50">50</option>'+
@@ -147,8 +147,8 @@ $(document).ready(function(){
 		},
 			'sDom': '<"toolbartwo">lfrtip',
 			"language": {
-			"search": "<span class='glyphicon glyphicon-search' aria-hidden="true"></span><span class="sr-only">search</span>",
-			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden="true"></span><span class="sr-only">select number of entries to display</span> <select>"+
+			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
 			  '<option value="10">10</option>'+
 			  '<option value="25">25</option>'+
 			  '<option value="50">50</option>'+

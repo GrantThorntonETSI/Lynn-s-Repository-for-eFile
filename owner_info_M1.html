@@ -42,39 +42,82 @@
           </button>
           <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
         </div>
+    
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#">Home</a></li>
-            <li><a href="#w">Applications / Registration</a></li>
-            <li><a href="#">Actions</a></li>
-            <li><a href="#">Resources</a></li>
+            <li><a href="#">Applications / Registration</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="https://www.uspto.gov/learning-and-resources/account-faqss">FAQs</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">File an Amendment<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li><a href="#">Voluntary Amendment</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Post Approval/Publication/Post-Notice of Allowance Amendment</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Amendment to Allege Use or Statement of Use</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Request to Delete Section 1(b) Basis</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">File a Petition</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-            	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
-            	<ul class="dropdown-menu">
-                    <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                <li><a href="#">Respond to Office Action</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File Request for Reconsideration</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File an Extension Request</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Contacts<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li><a href="#">Attorney</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                    <li><a href="#">Owner</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
-              	</ul>
-            </li>
-            <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
+                    <li><a href="#">Correspondence</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Domestic Representative</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Delegate</a></li>
+                  </ul>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Request Abandonment</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File Post Registration</a></li>
           </ul>
+        </li>
+        <li><a href="#">Resources</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">Help<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.uspto.gov/learning-and-resources/account-faqss">FAQs</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+            </ul>
+        </li>
+        <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
+      </ul>
           
           <br style="clear:both">
           
           <ul class="nav navbar-nav navbar-right" id="lowernav">
           	<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
               <ul class="dropdown-menu" id="classfees">
                 <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
                 <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
@@ -92,7 +135,6 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-      
     <div class="container-fluid">    
       <div class="row content" id="owner">
         <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">

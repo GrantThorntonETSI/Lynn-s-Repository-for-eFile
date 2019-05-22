@@ -497,7 +497,7 @@ div.breadcrumb-steps {
 	width:100%;
 	padding-right: 26px;
 	}
-ul#lowernav li>a.dropdown-toggle, ul#lowernav li a  {
+ul#dropdown-menu li>a.dropdown-toggle, ul#lowernav li a  {
     color: #fff!important;
 	}
 ul#lowernav li a:hover  {
@@ -566,6 +566,9 @@ ul#lowernav .dropdown-menu>li>a:hover  {
 ul.dropdown-menu>li>a  {
 	line-height: 2.978em;
 	}
+ul.dropdown-menu>li>a.dropdown-toggle  {
+	border-bottom: 1px solid rgba(0,0,0,.15)!important;
+	}
 #dashboardtableone_wrapper ul.dropdown-menu>li>a, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a, #filepetitiontable_wrapper ul.dropdown-menu>li>a  {
 	color: #fff;
     font-weight: 600;
@@ -576,15 +579,32 @@ ul.dropdown-menu>li>a  {
 	}
 ul.dropdown-menu>li {
 	line-height: 2.5em;
+	width:389px;
 	}
-ul.dropdown-menu>li>a:hover  {
-    color: #fff;
-	background-image:none!important;
-	background-color: #9BB8D3;
-	-webkit-transition: background-color .2s ease;
-	-moz-transition: background-color .2s ease;
-	transition: background-color .2s ease;
-	}
+	ul.dropdown-menu>li>a:hover  {
+		color: #fff;
+		background-image:none!important;
+		background-color: #9BB8D3;
+		-webkit-transition: background-color .2s ease;
+		-moz-transition: background-color .2s ease;
+		transition: background-color .2s ease;
+		}
+		ul.dropdown-menu>li>ul.dropdown-submenu {
+			position:relative;
+			margin:0;
+			top:-2px;
+			right:1px;
+			width:390px;
+			border: none;
+			border-radius:0;
+			background-color:#808080;
+			}
+			ul.dropdown-menu>li>ul.dropdown-submenu li {
+				width:390px;
+				}
+			ul.dropdown-menu>li>ul.dropdown-submenu a {
+				color:#fff!important;
+				}
 #dashboardtableone_wrapper ul.dropdown-menu>li>a:hover, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:hover, #dashboardtableone_wrapper ul.dropdown-menu>li>a:active, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:active, #dashboardtableone_wrapper ul.dropdown-menu>li>a:focus, #dashboardtabletwo_wrapper ul.dropdown-menu>li>a:focus, #filepetitiontable_wrapper ul.dropdown-menu>li>a:hover, #filepetitiontable_wrapper ul.dropdown-menu>li>a:active, #filepetitiontable_wrapper ul.dropdown-menu>li>a:focus{
 	background-color: #808080;
 	background-image: none;
@@ -2483,7 +2503,7 @@ span#authem  {
 	margin-left:1.2em;
 	}
 .radio ul li {
-	margin-left:0;
+	margin-left:2.4em;
 	}
 #declarationsignature .checkmargin, #reviewapplication .checkmargin {
 	margin-bottom:2em!important;
@@ -3004,6 +3024,9 @@ button[type="submit"].right, button[type="button"].right {
 	}
 #petitions1 p.panel-title, #petitions2 p.panel-title, #responseamend p.panel-title  {
 	margin-bottom: 1em!important;
+	}
+#petitions1 p.extensions, #petitions2 p.extensions  {
+	margin: 1.5em!important;
 	}
 #gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group, #petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group {
 	margin-bottom: 1.5em;

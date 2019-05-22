@@ -26,69 +26,110 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
-            </div>
-        
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Home</a></li>
-                <li><a href="#w">Applications / Registration</a></li>
-                <li><a href="#">Actions</a></li>
-                <li><a href="#">Resources</a></li>
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Applications / Registration</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions<span class="caret"></span></a>
+              <ul class="dropdown-menu">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Help<span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="https://www.uspto.gov/learning-and-resources/account-faqss">FAQs</a></li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">File an Amendment<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li><a href="#">Voluntary Amendment</a></li>
                     <li role="separator" class="divider"></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Post Approval/Publication/Post-Notice of Allowance Amendment</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Amendment to Allege Use or Statement of Use</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Request to Delete Section 1(b) Basis</a></li>
                   </ul>
                 </li>
+                <li><a href="#">File a Petition</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Respond to Office Action</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File Request for Reconsideration</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File an Extension Request</a></li>
+                <li role="separator" class="divider"></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
-                    </ul>
-                </li>
-                <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
-              </ul>
-              
-              <br style="clear:both">
-              
-              <ul class="nav navbar-nav navbar-right" id="lowernav">
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
-                  <ul class="dropdown-menu" id="classfees">
-                    <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
-                    <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
-                    <li aria-live="assertive">Total Classes 0</li>
-                    <li id="lastli" aria-live="assertive">Total Fee $<span>225</span></li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Contacts<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li><a href="#">Attorney</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Owner</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Correspondence</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Domestic Representative</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Delegate</a></li>
                   </ul>
                 </li>
-            <!--<li><a href="#">Actions</a></li>
-                <li><a href="#">Applications / Registration</a></li>-->
-                <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
-                <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
-                <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop" aria-live="assertive"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Request Abandonment</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File Post Registration</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Resources</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">Help<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.uspto.gov/learning-and-resources/account-faqss">FAQs</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+            </ul>
+        </li>
+        <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
+      </ul>
+          
+          <br style="clear:both">
+          
+          <ul class="nav navbar-nav navbar-right" id="lowernav">
+          	<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
+              <ul class="dropdown-menu" id="classfees">
+                <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
+                <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
+                <li aria-live="assertive">Total Classes 0</li>
+                <li id="lastli" aria-live="assertive">Total Fee $<span>225</span></li>
               </ul>
-              <br style="clear:both">
-            </div><!-- /.navbar-collapse -->
-          </div><!-- /.container-fluid -->
-        </nav>
-      
+            </li>
+		<!--<li><a href="#">Actions</a></li>
+            <li><a href="#">Applications / Registration</a></li>-->
+            <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
+            <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
+            <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop" aria-live="assertive"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+          </ul>
+          <br style="clear:both">
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
     <div class="container-fluid">    
         <div class="row content">
             <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
@@ -119,14 +160,16 @@
                                                             	<div class="col-xs-12 form-group form-group-md">
                                                                     <div role="radiogroup" aria-describedby="selection" class="form-group form-group-md">
                                                                         <div class="radio">
-                                                                            <label for="unrepre" class="radio-inline radiocontainer"><ul><span class="weight600">Unrepresented Owner/Holder</span>: I hereby confirm that
+                                                                            <label for="unrepre" class="radio-inline radiocontainer">
+                                                                            	<ul><span class="weight600">Unrepresented Owner/Holder</span>: I hereby confirm that
                                                                                     <li><span class="weight600">No</span> authorized attorney or Canadian attorney/agent <a href="#">represents</a> me in this matter, and that I am either: (1) the owner/holder; or (2) a person(s) with legal authority to bind the owner/holder; and</li>
                                                                                     <li>If an authorized U.S. attorney or canadian attorney/agent previously represented me in this matter, either I have filed a signed revocation of power of attorney with the USPTO or the USPTO has granted the request of my prior representation to withdraw. <br><span class="weight600 uppercase">advisory</span>: you may click this first button <em>only</em> if you are the owner/holder or legally authorized to bind the owner/holder, e.g., an officer of the owner/holder corporation or association, or a general partner of the owner/holder partnership.</li>
                                                                                 </ul>
                                                                             <input type="radio" name="roadeclarations" id="unrepre" value="unrepresented" tabindex="0"><span class="checkmark"></span></label>
                                                                         </div>
                                                                         <div class="radio">
-                                                                            <label for="usattorney" class="radio-inline radiocontainer"><ul><span class="weight600">Authorized U.S. Attorney</span>: I hereby confirm that
+                                                                            <label for="usattorney" class="radio-inline radiocontainer">
+                                                                            	<ul><span class="weight600">Authorized U.S. Attorney</span>: I hereby confirm that
                                                                                     <li>I am an attorney who is a member in good standing of the bar of the highest court of a U.S. state, which includes the District of Columbia, Puerto Rico, and other federal territories and possessions;</li>
                                                                                     <li>I am currently the owner&#8217;s/holder&#8217;s attorney or an <a href="#">associate</a> thereof;</li>
                                                                                     <li>To the best of my knowledge, if prior to my appointment another U.S. attorney or a Canadian attorney/agent <span class="weight600">not currently associated with my company/firm</span> previously <a href="#">represented</a> the owner/holder in this matter: <a href="#">(1)</a> the owner/holder has filed or is concurrently filing a signed revocation of or substitute power of attorney with the USPTO; <a href="#">(2)</a> the USPTO has granted the request of the prior representative to withdraw; <a href="#">(3)</a> the owner/holder has filed a power of attorney appointing me in this matter; or <a href="#">(4)</a> the owner&#8217;s/holder&#8217;s appointed U.S. attorney or Canadian attorney/agent has filed a power of attorney appointing me as an associate attorney in this matter.</li>
