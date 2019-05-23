@@ -16,12 +16,19 @@ $(document).ready(function(){
 	});
 	$( window ).resize(function() {
 		var e = $( window ).height();
+		var f = $('ul.dropdown-menu').eq(0).height();
 		var enav = $('.navbar-fixed-top').height();
 		var efoot = $('footer').height();
 		var winwidth = $(window).width();
 		//if (winwidth > 768) {
 			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
 			$('main#loginform').css('position','relative').css('top',((e - efoot) - enav) / 6);
+			if (f > e) {
+				$('ul.dropdown-menu').eq(0).css('height', (e - 400)).css('max-height', '340px').css('overflow-y','scroll');
+				}
+			else {
+				$('ul.dropdown-menu').eq(0).css('height', (e - 400)).css('max-height', '340px').css('overflow-y','auto');
+				}
 			//}
 //		else if (winwidth < 767) {
 //			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
@@ -39,33 +46,21 @@ $(document).ready(function(){
 		else {
 			$(this).attr( 'aria-expanded','false' );
 		}
-		$(function() {
-			var e = $( window ).height();
-			var f = $('ul.dropdown-menu').eq(0).height();
-			if (f > e) {
-				$('ul.dropdown-menu').eq(0).css('height', (e - 100)).css('overflow-y','scroll');
-				}
-			else {
-				$('ul.dropdown-menu').eq(0).css('height', 'auto').css('overflow-y','auto');
-				}
-		});
-		return false;
-	});
-	$( window ).resize(function() {
 		var e = $( window ).height();
-			var f = $('ul.dropdown-menu').eq(0).height();
-			if (f > e) {
-				$('ul.dropdown-menu').eq(0).css('height', (e - 100)).css('overflow-y','scroll');
-				}
-			else {
-				$('ul.dropdown-menu').eq(0).css('height', 'auto').css('overflow-y','auto');
-				}
+		var f = $('ul.dropdown-menu').eq(0).height();
+		if (f > e) {
+			$('ul.dropdown-menu').eq(0).css('max-height', (e - 280)).css('overflow-y','scroll');
+			}
+		else {
+			$('ul.dropdown-menu').eq(0).css('max-height', (e - 280)).css('overflow-y','auto');
+			}
+		return false;
 	});
 	$('a.dropdown-toggle').eq(0).on('click', function() {
 		var subMenushown = $('.dropdown-submenu');
 		$(subMenushown).removeClass('show');
 		$(subMenushown).prev('a.dropdown-toggle').attr('aria-expanded','false');
-		$('ul.dropdown-menu').eq(0).css('height', 'auto').css('overflow-y','auto');
+		$('ul.dropdown-menu').eq(0).css('min-height', '200px').css('overflow-y','auto');
 	});
 	// 
 	$("button.Accordion-trigger").click(function() {

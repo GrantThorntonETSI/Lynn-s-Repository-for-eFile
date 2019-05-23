@@ -1751,16 +1751,19 @@ label.hasinfo {
 	margin-right:15px;
 	max-height:320px;
 	}	
-	#scrollone::-webkit-scrollbar {
+	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar {
 	  width: 1em;
 	}
-	#scrollone::-webkit-scrollbar-track {
+	#scrollone::-webkit-scrollbar-track, ul.dropdown-menu::-webkit-scrollbar-track {
 	  background: #bbb; 
 	}
 	#scrollone::-webkit-scrollbar-thumb {
 	  background: #808080; 
 	}
-	#scrollone::-webkit-scrollbar-thumb:hover {
+	ul.dropdown-menu::-webkit-scrollbar-thumb {
+	  background: #555; 
+	}
+	#scrollone::-webkit-scrollbar-thumb:hover, ul.dropdown-menu::-webkit-scrollbar-thumb:hover {
 	  background: #004C97; 
 	}
 /*BUTTONS*/
