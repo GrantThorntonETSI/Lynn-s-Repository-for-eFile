@@ -1084,7 +1084,8 @@ td.red {
 	margin-top: .3em;
 	}
 #dashboardtableone_filter label, #dashboardtabletwo_filter label, #filepetitiontable_filter label, #responseamendtable_filter label, #responseamendtabletwo_filter label {
-	margin-bottom: 1.5em;
+	margin-bottom: .6em;
+	margin-top: .3em;
 	}
 #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"], #filepetitiontable_wrapper input[type="search"]  {	
 	width:6.5em;
@@ -2038,7 +2039,7 @@ button#moreoptionsbtn {
 	background-color:#9BB8D3;
 	}
 #dashboardtableone_wrapper div.toolbar .btn-xs .glyphicon, #dashboardtabletwo_wrapper div.toolbartwo .btn-xs .glyphicon, #filepetitiontable_wrapper div.toolbarpetitions .btn-xs .glyphicon {
-	top: -7px;
+	top: -3px;
 	}
 #reviewapplication .btn-success.fill {
 	display:inline-block;
@@ -2400,7 +2401,7 @@ input[type="file"]:focus {
 	margin-left: 0; 
 	}
 option, select, input[type="text"], input[type="email"], input[type="date"], input[type="tel"], input[type="url"] { 
-	min-height: 38px!important; 
+	height: 38px!important; 
 	}
 #goodsandservices_wrapper input[type="search"], #dashboardtableone_wrapper input[type="search"], #dashboardtabletwo_wrapper input[type="search"], #filepetitiontable_wrapper input[type="search"] {
 	margin-left: .5em!important;
@@ -3359,9 +3360,6 @@ footer #megamenu ul {
 		}
 	body.loginform, #loginform .headlinecontainer, main#loginform  {
 		background-color: #004C97;
-		}
-	#dashboardtableone_length label, #dashboardtabletwo_length label, #filepetitiontable_length label, #responseamendtable_length label, #responseamendtabletwo_length label {
-		margin-top: .5em;
 		}
 	#loginform .maincontainer {
 		padding:1em 3em;
