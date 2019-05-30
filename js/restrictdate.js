@@ -52,7 +52,8 @@ function datealert() {
 	var validate = event.currentTarget.value; 	
 	var dateval = Date.parse(validate);
   	var requireddate = Date.parse(newDate);
-	var todaydate = Date.parse(thatz);
+	var todaydate = Date.parse(thatz);	
+	
 	if ((requireddate - 182.5) > dateval) {
 		var b = document.getElementById("alertmin");
 		if (b.style.visibility === "hidden") {
@@ -64,7 +65,7 @@ function datealert() {
 			document.getElementById("mintext").style.display = "block";
 			document.getElementById("alertbtn").style.display = "block";
 			document.getElementById("alertbtn").focus();
-			window.scrollTo(0, 250);
+			window.scrollTo(0, '90%');
 			document.getElementById("mintext").innerHTML = ("You cannot claim Section 44(d) priority, because your attempted U.S. filing is outside the 6-month window. (i.e., from when the foreign application was filed). The date must be a number after " + strmin)
 	  } else {
 			b.style.visibility = "hidden";
@@ -77,7 +78,7 @@ function datealert() {
 			document.getElementById("alertbtn").blur();
 			//validateinput.focus();
 	  }
-	  validateinput.value = "yyyy-MM-dd";
+	  //validateinput.value = "yyyy-MM-dd";
 	  document.getElementById("alertbtn").onclick = function() {
 	  	validateinput.focus();
 	  }
@@ -93,9 +94,9 @@ function datealert() {
 			document.getElementById("mintext").style.display = "block";
 			document.getElementById("alertbtn").style.display = "block";
 			document.getElementById("alertbtn").focus();
-			window.scrollBy(0, 250);
+			window.scrollBy(0, '90%');
 			document.getElementById("mintext").innerHTML = ("You cannot claim Section 44(d) priority, because your attempted U.S. filing is after the current date. The date must be a number before " + thatz);
-	  		validateinput.value = "yyyy-MM-dd";
+	  		//validateinput.value = "yyyy-MM-dd";
 		} else {
 			b.style.visibility = "hidden";
 			b.style.top = "-10000px";

@@ -2664,6 +2664,51 @@ input[type="radio"]:focus + label span.checkmark::after {
 		margin:0 auto;
 		padding-left:38px!important;
 		}
+/* FILE UPLOAD icon fonts */
+@font-face {
+      font-family: 'fontello';
+      src: url('../FONTS/fontello.eot?71612010');
+      src: url('../FONTS/fontello.eot?71612010#iefix') format('embedded-opentype'),
+           url('../FONTS/fontello.woff?71612010') format('woff'),
+           url('../FONTS/fontello.ttf?71612010') format('truetype'),
+           url('../FONTS/fontello.svg?71612010#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }     
+.upload-icon {
+	font-family: "fontello";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	margin-right: .2em;
+	text-align: center;
+	/* opacity: .8; */
+	
+	/* For safety - reset parent styles, that can break glyph codes*/
+	font-variant: normal;
+	text-transform: none;
+	
+	/* fix buttons height, for twitter bootstrap */
+	line-height: 1em;
+	
+	/* Animation center compensation - margins should be symmetric */
+	/* remove if not needed */
+	margin-left: .2em;
+	
+	/* You can be more comfortable with increased icons size */
+	/* font-size: 120%; */
+	
+	/* Font smoothing. That was taken from TWBS */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	/* Uncomment for 3D effect */
+	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+	}
 /* FILE UPLOAD */
 .upload-drop-zone {
 	color: #808080;
@@ -2701,7 +2746,7 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 	margin-bottom:.6em;
 	line-height: 1.5em;
 	}
-p#upimage {
+	p#upimage {
 	margin-bottom:.6em;
 	}
 #attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"] {
@@ -2795,7 +2840,10 @@ button[type="submit"].right, button[type="button"].right {
 	margin:0 auto;
 	float:none;
 	}
-.fileholder .linkholder {
+.js-upload-finished .linkholder a {
+	text-decoration:underline;
+	}
+.fileholder .linkholder, .fileholder .iconholder {
 	/*overflow-wrap: break-word;
 	word-wrap: break-word;
 	-ms-word-break: break-all;
@@ -2811,12 +2859,12 @@ button[type="submit"].right, button[type="button"].right {
 	display:table;
 	max-height: 38px;
 	}
-.fileholder .linkholder a {
-	display: table-cell;
+.fileholder .linkholder a, .fileholder i {
+	display: table-cell!important;
     vertical-align: middle;
 	overflow: hidden;
   	text-overflow: ellipsis;
-	max-width: 100px;
+	max-width: 20px;
 	}
 .fileholder div {
 	padding: 1em 0;
@@ -2827,15 +2875,19 @@ button[type="submit"].right, button[type="button"].right {
 .fileholder div.row {
 	padding: 0;
 	}
-.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, #petitions1 div img, #petitions2 div img, #responseamend div img {
+.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, .fileholder i, #petitions1 div img, #petitions2 div img, #responseamend div img {
     float: none!important;
 	height:38px;
 	font-size:.8em;
 	}
+.fileholder div img {
+	height:auto;
+	max-width:80%;
+	}
 #petitions1 div img, #petitions2 div img, #responseamend div img {
     float: left!important;
 	}
-.fileholder div img, .fileholder span, #petitions1 div img, #petitions2 div img, #responseamend div img {
+.fileholder div img, .fileholder i, .fileholder span, #petitions1 div img, #petitions2 div img, #responseamend div img {
 	margin:0 auto;
 	display:block;
 	}
@@ -2853,8 +2905,11 @@ button[type="submit"].right, button[type="button"].right {
 .fileholder span.glyphicon {
 	line-height: 1.4em;
 	}
-.fileholder a {
+.fileholder a, .fileholder i {
 	color:#fff;
+	}
+.fileholder i {
+	font-size: 1.4em;
 	}
 .fileholder {
 	padding:0 1.5em;
@@ -2885,7 +2940,7 @@ button[type="submit"].right, button[type="button"].right {
 	padding: .5em 1em!important;
 	display: table!important;
 	height:auto!important;
-	margin-top: .4em!important;
+	margin-top: .47em!important;
 	}
 .js-upload-finished .list-group-item-success {
 	display: inline-block;
@@ -3268,6 +3323,10 @@ footer #megamenu ul {
 		float:none!important;
 		width:100%!important;
 		margin-top:1em!important;
+		}
+	.js-upload-finished .badge {
+		margin-top: 1em!important;
+		font-size: .6em;
 		}
 }
 @media (max-width: 330px){
@@ -3665,9 +3724,9 @@ footer #megamenu ul {
 	#userprofilepage .panel-body {
 		min-height: 22em;
 		}
-	.js-upload-finished, .upload-drop-zone {
+	/*.js-upload-finished, .upload-drop-zone {
 		width:50%;
-		}
+		}*/
 	#responseamend .js-upload-finished, .upload-drop-zone {
 		width:100%;
 		}

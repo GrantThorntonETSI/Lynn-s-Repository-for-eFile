@@ -1041,70 +1041,114 @@ $(document).ready(function(){
 			: $(this).html('Accept');
 		});
 	//	
-	//START file upload inputs	
+	//START file upload inputs
+	$('#uploadmark button[type=submit]').css('display','none');	
 	$(document).on('change', 'input[type="file"]', function(e) {
-            var fileDisplayArea = $(this).siblings('label').children( 'div.fileDisplayArea' );
-    		//var fileDisplayArea = ('.fileDisplayArea');
-			var file = e.target.files[0];
-			var name = e.target.files[0].name;
-    		var type = e.target.files[0].type;
-			var listlength = $(this).parent().next().children('js-upload-finished').children('list-group').children('div.fileholder div.row').length + 1;
-			var holdata = $(this).parent().parent().find('div.fileholder');
-			var hidethis = $(this).parent().contents();
-			//var fileName = e.target.files[0].name;
-			var imageType = /image.*/;
-			if (file.type.match(imageType)) {
-			  if ((listlength) < 2)  {
-				//console.log(listlength);
-				var reader = new FileReader();
-			  	reader.onload = function(e) {
-					$(fileDisplayArea).addClass('loader').html("");
-					// Create an image
-					var img = new Image();
-					// Set the img src
-					img.src = reader.result;
-					var imgSrc = img.src;
-					// display the image on the page
-					$(fileDisplayArea).removeClass('loader').append(img);
-					$( '.upload-drop-zone' ).css('height','115px');
-					$( '.upload-drop-zone img' ).css('height','64px');
-					$( '.thumbnail img' ).css('height','20px');
-					$(holdata).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-4 linkholder"><a href="'+ imgSrc + '" aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-2"><img src="' + imgSrc + '" class="img-thumbnail"></div><div class="col-xs-4"><span class="badge alert-success pull-right">Selected File</span></div></div>');
-					//console.log(holdata);
-					}
-				if ((listlength) == 1)  {
-						$( hidethis ).hide();
-					}
-				//if ((listlength) == 0)  {
-						//$( '.upload-drop-zone' ).show();
-					//}
-				if (file) {
-				  reader.readAsDataURL(file);
-				  }
+		var fileDisplayArea = $(this).siblings('label').children( 'div.fileDisplayArea' );
+		//var fileDisplayArea = ('.fileDisplayArea');
+		var file = e.target.files[0];
+		var name = e.target.files[0].name;
+		var type = e.target.files[0].type;
+		var icon = [ '<i class="upload-icon demo-icon icon-file-word" aria-hidden="true">\&\#xf1c2\;</i>','<i class="upload-icon demo-icon icon-file-pdf" aria-hidden="true">\&\#xf1c1\;</i>','<i class="upload-icon demo-icon icon-file-powerpoint" aria-hidden="true">\&\#xf1c4\;</i>','<i class="upload-icon demo-icon icon-file-excel" aria-hidden="true">\&\#xf1c3\;</i>','<i class="upload-icon demo-icon icon-file-code" aria-hidden="true">\&\#xf1c9\;</i>' ];
+		var icon = jQuery.makeArray( icon );
+		if((type) == 'application\/vnd.openxmlformats\-officedocument\.wordprocessingml\.document'){
+			var icon = (icon[0]); 
+		}
+		else if((type) == 'application\/pdf'){
+			var icon = (icon[1]); 
+		}
+		else if((type) == 'application\/vnd.openxmlformats\-officedocument\.presentationml\.presentation'){
+			var icon = (icon[2]); 
+		}
+		else if((type) == 'application\/vnd\.openxmlformats\-officedocument\.spreadsheetml\.sheet'){
+			var icon = (icon[3]); 
+		}
+		else if((type) == 'text\/csv'){
+			var icon = (icon[3]); 
+		}
+		else if((type) == 'application\/vnd\.ms\-excel'){
+			var icon = (icon[3]); 
+		}
+		var listlength = $(this).parent().next().children('js-upload-finished').children('list-group').children('div.fileholder div.row').length + 1;
+		var holdata = $(this).parent().parent().find('div.fileholder');
+		var hidethis = $(this).parent().contents();
+		//var fileName = e.target.files[0].name;
+		var imageType = /image.*/;
+		if (file.type.match(imageType)) {
+		  if ((listlength) < 2)  {
+			//console.log(listlength);
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				$(fileDisplayArea).addClass('loader').html("");
+				// Create an image
+				var img = new Image();
+				// Set the img src
+				img.src = reader.result;
+				var imgSrc = img.src;
+				// display the image on the page
+				$(fileDisplayArea).removeClass('loader').append(img);
+				$( '.upload-drop-zone' ).css('height','115px');
+				$( '.upload-drop-zone img' ).css('height','64px');
+				$( '.thumbnail img' ).css('height','20px');
+				$(holdata).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-2 linkholder"><a href="'+ imgSrc + '" aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-5"><img src="' + imgSrc + '" class="img-thumbnail"></div><div class="col-xs-3"><span class="badge alert-success pull-right">Selected File</span></div></div>');
+				//console.log(holdata);
+				}
+			if ((listlength) == 1)  {
+					$( hidethis ).hide();
+				}
+			//if ((listlength) == 0)  {
+					//$( '.upload-drop-zone' ).show();
+				//}
+			if (file) {
+			  reader.readAsDataURL(file);
 			  }
-			} else {
-			  var reader = new FileReader();
-			  	reader.onload = function(e) {
-					if (( listlength ) < 2)  {
-						$( fileDisplayArea ).addClass( 'loader' ).html("");
-						// Create a file
-						var dataURL = reader.result;
-						$( fileDisplayArea ).removeClass( 'loader' );
-						$( fileDisplayArea ).html( '<span class="glyphicon glyphicon-check"></span>' );
-						$(holdata).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-4 linkholder"><a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-1 visuallyhidden">' + type + '</div><div class="col-xs-5"><span class="badge alert-success pull-right">Selected File</span></div></div>');
-						//console.log(dataURL);
-					}
-					if ((listlength) == 1)  {
-						$( hidethis ).hide();
-					}
+		  }
+		} else {
+		  var reader = new FileReader();
+			reader.onload = function(e) {
+				if (( listlength ) < 2)  {
+					$( fileDisplayArea ).addClass( 'loader' ).html("");
+					// Create a file
+					var dataURL = reader.result;
+					$( fileDisplayArea ).removeClass( 'loader' );
+					$( fileDisplayArea ).html( '<span class="glyphicon glyphicon-check"></span>' );
+					$(holdata).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-1 fileholder iconholder">' + icon + '</div><div class="col-xs-4 linkholder"><a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-1 visuallyhidden">' + type + '</div><div class="col-xs-4"><span class="badge alert-success pull-right">Selected File</span></div></div>');
+					//console.log(icon);
+					//console.log(type);
+				}
+				if ((listlength) == 1)  {
+					$( hidethis ).hide();
+				}
 //					if ((listlength) == 0)  {
 //						$( '.upload-drop-zone' ).show();
 //					}
-				}
-			if (file) {
-				reader.readAsDataURL(file);
-				}
-			  }
+			}
+		if (file) {
+			reader.readAsDataURL(file);
+			}
+		  }
+		  $('#uploadmark button[type=submit]').css('display','block');
+		  $( '#uploadmark').submit(
+				function( e ) {
+					var file = ($('.linkholder a').attr("href"));
+					//at this point, the variable, file, needs to be converted to a blob and appended to FormData
+					$.ajax({
+						url: 'upload',
+						type: 'POST',
+						data: new FormData( file ),
+						processData: false,
+						contentType: false,
+						success: function(result){
+							//$("#div").html(str);
+							//alert('At this point, the variable, file, needs to be converted to a blob and appended to FormData -- ' + file);
+							$( '#uploadmark button[type=submit]' ).css('display','none');
+							$( 'span.alert-success' ).html('Uploaded File');
+							}
+					});
+					return false;
+					e.preventDefault();
+				} 
+			);
         });
 	//	
 	//START remove selected file
@@ -1114,13 +1158,9 @@ $(document).ready(function(){
 		$( '#usaffiliation .upload-drop-zone' ).css('height','175px');
 		$( this ).parent().parent().remove();
 		$( 'div.fileDisplayArea img' ).remove();
+		$( '#uploadmark button[type=submit]' ).css('display','none');
 		$( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 	});
-	//
-	//+ Translation Item
-	//
-	
-	//- Translation Item		
 	//
 	//START toggle radio buttons content
 	//start mark color options
