@@ -1069,6 +1069,9 @@ $(document).ready(function(){
 		else if((type) == 'application\/vnd\.ms\-excel'){
 			var icon = (icon[3]); 
 		}
+		else {
+			var icon = (''); 
+		}
 		var listlength = $(this).parent().next().children('js-upload-finished').children('list-group').children('div.fileholder div.row').length + 1;
 		var holdata = $(this).parent().parent().find('div.fileholder');
 		var hidethis = $(this).parent().contents();
@@ -1145,6 +1148,7 @@ $(document).ready(function(){
 							$( 'span.alert-success' ).html('Uploaded File');
 							}
 					});
+					$( 'input[type="file"]' ).val('');
 					return false;
 					e.preventDefault();
 				} 
@@ -1153,6 +1157,7 @@ $(document).ready(function(){
 	//	
 	//START remove selected file
 	$(document).on('click', '.js-upload-finished button.close', function() {
+		$( 'input[type="file"]' ).val('');
 		$( '.hidethis' ).contents().css('display','block');
 		$( '.upload-drop-zone' ).css('height','115px');
 		$( '#usaffiliation .upload-drop-zone' ).css('height','175px');
