@@ -1247,8 +1247,9 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, tabl
 	position:absolute;
 	bottom:-4px;
 	}
-#mydata2 .scroll {
-	max-height:300px;
+#mydata2 tbody.scroll {
+	max-height:200px;
+	display:block;
 	overflow:auto;
 	overflow-y:auto;
 	overflow-x:auto;
@@ -2451,6 +2452,7 @@ option, select, input[type="text"], input[type="email"], input[type="date"], inp
     box-shadow: none!important;
 	-webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
     box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
+	min-height:38px;
 	}
 input.form-control, textarea.form-control, select.form-control {
     -webkit-border-radius: 	2px;
@@ -2504,11 +2506,21 @@ span#authem  {
 	}
 .radio ul {
 	list-style-type: disc;
-	margin-left:1.2em;
+	margin-left:0;
 	}
-.radio ul li {
-	margin-left:2.4em;
+	.radio ul li {
+		margin-left:2.4em;
+		}
+#createaccount .limits {
+	margin-top:3.1em;
 	}
+#createaccount ul {
+	list-style-type: disc;
+	}
+	#createaccount ul li {
+		margin-top:.45em;
+		margin-left:1.2em;
+		}
 #declarationsignature .checkmargin, #reviewapplication .checkmargin {
 	margin-bottom:2em!important;
 	}	
@@ -2971,7 +2983,7 @@ button[type="submit"].right, button[type="button"].right {
 	display:inline-block;
 	font-size: 1.3em;
 	}
-#gsselected span.weight600, #dashboardmain span.weight600, #editowner span.weight600, #reviewattorney span.weight600, #declarationschecks span.weight600 {
+#gsselected span.weight600, #dashboardmain span.weight600, #editowner span.weight600, #reviewattorney span.weight600, #declarationschecks span.weight600, #createaccount span.weight600 {
 	color:#333;
 	font-weight:600;
 	}
@@ -3035,7 +3047,7 @@ button[type="submit"].right, button[type="button"].right {
 	word-break:break-all;
 	min-height: 149px;
 	}
-#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading, #userprofilepage .panel-body, #petitions1 .panel-body {
+#gsselected .panel-heading, #dashboardmain .panel-heading, #editowner .panel-heading, #reviewattorney .panel-heading, #userprofilepage .panel-body, #petitions1 .panel-body, #createaccount .panel-heading {
 	-webkit-border-top-left-radius: 		0;
     -webkit-border-top-right-radius: 		0;
 	-webkit-border-bottom-left-radius: 		0;
@@ -3078,7 +3090,7 @@ button[type="submit"].right, button[type="button"].right {
 	-moz-border-top-right-radius: 		0;
 	border-top-right-radius: 			0;
 	}
-#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default, #userprofilepage .panel-default, #petitions1 .panel-default, #petitions2 .panel-default, #responseamend .panel-default {
+#gsselected .panel-default, #dashboardmain .panel-default, #editowner .panel-default, #reviewattorney .panel-default, #userprofilepage .panel-default, #petitions1 .panel-default, #petitions2 .panel-default, #responseamend .panel-default, #createaccount .panel-heading {
 	border:none!important;
 	}
 #petitions1 p.panel-title, #petitions2 p.panel-title, #responseamend p.panel-title  {
@@ -3159,8 +3171,8 @@ button[type="submit"].right, button[type="button"].right {
 	-webkit-hyphens: none;
 	hyphens: none;
 	}
-#dashboardmain .panel-default>.panel-heading {
-    background-color:#F3D54E;
+#dashboardmain .panel-default>.panel-heading, #createaccount .panel-heading {
+    background-color:#9BB8D3;
 	}
 #gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number, #petitions1 .panel-default>.panel-body .number, #petitions2 .panel-default>.panel-body .number {
 	color:#333/*#FFF*/;

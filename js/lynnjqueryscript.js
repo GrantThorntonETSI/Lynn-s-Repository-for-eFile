@@ -1641,6 +1641,18 @@ $(document).ready(function(){
 			$(this).closest('fieldset').find('textarea.datesigned').val('');
 		}
 	});
+	//START select security questions
+	$('#createaccount .hidethis').css('display','none');
+	$('select.questions').on('change',function(){
+		var loadsign = ($(this).val());
+		$(this).closest('fieldset').find('.hidethis').show('fast');
+		$( loadsign ).css('display','block');
+		if( loadsign == 'Select') {
+			$(this).closest('fieldset').find('.hidethis').hide('fast');
+			$(this).closest('fieldset').find('input.answer').val('');
+			$(this).closest('fieldset').find('.hidethis input').val('');
+			} 
+	});
 	//
 	//START select all declarations	  
 	$(document).on('change','#declarationsignature input#select', function() {

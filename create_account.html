@@ -129,7 +129,7 @@
     </nav>
     <div class="container-fluid">    
       <div class="row content">
-        <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
+        <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7" id="createaccount">
             <!--START Content Div-->
             <div class="row">
                 <div class="col-xs-12 text-left">
@@ -144,25 +144,25 @@
                             <!--START Create Account Form-->
                             <fieldset aria-label="enter account details">
                                 <div class="row">
-                                  <div class="form-group form-group-md col-xs-12 col-md-6">
+                                  <div class="col-xs-12 col-md-6 form-group form-group-md">
                                       <label for="email">Email address <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="The USPTO will use this email address to send correspondence regarding this application or registration. It is critical to ensure this email address is current." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>
-                                      <input type="email" class="form-control" id="email" required>
+                                      <input type="email" class="form-control" id="email" aria-describedby="requirements" required>
                                   </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group form-group-md col-xs-12 col-md-8 col-lg-4">
+                                    <div class="col-xs-12 col-md-8 col-lg-4 form-group form-group-md">
                                         <label for="firstname">First name <span class="weight600">&#42;</span></label>
                                         <input type="text" class="form-control" id="firstname" required>
                                     </div>
-                                    <div class="form-group form-group-md col-xs-12 col-md-4 col-lg-3">
+                                    <div class="col-xs-12 col-md-4 col-lg-3 form-group form-group-md">
                                         <label for="middlename">Middle name</label>
                                         <input type="text" class="form-control" id="middlename">
                                     </div>
-                                    <div class="form-group form-group-md col-xs-12 col-md-12 col-lg-5">
+                                    <div class="col-xs-12 col-md-12 col-lg-5 form-group form-group-md">
                                         <label for="lastname">Last name <span class="weight600">&#42;</span></label>
                                         <input type="text" class="form-control" id="lastname" required>
                                     </div>
-                                    <div class="form-group form-group-md col-xs-4">
+                                    <div class="col-xs-4 form-group form-group-md">
                                         <label for="suffix">Suffix</label>
                                         <select class="form-control" id="suffix">
                                           <option value="Select">Select</option>
@@ -180,15 +180,100 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group form-group-md col-xs-12 col-md-6 col-lg-6">
-                                        <label for="password">Password <span class="weight600">&#42;</span></label>
-                                        <input type="text" class="form-control" id="password" required>
+                                	<div class="col-xs-12 col-md-6">
+                                    	<div class="row">
+                                            <div class="col-xs-12 form-group form-group-md">
+                                                <label for="password">Password <span class="weight600">&#42;</span></label>
+                                                <input type="text" class="form-control" id="password" required>
+                                            </div>
+                                            <div class="col-xs-12 form-group form-group-md">
+                                                <label for="confirmpassword">Confirm password <span class="weight600">&#42;</span></label>
+                                                <input type="text" class="form-control" id="confirmpassword" required>
+                                            </div>
+                                      	</div>
                                     </div>
-                                    <div class="form-group form-group-md col-xs-12 col-md-6 col-lg-6">
-                                        <label for="confirmpassword">Confirm password <span class="weight600">&#42;</span></label>
-                                        <input type="text" class="form-control" id="confirmpassword" required>
-                                    </div>
+                                    <div class="col-xs-12 col-md-6 form-group form-group-md limits">
+                                      <ul id="requirements" class="panel-heading"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span><span class="weight600"> Password Requirements</span>
+                                      	<li>Minimum of 12 characters</li>
+                                        <li>One uppercase and one lowercase letter</li>
+                                        <li>One number and one special character (&#8220;!@#$%^&&#42;()_+-={ }|[ ]\:'';'< >?,./)</li>
+                                      </ul>
+                                  	</div>
                                 </div>
+                         	</fieldset>
+                            <section class="col-xs-12" aria-label="security questions">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="card-text noexpand">
+                                            <h2 class="card-title weight600">Security Questions</h2>
+                                        </div>
+                                        <p class="leadtext" id="lead">These questions help us verify your identity.</p>
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6 form-group form-group-md">
+                                                    <label for="questionone" class="sr-only">security question one</label> 
+                                                    <select class="form-control questions" id="questionone">
+                                                        <option value="Select">Select a question <span class="weight600">&#42;</span></option>
+                                                        <option value="petcolor">What color was your first pet?</option>
+                                                        <option value="bedrooms">How many bedrooms does your house/apartment have?</option>
+                                                        <option value="yearmet">During what year did you meet your spouse/partner</option>
+                                                        <option value="mothername">What is your mother&#8217;s middle name?</option>
+                                                    </select>
+                                               </div>
+                                               <div class="col-xs-12 col-md-6 form-group form-group-md hidethis">
+                                                    <label for="answerone" class="weight600 sr-only">enter your answer to question one</label> 
+                                                    <input id="answerone" class="form-control answer" placeholder="Enter your answer *"></textarea>
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div><!--//question 1-->
+                                </fieldset>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6 form-group form-group-md">
+                                                    <label for="questiontwo" class="sr-only">security question two</label> 
+                                                    <select class="form-control questions" id="questiontwo">
+                                                        <option value="Select">Select a question <span class="weight600">&#42;</span></option>
+                                                        <option value="petcolor">What is your favorite hobby?</option>
+                                                        <option value="bedrooms">What was the name of your first school?</option>
+                                                        <option value="yearmet">What is the name of the city/town in which you were born?</option>
+                                                        <option value="mothername">What is your favorite comic book hero?</option>
+                                                    </select>
+                                               </div>
+                                               <div class="col-xs-12 col-md-6 form-group form-group-md hidethis">
+                                                    <label for="answertwo" class="weight600 sr-only">enter your answer to question two</label> 
+                                                    <input id="answertwo" class="form-control answer" placeholder="Enter your answer *"></textarea>
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div><!--//question 2-->
+                                </fieldset>
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-md-6 form-group form-group-md">
+                                                    <label for="questionthree" class="sr-only">security question three</label> 
+                                                    <select class="form-control questions" id="questionthree">
+                                                        <option value="Select">Select a question <span class="weight600">&#42;</span></option>
+                                                        <option value="petcolor">What was your high school mascot?</option>
+                                                        <option value="bedrooms">What is your fatherr&#8217;s middle name?</option>
+                                                        <option value="yearmet">What is your all-time favorite sports team?</option>
+                                                        <option value="mothername">What was the name of your first pet?</option>
+                                                    </select>
+                                               </div>
+                                               <div class="col-xs-12 col-md-6 form-group form-group-md hidethis">
+                                                    <label for="answerthree" class="weight600 sr-only">enter your answer to question three</label> 
+                                                    <input id="answerthree" class="form-control answer" placeholder="Enter your answer *"></textarea>
+                                               </div>
+                                            </div>
+                                        </div>
+                                    </div><!--//question 2-->
+                                </fieldset>
+                            </section>
+                         	<fieldset>
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <input class="form-check-input checkmark" type="checkbox" value="" tabindex="0" aria-labelledby="termsagree" id="agreement">
