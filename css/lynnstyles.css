@@ -200,8 +200,9 @@ object#selected {
 	overflow:visible;
 	}
 .img-thumbnail, .thumbnail {
-    -webkit-box-shadow: 0 0px 0px rgba(0,0,0,0);
-    box-shadow: 0 0px 0px rgba(0,0,0,0);
+    -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+	-moz-box-shadow: 	0 0 0 rgba(0,0,0,0);
+	box-shadow: 		0 0 0 rgba(0,0,0,0);
 	-webkit-border-radius: 2px;
 	-moz-border-radius: 2px;
 	border-radius: 2px;
@@ -457,6 +458,9 @@ div.breadcrumb-steps {
     -webkit-box-shadow:none;
 	-moz-box-shadow:none;
 	box-shadow: none;
+	}
+#editattorney .breadcrumb-steps .col-xs-2 {
+	width:20%;
 	}
 /* END progress tracker*/
 
@@ -920,6 +924,10 @@ table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected {
 	 padding-left:.1em;
 	 padding-right:.1em;
 	 }
+#dashboardtableone th, #dashboardtabletwo th {
+	white-space: nowrap;
+	overflow: hidden;
+	}
 table.dataTable thead .sorting_asc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:after {
     color: #cdd8dc;
@@ -1022,7 +1030,7 @@ span#filingsheader {
 	}
 #announce h3{
 	padding:4px;
-	color:#fff;
+	color:#808080;
 	text-align:center;
 	}
 #goodsandservices_wrapper {
@@ -1201,12 +1209,48 @@ main #loginform .landingpagemain {
 	border-radius:1.3em;
 	}
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
-	background-color: #009CDE;
+	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+	-moz-box-shadow: 	0 0 0 rgba(0,0,0,0);
+	box-shadow: 		0 0 0 rgba(0,0,0,0);
 	left:6px;
+	content: '\e250';
+    font-family: 'Glyphicons Halflings';
+    font-size: 1em;
+    line-height: 1.84em;
+	top:23.63%;
+	width:1.5em;
+	height:1.56em;
+	-webkit-border-radius: 1.6em;
+	-webkit-border-bottom-right-radius: 1.7em;
+	-webkit-border-bottom-left-radius: 1.7em;
+	-moz-border-radius: 1.6em;
+	-moz-border-radius-bottomright: 1.7em;
+	-moz-border-radius-bottomleft: 1.7em;
+	border-radius: 1.6em;
+	border-bottom-right-radius: 1.7em;
+	border-bottom-left-radius: 1.7em;
+	margin-left:10%;
+	color:#009CDE;
 	}
-table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.parent>th:first-child:before {
-	background-color: #63666A!important;
-	color: #fff!important;
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>th:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>th:first-child:before {
+	background-color: #f1f1f1;
+	border: .2em solid #f1f1f1;
+	}
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].even>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].even>th:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].even>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].even>th:first-child:before {
+	background-color: #fafafa;
+	border: .2em solid #fafafa;
+	}
+table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>th:first-child:before {
+	background-color: #f1f1f1!important;
+	border: .2em solid #f1f1f1!important;
+	color:#808080!important;
+	content: '\e252'!important;
+	}
+table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>th:first-child:before {
+	background-color: #fafafa!important;
+	border: .2em solid #fafafa!important;
+	color:#808080!important;
+	content: '\e252'!important;
 	}
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.active, #dashboardtabletwo_paginate .paginate_button.current, #dashboardtabletwo_paginate .paginate_button.active, #filepetitiontable_paginate .paginate_button.current, #filepetitiontable_paginate .paginate_button.active, #responseamendtable_paginate .paginate_button.current, #responseamendtable_paginate .paginate_button.active, #responseamendtabletwo_paginate .paginate_button.current, #responseamendtabletwo_paginate .paginate_button.active {
     cursor: pointer;
@@ -1841,10 +1885,13 @@ label.hasinfo {
   	box-shadow:         rgb(0,0,0);
 	text-shadow: 0 0 0 transparent;
 	}
-.resetphonebtn, .resetregbtn, .resetdktrefbtn, .resetnamebtn, .resetportraitbtn, .resetportraitbtn, .resetsignaturebtn, .resettranslationbtn, .resettransliterationbtn, .resetdisclaimbtn {
+.resetphonebtn, .resetregbtn, .resetdktrefbtn, .resetnamebtn, .resetportraitbtn, .resetportraitbtn, .resetsignaturebtn, .resettranslationbtn, .resettransliterationbtn, .resetdisclaimbtn, .deleterow {
 	margin: 0 auto;
     float: none;
     margin-top: .545em;
+	}
+.deleterow {
+    float: right;
 	}
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.focus, .ql-snow.ql-toolbar span:focus, .ql-snow .ql-toolbar span:focus, .ql-snow.ql-toolbar span.focus, .ql-tooltip input:focus, .ql-tooltip input.focus {
     /*outline: thin dotted;*/
@@ -2441,7 +2488,7 @@ option, select, input[type="text"], input[type="email"], input[type="date"], inp
     box-shadow: none!important;
 	-webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
     box-shadow: inset 0 0 0 rgba(0,0,0,0)!important;
-	border: 1px solid #009CDE!important;
+	border: 1px solid #ccc!important;
     outline: 0!important;
 	background:none;
 	}
@@ -3000,6 +3047,11 @@ button[type="submit"].right, button[type="button"].right {
 	color:#111;
 	margin: 0 auto;
 	height:1em;
+	}
+#dashboard .dashsection button.close {
+   	color: #009CDE;
+	margin-left: 1.5em;
+	float:left;
 	}
 #gsselected button.close {
 	height:1.4em;

@@ -128,27 +128,53 @@ $(document).ready(function(){
 			responsive: {
 				breakpoints: [
 					{ name: 'desktop', width: Infinity },
-					{ name: 'tablet',  width: 1024 },
+					{ name: 'tablet',  width: 1180 },
 					{ name: 'fablet',  width: 768 },
 					{ name: 'phone',   width: 480 }
 				]
 			},
 			'columns': [
-				{ 'width': '10%' },
-				{ 'width': '60%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
+				{ 'width': '20%' },
+				{ 'width': '16%' },
+				{ 'width': '25%' },
+				{ 'width': '16%' },
+				{ 'width': '12%' },
+				{ 'width': '11%' },
 			  ],
 			  'columnDefs': [  
-				{ responsivePriority: 1, targets: 0 },
-				{ responsivePriority: 2, targets: 1 },
-				{ responsivePriority: 3, targets: 3 },
-				{ responsivePriority: 4, targets: 2 },
-				{ responsivePriority: 5, targets: 4 },
-				{ className: 'centertxt', 'targets': [ 0,1,2,3,4 ] },
+				{ responsivePriority: 1, targets: 0 },//buttons
+				{ responsivePriority: 2, targets: 1 },//serial
+				{ responsivePriority: 4, targets: 2 },//reg
+				{ responsivePriority: 3, targets: 3 },//owner
+				{ responsivePriority: 6, targets: 4 },//status
+				{ responsivePriority: 5, targets: 5 },//mark
+				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
 			   ],
 		});
+	//
+	//START delete dashboard table row
+	$( '#dashboardtableone tbody' ).on('click','.deleterow',function(e){
+		e.preventDefault();
+		var numrows = $( '#dashboardtableone tbody tr' ).length -1;
+		var rows = $( '#dashboardtableone tbody tr' );
+		$( this ).closest('tr').next('tr.child').remove();
+		$( this ).closest('tr').remove();
+		$('#dashboardtableone_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
+		if (numrows < 1) {
+			$('#dashboardtableone_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
+			};
+	});
+	$( '#dashboardtabletwo tbody' ).on('click','.deleterow',function(e){
+		e.preventDefault();
+		var numrows = $( '#dashboardtabletwo tbody tr' ).length -1;
+		var rows = $( '#dashboardtabletwo tbody tr' );
+		$( this ).closest('tr').next('tr.child').remove();
+		$( this ).closest('tr').remove();
+		$('#dashboardtabletwo_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
+		if (numrows < 1) {
+			$('#dashboardtabletwo_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
+			};
+	});
 	//
 	//START initialize Dashboard datable two
 		var tabletwo = $('#dashboardtabletwo').DataTable({
@@ -169,29 +195,28 @@ $(document).ready(function(){
 			responsive: {
 				breakpoints: [
 					{ name: 'desktop', width: Infinity },
-					{ name: 'tablet',  width: 1024 },
+					{ name: 'tablet',  width: 1180 },
 					{ name: 'fablet',  width: 768 },
-					{ name: 'phone',   width: 480 }
+					{ name: 'phone',   width: 380 }
 				]
 			},
 			'columns': [
-				{ 'width': '10%' },
-				{ 'width': '20%' },
-				{ 'width': '15%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '25%' },
+				{ 'width': '18%' },//buttons
+				{ 'width': '10%' },//serial
+				{ 'width': '25%' },//reg
+				{ 'width': '11%' },//mark
+				{ 'width': '9%' },//owner
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
 			  ],
 			  'columnDefs': [
-			  	{ responsivePriority: 1, targets: 0 },
-				{ responsivePriority: 2, targets: 6 },
-				{ responsivePriority: 3, targets: 4 },
-				{ responsivePriority: 4, targets: 5 },
-				{ responsivePriority: 5, targets: 1 },
-				{ responsivePriority: 6, targets: 3 },
-				{ responsivePriority: 7, targets: 2 },
-				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5,6 ] },
+			  	{ responsivePriority: 1, targets: 0 },//buttons
+				{ responsivePriority: 2, targets: 1 },//serial
+				{ responsivePriority: 4, targets: 2 },//reg
+				{ responsivePriority: 5, targets: 3 },//mark
+				{ responsivePriority: 3, targets: 4 },//owner
+				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
 			  ],
 		});
 	//
@@ -2045,9 +2070,9 @@ $(document).ready(function(){
 		$( '.appenddisclaim .resetdisclaim' ).removeClass( 'visuallyremoved' );
 		$( this ).removeClass( '.addinitial' );
 		});
-		$( document ).on('click','.resetdisclaimbtn',function(){
-			$( this ).parent().parent().remove();
-		});
+	$( document ).on('click','.resetdisclaimbtn',function(){
+		$( this ).parent().parent().remove();
+	});
 	//
 	//START pending + foreign
 	//Basis one
@@ -2984,6 +3009,33 @@ $(document).ready(function(){
 			theme: 'snow'
 			});
 		}
+	//
+	//START ROA Optional Actions
+	$(document).on('click', 'button.next', function() {
+		var url = 'attorney_info_review_optional.html';
+		$(location).prop('href', url);
+	});
+	
+	$(function() {
+		var progresslength = $('#editattorney .breadcrumb-steps .col-xs-2').length;
+		var progress = $('#editattorney .breadcrumb-steps .col-xs-2');
+		  if ((progresslength) === 5)  {
+			  $(progress).css('width','20%');
+		  }
+		  if ((progresslength) === 4)  {
+			  $(progress).css('width','25%');
+		  }
+		  if ((progresslength) === 3)  {
+			  $(progress).css('width','33.33%');
+		  }
+		  if ((progresslength) === 2)  {
+			  $(progress).css('width','50%');
+		  }
+		  if ((progresslength) === 1)  {
+			  $('#editattorney .displaycell').css('display','none');
+			console.log(progresslength);
+		  }
+	});
 	//
 	//START revive petition options			
 	$('div#reviveappformradios').css('display','none');
