@@ -1258,8 +1258,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>td:first-child:before, 
 	content: '\e252'!important;
 	}
 table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>th:first-child:before {
-	background-color: #fafafa!important;
-	border: .2em solid #fafafa!important;
+	background-color: transparent!important;
+	border: .2em solid transparent!important;
 	color:#808080!important;
 	content: '\e252'!important;
 	}
