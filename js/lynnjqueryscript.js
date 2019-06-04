@@ -201,7 +201,7 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '18%' },//buttons
+				{ 'width': '18%' },//toggle show child rows
 				{ 'width': '10%' },//serial
 				{ 'width': '25%' },//reg
 				{ 'width': '11%' },//mark
@@ -211,7 +211,7 @@ $(document).ready(function(){
 				{ 'width': '9%' },
 			  ],
 			  'columnDefs': [
-			  	{ responsivePriority: 1, targets: 0 },//buttons
+			  	{ responsivePriority: 1, targets: 0 },//toggle show child rows
 				{ responsivePriority: 2, targets: 1 },//serial
 				{ responsivePriority: 4, targets: 2 },//reg
 				{ responsivePriority: 5, targets: 3 },//mark
@@ -3011,11 +3011,10 @@ $(document).ready(function(){
 		}
 	//
 	//START ROA Optional Actions
-	$(document).on('click', 'button.next', function() {
+	$('#roaoptact').on('click', 'button.next', function() {
 		var url = 'attorney_info_review_optional.html';
 		$(location).prop('href', url);
 	});
-	
 	$(function() {
 		var progresslength = $('#editattorney .breadcrumb-steps .col-xs-2').length;
 		var progress = $('#editattorney .breadcrumb-steps .col-xs-2');
