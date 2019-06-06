@@ -1308,6 +1308,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>td:first-child:before,
 	overflow:auto;
 	overflow-y:auto;
 	overflow-x:auto;
+	scrollbar-color: #808080 #bbb;
 	}	
 	#mydata2 .scroll::-webkit-scrollbar {
 		width: 1em;
@@ -1320,6 +1321,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>td:first-child:before,
 		}
 	#mydata2 .scroll::-webkit-scrollbar-thumb:hover {
 		background: #004C97; 
+		}
+	#mydata2 .scroll:hover {
+		scrollbar-color: #004C97 #bbb;
+		}
+	#mydata2 .scroll {
+		scrollbar-width: thin;
 		}
 #mydata .table-fixed .nopadding, #mydata2 .table-fixed .nopadding {
 	padding:0;
@@ -1802,11 +1809,11 @@ label.hasinfo {
 	overflow:auto;
 	overflow-y:auto;
 	overflow-x:auto;
+	scrollbar-color: #808080 #bbb;
+	scrollbar-width: thin;
 	}
-#responseamendreview #scrollone {
-	margin:auto 0;
-	margin-right:15px;
-	max-height:320px;
+#scrollone:hover {
+	scrollbar-color: #004C97 #bbb;
 	}	
 	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar {
 	  width: 1em;
@@ -1820,6 +1827,14 @@ label.hasinfo {
 	ul.dropdown-menu::-webkit-scrollbar-thumb {
 	  background: #555; 
 	}
+	ul.dropdown-menu {
+		scrollbar-color: #808080 #bbb;
+		overflow-x:hidden;
+		scrollbar-width: thin;
+		}
+	ul.dropdown-menu:hover {
+		scrollbar-color: #004C97 #bbb;
+		}
 	#scrollone::-webkit-scrollbar-thumb:hover, ul.dropdown-menu::-webkit-scrollbar-thumb:hover {
 	  background: #004C97; 
 	}
