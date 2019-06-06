@@ -478,7 +478,7 @@ $(document).ready(function(){
 		});
 	//
 	//START close (x) dashboard panels
-	$('#dashsectionscontainer .closegspanels').click(function() {
+	$('#dashsectionscontainer #announcements .closegspanels').click(function() {
 		$( this ).parent().parent().parent().parent().parent().fadeOut( 'fast','swing');
 	});
 	//
@@ -1133,7 +1133,7 @@ $(document).ready(function(){
 		  }
 		} else {
 		  var reader = new FileReader();
-			reader.onload = function(e) {
+			reader.onload = function() {
 				if (( listlength ) < 2)  {
 					$( fileDisplayArea ).addClass( 'loader' ).html("");
 					// Create a file
@@ -1175,7 +1175,7 @@ $(document).ready(function(){
 					});
 					$( 'input[type="file"]' ).val('');
 					return false;
-					e.preventDefault();
+					//e.preventDefault();
 				} 
 			);
         });
@@ -2277,11 +2277,12 @@ $(document).ready(function(){
 		$( this ).removeClass( '.addinitial' );
 		});
 	//
-	//START Basis foreign application date alert
+	//START Basis foreign application / dashboard date alert
 	$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	$(document).on('click','#alertmin button.close', function () {
 	  $('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	  $('#alertmin button').css('display','none');
+	  $('#alertmin').css('height','1px');
 	  $('#alertmin p').css('display','none');
 	});
 	//
@@ -2312,16 +2313,25 @@ $(document).ready(function(){
 		});
 	});
 	//
-	//START close button height match
+	//START close button height match dashboard
 	$( window ).load(function () {
       var d = $( '#announcements .closepans' ).prev('div');
-	  $(d).css('display','flex').css('flex-direction','column');
-	  $('.closepans').css( 'height', (d.innerHeight()) );
-	  $('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
+	  $(d).css('display','flex').css('flex-direction','column').css('min-height','3em');
+	  $('#announcements .closepans').css( 'line-height', (d.innerHeight()) ).css( 'height', (d.innerHeight()) );
+	  $('#announcements .closegspanels').css('line-height',(d.innerHeight() + 'px'));
 	  $( window ).resize(function() {
-  		$('.closepans').css( 'height', (d.innerHeight()) );
-	  	$('.closegspanels').css('line-height',(d.innerHeight() + 'px'));
+  		$('#announcements .closepans').css( 'height', (d.innerHeight()) );
+	  	$('#announcements .closegspanels').css('line-height',(d.innerHeight() + 'px'));
 		});
+	  var e = $( '#dashboardmain .alert-warning .closepans' );
+	  $(e).css('min-height','3em');
+	  $('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
+	  $('#dashboardmain .alert-warning button.closegspanels').css('height',(e.innerHeight() + 'px')).css('line-height',(e.innerHeight() + 'px'));
+	  $( window ).resize(function() {
+  		$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
+	  	$('#dashboardmain .alert-warning button.closegspanels').css('height',(e.innerHeight() + 'px')).css('line-height',(e.innerHeight() + 'px'));
+		});
+		console.log(e);
 	});
 	//
 	//row header p height match

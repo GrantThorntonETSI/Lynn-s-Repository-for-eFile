@@ -2871,19 +2871,39 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 #alertmin { 
 	visibility: hidden;
 	}
+#dashboardmain #alertmin, #filingbasisabde #alertmin { 
+	height: 1px;
+	}
 #alertmin p { 
-	float:left;
 	width: 80%;
 	}
-p#mintext { 
-	float:left;
-	width: 90%;
+#filingbasisabde #alertmin p { 
+	width: 85%;
+	padding-left:0;
 	}
-#alertmin button#alertbtn { 
-	float:right;
-	width: 10%;
+div#minholder { 
+	display: table;
+	width: 100%;
+	min-height: 2.91em;
+	}
+p#mintext { 
+	display: table-cell;
+	vertical-align:middle;
+	font-size:1.07em;
+	padding-left:27px;
+	}
+#alertmin button#alertbtn {
 	font-size: 2.5em;
 	color:#444;
+	float:right;
+	display: table-cell;
+	vertical-align:middle;
+	}
+#filingbasisabde #alertmin button#alertbtn {
+	width:15%;
+	}
+#alertmin button#alertbtn span {
+	top: 4px;
 	}
 #alertmin button#alertbtn:hover { 
 	color:#000;
@@ -3049,6 +3069,10 @@ button[type="submit"].right, button[type="button"].right {
 	margin:.1em;
 	color:#333/*#fff*/;
 	}
+#dashboardmain .panel-heading h4 {
+	padding-left:25px;
+	margin-top: .4em;
+	}
 #reviewattorney .Accordion p {
 	padding-left:0;
 	padding-right:0;
@@ -3058,6 +3082,9 @@ button[type="submit"].right, button[type="button"].right {
 	color:#111;
 	margin: 0 auto;
 	height:1em;
+	}
+#dashboardmain button.closegspanels {
+    font-size: 3em;
 	}
 #dashboard .dashsection button.close {
    	color: #009CDE;
@@ -3088,9 +3115,9 @@ button[type="submit"].right, button[type="button"].right {
 	display:block;
 	flex:0;
 	}
-#announcements .closepans {
-	height:20px;
-	}
+/*#announcements .closepans {
+	min-height: 3.23em;
+	}*/
 #announcements .closegspanels {
 	line-height:20px;
 	}

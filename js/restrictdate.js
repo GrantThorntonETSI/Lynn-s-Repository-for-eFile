@@ -58,6 +58,7 @@ function datealert() {
 		var b = document.getElementById("alertmin");
 		if (b.style.visibility === "hidden") {
 			b.style.visibility = "visible";
+			b.style.height = "auto";
 			b.style.float = "left";
 			b.style.top = ".25em";
 			b.style.padding = "1em";
@@ -87,6 +88,7 @@ function datealert() {
 		var b = document.getElementById("alertmin");
 		if (b.style.visibility === "hidden") {
 			b.style.visibility = "visible";
+			b.style.height = "auto";
 			b.style.float = "left";
 			b.style.top = ".25em";
 			b.style.padding = "1em";
