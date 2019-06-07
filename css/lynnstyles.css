@@ -1208,6 +1208,9 @@ main #loginform .landingpagemain {
 	-moz-border-radius:1.3em;
 	border-radius:1.3em;
 	}
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:hover:before {
+	color:#047db0!important;
+	}
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
 	-moz-box-shadow: 	0 0 0 rgba(0,0,0,0);
@@ -2644,7 +2647,8 @@ input[type="checkbox"]:focus + label span.radio::before {
 	}
 input[type="date"] {
 	padding:0 12px;
-	line-height:.95em!important;
+	line-height:38px!important;
+	padding-bottom:2px;
 	}
 #specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo {
 	height:115px;
@@ -2883,18 +2887,26 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 .alert-success { 
 	background-image:none!important;
 	}
+span.leftquote:before {
+	content: "\201C"!important;
+	}
+span.rightquote:before {
+	content: "\201D"!important;
+	}
 #alertmin { 
 	visibility: hidden;
 	}
-#dashboardmain #alertmin, #filingbasisabde #alertmin { 
+#dashboardmain #alertmin, #filingbasisabde #alertmin, #filingbasisab #alertmin, #roasign #alertmin { 
 	height: 1px;
 	}
 #alertmin p { 
 	width: 80%;
 	}
-#filingbasisabde #alertmin p { 
-	width: 85%;
+#filingbasisab #alertmin p, #roasign #alertmin p, #filingbasisabde #alertmin p { 
+	width: auto;
 	padding-left:0;
+	margin-right:1em;
+	width: 85%;
 	}
 div#minholder { 
 	display: table;
@@ -2904,8 +2916,10 @@ div#minholder {
 p#mintext { 
 	display: table-cell;
 	vertical-align:middle;
-	font-size:1.07em;
 	padding-left:27px;
+	}
+#dashboardmain p#mintext { 
+	font-size:1.07em;
 	}
 #alertmin button#alertbtn {
 	font-size: 2.5em;
@@ -2914,7 +2928,7 @@ p#mintext {
 	display: table-cell;
 	vertical-align:middle;
 	}
-#filingbasisabde #alertmin button#alertbtn {
+#filingbasisabde #alertmin button#alertbtn, #filingbasisab #alertmin button#alertbtn, #roasign #alertmin button#alertbtn {
 	width:15%;
 	}
 #alertmin button#alertbtn span {
@@ -3106,6 +3120,11 @@ button[type="submit"].right, button[type="button"].right {
 	margin-left: 1.5em;
 	float:left;
 	}
+#dashboard .dashsection button.deleterow:hover {
+   	color: #047db0;
+	opacity:1.0;
+	-moz-opacity: 1.0;
+	}
 #gsselected button.close {
 	height:1.4em;
 	}
@@ -3114,7 +3133,7 @@ button[type="submit"].right, button[type="button"].right {
 	height:1.06em;
 	color:#009CDE;
 	}
-#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover {
+#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover {
 	color: #047db0;
 	opacity:1.0;
 	-moz-opacity: 1.0;

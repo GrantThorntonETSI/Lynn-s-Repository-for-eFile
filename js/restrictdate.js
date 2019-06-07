@@ -4,6 +4,7 @@ function datelimit() {
 	var b = document.getElementById("alertmin");
 	var bb = document.getElementById("alertbtn");
 	b.style.visibility = "hidden";
+	b.style.height = "1px";
 	bb.style.display = "none";
 	b.style.top = "-10000px";
 	b.style.float = "none";
@@ -59,6 +60,8 @@ function datealert() {
 		if (b.style.visibility === "hidden") {
 			b.style.visibility = "visible";
 			b.style.height = "auto";
+			b.classList.add("form-group");
+			b.classList.add("form-group-md");
 			b.style.float = "left";
 			b.style.top = ".25em";
 			b.style.padding = "1em";
@@ -70,6 +73,9 @@ function datealert() {
 			document.getElementById("mintext").innerHTML = ("You cannot claim Section 44(d) priority, because your attempted U.S. filing is outside the 6-month window. (i.e., from when the foreign application was filed). The date must be a number after " + strmin)
 	  } else {
 			b.style.visibility = "hidden";
+			b.style.height = "1px";
+			b.classList.remove("form-group");
+			b.classList.remove("form-group-md");
 			b.style.top = "-10000px";
 			b.style.float = "none";
 			b.padding = "0";
@@ -89,6 +95,8 @@ function datealert() {
 		if (b.style.visibility === "hidden") {
 			b.style.visibility = "visible";
 			b.style.height = "auto";
+			b.classList.add("form-group");
+			b.classList.add("form-group-md");
 			b.style.float = "left";
 			b.style.top = ".25em";
 			b.style.padding = "1em";
@@ -101,6 +109,9 @@ function datealert() {
 	  		//validateinput.value = "yyyy-MM-dd";
 		} else {
 			b.style.visibility = "hidden";
+			b.style.height = "1px";
+			b.classList.remove("form-group");
+			b.classList.remove("form-group-md");
 			b.style.top = "-10000px";
 			b.style.float = "none";
 			b.padding = "0";

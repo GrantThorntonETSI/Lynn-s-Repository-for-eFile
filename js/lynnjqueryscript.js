@@ -1654,18 +1654,31 @@ $(document).ready(function(){
 	$('select.countinputs').on('change',function(){
 		var count = $('div.indentctr input[type=radio]:checked').length;
 		var boxes = $('div.indentctr');
-		//var section = $(this).closest('section').prev('section').find('div.indentctr');
+		var b = $('#alertmin');
+		var c = $('#mintext');
+		var d = $('#alertbtn');
 		$(this).closest('section').prev('section').find('div.indentctr input[type=radio]:checked');
 		if( count < 1) {
 			$('html, body').animate({
-				scrollTop: boxes.offset().top - 144
+				scrollTop: boxes.offset().top - 300
 			}, 500);
+			$(b).css('visibility','visible');
+			$(b).css('height','auto');
+			$(b).addClass('form-group').addClass('form-group-md');
+			$(b).css('float','left');
+			$(b).css('top','.25em');
+			$(b).css('padding','1em');
+			$(b).css('marginBottom','1em');
+			$(c).css('display','block');
+			$(d).css('display','block');
+			$(d).toggleClass( 'focus' );
+			$(c).html('You must click one of the three buttons, below, to confirm that you are authorized pursuant to the rules governing representation of others before the USPTO to sign this form.');
 			$(this).val('Select');
 			$(this).closest('fieldset').find('.hidethis').css('display','none');
-			alert ('You must click one of the three buttons, below, to confirm that you are authorized pursuant to the rules governing representation of others before the USPTO to sign this form.');
 			$(this).closest('fieldset').find('textarea.datesigned').val('');
 		}
 	});
+	//
 	//START select security questions
 	$('#createaccount .hidethis').css('display','none');
 	$('select.questions').on('change',function(){
@@ -2279,11 +2292,19 @@ $(document).ready(function(){
 	//
 	//START Basis foreign application / dashboard date alert
 	$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
-	$(document).on('click','#alertmin button.close', function () {
-	  $('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
-	  $('#alertmin button').css('display','none');
-	  $('#alertmin').css('height','1px');
-	  $('#alertmin p').css('display','none');
+	$(document).on('click','#alertmin button.close', function(e) {
+		$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
+		$('#alertmin button').css('display','none');
+		$('#alertmin').css('height','1px');
+		$('#alertmin').removeClass('form-group').removeClass('form-group-md');
+		$('#alertmin p').css('display','none');
+		e.preventDefault();
+	});
+	$(document).on('click','#filingbasisab #alertmin button.close', function(e) {
+		var t = $('input[type=radio][disabled]');
+		$('html, body').animate({
+			scrollTop: (t).offset().top - 150
+			}, 500);
 	});
 	//
 	//START modals
@@ -2331,7 +2352,7 @@ $(document).ready(function(){
   		$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
 	  	$('#dashboardmain .alert-warning button.closegspanels').css('height',(e.innerHeight() + 'px')).css('line-height',(e.innerHeight() + 'px'));
 		});
-		console.log(e);
+		//console.log(e);
 	});
 	//
 	//row header p height match
@@ -2969,12 +2990,28 @@ $(document).ready(function(){
 			$(document).on('change','#basisab input[type=radio].count', function() {
 				var count = $(this).closest('fieldset').find('input[type=radio].count').length;
 				var countall = $(this).closest('fieldset').find('input[type=radio].count:checked').length;
+				var b = $('#alertmin');
+				var c = $('#mintext');
+				var d = $('#alertbtn');
 				if (countall == count) {
-					alert ('You have indicated at least one of the goods / services in this class is in-use. You must choose "Yes" for at least one good / service.');
+					$(b).css('visibility','visible');
+					$(b).css('height','auto');
+					$(b).addClass('form-group').addClass('form-group-md');
+					$(b).css('float','left');
+					$(b).css('top','.25em');
+					$(b).css('padding','1em');
+					$(b).css('margin-bottom','1em');
+					$(c).css('display','block');
+					$(d).css('display','block');
+					$(d).toggleClass( 'focus' );
+					$('html, body').animate({
+						scrollTop: $(b).offset().top - 144
+					}, 500);
+					$(c).html('You have indicated at least one of the goods / services in this class is in-use. You must choose ' + '<span class="leftquote"></span>Yes<span class="rightquote"></span>' + ' for at least one good / service.');
 					$(this).prop({
-								disabled: true,
-								checked:false,
-								}).attr('aria-disabled', 'true');
+						disabled: true,
+						checked:false,
+						}).attr('aria-disabled', 'true');
 					$(this).parent().addClass('special').addClass('disabled');
 					}
 				});
