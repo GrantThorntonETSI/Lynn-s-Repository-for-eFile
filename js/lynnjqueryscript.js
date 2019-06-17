@@ -1733,23 +1733,23 @@ $(document).ready(function(){
 		}
 	//		
 	//START generate unique IDs + matching labels for Basis pages, uploaded files
-		var fileList = $('#basisab input[type=file], #basisabde input[type=file]');
+		var fileList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file]');
 		for (var i = 0; i <= fileList.length; i++) {
 			$(fileList[i]).attr('id', 'uploadedfile' + i);
 		}
-		var nameList = $('#basisab input[type=file], #basisabde input[type=file]');
+		var nameList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file]');
 		for (var i = 0; i <= nameList.length; i++) {
 			$(nameList[i]).attr('name', 'uploadedspecimen' + i + 'file');
 		}
-		var labelList = $('#basisab input[type=file], #basisabde input[type=file]').prev('label');
+		var labelList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file]').prev('label');
 		for (var i = 0; i <= labelList.length; i++) {
 			$(labelList[i]).attr('for', 'uploadedfile' + i);
 		}
-		var labelidList = $('#basisab input[type=file], #basisabde input[type=file]').prev('label');
+		var labelidList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file]').prev('label');
 		for (var i = 0; i <= labelidList.length; i++) {
 			$(labelidList[i]).attr('id', 'specimen' + i);
 		}
-		var filesarialabelList = $('#basisab input[type=file], #basisabde input[type=file]');
+		var filesarialabelList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file]');
 		for (var i = 0; i <= filesarialabelList.length; i++) {
 			$(filesarialabelList[i]).attr('aria-labelledby', 'specimen' + i);
 		}
