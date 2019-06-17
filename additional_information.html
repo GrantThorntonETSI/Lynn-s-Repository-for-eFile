@@ -219,7 +219,7 @@
                                               <label for="inlineRadio046" class="radio-inline radiocontainer">No<input type="radio" name="uncommoninfo" id="inlineRadio046" value="no" tabindex="0"><span class="checkmark"></span></label>
                                             </div><!--END radiogroup-->
                                             <!--Start Dropzone-->
-                                            <div id="yesnotpreviously">
+                                            <div id="yesnotpreviously" class="upload">
                                                 <label for="ta8" class="weight600">Provide the additional information.</label> 
                                                 <textarea id="ta8" rows="3" class="form-control"></textarea>
                                                 <p class="weight600 form-group form-group-md">Optional upload.</p>
@@ -229,8 +229,7 @@
                                                 </div><!-- Drop Zone -->
                                                 <div class="row">
                                                     <div class="js-upload-finished col-xs-12">
-                                                        <p id="uploadedfile">Selected files</p>
-                                                        <div class="list-group" id="filedata">
+                                                        <div class="list-group">
                                                             <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
                                                         </div>
                                                     </div>
@@ -295,7 +294,7 @@
                                                     <p>The Principal Register is the primary register for all trademarks. When a mark has been registered on the Principal Register, the mark is entitled to certain rights provided by federal law. The Supplemental Register is a listing of non-mark designations (such as descriptive words) that are &#8220;capable&#8221; of eventually becoming a &#8220;mark.&#8221;</p>
                                                 </div>
                                             </div>
-                                            <p class="weight600">You are seeking registration on the:</p>
+                                            <p>You are seeking registration on the:</p>
                                             <div>
                                                 <div role="radiogroup" aria-labelledby="disclaim" class="form-group form-group-md">
                                                     <fieldset aria-label="principal or supplemental">
@@ -363,7 +362,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div id="yesevidence" class="form-group"><!--toggle 'yes' radio-->
+                                                        <div id="yesevidence" class="form-group upload">
                                                             <p class="weight600" role="heading" aria-level="3">Upload evidence.</p>
                                                             <div class="form-group form-group-md hidethis">
                                                                 <label class="small upload-drop-zone" for="filetwo"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select file</div></label>
@@ -371,8 +370,7 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="js-upload-finished col-xs-12">
-                                                                    <p id="uploadedfile">Selected files</p>
-                                                                    <div class="list-group" id="filedata">
+                                                                    <div class="list-group">
                                                                         <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
                                                                     </div>
                                                                 </div>
@@ -393,7 +391,7 @@
                                                                         <input type="text" class="form-control" id="prioregnumbers">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-3 col-sm-2 visuallyremoved resetreg">
-                                                                        <button type="button" class="btn btn-sm close resetregbtn" aria-label="remove this number"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                                                        <button type="button" class="btn btn-sm close resetregbtn visuallyremoved" aria-label="remove this number"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
                                                                     </div>
                                                                 </div>
                                                            	</div>
@@ -423,21 +421,21 @@
                                                 <h2 class="card-title weight600" id="otherform">Use in Another Form</h2>
                                             </div>
                                             <div>
-                                                <p class="weight600" id="otherform">Is the mark (or part of the mark) currently in use in another form?</p>                                                
+                                                <p id="otherform">Is the mark (or part of the mark) currently in use in another form?</p>                                                
                                                 <div role="radiogroup" aria-labelledby="otherform" class="form-group form-group-md">
                                                   <label for="inlineRadio040" class="radio-inline radiocontainer">Yes<input type="radio" name="formradio" id="inlineRadio040" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                   <label for="inlineRadio041" class="radio-inline radiocontainer">No<input type="radio" name="formradio" id="inlineRadio041" value="no" tabindex="0"><span class="checkmark"></span></label>
                                             	</div><!--END radiogroup-->
                                                 <div id="yesotherform" class="form-group"><!--toggle 'yes' radio-->
                                                     <div class="form-group form-group-md">
-                                                        <p class="weight600">Is this for the whole mark, or part of the mark?</p>
+                                                        <p>Is this for the whole mark, or part of the mark?</p>
                                                         <div role="radiogroup" aria-labelledby="disclm" class="form-group form-group-md">
                                                           <label for="inlineRadio042" class="radio-inline radiocontainer">Whole<input type="radio" name="wholepartradiothree" id="inlineRadio042" value="whole" tabindex="0"><span class="checkmark"></span></label>
                                                           <label for="inlineRadio043" class="radio-inline radiocontainer">In part<input type="radio" name="wholepartradiothree" id="inlineRadio043" value="inpart" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
                                                         <div id="yespartother" class="form-group"><!--toggle 'yes' radio-->
                                                             <div class="form-group form-group-md">
-                                                                <label for="partmark" class="weight600">Which part of the mark?</label> 
+                                                                <label for="partmark">Which part of the mark?</label> 
                                                                 <textarea id="partmark" rows="1" class="form-control"></textarea>
                                                             </div>
                                                         </div>
@@ -492,7 +490,7 @@
                                                   <!--Start Dropzone-->
                                                   <div class="col-xs-12 form-group form-group-md">
                                                   		<div class="row">
-                                                            <div class="col-xs-12 form-group form-group-md">
+                                                            <div class="col-xs-12 form-group form-group-md upload">
                                                                 <div class="card-text noexpand blue">
                                                                     <h2 class="card-title weight600">Court Decree</h2>
                                                                 </div>
@@ -503,8 +501,7 @@
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="js-upload-finished col-xs-12">
-                                                                        <p id="uploadedfile">Selected files</p>
-                                                                        <div class="list-group" id="filedata">
+                                                                        <div class="list-group">
                                                                             <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
                                                                         </div>
                                                                     </div>
@@ -628,7 +625,7 @@
                                                   <!--Start Dropzone-->
                                                   <div class="col-xs-12 form-group form-group-md">
                                                   	<div class="row">
-                                                      	<div class="col-xs-12 form-group form-group-md">
+                                                      	<div class="col-xs-12 form-group form-group-md upload">
                                                             <div class="card-text noexpand blue">
                                                                 <h2 class="card-title weight600">Prior decision made by the Trademark Trial and Appeal Board (TTAB)</h2>
                                                             </div>
@@ -639,8 +636,7 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="js-upload-finished col-xs-12">
-                                                                    <p id="uploadedfile">Selected files</p>
-                                                                    <div class="list-group" id="filedata">
+                                                                    <div class="list-group">
                                                                         <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
                                                                     </div>
                                                                 </div>
@@ -768,7 +764,7 @@
                                               <!--Start Dropzone-->
                                                 <div class="col-xs-12 form-group form-group-md">
                                                     <div class="row">
-                                                        <div class="col-xs-12 form-group form-group-md">
+                                                        <div class="col-xs-12 form-group form-group-md upload">
                                                             <div class="card-text noexpand blue">
                                                                 <h2 class="card-title weight600">Written consent signed by owner of conflicting registrations</h2>
                                                             </div>
@@ -779,8 +775,7 @@
                                                             </div>
                                                             <div class="row">
                                                                 <div class="js-upload-finished col-xs-12">
-                                                                    <p id="uploadedfile">Selected files</p>
-                                                                    <div class="list-group" id="filedata">
+                                                                    <div class="list-group">
                                                                         <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
                                                                     </div>
                                                                 </div>
@@ -904,7 +899,7 @@
                                                       <!--Start Dropzone-->
                                                       <div class="col-xs-12 form-group form-group-md">
                                                         <div class="row">
-                                                            <div class="col-xs-12 form-group form-group-md">
+                                                            <div class="col-xs-12 form-group form-group-md upload">
                                                                 <div class="card-text noexpand blue">
                                                                     <h2 class="card-title weight600">Earlier date of first use in commerce</h2>
                                                                 </div>
@@ -915,8 +910,7 @@
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="js-upload-finished col-xs-12">
-                                                                        <p id="uploadedfile">Selected files</p>
-                                                                        <div class="list-group" id="filedata">
+                                                                        <div class="list-group">
                                                                             <div class="list-group-item list-group-item-success fileholder col-xs-12" role="alert"></div>
                                                                         </div>
                                                                     </div>

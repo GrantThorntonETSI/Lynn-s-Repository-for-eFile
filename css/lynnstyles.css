@@ -369,6 +369,7 @@ section .breadcrumb-steps {
 	}
 .displaycell {
 	display:table-cell;
+	vertical-align:middle;
 	}
 .breadcrumb-steps .displaycell > div {
 	height:100%;
@@ -1654,6 +1655,18 @@ span#termsagree label a:hover, span#termsagree label a:hover {
     background-color: #004C97;
     color: #fff;
 	}
+#statementou .noexpand.blue {
+    height: 50px;
+	}
+#statementou .noexpand.blue span:first-child {
+    margin-right: 1em;
+	}
+#statementou .noexpand.blue span.listed {
+    font-weight: normal;
+	}
+#statementou .noexpand.blue .displaytable {
+    height: 38px;
+	}
 .leadtext {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -1763,12 +1776,6 @@ label.hasinfo {
 	}
 .badge {
 	line-height: inherit;
-	}
-#upimgtwo {
-	padding: .81em;
-	}
-#upimgtwo span {
-	line-height: 1.8em;
 	}
 .visuallyhidden {
 	visibility:hidden!important;
@@ -2378,7 +2385,7 @@ div.round {
 	float: right;
     margin: 0;
 	}
-#basisabde .btn-success.add.ctr, #basisab .btn-success.add.ctr {
+#basisabde .btn-success.add.ctr, #basisab .btn-success.add.ctr, #statementou .btn-success.add.ctr, #detected .btn-success.add.ctr {
 	margin-top: 0;
 	margin-bottom:2em;
 	}
@@ -2396,7 +2403,7 @@ div.round {
 div[role="heading"] { 
 	margin-bottom: .6em;
 	}
-#uploaded div[role="heading"], #entities div[role="heading"], #filingbasisabde div[role="heading"], filingbasisab div[role="heading"] { 
+#uploaded div[role="heading"], #entities div[role="heading"], #filingbasisabde div[role="heading"], filingbasisab div[role="heading"], soucontent div[role="heading"] { 
 	margin-bottom: 0;
 	}
 div[role="heading"] { 
@@ -2563,7 +2570,7 @@ span#authem  {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
-#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span {
+#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span.radio, #statementou span.radio {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
@@ -2814,7 +2821,7 @@ input[type="radio"]:focus + label span.checkmark::after {
 	margin-bottom: 1em;
 	width:100%;
 	}
-#basisabde .upload-drop-zone, #basisab .upload-drop-zone, #gridview .upload-drop-zone {
+#basisabde .upload-drop-zone, #basisab .upload-drop-zone, #gridview .upload-drop-zone, #statementou .upload-drop-zone {
 	line-height: 1.25em;
 	}
 #gridview .upload-drop-zone {
@@ -2838,7 +2845,7 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 	p#upimage {
 	margin-bottom:.6em;
 	}
-#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"] {
+#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], #statementou input[type="file"] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -2958,6 +2965,7 @@ button[type="submit"].right, button[type="button"].right {
 .js-upload-finished {
 	margin:0 auto;
 	float:none;
+	display:none;
 	}
 .js-upload-finished .linkholder a {
 	text-decoration:underline;
@@ -3003,7 +3011,7 @@ button[type="submit"].right, button[type="button"].right {
 	height:auto;
 	max-width:80%;
 	}
-#petitions1 div img, #petitions2 div img, #responseamend div img {
+#petitions1 div img, #petitions2 div img {
     float: left!important;
 	}
 .fileholder div img, .fileholder i, .fileholder span, #petitions1 div img, #petitions2 div img, #responseamend div img {
@@ -3128,12 +3136,12 @@ button[type="submit"].right, button[type="button"].right {
 #gsselected button.close {
 	height:1.4em;
 	}
-#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close {
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, #statementou button.close {
     font-size: 3em;
 	height:1.06em;
 	color:#009CDE;
 	}
-#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover {
+#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #statementou button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover {
 	color: #047db0;
 	opacity:1.0;
 	-moz-opacity: 1.0;
@@ -3756,6 +3764,9 @@ footer #megamenu ul {
 	#petitions1 .panel-body p, #petitions2 .panel-body p, #responseamend .panel-body p {
 		margin-top: 0;
 		margin-bottom: .8em;
+		}
+	#responseamend .upload p {
+		margin-top: .6em;
 		}
 	}
 @media (min-width: 1200px) and (max-width: 1587px) {
