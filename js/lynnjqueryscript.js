@@ -1358,7 +1358,7 @@ $(document).ready(function(){
 					$( this ).find( 'button[type=submit]' ).css('display','none');
 					$( this ).find( 'span.alert-success' ).html('Uploaded File');
 					$( this ).find( 'input[type="file"]' ).val('');
-					return false;
+					//return false;
 					e.preventDefault();
 				} 
 			);
@@ -1378,12 +1378,17 @@ $(document).ready(function(){
 		$( showinput ).contents().css('display','block');
 		$( displaydata ).css('display','none');
 		$(this).closest('div.upload').find( 'button[type=submit]' ).css('display','none');
-		$(this).closest('div.upload').find( 'div.upload-drop-zone' ).css('height','115px');
-		$(this).closest('div#usaffiliation').find( 'div.upload-drop-zone' ).css('height','2.65em').css('display','table');
+		$(this).closest('div.upload').find( 'label.upload-drop-zone' ).css('height','115px');
+		$(this).closest('div#usaffiliation').find( 'label.upload-drop-zone' ).css('height','2.65em').css('display','table');
 		$(this).closest('div.upload').find( 'div.fileDisplayArea img' ).remove();
 		$(this).closest('div.upload').find( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 		$(this).parent().parent().remove();
 	});
+	//
+	//START prevent File Upload submit
+	//$('div.upload button[type=submit]').click(function(event){
+	  //event.preventDefault();
+	//});
 	//
 	//START toggle radio buttons content
 	//start mark color options
@@ -1704,7 +1709,6 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yescommerce select').val( resetselect[0] );
 			$(this).closest('section').find('div.yescommerce .hidethis').contents().css('display','block');
 			$(this).closest('section').find('div.yescommerce .upload-drop-zone').css('height','115px');
-			$(this).closest('section').find('div.yescommerce div.upload-drop-zone').css('height','175px');
 			$(this).closest('section').find('div.yescommerce .js-upload-finished button.close' ).parent().parent().remove();
 			$(this).closest('section').find('div.yescommerce div.fileDisplayArea img' ).remove();
 			$(this).closest('section').find('div.yescommerce div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
@@ -1776,7 +1780,6 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yesconnection select').val( resetselect[0] );
 			$(this).closest('section').find('div.yesconnection .hidethis').contents().css('display','block');
 			$(this).closest('section').find('div.yesconnection .upload-drop-zone').css('height','115px').css('display','block');
-			$(this).closest('section').find('div.yesconnection div.upload-drop-zone').css('height','175px').css('display','block');
 			$(this).closest('section').find('div.yesconnection .js-upload-finished button.close' ).parent().parent().remove();
 			$(this).closest('section').find('div.yesconnection div.fileDisplayArea img' ).remove();
 			$(this).closest('section').find('div.yesconnection div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
@@ -1800,7 +1803,6 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yesspecimen').hide( 'fast' );
 			$(this).closest('section').find('.hidethis').contents().css('display','block');
 			$(this).closest('section').find('.upload-drop-zone').css('height','115px');
-			$(this).closest('section').find('div.upload-drop-zone').css('height','175px');
 			$(this).closest('section').find('.js-upload-finished button.close' ).parent().parent().remove();
 			$(this).closest('section').find('div.fileDisplayArea img' ).remove();
 			$(this).closest('section').find('div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
@@ -2430,7 +2432,6 @@ $(document).ready(function(){
 			$('div.yescommerce div.holdsaforeign select, div.yescommerce div.holdsapending select').val( resetselect[0] );
 			$('div.yescommerce div.holdsaforeign .hidethis, div.yescommerce div.holdsapending .hidethis').contents().css('display','block');
 			$('div.yescommerce div.holdsaforeign .upload-drop-zone, div.yescommerce div.holdsapending .upload-drop-zone').css('height','115px');
-			$('div.yescommerce div.holdsaforeign div.upload-drop-zone, div.yescommerce div.holdsapending div.upload-drop-zone').css('height','175px');
 			$('div.yescommerce div.holdsaforeign .js-upload-finished button.close, div.yescommerce div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
 			$('div.yescommerce div.holdsaforeign div.fileDisplayArea img, div.yescommerce div.holdsapending div.fileDisplayArea img' ).remove();
 			$('div.yescommerce div.holdsaforeign div.fileDisplayArea, div.yescommerce div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
@@ -2458,7 +2459,6 @@ $(document).ready(function(){
 			$('div.yesconnection div.holdsaforeign select, div.yesconnection div.holdsapending select').val( resetselect[0] );
 			$('div.yesconnection div.holdsaforeign .hidethis, div.yesconnection div.holdsapending .hidethis').contents().css('display','block');
 			$('div.yesconnection div.holdsaforeign .upload-drop-zone, div.yesconnection div.holdsapending .upload-drop-zone').css('height','115px');
-			$('div.yesconnection div.holdsaforeign div.upload-drop-zone, div.yesconnection div.holdsapending div.upload-drop-zone').css('height','175px');
 			$('div.yesconnection div.holdsaforeign .js-upload-finished button.close, div.yesconnection div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
 			$('div.yesconnection div.holdsaforeign div.fileDisplayArea img, div.yesconnection div.holdsapending div.fileDisplayArea img' ).remove();
 			$('div.yesconnection div.holdsaforeign div.fileDisplayArea, div.yesconnection div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
@@ -2566,7 +2566,7 @@ $(document).ready(function(){
 	});
 	//
 	//START modals
-	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {
+	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal','#soumodal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
 	})
 	//
@@ -2592,11 +2592,65 @@ $(document).ready(function(){
 		});
 	});
 	//
+	//START SOU blue bar height
+	var souf = $('#statementou h2.displaycell').outerHeight();
+	$('#statementou .noexpand.blue').css('height',(souf));
+	$( window ).resize(function() {
+		var souf = $('#statementou h2.displaycell').outerHeight();
+		$('#statementou .noexpand.blue').css('height',(souf));
+	});
+	//
+	//START close button height match SOU labels
+	$('#soucontent div.modal').on('show.bs.modal', function() {
+      var d = $('#statementou div.modal button.closegspanels').parent().find('span.closepans');
+	  var c = $('#statementou div.modal button.closegspanels').closest('span.label');
+	  var f = $('#statementou div.modal button.closegspanels');
+	  var e = $('#statementou div.modal span.closepans').eq(0).parent();
+	  $(c).css('display','table').css('float','left').css('max-width','48%');
+	  $(d).css('display','table-cell').css('vertical-align','middle');
+	  $(f).css('display','table-cell').css('vertical-align','middle');
+	  $(c).css('height','50%');
+	  $('#statementou div.modal button.closegspanels').css('display','table-cell').css('vertical-align','middle').css('line-height',(c.innerHeight() + 'px')).css( 'height',(c.innerHeight()));
+	});
+	//
+	//START SOU modal button add/remove GSs
+		$('#inusegs span.label button').on('click',function() { 
+			//$(this).parent().remove();
+			var colorClass = this.className;
+			if ((colorClass) == ('close closegspanels')) {
+				$(this).parent().css('background','#ecf1f3').css('color','#999');
+				$(this).children('span').addClass('glyphicon-refresh').removeClass('glyphicon-remove-circle');
+				$(this).toggleClass('refresh');
+			}
+			if ((colorClass) == ('close closegspanels refresh')) {
+				$(this).parent().css('background','#cbd6da').css('color','#333');
+				$(this).children('span').removeClass('glyphicon-refresh').addClass('glyphicon-remove-circle');
+				$(this).toggleClass('refresh');
+			}
+		});
+	//
+	//START SOU modal add/remove GSs from blue bar
+	$('#inusegs button').on('click',function() {
+		var colorClass = this.className;
+		var labelindex = $(this).index('#inusegs button.closegspanels');
+		//$( this ).siblings('span.closepans').html( "That was label index #" + labelindex );
+		if ((colorClass) === ('close closegspanels')) {
+			$('#statementou h2.displaycell span.listed').eq( labelindex ).css('display','inline');
+			var souf = $('#statementou h2.displaycell').outerHeight();
+			$('#statementou .noexpand.blue').css('height',(souf));
+		}
+		if ((colorClass) === ('close closegspanels refresh')) {
+			$('#statementou h2.displaycell span.listed').eq( labelindex ).css('display','none');
+			var souf = $('#statementou h2.displaycell').outerHeight();
+			$('#statementou .noexpand.blue').css('height',(souf));
+		}
+	});
+	//
 	//START close button height match dashboard
 	$( window ).load(function () {
       var d = $( '#announcements .closepans' ).prev('div');
 	  $(d).css('display','flex').css('flex-direction','column').css('min-height','3em');
-	  $('#announcements .closepans').css( 'line-height', (d.innerHeight()) ).css( 'height', (d.innerHeight()) );
+	  $('#announcements .closepans').css( 'line-height', (d.innerHeight() + 'px') ).css( 'height', (d.innerHeight()) );
 	  $('#announcements .closegspanels').css('line-height',(d.innerHeight() + 'px'));
 	  $( window ).resize(function() {
   		$('#announcements .closepans').css( 'height', (d.innerHeight()) );
@@ -2610,7 +2664,6 @@ $(document).ready(function(){
   		$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
 	  	$('#dashboardmain .alert-warning button.closegspanels').css('height',(e.innerHeight() + 'px')).css('line-height',(e.innerHeight() + 'px'));
 		});
-		//console.log(e);
 	});
 	//
 	//row header p height match
@@ -3632,4 +3685,25 @@ $(document).ready(function(){
 		$('div#reconsideration, div#souquestion, div#xreq').hide('fast');
 		$('div#xreq').show('fast','swing');
 	});
+	//START SOU select modals
+	$('select#gsactions').on('change',function(){
+		var loadmodal = ($(this).val());
+		$( loadmodal ).css('display','block');
+		if( loadmodal == 'Select') {
+			$('#soucontent div.modal').modal('hide');
+			}
+		else if ( loadmodal == 'delete') {
+			$('#soucontent div#soumodal').modal('show');
+			} 
+		else if ( loadmodal == 'limit') {
+			$('#soucontent div#soumodaltwo').modal('show');
+			} 
+	});
+	$('#soucontent div.modal').on('hide.bs.modal', function() {
+		var resetselect = [ 'edit' ];
+		var resetselect = jQuery.makeArray( resetselect );
+		var loadmodal = $('select#gsactions');
+		$(loadmodal).val( resetselect[0] );
+	});
+	//
 });
