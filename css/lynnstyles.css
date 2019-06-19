@@ -131,6 +131,9 @@ p {
     margin-bottom: .7em;
     line-height: 1.5em;
 	}
+#currentmark p {
+    text-align: center;
+	}
 #petitions1 h3, #petitions2 h3, #responseamend h3 {
 	margin-top: 1.2em;
 	font-size: 1.2em;
@@ -215,6 +218,42 @@ object#selected {
 	display: inline-block;
 	border-radius: .19em;
 	}
+#inusegs .label {
+	margin:0 .75em .75em 0;
+	font-size:1em;
+	text-align:left;
+	background:#cdd8dc;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-ms-word-break: break-all;
+	word-break: break-all;
+	word-break: break-word;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	white-space: normal;
+	display: table;
+	float: left;
+	max-width: 48%;
+	height: 50%;
+	}
+	#inusegs .label button .glyphicon {
+		line-height: auto;
+		}
+		#inusegs .label button {
+			width:10%;
+			float:right;
+			font-size: 2em;
+			color:#333;
+			min-width: 38px;
+			display: table-cell;
+			vertical-align: middle;
+			}
+			#inusegs span.label span {
+				width:80%;
+				line-height: 1.2em;
+				}
 .label.subtle {
 	padding-top:.35em;
 	padding-bottom:.35em;
@@ -777,6 +816,9 @@ h2, h3, h4, h5, h6 {
 	}
 #petitions h1 {
 	margin-bottom:1em;
+	}
+#editowneroptional h1, #editattorneyoptional h1, #gsinuseoptional h1, #gsselectedoptional h1, div.amend h1 {
+	font-size:1.9em!important;
 	}
 #designwithtext h3 {
 	margin-top: 1em;
@@ -1656,7 +1698,8 @@ span#termsagree label a:hover, span#termsagree label a:hover {
     color: #fff;
 	}
 #statementou .noexpand.blue {
-    height: 50px;
+    padding-left: 0;
+	min-height: 64px;
 	}
 #statementou .noexpand.blue span:first-child {
     margin-right: 1em;
@@ -1665,7 +1708,13 @@ span#termsagree label a:hover, span#termsagree label a:hover {
     font-weight: normal;
 	}
 #statementou .noexpand.blue .displaytable {
-    height: 38px;
+    min-height: 38px;
+	}
+#statementou .noexpand.blue .displaytable h2 {
+	padding-bottom: .9em;
+	}
+#statementou select#gsactions {
+	margin-top: .5em;
 	}
 .leadtext {
     margin-top: 30px;
@@ -1697,7 +1746,7 @@ p#lead {
 span.weight600 {
 	font-weight:normal;
 	}
-#success span.weight600, #responseamend span.weight600 {
+#success span.weight600, #responseamend span.weight600, div.modal span.weight600 {
 	color:#333;
 	font-weight:600;
 	}
@@ -1817,21 +1866,31 @@ label.hasinfo {
 	max-height:300px;
 	margin:auto 5%;
 	overflow:auto;
-	overflow-y:auto;
+	overflow-y:none;
 	overflow-x:auto;
 	scrollbar-color: #808080 #bbb;
 	scrollbar-width: thin;
 	}
-#scrollone:hover {
+div.modal div#inusegs {
+	min-height:200px;
+	overflow:auto;
+	overflow-y:auto;
+	overflow-x:auto;
+	scrollbar-color: #808080 #bbb;
+	scrollbar-width: thin;
+	padding: 10px 10px;
+    padding-bottom: 1px;
+	}
+#scrollone:hover, div.modal  div#inusegs:hover {
 	scrollbar-color: #004C97 #bbb;
 	}	
-	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar {
+	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar, div.modal div#inusegs::-webkit-scrollbar {
 	  width: 1em;
 	}
-	#scrollone::-webkit-scrollbar-track, ul.dropdown-menu::-webkit-scrollbar-track {
+	#scrollone::-webkit-scrollbar-track, ul.dropdown-menu::-webkit-scrollbar-track, div.modal div#inusegs::-webkit-scrollbar-track {
 	  background: #bbb; 
 	}
-	#scrollone::-webkit-scrollbar-thumb {
+	#scrollone::-webkit-scrollbar-thumb, div.modal div#inusegs::-webkit-scrollbar-thumb {
 	  background: #808080; 
 	}
 	ul.dropdown-menu::-webkit-scrollbar-thumb {
@@ -1845,7 +1904,7 @@ label.hasinfo {
 	ul.dropdown-menu:hover {
 		scrollbar-color: #004C97 #bbb;
 		}
-	#scrollone::-webkit-scrollbar-thumb:hover, ul.dropdown-menu::-webkit-scrollbar-thumb:hover {
+	#scrollone::-webkit-scrollbar-thumb:hover, ul.dropdown-menu::-webkit-scrollbar-thumb:hover, div.modal div#inusegs::-webkit-scrollbar-thumb:hover{
 	  background: #004C97; 
 	}
 /*BUTTONS*/
@@ -1882,6 +1941,9 @@ label.hasinfo {
     margin-top: 1.99993em;
 	padding: 5px 10px;
 	}
+	#editowneroptional #editowner .btn-success.add {
+		margin-top: 2.78em;
+		}
 #editowner .btn-group {
 	width:40px;
 	}
@@ -1926,10 +1988,14 @@ label.hasinfo {
     float: none;
     margin-top: .545em;
 	}
+#soumodaltwo .modal-footer button {
+	float:none;
+	margin: 0 auto;
+	}
 .deleterow {
     float: right;
 	}
-.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.focus, .ql-snow.ql-toolbar span:focus, .ql-snow .ql-toolbar span:focus, .ql-snow.ql-toolbar span.focus, .ql-tooltip input:focus, .ql-tooltip input.focus {
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.focus, .ql-snow.ql-toolbar span:focus, .ql-snow .ql-toolbar span:focus, .ql-snow.ql-toolbar span.focus, .ql-tooltip input:focus, .ql-tooltip input.focus, .ql-container:focus {
     /*outline: thin dotted;*/
 	outline: 1px solid #9BB8D3!important;
 	outline: 1px solid -webkit-focus-ring-color;
@@ -2075,7 +2141,7 @@ button#moreoptionsbtn {
 	}
 .btn-success:active:focus, btn.btn-success:active:hover, .btn-success:focus, .btn-success:hover, .btn-success:active.focus, btn.btn-success:active.hover, .btn-success.focus, .btn-success.hover {
 	background-color: #047db0;
-    border-color: #057eb1;
+    border-color: #047db0;
 	}
 .btn.add, .btn-success.add  {	
 	margin-top: 1.91em;
@@ -2178,7 +2244,7 @@ button#moreoptionsbtn {
     margin: 0 auto!important;
     float: none!important;
 	}
-#detected .addinitial {    
+#detected .addinitial, #amendmark .addinitial {    
 	width: 90%!important;
 	}
 /*toggle button*/
@@ -2278,14 +2344,18 @@ input:checked + .slider #off {
 		100% { transform: rotate(360deg); }
 		}
 /* MODALS */
+#tradeservmodal, #collectivemodal, #collectivemembmodal, #emailmodal, #securitymodal, #passwordmodal, #soumodal, #soumodaltwo {
+	font-size:1.25em;
+	}
+#tradeservmodal .modal-title, #collectivemodal .modal-title, #collectivemembmodal .modal-title, #emailmodal .modal-title, #securitymodal .modal-title, #passwordmodal .modal-title, #soumodal .modal-title, #soumodaltwo .modal-title {
+	font-weight: 600;
+	color:#333;
+	}
 .modal-footer {
     border-top: none;
 	}
 .modal-header {
     border-bottom: none;
-	}
-.modal-header .close {
-    margin-top: -4px!important;
 	}
 .modal-content {
 	-webkit-border-top-left-radius: 		0;
@@ -2385,7 +2455,7 @@ div.round {
 	float: right;
     margin: 0;
 	}
-#basisabde .btn-success.add.ctr, #basisab .btn-success.add.ctr, #statementou .btn-success.add.ctr, #detected .btn-success.add.ctr {
+#basisabde .btn-success.add.ctr, #basisab .btn-success.add.ctr, #statementou .btn-success.add.ctr, #detected .btn-success.add.ctr, #amendmark .btn-success.add.ctr {
 	margin-top: 0;
 	margin-bottom:2em;
 	}
@@ -2672,6 +2742,12 @@ input[type="radio"] {
 	margin-bottom: 1.7em;
     margin-top: 1.7em!important;
 	}
+#amendarea .radio {
+	margin-bottom: .5em;
+	}
+	#amendarea #amendescript .radio {
+		margin-top: 0!important;
+		}
 #responseamendtable .radio, #responseamendtabletwo .radio {
 	 margin-top:10px!important;
 	 }
@@ -2747,7 +2823,7 @@ input[type="radio"]:focus + label span.checkmark::after {
 	 overflow:hidden;
  	}
 /* accept b/w image, colorclaim */
-	#nocolorclaim .img-thumbnail {
+	#nocolorclaim .img-thumbnail, #currentmark .img-thumbnail {
 		max-width:310px; 
 		margin:0 auto;
 		display:block; 
@@ -2845,7 +2921,7 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 	p#upimage {
 	margin-bottom:.6em;
 	}
-#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], #statementou input[type="file"] {
+#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], #statementou input[type="file"], #amendmark input[type="file"] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -3114,9 +3190,9 @@ button[type="submit"].right, button[type="button"].right {
 	padding-left:0;
 	padding-right:0;
 	}
-#gsselected button.close, #dashboardmain button.close, #editowner button.close, #reviewattorney button.close {
+#gsselected button.close, #dashboardmain button.close, #editowner button.close {
     font-size: 1.45em;
-	color:#111;
+	color:#333;
 	margin: 0 auto;
 	height:1em;
 	}
@@ -3136,12 +3212,12 @@ button[type="submit"].right, button[type="button"].right {
 #gsselected button.close {
 	height:1.4em;
 	}
-#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, #statementou button.close {
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, #statementou div.fileholder button.close, #amendmark button.close {
     font-size: 3em;
 	height:1.06em;
 	color:#009CDE;
 	}
-#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #statementou button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover {
+#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #amendmark button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #statementou button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover {
 	color: #047db0;
 	opacity:1.0;
 	-moz-opacity: 1.0;
