@@ -2735,7 +2735,7 @@ $(document).ready(function(){
 				$(this).parent().css('background','#ecf1f3').css('color','#999');
 				$(this).children('span').addClass('glyphicon-refresh').removeClass('glyphicon-remove-circle');
 				$(this).toggleClass('refresh');
-				$(this).attr('aria-label','undo delete this gs');
+				$(this).attr('aria-label','undo delete this good / service');
 				
 			}
 			if ((colorClass) == ('close closegspanels refresh')) {
