@@ -2881,6 +2881,20 @@ input[type="radio"]:focus + label span.checkmark::after {
 	/* Uncomment for 3D effect */
 	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 	}
+div#currentmark p {
+	text-align:center;
+	}
+div#currentmark i {
+	font-size:3em;
+    display: block;
+	margin:0 auto;
+	}
+div#currentmark a {
+    display: block;
+	margin:0 auto;
+	text-align:center;
+	margin-top:.8em;
+	}
 /* FILE UPLOAD */
 .upload-drop-zone {
 	color: #808080;

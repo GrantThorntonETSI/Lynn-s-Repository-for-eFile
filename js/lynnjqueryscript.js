@@ -1246,7 +1246,7 @@ $(document).ready(function(){
 		});
 	//	
 	//START file upload inputs
-	$('div.upload button[type=submit]').css('display','none');	
+	$('div.upload button[type=submit]').css('display','none');
 	$(document).on('change', 'input[type="file"]', function(e) {
 		var fileDisplayArea = $(this).siblings('label').children( 'div.fileDisplayArea' );
 		//var fileDisplayArea = ('.fileDisplayArea');
@@ -1300,6 +1300,9 @@ $(document).ready(function(){
 				$( '.upload-drop-zone img' ).css('height','64px');
 				$( '.thumbnail img' ).css('height','20px');
 				$(holdata).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-2 linkholder"><a href="'+ imgSrc + '" aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-5"><img src="' + imgSrc + '" class="img-thumbnail"></div><div class="col-xs-3"><span class="badge alert-success pull-right">Selected File</span></div></div>');
+				if ( $( 'div#amendmark' ).length ) {
+					$('div#currentmark img').attr('src', imgSrc);
+					}
 				//console.log(holdata);
 				}
 			if ((listlength) == 1)  {
@@ -1323,6 +1326,11 @@ $(document).ready(function(){
 					$( displaydata ).css('display','block');
 					$( fileDisplayArea ).html( '<span class="glyphicon glyphicon-check"></span>' );
 					$( holdata ).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-1 fileholder iconholder">' + icon + '</div><div class="col-xs-4 linkholder"><a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-1 visuallyhidden">' + type + '</div><div class="col-xs-4"><span class="badge alert-success pull-right">Selected File</span></div></div>');
+					if ( $( 'div#amendmark' ).length ) {
+						$('div#currentmark img').css('display','none');
+						$('div#currentmark').prepend('<a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a>');
+						$('div#currentmark').prepend(icon);
+					}
 					//console.log(icon);
 					//console.log(type);
 				}
@@ -1371,6 +1379,8 @@ $(document).ready(function(){
 			});
 	//	
 	//START remove selected file
+	var initialmark = $('div#currentmark img').attr('src');
+	var resetmark = {};
 	$(document).on('click', '.js-upload-finished button.close', function() {
 		var displaydata = $(this).closest('div.upload').find('div.js-upload-finished');
 		var showinput = $(this).closest('div.upload').find('div.hidethis');
@@ -1383,7 +1393,15 @@ $(document).ready(function(){
 		$(this).closest('div.upload').find( 'div.fileDisplayArea img' ).remove();
 		$(this).closest('div.upload').find( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
 		$(this).parent().parent().remove();
+		var removemarkselection = function(){
+			$('div#currentmark').find('i').remove();
+			$('div#currentmark').find('a').remove();
+			$('div#currentmark img').attr('src',initialmark).css('display','block');
+		}
+		resetmark = removemarkselection;
+		$(resetmark);
 	});
+	
 	//
 	//START prevent File Upload submit
 	//$('div.upload button[type=submit]').click(function(event){
