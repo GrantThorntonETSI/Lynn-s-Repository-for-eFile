@@ -241,12 +241,12 @@
                                     <div class="col-xs-12" id="amendarea">
                                         <input class="form-check-input checkmark" type="checkbox" value="amendescription" tabindex="0" aria-labelledby="amendescript" id="amendd" name="amendd">
                                         <label class="form-check-label form-check-left form-check" for="amendd" id="amendescript"><span class="radio notspecial">I need to amend the description of my mark to confirm to my specimen</span></label>
-                                        <div id="amenddescript">
+                                        <div id="amenddescript" role="alert">
                                             <textarea id="ta2" rows="3" class="form-control" aria-labelledby="amendescript"></textarea>
                                         </div>
                                         <input class="form-check-input checkmark" type="checkbox" value="amendmarkliteral" tabindex="0" aria-labelledby="editliteral" id="amendliteral" name="amendliteral">
                                         <label class="form-check-label form-check-left form-check" for="amendliteral" id="editliteral"><span class="radio notspecial">I need to amend the mark literal</span></label>
-                                        <div id="amendlit">
+                                        <div id="amendlit" role="alert">
                                             <textarea id="ta014" rows="3" class="form-control" aria-labelledby="editliteral"></textarea>
                                         </div>
                                     </div>
@@ -257,7 +257,7 @@
                                   <label for="inlineRadio0112" class="radio-inline radiocontainer">No<input type="radio" name="newinfo" id="inlineRadio0112" value="no" tabindex="0"><span class="checkmark"></span></label>
                                 </div>
                             </fieldset>
-                            <fieldset aria-labelledby="addmkinfo" id="addmarkinfo">
+                            <fieldset aria-labelledby="addmkinfo" id="addmarkinfo" role="alert">
                                 <div class="row">
                                     <div class="col-xs-12">
                                         <section aria-label="color claim">
@@ -277,13 +277,13 @@
                                                     <label for="inlineRadio1" class="radio-inline radiocontainer">Yes<input type="radio" name="coloradio" id="inlineRadio1" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                     <label for="inlineRadio2" class="radio-inline radiocontainer">No<input type="radio" name="coloradio" id="inlineRadio2" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                 </div><!--END radiogroup-->
-                                                <div id="yescolorclaim"><!--toggle 'yes' radio-->
+                                                <div id="yescolorclaim" role="alert"><!--toggle 'yes' radio-->
                                                     <label for="ta3">Identify the colors in your mark. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>                                                            <textarea id="ta3" rows="3" class="form-control"></textarea>
                                                     <h3 class="weight600 form-group form-group-md">Mark Description</h3>
                                                     <label for="ta2">Enter the description of the mark including the location of the colors. <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
                                                     <textarea id="ta2" rows="3" class="form-control" required></textarea>
                                                 </div>
-                                                <div id="nocolorclaim" class="form-group form-group-md"><!--toggle 'no' radio-->
+                                                <div id="nocolorclaim" class="form-group form-group-md" role="alert"><!--toggle 'no' radio-->
                                                     <img src="images/designonly_alt1.gif" class="img-thumbnail" alt="your black and white mark"> 
                                                     <div class="bwimage">
                                                         <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
@@ -321,7 +321,7 @@
                                                     <label for="inlineRadio3" class="radio-inline radiocontainer">Yes<input type="radio" name="foreignradio" id="inlineRadio3" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                     <label for="inlineRadio4" class="radio-inline radiocontainer">No<input type="radio" name="foreignradio" id="inlineRadio4" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                 </div><!--END radiogroup-->
-                                                <div id="yestranslation" aria-labelledby="translate"><!--toggle 'yes' radio-->
+                                                <div id="yestranslation" aria-labelledby="translate" role="alert"><!--toggle 'yes' radio-->
                                                 	<div class="row">
                                                         <div class="col-xs-12 form-group form-group-md holdsatranslate">
                                                             <h3 class="weight600" id="translate">Enter the foreign language and the translation. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></h3>
@@ -383,7 +383,7 @@
                                                   <label for="inlineRadio5" class="radio-inline radiocontainer">Yes<input type="radio" name="nonlatradio" id="inlineRadio5" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                   <label for="inlineRadio6" class="radio-inline radiocontainer">No<input type="radio" name="nonlatradio" id="inlineRadio6" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                 </div><!--END radiogroup-->
-                                                <div id="yestransliteration" aria-labelledby="translitp"><!--toggle 'yes' radio-->
+                                                <div id="yestransliteration" aria-labelledby="translitp" role="alert"><!--toggle 'yes' radio-->
                                                 	<div class="row">
                                                         <div class="col-xs-12 form-group form-group-md holdsatransliterate">
                                                             <h3 class="weight600" id="translitp">Enter the transliteration of the mark. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></h3>
@@ -447,7 +447,7 @@
                                                     <label for="inlineRadio7" class="radio-inline radiocontainer">Yes<input type="radio" name="npsradio" id="inlineRadio7" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                     <label for="inlineRadio8" class="radio-inline radiocontainer">No<input type="radio" name="npsradio" id="inlineRadio8" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                 </div><!--END radiogroup-->
-                                                <div id="yesnps" role="region" aria-labelledby="translit">
+                                                <div id="yesnps" role="region alert" aria-labelledby="translit">
                                                     <p id="whichnps">Identify which of the following it contains:</p> 
                                                     <input class="form-check-input checkmark" type="checkbox" value="name" tabindex="0" aria-labelledby="checkname" id="namechecked">
                                                     <label class="form-check-label form-check" for="namechecked" id="checkname"><span class="radio notspecial">Name</span></label>
@@ -599,7 +599,7 @@
                                               <label for="inlineRadio09" class="radio-inline radiocontainer">Yes<input type="radio" name="disclaimradio" id="inlineRadio09" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                               <label for="inlineRadio010" class="radio-inline radiocontainer">No<input type="radio" name="disclaimradio" id="inlineRadio010" value="no" tabindex="0"><span class="checkmark"></span></label>
                                             </div><!--END radiogroup-->
-                                            <div id="yesdisclaimer" class="form-group"><!--toggle 'yes' radio-->
+                                            <div id="yesdisclaimer" class="form-group" role="alert"><!--toggle 'yes' radio-->
                                                 <div class="row disclaim">
                                                     <div class="form-group form-group-md col-xs-9">
                                                         <div class="control-label">
@@ -647,7 +647,7 @@
                                               <label for="inlineRadio011" class="radio-inline radiocontainer">Yes<input type="radio" name="priorradio" id="inlineRadio011" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                               <label for="inlineRadio012" class="radio-inline radiocontainer">No<input type="radio" name="priorradio" id="inlineRadio012" value="no" tabindex="0"><span class="checkmark"></span></label>
                                             </div><!--END radiogroup-->
-                                            <div id="yesprior" role="region" aria-labelledby="prioreg" class="form-group form-group-md">
+                                            <div id="yesprior" role="region alert" aria-labelledby="prioreg" class="form-group form-group-md">
                                                 <div class="row docket">
                                                     <div class="form-group form-group-md col-xs-9">
                                                         <label for="yesprior">Enter prior U.S. registration numbers. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
@@ -689,7 +689,7 @@
                                                   <label for="inlineRadio013" class="radio-inline radiocontainer">Yes<input type="radio" name="meaningradio" id="inlineRadio013" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                   <label for="inlineRadio014" class="radio-inline radiocontainer">No<input type="radio" name="meaningradio" id="inlineRadio014" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                 </div><!--END radiogroup-->
-                                                <div id="yesmeaning" role="region" class="form-horizontal form-group form-group-md">
+                                                <div id="yesmeaning" role="region alert" class="form-horizontal form-group form-group-md">
                                                 	<div class="row">
                                                         <div class="col-xs-12 col-md-4">
                                                             <label for="yesmeaning" class="sr-only">What has meaning or significance?</label>

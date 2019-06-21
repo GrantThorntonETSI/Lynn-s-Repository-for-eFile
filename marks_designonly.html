@@ -265,14 +265,14 @@
                                                             <label for="inlineRadio1" class="radio-inline radiocontainer">Yes<input type="radio" name="coloradio" id="inlineRadio1" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                             <label for="inlineRadio2" class="radio-inline radiocontainer">No<input type="radio" name="coloradio" id="inlineRadio2" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yescolorclaim"><!--toggle 'yes' radio-->
+                                                        <div id="yescolorclaim" role="alert"><!--toggle 'yes' radio-->
                                                             <label for="ta3">Identify the colors in your mark. <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label> 
                                                             <textarea id="ta3" rows="3" class="form-control"></textarea>
                                                             <h3 class="weight600 form-group form-group-md">Mark Description</h3>
                                                             <label for="ta2">Enter the description of the mark including the location of the colors. <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="If the mark is a color mark, the description must include the nature and location of the color; i.e., you must specifically state where each color is located within the mark." class="glyphicon glyphicon-info-sign test" data-placement="right"></a></label>  
                                                             <textarea id="ta2" rows="3" class="form-control" required></textarea>
                                                         </div>
-                                                        <div id="nocolorclaim" class="form-group form-group-md"><!--toggle 'no' radio-->
+                                                        <div id="nocolorclaim" class="form-group form-group-md" role="alert"><!--toggle 'no' radio-->
                                                         	<img src="images/designonly_alt1.gif" class="img-thumbnail" alt="your black and white mark"> 
                                                             <div class="bwimage">
                                                                 <input class="form-check-input checkmark" type="checkbox" value="accept B W mark" tabindex="0" aria-labelledby="acceptmark" id="bwmark">
@@ -310,7 +310,7 @@
                                                             <label for="inlineRadio7" class="radio-inline radiocontainer">Yes<input type="radio" name="npsradio" id="inlineRadio7" value="yes" tabindex="0"><span class="checkmark"></span></label>
                                                             <label for="inlineRadio8" class="radio-inline radiocontainer">No<input type="radio" name="npsradio" id="inlineRadio8" value="no" tabindex="0"><span class="checkmark"></span></label>
                                                         </div><!--END radiogroup-->
-                                                        <div id="yesnps" role="region" aria-labelledby="translit">
+                                                        <div id="yesnps" role="region alert" aria-labelledby="translit">
                                                         	<p id="whichnps">Identify which of the following it contains:</p> 
                                                             <input class="form-check-input checkmark" type="checkbox" value="name" tabindex="0" aria-labelledby="checkname" id="namechecked">
                                                             <label class="form-check-label form-check" for="namechecked" id="checkname"><span class="radio notspecial">Name</span></label>

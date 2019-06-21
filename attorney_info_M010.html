@@ -239,7 +239,7 @@
                         <script type="application/javascript" src="js/accordion.js"></script>
 						<script type="application/javascript" src="js/checkbox.js"></script>
                         <script type="application/javascript" src="js/btn_checkbox.js"></script>
-                    <div id="yesattorneyfiling" role="region" aria-labelledby="attorneyfiling">
+                    <div id="yesattorneyfiling" role="region alert" aria-labelledby="attorneyfiling">
                         <form method="post" id="addNewAttorneyForm" action="/attorney/add" enctype="multipart/form-data" th:object="${addNewAttorneyContactFormDTO}" aria-labelledby="title">
                             <fieldset aria-labelledby="attorneyinfo">
                                 <div class="row">
@@ -686,7 +686,7 @@
                                             </select>
                                         </div>
                                     </div>                                
-                                <div id="usaffiliation" role="region" aria-labelledby="affiliation" class="hidethisdiv">
+                                <div id="usaffiliation" role="region alert" aria-labelledby="affiliation" class="hidethisdiv">
                                     <div class="row">
                                         <div class="form-group form-group-md col-xs-12 col-md-3">
                                             <label for="attorney-bar-jurisdiction">Bar jurisdiction</label>
@@ -781,7 +781,7 @@
                                         <label class="form-check-label form-check" for="user-accept-checkbox" id="userAccept-label"><span class="radio notspecial">I certify that this attorney is in good standing with a bar of the highest court of any U.S. State, the District of Columbia, the U.S. Commonwealths or U.S. Territories.</span></label>
                                     </div>
                              	</div><!--END US affiliation-->
-                                <div id="canadianaffiliation" role="region" aria-labelledby="affiliation" class="hidethisdiv">
+                                <div id="canadianaffiliation" role="region alert" aria-labelledby="affiliation" class="hidethisdiv">
                                     <div class="form-group">
                                         <label for="ca-attornery-query">Please select a name from the registered OED list from Canadian Trademark and Patent Agents</label>
                                         <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;">	

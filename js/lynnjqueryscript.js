@@ -2003,6 +2003,7 @@ $(document).ready(function(){
 		var includeforeign = ('js/' + $(this).val() + $( '#entitycountry' ).val() + '.js');
 		$.getScript( includeforeign );
 		$('#owner #autofillforeign').show( 'fast' );
+		$('#owner #autofillforeign').parent().attr('role','alert');
 		$('footer').css('display','block');
 		//console.log(includeforeign);
 	});
@@ -2486,6 +2487,7 @@ $(document).ready(function(){
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsaforeign').show( 'fast' );
 			$('button#addforeignreg_basisone').show( 'fast' );
+			$('button#addforeignreg_basisone').parent().attr( 'role','alert' );
 			$('input#natwo_basisone').prop({
 					checked: false,				
 				});
@@ -2502,6 +2504,7 @@ $(document).ready(function(){
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsapending').show( 'fast' );
 			$('button#addpending_basistwo').show( 'fast' );
+			$('button#addpending_basistwo').parent().attr( 'role','alert' );
 			$('input#natwo_basistwo').prop({
 					checked: false,				
 				});
@@ -2517,6 +2520,7 @@ $(document).ready(function(){
 		if(this.checked == true){
 			$(this).parent().parent().parent().find('div.holdsaforeign').show( 'fast' );
 			$('button#addforeignreg_basistwo').show( 'fast' );
+			$('button#addforeignreg_basistwo').parent().attr( 'role','alert' );
 			$('input#natwo_basistwo').prop({
 					checked: false,				
 				});
@@ -2682,7 +2686,7 @@ $(document).ready(function(){
 	});
 	//
 	//START modals
-	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal','#soumodal').on('shown.bs.modal', function () {
+	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal','#soumodal, #soumodaltwo').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
 	})
 	//
@@ -3844,7 +3848,9 @@ $(document).ready(function(){
 	});
 	//
 	//START amend mark additional info
-	$('fieldset#addmarkinfo').css('display','none');
+	if ( $( 'div#amendmark' ).length ) {
+		$('fieldset#addmarkinfo').css('display','none');
+	}
 	$('input#inlineRadio0111').change(function() {
 		if(this.checked == true){
 			$('fieldset#addmarkinfo').show( 'fast' );
