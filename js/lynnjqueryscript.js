@@ -1,6 +1,6 @@
 $(document).ready(function(){
 //START footer and login positioning
-	$( window ).load(function() {
+	$( window ).on('load', function() {
 		var e = $( window ).height();
 		var enav = $('.navbar-fixed-top').height();
 		var efoot = $('footer').height();
@@ -126,6 +126,9 @@ $(document).ready(function(){
   			},
 			'autoWidth': false,
 			responsive: {
+				details: {
+                type: 'column'
+            	},
 				breakpoints: [
 					{ name: 'desktop', width: Infinity },
 					{ name: 'tablet',  width: 1180 },
@@ -134,7 +137,8 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '20%' },
+				{ 'width': '10%' },
+				{ 'width': '10%' },
 				{ 'width': '16%' },
 				{ 'width': '25%' },
 				{ 'width': '16%' },
@@ -142,39 +146,17 @@ $(document).ready(function(){
 				{ 'width': '11%' },
 			  ],
 			  'columnDefs': [  
-				{ responsivePriority: 1, targets: 0 },//buttons
-				{ responsivePriority: 2, targets: 1 },//serial
-				{ responsivePriority: 4, targets: 2 },//reg
-				{ responsivePriority: 3, targets: 3 },//owner
-				{ responsivePriority: 6, targets: 4 },//status
-				{ responsivePriority: 5, targets: 5 },//mark
-				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
+				{ responsivePriority: 0, targets: 0 },//(control)
+				{ responsivePriority: 1, targets: 1 },//buttons
+				{ responsivePriority: 2, targets: 2 },//serial
+				{ responsivePriority: 4, targets: 3 },//reg
+				{ responsivePriority: 3, targets: 4 },//owner
+				{ responsivePriority: 6, targets: 5 },//status
+				{ responsivePriority: 5, targets: 6 },//mark
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6 ] },
+				{ className: 'control', 'orderable': false, 'targets': [ 0 ] },
 			   ],
 		});
-	//
-	//START delete dashboard table row
-	$( '#dashboardtableone tbody' ).on('click','.deleterow',function(e){
-		e.preventDefault();
-		var numrows = $( '#dashboardtableone tbody tr' ).length -1;
-		var rows = $( '#dashboardtableone tbody tr' );
-		$( this ).closest('tr').next('tr.child').remove();
-		$( this ).closest('tr').remove();
-		$('#dashboardtableone_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
-		if (numrows < 1) {
-			$('#dashboardtableone_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
-			};
-	});
-	$( '#dashboardtabletwo tbody' ).on('click','.deleterow',function(e){
-		e.preventDefault();
-		var numrows = $( '#dashboardtabletwo tbody tr' ).length -1;
-		var rows = $( '#dashboardtabletwo tbody tr' );
-		$( this ).closest('tr').next('tr.child').remove();
-		$( this ).closest('tr').remove();
-		$('#dashboardtabletwo_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
-		if (numrows < 1) {
-			$('#dashboardtabletwo_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
-			};
-	});
 	//
 	//START initialize Dashboard datable two
 		var tabletwo = $('#dashboardtabletwo').DataTable({
@@ -201,8 +183,8 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '18%' },//toggle show child rows
-				{ 'width': '10%' },//serial
+				{ 'width': '12%' },//toggle show child rows
+				{ 'width': '16%' },//serial
 				{ 'width': '25%' },//reg
 				{ 'width': '11%' },//mark
 				{ 'width': '9%' },//owner
@@ -216,9 +198,52 @@ $(document).ready(function(){
 				{ responsivePriority: 4, targets: 2 },//reg
 				{ responsivePriority: 5, targets: 3 },//mark
 				{ responsivePriority: 3, targets: 4 },//owner
-				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5 ] },
+				{ className: 'control', 'orderable': false, 'targets': [ 0 ] },
 			  ],
 		});
+	//
+	//START a11y datatable hide/show rows
+	$( '#dashboardtableone tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	$( '#dashboardtabletwo tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	//
+	//START delete dashboard table row
+	$( '#dashboardtableone tbody' ).on('click','.deleterow',function(e){
+		e.preventDefault();
+		var numrows = $( '#dashboardtableone tbody tr' ).length -1;
+		var rows = $( '#dashboardtableone tbody tr' );
+		$( this ).closest('tr').next('tr.child').remove();
+		$( this ).closest('tr').remove();
+		$('#dashboardtableone_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
+		if (numrows < 1) {
+			$('#dashboardtableone_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
+			};
+	});
+	$( '#dashboardtabletwo tbody' ).on('click','.deleterow',function(e){
+		e.preventDefault();
+		var numrows = $( '#dashboardtabletwo tbody tr' ).length -1;
+		var rows = $( '#dashboardtabletwo tbody tr' );
+		$( this ).closest('tr').next('tr.child').remove();
+		$( this ).closest('tr').remove();
+		$('#dashboardtabletwo_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
+		if (numrows < 1) {
+			$('#dashboardtabletwo_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
+			};
+	});
 	//
 	//START initialize File Petition datable
 		var table = $('#filepetitiontable').DataTable({
@@ -1852,7 +1877,7 @@ $(document).ready(function(){
 		}
 	});
 	//
-	//START generate unique IDs + matching labels for Basis pages, checkmarks
+	//START generate unique IDs + matching labels for Basis  + SOU pages, checkmarks
 		var checkboxList = $('#basisab input.showspecimen, #basisabde input.showspecimen');
 		for (var i = 0; i <= checkboxList.length; i++) {
 			$(checkboxList[i]).attr('id', 'individualspecimencheck_' + i);
@@ -1870,24 +1895,24 @@ $(document).ready(function(){
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'individualspecimen_' + i);
 		}
 	//		
-	//START generate unique IDs + matching labels for Basis + Amend Mark pages, uploaded files
-		var fileList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file]');
+	//START generate unique IDs + matching labels for Basis, Amend Mark + SOU pages, uploaded files
+		var fileList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file], #soucontent input[type=file]');
 		for (var i = 0; i <= fileList.length; i++) {
 			$(fileList[i]).attr('id', 'uploadedfile' + i);
 		}
-		var nameList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file]');
+		var nameList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file], #soucontent input[type=file]');
 		for (var i = 0; i <= nameList.length; i++) {
 			$(nameList[i]).attr('name', 'uploadedspecimen' + i + 'file');
 		}
-		var labelList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file]').prev('label');
+		var labelList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file], #soucontent input[type=file]').prev('label');
 		for (var i = 0; i <= labelList.length; i++) {
 			$(labelList[i]).attr('for', 'uploadedfile' + i);
 		}
-		var labelidList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file]').prev('label');
+		var labelidList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file], #soucontent input[type=file]').prev('label');
 		for (var i = 0; i <= labelidList.length; i++) {
 			$(labelidList[i]).attr('id', 'specimen' + i);
 		}
-		var filesarialabelList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file]');
+		var filesarialabelList = $('#basisab input[type=file], #basisabde input[type=file], #detected input[type=file], #amendmark input[type=file], #soucontent input[type=file]');
 		for (var i = 0; i <= filesarialabelList.length; i++) {
 			$(filesarialabelList[i]).attr('aria-labelledby', 'specimen' + i);
 		}
@@ -2704,7 +2729,7 @@ $(document).ready(function(){
 	});
 	//
 	//START modals
-	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal','#soumodal, #soumodaltwo').on('shown.bs.modal', function () {
+	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal','#soucontent .modal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
 	})
 	//
@@ -2730,35 +2755,26 @@ $(document).ready(function(){
 		});
 	});
 	//
-	//START SOU blue bar height
-	var souf = $('#statementou h2.displaycell').outerHeight();
-	$('#statementou .noexpand.blue').css('height',(souf));
-	$( window ).resize(function() {
-		var souf = $('#statementou h2.displaycell').outerHeight();
-		$('#statementou .noexpand.blue').css('height',(souf));
-	});
-	//
 	//START close button height match SOU labels
-	$('#soucontent div.modal').on('show.bs.modal', function() {
-      var d = $('#statementou div.modal button.closegspanels').parent().find('span.closepans');
-	  var c = $('#statementou div.modal button.closegspanels').closest('span.label');
-	  var f = $('#statementou div.modal button.closegspanels');
-	  var e = $('#statementou div.modal span.closepans').eq(0).parent();
+	$('div.gsmodal').on('show.bs.modal', function() {
+      var d = $('div.gsmodal button.closegspanels').parent().find('span.closepans');
+	  var c = $('div.gsmodal button.closegspanels span.label');
+	  var f = $('div.gsmodal button.closegspanels');
+	  var e = $('div.gsmodal span.closepans').eq(0).parent();
 	  $(d).css('display','table-cell').css('vertical-align','middle');
 	  $(f).css('display','table-cell').css('vertical-align','middle');
-	  $(c).css('height','50%');
-	  $('#statementou div.modal button.closegspanels').css('line-height',(c.innerHeight() + 'px')).css( 'height',(c.innerHeight()));
+	  $(c).css('min-height','24%');
+	  $('div.gsmodal button.closegspanels').css('line-height',(c.innerHeight() + 'px')).css( 'height',(c.innerHeight()));
 	});
 	//
 	//START SOU modal button add/remove GSs
-		$('#inusegs span.label button').on('click',function() { 
+		$('div.inusegs span.label button').on('click',function() { 
 			var colorClass = this.className;
 			if ((colorClass) == ('close closegspanels')) {
 				$(this).parent().css('background','#ecf1f3').css('color','#999');
 				$(this).children('span').addClass('glyphicon-refresh').removeClass('glyphicon-remove-circle');
 				$(this).toggleClass('refresh');
 				$(this).attr('aria-label','undo delete this good / service');
-				
 			}
 			if ((colorClass) == ('close closegspanels refresh')) {
 				$(this).parent().css('background','#cbd6da').css('color','#333');
@@ -2769,24 +2785,85 @@ $(document).ready(function(){
 		});
 	//
 	//START SOU modal add/remove GSs from blue bar
-	$('#inusegs button').on('click',function() {
+	$('div.inusegs button').on('click',function() {
 		var colorClass = this.className;
-		var labelindex = $(this).index('#inusegs button.closegspanels');
-		//$( this ).siblings('span.closepans').html( "That was label index #" + labelindex );
+		var labelindex = $(this).index('div.inusegs button.closegspanels');
 		if ((colorClass) === ('close closegspanels')) {
-			$('#statementou h2.displaycell span.listed').eq( labelindex ).css('display','inline');
-			var souf = $('#statementou h2.displaycell').outerHeight();
-			$('#statementou .noexpand.blue').css('height',(souf));
+			var buttonparent = $(this).parents('div.modal');
+			var buttongrandparent = $( buttonparent ).parent();
+			$('.statementou h2.displaycell span.listed').eq( labelindex ).removeClass('strike');
+			$('.statementou h2.displaycell span.listed span.sr-only').eq( labelindex ).text('added');
 		}
 		if ((colorClass) === ('close closegspanels refresh')) {
-			$('#statementou h2.displaycell span.listed').eq( labelindex ).css('display','none');
-			var souf = $('#statementou h2.displaycell').outerHeight();
-			$('#statementou .noexpand.blue').css('height',(souf));
+			var buttonparent = $(this).parents('div.modal');
+			var buttongrandparent = $( buttonparent ).parent();
+			$('.statementou h2.displaycell span.listed').eq( labelindex ).addClass('strike');
+			$('.statementou h2.displaycell span.listed span.sr-only').eq( labelindex ).text('removed');
 		}
 	});
 	//
+	//START SOU modal add/remove class
+	if ( $( 'div#soucontent' ).length ) {
+		$('div.formodal').css('display','none');
+		//START SOU blue bar height
+		$( window ).on('load', function() {
+			var winwidth = $(window).width();
+			var modalparent = $('div.modal').parent();
+			if (winwidth > 1199) {
+				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
+				$.each(modalparent, function(){
+					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
+					$(this).find('.statementou .noexpand.blue').css('height',(souf));
+				});	
+			}
+			else if (winwidth < 1199) {
+				$.each(modalparent, function(){
+					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
+					$(this).find('.statementou .noexpand.blue').css('height',(souf));
+				});
+			}
+		});
+		$( window ).resize(function() {
+			var winwidth = $(window).width();
+			var modalparent = $('div.modal').parent();
+			if (winwidth > 1199) {
+				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
+				$.each(modalparent, function(){
+					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
+					$(this).find('.statementou .noexpand.blue').css('height',(souf));
+				});	
+			}
+			else if (winwidth < 1199) {
+				$.each(modalparent, function(){
+					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
+					$(this).find('.statementou .noexpand.blue').css('height',(souf));
+				});
+			}
+		});
+		//
+		}
+	$('div.classmodal button.btn-success').on('click',function() {
+		var modaldiv = $('div.formodal');
+		var modaldivparent = $(this).parents('div.modal');
+		var modaldivgrandparent = $(modaldivparent).parent();
+		$( modaldivparent ).find('span.sr-only').text('class removed');
+		$( modaldivgrandparent ).find('div.inusegs span.subtle').css('display','none');
+		$( modaldivparent ).parent().find('div.statementou').css('opacity','0.4');
+		$( modaldivparent ).modal('hide')
+		$( modaldivparent ).parent().find('div.formodal').css('display','block');
+	});
+	$('button.resetclassbtn').on('click',function() {
+		var modaldiv = $(this).parents('div.formodal');
+		var modaldivparent = $(this).parents('div.modal');
+		var modaldivgrandparent = $(modaldiv).parent();
+		$( modaldivgrandparent ).find('div.inusegs span.subtle').css('display','table');
+		$( modaldiv).parent().find('div.statementou').css('opacity','1.0');
+		$( modaldivparent ).find('span.sr-only').text('class added');
+		$( modaldiv ).css('display','none');
+	});
+	//
 	//START close button height match dashboard
-	$( window ).load(function () {
+	$( window ).on('load', function() {
       var d = $( '#announcements .closepans' ).prev('div');
 	  $(d).css('display','flex').css('flex-direction','column').css('min-height','3em');
 	  $('#announcements .closepans').css( 'line-height', (d.innerHeight() + 'px') ).css( 'height', (d.innerHeight()) );
@@ -3825,24 +3902,24 @@ $(document).ready(function(){
 		$('div#xreq').show('fast','swing');
 	});
 	//START SOU select modals
-	$('select#gsactions').on('change',function(){
+	$('.statementou select').on('change',function(){
 		var loadmodal = ($(this).val());
-		$( loadmodal ).css('display','block');
-		if( loadmodal == 'Select') {
-			$('#soucontent div.modal').modal('hide');
+		//$( loadmodal ).css('display','block');
+		if( loadmodal == 'edit') {
+			$(this).parents('#soucontent div.modal').modal('hide');
 			}
 		else if ( loadmodal == 'delete') {
-			$('#soucontent div#soumodal').modal('show');
+			$(this).parents('.statementou').parent().siblings('div.classmodal').modal('show');
 			} 
 		else if ( loadmodal == 'limit') {
-			$('#soucontent div#soumodaltwo').modal('show');
+			$(this).parents('.statementou').parent().siblings('div.gsmodal').modal('show');
 			} 
 	});
-	$('#soucontent div.modal').on('hide.bs.modal', function() {
+	$('#soucontent').on('hide.bs.modal', function() {
 		var resetselect = [ 'edit' ];
 		var resetselect = jQuery.makeArray( resetselect );
-		var loadmodal = $('select#gsactions');
-		$(loadmodal).val( resetselect[0] );
+		var loadmodalreset = $('.statementou select');
+		$(loadmodalreset).val( resetselect[0] );
 	});
 	//
 	//START amend mark edit descripion + literal

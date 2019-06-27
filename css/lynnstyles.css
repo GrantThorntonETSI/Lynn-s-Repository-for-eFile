@@ -218,7 +218,7 @@ object#selected {
 	display: inline-block;
 	border-radius: .19em;
 	}
-#inusegs .label {
+.inusegs .label {
 	margin:0 .75em .75em 0;
 	font-size:1em;
 	text-align:left;
@@ -235,13 +235,13 @@ object#selected {
 	white-space: normal;
 	display: table;
 	float: left;
-	max-width: 48%;
-	height: 50%;
+	width: 47%;
+	min-height: 3.15em;
 	}
-	#inusegs .label button .glyphicon {
+	.inusegs .label button .glyphicon {
 		line-height: auto;
 		}
-		#inusegs .label button {
+		.inusegs .label button {
 			width:10%;
 			float:right;
 			font-size: 2em;
@@ -250,7 +250,7 @@ object#selected {
 			display: table-cell;
 			vertical-align: middle;
 			}
-			#inusegs span.label span {
+			.inusegs span.label span {
 				width:80%;
 				line-height: 1.2em;
 				}
@@ -1105,7 +1105,7 @@ table#goodsandservices {
 	}
 td:focus {
     box-shadow: none;
-	outline: 1px solid #009CDE;
+	outline: 1px solid #009CDE!important;
     outline-offset: -4px;
 	}
 td.red {
@@ -1148,7 +1148,7 @@ td.red {
     float: left;
     margin-left: 1.5em;
 	}
-#dashboardtableone .centertxt, #dashboardtabletwo .centertxt, #goodsandservices .centertxt, #filepetitiontable .centertxt, #responseamendtable .centertxt, #responseamendtabletwo .centertxt {
+#dashboardtableone .centertxt, #dashboardtableone .control, #dashboardtabletwo .centertxt, #dashboardtabletwo .control, #goodsandservices .centertxt, #filepetitiontable .centertxt, #responseamendtable .centertxt, #responseamendtabletwo .centertxt {
 	text-align:center;
 	}
 .dashsection {
@@ -1254,11 +1254,11 @@ main #loginform .landingpagemain {
 table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:hover:before {
 	color:#047db0!important;
 	}
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table.dataTable.dtr-column>tbody>tr>td.control:before, table.dataTable.dtr-column>tbody>tr>th.control:before {
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
 	-moz-box-shadow: 	0 0 0 rgba(0,0,0,0);
 	box-shadow: 		0 0 0 rgba(0,0,0,0);
-	left:6px;
+	left:50%;
 	content: '\e250';
     font-family: 'Glyphicons Halflings';
     font-size: 1.1em;
@@ -1275,8 +1275,9 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
 	border-radius: 1em;
 	border-bottom-right-radius: 1em;
 	border-bottom-left-radius: 1em;
-	margin-left:10%;
 	color:#009CDE;
+	margin-top:0;
+	position:relative;
 	}
 table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
 	vertical-align: middle;
@@ -1288,8 +1289,14 @@ table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:f
 	}
 table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
     padding-left: 0;
+	padding-right: 16px;
 	}
-table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>th:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>th:first-child:before {
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>td:first-child:before, 
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].odd>th:first-child:before, 
+table.dataTable.dtr-column>tbody>tr>td.control:before, 
+table.dataTable.dtr-column>tbody>tr>th.control:before, 
+table.dataTable.dtr-column>tbody>tr.parent td.control:before, 
+table.dataTable.dtr-column>tbody>tr.parent th.control:before {
 	background-color: transparent;
 	border: .2em solid transparent;
 	}
@@ -1297,7 +1304,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"].even>td:first-child:be
 	background-color: transparent;
 	border: .2em solid transparent;
 	}
-table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>th:first-child:before {
+table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>td:first-child:before, table.dataTable.dtr-inline.collapsed>tbody>tr.odd.parent>th:first-child:before, table.dataTable.dtr-column>tbody>tr.parent td.control:before, table.dataTable.dtr-column>tbody>tr.parent th.control:before {
 	background-color: transparent!important;
 	border: .2em solid transparent!important;
 	color:#808080!important;
@@ -1697,24 +1704,28 @@ span#termsagree label a:hover, span#termsagree label a:hover {
     background-color: #004C97;
     color: #fff;
 	}
-#statementou .noexpand.blue {
+.statementou .noexpand.blue {
     padding-left: 0;
 	min-height: 64px;
 	}
-#statementou .noexpand.blue span:first-child {
+.statementou .noexpand.blue span:first-child {
     margin-right: 1em;
 	}
-#statementou .noexpand.blue span.listed {
+.statementou .noexpand.blue span.listed {
     font-weight: normal;
 	}
-#statementou .noexpand.blue .displaytable {
+.statementou .noexpand.blue span.strike {
+	text-decoration: line-through #FFF;
+	}
+.statementou .noexpand.blue .displaytable {
     min-height: 38px;
 	}
-#statementou .noexpand.blue .displaytable h2 {
+.statementou .noexpand.blue .displaytable h2 {
 	padding-bottom: .9em;
 	}
-#statementou select#gsactions {
+.statementou select.gsactions {
 	margin-top: .5em;
+	margin-bottom: 1em;
 	}
 .leadtext {
     margin-top: 30px;
@@ -1871,8 +1882,8 @@ label.hasinfo {
 	scrollbar-color: #808080 #bbb;
 	scrollbar-width: thin;
 	}
-div.modal div#inusegs {
-	min-height:200px;
+div.modal div.inusegs {
+	min-height:280px;
 	overflow:auto;
 	overflow-y:auto;
 	overflow-x:auto;
@@ -1881,16 +1892,16 @@ div.modal div#inusegs {
 	padding: 10px 10px;
     padding-bottom: 1px;
 	}
-#scrollone:hover, div.modal  div#inusegs:hover {
+#scrollone:hover, div.modal  div.inusegs:hover {
 	scrollbar-color: #004C97 #bbb;
 	}	
-	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar, div.modal div#inusegs::-webkit-scrollbar {
+	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar, div.modal div.inusegs::-webkit-scrollbar {
 	  width: 1em;
 	}
-	#scrollone::-webkit-scrollbar-track, ul.dropdown-menu::-webkit-scrollbar-track, div.modal div#inusegs::-webkit-scrollbar-track {
+	#scrollone::-webkit-scrollbar-track, ul.dropdown-menu::-webkit-scrollbar-track, div.modal div.inusegs::-webkit-scrollbar-track {
 	  background: #bbb; 
 	}
-	#scrollone::-webkit-scrollbar-thumb, div.modal div#inusegs::-webkit-scrollbar-thumb {
+	#scrollone::-webkit-scrollbar-thumb, div.modal div.inusegs::-webkit-scrollbar-thumb {
 	  background: #808080; 
 	}
 	ul.dropdown-menu::-webkit-scrollbar-thumb {
@@ -1904,7 +1915,7 @@ div.modal div#inusegs {
 	ul.dropdown-menu:hover {
 		scrollbar-color: #004C97 #bbb;
 		}
-	#scrollone::-webkit-scrollbar-thumb:hover, ul.dropdown-menu::-webkit-scrollbar-thumb:hover, div.modal div#inusegs::-webkit-scrollbar-thumb:hover{
+	#scrollone::-webkit-scrollbar-thumb:hover, ul.dropdown-menu::-webkit-scrollbar-thumb:hover, div.modal div.inusegs::-webkit-scrollbar-thumb:hover{
 	  background: #004C97; 
 	}
 /*BUTTONS*/
@@ -1983,12 +1994,19 @@ div.modal div#inusegs {
   	box-shadow:         rgb(0,0,0);
 	text-shadow: 0 0 0 transparent;
 	}
-.resetphonebtn, .resetregbtn, .resetdktrefbtn, .resetnamebtn, .resetportraitbtn, .resetportraitbtn, .resetsignaturebtn, .resettranslationbtn, .resettransliterationbtn, .resetdisclaimbtn, .deleterow {
+.resetphonebtn, .resetregbtn, .resetdktrefbtn, .resetnamebtn, .resetportraitbtn, .resetportraitbtn, .resetsignaturebtn, .resettranslationbtn, .resettransliterationbtn, .resetdisclaimbtn, .deleterow, button.resetclassbtn {
 	margin: 0 auto;
     float: none;
     margin-top: .545em;
 	}
-#soumodaltwo .modal-footer button {
+div.resetclass{
+	 border-top: 1px solid #ddd; 
+	 margin-bottom: 0.4em; 
+	 margin-top: 1.5em;
+	 margin-left:15px;
+	 margin-right:15px;"
+	}
+#markoptions .modal-footer button, .gsmodal .modal-footer button {
 	float:none;
 	margin: 0 auto;
 	}
@@ -2344,10 +2362,10 @@ input:checked + .slider #off {
 		100% { transform: rotate(360deg); }
 		}
 /* MODALS */
-#tradeservmodal, #collectivemodal, #collectivemembmodal, #emailmodal, #securitymodal, #passwordmodal, #soumodal, #soumodaltwo {
+#tradeservmodal, #collectivemodal, #collectivemembmodal, #emailmodal, #securitymodal, #passwordmodal, #soucontent .modal {
 	font-size:1.25em;
 	}
-#tradeservmodal .modal-title, #collectivemodal .modal-title, #collectivemembmodal .modal-title, #emailmodal .modal-title, #securitymodal .modal-title, #passwordmodal .modal-title, #soumodal .modal-title, #soumodaltwo .modal-title {
+#tradeservmodal .modal-title, #collectivemodal .modal-title, #collectivemembmodal .modal-title, #emailmodal .modal-title, #securitymodal .modal-title, #passwordmodal .modal-title, #soucontent .modal-title {
 	font-weight: 600;
 	color:#333;
 	}
@@ -2356,6 +2374,14 @@ input:checked + .slider #off {
 	}
 .modal-header {
     border-bottom: none;
+	}
+.modal-header .close {
+    font-size: 2em;
+	padding: 0 .3em .2em .3em;
+	}
+.modal-header h4 {
+    width: 80%;
+	padding: .35em .3em .2em .3em;
 	}
 .modal-content {
 	-webkit-border-top-left-radius: 		0;
@@ -2455,7 +2481,7 @@ div.round {
 	float: right;
     margin: 0;
 	}
-#basisabde .btn-success.add.ctr, #basisab .btn-success.add.ctr, #statementou .btn-success.add.ctr, #detected .btn-success.add.ctr, #amendmark .btn-success.add.ctr {
+#basisabde .btn-success.add.ctr, #basisab .btn-success.add.ctr, .statementou .btn-success.add.ctr, #detected .btn-success.add.ctr, #amendmark .btn-success.add.ctr {
 	margin-top: 0;
 	margin-bottom:2em;
 	}
@@ -2640,7 +2666,7 @@ span#authem  {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
-#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span.radio, #statementou span.radio {
+#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span.radio, .statementou span.radio {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
@@ -2727,7 +2753,7 @@ input[type="date"] {
 	line-height:38px!important;
 	padding-bottom:2px;
 	}
-#specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo {
+#specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo, #specdescriptone {
 	height:115px;
 	}
 label.form-check-label {
@@ -2911,7 +2937,7 @@ div#currentmark a {
 	margin-bottom: 1em;
 	width:100%;
 	}
-#basisabde .upload-drop-zone, #basisab .upload-drop-zone, #gridview .upload-drop-zone, #statementou .upload-drop-zone {
+#basisabde .upload-drop-zone, #basisab .upload-drop-zone, #gridview .upload-drop-zone, .statementou .upload-drop-zone {
 	line-height: 1.25em;
 	}
 #gridview .upload-drop-zone {
@@ -2935,7 +2961,7 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 	p#upimage {
 	margin-bottom:.6em;
 	}
-#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], #statementou input[type="file"], #amendmark input[type="file"] {
+#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], .statementou input[type="file"], #amendmark input[type="file"] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -3215,8 +3241,6 @@ button[type="submit"].right, button[type="button"].right {
 	}
 #dashboard .dashsection button.close {
    	color: #009CDE;
-	margin-left: 1.5em;
-	float:left;
 	}
 #dashboard .dashsection button.deleterow:hover {
    	color: #047db0;
@@ -3226,12 +3250,12 @@ button[type="submit"].right, button[type="button"].right {
 #gsselected button.close {
 	height:1.4em;
 	}
-#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, #statementou div.fileholder button.close, #amendmark button.close {
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, .statementou div.fileholder button.close, #amendmark button.close, button.resetclassbtn {
     font-size: 3em;
 	height:1.06em;
 	color:#009CDE;
 	}
-#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #amendmark button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, #statementou button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover {
+#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #amendmark button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, .statementou button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover, button.resetclassbtn:hover {
 	color: #047db0;
 	opacity:1.0;
 	-moz-opacity: 1.0;
@@ -3517,6 +3541,11 @@ footer #megamenu ul {
     border-color: #009CDE;
     outline: 0;
 	}
+@media (max-width: 421px) { 
+	.inusegs .label {
+		width: 100%;
+		}
+}
 @media (max-width: 528px) { 
 	.breadcrumb-steps p {
 		display:none!important;
