@@ -313,16 +313,15 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '4%' },
-				{ 'width': '30%' },
-				{ 'width': '36%' },
-				{ 'width': '30%' },
+				{ 'width': '16%' },
+				{ 'width': '26%' },
+				{ 'width': '26%' },
+				{ 'width': '26%' },
 			  ],
 			  'columnDefs': [
-				{ className: 'centertxt', 'targets': [ 0,1,2 ] },
+				{ className: 'centertxt', 'targets': [ 1,2 ] },
 				{ orderable: false},
-            	{ className: 'select-checkbox'},
-            	{ targets:   0}
+            	{ className: 'select-checkbox', targets: [ 0 ]},
 			  ],
 			  	select: {
 				style:    'multi',
@@ -356,22 +355,21 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '4%' },
-				{ 'width': '13%' },
-				{ 'width': '13%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
-				{ 'width': '10%' },
+				{ 'width': '9%' },
+				{ 'width': '14%' },
+				{ 'width': '14%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '9%' },
 			  ],
 			  'columnDefs': [
-				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5,6,7,8,9 ] },
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6,7,8,9 ] },
 				{ orderable: false},
-            	{ className: 'select-checkbox'},
-            	{ targets:   0}
+            	{ className: 'select-checkbox', targets: [ 0 ]},
 			  ],
 			  	select: {
 				style:    'multi',
