@@ -3753,8 +3753,9 @@ footer #megamenu ul {
 	body {
 		font-size:90%!important;
 		}
-	div.fileDisplayArea {
-		font-size:100%!important;
+	.upload-drop-zone span.glyphicon-upload, .upload-drop-zone span.glyphicon-check {
+		font-size: 3.1em!important;
+    	line-height: 1.1em!important;
 		}
 	footer #megamenu {
 		font-size:80%!important;
