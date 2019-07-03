@@ -249,6 +249,78 @@ $(document).ready(function(){
 			  ],
 		});
 	//
+	//START initialize Response Amendment datable
+		var tablethree = $('#responseamendtable').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+		},
+			'sDom': 't',
+			'autoWidth': false,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
+			'columns': [
+				{ 'width': '8%' },
+				{ 'width': '14%' },
+				{ 'width': '24%' },
+				{ 'width': '24%' },
+				{ 'width': '24%' },
+			  ],
+			  'columnDefs': [
+				{ className: 'centertxt', 'targets': [ 1,2,3,4 ] },
+            	{ className: 'select-checkbox', 'orderable': false, targets: [ 1 ]},
+				{ className: 'control', 'orderable': false, targets: [ 0 ]},
+			  ],
+			  	select: {
+				style:    'multi',
+				selector: 'tr td:nth-child(1) span'
+			},
+			order: [[ 1, 'asc' ]]
+		});
+	//
+	//START initialize Response Amendment datable two
+		var tablethree = $('#responseamendtabletwo').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+		},
+			'sDom': 't',
+			'autoWidth': false,
+			responsive: {
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1024 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				]
+			},
+			'columns': [
+				{ 'width': '9%' },
+				{ 'width': '9%' },
+				{ 'width': '13%' },
+				{ 'width': '13%' },
+				{ 'width': '8%' },
+				{ 'width': '8%' },
+				{ 'width': '8%' },
+				{ 'width': '8%' },
+				{ 'width': '8%' },
+				{ 'width': '8%' },
+				{ 'width': '8%' },
+			  ],
+			  'columnDefs': [
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6,7,8,9 ] },
+            	{ className: 'select-checkbox', 'orderable': false, targets: [ 1 ]},
+				{ className: 'control', 'orderable': false, targets: [ 0 ]},
+			  ],
+			  	select: {
+				style:    'multi',
+				selector: 'tr td:nth-child(1) span'
+			},
+			order: [[ 1, 'asc' ]]
+		});
+	//
 	//START a11y datatable hide/show rows
 	$( '#dashboardtableone tbody' ).on('click', 'td.control', function(e){
 		e.preventDefault();
@@ -267,6 +339,22 @@ $(document).ready(function(){
 		$( dtcontent ).attr('role','alert');
 	});
 	$( '#filepetitiontable tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	$( '#responseamendtable tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	$( '#responseamendtabletwo tbody' ).on('click', 'td.control', function(e){
 		e.preventDefault();
 		$( this ).attr('aria-expanded', function (i, attr) {
 			return attr == 'true' ? 'false' : 'true'
@@ -299,119 +387,29 @@ $(document).ready(function(){
 			};
 	});
 	//
-	//START initialize Response Amendment datable
-		var tablethree = $('#responseamendtable').DataTable({
-		"fnDrawCallback": function( oSettings ) {
-		},
-			'sDom': 't',
-			//"language": {
-			//"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
-//			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
-//			  '<option value="10">10</option>'+
-//			  '<option value="25">25</option>'+
-//			  '<option value="50">50</option>'+
-//			  '<option value="100">100</option>'+
-//			  '<option value="-1">All</option>'+
-//			  '</select>'
-  			//},
-			'autoWidth': false,
-			responsive: {
-				breakpoints: [
-					{ name: 'desktop', width: Infinity },
-					{ name: 'tablet',  width: 1024 },
-					{ name: 'fablet',  width: 768 },
-					{ name: 'phone',   width: 480 }
-				]
-			},
-			'columns': [
-				{ 'width': '16%' },
-				{ 'width': '26%' },
-				{ 'width': '26%' },
-				{ 'width': '26%' },
-			  ],
-			  'columnDefs': [
-				{ className: 'centertxt', 'targets': [ 1,2 ] },
-				{ orderable: false},
-            	{ className: 'select-checkbox', targets: [ 0 ]},
-			  ],
-			  	select: {
-				style:    'multi',
-				selector: 'tr td:nth-child(1) span'
-			},
-			order: [[ 1, 'asc' ]]
-		});
-	//
-	//START initialize Response Amendment datable two
-		var tablethree = $('#responseamendtabletwo').DataTable({
-		"fnDrawCallback": function( oSettings ) {
-		},
-			'sDom': 't',
-			//"language": {
-			//"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
-//			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
-//			  '<option value="10">10</option>'+
-//			  '<option value="25">25</option>'+
-//			  '<option value="50">50</option>'+
-//			  '<option value="100">100</option>'+
-//			  '<option value="-1">All</option>'+
-//			  '</select>'
-  			//},
-			'autoWidth': false,
-			responsive: {
-				breakpoints: [
-					{ name: 'desktop', width: Infinity },
-					{ name: 'tablet',  width: 1024 },
-					{ name: 'fablet',  width: 768 },
-					{ name: 'phone',   width: 480 }
-				]
-			},
-			'columns': [
-				{ 'width': '9%' },
-				{ 'width': '14%' },
-				{ 'width': '14%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-			  ],
-			  'columnDefs': [
-				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6,7,8,9 ] },
-				{ orderable: false},
-            	{ className: 'select-checkbox', targets: [ 0 ]},
-			  ],
-			  	select: {
-				style:    'multi',
-				selector: 'tr td:nth-child(1) span'
-			},
-			order: [[ 1, 'asc' ]]
-		});
-	//
 	//generate unique IDs + matching labels for response / amend pages, checkmarks
-		var checkboxList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input');
+		var checkboxList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input');
 		for (var i = 0; i <= checkboxList.length; i++) {
 			$(checkboxList[i]).attr('id', 'checkboxone' + i);
 		}
-		var labelList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input').next('label');
+		var labelList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input').next('label');
 		for (var i = 0; i <= labelList.length; i++) {
 			$(labelList[i]).attr('for', 'checkboxone' + i);
 		}
-		var labelidList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input').next('label');
+		var labelidList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input').next('label');
 		for (var i = 0; i <= labelidList.length; i++) {
 			$(labelidList[i]).attr('id', 'selectrow_' + i);
 		}
-		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(1) input, #responseamendtabletwo tr td:nth-child(1) input');
+		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input');
 		for (var i = 0; i <= checkboxarialabelList.length; i++) {
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'selectrow_' + i);
 		}
 	//
 	//start select all response / amend	  
 	$(document).on('change','#responseamendtable input#selectall', function() {
-	   var checkboxes  = $('#responseamendtable tr td:nth-child(1) span');
+	   var checkboxes  = $('#responseamendtable tr td:nth-child(2) span');
 	   var rows  = $('#responseamendtable tr');
-	   var input  = $('#responseamendtable tr td:nth-child(1) input');
+	   var input  = $('#responseamendtable tr td:nth-child(2) input.form-check-input');
 	   var selectall = $(this);
 		if ($(this).is( ":checked" )) {
 			$(rows).addClass('selected');
@@ -421,7 +419,7 @@ $(document).ready(function(){
 			$(input).prop('checked', false); 
 		}
 	});
-	$('#responseamendtable tr td:nth-child(1) input').on('change', function(e){
+	$('#responseamendtable tr td:nth-child(2) input').on('change', function(e){
 		$('#responseamendtable input#selectall').prop('checked', false);
 		if ($(this).is( ":checked" )) {
 			$(this).parent().parent().addClass('selected');
@@ -430,9 +428,9 @@ $(document).ready(function(){
 		}
 	});
 	$(document).on('change','#responseamendtabletwo input#selectalltwo', function() {
-	   var checkboxes  = $('#responseamendtabletwo tr td:nth-child(1) span');
+	   var checkboxes  = $('#responseamendtabletwo tr td:nth-child(2) span');
 	   var rows  = $('#responseamendtabletwo tr');
-	   var input  = $('#responseamendtabletwo tr td:nth-child(1) input');
+	   var input  = $('#responseamendtabletwo tr td:nth-child(2) input');
 	   var selectall = $(this);
 		if ($(this).is( ":checked" )) {
 			$(rows).addClass('selected');
@@ -442,7 +440,7 @@ $(document).ready(function(){
 			$(input).prop('checked', false); 
 		}
 	});
-	$('#responseamendtabletwo tr td:nth-child(1) input').on('change', function(e){
+	$('#responseamendtabletwo tr td:nth-child(2) input').on('change', function(e){
 		$('#responseamendtabletwo input#selectalltwo').prop('checked', false);
 		if ($(this).is( ":checked" )) {
 			$(this).parent().parent().addClass('selected');

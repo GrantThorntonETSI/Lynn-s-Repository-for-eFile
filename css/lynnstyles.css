@@ -1160,7 +1160,7 @@ td.red {
     float: left;
     margin-left: 1.5em;
 	}
-#dashboardtableone .centertxt, #dashboardtableone .control, #dashboardtabletwo .centertxt, #dashboardtabletwo .control, #goodsandservices .centertxt, #filepetitiontable .centertxt, #responseamendtable .centertxt, #responseamendtabletwo .centertxt, #filepetitiontable .control, #filepetitiontable .centertxt {
+#dashboardtableone .centertxt, #dashboardtableone .control, #dashboardtabletwo .centertxt, #dashboardtabletwo .control, #goodsandservices .centertxt, #filepetitiontable .centertxt, #responseamendtable .centertxt, #responseamendtabletwo .centertxt, #filepetitiontable .control, #responseamendtable .control, #responseamendtabletwo .control {
 	text-align:center;
 	}
 .dashsection {
@@ -1298,8 +1298,11 @@ table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:f
 	left:20%!important;
 	top:6px!important;
 	}
-table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
 	top:1px!important;
+	}
+table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+	left:42%!important;
 	}
 table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, 
 #responseamendtabletwo_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #responseamendtabletwo_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, #responseamendtable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #responseamendtable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
@@ -2805,7 +2808,7 @@ label.form-check-label {
     margin-left: 2.7em;
 	}
 .select-checkbox label.form-check-label {
-    margin-left: 1.7em;
+    margin-left: 2.7em;
 	float:right;
 	}
 th.select-checkbox label.form-check-label {
@@ -4031,11 +4034,6 @@ footer #megamenu ul {
 	#sectioneight .matchlabelheight, #sectioneight .matchlabelheighttwo {
 		min-height:24px;
 		}
-}
-@media (max-width: 1039px) { 
-	#responseamendtable th .form-check span.radio.notspecial::before, #responseamendtabletwo th .form-check span.radio.notspecial::before {
-		left: -26px;
-	}
 }
 @media (orientation: portrait) { 
 	.stickycomponents {
