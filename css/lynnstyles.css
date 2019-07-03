@@ -1160,7 +1160,7 @@ td.red {
     float: left;
     margin-left: 1.5em;
 	}
-#dashboardtableone .centertxt, #dashboardtableone .control, #dashboardtabletwo .centertxt, #dashboardtabletwo .control, #goodsandservices .centertxt, #filepetitiontable .centertxt, #responseamendtable .centertxt, #responseamendtabletwo .centertxt {
+#dashboardtableone .centertxt, #dashboardtableone .control, #dashboardtabletwo .centertxt, #dashboardtabletwo .control, #goodsandservices .centertxt, #filepetitiontable .centertxt, #responseamendtable .centertxt, #responseamendtabletwo .centertxt, #filepetitiontable .control, #filepetitiontable .centertxt {
 	text-align:center;
 	}
 .dashsection {
@@ -1291,9 +1291,15 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
 	margin-top:0;
 	position:relative;
 	}
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child, table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child {
+	padding-left:8px!important;
+	}
 table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#responseamendtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
 	left:20%!important;
 	top:6px!important;
+	}
+table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#filepetitiontable.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
+	top:1px!important;
 	}
 table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, table#dashboardtabletwo.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, 
 #responseamendtabletwo_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #responseamendtabletwo_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, #responseamendtable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #responseamendtable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before, #filepetitiontable_wrapper table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>th:first-child:before {
@@ -2032,6 +2038,9 @@ div.resetclass{
 	}
 .deleterow {
     float: right;
+	}
+#filepetitiontable .deleterow {
+    float: none;
 	}
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, div[role="radio"]:focus, .btn-success.active.focus, .btn-success.active:focus, .btn-success.focus, .btn-success:active.focus, .btn-success:active:focus, .btn-success:focus, .btn-sm.active.focus, .btn-sm.active:focus, .btn-sm.focus, .btn-sm:active.focus, .btn-sm:active:focus, .btn-sm:focus, .close.active.focus, .close.active:focus, .close.focus, .close:active.focus, .close:active:focus, .close:focus, .btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.focus, .btn-primary:active.focus, .btn-primary:active:focus, .btn-primary:focus, .ql-snow.ql-toolbar button:focus, .ql-snow .ql-toolbar button:focus, .ql-snow.ql-toolbar button.focus, .ql-snow.ql-toolbar span:focus, .ql-snow .ql-toolbar span:focus, .ql-snow.ql-toolbar span.focus, .ql-tooltip input:focus, .ql-tooltip input.focus, .ql-container:focus {
     /*outline: thin dotted;*/
@@ -3293,7 +3302,7 @@ button[type="submit"].right, button[type="button"].right {
 	padding-left:0;
 	padding-right:0;
 	}
-#gsselected button.close, #dashboardmain button.close, #editowner button.close {
+#gsselected button.close, #dashboardmain button.close, #editowner button.close, #filepetitiontable button.deleterow {
     font-size: 1.45em;
 	color:#333;
 	margin: 0 auto;
@@ -3302,10 +3311,10 @@ button[type="submit"].right, button[type="button"].right {
 #dashboardmain button.closegspanels {
     font-size: 3em;
 	}
-#dashboard .dashsection button.close {
+#dashboard .dashsection button.close, #filepetitiontable button.deleterow {
    	color: #009CDE;
 	}
-#dashboard .dashsection button.deleterow:hover {
+#dashboard .dashsection button.deleterow:hover, #filepetitiontable button.deleterow:hover {
    	color: #047db0;
 	opacity:1.0;
 	-moz-opacity: 1.0;

@@ -203,48 +203,6 @@ $(document).ready(function(){
 			  ],
 		});
 	//
-	//START a11y datatable hide/show rows
-	$( '#dashboardtableone tbody' ).on('click', 'td.control', function(e){
-		e.preventDefault();
-		$( this ).attr('aria-expanded', function (i, attr) {
-			return attr == 'true' ? 'false' : 'true'
-		});
-		var dtcontent = $( this ).parent().next('tr.child');
-		$( dtcontent ).attr('role','alert');
-	});
-	$( '#dashboardtabletwo tbody' ).on('click', 'td.control', function(e){
-		e.preventDefault();
-		$( this ).attr('aria-expanded', function (i, attr) {
-			return attr == 'true' ? 'false' : 'true'
-		});
-		var dtcontent = $( this ).parent().next('tr.child');
-		$( dtcontent ).attr('role','alert');
-	});
-	//
-	//START delete dashboard table row
-	$( '#dashboardtableone tbody' ).on('click','.deleterow',function(e){
-		e.preventDefault();
-		var numrows = $( '#dashboardtableone tbody tr' ).length -1;
-		var rows = $( '#dashboardtableone tbody tr' );
-		$( this ).closest('tr').next('tr.child').remove();
-		$( this ).closest('tr').remove();
-		$('#dashboardtableone_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
-		if (numrows < 1) {
-			$('#dashboardtableone_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
-			};
-	});
-	$( '#dashboardtabletwo tbody' ).on('click','.deleterow',function(e){
-		e.preventDefault();
-		var numrows = $( '#dashboardtabletwo tbody tr' ).length -1;
-		var rows = $( '#dashboardtabletwo tbody tr' );
-		$( this ).closest('tr').next('tr.child').remove();
-		$( this ).closest('tr').remove();
-		$('#dashboardtabletwo_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
-		if (numrows < 1) {
-			$('#dashboardtabletwo_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
-			};
-	});
-	//
 	//START initialize File Petition datable
 		var table = $('#filepetitiontable').DataTable({
 		"fnDrawCallback": function( oSettings ) {
@@ -270,23 +228,76 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '10%' },
-				{ 'width': '15%' },
-				{ 'width': '20%' },
-				{ 'width': '25%' },
-				{ 'width': '15%' },
-				{ 'width': '15%' },
+				{ 'width': '8%' },//control 0
+				{ 'width': '12%' },//mark 2
+				{ 'width': '13%' },//serial 3
+				{ 'width': '18%' },//filing 4
+				{ 'width': '23%' },//status 5
+				{ 'width': '13%' },//owner 6
+				{ 'width': '13%' },//attorney 7
 			  ],
 			  'columnDefs': [
 			  	{ responsivePriority: 1, targets: 0 },
-				{ responsivePriority: 3, targets: 4 },
-				{ responsivePriority: 4, targets: 5 },
-				{ responsivePriority: 5, targets: 1 },
-				{ responsivePriority: 6, targets: 3 },
-				{ responsivePriority: 7, targets: 2 },
-				{ className: 'centertxt', 'targets': [ 0,1,2,3,4,5 ] },
+				{ responsivePriority: 2, targets: 5 },
+				{ responsivePriority: 3, targets: 1 },
+				{ responsivePriority: 4, targets: 6 },
+				{ responsivePriority: 5, targets: 2 },
+				{ responsivePriority: 6, targets: 4 },
+				{ responsivePriority: 7, targets: 3 },
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5 ] },
+				{ className: 'control', 'orderable': false, 'targets': [ 0 ] },
 			  ],
 		});
+	//
+	//START a11y datatable hide/show rows
+	$( '#dashboardtableone tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	$( '#dashboardtabletwo tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	$( '#filepetitiontable tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	//
+	//START delete datatable table row
+	$( '#dashboardtableone tbody' ).on('click','.deleterow',function(e){
+		e.preventDefault();
+		var numrows = $( '#dashboardtableone tbody tr' ).length -1;
+		var rows = $( '#dashboardtableone tbody tr' );
+		$( this ).closest('tr').next('tr.child').remove();
+		$( this ).closest('tr').remove();
+		$('#dashboardtableone_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
+		if (numrows < 1) {
+			$('#dashboardtableone_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
+			};
+	});
+	$( '#dashboardtabletwo tbody' ).on('click','.deleterow',function(e){
+		e.preventDefault();
+		var numrows = $( '#dashboardtabletwo tbody tr' ).length -1;
+		var rows = $( '#dashboardtabletwo tbody tr' );
+		$( this ).closest('tr').next('tr.child').remove();
+		$( this ).closest('tr').remove();
+		$('#dashboardtabletwo_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
+		if (numrows < 1) {
+			$('#dashboardtabletwo_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
+			};
+	});
 	//
 	//START initialize Response Amendment datable
 		var tablethree = $('#responseamendtable').DataTable({
