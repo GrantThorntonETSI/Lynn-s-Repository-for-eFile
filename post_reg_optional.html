@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
 
-    <title>Respond to Office Action Optional Actions :: USPTO.gov :: webapp prototype</title>
+    <title>Post Registration Optional Actions :: USPTO.gov :: webapp prototype</title>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -134,18 +134,18 @@
     </nav>
     <div class="container-fluid">    
       <div class="row content">
-        <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7" id="roaoptact">
+        <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7" id="postregoptact">
             <!--START Content Div-->
             <div class="row">
                 <div class="col-xs-12">
                     <div class="row">
                     	<div class="col-xs-12">
-                    		<h1>Respond to Office Action</h1>
+                    		<h1>Post Registration</h1>
                         </div>
                     </div>
                 </div>
                 <form action="" method="post">
-                   <fieldset aria-label="enter optional information" id="responseamendoptional">  
+                   <fieldset aria-label="enter optional information" id="postregoptional">  
                        <div class="col-xs-12 form-group form-group-md">
                         	<div class="card-text noexpand">
                                 <h2 class="card-title weight600">Optional Actions</h2>
@@ -161,25 +161,12 @@
                                     <label class="form-check-label form-check" for="ownaddre" id="ownaddr"><span class="radio notspecial">Correct or change the owner&#8217;s name or entity information</span></label>
                                 </div>
                                 <div class="col-xs-12 form-group form-group-md">
-                                    <input class="form-check-input checkmark" type="checkbox" value="editmark" tabindex="0" aria-labelledby="changemark" id="minorchange">
-                                    <label class="form-check-label form-check" for="minorchange" id="changemark"><span class="radio notspecial">Make a minor change to the mark or submit a better quality image</span></label>
+                                    <input class="form-check-input checkmark" type="checkbox" value="editcert" tabindex="0" aria-labelledby="changecert" id="certchange" disabled>
+                                    <label class="form-check-label form-check" for="certchange" id="changecert"><span class="radio notspecial special">Request an Amendment or Correction of the Registration Certificate</span></label>
                                 </div>
                                 <div class="col-xs-12 form-group form-group-md">
-                                    <input class="form-check-input checkmark" type="checkbox" value="modgs" tabindex="0" aria-labelledby="modgss" id="modify">
-                                    <label class="form-check-label form-check" for="modify" id="modgss"><span class="radio notspecial">Modify goods/services</span></label>		
-                                </div>
-                                <div class="col-xs-12 form-group form-group-md">
-                                    <input class="form-check-input checkmark" type="checkbox" value="makechange" tabindex="0" aria-labelledby="change" id="changefile">
-                                    <label class="form-check-label form-check" for="changefile" id="change">
-                                    	<span class="radio notspecial">
-                                            <ul>Add, change or withdraw any of the following:
-                                                <li>Miscellanous Statement</li>
-                                                <li>Type of Register</li>
-                                                <li>2(f) claim of aquired distinciveness</li>
-                                                <li>Concurrent Use</li>
-                                            </ul>
-                                        </span>
-                                    </label>		
+                                    <input class="form-check-input checkmark" type="checkbox" value="misc" tabindex="0" aria-labelledby="miscstate" id="statemisc">
+                                    <label class="form-check-label form-check" for="statemisc" id="miscstate"><span class="radio notspecial">Add change or withdraw the miscellanous statement</span></label>		
                                 </div>
                             </div>
                         </div>

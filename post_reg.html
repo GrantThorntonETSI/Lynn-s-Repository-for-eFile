@@ -1,0 +1,329 @@
+<!doctype html>
+<html th:fragment="layout (template, menu)" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
+
+    <title>Post Registration :: USPTO.gov :: webapp prototype</title>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<!--    <link rel="stylesheet" th:href="@{/resources/css/usPTO.css}"/>
+--> <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--<link rel="stylesheet" href="usPTO.css">-->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/lynnstyles.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://www.uspto.gov"><img src="images/logo_top.png" alt="US Trade and Patent Office logo"></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Applications / Registration</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown-submenu" role="button" aria-haspopup="true" aria-expanded="false">File an Amendment<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li><a href="#">Voluntary Amendment</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Post Approval/Publication/Post-Notice of Allowance Amendment</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Amendment to Allege Use or Statement of Use</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Request to Delete Section 1(b) Basis</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">File a Petition</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Respond to Office Action</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File Request for Reconsideration</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File an Extension Request</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Contacts<span class="caret"></span></a>
+                  <ul class="dropdown-menu dropdown-submenu">
+                    <li><a href="#">Attorney</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Owner</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Correspondence</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Domestic Representative</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Delegate</a></li>
+                  </ul>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Request Abandonment</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">File Post Registration</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Resources</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">Help<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="https://www.uspto.gov/learning-and-resources/account-faqss">FAQs</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false">Lynn Stanikmas<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="https://efilereimagined.com/accounts/dashboard">eFile</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://efilereimagined.com/accounts/userHome">Account</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://efilereimagined.com/logout">Sign Out</a></li>
+            </ul>
+        </li>
+        <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
+      </ul>
+          
+          <br style="clear:both">
+          
+          <ul class="nav navbar-nav navbar-right" id="lowernav">
+          	<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
+              <ul class="dropdown-menu" id="classfees">
+                <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
+                <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
+                <li aria-live="assertive">Total Classes 0</li>
+                <li id="lastli" aria-live="assertive">Total Fee $<span>225</span></li>
+              </ul>
+            </li>
+		<!--<li><a href="#">Actions</a></li>
+            <li><a href="#">Applications / Registration</a></li>-->
+            <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
+            <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
+            <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop" aria-live="assertive"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+          </ul>
+          <br style="clear:both">
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid">    
+        <div class="row content">
+            <main class="col-xs-12 col-sm-8 col-md-8 col-lg-7">
+              <!--START Content Div-->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h1>Post Registration</h1>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12" id="declarationsignature">
+                                <form action="" method="post">
+                                   <fieldset>
+                                    <div class="row">
+                                    	<section class="col-xs-12" aria-label="declarations" id="declarationschecks">
+                                            <div class="card-text noexpand">
+                                                <h2 class="card-title weight600">Declarations</h2>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 form-group form-group-md indentctr">
+                                                    <p class="weight600">Read the following statements before signing. Acknowledge the statements by checking the boxes and signing below.</p> 
+                                                    <div class="row">
+                                                        <div class="col-xs-12 form-group form-group-md">		
+                                                            <input class="form-check-input checkmark" type="checkbox" value="selectall" tabindex="0" aria-labelledby="selall" id="select">
+                                                            <label class="form-check-label form-check" for="select" id="selall"><span class="radio notspecial">Select all</span></label>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">		
+                                                            <input class="form-check-input checkmark" type="checkbox" value="xnonuse" tabindex="0" aria-labelledby="nonuse" id="xnon">
+                                                            <label class="form-check-label form-check" for="xnon" id="nonuse"><span class="radio notspecial">Unless the owner has specifically claimed excusable nonuse, the mark is in use in commerce on or in connection with the goods/services or to indicate membership in the collective membership organization identified above, as evidenced by the attached specimen(s).</span></label>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="currently" tabindex="0" aria-labelledby="currentlyin" id="currentlyinuse">
+                                                            <label class="form-check-label form-check" for="currentlyinuse" id="currentlyin"><span class="radio notspecial">The specimen(s) shows the mark as currently used in commerce on or in connection with the goods/services/collective membership organization.</span></label>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="continuous" tabindex="0" aria-labelledby="continuoususe" id="continusecomm">
+                                                            <label class="form-check-label form-check" for="continusecomm" id="continuoususe"><span class="radio notspecial">The mark has been in continuous use in commerce for five consecutive years after the date of registration, or the date of publication under 15 U.S.C. &#167; 1062(c), and is still in use in commerce on or in connection with all goods/services, or to indicate membership in the collective membership organization, listed in the existing registration.</span></label>
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="nodecision" tabindex="0" aria-labelledby="final" id="finaldec">
+                                                            <label class="form-check-label form-check" for="finaldec" id="final"><span class="radio notspecial">There has been no final decision adverse to the owner&#8217;s claim of ownership of such mark for such goods/services, or to indicate membership in the collective membership organization, or to the owner&#8217;s right to register the same or to keep the same on the register.</span></label>		
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="proceeding" tabindex="0" aria-labelledby="proceed" id="rights">
+                                                            <label class="form-check-label form-check" for="rights" id="proceed"><span class="radio notspecial">There is no proceeding involving said rights pending and not finally disposed of either in the United States Patent and Trademark Office or in a court.</span></label>		
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="evidentiary" tabindex="0" aria-labelledby="support" id="evidentsupp">
+                                                            <label class="form-check-label form-check" for="evidentsupp" id="support"><span class="radio notspecial">To the best of the signatory&#8217;s knowledge, information, and belief, formed after an inquiry reasonable under the circumstances, the allegations and other factual contentions made above have evidentiary support.</span></label>		
+                                                        </div>
+                                                        <div class="col-xs-12 form-group form-group-md">
+                                                            <input class="form-check-input checkmark" type="checkbox" value="warning" tabindex="0" aria-labelledby="punishable" id="declares">
+                                                            <label class="form-check-label form-check" for="declares" id="punishable"><span class="radio notspecial">The signatory being warned that willful false statements and the like are punishable by fine or imprisonment, or both, under 18 U.S.C. &#167; 1001, and that such willful false statements and the like may jeopardize the validity of this submission, declares that all statements made of his/her own knowledge are true and all statements made on information and belief are believed to be true.</span></label>		
+                                                        </div>
+                                                    </div><!--end checkbox row-->
+                                                </div>
+                                            </div>
+                                        </section><!--//declarations-->
+                                        <div class="form-group form-group-md col-xs-12">
+                                            <div class="row">
+                                                <section class="col-xs-12" aria-label="signature method">
+                                                    <div class="card-text noexpand">
+                                                        <h2 class="card-title weight600">Signature Method</h2>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 form-group form-group-md">
+                                                                <label for="ta2">How are you signing the application?</label> 
+                                                                <select class="form-control signmethod" id="ta2"  onchange="showTheTime()">
+                                                                    <option value="Select">Select Signature Method</option>
+                                                                    <option value="direct">Sign directly</option>
+                                                                    <option value="handwritten" disabled>Print and upload handwritten signature</option>
+                                                                    <option value="send" disabled>Send to second party for signature</option>
+                                                                    <option value="unsigned" disabled>Submit unsigned</option>
+                                                                </select>
+                                                           </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div><!--//signature method-->
+                                            <div class="row hidethis">
+                                                <section class="col-xs-12" aria-label="sign">
+                                                    <div class="card-text noexpand">
+                                                        <h2 class="card-title weight600">Sign</h2>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 form-group form-group-md">
+                                                                <div class="row">
+                                                                    <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                                                        <p class="sr-only">Enclose the signature in forward slashes</p>
+                                                                        <label for="signature">Signature <span class="weight600">&#42;</span> <a href="#" data-toggle="tooltip" title="" class="glyphicon glyphicon-info-sign test" data-placement="right" data-original-title="To electronically sign the application enter any combination of alpha numeric characters between two forward slash symbols (/); e.g., /jane smith/, /rdr/, or /127/)."></a></label>
+                                                                        <input type="text" class="form-control" placeholder="/Signature/" id="signature" required>
+                                                                    </div>
+                                                                    <script type="application/javascript" src="js/timestamp.js"></script>
+                                                                    <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                                                        <p class="sr-only">Enter the date in the following format: 20:36:14 May 30, 2019 E.T.</p>
+                                                                        <label for="datesigned">Date signed: <span id="tz" class="sr-only"> </span></label>
+                                                                        <textarea rows="1" class="form-control datesigned disabled" id="datesigned" disabled> </textarea>
+                                                                    </div>
+                                                                    <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                                                        <label for="signatoryname">Signatory&#8217;s name <span class="weight600">&#42;</span></label>
+                                                                        <input type="text" class="form-control" id="signatoryname" required>
+                                                                    </div>
+                                                                    <div class="form-group form-group-md col-xs-12 col-sm-9 col-lg-6">
+                                                                        <label for="signatoryphone">Signatory&#8217;s phone number</label>
+                                                                        <input type="tel" class="form-control" id="signatoryphone">
+                                                                    </div>
+                                                                    <div class="form-group form-group-md col-xs-12 col-sm-12 col-lg-6">
+                                                                        <label for="signatoryposition">Signatory&#8217;s position <span class="weight600">&#42;</span></label>
+                                                                        <input type="text" class="form-control" id="signatoryposition" required>
+                                                                    </div>
+                                                                </div><!--end checkbox row-->
+                                                           </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div><!--//sign-->
+                                            <div class="row">
+                                                <section class="col-xs-12" aria-label="declaration of incontestability">
+                                                    <div class="card-text noexpand">
+                                                        <h2 class="card-title weight600">Declaration of Incontestability</h2>
+                                                    </div>
+                                                    <div class="col-xs-12">
+                                                        <div class="row">
+                                                            <div class="col-xs-12 form-group form-group-md">
+                                                                <p class="weight600" id="incontestable">Do you wish to file a Declaration of Incontestability (Section 15) at this time?</p>
+                                                                <div role="radiogroup" class="form-group form-group-md" aria-describedby="incontestable">
+                                                                    <label for="inlineRadio0114" class="radio-inline radiocontainer"><input type="radio" name="incontest" id="inlineRadio0114" value="" tabindex="0"><span class="checkmark"></span>Yes</label>
+                                                                    <label for="inlineRadio0115" class="radio-inline radiocontainer"><input type="radio" name="incontest" id="inlineRadio0115" value="" tabindex="0"><span class="checkmark"></span>No</label>
+                                                                </div>
+                                                           </div>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div><!--//incontestability-->
+                                        </div><!--END formgroup-->
+                                    </div>
+                               </fieldset>
+                            </form> 
+                        </div><!--END col-->
+                    </div><!--END row-->                    
+                </div>
+              </div><!--END row-->
+              <div class="inlinebuttons btn-group btn-group-justified" role="navigation" aria-label="view previous or next page" id="prevnxt">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
+                    <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
+                </div>
+            </div>
+        </main>
+    </div><!--END div content-->
+ </div><!--END div container-->
+                <!--jquery and web jars -->
+        <!--<script th:src="@{/webjars/jquery/jquery.min.js}"></script>-->
+        <script type="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <!--<script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>-->
+        <script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!--<script src="../resources/js/jquery.dataTables.min.js"></script>-->
+        <script type="application/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <!--<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>-->
+        <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="js/accordion.js"></script>
+        <script type="application/javascript" src="js/checkbox.js"></script>
+        <script type="application/javascript" src="js/radio.js"></script>
+        <script type="application/javascript" src="js/btn_checkbox.js"></script>
+        <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="uspto-footer-top col-xs-4 col-sm-8 col-md-9 col-lg-9">
+                    <div class="uspto-footer-logo col-sm-8">
+                        <a href="http://www.uspto.gov">
+                            <div class="footer-brand" role="img" aria-label="United States Office of Patent and Trademarks"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-8 col-sm-4 col-md-3">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <span id="webPolicy"><p>Website policy</p></span>
+                        </div>
+                        <div class="col-xs-6">
+                            <p>Privacy policy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

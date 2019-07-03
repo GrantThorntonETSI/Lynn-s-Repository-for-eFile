@@ -134,16 +134,16 @@ p {
 #currentmark p {
     text-align: center;
 	}
-#petitions1 h3, #petitions2 h3, #responseamend h3 {
+#petitions1 h3, #petitions2 h3, #responseamend h3, #sectioneight h3, #incontestable h3 {
 	margin-top: 1.2em;
 	font-size: 1.2em;
 	}
-#petitions1 h4, #petitions1 .panel-body p, #petitions2 h4, #petitions2 .panel-body p, #responseamend h4, #responseamend .panel-body p {
+#petitions1 h4, #petitions1 .panel-body p, #petitions2 h4, #petitions2 .panel-body p, #responseamend h4, #responseamend .panel-body p, #sectioneight h4, #sectioneight .panel-body p, #incontestable h4, #incontestable .panel-body p {
     margin-top: .6em;
     margin-bottom: .4em;
 	font-weight:600;
 	}
-#petitions1 .panel-body p, #petitions2 .panel-body p, #responseamend .panel-body p {
+#petitions1 .panel-body p, #petitions2 .panel-body p, #responseamend .panel-body p, #sectioneight .panel-body p, #incontestable .panel-body p {
 	font-weight:400;
 	}
 #preferences p {
@@ -848,20 +848,20 @@ h2, h3, h4, h5, h6 {
 	padding: 0 0 1.3em 0;
 	margin-bottom: 1em;
 	}
-#petitions1 .underlinerow, #petitions2 .underlinerow, #responseamend .underlinerow {
+#petitions1 .underlinerow, #petitions2 .underlinerow, #responseamend .underlinerow, #sectioneight .underlinerow, #incontestable .underlinerow {
 	margin-bottom: 1em;
 	}
-#petitions1 .underlinerow h3, #petitions2 .underlinerow h3, #responseamend .underlinerow h3 {
+#petitions1 .underlinerow h3, #petitions2 .underlinerow h3, #responseamend .underlinerow h3, #sectioneight .underlinerow h3, #incontestable .underlinerow h3 {
 	margin-top: 0;
 	}
-#petitions1 .leadtext, #petitions2 .leadtext, #responseamend .leadtext {
+#petitions1 .leadtext, #petitions2 .leadtext, #responseamend .leadtext, #sectioneight .leadtext, #incontestable .leadtext {
 	margin-bottom: 0;
 	}
-#petitions1 .underlinerow>div, #petitions2 .underlinerow>div, #responseamend .underlinerow>div {
+#petitions1 .underlinerow>div, #petitions2 .underlinerow>div, #responseamend .underlinerow>div, #sectioneight .underlinerow>div, #incontestable .underlinerow>div {
 	padding-left: 0;
 	padding-right: 0;
 	}
-#petitions1 .underlinerow>div a, #petitions2 .underlinerow>div a, #responseamend .underlinerow>div a {
+#petitions1 .underlinerow>div a, #petitions2 .underlinerow>div a, #responseamend .underlinerow>div a, #sectioneight .underlinerow>div a, #incontestable .underlinerow>div a {
 	margin-top: 1.2em;
 	display: inline-block;
 	font-size: 1.2em;
@@ -931,7 +931,7 @@ h1.message   {
 	font-size: 1em;
 	padding:0;
 	}
-#petitions1 .glyphicon-edit, #petitions2 .glyphicon-edit, #responseamend .glyphicon-edit {
+#petitions1 .glyphicon-edit, #petitions2 .glyphicon-edit, #responseamend .glyphicon-edit, #sectioneight .glyphicon-edit, #incontestable .glyphicon-edit {
 	font-size: 1.3em;
 	}
 .glyphicon-new-window:hover, .glyphicon-edit:hover, .glyphicon-new-window:active, .glyphicon-edit:active {
@@ -1734,6 +1734,9 @@ span#termsagree label a:hover, span#termsagree label a:hover {
 .statementou .noexpand.blue span.strike {
 	text-decoration: line-through #FFF;
 	}
+.strike {
+	text-decoration: line-through #FFF;
+	}
 .statementou .noexpand.blue .displaytable {
     min-height: 38px;
 	}
@@ -2090,6 +2093,22 @@ div[role="radio"]:focus {
 	font-weight: 400;
 	display:block;
 	}
+#sectioneight section.basis h2.card-title {
+	height:44px;
+	line-height: 44px;
+	}
+.removegs {
+	opacity: 0.4;
+	}
+h2 button.close {
+	height: 44px;
+	width: 44px;
+    margin-right: .5em;
+	font-size: 1.4em;
+	}
+	h2 button.close span.glyphicon {
+		margin-left: 0;
+		}
 .btn-primary {
 	background-image:none;
 	box-shadow:none;
@@ -2115,7 +2134,7 @@ div[role="radio"]:focus {
 	margin-top:1.5em;
 	margin-bottom:1.5em;
 	}
-#petitions1 .panel-body .btn-xs, #petitions2 .panel-body .btn-xs, #responseamend .panel-body .btn-xs {
+#petitions1 .panel-body .btn-xs, #petitions2 .panel-body .btn-xs, #responseamend .panel-body .btn-xs, #sectioneight .panel-body .btn-xs, #incontestable .panel-body .btn-xs {
 	margin:0;
 	}
 .btn-default {
@@ -2679,11 +2698,11 @@ legend {
 span#authem  {
 	margin-bottom: 0!important;
 	}
-#declarationsignature #declarationschecks label, #optionalactionschecks label, #responseamendoptional label {
+#declarationsignature #declarationschecks label, #optionalactionschecks label, #responseamendoptional label, #postregoptional label {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
-#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span.radio, .statementou span.radio {
+#declarationsignature #declarationschecks span.radio, #optionalactionschecks span.radio, #responseamendoptional span.radio, .statementou span.radio, #postregoptional span.radio {
 	margin-top:0!important;
 	margin-bottom:0!important;
 	}
@@ -2770,7 +2789,7 @@ input[type="date"] {
 	line-height:38px!important;
 	padding-bottom:2px;
 	}
-#specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo, #specdescriptone {
+#specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo, #specdescriptone, #incontestable textarea {
 	height:115px;
 	}
 label.form-check-label {
@@ -2791,6 +2810,18 @@ input[type="radio"] {
 .radio {
 	margin-bottom: 1.7em;
     margin-top: 1.7em!important;
+	}
+.blue span.radio {
+	margin-bottom: .2em;
+    margin-top: 1.07em!important;
+	}
+#incontestable div.basis label span.radio {
+	margin-bottom: 1em;
+    margin-top: 1em!important;
+	}
+#incontestable div.basis label#selall span.radio {
+	margin-bottom: 0;
+    margin-top: 1em!important;
 	}
 #amendarea .radio {
 	margin-bottom: .5em;
@@ -2961,7 +2992,7 @@ div#currentmark a {
 	margin-bottom: 1em;
 	width:100%;
 	}
-#basisabde .upload-drop-zone, #basisab .upload-drop-zone, #gridview .upload-drop-zone, .statementou .upload-drop-zone {
+#basisabde .upload-drop-zone, #basisab .upload-drop-zone, #gridview .upload-drop-zone, .statementou .upload-drop-zone, #sectioneight .upload-drop-zone {
 	line-height: 1.25em;
 	}
 #gridview .upload-drop-zone {
@@ -2985,7 +3016,7 @@ p#upimagetwo, p#upimagethree, p#upimagefour {
 	p#upimage {
 	margin-bottom:.6em;
 	}
-#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], .statementou input[type="file"], #amendmark input[type="file"] {
+#attorney input[type="file"], #owner input[type="file"], #uploadmark input[type="file"], #yesnps input[type="file"], #basisabde input[type="file"], #basisab input[type="file"], #detected input[type="file"], #gridview input[type="file"], #responseamend input[type="file"], .statementou input[type="file"], #amendmark input[type="file"], #sectioneight input[type="file"] {
 	width: 0.1px;
 	height: 0.1px;
 	opacity: 0;
@@ -3142,7 +3173,7 @@ button[type="submit"].right, button[type="button"].right {
 .fileholder div.row {
 	padding: 0;
 	}
-.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, .fileholder i, #petitions1 div img, #petitions2 div img, #responseamend div img {
+.fileholder div img, .fileholder div button, .fileholder span, .fileholder a, .fileholder i, #petitions1 div img, #petitions2 div img, #responseamend div img, #sectioneight #applicationdata div img, #incontestable #applicationdata div img {
     float: none!important;
 	height:38px;
 	font-size:.8em;
@@ -3151,20 +3182,20 @@ button[type="submit"].right, button[type="button"].right {
 	height:auto;
 	max-width:80%;
 	}
-#petitions1 div img, #petitions2 div img {
+#petitions1 div img, #petitions2 div img, #sectioneight #applicationdata div img, #incontestable #applicationdata div img {
     float: left!important;
 	}
-.fileholder div img, .fileholder i, .fileholder span, #petitions1 div img, #petitions2 div img, #responseamend div img {
+.fileholder div img, .fileholder i, .fileholder span {
 	margin:0 auto;
 	display:block;
 	}
-.fileholder .img-thumbnail, #petitions1 .img-thumbnail, #petitions2 .img-thumbnail, #responseamend .img-thumbnail {
+.fileholder .img-thumbnail, #petitions1 .img-thumbnail, #petitions2 .img-thumbnail, #responseamend .img-thumbnail, #sectioneight #applicationdata .img-thumbnail, #incontestable #applicationdata .img-thumbnail {
 	border:0;
 	-webkit-border-radius: 2px 2px 2px 2px;
     -moz-border-radius: 2px 2px 2px 2px;
     border-radius: 2px 2px 2px 2px;
 	}
-#petitions1 .img-thumbnail, #petitions2 .img-thumbnail, #responseamend .img-thumbnail {
+#petitions1 .img-thumbnail, #petitions2 .img-thumbnail, #responseamend .img-thumbnail, #sectioneight #applicationdata .img-thumbnail, #incontestable #applicationdata .img-thumbnail {
     background-color: #ccc;
 	margin-bottom: .8em;
 	margin-top: .6em;
@@ -3238,12 +3269,20 @@ button[type="submit"].right, button[type="button"].right {
 	display:inline-block;
 	font-size: 1.3em;
 	}
-#gsselected span.weight600, #dashboardmain span.weight600, #editowner span.weight600, #reviewattorney span.weight600, #declarationschecks span.weight600, #createaccount span.weight600 {
+#gsselected span.weight600, #dashboardmain span.weight600, #editowner span.weight600, #reviewattorney span.weight600, #declarationschecks span.weight600, #createaccount span.weight600, label span.weight600 {
 	color:#333;
 	font-weight:600;
 	}
+#incontestable label span.weight600 {
+	color:#fff;
+	}
+#incontestable div.basis label {
+	margin-left:3.8em;
+	margin-bottom: 0;
+	}
 #gsselected .panel-heading h4, #gsselected .panel-heading p, #dashboardmain .panel-heading h4, #dashboardmain .panel-heading p, #editowner .panel-heading p, #reviewattorney .panel-heading p, #reviewattorney .panel-heading p {
 	margin:.1em;
+	margin-top:9px;
 	color:#333/*#fff*/;
 	}
 #dashboardmain .panel-heading h4 {
@@ -3272,14 +3311,18 @@ button[type="submit"].right, button[type="button"].right {
 	-moz-opacity: 1.0;
 	}
 #gsselected button.close {
-	height:1.4em;
+	height: 44px;
+    width: 44px;
+    margin-right: .5em;
+    font-size: 1.85em;
 	}
-#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, .statementou div.fileholder button.close, #amendmark button.close, button.resetclassbtn {
+
+#editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, .statementou div.fileholder button.close, #amendmark button.close, button.resetclassbtn, #sectioneight div.fileholder button.close {
     font-size: 3em;
 	height:1.06em;
 	color:#009CDE;
 	}
-#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #amendmark button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, .statementou button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover, button.resetclassbtn:hover {
+#editowner button.close:hover, #reviewattorney button.close:hover, #userprofilepage button.close:hover, #yesattorneyfiling button.close:hover, #detected button.close:hover, #amendmark button.close:hover, #designwithtext button.close:hover, #basisabde button.close:hover, #basisab button.close:hover, .statementou button.close:hover, #sectioneight button.close:hover, #addNewOwnerForm button.close:hover, #addNewOwnerForm button.close:hover, button.deleterow:hover, button.resetclassbtn:hover, #sectioneight div.fileholder button.close:hover {
 	color: #047db0;
 	opacity:1.0;
 	-moz-opacity: 1.0;
@@ -3369,7 +3412,7 @@ button[type="submit"].right, button[type="button"].right {
 #petitions1 p.extensions, #petitions2 p.extensions  {
 	margin: 1.5em!important;
 	}
-#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group, #petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group {
+#gsselected .panel-group, #editowner .panel-group, #reviewattorney .panel-group, #userprofilepage .panel-group, #petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group, #sectioneight .panel-group, #incontestable .panel-group {
 	margin-bottom: 1.5em;
 	padding:0;
 	overflow-wrap: break-word;
@@ -3389,17 +3432,17 @@ button[type="submit"].right, button[type="button"].right {
 #userprofilepage .panel-body {
 	min-height: 26.5em;
 	}
-#editowner .panel-group .email, #reviewattorney .panel-group .email, #petitions1 .panel-group .email, #petitions2 .panel-group .email, #responseamend .panel-group .email {
+#editowner .panel-group .email, #reviewattorney .panel-group .email, #petitions1 .panel-group .email, #petitions2 .panel-group .email, #responseamend .panel-group .email, #sectioneight .panel-group .email, #incontestable .panel-group .email {
 	-ms-hyphens: none;
 	-moz-hyphens: none;
 	-webkit-hyphens: none;
 	hyphens: none;
 	}
-#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion, #petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group, #responseamend .panel-group {
+#editowner .panel-group, #editowner .panel-group .Accordion, #reviewattorney .panel-group, #reviewattorney .panel-group .Accordion, #petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group, #responseamend .panel-group, #sectioneight .panel-group, #incontestable .panel-group {
 	margin-bottom: 1em;
 	margin-top: 1em;
 	}
-#petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group {
+#petitions1 .panel-group, #petitions2 .panel-group, #responseamend .panel-group, #sectioneight .panel-group, #incontestable .panel-group {
 	margin-bottom: 2em;
 	}
 #dashboardmain .panel-group {
@@ -3407,19 +3450,19 @@ button[type="submit"].right, button[type="button"].right {
 	margin-bottom:12px;
 	padding-top:0;
 	}
-#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel, #userprofilepage .panel-group .panel, #petitions1 .panel-group .panel, #petitions2 .panel-group .panel, #responseamend .panel-group .panel {
+#gsselected .panel-group .panel, #dashboardmain .panel-group .panel, #editowner .panel-group .panel, #reviewattorney .panel-group .panel, #userprofilepage .panel-group .panel, #petitions1 .panel-group .panel, #petitions2 .panel-group .panel, #responseamend .panel-group .panel, #sectioneight .panel-group .panel, #incontestable .panel-group .panel {
 	-webkit-border-radius: 	2px;
     -moz-border-radius: 	2px;
     border-radius: 			2px;
 	}
-#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body, #petitions2 .panel-default>.panel-body, #responseamend .panel-default>.panel-body {
+#gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading, #editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body, #petitions2 .panel-default>.panel-body, #responseamend .panel-default>.panel-body, #sectioneight .panel-default>.panel-body, #incontestable .panel-default>.panel-body {
     color:#333/*#FFF*/;
     background-color:#eee/*#F3D54E*/;
 	font-size:.8em;
 	width: 100%;
 	border:none!important;
 	}
-#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body, #petitions2 .panel-default>.panel-body, #responseamend .panel-default>.panel-body {
+#editowner .panel-default>.panel-heading, #reviewattorney .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-heading, #userprofilepage .panel-default>.panel-body, #petitions1 .panel-default>.panel-body, #petitions2 .panel-default>.panel-body, #responseamend .panel-default>.panel-body, #sectioneight .panel-default>.panel-body, #incontestable .panel-default>.panel-body {
     background-color:transparent;
 	border:1px solid #eee!important;
 	}
@@ -3444,17 +3487,17 @@ button[type="submit"].right, button[type="button"].right {
 #dashboardmain .panel-default>.panel-heading, #createaccount .panel-heading {
     background-color:#9BB8D3;
 	}
-#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number, #petitions1 .panel-default>.panel-body .number, #petitions2 .panel-default>.panel-body .number {
+#gsselected .panel-default>.panel-heading .number, #dashboardmain .panel-default>.panel-heading .number, #editowner .panel-default>.panel-heading .number, #reviewattorney .panel-default>.panel-heading .number, #petitions1 .panel-default>.panel-body .number, #petitions2 .panel-default>.panel-body .number, #sectioneight .panel-default>.panel-body .number, #incontestable .panel-default>.panel-body .number {
 	color:#333/*#FFF*/;
 	}
-#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name, #petitions1 .panel-default>.panel-body .name, #petitions2 .panel-default>.panel-body .name, #responseamend .panel-default>.panel-body .name {
+#gsselected .panel-default>.panel-heading .name, #dashboardmain .panel-default>.panel-heading .name, #editowner .panel-default>.panel-heading .name, #reviewattorney .panel-default>.panel-heading .name, #petitions1 .panel-default>.panel-body .name, #petitions2 .panel-default>.panel-body .name, #responseamend .panel-default>.panel-body .name, #sectioneight .panel-default>.panel-body .name, #incontestable .panel-default>.panel-body .name {
 	color:#EEEEE;
 	}
 #gsselected .panel-default>.panel-heading, #dashboardmain .panel-default>.panel-heading {
 	color:#EEEEEE;
 	letter-spacing: 0.03em;
 	}
-#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel, #userprofilepage .panel, #petitions1 .panel, #petitions2 .panel, #responseamend .panel {
+#gsselected .panel, #dashboardmain .panel, #editowner .panel, #reviewattorney .panel, #userprofilepage .panel, #petitions1 .panel, #petitions2 .panel, #responseamend .panel, #sectioneight .panel, #incontestable .panel {
 	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
     box-shadow: 0 0 0 rgba(0,0,0,0);
 	}
@@ -3698,6 +3741,9 @@ footer #megamenu ul {
 	body {
 		font-size:90%!important;
 		}
+	div.fileDisplayArea {
+		font-size:100%!important;
+		}
 	footer #megamenu {
 		font-size:80%!important;
 		}
@@ -3823,13 +3869,16 @@ footer #megamenu ul {
 	.form-check {
     	padding-left: 50px;
 		}
+	#incontestable .form-check {
+    	padding-left: 0;
+		}
 	.select-checkbox label.form-check-label {
 		padding-left: .75em;
 		}
 	.form-check-left {
     	padding-left: 0;
 		}
-	#declarationsignature .form-check, #optionalactionschecks .form-check, #petitions1 .form-check, #petitions2 .form-check, #usaffiliation .form-check, #responseamendoptional .form-check {
+	#declarationsignature .form-check, #optionalactionschecks .form-check, #petitions1 .form-check, #petitions2 .form-check, #usaffiliation .form-check, #responseamendoptional .form-check, #postregoptional .form-check {
     	padding-left: 0;
 		}
 	#gridview .form-check {
@@ -3967,6 +4016,11 @@ footer #megamenu ul {
 	.callout, #responseamend .callout .panel-body {
 		padding:4em;
 		padding-bottom:3.1em;
+		}
+}
+@media (min-width: 1364px) { 
+	#sectioneight .matchlabelheight, #sectioneight .matchlabelheighttwo {
+		min-height:24px;
 		}
 }
 @media (max-width: 1039px) { 
