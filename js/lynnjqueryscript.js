@@ -58,9 +58,10 @@ $(document).ready(function(){
 	});
 	$('a.dropdown-toggle').eq(0).on('click', function() {
 		var subMenushown = $('.dropdown-submenu');
+		var submenuwide = $('ul.dropdown-menu').eq(0);
 		$(subMenushown).removeClass('show');
 		$(subMenushown).prev('a.dropdown-toggle').attr('aria-expanded','false');
-		$('ul.dropdown-menu').eq(0).css('min-height', '200px').css('overflow-y','auto');
+		$(submenuwide).css('min-height', '200px').css('overflow-y','auto').css('width', '389px');
 	});
 	// 
 	$("button.Accordion-trigger").click(function() {
