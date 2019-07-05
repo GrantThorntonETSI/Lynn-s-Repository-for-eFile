@@ -623,6 +623,7 @@ ul.dropdown-menu>li>a.dropdown-toggle  {
 	}
 ul.dropdown-menu>li {
 	line-height: 2.5em;
+	width:389px;
 	}
 	ul.dropdown-menu>li>a:hover  {
 		color: #fff;
