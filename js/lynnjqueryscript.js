@@ -37,7 +37,7 @@ $(document).ready(function(){
 	});
 	//
 	//START main nav nested dropdown menu
-	$('.dropdown-menu a.dropdown-toggle').on('click', function() {
+	$('ul.nav .dropdown-menu a.dropdown-toggle').on('click', function() {
 		var subMenu = $(this).next('.dropdown-menu');
 		$(subMenu).toggleClass('show');
 		if ($(subMenu).hasClass( 'show' )) {
