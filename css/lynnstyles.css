@@ -17,39 +17,6 @@ body {
 	/*height:100%;*/
 	/*overflow-x: hidden;*/
 	}
-/* skip navigation */
-#skipnav a {
-      position: absolute;
-      clip: rect(0 0 0 0);
-      border: 0;
-      height: 1px; 
-	  margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      width: 1px;
-      white-space: nowrap;
-	  text-decoration:none;
-    }
-    #skipnav a:focus {
-      clip:auto;
-      left:0;
-      top:70px;
-      width:100%;
-      height:auto;
-      margin:0;
-      padding:0;
-      border-left:none;
-      border-right:none;
-      text-align:left;
-	  z-index:1040;
-	  color:#fff;
-	  font-size: .74em;
-	  margin-left:11px;
-    }
-#landing #skipnav a:focus {
-      left:100px;
-      top:18px;
-    }
 /*text editor*/
 .ql-container {
 	font-family: "Segoe UI", "Helvetica Neue", Tahoma, Arial!important;
@@ -558,7 +525,7 @@ div.breadcrumb-steps {
 .navbar-brand img {
 	width: 78px;
 	height:auto;
-	margin-left: 11px;
+	margin-left: 30px;
 	}
 .navbar-brand {
 	padding: 12px 15px;
@@ -572,7 +539,7 @@ div.breadcrumb-steps {
 #lowernav {
 	border-top: 3px solid #EEEEEE;
 	width:100%;
-	padding-right: 15px;
+	padding-right: 26px;
 	}
 ul#dropdown-menu li>a.dropdown-toggle, ul#lowernav li a  {
     color: #fff!important;
@@ -3732,7 +3699,7 @@ footer #megamenu ul {
 		float: right;
 		}
 	.navbar-right {
-		padding-right: 32px;
+		padding-right: 42px;
 		}
 	#lowernav {
 		background-color:#004C97;
@@ -3796,11 +3763,6 @@ footer #megamenu ul {
 @media (max-width: 767px) {
 	body {
 		font-size:90%!important;
-		}
-	#skipnav a:focus {
-		left:100px;
-		top:19px;
-		font-size:.9em;
 		}
 	.upload-drop-zone span.glyphicon-upload, .upload-drop-zone span.glyphicon-check {
 		font-size: 3.1em!important;
