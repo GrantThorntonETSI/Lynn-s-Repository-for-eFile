@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/lynnstyles.css">
 </head>
 <body onload="ShowChromeAlert()">
+	<div id="skipnav"><a href="#dashboardmain">Skip navigation</a></div>
 	<nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -107,31 +108,31 @@
         <li><a href="https://my.uspto.gov/" class="orange">MyUSPTO</a></li>
       </ul>
           
-          <br style="clear:both">
-          
-          <ul class="nav navbar-nav navbar-right" id="lowernav">
-          	<li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
-              <ul class="dropdown-menu" id="classfees">
-                <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
-                <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
-                <li aria-live="assertive">Total Classes 0</li>
-                <li id="lastli" aria-live="assertive">Total Fee $<span>225</span></li>
-              </ul>
-            </li>
-		<!--<li><a href="#">Actions</a></li>
-            <li><a href="#">Applications / Registration</a></li>-->
-            <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
-            <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
-            <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop" aria-live="assertive"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+      <br style="clear:both">
+      
+      <ul class="nav navbar-nav navbar-right" id="lowernav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"  aria-expanded="false" aria-live="assertive">Fees $<span id="displayfees">225</span><span class="caret"></span></a>
+          <ul class="dropdown-menu" id="classfees">
+            <li id="firstli" aria-live="assertive">Basic Fees $<span>225</span></li>
+            <li id="classli" aria-live="assertive">Extra Class Fee $<span>0</span></li>
+            <li aria-live="assertive">Total Classes 0</li>
+            <li id="lastli" aria-live="assertive">Total Fee $<span>225</span></li>
           </ul>
-          <br style="clear:both">
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-	<div class="container-fluid">    
+        </li>
+    <!--<li><a href="#">Actions</a></li>
+        <li><a href="#">Applications / Registration</a></li>-->
+        <!--<li><a href="#" class="glyphed" id="showcontacts"><span class="glyphicon glyphicon-list" aria-hidden="true"></span>Managed Contacts</a></li>-->
+        <!--<li><a href="#" class="glyphed" id="showfees"><span class="glyphicon glyphicon-usd kerned" aria-hidden="true"></span>Fees</a></li>-->
+        <li><a href="#" class="glyphed" data-toggle="popover" id="togglepop" aria-live="assertive"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span>Show My Mark</a></li>
+      </ul>
+      <br style="clear:both">
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid">    
   	<div class="row content">
-    	<main class="col-xs-12 col-sm-10 col-md-10 col-lg-11" id="dashboardmain">
+    	<main class="col-xs-12 col-sm-10 col-md-10 col-lg-11" id="dashboardmain" tabindex="-1">
               <!--START Content Div-->
               <div class="row">
                 <div class="col-xs-12" id="dashsectionscontainer">

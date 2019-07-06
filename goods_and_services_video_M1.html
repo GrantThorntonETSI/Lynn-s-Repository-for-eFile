@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" style="-moz-border-radius: 0px;-webkit-border-radius: 0px;border-radius: 0px;" type="image/x-icon" th:href="@{/resources/images/nav_banner.png}">
 
-    <title>USPTO.gov :: webapp prototype</title>
+    <title>Goods and Services Video :: USPTO.gov :: webapp prototype</title>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -29,6 +29,7 @@
 </head>
 
 <body>
+	<div id="skipnav"><a href="#mainContent">Skip navigation</a></div>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -136,7 +137,7 @@
     </nav>
     <div class="container-fluid">    
       <div class="row content">
-        <main class="col-xs-12 col-sm-11 col-md-8 col-lg-7">
+        <main class="col-xs-12 col-sm-11 col-md-8 col-lg-7" id="mainContent" tabindex="-1">
             <!--START Content Div-->
             <div class="row">
                 <div class="col-xs-12 text-left" id="goodservideo">
@@ -220,7 +221,7 @@
                                   <label for="searchmanual" class="radio-inline radiocontainer">Search ID manual for goods and service<input type="radio" name="selectgs" id="searchmanual" value="searchman" tabindex="0"><span class="checkmark"></span></label>
                                 </div>
                                 <div class="radio">
-                                  <label for="provideown" class="radio-inline radiocontainer disabled special strike">Provide own goods and services<input type="radio" name="selectgs" id="provideown" value="provide" tabindex="0" disabled><span class="checkmark"></span></label>
+                                  <label for="provideown" class="radio-inline radiocontainer disabled special">Provide own goods and services<input type="radio" name="selectgs" id="provideown" value="provide" tabindex="0" disabled><span class="checkmark"></span></label>
                                 </div>
                             </div><!--END radiogroup-->
 						</div>
