@@ -3934,19 +3934,10 @@ footer #megamenu ul {
 	.form-check {
     	padding-left: 50px;
 		}
-	#incontestable .form-check {
-    	padding-left: 0;
-		}
 	.select-checkbox label.form-check-label {
 		padding-left: .75em;
 		}
 	.form-check-left {
-    	padding-left: 0;
-		}
-	#declarationsignature .form-check, #optionalactionschecks .form-check, #petitions1 .form-check, #petitions2 .form-check, #usaffiliation .form-check, #responseamendoptional .form-check, #postregoptional .form-check {
-    	padding-left: 0;
-		}
-	#gridview .form-check {
     	padding-left: 0;
 		}
 	body#landing {
