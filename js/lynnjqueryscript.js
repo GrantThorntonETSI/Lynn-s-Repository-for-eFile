@@ -3999,8 +3999,10 @@ $(document).ready(function(){
 			checked:false,
 		});
 		$('div#reviveappform input').val('');
-		$('div#fees, div#requestnoa, div#reconsideration, div#reviveappform, div#expedite').hide('fast');
-		$('div#expedite, div#xreq, div#souquestion, div#sou, div#reviveappform').show('fast','swing');
+		$('div#fees, div#requestnoa, div#reconsideration, div#expedite, div#reviveappform').hide('fast');
+		$('div#expedite, div#xreq, div#souquestion, div#sou').css('display','block');
+		$('div#reviveappform, div#expedite, div#xreq, div#souquestion, div#sou').show('fast','swing');
+		
 	});
 	$('input#inlineRadio0103').change(function() {
 		$(clear);
@@ -4010,6 +4012,7 @@ $(document).ready(function(){
 		});
 		$('div#reviveappform input').val('');
 		$('div#expedite, div#xreq, div#souquestion, div#sou, div#reconsideration, div#reviveappform').hide('fast');
+		$('#requestnoa, div#expedite').css('display','block');
 		$('div#reviveappform, #requestnoa, div#expedite').show('fast','swing');
 	});
 	$('input#inlineRadio0106').change(function() {
