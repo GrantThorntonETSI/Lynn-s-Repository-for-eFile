@@ -2358,6 +2358,7 @@ $(document).ready(function(){
 		$( this ).find('span.glyphicon-ok-sign').parent().parent().css('background-color','#D4EB8E').css('color','#333').siblings().css('background-color','#D4EB8E').css('color','#333');
 		$( this ).find('span.glyphicon-ok-sign').parent().parent().parent().siblings().children().children().children('.glyphicon-ok-sign').removeClass( 'glyphicon-ok-sign' );
 		$( this ).find('span.glyphicon-ok-sign').attr('aria-label','deselect this contact');
+		$( '#mydata2 .collapse' ).collapse('hide').fadeOut( 'slow','swing');
 	}
 	$('a.fromcontact').click(togglecontacts);
 	//
