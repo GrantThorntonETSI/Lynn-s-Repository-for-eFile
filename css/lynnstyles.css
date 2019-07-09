@@ -3743,6 +3743,7 @@ footer #megamenu ul {
 	#landing #lowernav {
 		background-color:#f6f6f6;
 		border-top:0;
+		float: right!important;
 		}
 	#landing #lowernav a {
 		color:#009CDE!important;
