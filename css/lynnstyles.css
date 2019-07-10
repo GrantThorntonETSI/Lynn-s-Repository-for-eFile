@@ -2724,7 +2724,6 @@ option, select, input[type="text"], input[type="email"], input[type="date"], inp
 	min-height:38px;
 	}
 input.form-control, textarea.form-control, select.form-control {
-    -webkit-border-radius: 	2px;
 	-moz-border-radius: 	2px;
 	-webkit-border-radius: 	2px;
 	-moz-border-radius: 	2px;

@@ -241,7 +241,7 @@
 						<script type="application/javascript" src="js/checkbox.js"></script>
                         <script type="application/javascript" src="js/btn_checkbox.js"></script>
                     <div id="yesattorneyfiling" role="alert"  aria-live="assertive" aria-labelledby="attorneyfiling">
-                        <form method="post" id="addNewAttorneyForm" action="/attorney/add" enctype="multipart/form-data" th:object="${addNewAttorneyContactFormDTO}" aria-labelledby="title">
+                        <form method="post" id="addNewAttorneyForm" action="" enctype="multipart/form-data" th:object="${addNewAttorneyContactFormDTO}" aria-labelledby="title">
                             <fieldset aria-labelledby="attorneyinfo">
                                 <div class="row">
                                   <div class="col-xs-12 col-sm-12 col-lg-12">
@@ -947,6 +947,8 @@
         <script type="application/javascript" src="js/validate.js"></script>
 		<script type="application/javascript">
 			function checkForm(theForm) {
+				var checkBox = document.getElementById("inlineRadio015");
+				if (checkBox.checked == true){
 				var why = "";
 				why  = checkText(theForm.attorneyfirstname.value, "first name");
 				var attorneyfirstnameval = document.getElementById("attorneyfirstname").value;
@@ -1003,8 +1005,9 @@
 						return false;
 					} 
 					else {
-				return true;
+				window.location.href = 'attorney_info_review.html';
 				}
+			}
 		}
         </script>        
         

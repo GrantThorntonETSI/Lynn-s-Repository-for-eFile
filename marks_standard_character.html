@@ -206,6 +206,10 @@
                 </div>
                 <h1>Trademark Details &#8211; Standard Character</h1>
                 <p class="required"><span class="weight600">&#42; = Required</span></p>
+                <div class="row">
+                    <div class="col-xs-12" id="errorslist" tabindex="-1">
+                    </div>
+                </div>
                 <p class="instructions" id="costsavingoptions">Reduced fee mode</p>
                 <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn Reduced Fee labels on or off">
                     <label class="switch">
@@ -222,7 +226,7 @@
                         <div class="card-text noexpand">
                             <h2 class="card-title weight600">Mark Information</h2>
                         </div>
-                        <form action="" method="post">
+                        <form action="" method="post" id="standardCharacterForm" action="">
                            <fieldset>
                                 <div class="row">
                                     <div class="col-xs-12 form-group form-group-md">
@@ -468,7 +472,7 @@
                     <button type="button" class="btn btn-sm btn-default fill prev" id="" value="previous">Previous</button>
                 </div>
                 <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next">Next 
+                    <button type="button" class="btn btn-sm btn-primary fill next" id="" value="next" onclick="return checkForm(standardCharacterForm);">Next 
                     <div class="round"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></div></button>
                 </div>
               </div>
@@ -491,6 +495,44 @@
 	<script type="application/javascript" src="js/checkbox.js"></script>
     <script type="application/javascript" src="js/btn_checkbox.js"></script>
     <script type="application/javascript" src="js/lynnjqueryscript.js"></script>
+    <script type="application/javascript" src="js/validate_standchar.js"></script>
+    <script type="application/javascript">
+			function checkForm(theForm) {
+				var why = "";
+				why  = checkText(theForm.ta2standard.value, "Enter the word(s), letter(s) and/or number(s) you wish to register, e.g., THE CAT'S MEOW.");
+				var attorneyfirstnameval = document.getElementById("ta2standard").value;
+				var highlightattorneyfirstname = document.getElementById("ta2standard");
+					if (attorneyfirstnameval) {
+						var highlightattorneyfirstname = document.getElementById("ta2standard");
+						document.getElementById("ta2standard").classList.remove("highlighted");
+						highlightattorneyfirstname.classList.remove("highlighted");
+						highlightattorneyfirstname.setAttribute("aria-invalid", "false");
+						}
+					if (attorneyfirstnameval.length == 0) {
+					highlightattorneyfirstname.classList.add("highlighted");
+					highlightattorneyfirstname.setAttribute("aria-invalid", "true");
+					}
+					if (why != "") {
+						var textnode = "The form is not complete. Please enter the following information.\n" + why;
+						var node = document.createElement("ul");
+						node.innerHTML = (textnode);
+						document.getElementById("errorslist").appendChild(node);
+						document.getElementById("errorslist").focus();
+						document.getElementById("errorslist").tabIndex = "-1";
+						window.scrollTo(0, 0);
+						var c = document.getElementById("errorslist").childElementCount;
+						if (c > 1) {
+							document.getElementById("errorslist").firstElementChild.remove();
+						}
+						node.setAttribute('aria-invalid', 'true');						
+						return false;
+					} 
+					else {
+				<!--return true;-->
+				window.location.href = 'marks_design_with_text_disclaimer_M2.html';
+				}
+		}
+        </script>  
 <footer>
     <div class="container-fluid">
         <div class="row">
