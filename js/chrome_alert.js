@@ -12,9 +12,14 @@
 		document.getElementById("mintext").style.display = "none";
 		var ua = window.navigator.userAgent; //Check the userAgent property of the window.navigator object
 		var chrome = ua.indexOf('Chrome'); // Chrome browser
+		if (ua.indexOf('Edge') !== -1) {
+			return (chrome < -1);
+			}
+			else {
 		return (chrome > -1);
-		}		
-		//show alert if it's not Chrome
+			}
+		}
+	//show alert if it's not Chrome
 	function ShowChromeAlert(){
 		if(isCHROME()){
 		   	//alert("User is using Chrome");
@@ -35,9 +40,11 @@
 			b.style.visibility = "visible";
 			b.style.height = "auto";
 			b.style.float = "none";
-			b.style.top = ".25em";
+			b.style.top = "7em";
 			b.style.padding = "1em";
-			b.marginBottom = "1em";
+			b.style.margin = "0 auto";
+			//b.style.marginBottom = "6em";
+			//b.style.marginTop = "3em";
 			document.getElementById("mintext").style.display = "table-cell";
 			document.getElementById("alertbtn").style.display = "table-cell";
 			document.getElementById("alertbtn").focus();

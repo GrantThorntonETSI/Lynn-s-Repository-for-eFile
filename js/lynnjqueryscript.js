@@ -2855,7 +2855,7 @@ $(document).ready(function(){
 		});
 	//
 	//START Basis foreign application / dashboard date alert
-	$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
+	//$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 	$(document).on('click','#alertmin button.close', function(e) {
 		$('#alertmin').css('visibility','hidden').css('top','-10000px').css('float','none').css('margin-bottom','0').css('padding','0');
 		$('#alertmin button').css('display','none');

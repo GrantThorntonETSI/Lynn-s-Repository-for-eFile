@@ -3832,6 +3832,9 @@ footer #megamenu ul {
 	.btn-success.add.ctr {
 		margin-top:0;
 		}
+	div.alertmargin #alertmin {
+		margin-bottom:5em!important;
+		}
 }
 @media (max-width: 767px) {
 	body {
@@ -3904,6 +3907,9 @@ footer #megamenu ul {
 		}
 	.navbar-nav {
 		margin: 7.5px 15px;
+		}
+	.navbar-nav li {
+		min-width: 10px;
 		}
 	.navbar-right#lowernav {
 		background-image: none;
