@@ -2080,9 +2080,6 @@ div.resetclass{
 	float:none;
 	margin: 0 auto;
 	}
-.deleterow {
-    float: right;
-	}
 #filepetitiontable .deleterow {
     float: none;
 	}

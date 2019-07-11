@@ -138,7 +138,8 @@ $(document).ready(function(){
 			'autoWidth': false,
 			responsive: {
 				details: {
-                type: 'column'
+                type: 'column',
+				target: 1,
             	},
 				breakpoints: [
 					{ name: 'desktop', width: Infinity },
@@ -156,16 +157,16 @@ $(document).ready(function(){
 				{ 'width': '12%' },
 				{ 'width': '11%' },
 			  ],
-			  'columnDefs': [  
-				{ responsivePriority: 0, targets: 0 },//(control)
-				{ responsivePriority: 1, targets: 1 },//buttons
+			  'columnDefs': [ 
+			  	{ responsivePriority: 1, targets: 0 },//buttons 
+				{ responsivePriority: 0, targets: 1 },//(control)
 				{ responsivePriority: 2, targets: 2 },//serial
 				{ responsivePriority: 4, targets: 3 },//reg
 				{ responsivePriority: 3, targets: 4 },//owner
 				{ responsivePriority: 6, targets: 5 },//status
 				{ responsivePriority: 5, targets: 6 },//mark
-				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6 ] },
-				{ className: 'control', 'orderable': false, 'targets': [ 0 ] },
+				{ className: 'centertxt', 'targets': [ 0,2,3,4,5,6 ] },
+				{ className: 'control', 'orderable': true, 'targets': [ 1 ] },
 			   ],
 		});
 	//
