@@ -1788,6 +1788,9 @@ span#termsagree label a:hover, span#termsagree label a:hover {
 .strike {
 	text-decoration: line-through #FFF;
 	}
+.form-check span.radio.special.strike, .radio-inline.radiocontainer.special.strike, .radiocontainer.special.strike {
+	text-decoration: line-through #000;
+	}
 .statementou .noexpand.blue .displaytable {
     min-height: 38px;
 	}
