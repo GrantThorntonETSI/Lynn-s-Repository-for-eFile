@@ -1861,10 +1861,6 @@ fieldset {
 .checkbox-inline, .radio-inline {
     padding-left: 21px;
 	}
-input[type="date"]::-webkit-inner-spin-button, input[type=month]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    display: none;
-	}
 .disabled {
 	cursor: url('../images/cursor_not_allowed.png'), auto!important;
 	}
@@ -2841,6 +2837,47 @@ input[type="date"] {
 	padding:0 12px;
 	line-height:38px!important;
 	padding-bottom:2px;
+	padding-right:4px;
+	}
+/*up down arrows*/
+input[type="date"]::-webkit-inner-spin-button, input[type=month]::-webkit-inner-spin-button {
+	position: absolute;
+	right:6.2em;
+	height:30px;
+	bottom:4px;
+	padding: 0 4px;
+	margin-right:7px;
+    /*-webkit-appearance: none;
+    display: none;*/
+	}
+/*calendar icon popup selector*/
+input[type="date"]::-webkit-calendar-picker-indicator {
+	position: absolute;
+    top: 3.9em;
+	right:0;
+    width: 48px;
+    height: 48px;
+    color: transparent;
+    background: transparent;
+	}
+div.col-md-4 input[type="date"]::-webkit-calendar-picker-indicator {
+    top: 2.2em;
+	}
+div.col-md-6 input[type="date"]::-webkit-calendar-picker-indicator {
+    top: 3.2em;
+	}
+input[type="date"]:after {
+    font-family: "Glyphicons Halflings";
+    font-weight: 900; 
+    content: "\e109";
+    color: #009CDE;
+    padding: 0 8px;
+	font-size:1.5em;
+	margin-left:6px;
+	margin-top:2px;
+	}
+input[type="date"]:hover:after {
+    color: #047db0;
 	}
 #specdescripthree, #specdescript, #specdescriptfour, #specdescriptwo, #specdescriptone, #incontestable textarea {
 	height:115px;
@@ -3985,16 +4022,6 @@ footer #megamenu ul {
 	.callout .view {
 		float: left;
 		}
-}
-@media (min-width:577px) and (max-width:767px) { 
-	#loginform .maincontainer {
-		padding:1em 9em;
-		}
-	#loginform .maincontainer.bottom {
-		margin:0 9em;
-		}
-}
-@media (max-width: 991px) {
 	#editowner .inlinebuttons, #reviewattorney .inlinebuttons, #petitions1 .inlinebuttons, #petitions2 .inlinebuttons, #responseamend .inlinebuttons {
 		margin-top:1em;
 		}
@@ -4004,7 +4031,15 @@ footer #megamenu ul {
 	img.tmr {
 		display:none;
 		}
-	}
+}
+@media (min-width:577px) and (max-width:767px) { 
+	#loginform .maincontainer {
+		padding:1em 9em;
+		}
+	#loginform .maincontainer.bottom {
+		margin:0 9em;
+		}
+}
 @media (min-width: 1200px) {
 	#userprofilepage div#one .panel-default>.panel-body, #userprofilepage div#one .panel-default>.panel-heading   {
 		border-right: none!important;
