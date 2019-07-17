@@ -1962,7 +1962,7 @@ div.modal div.inusegs {
 	padding: 10px 10px;
     padding-bottom: 1px;
 	}
-#scrollone:hover, div.modal  div.inusegs:hover {
+#scrollone:hover, div.modal,  div.inusegs:hover {
 	scrollbar-color: #004C97 #bbb;
 	}	
 	#scrollone::-webkit-scrollbar, ul.dropdown-menu::-webkit-scrollbar, div.modal div.inusegs::-webkit-scrollbar {
@@ -2729,12 +2729,30 @@ input.form-control, textarea.form-control, select.form-control {
 select.form-control {
     height: 38px!important;
 	}
-textarea {
-	min-height:38px;
-	}
 textarea.datesigned {
 	line-height: 24px;
 	}
+textarea {
+	min-height:38px;
+	resize: none;
+	scrollbar-color: #808080 #bbb;
+	scrollbar-width: thin;
+	}
+	textarea.datesigned {
+		line-height: 24px;
+		}
+	textarea::-webkit-scrollbar-thumb:hover {
+		background: #004C97;
+		}	
+	textarea::-webkit-scrollbar {
+	  	width: 1em;
+		}
+	textarea::-webkit-scrollbar-track {
+	  	background: #bbb; 
+		}
+	textarea::-webkit-scrollbar-thumb {
+	  	background: #808080; 
+		}
 legend {
 	position:absolute;
 	left:-10000px;
