@@ -3180,7 +3180,7 @@ span.rightquote:before {
 	content: "\201D"!important;
 	}
 #alertmin { 
-	visibility: hidden;
+	visibility: hidden!important;
 	}
 #dashboardmain #alertmin, #filingbasisabde #alertmin, #filingbasisab #alertmin, #roasign #alertmin { 
 	height: 1px;
