@@ -3181,6 +3181,7 @@ span.rightquote:before {
 	}
 #alertmin { 
 	visibility: hidden;
+	padding: 0;
 	}
 #dashboardmain #alertmin, #filingbasisabde #alertmin, #filingbasisab #alertmin, #roasign #alertmin { 
 	height: 1px;
@@ -3207,12 +3208,19 @@ p#mintext {
 #dashboardmain p#mintext { 
 	font-size:1.07em;
 	}
-#alertmin button#alertbtn {
+#alertmin button#alertbtn, #alertmin button#alertbtndash, #alertmin button#cancelbtndash {
 	font-size: 2.5em;
 	color:#444;
 	float:right;
 	display: table-cell;
 	vertical-align:middle;
+	}
+#alertmin button#cancelbtndash {
+	font-size: 2.14em;
+	margin-right:.5em;
+	}
+#alertmin button#alertbtndash {
+	font-size: 2.3em
 	}
 #filingbasisabde #alertmin button#alertbtn, #filingbasisab #alertmin button#alertbtn, #roasign #alertmin button#alertbtn {
 	width:15%;
@@ -3406,6 +3414,9 @@ button[type="submit"].right, button[type="button"].right {
 	color:#333;
 	margin: 0 auto;
 	height:1em;
+	}
+#dashboardmain button.close {
+	height:auto;
 	}
 #dashboardmain button.closegspanels {
     font-size: 3em;

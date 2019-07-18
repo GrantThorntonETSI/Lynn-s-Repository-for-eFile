@@ -146,7 +146,7 @@ $(document).ready(function(){
 					{ name: 'tablet',  width: 1180 },
 					{ name: 'fablet',  width: 768 },
 					{ name: 'phone',   width: 480 }
-				]
+				],
 			},
 			'columns': [
 				{ 'width': '10%' },
@@ -376,27 +376,61 @@ $(document).ready(function(){
 	});
 	//
 	//START delete datatable table row
-	$( '#dashboardtableone tbody' ).on('click','.deleterow',function(e){
-		e.preventDefault();
-		var numrows = $( '#dashboardtableone tbody tr' ).length -1;
-		var rows = $( '#dashboardtableone tbody tr' );
-		$( this ).closest('tr').next('tr.child').remove();
-		$( this ).closest('tr').remove();
-		$('#dashboardtableone_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
-		if (numrows < 1) {
-			$('#dashboardtableone_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
-			};
-	});
-	$( '#dashboardtabletwo tbody' ).on('click','.deleterow',function(e){
-		e.preventDefault();
-		var numrows = $( '#dashboardtabletwo tbody tr' ).length -1;
-		var rows = $( '#dashboardtabletwo tbody tr' );
-		$( this ).closest('tr').next('tr.child').remove();
-		$( this ).closest('tr').remove();
-		$('#dashboardtabletwo_info').text('Showing 1 to ' + numrows + ' of ' + numrows + ' entries');
-		if (numrows < 1) {
-			$('#dashboardtabletwo_info').text('Showing 0 to ' + numrows + ' of ' + numrows + ' entries');
-			};
+	$( '#dashboardtableone tbody .deleterow' ).each(function() {
+		$(this).on('click', function(e){
+			e.preventDefault();
+			var numrows = $( '#dashboardtableone tbody tr' ).length -1;
+			var rows = $( '#dashboardtableone tbody tr' );
+			var hasdraft = $( this ).closest('tr:contains(Draft)');
+			var hasdraftchild = $( this ).closest('tr').next('tr.child:contains(Draft)');
+			var draft = 'draft application';
+			var focussed = $('span#filingsheader button');
+			var dt = $('#dashboardtableone').dataTable();
+			var b = $('#alertmin');
+			if ((hasdraft.length > 0) || (hasdraftchild.length > 0)) {
+				if ($(b).css('visibility','hidden')) {
+					$(b).css('visibility','visible');
+					$(b).css('height','auto');
+					$(b).addClass('form-group');
+					$(b).addClass('form-group-md');
+					$(b).css('float','left');
+					$(b).css('top','.25em');
+					$(b).css('padding','1em');
+					$(b).css('marginBottom','1em');
+					$('#mintext').css('display','table-cell');
+					$('#alertbtndash').css('display','block');
+					$('#alertbtndash').focus();
+					window.scrollBy(0, '90%');
+					$('#mintext').html('Are you sure you want to delete this ' + draft + '?');
+					$('#alertbtndash').on('click', function() {
+						$(focussed).focus();
+						$(hasdraft).remove();
+						$(hasdraftchild).remove();
+    					dt.fnDeleteRow(hasdraft);
+						dt.fnDeleteRow(hasdraftchild);	
+					  });
+					}
+				} else if ((hasdraft.length < 1) || (hasdraftchild.length < 1)) {
+					var deletethis = $( this ).closest('tr').next('tr.child');
+					var deletethistoo = $( this ).closest('tr');
+					$(b).css('visibility','hidden');
+					$(b).css('height','1px');
+					$(b).removeClass('form-group');
+					$(b).removeClass('form-group-md');
+					$(b).css('top','-10000px');
+					$(b).css('float','none');
+					$(b).css('padding','0');
+					$(b).css('marginBottom','0');
+					$('#mintext').css('display','none');
+					$('#alertbtndash').css('display','none');
+					$('#alertbtndash').blur();
+					$( deletethis ).remove();
+					$( deletethistoo ).remove();
+    				dt.fnDeleteRow(deletethis);
+					dt.fnDeleteRow(deletethistoo);
+				}
+			  
+			});
 	});
 	//
 	//generate unique IDs + matching labels for response / amend pages, checkmarks
@@ -3018,10 +3052,10 @@ $(document).ready(function(){
 	  var e = $( '#dashboardmain .alert-warning .closepans' );
 	  $(e).css('min-height','3em');
 	  $('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
-	  $('#dashboardmain .alert-warning button.closegspanels').css('height',(e.innerHeight() + 'px')).css('line-height',(e.innerHeight() + 'px'));
+	  $('#dashboardmain .alert-warning button.closegspanels').css('line-height',(e.innerHeight() + 'px')).css('display','table-cell');
 	  $( window ).resize(function() {
   		$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
-	  	$('#dashboardmain .alert-warning button.closegspanels').css('height',(e.innerHeight() + 'px')).css('line-height',(e.innerHeight() + 'px'));
+	  	$('#dashboardmain .alert-warning button.closegspanels').css('line-height',(e.innerHeight() + 'px'));
 		});
 	});
 	//
