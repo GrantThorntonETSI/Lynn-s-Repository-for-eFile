@@ -3089,6 +3089,7 @@ $(document).ready(function(){
 		});
 	// 
 	//START toggle teas save more labels
+	$('.togglesavemore').prop('checked', true);
 	$('.togglesavemore').change(function() {
 		if(this.checked == true){
 			$( document ).find('span.subtle').removeClass('visuallyremoved');

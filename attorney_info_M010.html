@@ -215,7 +215,7 @@
                     <div role="switch" aria-describedby="#costsavingoptions" aria-label="turn Reduced Fee labels on or off">
                         <label class="switch">
                         <input class="togglesavemore" type="checkbox">
-                        <span class="slider uppercase"><span class="visuallyhidden" id="on">On</span> <span id="off">Off</span></span>
+                        <span class="slider uppercase"><span id="on">On</span> <span id="off">Off</span></span>
                         </label>
                     </div>
                     <!--START Attorney Information Form-->
@@ -679,7 +679,7 @@
                                 <fieldset aria-labelledby="affiliation">
                                     <div class="row">
                                         <div class="form-group form-group-md col-xs-12">
-                                            <label for="attorney-bar-standing">Specify affiliation <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
+                                            <label for="attorney-bar-standing">Specify affiliation <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
                                             <select class="form-control" id="attorney-bar-standing" th:field="*{attorneyAffiliation}">
                                               <option value="Select">Select</option>
                                               <option value="usaffiliation">US attorney in good standing</option>
@@ -747,7 +747,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group form-group-md col-xs-12 col-md-5">
-                                            <label for="bar-membership-number">Membership number <span class="label label-info subtle visuallyremoved" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
+                                            <label for="bar-membership-number">Membership number <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span></label>
                                             <input type="text" class="form-control" id="bar-membership-number" name="attorneyBarMembershipNumber" value="">
                                         </div>
                                         <div class="form-group form-group-md col-xs-12 col-md-4">
