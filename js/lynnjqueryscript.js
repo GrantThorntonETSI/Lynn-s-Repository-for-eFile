@@ -797,7 +797,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(clearthis).find('input[type=checkbox]').prop('checked', false);
 					$(clearthis).find('input').val('');
@@ -856,7 +856,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(clearthis).find('input[type=checkbox]').prop('checked', false);
 					$(clearthis).find('select').val('Select');
@@ -891,7 +891,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('div.upload').hide('fast');
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(this).prop('checked', true);
@@ -919,7 +919,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('div.upload').hide('fast');
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 				};
@@ -1021,7 +1021,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('div.upload').hide('fast');
 				};
 				clearall = clear;
@@ -1048,7 +1048,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('div.upload').hide('fast');
 				};
 				clearall = clear;
@@ -1081,7 +1081,7 @@ $(document).ready(function(){
 					$(clearthis).find('section.basis div.fileDisplayArea img').remove();
 					$(clearthis).find('section.basis div.js-upload-finished').css('display','none');
 					$(clearthis).find('section.basis button[type=submit]').css('display','none');
-					$(clearthis).find('section.basis div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('section.basis div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png');
 					$(clearthis).find('section.basis div.upload').hide('fast');
 				};
 				clearall = clear;
@@ -1120,7 +1120,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.yesonespecimen div.fileDisplayArea img').remove();
 					$(clearthis).find('div.yesonespecimen div.js-upload-finished').css('display','none');
 					$(clearthis).find('div.yesonespecimen button[type=submit]').css('display','none');
-					$(clearthis).find('div.yesonespecimen div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.yesonespecimen div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png');
 					$(clearthis).find('div.yesonespecimen div.upload').hide('fast');
 				};
 				clearall = clear;
@@ -1144,7 +1144,7 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yesonespecimen button.close').parent().parent().remove();
 			$(this).closest('section').find('div.yesonespecimen div.fileDisplayArea img').remove();
 			$(this).closest('section').find('div.yesonespecimen button[type=submit]').css('display','none');
-			$(this).closest('section').find('div.yesonespecimen div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$(this).closest('section').find('div.yesonespecimen div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png');
 			$(this).closest('section').find('div.yesonespecimen div.upload').hide('fast');
 			$(this).closest('section').find('div.yesonespecimen').hide('fast');
 			}
@@ -1185,7 +1185,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.yesspecimen div.fileDisplayArea img').remove();
 					$(clearthis).find('div.yesspecimen div.js-upload-finished').css('display','none');
 					$(clearthis).find('div.yesspecimen button[type=submit]').css('display','none');
-					$(clearthis).find('div.yesspecimen div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.yesspecimen div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png');
 					$(clearthis).find('div.yesspecimen div.upload').hide('fast');
 				};
 				clearall = clear;
@@ -1240,7 +1240,7 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_ttab #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_conflictingreg #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_earlieruse #usaffiliation .upload-drop-zone').css('height','175px');
 			$('div#hideshowconcurrentuses_ttab .js-upload-finished button.close, div#hideshowconcurrentuses_conflictingreg .js-upload-finished button.close, div#hideshowconcurrentuses_earlieruse .js-upload-finished button.close' ).parent().parent().remove();
 			$('div#hideshowconcurrentuses_ttab div.fileDisplayArea img, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea img, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea img' ).remove();
-			$('div#hideshowconcurrentuses_ttab div.fileDisplayArea, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div#hideshowconcurrentuses_ttab div.fileDisplayArea, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 	});	
 	$('input#inlineRadio053').change(function() {
 		if(this.checked == true){
@@ -1263,7 +1263,7 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_courtd #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_conflictingreg #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_earlieruse #usaffiliation .upload-drop-zone').css('height','175px');
 			$('div#hideshowconcurrentuses_courtd .js-upload-finished button.close, div#hideshowconcurrentuses_conflictingreg .js-upload-finished button.close, div#hideshowconcurrentuses_earlieruse .js-upload-finished button.close' ).parent().parent().remove();
 			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea img, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea img, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea img' ).remove();
-			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 	});
 	$('input#inlineRadio054').change(function() {
 		if(this.checked == true){
@@ -1286,7 +1286,7 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_courtd #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_ttab #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_earlieruse #usaffiliation .upload-drop-zone').css('height','175px');
 			$('div#hideshowconcurrentuses_courtd .js-upload-finished button.close, div#hideshowconcurrentuses_ttab .js-upload-finished button.close, div#hideshowconcurrentuses_earlieruse .js-upload-finished button.close' ).parent().parent().remove();
 			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea img, div#hideshowconcurrentuses_ttab div.fileDisplayArea img, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea img' ).remove();
-			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea, div#hideshowconcurrentuses_ttab div.fileDisplayArea, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea, div#hideshowconcurrentuses_ttab div.fileDisplayArea, div#hideshowconcurrentuses_earlieruse div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 	});
 	$('input#inlineRadio055').change(function() {
 		if(this.checked == true){
@@ -1309,7 +1309,7 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_courtd #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_ttab #usaffiliation .upload-drop-zone, div#hideshowconcurrentuses_conflictingreg #usaffiliation .upload-drop-zone').css('height','175px');
 			$('div#hideshowconcurrentuses_courtd .js-upload-finished button.close, div#hideshowconcurrentuses_ttab .js-upload-finished button.close, div#hideshowconcurrentuses_conflictingreg .js-upload-finished button.close' ).parent().parent().remove();
 			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea img, div#hideshowconcurrentuses_ttab div.fileDisplayArea img, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea img' ).remove();
-			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea, div#hideshowconcurrentuses_ttab div.fileDisplayArea, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div#hideshowconcurrentuses_courtd div.fileDisplayArea, div#hideshowconcurrentuses_ttab div.fileDisplayArea, div#hideshowconcurrentuses_conflictingreg div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 	});
 	//START toggle panel color
 	$( '.nocontent' ).click(function() {
@@ -1439,6 +1439,10 @@ $(document).ready(function(){
 		if((type) == 'application\/vnd.openxmlformats\-officedocument\.wordprocessingml\.document'){
 			var icon = (icon[0]); 
 		}
+		if((type) == 'application/msword')
+		{
+			var icon = (icon[0]); 
+		}
 		else if((type) == 'application\/pdf'){
 			var icon = (icon[1]); 
 		}
@@ -1465,6 +1469,7 @@ $(document).ready(function(){
 		var imageType = /image.*/;
 		if (file.type.match(imageType)) {
 		  if ((listlength) < 2)  {
+			  window.filetypes = $(this).closest('div.upload').find('div.fileDisplayArea').text();
 			//console.log(listlength);
 			var reader = new FileReader();
 			reader.onload = function(e) {
@@ -1495,6 +1500,7 @@ $(document).ready(function(){
 			if (file) {
 			  reader.readAsDataURL(file);
 			  }
+			  console.log(filetypes);
 		  }
 		} else {
 		  var reader = new FileReader();
@@ -1526,7 +1532,7 @@ $(document).ready(function(){
 			reader.readAsDataURL(file);
 			}
 		  }
-		  $(this).closest( 'div.upload' ).find( 'button[type=submit]' ).css('display','block');
+		  $(this).closest('div.upload').find('button[type=submit]').css('display','block');
 		  $( 'div.upload' ).submit(
 				function(e) {
 					var file = ($( 'div.upload .linkholder a' ).attr('href'));
@@ -1563,6 +1569,7 @@ $(document).ready(function(){
 	var initialmark = $('div#currentmark img').attr('src');
 	var resetmark = {};
 	$(document).on('click', '.js-upload-finished button.close', function() {
+		var filetypes2 = window.filetypes;
 		var displaydata = $(this).closest('div.upload').find('div.js-upload-finished');
 		var showinput = $(this).closest('div.upload').find('div.hidethis');
 		$(this).closest('div.upload').find( 'input[type="file"]' ).val('');
@@ -1572,7 +1579,7 @@ $(document).ready(function(){
 		$(this).closest('div.upload').find( 'label.upload-drop-zone' ).css('height','115px');
 		$(this).closest('div#usaffiliation').find( 'label.upload-drop-zone' ).css('height','2.65em').css('display','table');
 		$(this).closest('div.upload').find( 'div.fileDisplayArea img' ).remove();
-		$(this).closest('div.upload').find( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$(this).closest('div.upload').find( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>' + filetypes + '</div>');
 		$(this).parent().parent().remove();
 		var removemarkselection = function(){
 			$('div#currentmark').find('i').remove();
@@ -1718,7 +1725,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .doc');
 					$(clearthis).find('input[type=checkbox]').prop('checked', false);
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(clearthis).find('input').val('');
@@ -1840,7 +1847,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('input[type=checkbox]').prop('checked', false);
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(clearthis).find('input').val('');
@@ -2026,7 +2033,7 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yescommerce .upload-drop-zone').css('height','115px');
 			$(this).closest('section').find('div.yescommerce .js-upload-finished button.close' ).parent().parent().remove();
 			$(this).closest('section').find('div.yescommerce div.fileDisplayArea img' ).remove();
-			$(this).closest('section').find('div.yescommerce div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$(this).closest('section').find('div.yescommerce div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</div>');
 			}
 	else {
 			$(this).closest('section').find('div.yescommerce').show( 'fast' );
@@ -2097,7 +2104,7 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.yesconnection .upload-drop-zone').css('height','115px').css('display','block');
 			$(this).closest('section').find('div.yesconnection .js-upload-finished button.close' ).parent().parent().remove();
 			$(this).closest('section').find('div.yesconnection div.fileDisplayArea img' ).remove();
-			$(this).closest('section').find('div.yesconnection div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$(this).closest('section').find('div.yesconnection div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</div>');
 			}
 	else {
 			$(this).closest('section').find('div.yesconnection').show( 'fast' );
@@ -2114,7 +2121,7 @@ $(document).ready(function(){
 			$(this).closest('section').find('div.upload').css('display','block');
 			$(this).closest('section').find( '.upload-drop-zone' ).css('height','115px').css('display','block');
 			$(this).closest('section').find( '#usaffiliation .upload-drop-zone' ).css('height','175px').css('display','block');
-			$(this).closest('section').find( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$(this).closest('section').find( 'div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</div>');
 			}
 	else {
 			$(this).closest('section').find('div.yesspecimen').hide( 'fast' );
@@ -2122,7 +2129,7 @@ $(document).ready(function(){
 			$(this).closest('section').find('.upload-drop-zone').css('height','115px');
 			$(this).closest('section').find('.js-upload-finished button.close' ).parent().parent().remove();
 			$(this).closest('section').find('div.fileDisplayArea img' ).remove();
-			$(this).closest('section').find('div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$(this).closest('section').find('div.holdsaforeign div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</div>');
 			}
 	});
 	//end provide specimen options
@@ -2147,7 +2154,7 @@ $(document).ready(function(){
 					$(clearthis).find('div.fileDisplayArea img').remove();
 					$(clearthis).find('div.js-upload-finished').css('display','none');
 					$(clearthis).find('button[type=submit]').css('display','none');
-					$(clearthis).find('div.fileDisplayArea').html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+					$(clearthis).find('div.fileDisplayArea').html('<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc');
 					$(clearthis).find('input[type=checkbox]').prop('checked', false);
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(clearthis).find('input').val('');
@@ -2774,7 +2781,7 @@ $(document).ready(function(){
 			$('div.yescommerce div.holdsaforeign .upload-drop-zone, div.yescommerce div.holdsapending .upload-drop-zone').css('height','115px');
 			$('div.yescommerce div.holdsaforeign .js-upload-finished button.close, div.yescommerce div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
 			$('div.yescommerce div.holdsaforeign div.fileDisplayArea img, div.yescommerce div.holdsapending div.fileDisplayArea img' ).remove();
-			$('div.yescommerce div.holdsaforeign div.fileDisplayArea, div.yescommerce div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div.yescommerce div.holdsaforeign div.fileDisplayArea, div.yescommerce div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 			$('div.yescommerce div.appendaforeign div.holdsaforeign, div.yescommerce div.appendaforeign div.holdsapending').remove();
 		}
 	});
@@ -2801,7 +2808,7 @@ $(document).ready(function(){
 			$('div.yesconnection div.holdsaforeign .upload-drop-zone, div.yesconnection div.holdsapending .upload-drop-zone').css('height','115px');
 			$('div.yesconnection div.holdsaforeign .js-upload-finished button.close, div.yesconnection div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
 			$('div.yesconnection div.holdsaforeign div.fileDisplayArea img, div.yesconnection div.holdsapending div.fileDisplayArea img' ).remove();
-			$('div.yesconnection div.holdsaforeign div.fileDisplayArea, div.yesconnection div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+			$('div.yesconnection div.holdsaforeign div.fileDisplayArea, div.yesconnection div.holdsapending div.fileDisplayArea' ).html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 			$('div.yesconnection div.appendaforeign div.holdsaforeign, div#yesconnection div.appendaforeign div.holdsapending').remove();
 		}
 	});
@@ -2821,7 +2828,7 @@ $(document).ready(function(){
 		$( 'div.yescommerce div.holdsaforeign .upload-drop-zone' ).last().attr('for', clonelabel);
 		$( 'div.yescommerce div.holdsaforeign #usaffiliation .upload-drop-zone' ).last().css('height','175px');
 		$( 'div.yescommerce div.holdsaforeign div.fileDisplayArea img' ).last().remove();
-		$( 'div.yescommerce div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yescommerce div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 		$( 'div.yescommerce .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
 		});
@@ -2839,7 +2846,7 @@ $(document).ready(function(){
 		$( 'div.yesconnection div.holdsaforeign .upload-drop-zone' ).last().attr('for', clonelabel);
 		$( 'div.yesconnection div.holdsaforeign #usaffiliation .upload-drop-zone' ).last().css('height','175px');
 		$( 'div.yesconnection div.holdsaforeign div.fileDisplayArea img' ).last().remove();
-		$( 'div.yesconnection div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yesconnection div.holdsaforeign div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div>');
 		$( 'div.yesconnection .appendaforeign .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em');
 		$( this ).removeClass( '.addinitial' );
 		});
@@ -2862,7 +2869,7 @@ $(document).ready(function(){
 		$( 'div.yescommerce div.holdsapending .upload-drop-zone' ).last().attr('for', clonelabel);
 		$( 'div.yescommerce div.holdsapending #usaffiliation .upload-drop-zone' ).last().css('height','175px');
 		$( 'div.yescommerce div.holdsapending div.fileDisplayArea img' ).last().remove();
-		$( 'div.yescommerce div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yescommerce div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</div>');
 		$( 'div.yescommerce .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
 		$( this ).removeClass( '.addinitial' );
 		});
@@ -2883,7 +2890,7 @@ $(document).ready(function(){
 		$( 'div.yesconnection div.holdsapending .upload-drop-zone' ).last().attr('for', clonelabel);
 		$( 'div.yesconnection div.holdsapending #usaffiliation .upload-drop-zone' ).last().css('height','175px');
 		$( 'div.yesconnection div.holdsapending div.fileDisplayArea img' ).last().remove();
-		$( 'div.yesconnection div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Select File</div>');
+		$( 'div.yesconnection div.holdsapending div.fileDisplayArea' ).last().html('<div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</div>');
 		$( 'div.yesconnection .appendapending .resetreg' ).removeClass( 'visuallyremoved' ).css('border-top','1px solid #ddd').css('margin-bottom','.4em').css('margin-top','1.5em');
 		$( this ).removeClass( '.addinitial' );
 		});
