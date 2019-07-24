@@ -1569,6 +1569,7 @@ $(document).ready(function(){
 	var initialmark = $('div#currentmark img').attr('src');
 	var resetmark = {};
 	$(document).on('click', '.js-upload-finished button.close', function() {
+		window.filetypes = $(this).closest('div.upload').find('div.fileDisplayArea').text();
 		var filetypes2 = window.filetypes;
 		var displaydata = $(this).closest('div.upload').find('div.js-upload-finished');
 		var showinput = $(this).closest('div.upload').find('div.hidethis');
