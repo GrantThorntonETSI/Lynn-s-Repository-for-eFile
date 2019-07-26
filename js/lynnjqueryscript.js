@@ -387,6 +387,7 @@ $(document).ready(function(){
 			var focussed = $('span#filingsheader button');
 			var dt = $('#dashboardtableone').dataTable();
 			var b = $('#alertmin');
+			var deletebtn = event.target;
 			if ((hasdraft.length > 0) || (hasdraftchild.length > 0)) {
 				if ($(b).css('visibility','hidden')) {
 					$(b).css('visibility','visible');
@@ -396,9 +397,11 @@ $(document).ready(function(){
 					$(b).css('float','left');
 					$(b).css('top','.25em');
 					$(b).css('padding','1em');
+					$(b).css('padding-top','.5em');
 					$(b).css('marginBottom','1em');
 					$('#mintext').css('display','table-cell');
 					$('#alertbtndash').css('display','block');
+					$('#cancelbtndash').css('display','block');
 					$('#alertbtndash').focus();
 					window.scrollBy(0, '90%');
 					$('#mintext').html('Are you sure you want to delete this ' + draft + '?');
@@ -423,15 +426,15 @@ $(document).ready(function(){
 					$(b).css('marginBottom','0');
 					$('#mintext').css('display','none');
 					$('#alertbtndash').css('display','none');
+					$('#cancelbtndash').css('display','none');
 					$('#alertbtndash').blur();
-					$( deletethis ).remove();
-					$( deletethistoo ).remove();
-    				dt.fnDeleteRow(deletethis);
+					$(deletethis).remove();
+					$(deletethistoo).remove();
+					dt.fnDeleteRow(deletethis);
 					dt.fnDeleteRow(deletethistoo);
 				}
-			  
 			});
-	});
+		});
 	//
 	//generate unique IDs + matching labels for response / amend pages, checkmarks
 		var checkboxList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input');
@@ -3057,14 +3060,12 @@ $(document).ready(function(){
   		$('#announcements .closepans').css( 'height', (d.innerHeight()) );
 	  	$('#announcements .closegspanels').css('line-height',(d.innerHeight() + 'px'));
 		});
-	  var e = $( '#dashboardmain .alert-warning .closepans' );
-	  $(e).css('min-height','3em');
-	  $('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
-	  $('#dashboardmain .alert-warning button.closegspanels').css('line-height',(e.innerHeight() + 'px')).css('display','table-cell');
-	  $( window ).resize(function() {
-  		$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
-	  	$('#dashboardmain .alert-warning button.closegspanels').css('line-height',(e.innerHeight() + 'px'));
-		});
+	  //var e = $( '#dashboardmain .alert-warning .closepans' );
+	  //$(e).css('min-height','3em');
+	  //$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
+	  //$( window ).resize(function() {
+  		//$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
+		//});
 	});
 	//
 	//row header p height match
