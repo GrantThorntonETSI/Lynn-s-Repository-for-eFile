@@ -2245,6 +2245,9 @@ button#moreoptionsbtn {
 	background-color: #047db0;
     border-color: #047db0;
 	}
+#alertmin button#alertbtndash:active:focus, #alertmin button#alertbtndash:active:hover, #alertmin button#cancelbtndash:active:focus, #alertmin button#cancelbtndash:active:hover, #alertmin button#alertbtndash:active, #alertmin button#alertbtndash:focus, #alertmin button#cancelbtndash:active, #alertmin button#cancelbtndash:focus, #alertmin button#cancelbtndash:hover, #alertmin button#alertbtndash:hover {
+	background-color: #825e00;
+	}
 .btn.add, .btn-success.add  {	
 	margin-top: 1.91em;
 	border: none;
