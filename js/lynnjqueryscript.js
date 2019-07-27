@@ -162,9 +162,9 @@ $(document).ready(function(){
 				{ responsivePriority: 0, targets: 1 },//(control)
 				{ responsivePriority: 2, targets: 2 },//serial
 				{ responsivePriority: 4, targets: 3 },//reg
-				{ responsivePriority: 3, targets: 4 },//owner
-				{ responsivePriority: 6, targets: 5 },//status
-				{ responsivePriority: 5, targets: 6 },//mark
+				{ responsivePriority: 3, targets: 4 },//mark
+				{ responsivePriority: 6, targets: 5 },//owner
+				{ responsivePriority: 5, targets: 6 },//status
 				{ className: 'centertxt', 'targets': [ 0,2,3,4,5,6 ] },
 				{ className: 'control', 'orderable': true, 'targets': [ 1 ] },
 			   ],
@@ -210,7 +210,10 @@ $(document).ready(function(){
 				{ responsivePriority: 4, targets: 2 },//reg
 				{ responsivePriority: 5, targets: 3 },//mark
 				{ responsivePriority: 3, targets: 4 },//owner
-				{ className: 'centertxt', 'targets': [ 1,2,3,4,5 ] },
+				{ responsivePriority: 6, targets: 5 },//due date
+				{ responsivePriority: 7, targets: 6 },//status
+				{ responsivePriority: 8, targets: 7 },//action
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6,7 ] },
 				{ className: 'control', 'orderable': false, 'targets': [ 0 ] },
 			  ],
 		});
@@ -499,7 +502,7 @@ $(document).ready(function(){
 	});
 	//
 	//Dashboard datatables ellipsis menu tableone
-		$("div.toolbar").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="toggle columns visibility"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Mark</a></li></ul></div>');
+		$("div.toolbar").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="toggle columns visibility"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vis" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Mark</a></li></ul></div>');
 		$('a.toggle-vis').on( 'click', function () {
 			//e.preventDefault();
 			var column = tableone.column( $(this).attr('data-column') );
@@ -509,7 +512,7 @@ $(document).ready(function(){
 		});
 	//
 	//Dashboard datatables ellipsis menu tabletwo
-		$("div.toolbartwo").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdroptwo" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdroptwo" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="0" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Mark</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Due Date</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Action</a></li></ul></div>');
+		$("div.toolbartwo").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdroptwo" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdroptwo" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Mark</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Due Date</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="7" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Action</a></li></ul></div>');
 		$('a.toggle-vistwo').on( 'click', function () {
 			//e.preventDefault();
 			var column = tabletwo.column( $(this).attr('data-column') );
