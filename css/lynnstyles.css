@@ -735,7 +735,7 @@ ul[role="tablist"] li, #responseamendreview ul[role="tablist"] li {
 	margin: 0 1em 1em 0;
 	padding: .8em .8em;
 	list-style-type: none;
-	background: #808080;
+	background: #009CDE;
 	-webkit-border-radius:2px;
 	-moz-border-radius:2px;
 	border-radius:2px;
@@ -1113,7 +1113,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     color: #808080;
 	text-align:center;
 	}
-span#filingsheader {
+span#filingsheader, span#due {
 	line-height: 39px;
 	}
 #announce {
@@ -1182,9 +1182,12 @@ td.red {
 #dashboardmain .form-group {
     margin-bottom: 0;
 	}
-#dashboardtableone thead, #dashboardtabletwo thead, #dashboardtabletwo thead, #filepetitiontable thead:first-child>tr:first-child>th, table#goodsandservices thead:first-child>tr:first-child>th, #responseamendtable thead:first-child>tr:first-child>th, #responseamendtabletwo thead:first-child>tr:first-child>th {
+#dashboardtableone thead, #dashboardtabletwo thead, #filepetitiontable thead:first-child>tr:first-child>th, table#goodsandservices thead:first-child>tr:first-child>th, #responseamendtable thead:first-child>tr:first-child>th, #responseamendtabletwo thead:first-child>tr:first-child>th {
 	color:#fff;
 	background: #009CDE;
+	}
+#dashboardtableone thead, #dashboardtabletwo thead {
+	background: #808080;
 	}
 #dashboardtableone_length label, #dashboardtabletwo_length label, #filepetitiontable_length label, #responseamendtable_length label, #responseamendtabletwo_length label {
 	margin-top: .3em;
@@ -1776,6 +1779,7 @@ span#termsagree label a:hover, span#termsagree label a:hover {
 .statementou .noexpand.blue {
     padding-left: 0;
 	min-height: 64px;
+    display: inline-block;
 	}
 .statementou .noexpand.blue span:first-child {
     margin-right: 1em;
@@ -2257,13 +2261,14 @@ button#moreoptionsbtn {
 	margin:0 auto;
 	margin-bottom: 1.5em;
 	}
-#dashboardtableone .btn-success.fill {
-	display:inline-block;
+#announcements .btn-success.fill {
 	background-color:#007A33;
 	margin-right: .5em;
-	margin-top: .07em;
+	margin-top: 0;
+	margin-bottom: 1.9em;
 	position:relative;
-	float:right;
+	width:100%;
+	height:45px;
 	}
 #dashboardtableone_wrapper div.toolbar, #dashboardtabletwo_wrapper div.toolbartwo, #filepetitiontable_wrapper div.toolbarpetitions {
 	float:right;

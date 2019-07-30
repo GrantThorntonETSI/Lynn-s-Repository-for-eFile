@@ -152,10 +152,10 @@ $(document).ready(function(){
 				{ 'width': '10%' },
 				{ 'width': '10%' },
 				{ 'width': '16%' },
-				{ 'width': '25%' },
+				{ 'width': '20%' },
 				{ 'width': '16%' },
-				{ 'width': '12%' },
-				{ 'width': '11%' },
+				{ 'width': '16%' },
+				{ 'width': '16%' },
 			  ],
 			  'columnDefs': [ 
 			  	{ responsivePriority: 1, targets: 0 },//buttons 
@@ -195,14 +195,14 @@ $(document).ready(function(){
 				]
 			},
 			'columns': [
-				{ 'width': '12%' },//toggle show child rows
-				{ 'width': '16%' },//serial
-				{ 'width': '25%' },//reg
-				{ 'width': '11%' },//mark
-				{ 'width': '9%' },//owner
-				{ 'width': '9%' },
-				{ 'width': '9%' },
-				{ 'width': '9%' },
+				{ 'width': '8%' },
+				{ 'width': '12%' },
+				{ 'width': '20%' },
+				{ 'width': '12%' },
+				{ 'width': '12%' },
+				{ 'width': '12%' },
+				{ 'width': '12%' },
+				{ 'width': '12%' },
 			  ],
 			  'columnDefs': [
 			  	{ responsivePriority: 1, targets: 0 },//toggle show child rows
@@ -2997,23 +2997,21 @@ $(document).ready(function(){
 	if ( $( 'div#soucontent' ).length ) {
 		$('div.formodal').css('display','none');
 		//START SOU blue bar height
-		$( window ).on('load', function() {
-			var winwidth = $(window).width();
-			var modalparent = $('div.modal').parent();
-			if (winwidth > 1199) {
-				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
-				$.each(modalparent, function(){
-					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
-					$(this).find('.statementou .noexpand.blue').css('height',(souf));
-				});	
-			}
-			else if (winwidth < 1199) {
-				$.each(modalparent, function(){
-					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
-					$(this).find('.statementou .noexpand.blue').css('height',(souf));
-				});
-			}
-		});
+		var winwidth = $(window).width();
+		var modalparent = $('div.modal').parent();
+		if (winwidth > 1199) {
+			//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
+			$.each(modalparent, function(){
+				var souf = $(this).find('.statementou h2.displaycell').outerHeight();
+				$(this).find('.statementou .noexpand.blue').css('height',souf);
+			});	
+		}
+		else if (winwidth < 1199) {
+			$.each(modalparent, function(){
+				var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
+				$(this).find('.statementou .noexpand.blue').css('height',souf);
+			});
+		}
 		$( window ).resize(function() {
 			var winwidth = $(window).width();
 			var modalparent = $('div.modal').parent();
@@ -3021,18 +3019,18 @@ $(document).ready(function(){
 				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
 				$.each(modalparent, function(){
 					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
-					$(this).find('.statementou .noexpand.blue').css('height',(souf));
+					$(this).find('.statementou .noexpand.blue').css('height',souf);
 				});	
 			}
 			else if (winwidth < 1199) {
 				$.each(modalparent, function(){
 					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
-					$(this).find('.statementou .noexpand.blue').css('height',(souf));
+					$(this).find('.statementou .noexpand.blue').css('height',souf);
 				});
 			}
 		});
-		//
-		}
+	}
+	//
 	$('div.classmodal button.btn-success').on('click',function() {
 		var modaldiv = $('div.formodal');
 		var modaldivparent = $(this).parents('div.modal');
