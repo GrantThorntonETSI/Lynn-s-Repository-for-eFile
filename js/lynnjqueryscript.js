@@ -3039,6 +3039,7 @@ $(document).ready(function(){
 		$( modaldivparent ).find('span.sr-only').text('class removed');
 		$( modaldivgrandparent ).find('div.inusegs span.subtle').css('display','none');
 		$( modaldivparent ).parent().find('div.statementou').css('opacity','0.4');
+		$( modaldivparent ).parent().find('div.statementou select option').prop('disabled', true);
 		$( modaldivparent ).modal('hide')
 		$( modaldivparent ).parent().find('div.formodal').css('display','block');
 	});
@@ -3048,6 +3049,9 @@ $(document).ready(function(){
 		var modaldivgrandparent = $(modaldiv).parent();
 		$( modaldivgrandparent ).find('div.inusegs span.subtle').css('display','table');
 		$( modaldiv).parent().find('div.statementou').css('opacity','1.0');
+		$( modaldiv ).parent().find('div.statementou select option').eq(0).prop('disabled', false);
+		$( modaldiv ).parent().find('div.statementou select option').eq(1).prop('disabled', false);
+		$( modaldiv ).parent().find('div.statementou select option').eq(2).prop('disabled', false);
 		$( modaldivparent ).find('span.sr-only').text('class added');
 		$( modaldiv ).css('display','none');
 	});
