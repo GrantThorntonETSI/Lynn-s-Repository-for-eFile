@@ -2998,38 +2998,38 @@ $(document).ready(function(){
 	if ( $( 'div#soucontent' ).length ) {
 		$('div.formodal').css('display','none');
 		//START SOU blue bar height
-		var winwidth = $(window).width();
-		var modalparent = $('div.modal').parent();
-		if (winwidth > 1199) {
-			//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
-			$.each(modalparent, function(){
-				var souf = $(this).find('.statementou h2.displaycell').outerHeight();
-				$(this).find('.statementou .noexpand.blue').css('height',souf);
-			});	
-		}
-		else if (winwidth < 1199) {
-			$.each(modalparent, function(){
-				var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
-				$(this).find('.statementou .noexpand.blue').css('height',souf);
-			});
-		}
-		$( window ).resize(function() {
-			var winwidth = $(window).width();
-			var modalparent = $('div.modal').parent();
-			if (winwidth > 1199) {
-				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
-				$.each(modalparent, function(){
-					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
-					$(this).find('.statementou .noexpand.blue').css('height',souf);
-				});	
-			}
-			else if (winwidth < 1199) {
-				$.each(modalparent, function(){
-					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
-					$(this).find('.statementou .noexpand.blue').css('height',souf);
-				});
-			}
-		});
+		//var winwidth = $(window).width();
+//		var modalparent = $('div.modal').parent();
+//		if (winwidth > 1199) {
+//			//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
+//			$.each(modalparent, function(){
+//				var souf = $(this).find('.statementou h2.displaycell').outerHeight();
+//				$(this).find('.statementou .noexpand.blue').css('height',souf);
+//			});	
+//		}
+//		else if (winwidth < 1199) {
+//			$.each(modalparent, function(){
+//				var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
+//				$(this).find('.statementou .noexpand.blue').css('height',souf);
+//			});
+//		}
+//		$( window ).resize(function() {
+//			var winwidth = $(window).width();
+//			var modalparent = $('div.modal').parent();
+//			if (winwidth > 1199) {
+//				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
+//				$.each(modalparent, function(){
+//					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
+//					$(this).find('.statementou .noexpand.blue').css('height',souf);
+//				});	
+//			}
+//			else if (winwidth < 1199) {
+//				$.each(modalparent, function(){
+//					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
+//					$(this).find('.statementou .noexpand.blue').css('height',souf);
+//				});
+//			}
+//		});
 	}
 	//
 	$('div.classmodal button.btn-success').on('click',function() {
