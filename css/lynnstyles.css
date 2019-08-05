@@ -3447,6 +3447,7 @@ button[type="submit"].right, button[type="button"].right {
 	display: table!important;
 	height:auto!important;
 	margin-top: .47em!important;
+	font-size: .6em;
 	}
 .js-upload-finished .list-group-item-success {
 	display: inline-block;
