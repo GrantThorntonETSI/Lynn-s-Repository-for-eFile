@@ -1113,10 +1113,10 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     color: #808080;
 	text-align:center;
 	}
-span#filingsheader, span#due {
+span#filingsheader, span#due, span#notify {
 	line-height: 39px;
 	}
-#announce {
+#announce {	
 	background-color: #D9D9D6;
 	-webkit-border-top-right-radius:3px;
 	-moz-border-top-right-radius:3px;
