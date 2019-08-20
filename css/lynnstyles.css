@@ -4054,6 +4054,9 @@ footer #megamenu ul {
 	div.alertmargin #alertmin {
 		margin-bottom:5em!important;
 		}
+	div#yesmeaning .control-label p {
+		margin-top:.7em;
+		}
 }
 @media (max-width: 767px) {
 	body {
