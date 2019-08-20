@@ -130,11 +130,16 @@ $(document).ready(function(){
 				   $('#dashboardtableone_wrapper').hide();
 				   $('#dashboardtableone_wrapper').parent().parent().parent().parent().parent().parent().parent().hide();
 				   $('section#announcements').parent().addClass('col-lg-6').removeClass('col-lg-3').css('margin','0 auto').css('float', 'none');
+				   $('div.alert-warning').css('margin','1em auto').css('float', 'none');
+				   //$('div.alert-warning').parent().addClass('col-xs-12');
 			   }
 			   else {
 				   $('#dashboardtableone_wrapper').show();
 				   $('#dashboardtableone_wrapper').parent().parent().parent().parent().parent().parent().parent().show();
 				   $('section#announcements').parent().removeClass('col-lg-6').addClass('col-lg-3').css('margin','auto').css('float', 'left');
+				   $('div.alert-warning').css('margin','auto').css('float', 'left');
+				   $('div#alertminwelcome').css('width','100%');
+				   //$('div.alert-warning').parent().removeClass('col-xs-12');
 				   }
            },	
 			'sDom': '<"toolbar">lfrtip',
@@ -421,12 +426,12 @@ $(document).ready(function(){
 					$(b).css('padding','1em');
 					$(b).css('padding-top','.5em');
 					$(b).css('marginBottom','1em');
-					$('#mintext').css('display','table-cell');
+					$('#mintextdraft').css('display','table-cell');
 					$('#alertbtndash').css('display','block');
 					$('#cancelbtndash').css('display','block');
 					$('#alertbtndash').focus();
 					window.scrollBy(0, '90%');
-					$('#mintext').html('Are you sure you want to delete this ' + draft + '?');
+					$('#mintextdraft').html('Are you sure you want to delete this ' + draft + '?');
 					$('#alertbtndash').on('click', function() {
 						$(focussed).focus();
 						$(hasdraft).remove();
@@ -446,7 +451,7 @@ $(document).ready(function(){
 					$(b).css('float','none');
 					$(b).css('padding','0');
 					$(b).css('marginBottom','0');
-					$('#mintext').css('display','none');
+					$('#mintextdraft').css('display','none');
 					$('#alertbtndash').css('display','none');
 					$('#cancelbtndash').css('display','none');
 					$('#alertbtndash').blur();
@@ -583,6 +588,9 @@ $(document).ready(function(){
 	//START close (x) dashboard panels
 	$('#dashsectionscontainer #announcements .closegspanels').click(function() {
 		$( this ).parent().parent().parent().parent().parent().fadeOut( 'fast','swing');
+	});
+	$('#dashsectionscontainer #alertminwelcome .closegspanels').click(function() {
+		$( this ).parent().parent().fadeOut( 'fast','swing');
 	});
 	//
 	//START filter petition types
@@ -3076,22 +3084,22 @@ $(document).ready(function(){
 	});
 	//
 	//START close button height match dashboard
-	$( window ).on('load', function() {
-      var d = $( '#announcements .closepans' ).prev('div');
-	  $(d).css('display','flex').css('flex-direction','column').css('min-height','3em');
-	  $('#announcements .closepans').css( 'line-height', (d.innerHeight() + 'px') ).css( 'height', (d.innerHeight()) );
-	  $('#announcements .closegspanels').css('line-height',(d.innerHeight() + 'px'));
-	  $( window ).resize(function() {
-  		$('#announcements .closepans').css( 'height', (d.innerHeight()) );
-	  	$('#announcements .closegspanels').css('line-height',(d.innerHeight() + 'px'));
-		});
+	//$( window ).on('load', function() {
+//      var d = $( '#announcements .closepans' ).prev('div');
+//	  $(d).css('display','flex').css('flex-direction','column').css('min-height','3em');
+//	  $('#announcements .closepans').css( 'line-height', (d.innerHeight() + 'px') ).css( 'height', (d.innerHeight()) );
+//	  $('#announcements .closegspanels').css('line-height',((d.innerHeight() + 6) + 'px'));
+//	  $( window ).resize(function() {
+//  		$('#announcements .closepans').css( 'height', (d.innerHeight()) );
+//	  	$('#announcements .closegspanels').css('line-height',((d.innerHeight() + 6) + 'px'));
+//		});
 	  //var e = $( '#dashboardmain .alert-warning .closepans' );
 	  //$(e).css('min-height','3em');
 	  //$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
 	  //$( window ).resize(function() {
   		//$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
 		//});
-	});
+	//});
 	//
 	//row header p height match
 	var p = $('.rowheader p').height();
