@@ -3332,7 +3332,7 @@ div#minholderwelcome {
 	min-height: 2.91em;
 	}
 div#minholderwelcome div { 
-	width: 80%;
+	width: 90%;
 	float: left;
 	display:table;
 	}
@@ -3393,7 +3393,7 @@ p#mintext {
 	float: left;
 	line-height: 28px;
 	position:relative;
-	margin-left: 27px;
+	margin-left: 1.7em;
 	}
 #alertminwelcome a#surveybtndash .glyphicon-new-window, #alertminwelcome a#surveybtndash .glyphicon-new-window:hover {
     color: #007A33!important;
