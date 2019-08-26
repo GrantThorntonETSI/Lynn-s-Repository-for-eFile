@@ -590,7 +590,7 @@ $(document).ready(function(){
 		$( this ).parent().parent().parent().parent().parent().fadeOut( 'fast','swing');
 	});
 	$('#dashsectionscontainer #alertminwelcome .closegspanels').click(function() {
-		$( this ).parent().parent().fadeOut( 'fast','swing');
+		$( this ).parent().parent().parent().fadeOut( 'fast','swing');
 	});
 	//
 	//START filter petition types
