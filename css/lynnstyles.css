@@ -2147,7 +2147,7 @@ span.ql-picker span:focus, span.ql-picker span.focus, span.ql-picker:focus, span
 #dashsectionscontainer #minholderwelcome .close.active.focus, #dashsectionscontainer #minholderwelcome .close.focus, #dashsectionscontainer #minholderwelcome .close:active:focus, #dashsectionscontainer #minholderwelcome .close:focus {
 	color:#007A33!important;
 	}
-#dashsectionscontainer #alertminwelcome #minholderwelcome .close.active.focus, #dashsectionscontainer #alertminwelcome #minholderwelcome .close.focus, #dashsectionscontainer #alertminwelcome #minholderwelcome .close:active.focus, #dashsectionscontainer #alertminwelcome #minholderwelcome .close:focus, #dashsectionscontainer #announcements .close.active.focus, #dashsectionscontainer #announcements .close.focus, #dashsectionscontainer #announcements .close:active.focus, #dashsectionscontainer #announcements .close:focus {
+#alertminwelcome #minholderwelcome .close.active.focus, #alertminwelcome #minholderwelcome .close.focus, #alertminwelcome #minholderwelcome .close:active.focus, #alertminwelcome #minholderwelcome .close:focus, #dashsectionscontainer #announcements .close.active.focus, #dashsectionscontainer #announcements .close.focus, #dashsectionscontainer #announcements .close:active.focus, #dashsectionscontainer #announcements .close:focus {
 	outline-offset: 4px;
 	outline: 1px solid #fff!important;
 	}
@@ -3298,11 +3298,13 @@ span.rightquote:before {
 	height: auto;
 	background-color:#007A33;
 	color:#fff;
+	width:100%;
 	}
 #alertminwelcome button.closegspanels { 
-	font-size: 2.2em!important;
+	font-size: 2em!important;
 	display: table;
 	vertical-align:middle;
+	float:right;
 	}
 #dashboardmain #alertmin, #filingbasisabde #alertmin, #filingbasisab #alertmin, #roasign #alertmin { 
 	height: 1px;
@@ -3332,7 +3334,7 @@ div#minholderwelcome {
 	min-height: 2.91em;
 	}
 div#minholderwelcome div { 
-	width: 90%;
+	width: 85%;
 	float: left;
 	display:table;
 	}
@@ -3342,7 +3344,6 @@ div#minholderwelcome div {
 p#mintext, p#mintextdraft { 
 	display: table-cell;
 	vertical-align:middle;
-	padding-left:27px;
 	}
 p#mintext {
 	width:80%;
@@ -3388,12 +3389,11 @@ p#mintext {
 	background-color: #fff;
     color: #007A33;
     font-weight: 600;
-	padding-left:.5em;
-	padding-right:.5em;
 	float: left;
 	line-height: 28px;
 	position:relative;
-	margin-left: 1.7em;
+	padding-right: .5em;
+	padding-left: .5em;
 	}
 #alertminwelcome a#surveybtndash .glyphicon-new-window, #alertminwelcome a#surveybtndash .glyphicon-new-window:hover {
     color: #007A33!important;
@@ -3601,8 +3601,11 @@ button[type="submit"].right, button[type="button"].right {
     vertical-align: middle;
 	top:1px;
 	}
-#dashboardmain #alertminwelcome button.close span.glyphicon-remove {
+#alertminwelcome button.close span.glyphicon-remove {
 	color:#fff;
+	display: table-cell;
+    vertical-align: middle;
+	top:1px;
 	}
 #dashboardmain button.closegspanels {
     font-size: 3em;
@@ -4281,9 +4284,6 @@ footer #megamenu ul {
 		}
 	#responseamend .upload p {
 		margin-top: .6em;
-		}
-	#alertminwelcome {
-		width:48.9%
 		}
 	}
 @media (min-width: 1200px) and (max-width: 1587px) {
