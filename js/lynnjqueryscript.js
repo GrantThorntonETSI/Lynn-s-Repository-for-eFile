@@ -2332,22 +2332,27 @@ $(document).ready(function(){
 	});
 	//
 	//START select all incontestable	  
-	$(document).on('change','#incontestable input#select', function() {
-	   var checkboxes  = $('#incontestable input#select').parent().parent().parent().children('fieldset').find('input.checkmark');
-	   var selectall = $(this);
-	   if ($(this).is( ":checked" )) {
-			$.each(checkboxes, function(){
-				$(this).prop('checked', true);
-			});
-		} else {
-			$.each(checkboxes, function(){
-				$(this).prop('checked', false);
-			}); 
+	$(document).on('change','#incontestable input.selectallclasses', function() {
+	   var input  = $('#incontestable input.selectallclasses').parent().parent().parent().children('fieldset').find('input.checkmark');
+	   var input  = $('#incontestable input.selectallclasses').parent().parent().parent().children('fieldset').find('input.checkmark');
+		if ($(this).is( ":checked" )) {
+			$(input).prop('checked', true);
+			$('input:disabled').prop('checked', false);        
+		} 
+		else {
+			$(input).prop('checked', false); 
 		}
-		$(checkboxes).on('click', function(e){
-		   $(selectall).prop('checked', false);
-		});
 	});
+	//
+	//generate unique IDs + matching labels for Declaration of Incontestability, checkmarks
+		var checkboxList = $('#incontestable input.checkmark');
+		for (var i = 0; i <= checkboxList.length; i++) {
+			$(checkboxList[i]).attr('id', 'checkboxone' + i);
+		}
+		var labelList = $('#incontestable input.checkmark').next('label');
+		for (var i = 0; i <= labelList.length; i++) {
+			$(labelList[i]).attr('for', 'checkboxone' + i);
+		}
 	//
 	//START fill from contacts values -- attorney
 	function clearform() {
