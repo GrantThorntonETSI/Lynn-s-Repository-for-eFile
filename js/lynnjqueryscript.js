@@ -4256,6 +4256,7 @@ $(document).ready(function(){
 			showOn: 'button',
 			buttonImage: '',
 			buttonText: '<span class="sr-only">open the datepicker</span>',
+			dateFormat: 'mm/dd/yy',
 			prevText: '',
 			nextText: '',
 			constrainInput: true,
@@ -4265,6 +4266,14 @@ $(document).ready(function(){
 			beforeShow: function() {
 				makeAccessible();
 			},
+			//onSelect: function() {
+//				var d = $(this).datepicker('getDate');
+//				var forjson = JSON.stringify(d);
+//				var z = $(this).datepicker().data();
+//				z.cujo = forjson;
+//				console.log(forjson);
+//				console.log($(this).data());
+//				},
 		});
 		function makeAccessible () {
 			clearTimeout(makeAccessible.timer);
