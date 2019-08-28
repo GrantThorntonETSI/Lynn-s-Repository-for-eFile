@@ -2505,6 +2505,7 @@ input:checked + .slider #off {
 .modal-header h4 {
     width: 80%;
 	padding: .35em .3em .2em .3em;
+	float:left;
 	}
 .modal-content {
 	-webkit-border-top-left-radius: 		0;
