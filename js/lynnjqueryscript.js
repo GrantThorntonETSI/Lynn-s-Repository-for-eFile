@@ -2331,10 +2331,21 @@ $(document).ready(function(){
 		});
 	});
 	//
-	//START select all incontestable	  
+	//START select all incontestable class-level	  
 	$(document).on('change','#incontestable input.selectallclasses', function() {
 	   var input  = $('#incontestable input.selectallclasses').parent().parent().parent().children('fieldset').find('input.checkmark');
-	   var input  = $('#incontestable input.selectallclasses').parent().parent().parent().children('fieldset').find('input.checkmark');
+		if ($(this).is( ":checked" )) {
+			$(input).prop('checked', true);
+			$('input:disabled').prop('checked', false);        
+		} 
+		else {
+			$(input).prop('checked', false); 
+		}
+	});
+	//
+	//START select all incontestable gs-level	  
+	$(document).on('change','#incontestable input.selectallgs', function() {
+	   var input  = $(this).parent().parent().find('input.checkmark');
 		if ($(this).is( ":checked" )) {
 			$(input).prop('checked', true);
 			$('input:disabled').prop('checked', false);        
