@@ -3006,6 +3006,7 @@ $(document).ready(function(){
 	//START SOU modal button add/remove GSs
 		$('div.inusegs span.label button').on('click',function() { 
 			var colorClass = this.className;
+			var count = $(this).parent().parent('div.inusegs').find('span.glyphicon-remove-circle');
 			if ((colorClass) == ('close closegspanels')) {
 				$(this).parent().css('background','#ecf1f3').css('color','#999');
 				$(this).children('span').addClass('glyphicon-refresh').removeClass('glyphicon-remove-circle');
@@ -3018,11 +3019,17 @@ $(document).ready(function(){
 				$(this).toggleClass('refresh');
 				$(this).attr('aria-label','delete');
 			}
+			if ((count).length == 1) {
+				$(this).closest( 'div.gsmodal' ).parent().find('div.statementou').css('opacity','0.4');
+				$(this).closest( 'div.gsmodal' ).parent().find('div.statementou select option').prop('disabled', true);
+				$(this).closest( 'div.gsmodal' ).parent().find('div.formodal').css('display','block');
+				}
 		});
 	//
-	//START SOU modal add/remove GSs from blue bar
+	//START SOU modal strike/unstrike GSs from blue bar
 	$('div.inusegs button').on('click',function() {
 		var colorClass = this.className;
+		label = $(this).parent().parent('div.inusegs').find('button.closegspanels');
 		var labelindex = $(this).index('div.inusegs button.closegspanels');
 		if ((colorClass) === ('close closegspanels')) {
 			var buttonparent = $(this).parents('div.modal');
@@ -3041,56 +3048,33 @@ $(document).ready(function(){
 	//START SOU modal add/remove class
 	if ( $( 'div#soucontent' ).length ) {
 		$('div.formodal').css('display','none');
-		//START SOU blue bar height
-		//var winwidth = $(window).width();
-//		var modalparent = $('div.modal').parent();
-//		if (winwidth > 1199) {
-//			//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
-//			$.each(modalparent, function(){
-//				var souf = $(this).find('.statementou h2.displaycell').outerHeight();
-//				$(this).find('.statementou .noexpand.blue').css('height',souf);
-//			});	
-//		}
-//		else if (winwidth < 1199) {
-//			$.each(modalparent, function(){
-//				var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
-//				$(this).find('.statementou .noexpand.blue').css('height',souf);
-//			});
-//		}
-//		$( window ).resize(function() {
-//			var winwidth = $(window).width();
-//			var modalparent = $('div.modal').parent();
-//			if (winwidth > 1199) {
-//				//var souf = $(modalparent).find('.statementou h2.displaycell').outerHeight();
-//				$.each(modalparent, function(){
-//					var souf = $(this).find('.statementou h2.displaycell').outerHeight();
-//					$(this).find('.statementou .noexpand.blue').css('height',souf);
-//				});	
-//			}
-//			else if (winwidth < 1199) {
-//				$.each(modalparent, function(){
-//					var souf = ($(this).find('.statementou h2.displaycell').outerHeight() + 70);
-//					$(this).find('.statementou .noexpand.blue').css('height',souf);
-//				});
-//			}
-//		});
 	}
-	//
-	$('div.classmodal button.btn-success').on('click',function() {
+	$('div.classmodal button.deleteclass').on('click',function() {
 		var modaldiv = $('div.formodal');
 		var modaldivparent = $(this).parents('div.modal');
 		var modaldivgrandparent = $(modaldivparent).parent();
+		var modalgs = $(modaldivparent).closest('div.gsmodal');
 		$( modaldivparent ).find('span.sr-only').text('class removed');
 		$( modaldivgrandparent ).find('div.inusegs span.subtle').css('display','none');
 		$( modaldivparent ).parent().find('div.statementou').css('opacity','0.4');
 		$( modaldivparent ).parent().find('div.statementou select option').prop('disabled', true);
-		$( modaldivparent ).modal('hide')
+		$( modaldivparent ).modal('hide');
 		$( modaldivparent ).parent().find('div.formodal').css('display','block');
+		$(function() {
+			var gsbuttons = $(modalgs).find('div.inusegs span.label button');
+			$( gsbuttons ).parent().css('background','#ecf1f3').css('color','#999');
+			$( gsbuttons ).children('span').addClass('glyphicon-refresh').removeClass('glyphicon-remove-circle');
+			$( gsbuttons ).toggleClass('refresh');
+			$( gsbuttons ).attr('aria-label','undo delete this good / service');
+		});
+		$(this).closest('div.classmodal').parent().find('.statementou h2.displaycell span.listed').addClass('strike');
+		$(this).closest('div.classmodal').parent().find('.statementou h2.displaycell span.listed span.sr-only').text('removed');
 	});
 	$('button.resetclassbtn').on('click',function() {
 		var modaldiv = $(this).parents('div.formodal');
 		var modaldivparent = $(this).parents('div.modal');
 		var modaldivgrandparent = $(modaldiv).parent();
+		var modalgs = $(modaldiv).siblings('div.gsmodal');
 		$( modaldivgrandparent ).find('div.inusegs span.subtle').css('display','table');
 		$( modaldiv).parent().find('div.statementou').css('opacity','1.0');
 		$( modaldiv ).parent().find('div.statementou select option').eq(0).prop('disabled', false);
@@ -3098,25 +3082,16 @@ $(document).ready(function(){
 		$( modaldiv ).parent().find('div.statementou select option').eq(2).prop('disabled', false);
 		$( modaldivparent ).find('span.sr-only').text('class added');
 		$( modaldiv ).css('display','none');
+		$(function() {
+			var gsbuttons = $(modalgs).find('div.inusegs span.label button');
+			$( gsbuttons ).parent().css('background','#cbd6da').css('color','#333');
+			$( gsbuttons ).children('span').removeClass('glyphicon-refresh').addClass('glyphicon-remove-circle');
+			$( gsbuttons ).toggleClass('refresh');
+			$( gsbuttons ).attr('aria-label','delete');
+		});
+		$(this).closest('div.formodal').parent().find('.statementou h2.displaycell span.listed').removeClass('strike');
+		$(this).closest('div.formodal').parent().find('.statementou h2.displaycell span.listed span.sr-only').text('added');
 	});
-	//
-	//START close button height match dashboard
-	//$( window ).on('load', function() {
-//      var d = $( '#announcements .closepans' ).prev('div');
-//	  $(d).css('display','flex').css('flex-direction','column').css('min-height','3em');
-//	  $('#announcements .closepans').css( 'line-height', (d.innerHeight() + 'px') ).css( 'height', (d.innerHeight()) );
-//	  $('#announcements .closegspanels').css('line-height',((d.innerHeight() + 6) + 'px'));
-//	  $( window ).resize(function() {
-//  		$('#announcements .closepans').css( 'height', (d.innerHeight()) );
-//	  	$('#announcements .closegspanels').css('line-height',((d.innerHeight() + 6) + 'px'));
-//		});
-	  //var e = $( '#dashboardmain .alert-warning .closepans' );
-	  //$(e).css('min-height','3em');
-	  //$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
-	  //$( window ).resize(function() {
-  		//$('#dashboardmain .alert-warning .closepans').css( 'height', (e.innerHeight()) );
-		//});
-	//});
 	//
 	//row header p height match
 	var p = $('.rowheader p').height();
