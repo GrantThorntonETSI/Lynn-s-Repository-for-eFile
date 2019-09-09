@@ -855,12 +855,12 @@ $(document).ready(function(){
 		}
 		else {
 			var clearthis = $('div#uaf');
-			var resetselect = [ 'mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
+			//var resetselect = [ 'mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
 			var clearall = {};
 			$(function(){
 				var clear = function(){
-					$(clearthis).find('select[type=date]').val( resetselect[0] );
+					//$(clearthis).find('select[type=date]').val( resetselect[0] );
 					$(clearthis).find('input[type=radio]').prop('checked', false);
 					$(clearthis).find('input').val('');
 					$(clearthis).find('textarea').val('');
@@ -1261,13 +1261,13 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_conflictingreg').hide( 'fast' );
 			$('div#hideshowconcurrentuses_earlieruse').hide( 'fast' );
 			}
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$('div#hideshowconcurrentuses_ttab input[type=date], div#hideshowconcurrentuses_conflictingreg input[type=date], div#hideshowconcurrentuses_earlieruse input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$('div#hideshowconcurrentuses_ttab input[type=date], div#hideshowconcurrentuses_conflictingreg input[type=date], div#hideshowconcurrentuses_earlieruse input[type=date]').val(resetselect[1]);
 			$('div#hideshowconcurrentuses_ttab textarea, div#hideshowconcurrentuses_conflictingreg textarea, div#hideshowconcurrentuses_earlieruse textarea').val('');
 			$('div#hideshowconcurrentuses_ttab input.checkmark, div#hideshowconcurrentuses_conflictingreg input.checkmark, div#hideshowconcurrentuses_earlieruse input.checkmark').prop('checked', false);
 			$('div#hideshowconcurrentuses_ttab input[type=text], div#hideshowconcurrentuses_conflictingreg input[type=text], div#hideshowconcurrentuses_earlieruse input[type=text]').val('');
-			$('div#hideshowconcurrentuses_ttab select, div#hideshowconcurrentuses_conflictingreg select, div#hideshowconcurrentuses_earlieruse select').val( resetselect[0] );
+			//$('div#hideshowconcurrentuses_ttab select, div#hideshowconcurrentuses_conflictingreg select, div#hideshowconcurrentuses_earlieruse select').val( resetselect[0] );
 			$('div.appendaconcregapp_ttab div.holdsaconcregapp_ttab, div.appendaconcregapp_conflictingreg div.holdsaconcregapp_conflictingreg, div.appendaconcregapp_earlieruse div.holdsaconcregapp_earlieruse').remove();
 			$('div#hideshowconcurrentuses_ttab .hidethis, div#hideshowconcurrentuses_conflictingreg .hidethis, div#hideshowconcurrentuses_earlieruse .hidethis').contents().css('display','block');
 			$('div#hideshowconcurrentuses_ttab .js-upload-finished, div#hideshowconcurrentuses_conflictingreg .js-upload-finished, div#hideshowconcurrentuses_earlieruse .js-upload-finished').css('display','none');
@@ -1284,13 +1284,13 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_conflictingreg').hide( 'fast' );
 			$('div#hideshowconcurrentuses_earlieruse').hide( 'fast' );
 			}
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$('div#hideshowconcurrentuses_courtd input[type=date], div#hideshowconcurrentuses_conflictingreg input[type=date], div#hideshowconcurrentuses_earlieruse input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$('div#hideshowconcurrentuses_courtd input[type=date], div#hideshowconcurrentuses_conflictingreg input[type=date], div#hideshowconcurrentuses_earlieruse input[type=date]').val(resetselect[1]);
 			$('div#hideshowconcurrentuses_courtd textarea, div#hideshowconcurrentuses_conflictingreg textarea, div#hideshowconcurrentuses_earlieruse textarea').val('');
 			$('div#hideshowconcurrentuses_courtd input.checkmark, div#hideshowconcurrentuses_conflictingreg input.checkmark, div#hideshowconcurrentuses_earlieruse input.checkmark').prop('checked', false);
 			$('div#hideshowconcurrentuses_courtd input[type=text], div#hideshowconcurrentuses_conflictingreg input[type=text], div#hideshowconcurrentuses_earlieruse input[type=text]').val('');
-			$('div#hideshowconcurrentuses_courtd select, div#hideshowconcurrentuses_conflictingreg select, div#hideshowconcurrentuses_earlieruse select').val( resetselect[0] );
+			//$('div#hideshowconcurrentuses_courtd select, div#hideshowconcurrentuses_conflictingreg select, div#hideshowconcurrentuses_earlieruse select').val( resetselect[0] );
 			$('div.appendaconcregapp_courtd div.holdsaconcregapp_courtd, div.appendaconcregapp_conflictingreg div.holdsaconcregapp_conflictingreg, div.appendaconcregapp_earlieruse div.holdsaconcregapp_earlieruse').remove();
 			$('div#hideshowconcurrentuses_courtd .hidethis, div#hideshowconcurrentuses_conflictingreg .hidethis, div#hideshowconcurrentuses_earlieruse .hidethis').contents().css('display','block');
 			$('div#hideshowconcurrentuses_courtd .js-upload-finished, div#hideshowconcurrentuses_conflictingreg .js-upload-finished, div#hideshowconcurrentuses_earlieruse .js-upload-finished').css('display','none');
@@ -1307,13 +1307,13 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_courtd').hide( 'fast' );
 			$('div#hideshowconcurrentuses_earlieruse').hide( 'fast' );
 			}
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$('div#hideshowconcurrentuses_courtd input[type=date], div#hideshowconcurrentuses_ttab input[type=date], div#hideshowconcurrentuses_earlieruse input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$('div#hideshowconcurrentuses_courtd input[type=date], div#hideshowconcurrentuses_ttab input[type=date], div#hideshowconcurrentuses_earlieruse input[type=date]').val(resetselect[1]);
 			$('div#hideshowconcurrentuses_courtd textarea, div#hideshowconcurrentuses_ttab textarea, div#hideshowconcurrentuses_earlieruse textarea').val('');
 			$('div#hideshowconcurrentuses_courtd input.checkmark, div#hideshowconcurrentuses_ttab input.checkmark, div#hideshowconcurrentuses_earlieruse input.checkmark').prop('checked', false);
 			$('div#hideshowconcurrentuses_courtd input[type=text], div#hideshowconcurrentuses_ttab input[type=text], div#hideshowconcurrentuses_earlieruse input[type=text]').val('');
-			$('div#hideshowconcurrentuses_courtd select, div#hideshowconcurrentuses_ttab select, div#hideshowconcurrentuses_earlieruse select').val( resetselect[0] );
+			//$('div#hideshowconcurrentuses_courtd select, div#hideshowconcurrentuses_ttab select, div#hideshowconcurrentuses_earlieruse select').val( resetselect[0] );
 			$('div.appendaconcregapp_courtd div.holdsaconcregapp_courtd, div.appendaconcregapp_ttab div.holdsaconcregapp_ttab, div.appendaconcregapp_earlieruse div.holdsaconcregapp_earlieruse').remove();
 			$('div#hideshowconcurrentuses_courtd .hidethis, div#hideshowconcurrentuses_ttab .hidethis, div#hideshowconcurrentuses_earlieruse .hidethis').contents().css('display','block');
 			$('div#hideshowconcurrentuses_courtd .js-upload-finished, div#hideshowconcurrentuses_ttab .js-upload-finished, div#hideshowconcurrentuses_earlieruse .js-upload-finished').css('display','none');
@@ -1330,13 +1330,13 @@ $(document).ready(function(){
 			$('div#hideshowconcurrentuses_ttab').hide( 'fast' );
 			$('div#hideshowconcurrentuses_courtd').hide( 'fast' );
 			}
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$('div#hideshowconcurrentuses_courtd input[type=date], div#hideshowconcurrentuses_ttab input[type=date], div#hideshowconcurrentuses_conflictingreg input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$('div#hideshowconcurrentuses_courtd input[type=date], div#hideshowconcurrentuses_ttab input[type=date], div#hideshowconcurrentuses_conflictingreg input[type=date]').val(resetselect[1]);
 			$('div#hideshowconcurrentuses_courtd textarea, div#hideshowconcurrentuses_ttab textarea, div#hideshowconcurrentuses_conflictingreg textarea').val('');
 			$('div#hideshowconcurrentuses_courtd input.checkmark, div#hideshowconcurrentuses_ttab input.checkmark, div#hideshowconcurrentuses_conflictingreg input.checkmark').prop('checked', false);
 			$('div#hideshowconcurrentuses_courtd input[type=text], div#hideshowconcurrentuses_ttab input[type=text], div#hideshowconcurrentuses_conflictingreg input[type=text]').val('');
-			$('div#hideshowconcurrentuses_courtd select, div#hideshowconcurrentuses_ttab select, div#hideshowconcurrentuses_conflictingreg select').val( resetselect[0] );
+			//$('div#hideshowconcurrentuses_courtd select, div#hideshowconcurrentuses_ttab select, div#hideshowconcurrentuses_conflictingreg select').val( resetselect[0] );
 			$('div.appendaconcregapp_courtd div.holdsaconcregapp_courtd, div.appendaconcregapp_ttab div.holdsaconcregapp_ttab, div.appendaconcregapp_conflictingreg div.holdsaconcregapp_conflictingreg').remove();
 			$('div#hideshowconcurrentuses_courtd .hidethis, div#hideshowconcurrentuses_ttab .hidethis, div#hideshowconcurrentuses_conflictingreg .hidethis').contents().css('display','block');
 			$('div#hideshowconcurrentuses_courtd .js-upload-finished, div#hideshowconcurrentuses_ttab .js-upload-finished, div#hideshowconcurrentuses_conflictingreg .js-upload-finished').css('display','none');
@@ -1474,8 +1474,7 @@ $(document).ready(function(){
 		if((type) == 'application\/vnd.openxmlformats\-officedocument\.wordprocessingml\.document'){
 			var icon = (icon[0]); 
 		}
-		if((type) == 'application/msword')
-		{
+		else if((type) == 'application/msword'){
 			var icon = (icon[0]); 
 		}
 		else if((type) == 'application\/pdf'){
@@ -1553,8 +1552,8 @@ $(document).ready(function(){
 						$('div#currentmark').prepend('<a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a>');
 						$('div#currentmark').prepend(icon);
 					}
-					//console.log(icon);
-					//console.log(type);
+					console.log(icon[0]);
+					console.log(type);
 				}
 				if (( listlength ) == 1)  {
 					$( hidethis ).hide();
@@ -2058,13 +2057,13 @@ $(document).ready(function(){
 	$('input#inlineRadio26, input.count').change(function() {
 		if(this.checked == true){
 			$(this).closest('section').find('div.yescommerce').hide( 'fast' );
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$(this).closest('section').find('div.yescommerce input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$(this).closest('section').find('div.yescommerce input[type=date]').val(resetselect[1]);
 			$(this).closest('section').find('div.yescommerce textarea').val('');
 			$(this).closest('section').find('div.yescommerce input.checkmark').prop('checked', false);
 			$(this).closest('section').find('div.yescommerce input[type=text]').val('');
-			$(this).closest('section').find('div.yescommerce select').val( resetselect[0] );
+			//$(this).closest('section').find('div.yescommerce select').val( resetselect[0] );
 			$(this).closest('section').find('div.yescommerce .hidethis').contents().css('display','block');
 			$(this).closest('section').find('div.yescommerce .upload-drop-zone').css('height','115px');
 			$(this).closest('section').find('div.yescommerce .js-upload-finished button.close' ).parent().parent().remove();
@@ -2129,13 +2128,13 @@ $(document).ready(function(){
 	$('input#inlineRadio30, input.count').change(function() {
 		if(this.checked == true){
 			$(this).closest('section').find('div.yesconnection').hide( 'fast' );
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$(this).closest('section').find('div.yesconnection input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$(this).closest('section').find('div.yesconnection input[type=date]').val(resetselect[1]);
 			$(this).closest('section').find('div.yesconnection textarea').val('');
 			$(this).closest('section').find('div.yesconnection input.checkmark').prop('checked', false);
 			$(this).closest('section').find('div.yesconnection input[type=text]').val('');
-			$(this).closest('section').find('div.yesconnection select').val( resetselect[0] );
+			//$(this).closest('section').find('div.yesconnection select').val( resetselect[0] );
 			$(this).closest('section').find('div.yesconnection .hidethis').contents().css('display','block');
 			$(this).closest('section').find('div.yesconnection .upload-drop-zone').css('height','115px').css('display','block');
 			$(this).closest('section').find('div.yesconnection .js-upload-finished button.close' ).parent().parent().remove();
@@ -2174,8 +2173,8 @@ $(document).ready(function(){
 	$('div#usaffiliation').css('display','none');
 	$('div#canadianaffiliation').css('display','none');
 	$('#attorney-bar-standing').change(function(){
-		var resetselect = [ 'mm/dd/yy' ];
-		var resetselect = jQuery.makeArray( resetselect );
+		//var resetselect = [ 'mm/dd/yy' ];
+		//var resetselect = jQuery.makeArray( resetselect );
 		var clearall = {};
 		if($(this).val() == 'canadianaffiliation'){ // or this.value == 'canadianaffiliation'
 			var clearthis = $('div#usaffiliation');
@@ -2183,7 +2182,7 @@ $(document).ready(function(){
 				var clear = function(){
 					$(clearthis).find('input[type="file"]').val('');
 					$(clearthis).find('select').val('Select');
-					$(clearthis).find('select[type=date]').val( resetselect[0] );
+					//$(clearthis).find('select[type=date]').val( resetselect[0] );
 					$(clearthis).find('.hidethis').contents().css('display','block');
 					$(clearthis).find('.upload-drop-zone').css('height','2.65em').css('display','table');
 					$(clearthis).find('.js-upload-finished button.close').parent().parent().remove();
@@ -2822,13 +2821,13 @@ $(document).ready(function(){
 			$('div.yescommerce input#foreigntwo_basisone').prop({
 					checked: false,				
 				});
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$('div.yescommerce div.holdsaforeign input[type=date], div.yescommerce div.holdsapending input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$('div.yescommerce div.holdsaforeign input[type=date], div.yescommerce div.holdsapending input[type=date]').val(resetselect[1]);
 			$('div.yescommerce div.holdsaforeign textarea, div.yescommerce div.holdsapending textarea').val('');
 			$('div.yescommerce div.holdsaforeign input.checkmark, div.yescommerce div.holdsapending input.checkmark').prop('checked', false);
 			$('div.yescommerce div.holdsaforeign input[type=text], div.yescommerce div.holdsapending input[type=text]').val('');
-			$('div.yescommerce div.holdsaforeign select, div.yescommerce div.holdsapending select').val( resetselect[0] );
+			//$('div.yescommerce div.holdsaforeign select, div.yescommerce div.holdsapending select').val( resetselect[0] );
 			$('div.yescommerce div.holdsaforeign .hidethis, div.yescommerce div.holdsapending .hidethis').contents().css('display','block');
 			$('div.yescommerce div.holdsaforeign .upload-drop-zone, div.yescommerce div.holdsapending .upload-drop-zone').css('height','115px');
 			$('div.yescommerce div.holdsaforeign .js-upload-finished button.close, div.yescommerce div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
@@ -2849,13 +2848,13 @@ $(document).ready(function(){
 			$('div.yesconnection input#foreigntwo_basistwo').prop({
 					checked: false,				
 				});
-			var resetselect = [ 'Select','mm/dd/yy' ];
-			var resetselect = jQuery.makeArray( resetselect );
-			$('div.yesconnection div.holdsaforeign input[type=date], div.yesconnection div.holdsapending input[type=date]').val(resetselect[1]);
+			//var resetselect = [ 'Select','mm/dd/yy' ];
+			//var resetselect = jQuery.makeArray( resetselect );
+			//$('div.yesconnection div.holdsaforeign input[type=date], div.yesconnection div.holdsapending input[type=date]').val(resetselect[1]);
 			$('div.yesconnection div.holdsaforeign textarea, div.yesconnection div.holdsapending textarea').val('');
 			$('div.yesconnection div.holdsaforeign input.checkmark, div.yesconnection div.holdsapending input.checkmark').prop('checked', false);
 			$('div.yesconnection div.holdsaforeign input[type=text], div.yesconnection div.holdsapending input[type=text]').val('');
-			$('div.yesconnection div.holdsaforeign select, div.yesconnection div.holdsapending select').val( resetselect[0] );
+			//$('div.yesconnection div.holdsaforeign select, div.yesconnection div.holdsapending select').val( resetselect[0] );
 			$('div.yesconnection div.holdsaforeign .hidethis, div.yesconnection div.holdsapending .hidethis').contents().css('display','block');
 			$('div.yesconnection div.holdsaforeign .upload-drop-zone, div.yesconnection div.holdsapending .upload-drop-zone').css('height','115px');
 			$('div.yesconnection div.holdsaforeign .js-upload-finished button.close, div.yesconnection div.holdsapending .js-upload-finished button.close' ).parent().parent().remove();
