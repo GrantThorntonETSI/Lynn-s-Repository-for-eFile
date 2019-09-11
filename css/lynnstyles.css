@@ -3621,13 +3621,15 @@ button[type="submit"].right, button[type="button"].right {
 	opacity:1.0;
 	-moz-opacity: 1.0;
 	}
+#dashboard .dashsection button.deleterow {
+	float:none;
+	}
 #gsselected button.close {
 	height: 44px;
     width: 44px;
     margin-right: .5em;
     font-size: 1.85em;
 	}
-
 #editowner button.close, #reviewattorney button.close, #userprofilepage button.close, #yesattorneyfiling button.close, .phones button.close, #detected button.close, #designwithtext button.close, #basisabde button.close, #basisab button.close, .statementou div.fileholder button.close, #amendmark button.close, button.resetclassbtn, #sectioneight div.fileholder button.close {
     font-size: 3em;
 	height:1.06em;
