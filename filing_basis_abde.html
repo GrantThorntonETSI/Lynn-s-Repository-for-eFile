@@ -255,7 +255,9 @@
                                                                 <p id="upimage">Provide an image of your specimen:</p>
                                                                 <div>
                                                                     <div class="form-group form-group-md hidethis">
-                                                                        <label class="small upload-drop-zone" for="specimenfile" id="upimg"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png</label>
+                                                                        <label class="small upload-drop-zone" for="specimenfile" id="upimg">
+                                                                        	<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .tiff, .png
+                                                                        </label>
                                                                         <input type="file" id="specimenfile" name="specimenfileupload" class="form-control" accept=".jpg,.tiff,.png" aria-labelledby="upimg upimage">
                                                                     </div>
                                                                     <div class="row">
@@ -295,11 +297,11 @@
                                                         </div><!--END radiogroup-->
                                                         <div class="row form-group form-group-md yescommerce" role="alert"><!--toggle 'yes' radio-->
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                <label for="connectiondateone" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                <label for="connectiondateone" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                 <input type="text" class="form-control datepicker" id="connectiondateone" name="connectiondateone" placeholder="yyyy-mm-dd">
                                                             </div> 
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                <label for="firstconnection-date" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                <label for="firstconnection-date" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                 <input type="text" class="form-control datepicker" id="firstconnection-date" name="firstconnectiondate" placeholder="yyyy-mm-dd">
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md individualspecimen" role="alert">
@@ -410,21 +412,23 @@
                                                                         <input type="text" class="form-control" id="appnumbertwo">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="reg-date">Foreign registration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                        <label for="reg-date">Foreign registration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                         <input type="text" class="form-control datepicker" id="reg-date" name="regdate" value="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="reg-date-exp">Foreign registration expiration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                        <label for="reg-date-exp">Foreign registration expiration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                         <input type="text" class="form-control datepicker" id="reg-date-exp" name="regdatexp" value="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="renew-date">Foreign registration renewal date (if applicable): <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                        <label for="renew-date">Foreign registration renewal date (if applicable): <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                         <input type="text" class="form-control datepicker" id="renew-date" name="renewdate" value="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12 upload">
                                                                         <p id="upimagethree">Please provide a copy of the Foreign Registration Certificate. <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span></p>
                                                                         <div class="form-group form-group-md hidethis">
-                                                                            <label class="small upload-drop-zone" for="1" id="upimgthree"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div></label>
+                                                                            <label class="small upload-drop-zone" for="1" id="upimgthree">
+                                                                            		<span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc
+                                                                            </label>
                                                                             <input type="file" id="1" name="specimenfileupload" class="form-control"accept=".jpg,.pdf,.doc,.docx" aria-labelledby="upimgthree upimagethree">
                                                                         </div>
                                                                         <div class="row">
@@ -473,11 +477,11 @@
                                                         </div><!--END radiogroup-->
                                                         <div class="row form-group form-group-md yesconnection" role="alert"><!--toggle 'yes' radio-->
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                <label for="connection-date" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                <label for="connection-date" class="matchlabelheighttwo">When did you first use the mark in connection with the goods/services? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used with the goods or services." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                 <input type="text" class="form-control datepicker" id="connection-date" name="connectiondate" value="" placeholder="yyyy-mm-dd">
                                                             </div> 
                                                             <div class="col-xs-12 col-md-6 form-group form-group-md">
-                                                                <label for="firstconnection-date-two" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                <label for="firstconnection-date-two" class="matchlabelheighttwo">When did you first use the mark in Commerce? <a href="#" data-toggle="tooltip" title="Enter the date on which the mark was first used in commerce, such as commerce between states or between the United States and another country." class="glyphicon glyphicon-info-sign test" data-placement="right"></a> <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                 <input type="text" class="form-control datepicker" id="firstconnection-date-two" name="firstconnectiondate" value="" placeholder="yyyy-mm-dd">
                                                             </div>
                                                             <div class="col-xs-12 form-group form-group-md individualspecimen" role="alert">
@@ -542,7 +546,7 @@
                                                                         <input type="text" class="form-control" id="appnumber">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="application-date">Foreign application filing date: <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
+                                                                        <label for="application-date">Foreign application filing date: <span class="label label-info subtle">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
                                                                         <input type="text" class="form-control foreignfiling datepicker" id="application-date" name="applicationdate" min="" max="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
@@ -587,21 +591,23 @@
                                                                         <input type="text" class="form-control" id="appnumbertwo">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="reg-date">Foreign registration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
-                                                                        <input type="text" class="form-control datepicker" id="reg-date" name="regdate" value="" placeholder="yyyy-mm-dd">
+                                                                        <label for="reg-date-two">Foreign registration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
+                                                                        <input type="text" class="form-control datepicker" id="reg-date-two" name="regdatetwo" value="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="reg-date-exp">Foreign registration expiration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
-                                                                        <input type="text" class="form-control datepicker" id="reg-date-exp" name="regdatexp" value="" placeholder="yyyy-mm-dd">
+                                                                        <label for="reg-date-exp-two">Foreign registration expiration date: <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
+                                                                        <input type="text" class="form-control datepicker" id="reg-date-exp-two" name="regdatexptwo" value="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12">
-                                                                        <label for="renew-date">Foreign registration renewal date (if applicable): <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: m m - d d - y y y y</span></label>
-                                                                        <input type="text" class="form-control datepicker" id="renew-date" name="renewdate" value="" placeholder="yyyy-mm-dd">
+                                                                        <label for="renew-date-two">Foreign registration renewal date (if applicable): <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span><span class="sr-only">enter the date in the following format: y y y y - m m - d d</span></label>
+                                                                        <input type="text" class="form-control datepicker" id="renew-date-two" name="renewdatetwo" value="" placeholder="yyyy-mm-dd">
                                                                     </div>
                                                                     <div class="form-group form-group-md col-xs-12 upload">
                                                                         <p id="upimagefive">Please provide a copy of the Foreign Registration Certificate. <span class="label label-info subtle" aria-describedby="#costsavingoptions">Reduced Fee</span></p>
                                                                         <div class="form-group form-group-md hidethis">
-                                                                            <label class="small upload-drop-zone" for="1" id="upimgfive"><div class="fileDisplayArea"><span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc</div></label>
+                                                                            <label class="small upload-drop-zone" for="1" id="upimgfive">
+                                                                                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span> <br>Upload file. Allowed file types .jpg, .pdf, .doc
+                                                                            </label>
                                                                             <input type="file" id="1" name="specimenfileupload" class="form-control"accept=".jpg,.pdf,.doc,.docx" aria-labelledby="upimgfive upimagefive">
                                                                         </div>
                                                                         <div class="row">
