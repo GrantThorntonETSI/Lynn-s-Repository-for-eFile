@@ -1024,7 +1024,7 @@ table.dataTable.display tbody>tr.odd.selected>.sorting_1 a, table.dataTable.orde
 table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected {
     background-color: #d1d7e4!important;
 	}
-#dashboardtableone th, #dashboardtabletwo th, #filepetitiontable th, #responseamendtable th, #responseamendtabletwo th {
+#dashboardtableone th, #dashboardtabletwo th, #filepetitiontable th, #responseamendtable th, #responseamendtabletwo th, #dashboardtableatn th {
 	 font-weight:400!important;
 	 /*padding-left:.1em;
 	 padding-right:.1em;*/
@@ -1121,7 +1121,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
     color: #808080;
 	text-align:center;
 	}
-span#filingsheader, span#due, span#notify {
+span#filingsheader, span#due, span#notify, span#attorneyheader {
 	line-height: 39px;
 	color: #555;
     font-size: 1.2em;
@@ -1633,7 +1633,6 @@ table.dataTable.dtr-inline.collapsed>tbody>tr.even.parent>td:first-child:before,
     height: auto;
 	z-index:999;
 	}
-	
 /* TOOLTIP */
 .tooltip > .tooltip-inner {
 	background-color: #FFF; 
@@ -2350,6 +2349,9 @@ button#moreoptionsbtn {
 	background-color:#9BB8D3;
 	width:100%;
 	}
+#dashboardtableatn_wrapper div.toolbaratn .btn-sm span {
+	font-weight:600!important;
+	}
 #filepetitiontable_wrapper div.toolbarpetitions .btn-xs {
 	padding: .5em 1.02em;
 	border:0;
@@ -2515,7 +2517,10 @@ input:checked + .slider #off {
 #tradeservmodal, #collectivemodal, #collectivemembmodal, #emailmodal, #securitymodal, #passwordmodal, #soucontent .modal, #dashsectionscontainer .modal {
 	font-size:1.25em;
 	}
-#tradeservmodal .modal-title, #collectivemodal .modal-title, #collectivemembmodal .modal-title, #emailmodal .modal-title, #securitymodal .modal-title, #passwordmodal .modal-title, #soucontent .modal-title {
+#dashsectionscontainer .modal.atnmodal, #dashsectionscontainer .modal.addatnmodal {
+	font-size:1.38em;
+	}
+#tradeservmodal .modal-title, #collectivemodal .modal-title, #collectivemembmodal .modal-title, #emailmodal .modal-title, #securitymodal .modal-title, #passwordmodal .modal-title, #soucontent .modal-title, .modal.atnmodal .modal-title, .modal.addatnmodal .modal-title {
 	font-weight: 600;
 	color:#333;
 	}
@@ -2525,10 +2530,13 @@ input:checked + .slider #off {
 .modal-header {
     border-bottom: none;
 	}
-.modal-header .close {
+.modal-header .close, #dashboardmain .atnmodal .modal-header button.close, #dashboardmain .addatnmodal .modal-header button.close {
     font-size: 2em;
 	padding: .2em .25em .2em .25em;
 	margin-top: 0;
+	}
+#dashboardmain .atnmodal .modal-header button.close .glyphicon-remove, #dashboardmain .addatnmodal .modal-header button.close .glyphicon-remove {
+	top: 2px;
 	}
 .modal-header .close.active.focus, .modal-header .close.active:focus, .modal-header .close:active.focus, .modal-header .close:active:focus, .modal-header .close:focus {
 	outline: 1px solid #fff!important;
@@ -2543,7 +2551,7 @@ input:checked + .slider #off {
 	}
 .modal-header h4 {
     width: 80%;
-	padding: .8em .3em .2em .3em;
+	padding: .75em .3em .2em .3em;
 	float:left;
 	}
 .modal-content {
@@ -3640,6 +3648,7 @@ button[type="submit"].right, button[type="button"].right {
 #dashboardmain button.close span.glyphicon-remove {
 	display: table-cell;
     vertical-align: middle;
+	top:0;
 	}
 #alertminwelcome button.close span.glyphicon-remove {
 	color:#fff;

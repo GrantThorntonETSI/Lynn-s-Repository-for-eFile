@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var winwidth = $(window).width();
 		//if (winwidth > 768) {
 			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
-			$('main#loginform').css('position','relative').css('top',((e - efoot) - enav) / 6);
+			$('main#loginform').css('position','relative').css('top',((e - efoot) - enav) / 6);	
 			//}
 //		else if (winwidth < 767) {
 //			$('footer').css('position','relative').css('top',((e - efoot) - enav)).css('margin-top','0');
@@ -360,6 +360,78 @@ $(document).ready(function(){
 			order: [[ 1, 'asc' ]]
 		});
 	//
+	//START initialize Atn Contacts datable
+		var tableatn = $('#dashboardtableatn').DataTable({
+		"fnDrawCallback": function( oSettings ) {
+			},
+			'sDom': '<"toolbaratn">lfrtip',
+			"language": {
+			"search": "<span class='glyphicon glyphicon-search' aria-hidden='true'></span><span class='sr-only'>search</span>",
+			"lengthMenu": "<span class='glyphicon glyphicon-filter' aria-hidden='true'></span><span class='sr-only'>select number of entries to display</span> <select>"+
+			  '<option value="10">10</option>'+
+			  '<option value="25">25</option>'+
+			  '<option value="50">50</option>'+
+			  '<option value="100">100</option>'+
+			  '<option value="-1">All</option>'+
+			  '</select>'
+  			},
+			//fixedHeader: {
+				//header: true,
+				//headerOffset: 100,
+        	//},
+			'autoWidth': false,
+			responsive: {
+				details: {
+                type: 'column',
+				target: 0,
+            	},
+				breakpoints: [
+					{ name: 'desktop', width: Infinity },
+					{ name: 'tablet',  width: 1180 },
+					{ name: 'fablet',  width: 768 },
+					{ name: 'phone',   width: 480 }
+				],
+			},
+			'columns': [
+				{ 'width': '10%' },
+				{ 'width': '10%' },
+				{ 'width': '15%' },
+				{ 'width': '20%' },
+				{ 'width': '18%' },
+				{ 'width': '16%' },
+				{ 'width': '16%' },
+				],
+			'columnDefs': [ 
+				{ data: 'control', name: 'Control', responsivePriority: 0, targets: 0 },//(control)
+				{ data: 'checkboxes', name: 'Checkboxes', responsivePriority: 0, targets: 1 },//(checkboxes)
+				{ data: 'name', name: 'Name', responsivePriority: 1, targets: 2 },//name
+				{ data: 'company', name: 'Company', responsivePriority: 3, targets: 3 },//company
+				{ data: 'email', name: 'eMail', responsivePriority: 2, targets: 4 },//email
+				{ data: 'contact', name: 'Contact', responsivePriority: 5, targets: 5 },//contact type
+				{ data: 'updated', name: 'Updated', responsivePriority: 4, targets: 6 },//last updated
+				{ className: 'centertxt', 'targets': [ 1,2,3,4,5,6 ] },
+				{ className: 'select-checkbox', 'orderable': false, 'targets': [ 1 ]},
+				{ className: 'control', 'orderable': false, 'targets': [ 0 ] },
+			   ],
+			  select: {
+				style:    'multi',
+				selector: 'tr td:nth-child(1) span',
+				},
+			order: [[ 1, 'asc' ]]
+		});
+	//
+	//START atn delete action
+	$('#dashboardtableatn_wrapper').on('click', 'ul.dropdown-menu li a#deleteatn', function(e){
+		e.preventDefault();
+		var dt = $('#dashboardtableatn').dataTable();
+		var selectedrows = $('#dashboardtableatn_wrapper').find('tr.selected');
+		var selectedrowchild = $( selectedrows ).closest('tr').next('tr.child');
+		$( selectedrows ).remove();
+		$( selectedrowchild ).remove();
+		dt.fnDeleteRow( selectedrows );
+		dt.fnDeleteRow( selectedrowchild );
+	});
+	//
 	//START a11y datatable hide/show rows
 	$( '#dashboardtableone tbody' ).on('click', 'td.control', function(e){
 		e.preventDefault();
@@ -394,6 +466,14 @@ $(document).ready(function(){
 		$( dtcontent ).attr('role','alert');
 	});
 	$( '#responseamendtabletwo tbody' ).on('click', 'td.control', function(e){
+		e.preventDefault();
+		$( this ).attr('aria-expanded', function (i, attr) {
+			return attr == 'true' ? 'false' : 'true'
+		});
+		var dtcontent = $( this ).parent().next('tr.child');
+		$( dtcontent ).attr('role','alert');
+	});
+	$( '#dashboardtableatn tbody' ).on('click', 'td.control', function(e){
 		e.preventDefault();
 		$( this ).attr('aria-expanded', function (i, attr) {
 			return attr == 'true' ? 'false' : 'true'
@@ -463,20 +543,20 @@ $(document).ready(function(){
 			});
 		});
 	//
-	//generate unique IDs + matching labels for response / amend pages, checkmarks
-		var checkboxList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input');
+	//generate unique IDs + matching labels for response / amend pages, attorney contact page, checkmarks
+		var checkboxList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input, #dashboardtableatn tr td:nth-child(2) input');
 		for (var i = 0; i <= checkboxList.length; i++) {
 			$(checkboxList[i]).attr('id', 'checkboxone' + i);
 		}
-		var labelList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input').next('label');
+		var labelList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input, #dashboardtableatn tr td:nth-child(2) input').next('label');
 		for (var i = 0; i <= labelList.length; i++) {
 			$(labelList[i]).attr('for', 'checkboxone' + i);
 		}
-		var labelidList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input').next('label');
+		var labelidList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input, #dashboardtableatn tr td:nth-child(2) input').next('label');
 		for (var i = 0; i <= labelidList.length; i++) {
 			$(labelidList[i]).attr('id', 'selectrow_' + i);
 		}
-		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input');
+		var checkboxarialabelList = $('#responseamendtable tr td:nth-child(2) input, #responseamendtabletwo tr td:nth-child(2) input, #dashboardtableatn tr td:nth-child(2) input');
 		for (var i = 0; i <= checkboxarialabelList.length; i++) {
 			$(checkboxarialabelList[i]).attr('aria-labelledby', 'selectrow_' + i);
 		}
@@ -495,7 +575,7 @@ $(document).ready(function(){
 			$(input).prop('checked', false); 
 		}
 	});
-	$('#responseamendtable tr td:nth-child(2) input').on('change', function(e){
+	$(document).on('change','#responseamendtable tr td:nth-child(2) input', function(e){
 		$('#responseamendtable input#selectall').prop('checked', false);
 		if ($(this).is( ":checked" )) {
 			$(this).parent().parent().addClass('selected');
@@ -516,8 +596,31 @@ $(document).ready(function(){
 			$(input).prop('checked', false); 
 		}
 	});
-	$('#responseamendtabletwo tr td:nth-child(2) input').on('change', function(e){
+	$(document).on('change','#responseamendtabletwo tr td:nth-child(2) input',function(e){
 		$('#responseamendtabletwo input#selectalltwo').prop('checked', false);
+		if ($(this).is( ":checked" )) {
+			$(this).parent().parent().addClass('selected');
+		} else {
+			$(this).parent().parent().removeClass('selected'); 
+		}
+	});
+	//
+	//start select all atn contacts	  
+	$(document).on('change','#dashboardtableatn input#selectall', function() {
+	   var checkboxes  = $('#dashboardtableatn tr td:nth-child(2) span');
+	   var rows  = $('#dashboardtableatn tr');
+	   var input  = $('#dashboardtableatn tr td:nth-child(2) input.form-check-input');
+	   var selectall = $(this);
+		if ($(this).is( ":checked" )) {
+			$(rows).addClass('selected');
+			$(input).prop('checked', true);        
+		} else {
+			$(rows).removeClass('selected');
+			$(input).prop('checked', false); 
+		}
+	});
+	$(document).on('change','#dashboardtableatn tr td:nth-child(2) input', function(e){
+		$('#dashboardtableatn input#selectall').prop('checked', false);
 		if ($(this).is( ":checked" )) {
 			$(this).parent().parent().addClass('selected');
 		} else {
@@ -536,7 +639,7 @@ $(document).ready(function(){
 		});
 	//
 	//Dashboard datatables ellipsis menu tabletwo
-		$("div.toolbartwo").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdroptwo" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdroptwo" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Mark</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Due Date</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="7" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Action</a></li></ul></div>');
+		$("div.toolbartwo").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdroptwo" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdroptwo" role="menu"><li class="dropdown-header">Toggle Columns</li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Serial#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Registration#</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Mark</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="4" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Owner</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="5" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Due Date</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="6" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Status</a></li><li role="menuitem" aria-label="hide this column"><a class="toggle-vistwo" data-column="7" tabindex="0"><span class="glyphicon glyphicon-ok" aria-label="hide this column"></span>Action</a></li></ul></div>');
 		$('a.toggle-vistwo').on( 'click', function () {
 			//e.preventDefault();
 			var column = tabletwo.column( $(this).attr('data-column') );
@@ -547,10 +650,20 @@ $(document).ready(function(){
 		});
 	//
 	//Datatable filter menu petitions
-		$("div.toolbarpetitions").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="filter row visibility"><span class="">Filter</span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis" data-column="0" tabindex="0" id="revive"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Revive</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Director</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Petition to Make Special</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok visuallyhidden" aria-hidden="true"></span>Request for Reinstatement</a></li></ul></div>');
+		$("div.toolbarpetitions").html('<div class="dropdown" aria-live="assertive"><button class="btn btn-xs dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="filter row visibility"><span class="">Filter</span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis" data-column="0" tabindex="0" id="revive"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Petition to Revive</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="1" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Petition to Director</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="2" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Petition to Make Special</a></li><li role="menuitem" aria-label="filter these rows"><a class="toggle-vis disabled" data-column="3" tabindex="0"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Request for Reinstatement</a></li></ul></div>');
 		$('#petitions a.toggle-vis').on( 'click', function () {
 			//e.preventDefault();
 			$(this).attr('aria-label','unfilter these rows');			
+		});
+	//
+	//Dashboard datatables atn action menu
+		$("div.toolbaratn").html('<div class="dropdown" aria-live="assertive"><button class="btn-success btn-sm dropdown-toggle" id="dropdownMenucolvis" data-toggle="dropdown" aria-controls="elipsisdrop" aria-haspopup="true" aria-expanded="false" aria-label="select an action for the selected table rows"><span>Select Action</span></button><ul class="dropdown-menu" aria-labelledby="dropdownMenucolvis" id="elipsisdrop" role="menu"><li role="menuitem" aria-label="edit contact"><a href="#" class="action" tabindex="0" id="editatn"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit</a></li><li role="menuitem" aria-label="delete contact"><a href="#" class="action" tabindex="0" id="deleteatn"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>Delete</a></li><li role="menuitem" aria-label="add contact"><a href="#" class="action" tabindex="0" id="addatn"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>New</a></li></ul></div>');
+		$('a.action').on( 'click', function () {
+			//e.preventDefault();
+			//var column = tableone.column( $(this).attr('data-column') );
+			//column.visible( ! column.visible() );
+			//$(column).attr('aria-hidden','true')
+			//$(this).attr('aria-label','show this column');			
 		});
 	//
 	//start toggle glyphicon dashboard toggle menu widget
@@ -572,7 +685,7 @@ $(document).ready(function(){
 	});
 	//
 	//START Update ARIA label when sorting
-	$(document).on('click', 'table#dashboardtableone th, table#dashboardtabletwo th, table#filepetitiontable th, table#responseamendtable th', function() {
+	$(document).on('click', 'table#dashboardtableone th, table#dashboardtabletwo th, table#filepetitiontable th, table#responseamendtable th, table#dashboardtableatn th', function() {
 		$( this ).toggleClass( 'focus' );
 		$( this ).find('span.glyphicon-triangle-bottom').toggleClass( 'glyphicon-triangle-top' ).attr('aria-hidden','true');
 	});	
@@ -1374,6 +1487,16 @@ $(document).ready(function(){
 //			$('#specdescriptfour').css( 'height', ((c.outerHeight() + 2) + 'px') );
 //		});
 	//
+	//generate unique IDs + matching labels for filing basis datepickers
+		var datepickerList = $('#basisabde input.datepicker');
+		for (var i = 0; i <= datepickerList.length; i++) {
+			$(datepickerList[i]).attr('id', 'datepicker' + i);
+		}
+		var datepickerlabelList = $('#basisabde input.datepicker').prev('label');
+		for (var i = 0; i <= datepickerlabelList.length; i++) {
+			$(datepickerlabelList[i]).attr('for', 'datepicker' + i);
+		}
+	//
 	//START Placeholder as editable text
 	$('textarea#ta2, textarea#ta5').val('This mark consists of');
 	//
@@ -1545,7 +1668,7 @@ $(document).ready(function(){
 					var dataURL = reader.result;
 					$( fileDisplayArea ).removeClass( 'loader' );
 					$( displaydata ).css('display','block');
-					$( fileDisplayArea ).html( '<span class="glyphicon glyphicon-check"></span>' );
+					//$( fileDisplayArea ).html( '<span class="glyphicon glyphicon-check"></span>' );
 					$( holdata ).append('<div class="row"><div class="col-xs-2"><button type="button" class="btn btn-sm close" aria-label="remove file selection"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button></div><div class="col-xs-1 fileholder iconholder">' + icon + '</div><div class="col-xs-4 linkholder"><a href="' + dataURL + '"aria-labelledby="uploadedfile" download>' + name + '</a></div><div class="col-xs-1 visuallyhidden">' + type + '</div><div class="col-xs-4"><span class="badge alert-success pull-right">Selected File</span></div></div>');
 					if ( $( 'div#amendmark' ).length ) {
 						$('div#currentmark img').css('display','none');
@@ -2354,7 +2477,7 @@ $(document).ready(function(){
 		}
 	});
 	//
-	//generate unique IDs + matching labels for Declaration of Incontestability, checkmarks
+	//generate unique IDs + matching labels + arialabels for Declaration of Incontestability, checkmarks
 		var checkboxList = $('#incontestable input.checkmark');
 		for (var i = 0; i <= checkboxList.length; i++) {
 			$(checkboxList[i]).attr('id', 'checkboxone' + i);
@@ -2363,7 +2486,15 @@ $(document).ready(function(){
 		for (var i = 0; i <= labelList.length; i++) {
 			$(labelList[i]).attr('for', 'checkboxone' + i);
 		}
-	//
+		var labelidList = $('#incontestable input.checkmark').next('label');
+		for (var i = 0; i <= labelidList.length; i++) {
+			$(labelidList[i]).attr('id', 'checkbox_' + i);
+		}
+		var checkboxarialabelList = $('#incontestable input.checkmark');
+		for (var i = 0; i <= checkboxarialabelList.length; i++) {
+			$(checkboxarialabelList[i]).attr('aria-labelledby', 'checkbox_' + i);
+		}
+	//		
 	//START fill from contacts values -- attorney
 	function clearform() {
 	  $( 'input#attorney-first-name' ).val( '' );
@@ -2964,9 +3095,12 @@ $(document).ready(function(){
 	});
 	//
 	//START modals
-	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal','#soucontent .modal').on('shown.bs.modal', function () {
+	$('#tradeservmodal','#collectivemodal','#collectivemembmodal','#loginmodal','#emailmodal','#securitymodal','#passwordmodal').on('shown.bs.modal', function () {
 	  $('.btn-success').focus();
-	})
+	});
+	$('#soucontent .modal','div.atnmodal').on('shown.bs.modal', function () {
+	  $('button.cancel').focus();
+	});
 	//
 	//START show standard character preview
 	$( '#ta2standard' ).keyup(function(){
@@ -4114,7 +4248,92 @@ $(document).ready(function(){
 		$('div#reconsideration, div#souquestion, div#xreq').hide('fast');
 		$('div#xreq').show('fast','swing');
 	});
-	//START SOU select modals
+	//START show atn modal
+	$('a#editatn').on('click',function(){
+		$('div.atnmodal').modal('show');
+	});
+	$('a#addatn').on('click',function(){
+		$('div.addatnmodal').modal('show');
+	});
+	//
+	//START edit atn, update value
+	$('button.editatn').on('click',function(){
+		var checked = $('#dashboardtableatn').find('tr.selected');//find the selected rows
+		var modalinputs = $('div.atnmodal input');//modal inputs
+		var newdata = $.each( modalinputs, function(){
+			return($(this).val());//get the values entered into the modal inputs
+		});
+		$.each(checked, function(){
+			var thischecked = $(this);
+			var cells = $(this).find('td');//find the tds in the selected rows
+			var selectedrowchild = $( thischecked ).next('tr.child');
+			var selectedrowchilddataco = $( selectedrowchild ).find('span.dtr-title:contains("Company")');
+			var arr = $( newdata ).serializeArray();//an array of the values entered into the modal inputs and the input names
+			var namecells = $('#dashboardtableatn').DataTable().columns([2]).data();//name column data
+			var companycells = $('#dashboardtableatn').DataTable().columns([3]).data();//company column data
+			var checkedcontrol = $(this).find('td.control');
+			for (var i = 0; i < arr.length; i++){
+				var nameval =  arr[0].value;
+				var companyval =  arr[1].value;
+			}	
+			var updatedname = namecells;//update all instances of name in a row
+			var updatedcompany = companycells;//update all instances of name in a row
+			namecells.splice( updatedname, 1, nameval );//replace data with new name
+			companycells.splice( updatedcompany, 1, companyval );//replace data with new company
+			$(cells[2]).find('span.appended').html(' (' + updatedname[0] + ')');//add new name to old name
+			$(cells[3]).find('span.appended').html(' (' + updatedcompany[0] + ')');//add new company to old company
+			$( selectedrowchilddataco ).next('span.dtr-data').find('span.appended').html(' (' + updatedcompany[0] + ')');//add new company to old company, shown child row
+			$(checkedcontrol).one('click',function(){
+				var tr = $(this).parent('tr');
+				$('#dashboardtableatn').DataTable().on( 'responsive-resize', function ( e, datatable, columns ) {
+					$( tr ).next('tr').find('span.dtr-title:contains("Company")').next('span.dtr-data').find('span.appended').html(' (' + updatedcompany[0] + ')');//add new company to old company, child row
+				});
+				$('#dashboardtableatn').DataTable().on( 'responsive-display', function ( e, datatable, columns ) {
+					$( tr ).next('tr').find('span.dtr-title:contains("Company")').next('span.dtr-data').find('span.appended').html(' (' + updatedcompany[0] + ')');//add new company to old company, child row
+				});
+			});
+		});
+	});
+	$('button.addatn').on('click',function(){
+		var dt = $('#dashboardtableatn').DataTable();
+		var rowhtml = $("#dashboardtableatn").find('tr')[3];//copy this row html
+		var cloned = $( rowhtml ).clone();
+		var clonedtds = $( cloned ).find('td');
+		function isTextNode(){ 
+			$( clonedtds ).contents().filter(function(){
+				return this.nodeType === 3;
+			}).remove();//remove the contents of the cloned tds
+		};
+		var nodes = $( clonedtds ).contents().filter( isTextNode );
+		var cells = $( cloned ).find('td');//find the tds in the new row html
+		var modalinputs = $('div.addatnmodal input');//modal inputs
+		var newdata = $.each( modalinputs, function(){
+			return($(this).val());//get the values entered into the modal inputs
+		});
+		var arr = $( newdata ).serializeArray();//an array of the values entered into the modal inputs and the input names
+		var namecells = $('#dashboardtableatn').DataTable().columns([2]).data();//name column data
+		var companycells = $('#dashboardtableatn').DataTable().columns([3]).data();//company column data
+		for (var i = 0; i < arr.length; i++){
+			var nameval =  arr[0].value;
+			var companyval =  arr[1].value;
+		}	
+		var updatedname = namecells;//update all instances of name in a row
+		var updatedcompany = companycells;//update all instances of company in a row
+		namecells.splice( updatedname, 1, nameval );//replace data with new name
+		companycells.splice( updatedcompany, 1, companyval );//replace data with new company
+		$(cells[2]).html( updatedname[0] + '<span class="appended"></span>');//add new name to old name
+		$(cells[3]).html( updatedcompany[0] + '<span class="appended"></span>');//add new company to old company
+		dt.row.add($( cloned )).draw();//add the copied html to the DOM
+	});
+	//
+	$('#soucontent').on('hide.bs.modal', function() {
+		var resetselect = [ 'edit' ];
+		var resetselect = jQuery.makeArray( resetselect );
+		var loadmodalreset = $('.statementou select');
+		$(loadmodalreset).val( resetselect[0] );
+	});
+	//
+	//START SOU modals
 	$('.statementou select').on('change',function(){
 		var loadmodal = ($(this).val());
 		//$( loadmodal ).css('display','block');
